@@ -520,12 +520,33 @@ async function updateSubmissionGrades(id, grades, totalScore) {
   await sb.from("submissions").update({ grades, total_score: totalScore }).eq("id", id);
 }
 function App() {
-  const [role, setRole] = useState("student");
+  const [role, setRole] = useState("checking");
+  useEffect(() => {
+    let alive = true;
+    sb.auth.getSession().then(({ data }) => {
+      if (!alive) return;
+      setRole(data && data.session ? "teacher" : "student");
+    }).catch(() => {
+      if (alive) setRole("student");
+    });
+    const { data: authListener } = sb.auth.onAuthStateChange((event, session) => {
+      if (!alive) return;
+      if (event === "SIGNED_OUT") setRole("student");
+      else if (session) setRole("teacher");
+    });
+    return () => {
+      alive = false;
+      if (authListener && authListener.subscription) authListener.subscription.unsubscribe();
+    };
+  }, []);
   async function leaveTeacher() {
     await sb.auth.signOut();
     setRole("student");
   }
-  return /* @__PURE__ */ React.createElement("div", { className: "shell" }, /* @__PURE__ */ React.createElement("div", { className: "masthead" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "eyebrow" }, "История ЕГЭ"), /* @__PURE__ */ React.createElement("h1", null, "Тренажёр")), /* @__PURE__ */ React.createElement("div", { className: "role-switch" }, /* @__PURE__ */ React.createElement("button", { className: role !== "teacher" ? "active" : "", onClick: () => setRole("student") }, "Ученик"), /* @__PURE__ */ React.createElement("button", { className: role === "teacher" ? "active" : "", onClick: () => role === "teacher" ? leaveTeacher() : setRole("teacher-login") }, role === "teacher" ? "Выйти из режима преподавателя" : "Вход для преподавателя"))), role === "teacher-login" && /* @__PURE__ */ React.createElement(TeacherLogin, { onSuccess: () => setRole("teacher"), onCancel: () => setRole("student") }), role === "teacher" && /* @__PURE__ */ React.createElement(TeacherView, null), role === "student" && /* @__PURE__ */ React.createElement(StudentView, null));
+  if (role === "checking") {
+    return /* @__PURE__ */ React.createElement("div", { className: "shell" }, /* @__PURE__ */ React.createElement("div", { className: "loading" }, "Проверяю вход преподавателя…"));
+  }
+  return /* @__PURE__ */ React.createElement("div", { className: "shell" }, /* @__PURE__ */ React.createElement("div", { className: "masthead" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "eyebrow" }, "История ЕГЭ"), /* @__PURE__ */ React.createElement("h1", null, "Тренажёр")), /* @__PURE__ */ React.createElement("div", { className: "role-switch" }, /* @__PURE__ */ React.createElement("button", { type: "button", className: role !== "teacher" ? "active" : "", onClick: () => setRole("student") }, "Ученик"), /* @__PURE__ */ React.createElement("button", { type: "button", className: role === "teacher" ? "active" : "", onClick: () => role === "teacher" ? leaveTeacher() : setRole("teacher-login") }, role === "teacher" ? "Выйти из режима преподавателя" : "Вход для преподавателя"))), role === "teacher-login" && /* @__PURE__ */ React.createElement(TeacherLogin, { onSuccess: () => setRole("teacher"), onCancel: () => setRole("student") }), role === "teacher" && /* @__PURE__ */ React.createElement(TeacherView, null), role === "student" && /* @__PURE__ */ React.createElement(StudentView, null));
 }
 function TeacherLogin({ onSuccess, onCancel }) {
   const [email, setEmail] = useState("");
@@ -541,21 +562,82 @@ function TeacherLogin({ onSuccess, onCancel }) {
   }
   return /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h2", null, "Вход для преподавателя"), /* @__PURE__ */ React.createElement("div", { className: "notice" }, "Используется Supabase Auth. Создайте преподавателя в Authentication → Users; пароль не хранится в коде сайта."), /* @__PURE__ */ React.createElement("label", null, "Email"), /* @__PURE__ */ React.createElement("input", { type: "email", value: email, onChange: (e) => setEmail(e.target.value), autoFocus: true }), /* @__PURE__ */ React.createElement("label", null, "Пароль"), /* @__PURE__ */ React.createElement("input", { type: "password", value: pass, onChange: (e) => setPass(e.target.value), onKeyDown: (e) => e.key === "Enter" && submit() }), err && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } }, err), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8 } }, /* @__PURE__ */ React.createElement("button", { className: "btn", disabled: busy, onClick: submit }, busy ? "Вхожу…" : "Войти"), /* @__PURE__ */ React.createElement("button", { className: "btn ghost", onClick: onCancel }, "Отмена")));
 }
+
+class TeacherTabBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { error: null };
+  }
+  static getDerivedStateFromError(error) {
+    return { error };
+  }
+  componentDidCatch(error, info) {
+    console.error("Ошибка вкладки преподавателя:", error, info);
+  }
+  componentDidUpdate(prevProps) {
+    if (prevProps.tabKey !== this.props.tabKey && this.state.error) {
+      this.setState({ error: null });
+    }
+  }
+  render() {
+    if (this.state.error) {
+      return /* @__PURE__ */ React.createElement("div", { className: "card" },
+        /* @__PURE__ */ React.createElement("h2", null, "Ошибка этой вкладки"),
+        /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } },
+          "Вкладка дала ошибку, но вход преподавателя сохранён. Можно перейти на другую вкладку без повторного входа."
+        ),
+        /* @__PURE__ */ React.createElement("div", { className: "q-meta", style: { whiteSpace: "pre-wrap", marginBottom: 10 } },
+          String(this.state.error && (this.state.error.message || this.state.error))
+        ),
+        /* @__PURE__ */ React.createElement("button", {
+          type: "button",
+          className: "btn ghost",
+          onClick: () => this.setState({ error: null })
+        }, "Попробовать открыть снова")
+      );
+    }
+    return this.props.children;
+  }
+}
+
 function TeacherView() {
-  const [tab, setTab] = useState("import");
+  const [tab, setTab] = useState(() => {
+    try { return sessionStorage.getItem("historyTeacherTab") || "import"; }
+    catch { return "import"; }
+  });
+  function switchTab(nextTab) {
+    try { sessionStorage.setItem("historyTeacherTab", nextTab); } catch {}
+    setTab(nextTab);
+  }
   const [bank, setBank] = useState(null);
   const [tests, setTests] = useState(null);
   const [loadError, setLoadError] = useState("");
   const reload = useCallback(async () => {
-    const [{ data: b, error }, t] = await Promise.all([fetchBank(), fetchTests()]);
-    if (error) setLoadError("\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C \u0431\u0430\u043D\u043A \u0438\u0437 Supabase: " + error.message + ". \u041F\u0440\u043E\u0432\u0435\u0440\u044C\u0442\u0435 SUPABASE_URL/ANON_KEY \u0438 \u0447\u0442\u043E \u0442\u0430\u0431\u043B\u0438\u0446\u044B \u0441\u043E\u0437\u0434\u0430\u043D\u044B (\u0441\u043C. supabase_schema.sql).");
-    setBank(b);
-    setTests(t);
+    try {
+      setLoadError("");
+      const [{ data: b, error }, t] = await Promise.all([fetchBank(), fetchTests()]);
+      if (error) setLoadError("Не удалось загрузить банк из Supabase: " + error.message);
+      setBank(Array.isArray(b) ? b : []);
+      setTests(Array.isArray(t) ? t : []);
+    } catch (e) {
+      console.error(e);
+      setLoadError("Ошибка загрузки данных: " + (e && e.message ? e.message : String(e)));
+      setBank((prev) => Array.isArray(prev) ? prev : []);
+      setTests((prev) => Array.isArray(prev) ? prev : []);
+    }
   }, []);
   useEffect(() => {
     reload();
   }, [reload]);
-  return /* @__PURE__ */ React.createElement("div", null, loadError && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } }, loadError), /* @__PURE__ */ React.createElement("div", { className: "tabs" }, [["import", "\u0418\u043C\u043F\u043E\u0440\u0442 \u0431\u0430\u0437\u044B"], ["bank", "\u0411\u0430\u043D\u043A \u0437\u0430\u0434\u0430\u043D\u0438\u0439"], ["tests", "\u0422\u0435\u0441\u0442\u044B"], ["testimport", "\u0418\u043C\u043F\u043E\u0440\u0442 \u0442\u0435\u0441\u0442\u0430"], ["grade", "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043E\u0442\u0432\u0435\u0442\u043E\u0432"], ["export", "\u042D\u043A\u0441\u043F\u043E\u0440\u0442 / \u0434\u0438\u0430\u0433\u043D\u043E\u0441\u0442\u0438\u043A\u0430"]].map(([k, l]) => /* @__PURE__ */ React.createElement("button", { key: k, className: tab === k ? "active" : "", onClick: () => setTab(k) }, l))), tab === "import" && /* @__PURE__ */ React.createElement(ImportTab, { bank: bank || [], onReload: reload }), tab === "bank" && /* @__PURE__ */ React.createElement(BankTab, { bank, onReload: reload }), tab === "tests" && /* @__PURE__ */ React.createElement(TestsTab, { bank: bank || [], tests, onReload: reload }), tab === "testimport" && /* @__PURE__ */ React.createElement(TestImportTab, { bank: bank || [], onReload: reload }), tab === "grade" && /* @__PURE__ */ React.createElement(GradeTab, { tests: tests || [], bank: bank || [] }), tab === "export" && /* @__PURE__ */ React.createElement(ExportTab, { bank: bank || [], tests: tests || [] }));
+  return /* @__PURE__ */ React.createElement("div", null, loadError && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } }, loadError), /* @__PURE__ */ React.createElement("div", { className: "tabs" }, [["import", "\u0418\u043C\u043F\u043E\u0440\u0442 \u0431\u0430\u0437\u044B"], ["bank", "\u0411\u0430\u043D\u043A \u0437\u0430\u0434\u0430\u043D\u0438\u0439"], ["tests", "\u0422\u0435\u0441\u0442\u044B"], ["testimport", "\u0418\u043C\u043F\u043E\u0440\u0442 \u0442\u0435\u0441\u0442\u0430"], ["grade", "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043E\u0442\u0432\u0435\u0442\u043E\u0432"], ["export", "\u042D\u043A\u0441\u043F\u043E\u0440\u0442 / \u0434\u0438\u0430\u0433\u043D\u043E\u0441\u0442\u0438\u043A\u0430"]].map(([k, l]) => /* @__PURE__ */ React.createElement("button", { key: k, className: tab === k ? "active" : "", type: "button", onClick: () => switchTab(k) }, l))), /* @__PURE__ */ React.createElement(TeacherTabBoundary, { tabKey: tab },
+    tab === "import" ? /* @__PURE__ */ React.createElement(ImportTab, { bank: bank || [], onReload: reload }) :
+    tab === "bank" ? /* @__PURE__ */ React.createElement(BankTab, { bank, onReload: reload }) :
+    tab === "tests" ? /* @__PURE__ */ React.createElement(TestsTab, { bank: bank || [], tests, onReload: reload }) :
+    tab === "testimport" ? /* @__PURE__ */ React.createElement(TestImportTab, { bank: bank || [], onReload: reload }) :
+    tab === "grade" ? /* @__PURE__ */ React.createElement(GradeTab, { tests: tests || [], bank: bank || [] }) :
+    tab === "export" ? /* @__PURE__ */ React.createElement(ExportTab, { bank: bank || [], tests: tests || [] }) :
+    null
+  ));
 }
 function ImportTab({ bank, onReload }) {
   const [jsonFile, setJsonFile] = useState(null);
