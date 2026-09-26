@@ -304,6 +304,7 @@ function rowToQuestion(r) {
     imageFilenames: r.image_filenames || (r.image_filename ? [r.image_filename] : []),
     ogeNumber: r.ege_number || r.oge_number || null,
     topic: r.topic || "",
+    codifierTopics: (r.metadata && Array.isArray(r.metadata.codifierTopics)) ? r.metadata.codifierTopics : (r.topic ? [r.topic] : []),
     periods: r.periods || [],
     events: r.events || [],
     persons: r.persons || [],
@@ -346,7 +347,7 @@ function questionToRow(q) {
     source_question_html: q.sourceQuestionHtml || "",
     source_solution_html: q.sourceSolutionHtml || "",
     grading_mode: q.gradingMode || "exact",
-    metadata: q.metadata || {},
+    metadata: { ...(q.metadata || {}), codifierTopics: Array.isArray(q.codifierTopics) ? q.codifierTopics : ((q.metadata && Array.isArray(q.metadata.codifierTopics)) ? q.metadata.codifierTopics : (q.topic ? [q.topic] : [])) },
     match_left: q.matchLeft || [],
     match_right: q.matchRight || [],
     correct_match: q.correctMatch || [],
@@ -593,6 +594,7 @@ function ImportTab({ bank, onReload }) {
           correctText: String(q.correctText ?? q.answer ?? ""), maxScore: Number(q.maxScore) || 1,
           imageFilename: uploaded[0] || "", imageFilenames: uploaded,
           ogeNumber: Number(q.egeNumber || q.ogeNumber) || null, topic: q.topic || "",
+          codifierTopics: Array.isArray(q.codifierTopics) ? q.codifierTopics : (Array.isArray(q.codifier_topics) ? q.codifier_topics : (q.topic ? [q.topic] : [])),
           referenceAnswer: q.referenceAnswer || q.solution_text || "",
           matchLeft: Array.isArray(q.matchLeft) ? q.matchLeft : [], matchRight: Array.isArray(q.matchRight) ? q.matchRight : [], correctMatch: Array.isArray(q.correctMatch) ? q.correctMatch : [],
           gradingMode: q.gradingMode || "exact",
@@ -600,7 +602,7 @@ function ImportTab({ bank, onReload }) {
           years: Array.isArray(q.years) ? q.years : [], skills: Array.isArray(q.skills) ? q.skills : [],
           sourceThemeId: q.sourceThemeId ?? q.theme_id ?? null, sourceId: q.sourceId ?? q.id ?? null, sourcePage: q.sourcePage || q.source_page || "",
           sourceQuestionHtml: q.sourceQuestionHtml || q.question_html || "", sourceSolutionHtml: q.sourceSolutionHtml || q.solution_html || "",
-          metadata: q.metadata || {}
+          metadata: { ...(q.metadata || {}), codifierTopics: Array.isArray(q.codifierTopics) ? q.codifierTopics : (Array.isArray(q.codifier_topics) ? q.codifier_topics : (q.topic ? [q.topic] : [])) }
         };
         const err = await upsertQuestion(question);
         rep.push({ id, ok: !err, text: question.text, images: uploaded.length, missing });
@@ -947,7 +949,7 @@ function BankTab({ bank, onReload }) {
       confirmLabel: `\u0422\u043E\u0447\u043D\u043E \u0443\u0434\u0430\u043B\u0438\u0442\u044C ${selected.size} \u0437\u0430\u0434\u0430\u043D\u0438${selected.size === 1 ? "\u0435" : "\u0439"}?`,
       onConfirm: deleteSelected
     }
-  )), bulkBusy && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, "\u0423\u0434\u0430\u043B\u044F\u044E\u2026"), bank.length === 0 && /* @__PURE__ */ React.createElement("div", { className: "empty" }, "\u041F\u043E\u043A\u0430 \u043F\u0443\u0441\u0442\u043E \u2014 \u0434\u043E\u0431\u0430\u0432\u044C\u0442\u0435 \u043F\u0435\u0440\u0432\u043E\u0435 \u0437\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u0448\u0435 \u0438\u043B\u0438 \u0447\u0435\u0440\u0435\u0437 \xAB\u0418\u043C\u043F\u043E\u0440\u0442 \u0431\u0430\u0437\u044B\xBB."), bank.length > 0 && visibleBank.length === 0 && /* @__PURE__ */ React.createElement("div", { className: "empty" }, "\u041D\u0438\u0447\u0435\u0433\u043E \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D\u043E."), visibleBank.map((q) => /* @__PURE__ */ React.createElement("div", { className: "q-list-item", key: q.id, style: editingId === q.id ? { background: "#f6f3ea", borderRadius: 8 } : void 0 }, /* @__PURE__ */ React.createElement("input", { type: "checkbox", checked: selected.has(q.id), onChange: () => toggleSelected(q.id), style: { width: "auto", marginRight: 8 } }), /* @__PURE__ */ React.createElement("span", { className: "q-type-tag" }, TYPE_LABEL[q.type]), /* @__PURE__ */ React.createElement("span", { className: "q-meta", style: { marginLeft: 4 } }, "id: ", q.id), q.ogeNumber ? /* @__PURE__ */ React.createElement("span", { className: "q-type-tag", style: { background: "#eef1e6" } }, "\u2116", q.ogeNumber) : null, /* @__PURE__ */ React.createElement("span", { className: "q-meta" }, "\u0431\u0430\u043B\u043B: ", q.maxScore), q.topic && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, q.topic), (q.periods && q.periods.length > 0) && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, "Периоды: ", q.periods.join("; ")), (q.skills && q.skills.length > 0) && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, "Навыки: ", q.skills.join("; ")), /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, "Проверка: ", q.gradingMode || "exact"), (q.imageFilenames && q.imageFilenames.length ? q.imageFilenames : (q.imageFilename ? [q.imageFilename] : [])).map((img, ii) => /* @__PURE__ */ React.createElement("img", { key: ii, src: imageUrl(img), className: "q-image", alt: "" })), /* @__PURE__ */ React.createElement("div", { className: "q-text" }, q.text), (q.type === "single" || q.type === "multi") && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, q.options.map((o, i) => (q.correctIdx.includes(i) ? "\u2713 " : "\xB7 ") + o).join("   ")), q.type === "short" && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, "\u041E\u0442\u0432\u0435\u0442: ", q.correctText), q.type === "matching" && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, "\u041B\u0435\u0432\u044B\u0439 \u0441\u0442\u043E\u043B\u0431\u0435\u0446: ", (q.matchLeft || []).join(" | "), /* @__PURE__ */ React.createElement("br", null), "\u041F\u0440\u0430\u0432\u044B\u0439 \u0441\u0442\u043E\u043B\u0431\u0435\u0446: ", (q.matchRight || []).map((r, i) => `${i + 1}) ${r}`).join(", "), /* @__PURE__ */ React.createElement("br", null), "\u041E\u0442\u0432\u0435\u0442: ", (q.correctMatch || []).join("")), /* @__PURE__ */ React.createElement("div", { style: { marginTop: 8, display: "flex", gap: 8 } }, /* @__PURE__ */ React.createElement("button", { className: "btn ghost small", onClick: () => startEdit(q) }, "\u0418\u0437\u043C\u0435\u043D\u0438\u0442\u044C"), /* @__PURE__ */ React.createElement(ConfirmButton, { label: "\u0423\u0434\u0430\u043B\u0438\u0442\u044C", confirmLabel: "\u0422\u043E\u0447\u043D\u043E \u0443\u0434\u0430\u043B\u0438\u0442\u044C?", onConfirm: () => removeFromBank(q.id) }))))));
+  )), bulkBusy && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, "\u0423\u0434\u0430\u043B\u044F\u044E\u2026"), bank.length === 0 && /* @__PURE__ */ React.createElement("div", { className: "empty" }, "\u041F\u043E\u043A\u0430 \u043F\u0443\u0441\u0442\u043E \u2014 \u0434\u043E\u0431\u0430\u0432\u044C\u0442\u0435 \u043F\u0435\u0440\u0432\u043E\u0435 \u0437\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u0448\u0435 \u0438\u043B\u0438 \u0447\u0435\u0440\u0435\u0437 \xAB\u0418\u043C\u043F\u043E\u0440\u0442 \u0431\u0430\u0437\u044B\xBB."), bank.length > 0 && visibleBank.length === 0 && /* @__PURE__ */ React.createElement("div", { className: "empty" }, "\u041D\u0438\u0447\u0435\u0433\u043E \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D\u043E."), visibleBank.map((q) => /* @__PURE__ */ React.createElement("div", { className: "q-list-item", key: q.id, style: editingId === q.id ? { background: "#f6f3ea", borderRadius: 8 } : void 0 }, /* @__PURE__ */ React.createElement("input", { type: "checkbox", checked: selected.has(q.id), onChange: () => toggleSelected(q.id), style: { width: "auto", marginRight: 8 } }), /* @__PURE__ */ React.createElement("span", { className: "q-type-tag" }, TYPE_LABEL[q.type]), /* @__PURE__ */ React.createElement("span", { className: "q-meta", style: { marginLeft: 4 } }, "id: ", q.id), q.ogeNumber ? /* @__PURE__ */ React.createElement("span", { className: "q-type-tag", style: { background: "#eef1e6" } }, "\u2116", q.ogeNumber) : null, /* @__PURE__ */ React.createElement("span", { className: "q-meta" }, "\u0431\u0430\u043B\u043B: ", q.maxScore), q.topic && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, q.topic), (q.codifierTopics && q.codifierTopics.length > 0) && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, "Кодификатор: ", q.codifierTopics.join("; ")), (q.periods && q.periods.length > 0) && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, "Периоды: ", q.periods.join("; ")), (q.skills && q.skills.length > 0) && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, "Навыки: ", q.skills.join("; ")), /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, "Проверка: ", q.gradingMode || "exact"), (q.imageFilenames && q.imageFilenames.length ? q.imageFilenames : (q.imageFilename ? [q.imageFilename] : [])).map((img, ii) => /* @__PURE__ */ React.createElement("img", { key: ii, src: imageUrl(img), className: "q-image", alt: "" })), /* @__PURE__ */ React.createElement("div", { className: "q-text" }, q.text), (q.type === "single" || q.type === "multi") && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, q.options.map((o, i) => (q.correctIdx.includes(i) ? "\u2713 " : "\xB7 ") + o).join("   ")), q.type === "short" && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, "\u041E\u0442\u0432\u0435\u0442: ", q.correctText), q.type === "matching" && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, "\u041B\u0435\u0432\u044B\u0439 \u0441\u0442\u043E\u043B\u0431\u0435\u0446: ", (q.matchLeft || []).join(" | "), /* @__PURE__ */ React.createElement("br", null), "\u041F\u0440\u0430\u0432\u044B\u0439 \u0441\u0442\u043E\u043B\u0431\u0435\u0446: ", (q.matchRight || []).map((r, i) => `${i + 1}) ${r}`).join(", "), /* @__PURE__ */ React.createElement("br", null), "\u041E\u0442\u0432\u0435\u0442: ", (q.correctMatch || []).join("")), /* @__PURE__ */ React.createElement("div", { style: { marginTop: 8, display: "flex", gap: 8 } }, /* @__PURE__ */ React.createElement("button", { className: "btn ghost small", onClick: () => startEdit(q) }, "\u0418\u0437\u043C\u0435\u043D\u0438\u0442\u044C"), /* @__PURE__ */ React.createElement(ConfirmButton, { label: "\u0423\u0434\u0430\u043B\u0438\u0442\u044C", confirmLabel: "\u0422\u043E\u0447\u043D\u043E \u0443\u0434\u0430\u043B\u0438\u0442\u044C?", onConfirm: () => removeFromBank(q.id) }))))));
 }
 function TestsTab({ bank, tests, onReload }) {
   const [previewTest, setPreviewTest] = useState(null);
@@ -1012,7 +1014,7 @@ function TestsTab({ bank, tests, onReload }) {
   const q2 = search.trim().toLowerCase();
   const filtered = bank.filter((q) => {
     if (activeNumber && String(q.ogeNumber || "") !== activeNumber) return false;
-    if (q2 && !(q.text.toLowerCase().includes(q2) || (q.topic || "").toLowerCase().includes(q2) || (q.periods || []).join(" ").toLowerCase().includes(q2) || (q.events || []).join(" ").toLowerCase().includes(q2) || (q.persons || []).join(" ").toLowerCase().includes(q2) || (q.skills || []).join(" ").toLowerCase().includes(q2) || String(q.ogeNumber || "").includes(q2))) return false;
+    if (q2 && !(q.text.toLowerCase().includes(q2) || (q.topic || "").toLowerCase().includes(q2) || (q.codifierTopics || []).join(" ").toLowerCase().includes(q2) || (q.periods || []).join(" ").toLowerCase().includes(q2) || (q.events || []).join(" ").toLowerCase().includes(q2) || (q.persons || []).join(" ").toLowerCase().includes(q2) || (q.skills || []).join(" ").toLowerCase().includes(q2) || String(q.ogeNumber || "").includes(q2))) return false;
     return true;
   });
   const numbersPresent = [...new Set(bank.map((q) => q.ogeNumber).filter(Boolean))].sort((a, b) => a - b);
@@ -1024,12 +1026,14 @@ function TestsTab({ bank, tests, onReload }) {
       groups[numKey] = { topics: {}, topicOrder: [] };
       numberOrder.push(numKey);
     }
-    const topic = q.topic || "\u0411\u0435\u0437 \u0442\u0435\u043C\u044B";
-    if (!groups[numKey].topics[topic]) {
-      groups[numKey].topics[topic] = [];
-      groups[numKey].topicOrder.push(topic);
+    const topicList = (Array.isArray(q.codifierTopics) && q.codifierTopics.length) ? q.codifierTopics : [q.topic || "Без темы кодификатора"];
+    for (const topic of topicList) {
+      if (!groups[numKey].topics[topic]) {
+        groups[numKey].topics[topic] = [];
+        groups[numKey].topicOrder.push(topic);
+      }
+      groups[numKey].topics[topic].push(q);
     }
-    groups[numKey].topics[topic].push(q);
   }
   numberOrder.sort((a, b) => {
     if (a === "\u0411\u0435\u0437 \u043D\u043E\u043C\u0435\u0440\u0430") return 1;
@@ -1223,7 +1227,7 @@ function TestsTab({ bank, tests, onReload }) {
     n
   ))), /* @__PURE__ */ React.createElement("label", null, "\u041F\u043E\u0438\u0441\u043A \u043F\u043E \u0442\u0435\u043C\u0435 \u043A\u043E\u0434\u0438\u0444\u0438\u043A\u0430\u0442\u043E\u0440\u0430 \u0438\u043B\u0438 \u0442\u0435\u043A\u0441\u0442\u0443 \u0437\u0430\u0434\u0430\u043D\u0438\u044F"), /* @__PURE__ */ React.createElement("input", { type: "text", value: search, onChange: (e) => setSearch(e.target.value), placeholder: "\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440: 5.1 \u0438\u043B\u0438 \u0441\u0435\u043C\u044C\u044F \u0438\u043B\u0438 \u0441\u043E\u0446\u0438\u0430\u043B\u044C\u043D\u0430\u044F \u0440\u043E\u043B\u044C" }), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 14 } }, /* @__PURE__ */ React.createElement("label", { style: { margin: 0 } }, "\u0417\u0430\u0434\u0430\u043D\u0438\u044F \u0432 \u0442\u0435\u0441\u0442\u0435 (", selected.size, " \u0432\u044B\u0431\u0440\u0430\u043D\u043E \u0438\u0437 ", bank.length, ")"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 6, flexWrap: "wrap" } }, /* @__PURE__ */ React.createElement("button", { className: "btn ghost small", disabled: selected.size === 0, onClick: () => setSelected(new Set()) }, "Снять весь выбор"), /* @__PURE__ */ React.createElement("button", { className: "btn ghost small", onClick: expandAll }, "\u0420\u0430\u0437\u0432\u0435\u0440\u043D\u0443\u0442\u044C \u0432\u0441\u0451"), /* @__PURE__ */ React.createElement("button", { className: "btn ghost small", onClick: collapseAll }, "\u0421\u0432\u0435\u0440\u043D\u0443\u0442\u044C \u0432\u0441\u0451"))), numberOrder.length === 0 && /* @__PURE__ */ React.createElement("div", { className: "empty", style: { marginTop: 8 } }, bank.length === 0 ? "\u0421\u043D\u0430\u0447\u0430\u043B\u0430 \u0434\u043E\u0431\u0430\u0432\u044C\u0442\u0435 \u0437\u0430\u0434\u0430\u043D\u0438\u044F \u043D\u0430 \u0432\u043A\u043B\u0430\u0434\u043A\u0435 \xAB\u0418\u043C\u043F\u043E\u0440\u0442 \u0431\u0430\u0437\u044B\xBB \u0438\u043B\u0438 \xAB\u0411\u0430\u043D\u043A \u0437\u0430\u0434\u0430\u043D\u0438\u0439\xBB." : "\u041D\u0438\u0447\u0435\u0433\u043E \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D\u043E."), numberOrder.map((numKey) => {
     const group = groups[numKey];
-    const allIds = group.topicOrder.flatMap((t) => group.topics[t].map((q) => q.id));
+    const allIds = [...new Set(group.topicOrder.flatMap((t) => group.topics[t].map((q) => q.id)))];
     const selCountNum = allIds.filter((id) => selected.has(id)).length;
     const forceOpen = !!q2 || !!activeNumber;
     const isNumCollapsed = collapsedNumbers.has(numKey) ? true : expandedNumbers.has(numKey) ? false : !forceOpen;
