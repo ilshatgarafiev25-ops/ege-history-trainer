@@ -305,6 +305,9 @@ function rowToQuestion(r) {
     ogeNumber: r.ege_number || r.oge_number || null,
     topic: r.topic || "",
     codifierTopics: (r.metadata && Array.isArray(r.metadata.codifierTopics)) ? r.metadata.codifierTopics : (r.topic ? [r.topic] : []),
+    primaryCourseTopic: (r.metadata && r.metadata.primaryCourseTopic) || null,
+    requiredCourseTopics: (r.metadata && Array.isArray(r.metadata.requiredCourseTopics)) ? r.metadata.requiredCourseTopics : [],
+    mentionedCourseTopics: (r.metadata && Array.isArray(r.metadata.mentionedCourseTopics)) ? r.metadata.mentionedCourseTopics : [],
     periods: r.periods || [],
     events: r.events || [],
     persons: r.persons || [],
@@ -348,7 +351,14 @@ function questionToRow(q) {
     source_question_html: q.sourceQuestionHtml || "",
     source_solution_html: q.sourceSolutionHtml || "",
     grading_mode: q.gradingMode || "exact",
-    metadata: { ...(q.metadata || {}), source: q.source || (q.metadata && q.metadata.source) || "", codifierTopics: Array.isArray(q.codifierTopics) ? q.codifierTopics : ((q.metadata && Array.isArray(q.metadata.codifierTopics)) ? q.metadata.codifierTopics : (q.topic ? [q.topic] : [])) },
+    metadata: {
+      ...(q.metadata || {}),
+      source: q.source || (q.metadata && q.metadata.source) || "",
+      codifierTopics: Array.isArray(q.codifierTopics) ? q.codifierTopics : ((q.metadata && Array.isArray(q.metadata.codifierTopics)) ? q.metadata.codifierTopics : (q.topic ? [q.topic] : [])),
+      primaryCourseTopic: q.primaryCourseTopic || (q.metadata && q.metadata.primaryCourseTopic) || null,
+      requiredCourseTopics: Array.isArray(q.requiredCourseTopics) ? q.requiredCourseTopics : ((q.metadata && Array.isArray(q.metadata.requiredCourseTopics)) ? q.metadata.requiredCourseTopics : []),
+      mentionedCourseTopics: Array.isArray(q.mentionedCourseTopics) ? q.mentionedCourseTopics : ((q.metadata && Array.isArray(q.metadata.mentionedCourseTopics)) ? q.metadata.mentionedCourseTopics : [])
+    },
     match_left: q.matchLeft || [],
     match_right: q.matchRight || [],
     correct_match: q.correctMatch || [],
@@ -520,33 +530,12 @@ async function updateSubmissionGrades(id, grades, totalScore) {
   await sb.from("submissions").update({ grades, total_score: totalScore }).eq("id", id);
 }
 function App() {
-  const [role, setRole] = useState("checking");
-  useEffect(() => {
-    let alive = true;
-    sb.auth.getSession().then(({ data }) => {
-      if (!alive) return;
-      setRole(data && data.session ? "teacher" : "student");
-    }).catch(() => {
-      if (alive) setRole("student");
-    });
-    const { data: authListener } = sb.auth.onAuthStateChange((event, session) => {
-      if (!alive) return;
-      if (event === "SIGNED_OUT") setRole("student");
-      else if (session) setRole("teacher");
-    });
-    return () => {
-      alive = false;
-      if (authListener && authListener.subscription) authListener.subscription.unsubscribe();
-    };
-  }, []);
+  const [role, setRole] = useState("student");
   async function leaveTeacher() {
     await sb.auth.signOut();
     setRole("student");
   }
-  if (role === "checking") {
-    return /* @__PURE__ */ React.createElement("div", { className: "shell" }, /* @__PURE__ */ React.createElement("div", { className: "loading" }, "Проверяю вход преподавателя…"));
-  }
-  return /* @__PURE__ */ React.createElement("div", { className: "shell" }, /* @__PURE__ */ React.createElement("div", { className: "masthead" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "eyebrow" }, "История ЕГЭ"), /* @__PURE__ */ React.createElement("h1", null, "Тренажёр")), /* @__PURE__ */ React.createElement("div", { className: "role-switch" }, /* @__PURE__ */ React.createElement("button", { type: "button", className: role !== "teacher" ? "active" : "", onClick: () => setRole("student") }, "Ученик"), /* @__PURE__ */ React.createElement("button", { type: "button", className: role === "teacher" ? "active" : "", onClick: () => role === "teacher" ? leaveTeacher() : setRole("teacher-login") }, role === "teacher" ? "Выйти из режима преподавателя" : "Вход для преподавателя"))), role === "teacher-login" && /* @__PURE__ */ React.createElement(TeacherLogin, { onSuccess: () => setRole("teacher"), onCancel: () => setRole("student") }), role === "teacher" && /* @__PURE__ */ React.createElement(TeacherView, null), role === "student" && /* @__PURE__ */ React.createElement(StudentView, null));
+  return /* @__PURE__ */ React.createElement("div", { className: "shell" }, /* @__PURE__ */ React.createElement("div", { className: "masthead" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "eyebrow" }, "История ЕГЭ"), /* @__PURE__ */ React.createElement("h1", null, "Тренажёр")), /* @__PURE__ */ React.createElement("div", { className: "role-switch" }, /* @__PURE__ */ React.createElement("button", { className: role !== "teacher" ? "active" : "", onClick: () => setRole("student") }, "Ученик"), /* @__PURE__ */ React.createElement("button", { className: role === "teacher" ? "active" : "", onClick: () => role === "teacher" ? leaveTeacher() : setRole("teacher-login") }, role === "teacher" ? "Выйти из режима преподавателя" : "Вход для преподавателя"))), role === "teacher-login" && /* @__PURE__ */ React.createElement(TeacherLogin, { onSuccess: () => setRole("teacher"), onCancel: () => setRole("student") }), role === "teacher" && /* @__PURE__ */ React.createElement(TeacherView, null), role === "student" && /* @__PURE__ */ React.createElement(StudentView, null));
 }
 function TeacherLogin({ onSuccess, onCancel }) {
   const [email, setEmail] = useState("");
@@ -562,82 +551,21 @@ function TeacherLogin({ onSuccess, onCancel }) {
   }
   return /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h2", null, "Вход для преподавателя"), /* @__PURE__ */ React.createElement("div", { className: "notice" }, "Используется Supabase Auth. Создайте преподавателя в Authentication → Users; пароль не хранится в коде сайта."), /* @__PURE__ */ React.createElement("label", null, "Email"), /* @__PURE__ */ React.createElement("input", { type: "email", value: email, onChange: (e) => setEmail(e.target.value), autoFocus: true }), /* @__PURE__ */ React.createElement("label", null, "Пароль"), /* @__PURE__ */ React.createElement("input", { type: "password", value: pass, onChange: (e) => setPass(e.target.value), onKeyDown: (e) => e.key === "Enter" && submit() }), err && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } }, err), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8 } }, /* @__PURE__ */ React.createElement("button", { className: "btn", disabled: busy, onClick: submit }, busy ? "Вхожу…" : "Войти"), /* @__PURE__ */ React.createElement("button", { className: "btn ghost", onClick: onCancel }, "Отмена")));
 }
-
-class TeacherTabBoundary extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { error: null };
-  }
-  static getDerivedStateFromError(error) {
-    return { error };
-  }
-  componentDidCatch(error, info) {
-    console.error("Ошибка вкладки преподавателя:", error, info);
-  }
-  componentDidUpdate(prevProps) {
-    if (prevProps.tabKey !== this.props.tabKey && this.state.error) {
-      this.setState({ error: null });
-    }
-  }
-  render() {
-    if (this.state.error) {
-      return /* @__PURE__ */ React.createElement("div", { className: "card" },
-        /* @__PURE__ */ React.createElement("h2", null, "Ошибка этой вкладки"),
-        /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } },
-          "Вкладка дала ошибку, но вход преподавателя сохранён. Можно перейти на другую вкладку без повторного входа."
-        ),
-        /* @__PURE__ */ React.createElement("div", { className: "q-meta", style: { whiteSpace: "pre-wrap", marginBottom: 10 } },
-          String(this.state.error && (this.state.error.message || this.state.error))
-        ),
-        /* @__PURE__ */ React.createElement("button", {
-          type: "button",
-          className: "btn ghost",
-          onClick: () => this.setState({ error: null })
-        }, "Попробовать открыть снова")
-      );
-    }
-    return this.props.children;
-  }
-}
-
 function TeacherView() {
-  const [tab, setTab] = useState(() => {
-    try { return sessionStorage.getItem("historyTeacherTab") || "import"; }
-    catch { return "import"; }
-  });
-  function switchTab(nextTab) {
-    try { sessionStorage.setItem("historyTeacherTab", nextTab); } catch {}
-    setTab(nextTab);
-  }
+  const [tab, setTab] = useState("import");
   const [bank, setBank] = useState(null);
   const [tests, setTests] = useState(null);
   const [loadError, setLoadError] = useState("");
   const reload = useCallback(async () => {
-    try {
-      setLoadError("");
-      const [{ data: b, error }, t] = await Promise.all([fetchBank(), fetchTests()]);
-      if (error) setLoadError("Не удалось загрузить банк из Supabase: " + error.message);
-      setBank(Array.isArray(b) ? b : []);
-      setTests(Array.isArray(t) ? t : []);
-    } catch (e) {
-      console.error(e);
-      setLoadError("Ошибка загрузки данных: " + (e && e.message ? e.message : String(e)));
-      setBank((prev) => Array.isArray(prev) ? prev : []);
-      setTests((prev) => Array.isArray(prev) ? prev : []);
-    }
+    const [{ data: b, error }, t] = await Promise.all([fetchBank(), fetchTests()]);
+    if (error) setLoadError("\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C \u0431\u0430\u043D\u043A \u0438\u0437 Supabase: " + error.message + ". \u041F\u0440\u043E\u0432\u0435\u0440\u044C\u0442\u0435 SUPABASE_URL/ANON_KEY \u0438 \u0447\u0442\u043E \u0442\u0430\u0431\u043B\u0438\u0446\u044B \u0441\u043E\u0437\u0434\u0430\u043D\u044B (\u0441\u043C. supabase_schema.sql).");
+    setBank(b);
+    setTests(t);
   }, []);
   useEffect(() => {
     reload();
   }, [reload]);
-  return /* @__PURE__ */ React.createElement("div", null, loadError && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } }, loadError), /* @__PURE__ */ React.createElement("div", { className: "tabs" }, [["import", "\u0418\u043C\u043F\u043E\u0440\u0442 \u0431\u0430\u0437\u044B"], ["bank", "\u0411\u0430\u043D\u043A \u0437\u0430\u0434\u0430\u043D\u0438\u0439"], ["tests", "\u0422\u0435\u0441\u0442\u044B"], ["testimport", "\u0418\u043C\u043F\u043E\u0440\u0442 \u0442\u0435\u0441\u0442\u0430"], ["grade", "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043E\u0442\u0432\u0435\u0442\u043E\u0432"], ["export", "\u042D\u043A\u0441\u043F\u043E\u0440\u0442 / \u0434\u0438\u0430\u0433\u043D\u043E\u0441\u0442\u0438\u043A\u0430"]].map(([k, l]) => /* @__PURE__ */ React.createElement("button", { key: k, className: tab === k ? "active" : "", type: "button", onClick: () => switchTab(k) }, l))), /* @__PURE__ */ React.createElement(TeacherTabBoundary, { tabKey: tab },
-    tab === "import" ? /* @__PURE__ */ React.createElement(ImportTab, { bank: bank || [], onReload: reload }) :
-    tab === "bank" ? /* @__PURE__ */ React.createElement(BankTab, { bank, onReload: reload }) :
-    tab === "tests" ? /* @__PURE__ */ React.createElement(TestsTab, { bank: bank || [], tests, onReload: reload }) :
-    tab === "testimport" ? /* @__PURE__ */ React.createElement(TestImportTab, { bank: bank || [], onReload: reload }) :
-    tab === "grade" ? /* @__PURE__ */ React.createElement(GradeTab, { tests: tests || [], bank: bank || [] }) :
-    tab === "export" ? /* @__PURE__ */ React.createElement(ExportTab, { bank: bank || [], tests: tests || [] }) :
-    null
-  ));
+  return /* @__PURE__ */ React.createElement("div", null, loadError && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } }, loadError), /* @__PURE__ */ React.createElement("div", { className: "tabs" }, [["import", "\u0418\u043C\u043F\u043E\u0440\u0442 \u0431\u0430\u0437\u044B"], ["bank", "\u0411\u0430\u043D\u043A \u0437\u0430\u0434\u0430\u043D\u0438\u0439"], ["tests", "\u0422\u0435\u0441\u0442\u044B"], ["testimport", "\u0418\u043C\u043F\u043E\u0440\u0442 \u0442\u0435\u0441\u0442\u0430"], ["grade", "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043E\u0442\u0432\u0435\u0442\u043E\u0432"], ["export", "\u042D\u043A\u0441\u043F\u043E\u0440\u0442 / \u0434\u0438\u0430\u0433\u043D\u043E\u0441\u0442\u0438\u043A\u0430"]].map(([k, l]) => /* @__PURE__ */ React.createElement("button", { key: k, className: tab === k ? "active" : "", onClick: () => setTab(k) }, l))), tab === "import" && /* @__PURE__ */ React.createElement(ImportTab, { bank: bank || [], onReload: reload }), tab === "bank" && /* @__PURE__ */ React.createElement(BankTab, { bank, onReload: reload }), tab === "tests" && /* @__PURE__ */ React.createElement(TestsTab, { bank: bank || [], tests, onReload: reload }), tab === "testimport" && /* @__PURE__ */ React.createElement(TestImportTab, { bank: bank || [], onReload: reload }), tab === "grade" && /* @__PURE__ */ React.createElement(GradeTab, { tests: tests || [], bank: bank || [] }), tab === "export" && /* @__PURE__ */ React.createElement(ExportTab, { bank: bank || [], tests: tests || [] }));
 }
 function ImportTab({ bank, onReload }) {
   const [jsonFile, setJsonFile] = useState(null);
@@ -678,6 +606,9 @@ function ImportTab({ bank, onReload }) {
           imageFilename: uploaded[0] || "", imageFilenames: uploaded,
           ogeNumber: Number(q.egeNumber || q.ogeNumber) || null, topic: q.topic || "",
           codifierTopics: Array.isArray(q.codifierTopics) ? q.codifierTopics : (Array.isArray(q.codifier_topics) ? q.codifier_topics : (q.topic ? [q.topic] : [])),
+          primaryCourseTopic: q.primaryCourseTopic || (q.metadata && q.metadata.primaryCourseTopic) || null,
+          requiredCourseTopics: Array.isArray(q.requiredCourseTopics) ? q.requiredCourseTopics : ((q.metadata && Array.isArray(q.metadata.requiredCourseTopics)) ? q.metadata.requiredCourseTopics : []),
+          mentionedCourseTopics: Array.isArray(q.mentionedCourseTopics) ? q.mentionedCourseTopics : ((q.metadata && Array.isArray(q.metadata.mentionedCourseTopics)) ? q.metadata.mentionedCourseTopics : []),
           referenceAnswer: q.referenceAnswer || q.solution_text || "",
           matchLeft: Array.isArray(q.matchLeft) ? q.matchLeft : [], matchRight: Array.isArray(q.matchRight) ? q.matchRight : [], correctMatch: Array.isArray(q.correctMatch) ? q.correctMatch : [],
           gradingMode: q.gradingMode || "exact",
@@ -686,7 +617,14 @@ function ImportTab({ bank, onReload }) {
           source: q.source || (q.metadata && q.metadata.source) || "",
           sourceThemeId: q.sourceThemeId ?? q.theme_id ?? null, sourceId: q.sourceId ?? q.id ?? null, sourcePage: q.sourcePage || q.source_page || "",
           sourceQuestionHtml: q.sourceQuestionHtml || q.question_html || "", sourceSolutionHtml: q.sourceSolutionHtml || q.solution_html || "",
-          metadata: { ...(q.metadata || {}), source: q.source || (q.metadata && q.metadata.source) || "", codifierTopics: Array.isArray(q.codifierTopics) ? q.codifierTopics : (Array.isArray(q.codifier_topics) ? q.codifier_topics : (q.topic ? [q.topic] : [])) }
+          metadata: {
+            ...(q.metadata || {}),
+            source: q.source || (q.metadata && q.metadata.source) || "",
+            codifierTopics: Array.isArray(q.codifierTopics) ? q.codifierTopics : (Array.isArray(q.codifier_topics) ? q.codifier_topics : (q.topic ? [q.topic] : [])),
+            primaryCourseTopic: q.primaryCourseTopic || (q.metadata && q.metadata.primaryCourseTopic) || null,
+            requiredCourseTopics: Array.isArray(q.requiredCourseTopics) ? q.requiredCourseTopics : ((q.metadata && Array.isArray(q.metadata.requiredCourseTopics)) ? q.metadata.requiredCourseTopics : []),
+            mentionedCourseTopics: Array.isArray(q.mentionedCourseTopics) ? q.mentionedCourseTopics : ((q.metadata && Array.isArray(q.metadata.mentionedCourseTopics)) ? q.metadata.mentionedCourseTopics : [])
+          }
         };
         const err = await upsertQuestion(question);
         rep.push({ id, ok: !err, text: question.text, images: uploaded.length, missing });
@@ -1000,7 +938,7 @@ function BankTab({ bank, onReload }) {
     if (id === editingId) cancelEdit();
     onReload();
   }
-  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h2", null, editingId ? "\u0418\u0437\u043C\u0435\u043D\u0438\u0442\u044C \u0437\u0430\u0434\u0430\u043D\u0438\u0435" : "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0437\u0430\u0434\u0430\u043D\u0438\u0435 \u0432 \u0431\u0430\u043D\u043A"), /* @__PURE__ */ React.createElement("label", null, "\u0422\u0438\u043F \u0437\u0430\u0434\u0430\u043D\u0438\u044F", editingId ? " (\u0447\u0442\u043E\u0431\u044B \u0441\u043C\u0435\u043D\u0438\u0442\u044C \u0442\u0438\u043F, \u0443\u0434\u0430\u043B\u0438\u0442\u0435 \u0438 \u0441\u043E\u0437\u0434\u0430\u0439\u0442\u0435 \u0437\u0430\u043D\u043E\u0432\u043E)" : ""), /* @__PURE__ */ React.createElement("select", { value: draft.type, disabled: !!editingId, onChange: (e) => setDraft({ ...emptyDraft(), type: e.target.value }) }, /* @__PURE__ */ React.createElement("option", { value: "single" }, "\u0415\u0434\u0438\u043D\u0438\u0447\u043D\u044B\u0439 \u0432\u044B\u0431\u043E\u0440"), /* @__PURE__ */ React.createElement("option", { value: "multi" }, "\u041C\u043D\u043E\u0436\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439 \u0432\u044B\u0431\u043E\u0440"), /* @__PURE__ */ React.createElement("option", { value: "short" }, "\u041A\u0440\u0430\u0442\u043A\u0438\u0439 \u043E\u0442\u0432\u0435\u0442"), /* @__PURE__ */ React.createElement("option", { value: "essay" }, "\u0420\u0430\u0437\u0432\u0451\u0440\u043D\u0443\u0442\u044B\u0439 \u043E\u0442\u0432\u0435\u0442"), /* @__PURE__ */ React.createElement("option", { value: "matching" }, "\u0421\u043E\u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 (\u0442\u0430\u0431\u043B\u0438\u0446\u0430)")), /* @__PURE__ */ React.createElement("label", null, "\u0422\u0435\u043A\u0441\u0442 \u0437\u0430\u0434\u0430\u043D\u0438\u044F"), /* @__PURE__ */ React.createElement("textarea", { value: draft.text, onChange: (e) => setDraft({ ...draft, text: e.target.value }) }), /* @__PURE__ */ React.createElement("label", null, "\u0424\u043E\u0442\u043E \u043A \u0437\u0430\u0434\u0430\u043D\u0438\u044E (\u043D\u0435\u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E)"), /* @__PURE__ */ React.createElement("input", { type: "file", accept: "image/*", onChange: (e) => onDraftImage(e.target.files[0]) }), imgFile && /* @__PURE__ */ React.createElement("div", { className: "q-meta", style: { marginTop: 6 } }, "\u0412\u044B\u0431\u0440\u0430\u043D\u043E: ", imgFile.name, " (\u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u0441\u044F \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438)"), !imgFile && draft.imageFilename && /* @__PURE__ */ React.createElement("img", { src: imageUrl(draft.imageFilename), className: "q-image", style: { maxWidth: 240 }, alt: "" }), (draft.type === "single" || draft.type === "multi") && /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("label", null, "\u0412\u0430\u0440\u0438\u0430\u043D\u0442\u044B \u043E\u0442\u0432\u0435\u0442\u0430"), draft.options.map((o, i) => /* @__PURE__ */ React.createElement("div", { className: "option-row", key: i }, /* @__PURE__ */ React.createElement("input", { type: draft.type === "single" ? "radio" : "checkbox", checked: draft.correctIdx.includes(i), onChange: () => toggleCorrectIdx(i) }), /* @__PURE__ */ React.createElement("input", { type: "text", value: o, placeholder: `\u0412\u0430\u0440\u0438\u0430\u043D\u0442 ${i + 1}`, onChange: (e) => updateOption(i, e.target.value) }), draft.options.length > 2 && /* @__PURE__ */ React.createElement("button", { className: "btn danger", onClick: () => removeOption(i) }, "\u0423\u0431\u0440\u0430\u0442\u044C"))), /* @__PURE__ */ React.createElement("button", { className: "btn ghost small", onClick: addOption }, "+ \u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0432\u0430\u0440\u0438\u0430\u043D\u0442")), draft.type === "short" && /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("label", null, "\u0412\u0435\u0440\u043D\u044B\u0439 \u043E\u0442\u0432\u0435\u0442 (\u0432\u0430\u0440\u0438\u0430\u043D\u0442\u044B \u0447\u0435\u0440\u0435\u0437 \xAB|\xBB)"), /* @__PURE__ */ React.createElement("input", { type: "text", value: draft.correctText, onChange: (e) => setDraft({ ...draft, correctText: e.target.value }) })), draft.type === "essay" && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { marginTop: 12 } }, "\u0423\u0447\u0435\u043D\u0438\u043A \u043E\u0442\u0432\u0435\u0447\u0430\u0435\u0442 \u0442\u0435\u043A\u0441\u0442\u043E\u043C. \u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u0432\u0440\u0443\u0447\u043D\u0443\u044E \u2014 \u0432\u043E \u0432\u043A\u043B\u0430\u0434\u043A\u0435 \xAB\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043E\u0442\u0432\u0435\u0442\u043E\u0432\xBB."), draft.type === "matching" && /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "notice", style: { marginTop: 12 } }, "\u0421\u043B\u0435\u0432\u0430 \u2014 \u043F\u0440\u0438\u043C\u0435\u0440\u044B (\u0410, \u0411, \u0412\u2026), \u0441\u043F\u0440\u0430\u0432\u0430 \u2014 \u043F\u0440\u043E\u043D\u0443\u043C\u0435\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0435 \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u044B. Проверка как на ЕГЭ: 0 ошибок = полный балл, 1 ошибка = балл минус 1, 2+ = 0. Для заданий 6, 13, 15 ставьте максимальный балл 2."), /* @__PURE__ */ React.createElement("label", null, "\u041B\u0435\u0432\u044B\u0439 \u0441\u0442\u043E\u043B\u0431\u0435\u0446 \u2014 \u043F\u0440\u0438\u043C\u0435\u0440\u044B"), draft.matchLeft.map((v, i) => /* @__PURE__ */ React.createElement("div", { className: "option-row", key: i }, /* @__PURE__ */ React.createElement("span", { className: "q-meta", style: { width: 18 } }, "\u0410\u0411\u0412\u0413\u0414\u0415\u0416\u0417\u0418\u041A"[i]), /* @__PURE__ */ React.createElement("input", { type: "text", value: v, placeholder: `\u041F\u0440\u0438\u043C\u0435\u0440 ${i + 1}`, onChange: (e) => updateMatchLeft(i, e.target.value) }), draft.matchLeft.length > 2 && /* @__PURE__ */ React.createElement("button", { className: "btn danger", onClick: () => removeMatchLeft(i) }, "\u0423\u0431\u0440\u0430\u0442\u044C"))), /* @__PURE__ */ React.createElement("button", { className: "btn ghost small", onClick: addMatchLeft }, "+ \u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043F\u0440\u0438\u043C\u0435\u0440"), /* @__PURE__ */ React.createElement("label", { style: { marginTop: 14 } }, "\u041F\u0440\u0430\u0432\u044B\u0439 \u0441\u0442\u043E\u043B\u0431\u0435\u0446 \u2014 \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u044B"), draft.matchRight.map((v, i) => /* @__PURE__ */ React.createElement("div", { className: "option-row", key: i }, /* @__PURE__ */ React.createElement("span", { className: "q-meta", style: { width: 18 } }, i + 1), /* @__PURE__ */ React.createElement("input", { type: "text", value: v, placeholder: `\u0412\u0430\u0440\u0438\u0430\u043D\u0442 ${i + 1}`, onChange: (e) => updateMatchRight(i, e.target.value) }), draft.matchRight.length > 2 && /* @__PURE__ */ React.createElement("button", { className: "btn danger", onClick: () => removeMatchRight(i) }, "\u0423\u0431\u0440\u0430\u0442\u044C"))), /* @__PURE__ */ React.createElement("button", { className: "btn ghost small", onClick: addMatchRight }, "+ \u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0432\u0430\u0440\u0438\u0430\u043D\u0442"), /* @__PURE__ */ React.createElement("label", { style: { marginTop: 14 } }, "\u041F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u0435 \u0441\u043E\u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435"), draft.matchLeft.map((v, i) => /* @__PURE__ */ React.createElement("div", { className: "option-row", key: i }, /* @__PURE__ */ React.createElement("span", { className: "q-meta", style: { width: 18 } }, "\u0410\u0411\u0412\u0413\u0414\u0415\u0416\u0417\u0418\u041A"[i]), /* @__PURE__ */ React.createElement("select", { value: draft.correctMatch[i] || "", onChange: (e) => setCorrectMatch(i, e.target.value) }, /* @__PURE__ */ React.createElement("option", { value: "" }, "\u2014"), draft.matchRight.map((_, ri) => /* @__PURE__ */ React.createElement("option", { key: ri, value: ri + 1 }, ri + 1)))))), /* @__PURE__ */ React.createElement("label", null, "Режим автоматической проверки"), /* @__PURE__ */ React.createElement("select", { value: draft.gradingMode || "exact", onChange: (e) => setDraft({ ...draft, gradingMode: e.target.value }) }, /* @__PURE__ */ React.createElement("option", { value: "exact" }, "Точное совпадение"), /* @__PURE__ */ React.createElement("option", { value: "ordered" }, "Цифры: порядок важен"), /* @__PURE__ */ React.createElement("option", { value: "unordered" }, "Цифры: порядок не важен"), /* @__PURE__ */ React.createElement("option", { value: "manual" }, "Ручная проверка")), /* @__PURE__ */ React.createElement("label", null, "\u041C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u044B\u0439 \u0431\u0430\u043B\u043B"), /* @__PURE__ */ React.createElement("input", { type: "number", min: "1", value: draft.maxScore, onChange: (e) => setDraft({ ...draft, maxScore: e.target.value }), style: { maxWidth: 100 } }), /* @__PURE__ */ React.createElement("label", null, "\u041D\u043E\u043C\u0435\u0440 \u0437\u0430\u0434\u0430\u043D\u0438\u044F \u043F\u043E \u043A\u043E\u0434\u0438\u0444\u0438\u043A\u0430\u0442\u043E\u0440\u0443 \u0415\u0413\u042D (\u043D\u0435\u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E)"), /* @__PURE__ */ React.createElement("input", { type: "number", min: "1", max: "21", value: draft.ogeNumber, onChange: (e) => setDraft({ ...draft, ogeNumber: e.target.value }), style: { maxWidth: 100 } }), /* @__PURE__ */ React.createElement("label", null, "Эталон ответа / критерии (необязательно, видит только преподаватель)"), /* @__PURE__ */ React.createElement("textarea", { value: draft.referenceAnswer || "", onChange: (e) => setDraft({ ...draft, referenceAnswer: e.target.value }) }), /* @__PURE__ */ React.createElement("label", null, "\u0422\u0435\u043C\u0430 (\u043D\u0435\u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E)"), /* @__PURE__ */ React.createElement("input", { type: "text", value: draft.topic, onChange: (e) => setDraft({ ...draft, topic: e.target.value }) }), error && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } }, error), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8 } }, /* @__PURE__ */ React.createElement("button", { className: "btn", disabled: imgBusy, onClick: submit }, imgBusy ? "\u0421\u043E\u0445\u0440\u0430\u043D\u044F\u044E\u2026" : editingId ? "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F" : "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0432 \u0431\u0430\u043D\u043A"), editingId && /* @__PURE__ */ React.createElement("button", { className: "btn ghost", onClick: cancelEdit }, "\u041E\u0442\u043C\u0435\u043D\u0438\u0442\u044C"))), /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h2", null, "\u0411\u0430\u043D\u043A \u0437\u0430\u0434\u0430\u043D\u0438\u0439 (", bank.length, ")"), numbersPresent.length > 0 && /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("label", null, "Номер задания ЕГЭ"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexWrap: "wrap", gap: 6 } }, numbersPresent.map((n) => /* @__PURE__ */ React.createElement(
+  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h2", null, editingId ? "\u0418\u0437\u043C\u0435\u043D\u0438\u0442\u044C \u0437\u0430\u0434\u0430\u043D\u0438\u0435" : "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0437\u0430\u0434\u0430\u043D\u0438\u0435 \u0432 \u0431\u0430\u043D\u043A"), /* @__PURE__ */ React.createElement("label", null, "\u0422\u0438\u043F \u0437\u0430\u0434\u0430\u043D\u0438\u044F", editingId ? " (\u0447\u0442\u043E\u0431\u044B \u0441\u043C\u0435\u043D\u0438\u0442\u044C \u0442\u0438\u043F, \u0443\u0434\u0430\u043B\u0438\u0442\u0435 \u0438 \u0441\u043E\u0437\u0434\u0430\u0439\u0442\u0435 \u0437\u0430\u043D\u043E\u0432\u043E)" : ""), /* @__PURE__ */ React.createElement("select", { value: draft.type, disabled: !!editingId, onChange: (e) => setDraft({ ...emptyDraft(), type: e.target.value }) }, /* @__PURE__ */ React.createElement("option", { value: "single" }, "\u0415\u0434\u0438\u043D\u0438\u0447\u043D\u044B\u0439 \u0432\u044B\u0431\u043E\u0440"), /* @__PURE__ */ React.createElement("option", { value: "multi" }, "\u041C\u043D\u043E\u0436\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u044B\u0439 \u0432\u044B\u0431\u043E\u0440"), /* @__PURE__ */ React.createElement("option", { value: "short" }, "\u041A\u0440\u0430\u0442\u043A\u0438\u0439 \u043E\u0442\u0432\u0435\u0442"), /* @__PURE__ */ React.createElement("option", { value: "essay" }, "\u0420\u0430\u0437\u0432\u0451\u0440\u043D\u0443\u0442\u044B\u0439 \u043E\u0442\u0432\u0435\u0442"), /* @__PURE__ */ React.createElement("option", { value: "matching" }, "\u0421\u043E\u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435 (\u0442\u0430\u0431\u043B\u0438\u0446\u0430)")), /* @__PURE__ */ React.createElement("label", null, "\u0422\u0435\u043A\u0441\u0442 \u0437\u0430\u0434\u0430\u043D\u0438\u044F"), /* @__PURE__ */ React.createElement("textarea", { value: draft.text, onChange: (e) => setDraft({ ...draft, text: e.target.value }) }), /* @__PURE__ */ React.createElement("label", null, "\u0424\u043E\u0442\u043E \u043A \u0437\u0430\u0434\u0430\u043D\u0438\u044E (\u043D\u0435\u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E)"), /* @__PURE__ */ React.createElement("input", { type: "file", accept: "image/*", onChange: (e) => onDraftImage(e.target.files[0]) }), imgFile && /* @__PURE__ */ React.createElement("div", { className: "q-meta", style: { marginTop: 6 } }, "\u0412\u044B\u0431\u0440\u0430\u043D\u043E: ", imgFile.name, " (\u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u0441\u044F \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438)"), !imgFile && draft.imageFilename && /* @__PURE__ */ React.createElement("img", { src: imageUrl(draft.imageFilename), className: "q-image", style: { maxWidth: 240 }, alt: "" }), (draft.type === "single" || draft.type === "multi") && /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("label", null, "\u0412\u0430\u0440\u0438\u0430\u043D\u0442\u044B \u043E\u0442\u0432\u0435\u0442\u0430"), draft.options.map((o, i) => /* @__PURE__ */ React.createElement("div", { className: "option-row", key: i }, /* @__PURE__ */ React.createElement("input", { type: draft.type === "single" ? "radio" : "checkbox", checked: draft.correctIdx.includes(i), onChange: () => toggleCorrectIdx(i) }), /* @__PURE__ */ React.createElement("input", { type: "text", value: o, placeholder: `\u0412\u0430\u0440\u0438\u0430\u043D\u0442 ${i + 1}`, onChange: (e) => updateOption(i, e.target.value) }), draft.options.length > 2 && /* @__PURE__ */ React.createElement("button", { className: "btn danger", onClick: () => removeOption(i) }, "\u0423\u0431\u0440\u0430\u0442\u044C"))), /* @__PURE__ */ React.createElement("button", { className: "btn ghost small", onClick: addOption }, "+ \u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0432\u0430\u0440\u0438\u0430\u043D\u0442")), draft.type === "short" && /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("label", null, "\u0412\u0435\u0440\u043D\u044B\u0439 \u043E\u0442\u0432\u0435\u0442 (\u0432\u0430\u0440\u0438\u0430\u043D\u0442\u044B \u0447\u0435\u0440\u0435\u0437 \xAB|\xBB)"), /* @__PURE__ */ React.createElement("input", { type: "text", value: draft.correctText, onChange: (e) => setDraft({ ...draft, correctText: e.target.value }) })), draft.type === "essay" && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { marginTop: 12 } }, "\u0423\u0447\u0435\u043D\u0438\u043A \u043E\u0442\u0432\u0435\u0447\u0430\u0435\u0442 \u0442\u0435\u043A\u0441\u0442\u043E\u043C. \u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u0432\u0440\u0443\u0447\u043D\u0443\u044E \u2014 \u0432\u043E \u0432\u043A\u043B\u0430\u0434\u043A\u0435 \xAB\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043E\u0442\u0432\u0435\u0442\u043E\u0432\xBB."), draft.type === "matching" && /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "notice", style: { marginTop: 12 } }, "\u0421\u043B\u0435\u0432\u0430 \u2014 \u043F\u0440\u0438\u043C\u0435\u0440\u044B (\u0410, \u0411, \u0412\u2026), \u0441\u043F\u0440\u0430\u0432\u0430 \u2014 \u043F\u0440\u043E\u043D\u0443\u043C\u0435\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0435 \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u044B. Проверка как на ЕГЭ: 0 ошибок = полный балл, 1 ошибка = балл минус 1, 2+ = 0. Для заданий 6, 13, 15 ставьте максимальный балл 2."), /* @__PURE__ */ React.createElement("label", null, "\u041B\u0435\u0432\u044B\u0439 \u0441\u0442\u043E\u043B\u0431\u0435\u0446 \u2014 \u043F\u0440\u0438\u043C\u0435\u0440\u044B"), draft.matchLeft.map((v, i) => /* @__PURE__ */ React.createElement("div", { className: "option-row", key: i }, /* @__PURE__ */ React.createElement("span", { className: "q-meta", style: { width: 18 } }, "\u0410\u0411\u0412\u0413\u0414\u0415\u0416\u0417\u0418\u041A"[i]), /* @__PURE__ */ React.createElement("input", { type: "text", value: v, placeholder: `\u041F\u0440\u0438\u043C\u0435\u0440 ${i + 1}`, onChange: (e) => updateMatchLeft(i, e.target.value) }), draft.matchLeft.length > 2 && /* @__PURE__ */ React.createElement("button", { className: "btn danger", onClick: () => removeMatchLeft(i) }, "\u0423\u0431\u0440\u0430\u0442\u044C"))), /* @__PURE__ */ React.createElement("button", { className: "btn ghost small", onClick: addMatchLeft }, "+ \u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043F\u0440\u0438\u043C\u0435\u0440"), /* @__PURE__ */ React.createElement("label", { style: { marginTop: 14 } }, "\u041F\u0440\u0430\u0432\u044B\u0439 \u0441\u0442\u043E\u043B\u0431\u0435\u0446 \u2014 \u0432\u0430\u0440\u0438\u0430\u043D\u0442\u044B"), draft.matchRight.map((v, i) => /* @__PURE__ */ React.createElement("div", { className: "option-row", key: i }, /* @__PURE__ */ React.createElement("span", { className: "q-meta", style: { width: 18 } }, i + 1), /* @__PURE__ */ React.createElement("input", { type: "text", value: v, placeholder: `\u0412\u0430\u0440\u0438\u0430\u043D\u0442 ${i + 1}`, onChange: (e) => updateMatchRight(i, e.target.value) }), draft.matchRight.length > 2 && /* @__PURE__ */ React.createElement("button", { className: "btn danger", onClick: () => removeMatchRight(i) }, "\u0423\u0431\u0440\u0430\u0442\u044C"))), /* @__PURE__ */ React.createElement("button", { className: "btn ghost small", onClick: addMatchRight }, "+ \u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0432\u0430\u0440\u0438\u0430\u043D\u0442"), /* @__PURE__ */ React.createElement("label", { style: { marginTop: 14 } }, "\u041F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u0435 \u0441\u043E\u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435"), draft.matchLeft.map((v, i) => /* @__PURE__ */ React.createElement("div", { className: "option-row", key: i }, /* @__PURE__ */ React.createElement("span", { className: "q-meta", style: { width: 18 } }, "\u0410\u0411\u0412\u0413\u0414\u0415\u0416\u0417\u0418\u041A"[i]), /* @__PURE__ */ React.createElement("select", { value: draft.correctMatch[i] || "", onChange: (e) => setCorrectMatch(i, e.target.value) }, /* @__PURE__ */ React.createElement("option", { value: "" }, "\u2014"), draft.matchRight.map((_, ri) => /* @__PURE__ */ React.createElement("option", { key: ri, value: ri + 1 }, ri + 1)))))), /* @__PURE__ */ React.createElement("label", null, "Режим автоматической проверки"), /* @__PURE__ */ React.createElement("select", { value: draft.gradingMode || "exact", onChange: (e) => setDraft({ ...draft, gradingMode: e.target.value }) }, /* @__PURE__ */ React.createElement("option", { value: "exact" }, "Точное совпадение"), /* @__PURE__ */ React.createElement("option", { value: "ordered" }, "Цифры: порядок важен"), /* @__PURE__ */ React.createElement("option", { value: "unordered" }, "Цифры: порядок не важен"), /* @__PURE__ */ React.createElement("option", { value: "manual" }, "Ручная проверка")), /* @__PURE__ */ React.createElement("label", null, "\u041C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u044B\u0439 \u0431\u0430\u043B\u043B"), /* @__PURE__ */ React.createElement("input", { type: "number", min: "1", value: draft.maxScore, onChange: (e) => setDraft({ ...draft, maxScore: e.target.value }), style: { maxWidth: 100 } }), /* @__PURE__ */ React.createElement("label", null, "\u041D\u043E\u043C\u0435\u0440 \u0437\u0430\u0434\u0430\u043D\u0438\u044F \u043F\u043E \u043A\u043E\u0434\u0438\u0444\u0438\u043A\u0430\u0442\u043E\u0440\u0443 \u0415\u0413\u042D (\u043D\u0435\u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E)"), /* @__PURE__ */ React.createElement("input", { type: "number", min: "1", max: "21", value: draft.ogeNumber, onChange: (e) => setDraft({ ...draft, ogeNumber: e.target.value }), style: { maxWidth: 100 } }), /* @__PURE__ */ React.createElement("label", null, "Эталон ответа / критерии (необязательно, видит только преподаватель)"), /* @__PURE__ */ React.createElement("textarea", { value: draft.referenceAnswer || "", onChange: (e) => setDraft({ ...draft, referenceAnswer: e.target.value }) }), /* @__PURE__ */ React.createElement("label", null, "\u0422\u0435\u043C\u0430 (\u043D\u0435\u043E\u0431\u044F\u0437\u0430\u0442\u0435\u043B\u044C\u043D\u043E)"), /* @__PURE__ */ React.createElement("input", { type: "text", value: draft.topic, onChange: (e) => setDraft({ ...draft, topic: e.target.value }) }), error && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } }, error), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8 } }, /* @__PURE__ */ React.createElement("button", { className: "btn", disabled: imgBusy, onClick: submit }, imgBusy ? "\u0421\u043E\u0445\u0440\u0430\u043D\u044F\u044E\u2026" : editingId ? "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C \u0438\u0437\u043C\u0435\u043D\u0435\u043D\u0438\u044F" : "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0432 \u0431\u0430\u043D\u043A"), editingId && /* @__PURE__ */ React.createElement("button", { className: "btn ghost", onClick: cancelEdit }, "\u041E\u0442\u043C\u0435\u043D\u0438\u0442\u044C"))), /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h2", null, "\u0411\u0430\u043D\u043A \u0437\u0430\u0434\u0430\u043D\u0438\u0439 (", bank.length, ")"), numbersPresent.length > 0 && /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("label", null, "\u0411\u044B\u0441\u0442\u0440\u044B\u0439 \u0432\u044B\u0431\u043E\u0440 \u043F\u043E \u043D\u043E\u043C\u0435\u0440\u0443 \u0437\u0430\u0434\u0430\u043D\u0438\u044F (\u043A\u043E\u0434\u0438\u0444\u0438\u043A\u0430\u0442\u043E\u0440 \u0415\u0413\u042D)"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexWrap: "wrap", gap: 6 } }, numbersPresent.map((n) => /* @__PURE__ */ React.createElement(
     "button",
     {
       key: n,
@@ -1036,9 +974,10 @@ function BankTab({ bank, onReload }) {
   )), bulkBusy && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, "\u0423\u0434\u0430\u043B\u044F\u044E\u2026"), bank.length === 0 && /* @__PURE__ */ React.createElement("div", { className: "empty" }, "\u041F\u043E\u043A\u0430 \u043F\u0443\u0441\u0442\u043E \u2014 \u0434\u043E\u0431\u0430\u0432\u044C\u0442\u0435 \u043F\u0435\u0440\u0432\u043E\u0435 \u0437\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u0448\u0435 \u0438\u043B\u0438 \u0447\u0435\u0440\u0435\u0437 \xAB\u0418\u043C\u043F\u043E\u0440\u0442 \u0431\u0430\u0437\u044B\xBB."), bank.length > 0 && visibleBank.length === 0 && /* @__PURE__ */ React.createElement("div", { className: "empty" }, "\u041D\u0438\u0447\u0435\u0433\u043E \u043D\u0435 \u043D\u0430\u0439\u0434\u0435\u043D\u043E."), visibleBank.map((q) => /* @__PURE__ */ React.createElement("div", { className: "q-list-item", key: q.id, style: editingId === q.id ? { background: "#f6f3ea", borderRadius: 8 } : void 0 }, /* @__PURE__ */ React.createElement("input", { type: "checkbox", checked: selected.has(q.id), onChange: () => toggleSelected(q.id), style: { width: "auto", marginRight: 8 } }), /* @__PURE__ */ React.createElement("span", { className: "q-type-tag" }, TYPE_LABEL[q.type]), /* @__PURE__ */ React.createElement("span", { className: "q-meta", style: { marginLeft: 4 } }, "id: ", q.id), q.ogeNumber ? /* @__PURE__ */ React.createElement("span", { className: "q-type-tag", style: { background: "#eef1e6" } }, "\u2116", q.ogeNumber) : null, /* @__PURE__ */ React.createElement("span", { className: "q-meta" }, "\u0431\u0430\u043B\u043B: ", q.maxScore), q.topic && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, q.topic), (q.codifierTopics && q.codifierTopics.length > 0) && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, "Кодификатор: ", q.codifierTopics.join("; ")), (q.periods && q.periods.length > 0) && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, "Периоды: ", q.periods.join("; ")), (q.skills && q.skills.length > 0) && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, "Навыки: ", q.skills.join("; ")), /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, "Проверка: ", q.gradingMode || "exact"), (q.imageFilenames && q.imageFilenames.length ? q.imageFilenames : (q.imageFilename ? [q.imageFilename] : [])).map((img, ii) => /* @__PURE__ */ React.createElement("img", { key: ii, src: imageUrl(img), className: "q-image", alt: "" })), /* @__PURE__ */ React.createElement("div", { className: "q-text" }, q.text), (q.type === "single" || q.type === "multi") && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, q.options.map((o, i) => (q.correctIdx.includes(i) ? "\u2713 " : "\xB7 ") + o).join("   ")), q.type === "short" && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, "\u041E\u0442\u0432\u0435\u0442: ", q.correctText), q.type === "matching" && /* @__PURE__ */ React.createElement("div", { className: "q-meta" }, "\u041B\u0435\u0432\u044B\u0439 \u0441\u0442\u043E\u043B\u0431\u0435\u0446: ", (q.matchLeft || []).join(" | "), /* @__PURE__ */ React.createElement("br", null), "\u041F\u0440\u0430\u0432\u044B\u0439 \u0441\u0442\u043E\u043B\u0431\u0435\u0446: ", (q.matchRight || []).map((r, i) => `${i + 1}) ${r}`).join(", "), /* @__PURE__ */ React.createElement("br", null), "\u041E\u0442\u0432\u0435\u0442: ", (q.correctMatch || []).join("")), /* @__PURE__ */ React.createElement("div", { style: { marginTop: 8, display: "flex", gap: 8 } }, /* @__PURE__ */ React.createElement("button", { className: "btn ghost small", onClick: () => startEdit(q) }, "\u0418\u0437\u043C\u0435\u043D\u0438\u0442\u044C"), /* @__PURE__ */ React.createElement(ConfirmButton, { label: "\u0423\u0434\u0430\u043B\u0438\u0442\u044C", confirmLabel: "\u0422\u043E\u0447\u043D\u043E \u0443\u0434\u0430\u043B\u0438\u0442\u044C?", onConfirm: () => removeFromBank(q.id) }))))));
 }
 
-const COURSE_TOPICS = [{"id": 1, "name": "Восточные славяне и первые русские князья"}, {"id": 2, "name": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда"}, {"id": 3, "name": "Раздробленность Руси. Нашествие с Востока и Запада"}, {"id": 4, "name": "Объединение русских земель вокруг Москвы"}, {"id": 5, "name": "Культура Руси IX–XV вв."}, {"id": 6, "name": "Россия при Иване IV: реформы, опричнина, внешняя политика"}, {"id": 7, "name": "Смутное время"}, {"id": 8, "name": "Первые Романовы. Россия в XVII веке"}, {"id": 9, "name": "Пётр I: реформы и внешняя политика"}, {"id": 10, "name": "Культура XVI–XVII вв."}, {"id": 11, "name": "Дворцовые перевороты"}, {"id": 12, "name": "Екатерина II: внутренняя и внешняя политика"}, {"id": 13, "name": "Павел I"}, {"id": 14, "name": "Культура XVIII века"}, {"id": 15, "name": "Александр I и Отечественная война 1812 года"}, {"id": 16, "name": "Николай I"}, {"id": 17, "name": "Александр II и Великие реформы"}, {"id": 18, "name": "Александр III и социально-экономическое развитие конца XIX века"}, {"id": 19, "name": "Николай II: внутренняя и внешняя политика до 1905 года"}, {"id": 20, "name": "Культура XIX века"}, {"id": 21, "name": "Первая российская революция 1905–1907 гг."}, {"id": 22, "name": "Россия в 1907–1914 гг. Столыпин"}, {"id": 23, "name": "Первая мировая война"}, {"id": 24, "name": "Революции 1917 года"}, {"id": 25, "name": "Первые преобразования большевиков"}, {"id": 26, "name": "Гражданская война и военный коммунизм"}, {"id": 27, "name": "НЭП и образование СССР"}, {"id": 28, "name": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика"}, {"id": 29, "name": "Культура России и СССР 1900–1930-х гг."}, {"id": 30, "name": "Великая Отечественная война"}, {"id": 31, "name": "СССР в 1945–1953 гг."}, {"id": 32, "name": "Хрущёв и «оттепель», 1953–1964 гг."}, {"id": 33, "name": "Культура 1945–1964 гг."}, {"id": 34, "name": "СССР в 1964–1985 гг. — «застой»"}, {"id": 35, "name": "Перестройка"}, {"id": 36, "name": "Распад СССР"}, {"id": 37, "name": "Россия в 1990-е гг. + культура"}, {"id": 38, "name": "Россия в 2000-е–2020-е гг. + культура"}];
-const COURSE_BY_ID = new Map(COURSE_TOPICS.map((t) => [Number(t.id), t]));
-const COURSE_CODIFIER_MAP = {
+// ===== Темы курса 38: используются ТОЛЬКО во вкладке "Тесты" =====
+const COURSE38_TOPICS = [{"id": 1, "name": "Восточные славяне и первые русские князья"}, {"id": 2, "name": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда"}, {"id": 3, "name": "Раздробленность Руси. Нашествие с Востока и Запада"}, {"id": 4, "name": "Объединение русских земель вокруг Москвы"}, {"id": 5, "name": "Культура Руси IX–XV вв."}, {"id": 6, "name": "Россия при Иване IV: реформы, опричнина, внешняя политика"}, {"id": 7, "name": "Смутное время"}, {"id": 8, "name": "Первые Романовы. Россия в XVII веке"}, {"id": 9, "name": "Пётр I: реформы и внешняя политика"}, {"id": 10, "name": "Культура XVI–XVII вв."}, {"id": 11, "name": "Дворцовые перевороты"}, {"id": 12, "name": "Екатерина II: внутренняя и внешняя политика"}, {"id": 13, "name": "Павел I"}, {"id": 14, "name": "Культура XVIII века"}, {"id": 15, "name": "Александр I и Отечественная война 1812 года"}, {"id": 16, "name": "Николай I"}, {"id": 17, "name": "Александр II и Великие реформы"}, {"id": 18, "name": "Александр III и социально-экономическое развитие конца XIX века"}, {"id": 19, "name": "Николай II: внутренняя и внешняя политика до 1905 года"}, {"id": 20, "name": "Культура XIX века"}, {"id": 21, "name": "Первая российская революция 1905–1907 гг."}, {"id": 22, "name": "Россия в 1907–1914 гг. Столыпин"}, {"id": 23, "name": "Первая мировая война"}, {"id": 24, "name": "Революции 1917 года"}, {"id": 25, "name": "Первые преобразования большевиков"}, {"id": 26, "name": "Гражданская война и военный коммунизм"}, {"id": 27, "name": "НЭП и образование СССР"}, {"id": 28, "name": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика"}, {"id": 29, "name": "Культура России и СССР 1900–1930-х гг."}, {"id": 30, "name": "Великая Отечественная война"}, {"id": 31, "name": "СССР в 1945–1953 гг."}, {"id": 32, "name": "Хрущёв и «оттепель», 1953–1964 гг."}, {"id": 33, "name": "Культура 1945–1964 гг."}, {"id": 34, "name": "СССР в 1964–1985 гг. — «застой»"}, {"id": 35, "name": "Перестройка"}, {"id": 36, "name": "Распад СССР"}, {"id": 37, "name": "Россия в 1990-е гг. + культура"}, {"id": 38, "name": "Россия в 2000-е–2020-е гг. + культура"}];
+const COURSE38_BY_ID = new Map(COURSE38_TOPICS.map((t) => [Number(t.id), t]));
+const COURSE38_CODIFIER_MAP = {
   "1.3":1,"1.4":2,"1.5":1,"1.6":3,"1.7":3,"1.8":3,"1.9":4,"1.10":4,
   "2.1":6,"2.2":6,"2.3":7,"2.4":8,"2.5":8,
   "3.1":9,"3.2":9,"3.3":11,"3.4":12,"3.5":12,"3.6":12,"3.7":13,
@@ -1048,40 +987,39 @@ const COURSE_CODIFIER_MAP = {
   "8.1":30,"8.2":30,"8.3":30,"8.4":30,"9.1":31,"9.2":32,"9.3":34,"9.4":36,
   "10.1":37,"10.2":38
 };
-function normalizeCourseTopic(v) {
+function course38Normalize(v) {
   if (!v) return null;
-  if (typeof v === "number") return COURSE_BY_ID.get(v) || null;
+  if (typeof v === "number") return COURSE38_BY_ID.get(v) || null;
   if (typeof v === "string") {
     const n = Number(v);
-    if (Number.isFinite(n) && COURSE_BY_ID.has(n)) return COURSE_BY_ID.get(n);
-    return COURSE_TOPICS.find((t) => t.name === v) || null;
+    if (Number.isFinite(n) && COURSE38_BY_ID.has(n)) return COURSE38_BY_ID.get(n);
+    return COURSE38_TOPICS.find((t) => t.name === v) || null;
   }
   if (typeof v === "object") {
     const id = Number(v.id);
-    if (Number.isFinite(id) && COURSE_BY_ID.has(id)) return COURSE_BY_ID.get(id);
-    if (v.name) return COURSE_TOPICS.find((t) => t.name === v.name) || null;
+    if (Number.isFinite(id) && COURSE38_BY_ID.has(id)) return COURSE38_BY_ID.get(id);
+    if (v.name) return COURSE38_TOPICS.find((t) => t.name === v.name) || null;
   }
   return null;
 }
-function codifierCourseTopicId(topic) {
-  const s = String(topic || "").trim();
-  const m = s.match(/^(\d+\.\d+)/);
-  return m && COURSE_CODIFIER_MAP[m[1]] ? COURSE_CODIFIER_MAP[m[1]] : null;
+function course38CodifierId(topic) {
+  const m = String(topic || "").trim().match(/^(\d+\.\d+)/);
+  return m && COURSE38_CODIFIER_MAP[m[1]] ? COURSE38_CODIFIER_MAP[m[1]] : null;
 }
-function requiredCourseTopicIds(q) {
-  const raw = (q.metadata && Array.isArray(q.metadata.requiredCourseTopics))
-    ? q.metadata.requiredCourseTopics
-    : (Array.isArray(q.requiredCourseTopics) ? q.requiredCourseTopics : []);
-  const ids = raw.map(normalizeCourseTopic).filter(Boolean).map((t) => Number(t.id));
-  if (ids.length) return [...new Set(ids)].sort((a,b)=>a-b);
-  return [...new Set((q.codifierTopics || []).map(codifierCourseTopicId).filter(Boolean))].sort((a,b)=>a-b);
+function course38RequiredIds(q) {
+  const raw = (Array.isArray(q.requiredCourseTopics) && q.requiredCourseTopics.length)
+    ? q.requiredCourseTopics
+    : (q.metadata && Array.isArray(q.metadata.requiredCourseTopics) ? q.metadata.requiredCourseTopics : []);
+  const ids = raw.map(course38Normalize).filter(Boolean).map((t) => Number(t.id));
+  if (ids.length) return [...new Set(ids)].sort((a,b) => a-b);
+  return [...new Set((q.codifierTopics || []).map(course38CodifierId).filter(Boolean))].sort((a,b) => a-b);
 }
-function primaryCourseTopicForQuestion(q) {
-  const raw = (q.metadata && q.metadata.primaryCourseTopic) || q.primaryCourseTopic;
-  const t = normalizeCourseTopic(raw);
-  if (t) return t;
-  const ids = requiredCourseTopicIds(q);
-  return ids.length ? COURSE_BY_ID.get(Math.max(...ids)) : null;
+function course38Primary(q) {
+  const raw = q.primaryCourseTopic || (q.metadata && q.metadata.primaryCourseTopic);
+  const direct = course38Normalize(raw);
+  if (direct) return direct;
+  const req = course38RequiredIds(q);
+  return req.length ? COURSE38_BY_ID.get(Math.max(...req)) : null;
 }
 
 function TestsTab({ bank, tests, onReload }) {
@@ -1098,7 +1036,7 @@ function TestsTab({ bank, tests, onReload }) {
   const [collapsedSources, setCollapsedSources] = useState(/* @__PURE__ */ new Set());
   const [activeNumber, setActiveNumber] = useState("");
   const [sourceFilter, setSourceFilter] = useState("");
-  const [studiedTopicIds, setStudiedTopicIds] = useState(() => new Set(COURSE_TOPICS.map((t) => t.id)));
+  const [courseThrough, setCourseThrough] = useState("38");
   const [search, setSearch] = useState("");
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
@@ -1165,28 +1103,17 @@ function TestsTab({ bank, tests, onReload }) {
       });
     }
   }
-  function setStudiedThrough(id) {
-    const n = Number(id);
-    if (!n) {
-      setStudiedTopicIds(new Set(COURSE_TOPICS.map((t) => t.id)));
-      return;
-    }
-    setStudiedTopicIds(new Set(COURSE_TOPICS.filter((t) => t.id <= n).map((t) => t.id)));
-    setSelected(new Set());
-  }
-  function isCourseEligible(q) {
-    const req = requiredCourseTopicIds(q);
-    return req.length === 0 || req.every((id) => studiedTopicIds.has(id));
-  }
   const q2 = search.trim().toLowerCase();
   const filtered = bank.filter((q) => {
     const qSource = q.source || (q.metadata && q.metadata.source) || "";
-    if (!isCourseEligible(q)) return false;
+    const reqCourse = course38RequiredIds(q);
+    const through = Number(courseThrough) || 38;
+    if (reqCourse.length && reqCourse.some((id) => id > through)) return false;
     if (activeNumber && String(q.ogeNumber || "") !== activeNumber) return false;
     if (sourceFilter && qSource !== sourceFilter) return false;
-    const primary = primaryCourseTopicForQuestion(q);
-    const courseText = [primary ? primary.name : "", ...requiredCourseTopicIds(q).map((id) => (COURSE_BY_ID.get(id) || {}).name || "")].join(" ").toLowerCase();
-    if (q2 && !(q.text.toLowerCase().includes(q2) || qSource.toLowerCase().includes(q2) || courseText.includes(q2) || (q.topic || "").toLowerCase().includes(q2) || (q.codifierTopics || []).join(" ").toLowerCase().includes(q2) || (q.periods || []).join(" ").toLowerCase().includes(q2) || (q.events || []).join(" ").toLowerCase().includes(q2) || (q.persons || []).join(" ").toLowerCase().includes(q2) || (q.skills || []).join(" ").toLowerCase().includes(q2) || String(q.ogeNumber || "").includes(q2))) return false;
+    const primaryCourse = course38Primary(q);
+    const courseSearch = [primaryCourse ? primaryCourse.name : "", ...reqCourse.map((id) => (COURSE38_BY_ID.get(id) || {}).name || "")].join(" ").toLowerCase();
+    if (q2 && !(q.text.toLowerCase().includes(q2) || qSource.toLowerCase().includes(q2) || courseSearch.includes(q2) || (q.topic || "").toLowerCase().includes(q2) || (q.codifierTopics || []).join(" ").toLowerCase().includes(q2) || (q.periods || []).join(" ").toLowerCase().includes(q2) || (q.events || []).join(" ").toLowerCase().includes(q2) || (q.persons || []).join(" ").toLowerCase().includes(q2) || (q.skills || []).join(" ").toLowerCase().includes(q2) || String(q.ogeNumber || "").includes(q2))) return false;
     return true;
   });
   const numbersPresent = [...new Set(bank.map((q) => q.ogeNumber).filter(Boolean))].sort((a, b) => a - b);
@@ -1199,11 +1126,11 @@ function TestsTab({ bank, tests, onReload }) {
       groups[numKey] = { topics: {}, topicOrder: [] };
       numberOrder.push(numKey);
     }
-    const primary = primaryCourseTopicForQuestion(q);
-    const topic = primary ? `${primary.id}. ${primary.name}` : "Без темы курса";
+    const primaryCourse = course38Primary(q);
+    const topic = primaryCourse ? `${primaryCourse.id}. ${primaryCourse.name}` : "Без темы курса";
     const qSource = q.source || (q.metadata && q.metadata.source) || "Источник не указан";
     if (!groups[numKey].topics[topic]) {
-      groups[numKey].topics[topic] = { sources: {}, sourceOrder: [], courseId: primary ? primary.id : 999 };
+      groups[numKey].topics[topic] = { sources: {}, sourceOrder: [], courseId: primaryCourse ? primaryCourse.id : 999 };
       groups[numKey].topicOrder.push(topic);
     }
     const topicGroup = groups[numKey].topics[topic];
@@ -1214,7 +1141,7 @@ function TestsTab({ bank, tests, onReload }) {
     topicGroup.sources[qSource].push(q);
   }
   for (const nk of numberOrder) {
-    groups[nk].topicOrder.sort((a,b) => (groups[nk].topics[a].courseId || 999) - (groups[nk].topics[b].courseId || 999));
+    groups[nk].topicOrder.sort((a, b) => (groups[nk].topics[a].courseId || 999) - (groups[nk].topics[b].courseId || 999));
   }
   numberOrder.sort((a, b) => {
     if (a === "\u0411\u0435\u0437 \u043D\u043E\u043C\u0435\u0440\u0430") return 1;
@@ -1406,18 +1333,18 @@ function TestsTab({ bank, tests, onReload }) {
       )
     );
   }
-  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h2", null, editingTest ? "\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0442\u0435\u0441\u0442" : "\u0421\u043E\u0431\u0440\u0430\u0442\u044C \u0442\u0435\u0441\u0442 \u0438\u0437 \u0431\u0430\u043D\u043A\u0430"), /* @__PURE__ */ React.createElement("label", null, "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u0442\u0435\u0441\u0442\u0430"), /* @__PURE__ */ React.createElement("input", { type: "text", value: name, onChange: (e) => setName(e.target.value), placeholder: "\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440: \u041F\u0440\u043E\u0431\u043D\u044B\u0439 \u0442\u0435\u0441\u0442 \u21161" }), /* @__PURE__ */ React.createElement("label", { style: { display: "flex", alignItems: "center", gap: 8 } }, /* @__PURE__ */ React.createElement("input", { type: "checkbox", checked: training, onChange: (e) => setTraining(e.target.checked), style: { width: "auto" } }), "\u0422\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043E\u0447\u043D\u044B\u0439 \u0440\u0435\u0436\u0438\u043C (\u0443\u0447\u0435\u043D\u0438\u043A \u0441\u0440\u0430\u0437\u0443 \u0432\u0438\u0434\u0438\u0442 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439 \u043E\u0442\u0432\u0435\u0442 \u043F\u043E\u0441\u043B\u0435 \u043A\u0430\u0436\u0434\u043E\u0433\u043E \u0437\u0430\u0434\u0430\u043D\u0438\u044F)"), /* @__PURE__ */ React.createElement("label", { style: { marginTop: 12 } }, "Материал курса"),
+  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h2", null, editingTest ? "\u0420\u0435\u0434\u0430\u043A\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C \u0442\u0435\u0441\u0442" : "\u0421\u043E\u0431\u0440\u0430\u0442\u044C \u0442\u0435\u0441\u0442 \u0438\u0437 \u0431\u0430\u043D\u043A\u0430"), /* @__PURE__ */ React.createElement("label", null, "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435 \u0442\u0435\u0441\u0442\u0430"), /* @__PURE__ */ React.createElement("input", { type: "text", value: name, onChange: (e) => setName(e.target.value), placeholder: "\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440: \u041F\u0440\u043E\u0431\u043D\u044B\u0439 \u0442\u0435\u0441\u0442 \u21161" }), /* @__PURE__ */ React.createElement("label", { style: { display: "flex", alignItems: "center", gap: 8 } }, /* @__PURE__ */ React.createElement("input", { type: "checkbox", checked: training, onChange: (e) => setTraining(e.target.checked), style: { width: "auto" } }), "\u0422\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043E\u0447\u043D\u044B\u0439 \u0440\u0435\u0436\u0438\u043C (\u0443\u0447\u0435\u043D\u0438\u043A \u0441\u0440\u0430\u0437\u0443 \u0432\u0438\u0434\u0438\u0442 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439 \u043E\u0442\u0432\u0435\u0442 \u043F\u043E\u0441\u043B\u0435 \u043A\u0430\u0436\u0434\u043E\u0433\u043E \u0437\u0430\u0434\u0430\u043D\u0438\u044F)"), /* @__PURE__ */ React.createElement("label", null, "Материал курса"),
   /* @__PURE__ */ React.createElement("select", {
-    value: studiedTopicIds.size === COURSE_TOPICS.length ? "" : String(Math.max(...studiedTopicIds)),
-    onChange: (e) => setStudiedThrough(e.target.value),
-    style: { marginBottom: 8 }
+    value: courseThrough,
+    onChange: (e) => {
+      setCourseThrough(e.target.value);
+      setSelected(new Set());
+    },
+    style: { marginBottom: 10 }
   },
-    /* @__PURE__ */ React.createElement("option", { value: "" }, "Все 38 тем — показать весь банк"),
-    COURSE_TOPICS.map((t) => /* @__PURE__ */ React.createElement("option", { key: t.id, value: t.id }, "Изучено до " + t.id + ". " + t.name))
+    COURSE38_TOPICS.map((t) => /* @__PURE__ */ React.createElement("option", { key: t.id, value: String(t.id) }, t.id === 38 ? "Все 38 тем — показать весь банк" : "Изучено до " + t.id + ". " + t.name))
   ),
-  /* @__PURE__ */ React.createElement("div", { className: "q-meta", style: { marginBottom: 10 } },
-    "Доступно по изученному материалу: ", filtered.length, " из ", bank.length, " вопросов"
-  ),
+  /* @__PURE__ */ React.createElement("div", { className: "q-meta", style: { marginBottom: 10 } }, "Доступно: ", filtered.length, " из ", bank.length, " вопросов"),
   /* @__PURE__ */ React.createElement("label", null, "Номер задания ЕГЭ"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexWrap: "wrap", gap: 6 } }, numbersPresent.map((n) => /* @__PURE__ */ React.createElement(
     "button",
     {
@@ -1980,7 +1907,7 @@ function StudentView() {
   /* close groups.map: */ ))
   })(), submitErr && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } }, submitErr), /* @__PURE__ */ React.createElement("button", { className: "btn", disabled: subBusy, onClick: submit }, subBusy ? "\u041E\u0442\u043F\u0440\u0430\u0432\u043B\u044F\u044E\u2026" : "\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u043E\u0442\u0432\u0435\u0442\u044B"));
 }
-ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(React.Fragment, null, React.createElement(App, null), React.createElement("div", { style: { textAlign: "center", color: "#999", fontSize: 11, fontFamily: "-apple-system, Segoe UI, sans-serif", margin: "24px 0" } }, "версия 2026-09-17б · тренировочный режим")));
+ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(React.Fragment, null, React.createElement(App, null), React.createElement("div", { style: { textAlign: "center", color: "#999", fontSize: 11, fontFamily: "-apple-system, Segoe UI, sans-serif", margin: "24px 0" } }, "версия SAFE38-2026-09-26 · стабильная версия")));
 
 </script>
 
