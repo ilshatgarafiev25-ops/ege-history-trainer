@@ -1137,12 +1137,87 @@ function chronoGenerate(facts, through, mode, count, existing=[], composition='r
   return result;
 }
 
+function selectedAtomicPool(facts, task, through, mode, ids) {
+  const chosen=new Set(ids);
+  return (task===1 ? atomicPool(facts,through,mode) : chronoPool(facts,through,mode)).filter(f=>chosen.has(f.factId));
+}
+function generateSelectedAtomic(facts,task,through,mode,count,ids,existing=[],composition='russia') {
+  const pool=selectedAtomicPool(facts,task,through,mode,ids);
+  const qs=task===1 ? atomicGenerate(pool,through,mode,count,existing) : chronoGenerate(pool,through,mode,count,existing,composition,pool.filter(f=>f.scope==='world').map(f=>f.factId));
+  return qs.map(q=>({...q,metadata:{...q.metadata,atomic:{...q.metadata.atomic,task,selectedFactIds:pool.map(f=>f.factId)}}}));
+}
+function atomicReplacementCandidates(q,index,facts) {
+  const a=q.metadata.atomic, task=a.task||1;
+  const pool=selectedAtomicPool(facts,task,a.through,a.mode,a.selectedFactIds||[]);
+  const others=a.events.filter((_,i)=>i!==index);
+  return pool.filter(f=>f.factId!==a.events[index].factId && (task===1
+    ? others.every(o=>o.year!==f.year && o.event.toLowerCase()!==f.event.toLowerCase())
+    : f.scope===a.events[index].scope && others.every(o=>chronoCompatible(o,f))));
+}
+function replaceAtomicEvent(q,index,factId,facts) {
+  const f=atomicReplacementCandidates(q,index,facts).find(f=>f.factId===factId);
+  if(!f) throw new Error('Это событие нельзя использовать: проверьте выбранные факты, темы и даты.');
+  const a=q.metadata.atomic, task=a.task||1, events=a.events.map((e,i)=>i===index?f:e);
+  let options=a.options, text,correctText,referenceAnswer,required;
+  if(task===1) {
+    const pool=selectedAtomicPool(facts,task,a.through,a.mode,a.selectedFactIds||[]), used=new Set(events.map(e=>e.year));
+    const distractors=[];
+    for(const o of [...(a.options||[]),...pool]) if(!used.has(o.year) && pool.some(p=>p.factId===o.factId)) {distractors.push(o);used.add(o.year);if(distractors.length===2)break;}
+    if(distractors.length<2) throw new Error('Для замены нужны ещё две разные даты из выбранных фактов.');
+    options=atomicShuffle([...events,...distractors]);
+    correctText=events.map(e=>options.findIndex(o=>o.year===e.year)+1).join('');
+    const clean=s=>s.replace(/[|\r\n]/g,' ');
+    text='Установите соответствие между событиями и годами: к каждой позиции первого столбца подберите соответствующую позицию второго столбца.\n\n| СОБЫТИЯ | ГОДЫ |\n| --- | --- |\n'+options.map((o,i)=>'| '+(i<4?'АБВГ'[i]+') '+clean(events[i].event):'')+' | '+(i+1)+') '+o.year+' г. |').join('\n')+'\n\nЗапишите выбранные цифры под буквами А, Б, В, Г. Ответ: четыре цифры без пробелов.';
+    referenceAnswer=events.map((e,i)=>'АБВГ'[i]+') '+e.event+' — '+e.year+' г.').join('\n');
+    required=[...new Set(options.map(e=>e.courseTopicId))];
+  } else {
+    const ordered=events.map((e,i)=>({...e,number:i+1})).sort((x,y)=>x.year-y.year);
+    correctText=ordered.map(e=>e.number).join('');
+    text='Расположите в хронологической последовательности исторические события. Запишите цифры, которыми обозначены исторические события, в правильной последовательности.\n\n'+events.map((e,i)=>(i+1)+') '+e.event).join('\n\n');
+    referenceAnswer='Располагаем события от самого раннего к самому позднему. Номера сохранены из задания.\n\n'+ordered.map(e=>e.number+') '+e.event+' — '+e.dateLabel).join('\n')+'\n\n'+ordered.map(e=>e.dateLabel).join(' → ')+'\nПорядок номеров: '+ordered.map(e=>e.number).join(' → ')+'.\nПоэтому ответ: '+correctText+'.';
+    required=[...new Set(events.map(e=>e.courseTopicId))];
+  }
+  required=required.sort((x,y)=>x-y).map(id=>COURSE38_BY_ID.get(id));
+  return {...q,id:uid('atom'+task),text,correctText,referenceAnswer,topic:required.map(t=>t.name).join('; '),primaryCourseTopic:required[required.length-1],requiredCourseTopics:required,metadata:{...q.metadata,requiredCourseTopics:required,atomic:{...a,events,...(task===1?{options}:{})}}};
+}
+function AtomicEventEditor({q,facts,busy,onReplace}) {
+  const h=React.createElement;
+  return h('details',{className:'atomic-editor'},h('summary',null,'Заменить событие'),
+    h('p',{className:'q-meta'},'Доступны только факты, выбранные при создании этого задания. Для другого набора создайте новый комплект. Замена создаёт новую версию задания; ранее сохранённые тесты остаются прежними.'),
+    q.metadata.atomic.events.map((f,i)=>{
+      const candidates=atomicReplacementCandidates(q,i,facts);
+      return h('div',{key:i},h('label',null,(q.ogeNumber===1?'АБВГ'[i]:i+1)+') '+f.event,
+        h('select',{'aria-label':'Замена события '+(i+1),value:'',disabled:busy||!candidates.length,onChange:e=>onReplace(i,e.target.value)},
+          h('option',{value:''},candidates.length?'Выберите замену…':'Нет подходящей замены в выбранном наборе'),
+          candidates.map(c=>h('option',{key:c.factId,value:c.factId},c.event+' — '+(c.dateLabel||c.year+' г.')+' · тема '+c.courseTopicId)))));
+    }));
+}
+
 function AtomicGeneratorTab({ onReload, task = 1 }) {
   const cacheKey = task === 1 ? ATOMIC_CACHE_KEY : 'history.atomic.task2.v1:' + SUPABASE_URL;
   const validate = task === 1 ? atomicValidate : chronoValidate;
   const aid = name => 'atomic-' + name + (task === 1 ? '' : '-2');
   const [composition,setComposition] = useState('russia');
-  const [learnedWorld,setLearnedWorld] = useState([]);
+  const presetKey='history.atomic.presets.v1:'+SUPABASE_URL+':'+task;
+  const [selectedIds,setSelectedIds]=useState([]), [search,setSearch]=useState('');
+  const [presetName,setPresetName]=useState(''), [presetId,setPresetId]=useState('');
+  const [presets,setPresets]=useState(()=>{try{const p=JSON.parse(localStorage.getItem(presetKey)||'[]');return Array.isArray(p)?p.filter(x=>x&&typeof x.id==='string'&&typeof x.name==='string'&&Array.isArray(x.ids)&&COURSE38_BY_ID.has(Number(x.through))&&['current','cumulative'].includes(x.mode)&&['russia','mixed'].includes(x.composition)):[];}catch(_){return [];}});
+  function storePresets(next){try{localStorage.setItem(presetKey,JSON.stringify(next));setPresets(next);return true;}catch(_){setError('Не удалось сохранить набор в браузере. Проверьте доступное место и настройки хранения.');return false;}}
+  function savePreset(){
+    setError('');if(!presetName.trim()){setError('Введите название набора.');return;}
+    const ids=selectedAtomicPool(facts,task,through,mode,selectedIds).map(f=>f.factId);
+    if(!ids.length){setError('Сначала отметьте события для набора.');return;}
+    const id=uid('set');
+    if(storePresets([...presets,{id,name:presetName.trim(),through,mode,composition,ids}])){setPresetId(id);setStatus('Набор «'+presetName.trim()+'» сохранён в этом браузере.');}
+  }
+  function loadPreset(id){
+    setPresetId(id);const p=presets.find(p=>p.id===id);if(!p)return;
+    const available=new Set(facts.map(f=>f.factId));
+    setThrough(String(p.through));setMode(task===2?'cumulative':p.mode);setComposition(p.composition);setSelectedIds(p.ids.filter(id=>available.has(id)));setPresetName(p.name);setError('');
+    setStatus('Загружен набор «'+p.name+'».'+(p.ids.some(id=>!available.has(id))?' Некоторые факты отсутствуют в текущей базе и пропущены.':''));
+  }
+  function markFacts(ids,checked){setSelectedIds(prev=>checked?[...new Set([...prev,...ids])]:prev.filter(id=>!ids.includes(id)));}
+
   const [facts, setFacts] = useState([]), [status, setStatus] = useState('Загружаю атомарную базу…');
   const [through, setThrough] = useState(task === 2 ? '3' : '1'), [mode, setMode] = useState('cumulative'), [count, setCount] = useState('10');
   const [questions, setQuestions] = useState([]), [error, setError] = useState(''), [busy, setBusy] = useState(false);
@@ -1173,16 +1248,16 @@ function AtomicGeneratorTab({ onReload, task = 1 }) {
       const fs = validate(JSON.parse(await file.text()));
       let note = ' База сохранена в этом браузере.';
       try { localStorage.setItem(cacheKey, JSON.stringify({facts:fs})); } catch (_) { note = ' Браузер не разрешил сохранение: после перезагрузки потребуется повторный импорт.'; }
-      setFacts(fs); setLearnedWorld([]); setQuestions([]); setCreated(null); setStatus('Загружено ' + fs.length + ' фактов.' + note);
+      setFacts(fs); setSelectedIds([]); setQuestions([]); setCreated(null); setStatus('Загружено ' + fs.length + ' фактов.' + note);
     } catch(e) { setError('Импорт не выполнен: ' + e.message); } finally { setBusy(false); }
   }
   function generate(index) {
     setError(''); setCreated(null);
     try {
-      if (index === undefined) { setQuestions(task === 1 ? atomicGenerate(facts, through, mode, Number(count)) : chronoGenerate(facts, through, mode, Number(count), [], composition, learnedWorld)); setSaved(new Set()); }
+      if (index === undefined) { setQuestions(generateSelectedAtomic(facts,task,through,mode,Number(count),selectedIds,[],composition)); setSaved(new Set()); }
       else {
         const old = questions[index].metadata.atomic;
-        const next = (task === 1 ? atomicGenerate(facts, old.through, old.mode, 1, questions) : chronoGenerate(facts, old.through, old.mode, 1, questions, old.composition, old.learnedWorld))[0];
+        const next = generateSelectedAtomic(facts,task,old.through,old.mode,1,old.selectedFactIds||[],questions,old.composition)[0];
         setQuestions(questions.map((q,i) => i === index ? next : q));
       }
     } catch(e) { setError(e.message); }
@@ -1209,23 +1284,36 @@ function AtomicGeneratorTab({ onReload, task = 1 }) {
     finally { setBusy(false); }
   }
   const h = React.createElement, pool = task === 1 ? atomicPool(facts, through, mode) : chronoPool(facts, through, mode), dateCount = new Set(pool.map(f => f.year)).size;
+  const visiblePool=pool.filter(f=>(task===1||composition==='mixed'||f.scope==='russia') && (f.event+' '+f.year+' '+(f.dateLabel||'')).toLowerCase().includes(search.toLowerCase()));
+  const selectedPool=pool.filter(f=>selectedIds.includes(f.factId) && (task===1||composition==='mixed'||f.scope==='russia'));
   return h('div', {className:'atomic-generator', 'data-task':task},
     h('div', {className:'card'}, h('h2',null,'Генератор №'+task), h('div',{className:'notice',role:'status'},status),
       h('label',{htmlFor:aid('file')},'Загрузить / заменить атомарную базу (JSON)'), h('input',{id:aid('file'),type:'file',accept:'.json,application/json',disabled:busy,onChange:e => {importFacts(e.target.files[0]); e.target.value='';}}),
       h('label',{htmlFor:aid('through')},'Ученик изучил до темы:'), h('select',{id:aid('through'),value:through,disabled:busy,onChange:e=>setThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name))),
       h('label',{htmlFor:aid('mode')},'Режим генерации'),h('select',{id:aid('mode'),value:mode,disabled:busy,onChange:e=>setMode(e.target.value)},h('option',{value:'cumulative'},'Накопительно: темы 1–'+through),task===1 && h('option',{value:'current'},'Только текущая тема '+through)),
-      h('div',{className:'notice'},'Доступно: '+pool.length+' фактов, '+dateCount+' разных дат. '+(task===1 ? 'События и все варианты дат берутся только из выбранного материала. Разметка тем — из вашей базы.' : 'В каждом задании — 3 события из 3 разных изученных тем. Генерация доступна начиная с темы 3. События одного года и пересекающиеся периоды не объединяются. Зарубежные события нужно дополнительно отметить как изученные.')),
+      h('div',{className:'notice'},'Доступно: '+pool.length+' фактов, '+dateCount+' разных дат. '+(task===1 ? 'События и все варианты дат берутся только из выбранного материала. Разметка тем — из вашей базы.' : 'В каждом задании — 3 события из 3 разных изученных тем. Генерация доступна начиная с темы 3. События одного года и пересекающиеся периоды не объединяются. Включайте в выбор только уже изученные события, в том числе зарубежные.')),
       task===2 && h('div',null,
         h('label',{htmlFor:aid('composition')},'Состав задания'),
         h('select',{id:aid('composition'),value:composition,disabled:busy,onChange:e=>setComposition(e.target.value)},h('option',{value:'russia'},'Учебный режим: 3 события истории России'),h('option',{value:'mixed'},'2 события России + 1 событие всеобщей истории')),
         h('p',{className:'q-meta'},'База №2: '+facts.filter(f=>f.enabled!==false).length+' доступных фактов; '+facts.filter(f=>f.enabled===false).length+' отложены до уточнения. Для общего теста №1 + №2 сохраните оба комплекта в банк и выберите их во вкладке «Тесты».'),
-        composition==='mixed' && h('div',{className:'notice'},
-          h('strong',null,'Какие зарубежные события ученик уже изучил?'),
-          h('p',null,'Темы для всеобщей истории предложены по периоду. Отметьте только пройденные события; отметки действуют для текущего занятия.'),
-          h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',disabled:busy,onClick:()=>setLearnedWorld(pool.filter(f=>f.scope==='world').map(f=>f.factId))},'Все показанные изучены'),h('button',{className:'btn ghost small',disabled:busy,onClick:()=>setLearnedWorld([])},'Снять отметки')),
-          pool.filter(f=>f.scope==='world').length===0 && h('p',null,'В выбранной теме нет зарубежных событий.'),
-          h('div',{style:{maxHeight:280,overflowY:'auto'}},pool.filter(f=>f.scope==='world').map(f=>h('label',{key:f.factId,className:'opt'},h('input',{type:'checkbox',disabled:busy,checked:learnedWorld.includes(f.factId),onChange:e=>setLearnedWorld(e.target.checked?[...learnedWorld,f.factId]:learnedWorld.filter(id=>id!==f.factId))}),f.event+' — '+f.dateLabel+' (тема '+f.courseTopicId+')')))
-        )
+
+      ),
+
+      h('div',{className:'atomic-selection'},
+        h('h3',null,'События для тренировки'),
+        h('p',{className:'q-meta'},'Отметьте конкретные события. Неотмеченные факты не используются. Для №1 отметьте минимум 6 разных дат, включая даты для неправильных вариантов. Для №2 — события минимум из 3 разных тем. Выбор зарубежного события означает, что ученик его изучил.'),
+        h('label',{htmlFor:aid('search')},'Поиск события или даты'),h('input',{id:aid('search'),value:search,disabled:busy,onChange:e=>setSearch(e.target.value)}),
+        h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',disabled:busy,onClick:()=>markFacts(visiblePool.map(f=>f.factId),true)},'Выбрать все показанные'),h('button',{className:'btn ghost small',disabled:busy,onClick:()=>markFacts(visiblePool.map(f=>f.factId),false)},'Снять выделение показанных')),
+        h('p',{className:'q-meta','data-selection-count':true},'Выбрано в текущем материале: '+selectedPool.length+' событий, '+new Set(selectedPool.map(f=>f.year)).size+' дат, '+new Set(selectedPool.map(f=>f.courseTopicId)).size+' тем.'),
+        COURSE38_TOPICS.map(t=>{const rows=visiblePool.filter(f=>f.courseTopicId===t.id);return rows.length>0 && h('details',{key:t.id,'data-topic':t.id},h('summary',null,t.id+'. '+t.name+' — выбрано '+rows.filter(f=>selectedIds.includes(f.factId)).length+' из '+rows.length),
+          h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',disabled:busy,onClick:()=>markFacts(rows.map(f=>f.factId),true)},'Выбрать события темы'),h('button',{className:'btn ghost small',disabled:busy,onClick:()=>markFacts(rows.map(f=>f.factId),false)},'Снять выделение темы')),
+          rows.map(f=>h('label',{key:f.factId,className:'opt'},h('input',{type:'checkbox','data-fact-id':f.factId,disabled:busy,checked:selectedIds.includes(f.factId),onChange:e=>markFacts([f.factId],e.target.checked)}),f.event+' — '+(f.dateLabel||f.year+' г.')+(f.scope==='world'?' · всеобщая история':''))));}),
+        !visiblePool.length && h('p',null,'По выбранным условиям события не найдены.'),
+        h('h3',null,'Мои наборы'),
+        h('p',{className:'q-meta'},'Наборы сохраняются в этом браузере на этом устройстве отдельно для №1 и №2. После перезагрузки выберите нужный набор из списка.'),
+        h('label',{htmlFor:aid('preset')},'Сохранённый набор'),h('select',{id:aid('preset'),value:presetId,disabled:busy,onChange:e=>loadPreset(e.target.value)},h('option',{value:''},'Выберите набор…'),presets.map(p=>h('option',{key:p.id,value:p.id},p.name))),
+        h('label',{htmlFor:aid('preset-name')},'Название нового набора'),h('input',{id:aid('preset-name'),value:presetName,disabled:busy,placeholder:'Саша — первые три темы',onChange:e=>setPresetName(e.target.value)}),
+        h('div',{className:'atomic-actions'},h('button',{className:'btn ghost',disabled:busy,onClick:savePreset},'Сохранить как новый набор'),presetId && h(ConfirmButton,{label:'Удалить набор',confirmLabel:'Точно удалить набор?',onConfirm:()=>{if(storePresets(presets.filter(p=>p.id!==presetId)))setPresetId('');}}))
       ),
       h('label',{htmlFor:aid('count')},'Количество заданий (1–100)'),h('input',{id:aid('count'),type:'number',min:1,max:100,value:count,disabled:busy,onChange:e=>setCount(e.target.value)}),
       h('button',{className:'btn',disabled:busy||!facts.length||(task===2 && Number(through)<3),onClick:()=>generate()},'Сгенерировать задания №'+task),
@@ -1240,6 +1328,7 @@ function AtomicGeneratorTab({ onReload, task = 1 }) {
       h('div',{className:'atomic-actions'},h('button',{className:'btn ghost',disabled:busy,onClick:()=>save(false)},'Сохранить в банк'),h('button',{className:'btn',disabled:busy||!!created,onClick:()=>save(true)},busy?'Сохраняю…':'Сохранить и создать тест')),
       created && h('div',{className:'notice'},'Тест создан. Код для ученика: ',h('strong',{className:'test-code'},created.code)),
       questions.map((q,i)=>h('div',{key:q.id,className:'q-list-item'},h('div',{className:'q-meta'},'Задание '+(i+1)+' · '+(q.metadata.atomic.mode==='current'?'тема ':'темы 1–')+q.metadata.atomic.through+(task===2?' · темы событий: '+q.metadata.atomic.events.map(f=>f.courseTopicId).join(', '):'')+(saved.has(q.id)?' · сохранено в банк':'')),h('div',{className:'q-text'},renderText(q.text)),
+        h(AtomicEventEditor,{q,facts,busy,onReplace:(eventIndex,factId)=>{setError('');try{const next=replaceAtomicEvent(q,eventIndex,factId,facts);setQuestions(questions.map(x=>x.id===q.id?next:x));setCreated(null);}catch(e){setError(e.message);}}}),
         h('details',null,h('summary',null,'Правильный ответ (преподавателю)'),h('p',null,q.correctText),renderText(q.referenceAnswer)),
         h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',disabled:busy,onClick:()=>generate(i)},'Перегенерировать'),h('button',{className:'btn danger',disabled:busy,onClick:()=>{setQuestions(questions.filter(x=>x.id!==q.id));setCreated(null);}},'Удалить из комплекта'))))
     )
