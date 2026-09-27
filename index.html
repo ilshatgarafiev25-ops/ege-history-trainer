@@ -577,7 +577,7 @@ function TeacherView() {
   useEffect(() => {
     reload();
   }, [reload]);
-  return /* @__PURE__ */ React.createElement("div", null, loadError && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } }, loadError), /* @__PURE__ */ React.createElement("div", { className: "tabs" }, [["generator", "Генератор №1"], ["import", "\u0418\u043C\u043F\u043E\u0440\u0442 \u0431\u0430\u0437\u044B"], ["bank", "\u0411\u0430\u043D\u043A \u0437\u0430\u0434\u0430\u043D\u0438\u0439"], ["tests", "\u0422\u0435\u0441\u0442\u044B"], ["testimport", "\u0418\u043C\u043F\u043E\u0440\u0442 \u0442\u0435\u0441\u0442\u0430"], ["grade", "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043E\u0442\u0432\u0435\u0442\u043E\u0432"], ["export", "\u042D\u043A\u0441\u043F\u043E\u0440\u0442 / \u0434\u0438\u0430\u0433\u043D\u043E\u0441\u0442\u0438\u043A\u0430"]].map(([k, l]) => /* @__PURE__ */ React.createElement("button", { key: k, className: tab === k ? "active" : "", onClick: () => setTab(k) }, l))), React.createElement("div", { style: { display: tab === "generator" ? "block" : "none" } }, React.createElement(AtomicGeneratorTab, { onReload: reload })), tab === "import" && /* @__PURE__ */ React.createElement(ImportTab, { bank: bank || [], onReload: reload }), tab === "bank" && /* @__PURE__ */ React.createElement(BankTab, { bank, onReload: reload }), tab === "tests" && /* @__PURE__ */ React.createElement(TestsTab, { bank: bank || [], tests, onReload: reload }), tab === "testimport" && /* @__PURE__ */ React.createElement(TestImportTab, { bank: bank || [], onReload: reload }), tab === "grade" && /* @__PURE__ */ React.createElement(GradeTab, { tests: tests || [], bank: bank || [] }), tab === "export" && /* @__PURE__ */ React.createElement(ExportTab, { bank: bank || [], tests: tests || [] }));
+  return /* @__PURE__ */ React.createElement("div", null, loadError && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } }, loadError), /* @__PURE__ */ React.createElement("div", { className: "tabs" }, [["generator", "Генератор №1"], ["generator2", "Генератор №2"], ["import", "\u0418\u043C\u043F\u043E\u0440\u0442 \u0431\u0430\u0437\u044B"], ["bank", "\u0411\u0430\u043D\u043A \u0437\u0430\u0434\u0430\u043D\u0438\u0439"], ["tests", "\u0422\u0435\u0441\u0442\u044B"], ["testimport", "\u0418\u043C\u043F\u043E\u0440\u0442 \u0442\u0435\u0441\u0442\u0430"], ["grade", "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043E\u0442\u0432\u0435\u0442\u043E\u0432"], ["export", "\u042D\u043A\u0441\u043F\u043E\u0440\u0442 / \u0434\u0438\u0430\u0433\u043D\u043E\u0441\u0442\u0438\u043A\u0430"]].map(([k, l]) => /* @__PURE__ */ React.createElement("button", { key: k, className: tab === k ? "active" : "", onClick: () => setTab(k) }, l))), React.createElement("div", { style: { display: tab === "generator" ? "block" : "none" } }, React.createElement(AtomicGeneratorTab, { onReload: reload })), React.createElement("div", { style: { display: tab === "generator2" ? "block" : "none" } }, React.createElement(AtomicGeneratorTab, { onReload: reload, task: 2 })), tab === "import" && /* @__PURE__ */ React.createElement(ImportTab, { bank: bank || [], onReload: reload }), tab === "bank" && /* @__PURE__ */ React.createElement(BankTab, { bank, onReload: reload }), tab === "tests" && /* @__PURE__ */ React.createElement(TestsTab, { bank: bank || [], tests, onReload: reload }), tab === "testimport" && /* @__PURE__ */ React.createElement(TestImportTab, { bank: bank || [], onReload: reload }), tab === "grade" && /* @__PURE__ */ React.createElement(GradeTab, { tests: tests || [], bank: bank || [] }), tab === "export" && /* @__PURE__ */ React.createElement(ExportTab, { bank: bank || [], tests: tests || [] }));
 }
 function ImportTab({ bank, onReload }) {
   const [jsonFile, setJsonFile] = useState(null);
@@ -591,7 +591,7 @@ function ImportTab({ bank, onReload }) {
     setBusy(true);
     try {
       const arr = JSON.parse(await jsonFile.text());
-      if (!Array.isArray(arr)) throw new Error("Файл должен содержать JSON-массив заданий.");
+      if (!Array.isArray(arr)) throw new Error("Файл должен содержать JSON-массив заданий. Атомарную базу с facts загрузите во вкладке «Генератор №1» или «Генератор №2».");
       const byName = new Map(imageFiles.map((f) => [f.name, f]));
       const byStem = new Map(imageFiles.map((f) => [fileStem(f.name), f]));
       const rep = [];
@@ -1086,7 +1086,59 @@ function atomicGenerate(facts, through, mode, count, existing = []) {
   }
   return result;
 }
-function AtomicGeneratorTab({ onReload }) {
+function chronoValidate(data) {
+  if (!data || !Array.isArray(data.facts) || !data.facts.length) throw new Error('Нужна атомарная база №2 с массивом facts. Обычный банк импортируется во вкладке «Импорт базы».');
+  const ids = new Set();
+  return data.facts.map((f,i) => {
+    if (!f || typeof f.factId !== 'string' || !f.factId.trim() || ids.has(f.factId) || typeof f.event !== 'string' || !f.event.trim() || !Number.isInteger(f.year) || f.year < 1 || !Number.isInteger(f.endYear) || f.endYear < f.year || !Number.isInteger(f.courseTopicId) || !COURSE38_BY_ID.has(f.courseTopicId) || !['russia','world'].includes(f.scope)) throw new Error('Некорректный факт №2 в строке '+(i+1));
+    ids.add(f.factId);
+    return { ...f, event:f.event.trim().replace(/\s+/g,' '), enabled:f.enabled !== false, dateLabel: f.dateLabel || (f.year===f.endYear ? f.year+' г.' : f.year+'–'+f.endYear+' гг.') };
+  });
+}
+function chronoPool(facts, through, mode) {
+  if (!COURSE38_BY_ID.has(Number(through)) || !['cumulative','current'].includes(mode)) throw new Error('Выберите тему и режим.');
+  return facts.filter(f => f.enabled !== false && (mode==='current' ? f.courseTopicId===Number(through) : f.courseTopicId<=Number(through)));
+}
+function chronoCompatible(a,b) {
+  return a.factId!==b.factId && a.event.toLowerCase()!==b.event.toLowerCase() && (a.endYear < b.year || b.endYear < a.year);
+}
+function chronoGenerate(facts, through, mode, count, existing=[], composition='russia', learnedWorld=[]) {
+  if (!Number.isInteger(count) || count<1 || count>100) throw new Error('Количество заданий должно быть целым числом от 1 до 100.');
+  if (!['russia','mixed'].includes(composition)) throw new Error('Неизвестный состав задания.');
+  const pool=chronoPool(facts,through,mode), learned=new Set(learnedWorld);
+  const russia=pool.filter(f=>f.scope==='russia'), world=pool.filter(f=>f.scope==='world' && learned.has(f.factId));
+  if(composition==='mixed' && !world.length) throw new Error('Отметьте хотя бы одно уже изученное событие всеобщей истории ниже.');
+  if(russia.length < (composition==='mixed'?2:3)) throw new Error('Недостаточно событий России в выбранной теме. Выберите накопительный режим или дополните базу.');
+  const usage=new Map();
+  existing.forEach(q=>(q.metadata.atomic.events||[]).forEach(f=>usage.set(f.factId,(usage.get(f.factId)||0)+1)));
+  const rank=a=>atomicShuffle(a).sort((a,b)=>(usage.get(a.factId)||0)-(usage.get(b.factId)||0));
+  const result=[];
+  for(let n=0;n<count;n++) {
+    const rr=rank(russia), ww=rank(world); let chosen=null;
+    if(composition==='mixed') {
+      outer: for(const w of ww) for(let i=0;i<rr.length;i++) if(chronoCompatible(w,rr[i])) for(let j=i+1;j<rr.length;j++) if(chronoCompatible(w,rr[j]) && chronoCompatible(rr[i],rr[j])) {chosen=[rr[i],rr[j],w];break outer;}
+    } else {
+      outer: for(let i=0;i<rr.length;i++) for(let j=i+1;j<rr.length;j++) if(chronoCompatible(rr[i],rr[j])) for(let k=j+1;k<rr.length;k++) if(chronoCompatible(rr[i],rr[k]) && chronoCompatible(rr[j],rr[k])) {chosen=[rr[i],rr[j],rr[k]];break outer;}
+    }
+    if(!chosen) throw new Error('Не удалось выбрать три события с однозначным порядком: годы совпадают или периоды пересекаются. Расширьте изученный материал или список изученных зарубежных событий.');
+    const events=atomicShuffle(chosen), ordered=events.map((f,i)=>({...f,number:i+1})).sort((a,b)=>a.year-b.year);
+    const correctText=ordered.map(f=>f.number).join('');
+    const required=[...new Set(events.map(f=>f.courseTopicId))].sort((a,b)=>a-b).map(id=>COURSE38_BY_ID.get(id));
+    const referenceAnswer='Располагаем события от самого раннего к самому позднему. Номера сохранены из задания.\n\n'+ordered.map(f=>f.number+') '+f.event+' — '+f.dateLabel).join('\n')+'\n\n'+ordered.map(f=>f.dateLabel).join(' → ')+'\nПорядок номеров: '+ordered.map(f=>f.number).join(' → ')+'.\nПоэтому ответ: '+correctText+'.';
+    result.push({id:uid('atom2'),type:'short',ogeNumber:2,text:'Расположите в хронологической последовательности исторические события. Запишите цифры, которыми обозначены исторические события, в правильной последовательности.\n\n'+events.map((f,i)=>(i+1)+') '+f.event).join('\n\n'),correctText,maxScore:1,gradingMode:'ordered',referenceAnswer,
+      source:'Генератор №2 · '+(composition==='mixed'?'Россия и всеобщая история':'учебная хронология России'),topic:required.map(t=>t.name).join('; '),primaryCourseTopic:required[required.length-1],requiredCourseTopics:required,
+      metadata:{atomic:{version:1,task:2,through:Number(through),mode,composition,events,learnedWorld:world.map(f=>f.factId)},requiredCourseTopics:required}});
+    chosen.forEach(f=>usage.set(f.factId,(usage.get(f.factId)||0)+1));
+  }
+  return result;
+}
+
+function AtomicGeneratorTab({ onReload, task = 1 }) {
+  const cacheKey = task === 1 ? ATOMIC_CACHE_KEY : 'history.atomic.task2.v1:' + SUPABASE_URL;
+  const validate = task === 1 ? atomicValidate : chronoValidate;
+  const aid = name => 'atomic-' + name + (task === 1 ? '' : '-2');
+  const [composition,setComposition] = useState('russia');
+  const [learnedWorld,setLearnedWorld] = useState([]);
   const [facts, setFacts] = useState([]), [status, setStatus] = useState('Загружаю атомарную базу…');
   const [through, setThrough] = useState('1'), [mode, setMode] = useState('cumulative'), [count, setCount] = useState('10');
   const [questions, setQuestions] = useState([]), [error, setError] = useState(''), [busy, setBusy] = useState(false);
@@ -1097,13 +1149,13 @@ function AtomicGeneratorTab({ onReload }) {
     (async () => {
       try {
         let cached = null;
-        try { cached = localStorage.getItem(ATOMIC_CACHE_KEY); } catch (_) {}
+        try { cached = localStorage.getItem(cacheKey); } catch (_) {}
         let fs;
-        if (cached) { try { fs = atomicValidate(JSON.parse(cached)); } catch (_) {} }
+        if (cached) { try { fs = validate(JSON.parse(cached)); } catch (_) {} }
         if (!fs) {
-          const response = await fetch('history_task_1_facts.json');
+          const response = await fetch(task === 1 ? 'history_task_1_facts.json' : 'history_task_2_facts.json');
           if (!response.ok) throw new Error('Файл базы рядом с index.html не найден. Загрузите исходный атомарный JSON ниже.');
-          fs = atomicValidate(await response.json());
+          fs = validate(await response.json());
         }
         if (active) { setFacts(fs); setStatus('База готова: ' + fs.length + ' фактов. Неоднозначные формулировки с разными годами исключаются из генерации.'); }
       } catch (e) { if (active) setStatus('База не загружена. Загрузите атомарный JSON ниже. ' + e.message); }
@@ -1114,19 +1166,19 @@ function AtomicGeneratorTab({ onReload }) {
     if (!file) return;
     setError(''); setBusy(true);
     try {
-      const fs = atomicValidate(JSON.parse(await file.text()));
+      const fs = validate(JSON.parse(await file.text()));
       let note = ' База сохранена в этом браузере.';
-      try { localStorage.setItem(ATOMIC_CACHE_KEY, JSON.stringify({facts:fs})); } catch (_) { note = ' Браузер не разрешил сохранение: после перезагрузки потребуется повторный импорт.'; }
-      setFacts(fs); setQuestions([]); setCreated(null); setStatus('Загружено ' + fs.length + ' фактов.' + note);
+      try { localStorage.setItem(cacheKey, JSON.stringify({facts:fs})); } catch (_) { note = ' Браузер не разрешил сохранение: после перезагрузки потребуется повторный импорт.'; }
+      setFacts(fs); setLearnedWorld([]); setQuestions([]); setCreated(null); setStatus('Загружено ' + fs.length + ' фактов.' + note);
     } catch(e) { setError('Импорт не выполнен: ' + e.message); } finally { setBusy(false); }
   }
   function generate(index) {
     setError(''); setCreated(null);
     try {
-      if (index === undefined) { setQuestions(atomicGenerate(facts, through, mode, Number(count))); setSaved(new Set()); }
+      if (index === undefined) { setQuestions(task === 1 ? atomicGenerate(facts, through, mode, Number(count)) : chronoGenerate(facts, through, mode, Number(count), [], composition, learnedWorld)); setSaved(new Set()); }
       else {
         const old = questions[index].metadata.atomic;
-        const next = atomicGenerate(facts, old.through, old.mode, 1, questions)[0];
+        const next = (task === 1 ? atomicGenerate(facts, old.through, old.mode, 1, questions) : chronoGenerate(facts, old.through, old.mode, 1, questions, old.composition, old.learnedWorld))[0];
         setQuestions(questions.map((q,i) => i === index ? next : q));
       }
     } catch(e) { setError(e.message); }
@@ -1152,21 +1204,33 @@ function AtomicGeneratorTab({ onReload }) {
     } catch(e) { setError('Не удалось завершить сохранение: ' + e.message + '. Успешно сохранённые задания остаются в банке; можно повторить операцию.'); }
     finally { setBusy(false); }
   }
-  const h = React.createElement, pool = atomicPool(facts, through, mode), dateCount = new Set(pool.map(f => f.year)).size;
-  return h('div', {className:'atomic-generator'},
-    h('div', {className:'card'}, h('h2',null,'Генератор №1'), h('div',{className:'notice',role:'status'},status),
-      h('label',{htmlFor:'atomic-file'},'Загрузить / заменить атомарную базу (JSON)'), h('input',{id:'atomic-file',type:'file',accept:'.json,application/json',disabled:busy,onChange:e => {importFacts(e.target.files[0]); e.target.value='';}}),
-      h('label',{htmlFor:'atomic-through'},'Ученик изучил до темы:'), h('select',{id:'atomic-through',value:through,disabled:busy,onChange:e=>setThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name))),
-      h('label',{htmlFor:'atomic-mode'},'Режим генерации'),h('select',{id:'atomic-mode',value:mode,disabled:busy,onChange:e=>setMode(e.target.value)},h('option',{value:'cumulative'},'Накопительно: темы 1–'+through),h('option',{value:'current'},'Только текущая тема '+through)),
-      h('div',{className:'notice'},'Доступно: '+pool.length+' фактов, '+dateCount+' разных дат. События и все варианты дат берутся только из выбранного материала. Разметка тем — из вашей базы.'),
-      h('label',{htmlFor:'atomic-count'},'Количество заданий (1–100)'),h('input',{id:'atomic-count',type:'number',min:1,max:100,value:count,disabled:busy,onChange:e=>setCount(e.target.value)}),
-      h('button',{className:'btn',disabled:busy||!facts.length,onClick:()=>generate()},'Сгенерировать задания №1'),
-      dateCount<6 && h('p',{className:'q-meta'},'Для полного задания недостаточно разных дат: нужно не менее 6.'),
+  const h = React.createElement, pool = task === 1 ? atomicPool(facts, through, mode) : chronoPool(facts, through, mode), dateCount = new Set(pool.map(f => f.year)).size;
+  return h('div', {className:'atomic-generator', 'data-task':task},
+    h('div', {className:'card'}, h('h2',null,'Генератор №'+task), h('div',{className:'notice',role:'status'},status),
+      h('label',{htmlFor:aid('file')},'Загрузить / заменить атомарную базу (JSON)'), h('input',{id:aid('file'),type:'file',accept:'.json,application/json',disabled:busy,onChange:e => {importFacts(e.target.files[0]); e.target.value='';}}),
+      h('label',{htmlFor:aid('through')},'Ученик изучил до темы:'), h('select',{id:aid('through'),value:through,disabled:busy,onChange:e=>setThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name))),
+      h('label',{htmlFor:aid('mode')},'Режим генерации'),h('select',{id:aid('mode'),value:mode,disabled:busy,onChange:e=>setMode(e.target.value)},h('option',{value:'cumulative'},'Накопительно: темы 1–'+through),h('option',{value:'current'},'Только текущая тема '+through)),
+      h('div',{className:'notice'},'Доступно: '+pool.length+' фактов, '+dateCount+' разных дат. '+(task===1 ? 'События и все варианты дат берутся только из выбранного материала. Разметка тем — из вашей базы.' : 'События одного года и пересекающиеся периоды не объединяются. Зарубежные события нужно дополнительно отметить как изученные.')),
+      task===2 && h('div',null,
+        h('label',{htmlFor:aid('composition')},'Состав задания'),
+        h('select',{id:aid('composition'),value:composition,disabled:busy,onChange:e=>setComposition(e.target.value)},h('option',{value:'russia'},'Учебный режим: 3 события истории России'),h('option',{value:'mixed'},'2 события России + 1 событие всеобщей истории')),
+        h('p',{className:'q-meta'},'База №2: '+facts.filter(f=>f.enabled!==false).length+' доступных фактов; '+facts.filter(f=>f.enabled===false).length+' отложены до уточнения. Для общего теста №1 + №2 сохраните оба комплекта в банк и выберите их во вкладке «Тесты».'),
+        composition==='mixed' && h('div',{className:'notice'},
+          h('strong',null,'Какие зарубежные события ученик уже изучил?'),
+          h('p',null,'Темы для всеобщей истории предложены по периоду. Отметьте только пройденные события; отметки действуют для текущего занятия.'),
+          h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',disabled:busy,onClick:()=>setLearnedWorld(pool.filter(f=>f.scope==='world').map(f=>f.factId))},'Все показанные изучены'),h('button',{className:'btn ghost small',disabled:busy,onClick:()=>setLearnedWorld([])},'Снять отметки')),
+          pool.filter(f=>f.scope==='world').length===0 && h('p',null,'В выбранной теме нет зарубежных событий.'),
+          h('div',{style:{maxHeight:280,overflowY:'auto'}},pool.filter(f=>f.scope==='world').map(f=>h('label',{key:f.factId,className:'opt'},h('input',{type:'checkbox',disabled:busy,checked:learnedWorld.includes(f.factId),onChange:e=>setLearnedWorld(e.target.checked?[...learnedWorld,f.factId]:learnedWorld.filter(id=>id!==f.factId))}),f.event+' — '+f.dateLabel+' (тема '+f.courseTopicId+')')))
+        )
+      ),
+      h('label',{htmlFor:aid('count')},'Количество заданий (1–100)'),h('input',{id:aid('count'),type:'number',min:1,max:100,value:count,disabled:busy,onChange:e=>setCount(e.target.value)}),
+      h('button',{className:'btn',disabled:busy||!facts.length,onClick:()=>generate()},'Сгенерировать задания №'+task),
+      task===1 && dateCount<6 && h('p',{className:'q-meta'},'Для полного задания недостаточно разных дат: нужно не менее 6.'),
       questions.length>0 && h('p',{className:'q-meta'},'Изменение настроек применяется к следующему комплекту. Перегенерация сохраняет тему и режим конкретного задания. При малом пуле повторения неизбежны.')
     ),
     error && h('div',{className:'notice',role:'alert'},error),
     questions.length>0 && h('div',{className:'card'},h('h2',null,'Предпросмотр: '+questions.length+' заданий'),
-      h('label',{htmlFor:'atomic-name'},'Название теста'),h('input',{id:'atomic-name',type:'text',value:name,disabled:busy,onChange:e=>{setName(e.target.value);setCreated(null);}}),
+      h('label',{htmlFor:aid('name')},'Название теста'),h('input',{id:aid('name'),type:'text',value:name,disabled:busy,onChange:e=>{setName(e.target.value);setCreated(null);}}),
       h('label',{className:'opt'},h('input',{type:'checkbox',checked:training,disabled:busy,onChange:e=>{setTraining(e.target.checked);setCreated(null);}}),'Тренировочный режим (снять для контрольного)'),
       h('div',{className:'atomic-actions'},h('button',{className:'btn ghost',disabled:busy,onClick:()=>save(false)},'Сохранить в банк'),h('button',{className:'btn',disabled:busy||!!created,onClick:()=>save(true)},busy?'Сохраняю…':'Сохранить и создать тест')),
       created && h('div',{className:'notice'},'Тест создан. Код для ученика: ',h('strong',{className:'test-code'},created.code)),
@@ -2062,7 +2126,7 @@ function StudentView() {
   /* close groups.map: */ ))
   })(), submitErr && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } }, submitErr), /* @__PURE__ */ React.createElement("button", { className: "btn", disabled: subBusy, onClick: submit }, subBusy ? "\u041E\u0442\u043F\u0440\u0430\u0432\u043B\u044F\u044E\u2026" : "\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u043E\u0442\u0432\u0435\u0442\u044B"));
 }
-ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(React.Fragment, null, React.createElement(App, null), React.createElement("div", { style: { textAlign: "center", color: "#999", fontSize: 11, fontFamily: "-apple-system, Segoe UI, sans-serif", margin: "24px 0" } }, "версия SAFE38-ATOMIC1-v2-2026-09-26")));
+ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(React.Fragment, null, React.createElement(App, null), React.createElement("div", { style: { textAlign: "center", color: "#999", fontSize: 11, fontFamily: "-apple-system, Segoe UI, sans-serif", margin: "24px 0" } }, "версия SAFE38-GEN1-GEN2-2026-09-26")));
 
 </script>
 

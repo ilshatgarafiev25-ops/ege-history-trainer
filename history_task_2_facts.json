@@ -1,0 +1,3057 @@
+{
+  "meta": {
+    "schema": "history-task2-atomic-course38-v1",
+    "sourceQuestions": 98,
+    "chronologyQuestions": 97,
+    "uniqueFacts": 191,
+    "enabledFacts": 191,
+    "reviewFacts": 0,
+    "courseTopicVersion": "course38-v1",
+    "note": "Даты связаны с текстами событий, а не номерами пунктов исходного объяснения. Всеобщая история дополнительно выбирается преподавателем.",
+    "revision": "2026-09-27-reviewed10",
+    "reviewedFactIds": [
+      "CH2-0058",
+      "CH2-0070",
+      "CH2-0078",
+      "CH2-0089",
+      "CH2-0107",
+      "CH2-0151",
+      "CH2-0166",
+      "CH2-0201",
+      "CH2-0206",
+      "CH2-0208"
+    ],
+    "reviewScope": "Только 10 ранее отложенных записей. Остальные 181 факт не изменялись и повторно не сверялись."
+  },
+  "facts": [
+    {
+      "factId": "CH2-0000",
+      "event": "гибель Андрея Боголюбского",
+      "year": 1174,
+      "endYear": 1174,
+      "dateLabel": "1174 г.",
+      "courseTopicId": 3,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_138341"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0001",
+      "event": "Смоленская война",
+      "year": 1632,
+      "endYear": 1634,
+      "dateLabel": "1632–1634 гг.",
+      "courseTopicId": 8,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_138341",
+        "hist_2_181795"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0002",
+      "event": "Жакерия",
+      "year": 1358,
+      "endYear": 1358,
+      "dateLabel": "1358 г.",
+      "courseTopicId": 3,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_138341"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0003",
+      "event": "денежная реформа С.Ю. Витте",
+      "year": 1897,
+      "endYear": 1897,
+      "dateLabel": "1897 г.",
+      "courseTopicId": 19,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_138571",
+        "hist_2_181789"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0004",
+      "event": "победа революции на Кубе",
+      "year": 1959,
+      "endYear": 1959,
+      "dateLabel": "1959 г.",
+      "courseTopicId": 32,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_138571"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0005",
+      "event": "основание Санкт-Петербурга",
+      "year": 1703,
+      "endYear": 1703,
+      "dateLabel": "1703 г.",
+      "courseTopicId": 9,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_138571",
+        "hist_2_168728"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0006",
+      "event": "введение подушной подати",
+      "year": 1724,
+      "endYear": 1724,
+      "dateLabel": "1724 г.",
+      "courseTopicId": 9,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_139099",
+        "hist_2_167971",
+        "hist_2_181788"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0007",
+      "event": "начало правления в Москве Ивана Калиты",
+      "year": 1325,
+      "endYear": 1325,
+      "dateLabel": "1325 г.",
+      "courseTopicId": 3,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_139099"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0008",
+      "event": "заключение Аугсбургского религиозного мира",
+      "year": 1555,
+      "endYear": 1555,
+      "dateLabel": "1555 г.",
+      "courseTopicId": 6,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_139099",
+        "hist_2_164070",
+        "hist_2_168728",
+        "hist_2_181788"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0009",
+      "event": "«Кровавое воскресенье»",
+      "year": 1905,
+      "endYear": 1905,
+      "dateLabel": "1905 г.",
+      "courseTopicId": 21,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_141492",
+        "hist_2_167423",
+        "hist_2_181803"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0010",
+      "event": "Ялтинская конференция «Большой тройки»",
+      "year": 1945,
+      "endYear": 1945,
+      "dateLabel": "1945 г.",
+      "courseTopicId": 30,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_141492"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0011",
+      "event": "Варфоломеевская ночь во Франции",
+      "year": 1572,
+      "endYear": 1572,
+      "dateLabel": "1572 г.",
+      "courseTopicId": 6,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_141492",
+        "hist_2_159194",
+        "hist_2_167433"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0012",
+      "event": "Роспуск Коминтерна",
+      "year": 1943,
+      "endYear": 1943,
+      "dateLabel": "1943 г.",
+      "courseTopicId": 30,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_141493",
+        "hist_2_147714"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0013",
+      "event": "Открытие Америки Христофором Колумбом",
+      "year": 1492,
+      "endYear": 1492,
+      "dateLabel": "1492 г.",
+      "courseTopicId": 4,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_141493",
+        "hist_2_167428",
+        "hist_2_167976"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0014",
+      "event": "Введение Табели о рангах",
+      "year": 1722,
+      "endYear": 1722,
+      "dateLabel": "1722 г.",
+      "courseTopicId": 9,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_141493",
+        "hist_2_150529",
+        "hist_2_181805"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0015",
+      "event": "установление протектората О. Кромвеля в Англии",
+      "year": 1653,
+      "endYear": 1653,
+      "dateLabel": "1653 г.",
+      "courseTopicId": 8,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_142728"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0016",
+      "event": "введение опричнины",
+      "year": 1565,
+      "endYear": 1565,
+      "dateLabel": "1565 г.",
+      "courseTopicId": 6,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_142728"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0017",
+      "event": "принятие Судебника Ивана III",
+      "year": 1497,
+      "endYear": 1497,
+      "dateLabel": "1497 г.",
+      "courseTopicId": 4,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_142728",
+        "hist_2_153650",
+        "hist_2_162289",
+        "hist_2_181472",
+        "hist_2_129283",
+        "hist_2_167970"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0018",
+      "event": "созыв Стоглавого собора",
+      "year": 1551,
+      "endYear": 1551,
+      "dateLabel": "1551 г.",
+      "courseTopicId": 6,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_144795",
+        "hist_2_161220",
+        "hist_2_167419",
+        "hist_2_167430"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0019",
+      "event": "создание Арабского халифата",
+      "year": 632,
+      "endYear": 632,
+      "dateLabel": "632 г.",
+      "courseTopicId": 1,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_144795"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0020",
+      "event": "поход князя Олега Вещего на Царьград",
+      "year": 907,
+      "endYear": 907,
+      "dateLabel": "907 г.",
+      "courseTopicId": 1,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_144795"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0021",
+      "event": "переход к России Уссурийского края",
+      "year": 1860,
+      "endYear": 1860,
+      "dateLabel": "1860 г.",
+      "courseTopicId": 17,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_147714"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0022",
+      "event": "избрание Дж. Вашингтона президентом США",
+      "year": 1789,
+      "endYear": 1789,
+      "dateLabel": "1789 г.",
+      "courseTopicId": 12,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_147714"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0023",
+      "event": "разорение Владимира войсками Батыя",
+      "year": 1238,
+      "endYear": 1238,
+      "dateLabel": "1238 г.",
+      "courseTopicId": 3,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_147836"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0024",
+      "event": "восстание под предводительством У. Тайлера в Англии",
+      "year": 1381,
+      "endYear": 1381,
+      "dateLabel": "1381 г.",
+      "courseTopicId": 3,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_147836",
+        "hist_2_167972"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0025",
+      "event": "завоевание Сибирского ханства войском атамана Ермака",
+      "year": 1581,
+      "endYear": 1582,
+      "dateLabel": "1581–1582 гг.",
+      "courseTopicId": 6,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_147836"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0026",
+      "event": "начало Реформации в Англии",
+      "year": 1534,
+      "endYear": 1534,
+      "dateLabel": "1534 г.",
+      "courseTopicId": 6,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_148908"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0027",
+      "event": "разгром Хазарского каганата князем Святославом Игоревичем",
+      "year": 965,
+      "endYear": 965,
+      "dateLabel": "965 г.",
+      "courseTopicId": 1,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_148908",
+        "hist_2_164070"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0028",
+      "event": "Соляной бунт",
+      "year": 1648,
+      "endYear": 1648,
+      "dateLabel": "1648 г.",
+      "courseTopicId": 8,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_148908",
+        "hist_2_181472",
+        "hist_2_167976",
+        "hist_2_167981",
+        "hist_2_177437",
+        "hist_2_181807"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0029",
+      "event": "захват (аншлюс) Австрии нацистской Германией",
+      "year": 1938,
+      "endYear": 1938,
+      "dateLabel": "1938 г.",
+      "courseTopicId": 28,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_150529"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0030",
+      "event": "назначение председателем Совета министров П.А. Столыпина",
+      "year": 1906,
+      "endYear": 1906,
+      "dateLabel": "1906 г.",
+      "courseTopicId": 21,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_150529",
+        "hist_2_176565"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0031",
+      "event": "захват Константинополя крестоносцами во время Четвёртого крестового похода",
+      "year": 1204,
+      "endYear": 1204,
+      "dateLabel": "1204 г.",
+      "courseTopicId": 3,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_153650"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0032",
+      "event": "избрание царём Михаила Фёдоровича Романова",
+      "year": 1613,
+      "endYear": 1613,
+      "dateLabel": "1613 г.",
+      "courseTopicId": 8,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_153650",
+        "hist_2_181560",
+        "hist_2_181781"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0033",
+      "event": "Начало Реформации в Германии",
+      "year": 1517,
+      "endYear": 1517,
+      "dateLabel": "1517 г.",
+      "courseTopicId": 4,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_154906",
+        "hist_2_167415",
+        "hist_2_167981",
+        "hist_2_181805"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0034",
+      "event": "Принятие Соборного уложения царя Алексея Михайловича",
+      "year": 1649,
+      "endYear": 1649,
+      "dateLabel": "1649 г.",
+      "courseTopicId": 8,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_154906"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0035",
+      "event": "первое упоминание Москвы в летописи",
+      "year": 1147,
+      "endYear": 1147,
+      "dateLabel": "1147 г.",
+      "courseTopicId": 3,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_154906",
+        "hist_2_159194",
+        "hist_2_167428"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0036",
+      "event": "открытие Васко да Гамой морского пути в Индию",
+      "year": 1498,
+      "endYear": 1498,
+      "dateLabel": "1498 г.",
+      "courseTopicId": 4,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_155390",
+        "hist_2_136984"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0037",
+      "event": "Чигиринские походы",
+      "year": 1677,
+      "endYear": 1678,
+      "dateLabel": "1677–1678 гг.",
+      "courseTopicId": 8,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_155390"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation",
+      "verificationSources": [
+        "https://old.bigenc.ru/military_science/text/4685987"
+      ]
+    },
+    {
+      "factId": "CH2-0038",
+      "event": "основание Сергием Радонежским Троицкого монастыря",
+      "year": 1337,
+      "endYear": 1337,
+      "dateLabel": "1337 г.",
+      "courseTopicId": 5,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_155390"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation",
+      "verificationSources": [
+        "https://stsl.ru/monastery/"
+      ]
+    },
+    {
+      "factId": "CH2-0039",
+      "event": "присоединение Пскова к Московскому государству",
+      "year": 1510,
+      "endYear": 1510,
+      "dateLabel": "1510 г.",
+      "courseTopicId": 4,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_156400",
+        "hist_2_167974"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0040",
+      "event": "падение Западной Римской империи",
+      "year": 476,
+      "endYear": 476,
+      "dateLabel": "476 г.",
+      "courseTopicId": 1,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_156400"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0041",
+      "event": "восстание декабристов",
+      "year": 1825,
+      "endYear": 1825,
+      "dateLabel": "1825 г.",
+      "courseTopicId": 16,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_156400"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0042",
+      "event": "начало Столетней войны",
+      "year": 1337,
+      "endYear": 1337,
+      "dateLabel": "1337 г.",
+      "courseTopicId": 3,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_158000",
+        "hist_2_167973"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0043",
+      "event": "Грюнвальдская битва",
+      "year": 1410,
+      "endYear": 1410,
+      "dateLabel": "1410 г.",
+      "courseTopicId": 4,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_158000"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0044",
+      "event": "битва на реке Калке",
+      "year": 1223,
+      "endYear": 1223,
+      "dateLabel": "1223 г.",
+      "courseTopicId": 3,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_158000",
+        "hist_2_167420",
+        "hist_2_167423"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0045",
+      "event": "отмена крепостного права в России",
+      "year": 1861,
+      "endYear": 1861,
+      "dateLabel": "1861 г.",
+      "courseTopicId": 17,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_159194",
+        "hist_2_137402"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0046",
+      "event": "принятие Кодекса Юстиниана",
+      "year": 529,
+      "endYear": 534,
+      "dateLabel": "529–534 гг.",
+      "courseTopicId": 1,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_161166"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0047",
+      "event": "провозглашение России империей",
+      "year": 1721,
+      "endYear": 1721,
+      "dateLabel": "1721 г.",
+      "courseTopicId": 9,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_161166",
+        "hist_2_164070",
+        "hist_2_167429",
+        "hist_2_177468",
+        "hist_2_181799"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0048",
+      "event": "созыв первого Земского собора",
+      "year": 1549,
+      "endYear": 1549,
+      "dateLabel": "1549 г.",
+      "courseTopicId": 6,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_161166",
+        "hist_2_137402"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0049",
+      "event": "учреждение Правительствующего Сената",
+      "year": 1711,
+      "endYear": 1711,
+      "dateLabel": "1711 г.",
+      "courseTopicId": 9,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_162289",
+        "hist_2_167415"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0050",
+      "event": "Крестьянская война в Германии",
+      "year": 1524,
+      "endYear": 1526,
+      "dateLabel": "1524–1526 гг.",
+      "courseTopicId": 4,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_162289"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0051",
+      "event": "принятие указа об урочных летах",
+      "year": 1597,
+      "endYear": 1597,
+      "dateLabel": "1597 г.",
+      "courseTopicId": 6,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_166170",
+        "hist_2_176173",
+        "hist_2_181581"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0052",
+      "event": "Тегеранская конференция «Большой Тройки»",
+      "year": 1943,
+      "endYear": 1943,
+      "dateLabel": "1943 г.",
+      "courseTopicId": 30,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_166170"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0053",
+      "event": "образование Священной Римской империи",
+      "year": 962,
+      "endYear": 962,
+      "dateLabel": "962 г.",
+      "courseTopicId": 1,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_166170",
+        "hist_2_167429"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0054",
+      "event": "разорение Москвы ханом Тохтамышем",
+      "year": 1382,
+      "endYear": 1382,
+      "dateLabel": "1382 г.",
+      "courseTopicId": 3,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_168728",
+        "hist_2_181784"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0055",
+      "event": "Ледовое побоище",
+      "year": 1242,
+      "endYear": 1242,
+      "dateLabel": "1242 г.",
+      "courseTopicId": 3,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_169817",
+        "hist_2_167417"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0056",
+      "event": "установление во Франции якобинской диктатуры",
+      "year": 1793,
+      "endYear": 1793,
+      "dateLabel": "1793 г.",
+      "courseTopicId": 12,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_169817"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0057",
+      "event": "гибель царевича Дмитрия в Угличе",
+      "year": 1591,
+      "endYear": 1591,
+      "dateLabel": "1591 г.",
+      "courseTopicId": 7,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_169817",
+        "hist_2_167428"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0058",
+      "event": "начало освободительной войны против испанского владычества в Нидерландах",
+      "year": 1566,
+      "endYear": 1566,
+      "dateLabel": "1566 г.",
+      "courseTopicId": 6,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_169885"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation",
+      "verificationSources": [
+        "https://trojden.com/books/world-history/history-of-the-modern-age-xv-xvii-7-class-medinskii-2025/11"
+      ],
+      "reviewedAt": "2026-09-27",
+      "reviewNote": "Сохранены обе исходные формулировки отдельными записями; начало борьбы по учебнику — 1566. Не представлять их как два разнесённых по времени события.",
+      "equivalentEventGroup": "netherlands-liberation-onset-1566"
+    },
+    {
+      "factId": "CH2-0059",
+      "event": "Потсдамская конференция союзников",
+      "year": 1945,
+      "endYear": 1945,
+      "dateLabel": "1945 г.",
+      "courseTopicId": 31,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_169885"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0060",
+      "event": "Тарутинский марш-манёвр",
+      "year": 1812,
+      "endYear": 1812,
+      "dateLabel": "1812 г.",
+      "courseTopicId": 15,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_169885"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0061",
+      "event": "Ливонская война",
+      "year": 1558,
+      "endYear": 1583,
+      "dateLabel": "1558–1583 гг.",
+      "courseTopicId": 6,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_174378"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation",
+      "verificationSources": [
+        "https://bigenc.ru/c/ivan-iv-vasil-evich-f7714d"
+      ]
+    },
+    {
+      "factId": "CH2-0062",
+      "event": "издание Манифеста о трехдневной барщине",
+      "year": 1797,
+      "endYear": 1797,
+      "dateLabel": "1797 г.",
+      "courseTopicId": 13,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_174378",
+        "hist_2_181801"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0063",
+      "event": "Второй крестовый поход",
+      "year": 1147,
+      "endYear": 1147,
+      "dateLabel": "1147 г.",
+      "courseTopicId": 3,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_174378"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0064",
+      "event": "учреждение патриаршества на Руси",
+      "year": 1589,
+      "endYear": 1589,
+      "dateLabel": "1589 г.",
+      "courseTopicId": 6,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_175705",
+        "hist_2_167972"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0065",
+      "event": "начало Гуситских войн",
+      "year": 1419,
+      "endYear": 1419,
+      "dateLabel": "1419 г.",
+      "courseTopicId": 4,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_175705"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0066",
+      "event": "составление М.М. Сперанским «Введения к уложению государственных законов»",
+      "year": 1809,
+      "endYear": 1809,
+      "dateLabel": "1809 г.",
+      "courseTopicId": 15,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_175705"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0067",
+      "event": "приход фашистов к власти в Италии",
+      "year": 1922,
+      "endYear": 1922,
+      "dateLabel": "1922 г.",
+      "courseTopicId": 27,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_176173"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0068",
+      "event": "начало строительства Сибирского железного пути",
+      "year": 1891,
+      "endYear": 1891,
+      "dateLabel": "1891 г.",
+      "courseTopicId": 18,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_176173"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0069",
+      "event": "подписание Беловежских соглашений руководителями России, Белоруссии и Украины",
+      "year": 1991,
+      "endYear": 1991,
+      "dateLabel": "1991 г.",
+      "courseTopicId": 36,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_176565"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0070",
+      "event": "принятие Билля о правах в США",
+      "year": 1791,
+      "endYear": 1791,
+      "dateLabel": "1791 г.",
+      "courseTopicId": 12,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_176565"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation",
+      "verificationSources": [
+        "https://my-uchebnik.ru/book/history/5/history-00000302.htm"
+      ],
+      "reviewedAt": "2026-09-27",
+      "reviewNote": "Уточнено по проверке учебников линии Мединского, издания 2025 года; остальные факты базы повторно не проверялись."
+    },
+    {
+      "factId": "CH2-0071",
+      "event": "принятие Декларации прав человека и гражданина во Франции",
+      "year": 1789,
+      "endYear": 1789,
+      "dateLabel": "1789 г.",
+      "courseTopicId": 12,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_177505"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0072",
+      "event": "катастрофа на Чернобыльской АЭС",
+      "year": 1986,
+      "endYear": 1986,
+      "dateLabel": "1986 г.",
+      "courseTopicId": 35,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_177505"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0073",
+      "event": "образование «Союза 17 октября»",
+      "year": 1905,
+      "endYear": 1905,
+      "dateLabel": "1905 г.",
+      "courseTopicId": 21,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_177505"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0074",
+      "event": "провозглашение доктрины Монро в США",
+      "year": 1823,
+      "endYear": 1823,
+      "dateLabel": "1823 г.",
+      "courseTopicId": 15,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_178471"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0075",
+      "event": "отмена местничества",
+      "year": 1682,
+      "endYear": 1682,
+      "dateLabel": "1682 г.",
+      "courseTopicId": 8,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_178471",
+        "hist_2_181791"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0076",
+      "event": "арест и казнь Л.П. Берии",
+      "year": 1953,
+      "endYear": 1953,
+      "dateLabel": "1953 г.",
+      "courseTopicId": 32,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_178471"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0077",
+      "event": "нормандское завоевание Англии",
+      "year": 1066,
+      "endYear": 1066,
+      "dateLabel": "1066 г.",
+      "courseTopicId": 2,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181472",
+        "hist_2_176367"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0078",
+      "event": "начало старообрядческого раскола в Русской православной церкви",
+      "year": 1650,
+      "endYear": 1659,
+      "dateLabel": "1650-е годы",
+      "courseTopicId": 8,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_95986",
+        "hist_2_167977"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation",
+      "verificationSources": [
+        "https://my-uchebnik.ru/book/history/5/history-00000122.htm"
+      ],
+      "reviewedAt": "2026-09-27",
+      "reviewNote": "По решению преподавателя сохранено десятилетие 1650-е; точная дата в учебнике — 1653. Границы 1650–1659 используются для исключения пересекающихся событий."
+    },
+    {
+      "factId": "CH2-0079",
+      "event": "издание Генрихом IV Нантского эдикта",
+      "year": 1598,
+      "endYear": 1598,
+      "dateLabel": "1598 г.",
+      "courseTopicId": 7,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_95986",
+        "hist_2_167977",
+        "hist_2_181789",
+        "hist_2_181809"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0080",
+      "event": "заключение Туркманчайского мирного договора между Россией и Персией",
+      "year": 1828,
+      "endYear": 1828,
+      "dateLabel": "1828 г.",
+      "courseTopicId": 16,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_95986",
+        "hist_2_167977"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0081",
+      "event": "Гангутское морское сражение",
+      "year": 1714,
+      "endYear": 1714,
+      "dateLabel": "1714 г.",
+      "courseTopicId": 9,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_129283",
+        "hist_2_167418",
+        "hist_2_167970"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0082",
+      "event": "Провозглашение Англии республикой",
+      "year": 1649,
+      "endYear": 1649,
+      "dateLabel": "1649 г.",
+      "courseTopicId": 8,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_129283",
+        "hist_2_161220"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0083",
+      "event": "взятие Измаила русскими войсками под командованием А.В. Суворова",
+      "year": 1790,
+      "endYear": 1790,
+      "dateLabel": "1790 г.",
+      "courseTopicId": 12,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_136984"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0084",
+      "event": "освобождение Москвы от польско-литовских интервентов",
+      "year": 1612,
+      "endYear": 1612,
+      "dateLabel": "1612 г.",
+      "courseTopicId": 7,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_136984"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0085",
+      "event": "взятие Бастилии, начало Французской революции",
+      "year": 1789,
+      "endYear": 1789,
+      "dateLabel": "1789 г.",
+      "courseTopicId": 12,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_137402"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0086",
+      "event": "подписание договоров о принятии ДНР, ЛНР, Запорожской и Херсонской областей в состав России",
+      "year": 2022,
+      "endYear": 2022,
+      "dateLabel": "2022 г.",
+      "courseTopicId": 38,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_137577"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0087",
+      "event": "запуск в промышленную эксплуатацию первой в мире атомной электростанции",
+      "year": 1954,
+      "endYear": 1954,
+      "dateLabel": "1954 г.",
+      "courseTopicId": 32,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_137577"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0088",
+      "event": "кругосветное путешествие Ф. Магеллана",
+      "year": 1519,
+      "endYear": 1522,
+      "dateLabel": "1519–1522 гг.",
+      "courseTopicId": 4,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_137577",
+        "hist_2_146457"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0089",
+      "event": "начало завоевания франками Галлии",
+      "year": 486,
+      "endYear": 486,
+      "dateLabel": "486 г.",
+      "courseTopicId": 1,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_137655"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation",
+      "verificationSources": [
+        "https://my-uchebnik.ru/book/history/5/history-00000288.htm"
+      ],
+      "reviewedAt": "2026-09-27",
+      "reviewNote": "Уточнено по проверке учебников линии Мединского, издания 2025 года; остальные факты базы повторно не проверялись."
+    },
+    {
+      "factId": "CH2-0090",
+      "event": "Издание Жалованной грамоты городам",
+      "year": 1785,
+      "endYear": 1785,
+      "dateLabel": "1785 г.",
+      "courseTopicId": 12,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_137655",
+        "hist_2_197564",
+        "hist_2_181581"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0091",
+      "event": "Карибский кризис",
+      "year": 1962,
+      "endYear": 1962,
+      "dateLabel": "1962 г.",
+      "courseTopicId": 32,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_137655"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0092",
+      "event": "вступление на престол императрицы Анны Иоанновны",
+      "year": 1730,
+      "endYear": 1730,
+      "dateLabel": "1730 г.",
+      "courseTopicId": 11,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_161220"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0093",
+      "event": "создание Устава Владимира Всеволодовича",
+      "year": 1113,
+      "endYear": 1113,
+      "dateLabel": "1113 г.",
+      "courseTopicId": 2,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_176367"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation",
+      "verificationSources": [
+        "https://old.bigenc.ru/domestic_history/text/4702660"
+      ]
+    },
+    {
+      "factId": "CH2-0094",
+      "event": "Медный бунт",
+      "year": 1662,
+      "endYear": 1662,
+      "dateLabel": "1662 г.",
+      "courseTopicId": 8,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_176367",
+        "hist_2_167422",
+        "hist_2_177451"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0095",
+      "event": "установление сёгуната Токугава",
+      "year": 1603,
+      "endYear": 1603,
+      "dateLabel": "1603 г.",
+      "courseTopicId": 7,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_197564"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0096",
+      "event": "осада Пскова войском Стефана Батория",
+      "year": 1581,
+      "endYear": 1582,
+      "dateLabel": "1581–1582 гг.",
+      "courseTopicId": 6,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_197564"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0097",
+      "event": "создание группы «Освобождение труда»",
+      "year": 1883,
+      "endYear": 1883,
+      "dateLabel": "1883 г.",
+      "courseTopicId": 18,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167415"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0099",
+      "event": "разгром войск генерала П.Н. Врангеля в Крыму",
+      "year": 1920,
+      "endYear": 1920,
+      "dateLabel": "1920 г.",
+      "courseTopicId": 26,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167417",
+        "hist_2_167430"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0100",
+      "event": "завершение Реконкисты на Пиренейском полуострове",
+      "year": 1492,
+      "endYear": 1492,
+      "dateLabel": "1492 г.",
+      "courseTopicId": 4,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167417",
+        "hist_2_167421",
+        "hist_2_181811"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0102",
+      "event": "убийство эрцгерцога Франца Фердинанда («Сараевский инцидент»)",
+      "year": 1914,
+      "endYear": 1914,
+      "dateLabel": "1914 г.",
+      "courseTopicId": 23,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167418"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0103",
+      "event": "«стояние» на реке Угре",
+      "year": 1480,
+      "endYear": 1480,
+      "dateLabel": "1480 г.",
+      "courseTopicId": 4,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167418",
+        "hist_2_167426",
+        "hist_2_181807"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0104",
+      "event": "учреждение Государственного совета Российской империи",
+      "year": 1810,
+      "endYear": 1810,
+      "dateLabel": "1810 г.",
+      "courseTopicId": 15,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167419",
+        "hist_2_167978",
+        "hist_2_181781"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0105",
+      "event": "принятие Декларации независимости США",
+      "year": 1776,
+      "endYear": 1776,
+      "dateLabel": "1776 г.",
+      "courseTopicId": 12,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167419"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0106",
+      "event": "Чесменское сражение",
+      "year": 1770,
+      "endYear": 1770,
+      "dateLabel": "1770 г.",
+      "courseTopicId": 12,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167420",
+        "hist_2_181560"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0107",
+      "event": "изобретение книгопечатания И. Гутенбергом",
+      "year": 1440,
+      "endYear": 1449,
+      "dateLabel": "1440-е годы",
+      "courseTopicId": 5,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167420"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation",
+      "verificationSources": [
+        "https://my-uchebnik.ru/book/history/5/history-00000288.htm"
+      ],
+      "reviewedAt": "2026-09-27",
+      "reviewNote": "Уточнено по проверке учебников линии Мединского, издания 2025 года; остальные факты базы повторно не проверялись."
+    },
+    {
+      "factId": "CH2-0108",
+      "event": "учреждение Святейшего Синода",
+      "year": 1721,
+      "endYear": 1721,
+      "dateLabel": "1721 г.",
+      "courseTopicId": 9,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167421"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0110",
+      "event": "II Всероссийский съезд Советов",
+      "year": 1917,
+      "endYear": 1917,
+      "dateLabel": "1917 г.",
+      "courseTopicId": 24,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167422"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0111",
+      "event": "«Сто дней» Наполеона",
+      "year": 1815,
+      "endYear": 1815,
+      "dateLabel": "1815 г.",
+      "courseTopicId": 15,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167422",
+        "hist_2_181784"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0112",
+      "event": "заключение Вестфальского мира",
+      "year": 1648,
+      "endYear": 1648,
+      "dateLabel": "1648 г.",
+      "courseTopicId": 8,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167423",
+        "hist_2_167980"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0113",
+      "event": "разгром Непобедимой армады",
+      "year": 1588,
+      "endYear": 1588,
+      "dateLabel": "1588 г.",
+      "courseTopicId": 6,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167426",
+        "hist_2_181786"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0115",
+      "event": "Швейцарский поход А.В. Суворова",
+      "year": 1799,
+      "endYear": 1799,
+      "dateLabel": "1799 г.",
+      "courseTopicId": 13,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167426",
+        "hist_2_181817"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0119",
+      "event": "создание Дальневосточной республики",
+      "year": 1920,
+      "endYear": 1920,
+      "dateLabel": "1920 г.",
+      "courseTopicId": 26,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167429"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0121",
+      "event": "провозглашение Германской империи",
+      "year": 1871,
+      "endYear": 1871,
+      "dateLabel": "1871 г.",
+      "courseTopicId": 17,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167430",
+        "hist_2_167971",
+        "hist_2_177468"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0122",
+      "event": "Синопское сражение",
+      "year": 1853,
+      "endYear": 1853,
+      "dateLabel": "1853 г.",
+      "courseTopicId": 16,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167433"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0123",
+      "event": "начало правления князя Василия II Тёмного",
+      "year": 1425,
+      "endYear": 1425,
+      "dateLabel": "1425 г.",
+      "courseTopicId": 4,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167433"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0124",
+      "event": "гражданская война в США",
+      "year": 1861,
+      "endYear": 1865,
+      "dateLabel": "1861–1865 гг.",
+      "courseTopicId": 17,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167970",
+        "hist_2_181813"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0126",
+      "event": "издание манифеста «Об усовершенствовании государственного порядка»",
+      "year": 1905,
+      "endYear": 1905,
+      "dateLabel": "1905 г.",
+      "courseTopicId": 21,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167971"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0128",
+      "event": "заключение Портсмутского мирного договора между Россией и Японией",
+      "year": 1905,
+      "endYear": 1905,
+      "dateLabel": "1905 г.",
+      "courseTopicId": 21,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167421",
+        "hist_2_167972"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0130",
+      "event": "издание Судебника Ивана IV",
+      "year": 1550,
+      "endYear": 1550,
+      "dateLabel": "1550 г.",
+      "courseTopicId": 6,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167973"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0131",
+      "event": "заключение Сан-Стефанского мира между Россией и Османской империей",
+      "year": 1878,
+      "endYear": 1878,
+      "dateLabel": "1878 г.",
+      "courseTopicId": 17,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167973"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0132",
+      "event": "провозглашение Карла Великого императором",
+      "year": 800,
+      "endYear": 800,
+      "dateLabel": "800 г.",
+      "courseTopicId": 1,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167974"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0134",
+      "event": "отречение Николая II от престола",
+      "year": 1917,
+      "endYear": 1917,
+      "dateLabel": "1917 г.",
+      "courseTopicId": 24,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167974"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0135",
+      "event": "введение заповедных лет",
+      "year": 1581,
+      "endYear": 1581,
+      "dateLabel": "1581 г.",
+      "courseTopicId": 6,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167975"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0136",
+      "event": "начало деятельности Долгого парламента в Англии",
+      "year": 1640,
+      "endYear": 1640,
+      "dateLabel": "1640 г.",
+      "courseTopicId": 8,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167975"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0137",
+      "event": "восстание под предводительством К.А. Булавина",
+      "year": 1707,
+      "endYear": 1708,
+      "dateLabel": "1707–1708 гг.",
+      "courseTopicId": 9,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167975"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0138",
+      "event": "Гренгамское сражение",
+      "year": 1720,
+      "endYear": 1720,
+      "dateLabel": "1720 г.",
+      "courseTopicId": 9,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167976"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0139",
+      "event": "отмена кормлений",
+      "year": 1556,
+      "endYear": 1556,
+      "dateLabel": "1556 г.",
+      "courseTopicId": 6,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167978",
+        "hist_2_181608"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0140",
+      "event": "распад Франкской империи",
+      "year": 843,
+      "endYear": 843,
+      "dateLabel": "843 г.",
+      "courseTopicId": 1,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167978"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0141",
+      "event": "убийство императора Александра II",
+      "year": 1881,
+      "endYear": 1881,
+      "dateLabel": "1881 г.",
+      "courseTopicId": 17,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167979"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0142",
+      "event": "создание стрелецкого войска",
+      "year": 1550,
+      "endYear": 1550,
+      "dateLabel": "1550 г.",
+      "courseTopicId": 6,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167979"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0143",
+      "event": "«Славная революция» в Англии",
+      "year": 1688,
+      "endYear": 1689,
+      "dateLabel": "1688–1689 гг.",
+      "courseTopicId": 9,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167979",
+        "hist_2_181793"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0144",
+      "event": "присоединение к Московскому государству Новгорода",
+      "year": 1478,
+      "endYear": 1478,
+      "dateLabel": "1478 г.",
+      "courseTopicId": 4,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167980",
+        "hist_2_181793"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0145",
+      "event": "издание Жалованной грамоты дворянству",
+      "year": 1785,
+      "endYear": 1785,
+      "dateLabel": "1785 г.",
+      "courseTopicId": 12,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167980"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0146",
+      "event": "Сражение у мыса Калиакрия",
+      "year": 1791,
+      "endYear": 1791,
+      "dateLabel": "1791 г.",
+      "courseTopicId": 12,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_167981"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0147",
+      "event": "начало правления династии Цин в Китае",
+      "year": 1644,
+      "endYear": 1644,
+      "dateLabel": "1644 г.",
+      "courseTopicId": 8,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_112952"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0148",
+      "event": "революция в Мексике",
+      "year": 1910,
+      "endYear": 1917,
+      "dateLabel": "1910–1917 гг.",
+      "courseTopicId": 22,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_112952"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0149",
+      "event": "установление Третьей республики во Франции",
+      "year": 1870,
+      "endYear": 1870,
+      "dateLabel": "1870 г.",
+      "courseTopicId": 17,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_112952"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0151",
+      "event": "междоусобная война в Московском княжестве",
+      "year": 1425,
+      "endYear": 1453,
+      "dateLabel": "1425–1453 гг.",
+      "courseTopicId": 4,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_146457"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation",
+      "verificationSources": [
+        "https://my-uchebnik.ru/book/history/5/history-00000289.htm"
+      ],
+      "reviewedAt": "2026-09-27",
+      "reviewNote": "Уточнено по проверке учебников линии Мединского, издания 2025 года; остальные факты базы повторно не проверялись."
+    },
+    {
+      "factId": "CH2-0152",
+      "event": "восстание под предводительством Ивана Болотникова",
+      "year": 1606,
+      "endYear": 1607,
+      "dateLabel": "1606–1607 гг.",
+      "courseTopicId": 7,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_146457"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0153",
+      "event": "Термидорианский переворот во Франции",
+      "year": 1794,
+      "endYear": 1794,
+      "dateLabel": "1794 г.",
+      "courseTopicId": 12,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_177437",
+        "hist_2_181803"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0154",
+      "event": "создание Священного союза",
+      "year": 1815,
+      "endYear": 1815,
+      "dateLabel": "1815 г.",
+      "courseTopicId": 15,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_177437"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0155",
+      "event": "религиозные войны во Франции",
+      "year": 1562,
+      "endYear": 1598,
+      "dateLabel": "1562–1598 гг.",
+      "courseTopicId": 7,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_177451"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0156",
+      "event": "первый раздел Речи Посполитой",
+      "year": 1772,
+      "endYear": 1772,
+      "dateLabel": "1772 г.",
+      "courseTopicId": 12,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_177451",
+        "hist_2_181813"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0157",
+      "event": "начало церковной реформы патриарха Никона",
+      "year": 1653,
+      "endYear": 1653,
+      "dateLabel": "1653 г.",
+      "courseTopicId": 8,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_177468"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0159",
+      "event": "провозглашение Итальянского королевства",
+      "year": 1861,
+      "endYear": 1861,
+      "dateLabel": "1861 г.",
+      "courseTopicId": 17,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181560"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0161",
+      "event": "провозглашение Парижской коммуны",
+      "year": 1871,
+      "endYear": 1871,
+      "dateLabel": "1871 г.",
+      "courseTopicId": 17,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181581",
+        "hist_2_181815"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0162",
+      "event": "начало Первой мировой войны",
+      "year": 1914,
+      "endYear": 1914,
+      "dateLabel": "1914 г.",
+      "courseTopicId": 23,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181592"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0163",
+      "event": "восстание под предводительством С.Т. Разина",
+      "year": 1670,
+      "endYear": 1671,
+      "dateLabel": "1670–1671 гг.",
+      "courseTopicId": 8,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181592"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0164",
+      "event": "Июльская революция во Франции",
+      "year": 1830,
+      "endYear": 1830,
+      "dateLabel": "1830 г.",
+      "courseTopicId": 16,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181592"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0165",
+      "event": "основание Московского университета",
+      "year": 1755,
+      "endYear": 1755,
+      "dateLabel": "1755 г.",
+      "courseTopicId": 14,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181608"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0166",
+      "event": "возникновение чартизма",
+      "year": 1836,
+      "endYear": 1836,
+      "dateLabel": "1836 г.",
+      "courseTopicId": 16,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181608"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation",
+      "verificationSources": [
+        "https://my-uchebnik.ru/book/history/5/history-00000313.htm"
+      ],
+      "reviewedAt": "2026-09-27",
+      "reviewNote": "Уточнено по проверке учебников линии Мединского, издания 2025 года; остальные факты базы повторно не проверялись."
+    },
+    {
+      "factId": "CH2-0167",
+      "event": "создание III отделения Собственной Его Императорского Величества канцелярии",
+      "year": 1826,
+      "endYear": 1826,
+      "dateLabel": "1826 г.",
+      "courseTopicId": 16,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181777"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0168",
+      "event": "государственный переворот 18–19 брюмера",
+      "year": 1799,
+      "endYear": 1799,
+      "dateLabel": "1799 г.",
+      "courseTopicId": 13,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181777"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0169",
+      "event": "Брусиловский прорыв",
+      "year": 1916,
+      "endYear": 1916,
+      "dateLabel": "1916 г.",
+      "courseTopicId": 23,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181777"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0170",
+      "event": "образование первых министерств в Российской империи",
+      "year": 1802,
+      "endYear": 1802,
+      "dateLabel": "1802 г.",
+      "courseTopicId": 15,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181779"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0171",
+      "event": "провозглашение России республикой",
+      "year": 1917,
+      "endYear": 1917,
+      "dateLabel": "1917 г.",
+      "courseTopicId": 24,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181779",
+        "hist_2_181817"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0172",
+      "event": "Англо-бурская война",
+      "year": 1899,
+      "endYear": 1902,
+      "dateLabel": "1899–1902 гг.",
+      "courseTopicId": 19,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181779"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0174",
+      "event": "начало правления Марии Терезии",
+      "year": 1740,
+      "endYear": 1740,
+      "dateLabel": "1740 г.",
+      "courseTopicId": 11,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181781"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0175",
+      "event": "битва при Клушине",
+      "year": 1610,
+      "endYear": 1610,
+      "dateLabel": "1610 г.",
+      "courseTopicId": 7,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181784"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0178",
+      "event": "Прутский поход Петра I",
+      "year": 1711,
+      "endYear": 1711,
+      "dateLabel": "1711 г.",
+      "courseTopicId": 9,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181786"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0179",
+      "event": "начало правления в Москве Семена Гордого",
+      "year": 1340,
+      "endYear": 1340,
+      "dateLabel": "1340 г.",
+      "courseTopicId": 3,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181786",
+        "hist_2_181788"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0181",
+      "event": "включение Тверского княжества в состав Русского государства",
+      "year": 1485,
+      "endYear": 1485,
+      "dateLabel": "1485 г.",
+      "courseTopicId": 4,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181789"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0184",
+      "event": "отказ Анны Иоанновны от исполнения “Кондиций”",
+      "year": 1730,
+      "endYear": 1730,
+      "dateLabel": "1730 г.",
+      "courseTopicId": 11,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181791"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0185",
+      "event": "капитуляция Наполеона III под Седаном",
+      "year": 1870,
+      "endYear": 1870,
+      "dateLabel": "1870 г.",
+      "courseTopicId": 17,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181791"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0187",
+      "event": "подписание Рижского мира с Польшей",
+      "year": 1921,
+      "endYear": 1921,
+      "dateLabel": "1921 г.",
+      "courseTopicId": 27,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181793"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0188",
+      "event": "подписание Константинопольского мира между Россией и Османской империей",
+      "year": 1700,
+      "endYear": 1700,
+      "dateLabel": "1700 г.",
+      "courseTopicId": 9,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181795"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0189",
+      "event": "первый созыв Генеральных штатов во Франции",
+      "year": 1302,
+      "endYear": 1302,
+      "dateLabel": "1302 г.",
+      "courseTopicId": 3,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181795"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0190",
+      "event": "«Культурная революция» в Китае",
+      "year": 1966,
+      "endYear": 1976,
+      "dateLabel": "1966–1976 гг.",
+      "courseTopicId": 34,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181797"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0191",
+      "event": "Подписание Гюлистанского мирного договора между Россией и Персией",
+      "year": 1813,
+      "endYear": 1813,
+      "dateLabel": "1813 г.",
+      "courseTopicId": 15,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181797"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0192",
+      "event": "учреждение Верховного тайного совета",
+      "year": 1726,
+      "endYear": 1726,
+      "dateLabel": "1726 г.",
+      "courseTopicId": 11,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181797"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0193",
+      "event": "захват Константинополя турками-османами",
+      "year": 1453,
+      "endYear": 1453,
+      "dateLabel": "1453 г.",
+      "courseTopicId": 4,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181799"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0194",
+      "event": "битва при Молодях",
+      "year": 1572,
+      "endYear": 1572,
+      "dateLabel": "1572 г.",
+      "courseTopicId": 6,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181799"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0196",
+      "event": "Невская битва",
+      "year": 1240,
+      "endYear": 1240,
+      "dateLabel": "1240 г.",
+      "courseTopicId": 3,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181801"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0197",
+      "event": "Реставрация Стюартов в Англии",
+      "year": 1660,
+      "endYear": 1660,
+      "dateLabel": "1660 г.",
+      "courseTopicId": 8,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181801"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0198",
+      "event": "подписание Поляновского мирного договора",
+      "year": 1634,
+      "endYear": 1634,
+      "dateLabel": "1634 г.",
+      "courseTopicId": 8,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181803"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0200",
+      "event": "подписание Нерчинского договора с Китаем",
+      "year": 1689,
+      "endYear": 1689,
+      "dateLabel": "1689 г.",
+      "courseTopicId": 9,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181805"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0201",
+      "event": "начало Нидерландской революции",
+      "year": 1566,
+      "endYear": 1566,
+      "dateLabel": "1566 г.",
+      "courseTopicId": 6,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181807"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation",
+      "verificationSources": [
+        "https://trojden.com/books/world-history/history-of-the-modern-age-xv-xvii-7-class-medinskii-2025/11"
+      ],
+      "reviewedAt": "2026-09-27",
+      "reviewNote": "Сохранены обе исходные формулировки отдельными записями; начало борьбы по учебнику — 1566. Не представлять их как два разнесённых по времени события.",
+      "equivalentEventGroup": "netherlands-liberation-onset-1566"
+    },
+    {
+      "factId": "CH2-0203",
+      "event": "введение уроков и погостов",
+      "year": 947,
+      "endYear": 947,
+      "dateLabel": "около 947 г.",
+      "courseTopicId": 1,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181809"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0204",
+      "event": "битва на Шелони",
+      "year": 1471,
+      "endYear": 1471,
+      "dateLabel": "1471 г.",
+      "courseTopicId": 4,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181809"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0206",
+      "event": "начало княжения Владимира Святославича",
+      "year": 978,
+      "endYear": 980,
+      "dateLabel": "978/980 г.",
+      "courseTopicId": 2,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181811"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation",
+      "verificationSources": [
+        "https://my-uchebnik.ru/book/history/5/history-00000289.htm"
+      ],
+      "reviewedAt": "2026-09-27",
+      "reviewNote": "В учебнике указаны альтернативы 978/980. Границы 978–980 — защитный интервал сравнения, а не длительность события."
+    },
+    {
+      "factId": "CH2-0207",
+      "event": "битва на реке Сити",
+      "year": 1238,
+      "endYear": 1238,
+      "dateLabel": "1238 г.",
+      "courseTopicId": 3,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181811"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0208",
+      "event": "начало работы I Государственной думы",
+      "year": 1906,
+      "endYear": 1906,
+      "dateLabel": "1906 г.",
+      "courseTopicId": 21,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181813"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation",
+      "verificationSources": [
+        "https://my-uchebnik.ru/book/history/5/history-00000225.htm"
+      ],
+      "reviewedAt": "2026-09-27",
+      "reviewNote": "Уточнено по проверке учебников линии Мединского, издания 2025 года; остальные факты базы повторно не проверялись."
+    },
+    {
+      "factId": "CH2-0209",
+      "event": "вхождение Крыма в состав Российской империи",
+      "year": 1783,
+      "endYear": 1783,
+      "dateLabel": "1783 г.",
+      "courseTopicId": 12,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181815"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0210",
+      "event": "создание Прогрессивного блока",
+      "year": 1915,
+      "endYear": 1915,
+      "dateLabel": "1915 г.",
+      "courseTopicId": 23,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181815"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0211",
+      "event": "Реставрация Мейдзи в Японии",
+      "year": 1868,
+      "endYear": 1868,
+      "dateLabel": "1868 г.",
+      "courseTopicId": 17,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181817"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0213",
+      "event": "подписание Андрусовского перемирия",
+      "year": 1667,
+      "endYear": 1667,
+      "dateLabel": "1667 г.",
+      "courseTopicId": 8,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181819",
+        "hist_2_102568"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0214",
+      "event": "восстание сипаев",
+      "year": 1857,
+      "endYear": 1859,
+      "dateLabel": "1857–1859 гг.",
+      "courseTopicId": 17,
+      "scope": "world",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181819"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0215",
+      "event": "принятие «Уложения о службе»",
+      "year": 1556,
+      "endYear": 1556,
+      "dateLabel": "1556 г.",
+      "courseTopicId": 6,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_181819"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0217",
+      "event": "венчание на царство Ивана IV",
+      "year": 1547,
+      "endYear": 1547,
+      "dateLabel": "1547 г.",
+      "courseTopicId": 6,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_102568"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    },
+    {
+      "factId": "CH2-0218",
+      "event": "начало Ливонской войны",
+      "year": 1558,
+      "endYear": 1558,
+      "dateLabel": "1558 г.",
+      "courseTopicId": 6,
+      "scope": "russia",
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "hist_2_102568"
+      ],
+      "topicMapping": "reviewed-event-mapping; world topics are suggestions requiring teacher confirmation"
+    }
+  ]
+}
