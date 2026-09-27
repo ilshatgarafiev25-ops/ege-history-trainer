@@ -1100,15 +1100,19 @@ function chronoPool(facts, through, mode) {
   return facts.filter(f => f.enabled !== false && (mode==='current' ? f.courseTopicId===Number(through) : f.courseTopicId<=Number(through)));
 }
 function chronoCompatible(a,b) {
-  return a.factId!==b.factId && a.event.toLowerCase()!==b.event.toLowerCase() && (a.endYear < b.year || b.endYear < a.year);
+  return a.courseTopicId!==b.courseTopicId && a.factId!==b.factId && a.event.toLowerCase()!==b.event.toLowerCase() && (a.endYear < b.year || b.endYear < a.year);
 }
 function chronoGenerate(facts, through, mode, count, existing=[], composition='russia', learnedWorld=[]) {
   if (!Number.isInteger(count) || count<1 || count>100) throw new Error('Количество заданий должно быть целым числом от 1 до 100.');
   if (!['russia','mixed'].includes(composition)) throw new Error('Неизвестный состав задания.');
+  if (Number(through)<3) throw new Error('Задание №2 доступно после изучения минимум трёх тем: нужны три события из трёх разных тем.');
+  if (mode!=='cumulative') throw new Error('Для задания №2 используется только накопительный режим: три события из трёх разных изученных тем.');
   const pool=chronoPool(facts,through,mode), learned=new Set(learnedWorld);
   const russia=pool.filter(f=>f.scope==='russia'), world=pool.filter(f=>f.scope==='world' && learned.has(f.factId));
   if(composition==='mixed' && !world.length) throw new Error('Отметьте хотя бы одно уже изученное событие всеобщей истории ниже.');
-  if(russia.length < (composition==='mixed'?2:3)) throw new Error('Недостаточно событий России в выбранной теме. Выберите накопительный режим или дополните базу.');
+  if(russia.length < (composition==='mixed'?2:3)) throw new Error('Недостаточно изученных событий России для выбранного состава задания. Дополните базу или выберите больше изученных тем.');
+  const eligible=composition==='mixed' ? [...russia,...world] : russia;
+  if(new Set(eligible.map(f=>f.courseTopicId)).size<3) throw new Error('В доступной базе представлены менее трёх разных изученных тем. Для задания №2 нужно по одному событию из каждой из трёх разных тем.');
   const usage=new Map();
   existing.forEach(q=>(q.metadata.atomic.events||[]).forEach(f=>usage.set(f.factId,(usage.get(f.factId)||0)+1)));
   const rank=a=>atomicShuffle(a).sort((a,b)=>(usage.get(a.factId)||0)-(usage.get(b.factId)||0));
@@ -1120,14 +1124,14 @@ function chronoGenerate(facts, through, mode, count, existing=[], composition='r
     } else {
       outer: for(let i=0;i<rr.length;i++) for(let j=i+1;j<rr.length;j++) if(chronoCompatible(rr[i],rr[j])) for(let k=j+1;k<rr.length;k++) if(chronoCompatible(rr[i],rr[k]) && chronoCompatible(rr[j],rr[k])) {chosen=[rr[i],rr[j],rr[k]];break outer;}
     }
-    if(!chosen) throw new Error('Не удалось выбрать три события с однозначным порядком: годы совпадают или периоды пересекаются. Расширьте изученный материал или список изученных зарубежных событий.');
+    if(!chosen) throw new Error('Не удалось выбрать три события из трёх разных тем с однозначным порядком: не хватает подходящих тем, годы совпадают или периоды пересекаются. Расширьте изученный материал или список изученных зарубежных событий.');
     const events=atomicShuffle(chosen), ordered=events.map((f,i)=>({...f,number:i+1})).sort((a,b)=>a.year-b.year);
     const correctText=ordered.map(f=>f.number).join('');
     const required=[...new Set(events.map(f=>f.courseTopicId))].sort((a,b)=>a-b).map(id=>COURSE38_BY_ID.get(id));
     const referenceAnswer='Располагаем события от самого раннего к самому позднему. Номера сохранены из задания.\n\n'+ordered.map(f=>f.number+') '+f.event+' — '+f.dateLabel).join('\n')+'\n\n'+ordered.map(f=>f.dateLabel).join(' → ')+'\nПорядок номеров: '+ordered.map(f=>f.number).join(' → ')+'.\nПоэтому ответ: '+correctText+'.';
     result.push({id:uid('atom2'),type:'short',ogeNumber:2,text:'Расположите в хронологической последовательности исторические события. Запишите цифры, которыми обозначены исторические события, в правильной последовательности.\n\n'+events.map((f,i)=>(i+1)+') '+f.event).join('\n\n'),correctText,maxScore:1,gradingMode:'ordered',referenceAnswer,
       source:'Генератор №2 · '+(composition==='mixed'?'Россия и всеобщая история':'учебная хронология России'),topic:required.map(t=>t.name).join('; '),primaryCourseTopic:required[required.length-1],requiredCourseTopics:required,
-      metadata:{atomic:{version:1,task:2,through:Number(through),mode,composition,events,learnedWorld:world.map(f=>f.factId)},requiredCourseTopics:required}});
+      metadata:{atomic:{version:2,task:2,distinctTopics:true,through:Number(through),mode,composition,events,learnedWorld:world.map(f=>f.factId)},requiredCourseTopics:required}});
     chosen.forEach(f=>usage.set(f.factId,(usage.get(f.factId)||0)+1));
   }
   return result;
@@ -1140,7 +1144,7 @@ function AtomicGeneratorTab({ onReload, task = 1 }) {
   const [composition,setComposition] = useState('russia');
   const [learnedWorld,setLearnedWorld] = useState([]);
   const [facts, setFacts] = useState([]), [status, setStatus] = useState('Загружаю атомарную базу…');
-  const [through, setThrough] = useState('1'), [mode, setMode] = useState('cumulative'), [count, setCount] = useState('10');
+  const [through, setThrough] = useState(task === 2 ? '3' : '1'), [mode, setMode] = useState('cumulative'), [count, setCount] = useState('10');
   const [questions, setQuestions] = useState([]), [error, setError] = useState(''), [busy, setBusy] = useState(false);
   const [name, setName] = useState(''), [training, setTraining] = useState(true), [created, setCreated] = useState(null);
   const [saved, setSaved] = useState(new Set());
@@ -1209,8 +1213,8 @@ function AtomicGeneratorTab({ onReload, task = 1 }) {
     h('div', {className:'card'}, h('h2',null,'Генератор №'+task), h('div',{className:'notice',role:'status'},status),
       h('label',{htmlFor:aid('file')},'Загрузить / заменить атомарную базу (JSON)'), h('input',{id:aid('file'),type:'file',accept:'.json,application/json',disabled:busy,onChange:e => {importFacts(e.target.files[0]); e.target.value='';}}),
       h('label',{htmlFor:aid('through')},'Ученик изучил до темы:'), h('select',{id:aid('through'),value:through,disabled:busy,onChange:e=>setThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name))),
-      h('label',{htmlFor:aid('mode')},'Режим генерации'),h('select',{id:aid('mode'),value:mode,disabled:busy,onChange:e=>setMode(e.target.value)},h('option',{value:'cumulative'},'Накопительно: темы 1–'+through),h('option',{value:'current'},'Только текущая тема '+through)),
-      h('div',{className:'notice'},'Доступно: '+pool.length+' фактов, '+dateCount+' разных дат. '+(task===1 ? 'События и все варианты дат берутся только из выбранного материала. Разметка тем — из вашей базы.' : 'События одного года и пересекающиеся периоды не объединяются. Зарубежные события нужно дополнительно отметить как изученные.')),
+      h('label',{htmlFor:aid('mode')},'Режим генерации'),h('select',{id:aid('mode'),value:mode,disabled:busy,onChange:e=>setMode(e.target.value)},h('option',{value:'cumulative'},'Накопительно: темы 1–'+through),task===1 && h('option',{value:'current'},'Только текущая тема '+through)),
+      h('div',{className:'notice'},'Доступно: '+pool.length+' фактов, '+dateCount+' разных дат. '+(task===1 ? 'События и все варианты дат берутся только из выбранного материала. Разметка тем — из вашей базы.' : 'В каждом задании — 3 события из 3 разных изученных тем. Генерация доступна начиная с темы 3. События одного года и пересекающиеся периоды не объединяются. Зарубежные события нужно дополнительно отметить как изученные.')),
       task===2 && h('div',null,
         h('label',{htmlFor:aid('composition')},'Состав задания'),
         h('select',{id:aid('composition'),value:composition,disabled:busy,onChange:e=>setComposition(e.target.value)},h('option',{value:'russia'},'Учебный режим: 3 события истории России'),h('option',{value:'mixed'},'2 события России + 1 событие всеобщей истории')),
@@ -1224,7 +1228,8 @@ function AtomicGeneratorTab({ onReload, task = 1 }) {
         )
       ),
       h('label',{htmlFor:aid('count')},'Количество заданий (1–100)'),h('input',{id:aid('count'),type:'number',min:1,max:100,value:count,disabled:busy,onChange:e=>setCount(e.target.value)}),
-      h('button',{className:'btn',disabled:busy||!facts.length,onClick:()=>generate()},'Сгенерировать задания №'+task),
+      h('button',{className:'btn',disabled:busy||!facts.length||(task===2 && Number(through)<3),onClick:()=>generate()},'Сгенерировать задания №'+task),
+      task===2 && Number(through)<3 && h('p',{className:'q-meta'},'Сначала нужно изучить минимум три темы. В каждом задании будет по одному событию из трёх разных тем.'),
       task===1 && dateCount<6 && h('p',{className:'q-meta'},'Для полного задания недостаточно разных дат: нужно не менее 6.'),
       questions.length>0 && h('p',{className:'q-meta'},'Изменение настроек применяется к следующему комплекту. Перегенерация сохраняет тему и режим конкретного задания. При малом пуле повторения неизбежны.')
     ),
@@ -1234,7 +1239,7 @@ function AtomicGeneratorTab({ onReload, task = 1 }) {
       h('label',{className:'opt'},h('input',{type:'checkbox',checked:training,disabled:busy,onChange:e=>{setTraining(e.target.checked);setCreated(null);}}),'Тренировочный режим (снять для контрольного)'),
       h('div',{className:'atomic-actions'},h('button',{className:'btn ghost',disabled:busy,onClick:()=>save(false)},'Сохранить в банк'),h('button',{className:'btn',disabled:busy||!!created,onClick:()=>save(true)},busy?'Сохраняю…':'Сохранить и создать тест')),
       created && h('div',{className:'notice'},'Тест создан. Код для ученика: ',h('strong',{className:'test-code'},created.code)),
-      questions.map((q,i)=>h('div',{key:q.id,className:'q-list-item'},h('div',{className:'q-meta'},'Задание '+(i+1)+' · '+(q.metadata.atomic.mode==='current'?'тема ':'темы 1–')+q.metadata.atomic.through+(saved.has(q.id)?' · сохранено в банк':'')),h('div',{className:'q-text'},renderText(q.text)),
+      questions.map((q,i)=>h('div',{key:q.id,className:'q-list-item'},h('div',{className:'q-meta'},'Задание '+(i+1)+' · '+(q.metadata.atomic.mode==='current'?'тема ':'темы 1–')+q.metadata.atomic.through+(task===2?' · темы событий: '+q.metadata.atomic.events.map(f=>f.courseTopicId).join(', '):'')+(saved.has(q.id)?' · сохранено в банк':'')),h('div',{className:'q-text'},renderText(q.text)),
         h('details',null,h('summary',null,'Правильный ответ (преподавателю)'),h('p',null,q.correctText),renderText(q.referenceAnswer)),
         h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',disabled:busy,onClick:()=>generate(i)},'Перегенерировать'),h('button',{className:'btn danger',disabled:busy,onClick:()=>{setQuestions(questions.filter(x=>x.id!==q.id));setCreated(null);}},'Удалить из комплекта'))))
     )
