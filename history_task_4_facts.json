@@ -1,0 +1,4041 @@
+{
+  "meta": {
+    "schema": "history-task4-place-event-time-v1",
+    "sourceQuestions": 79,
+    "sourceRows": 316,
+    "uniqueFacts": 264,
+    "enabledFacts": 263,
+    "courseTopicVersion": "course38-v1",
+    "note": "Строки таблиц из правильных ответов источника. Время и привязка к теме используют хронологический диапазон; перед выдачей проверяйте предпросмотр и историческую точность."
+  },
+  "patterns": [
+    [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ]
+    ]
+  ],
+  "facts": [
+    {
+      "factId": "T4-146468-0001",
+      "place": "Клушино",
+      "event": "поражение войск В. И. Шуйского",
+      "time": "1610-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "146468"
+      ]
+    },
+    {
+      "factId": "T4-146468-0002",
+      "place": "Тушино",
+      "event": "Правление Лжедмитрия II",
+      "time": "1600-е гг.",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "146468"
+      ]
+    },
+    {
+      "factId": "T4-146468-0003",
+      "place": "Ям-Запольский",
+      "event": "подписание перемирия с Польшей",
+      "time": "1580-е гг.",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "146468"
+      ]
+    },
+    {
+      "factId": "T4-146468-0004",
+      "place": "Москва",
+      "event": "Убийство Лжедмитрия I",
+      "time": "1600-е гг.",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "146468"
+      ]
+    },
+    {
+      "factId": "T4-177440-0005",
+      "place": "Тверь",
+      "event": "Включение в состав Русского государства",
+      "time": "1480-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177440"
+      ]
+    },
+    {
+      "factId": "T4-177440-0006",
+      "place": "Варшава",
+      "event": "Антироссийское восстание",
+      "time": "1860-е гг.",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177440"
+      ]
+    },
+    {
+      "factId": "T4-177440-0007",
+      "place": "Оренбург",
+      "event": "восстание под предводительством Е.И. Пугачёва",
+      "time": "1770-е гг.",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177440"
+      ]
+    },
+    {
+      "factId": "T4-177440-0008",
+      "place": "Черкасск",
+      "event": "восстание под предводительством К.А. Булавина",
+      "time": "1700-е гг.",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177440",
+        "182560"
+      ]
+    },
+    {
+      "factId": "T4-181583-0009",
+      "place": "Запорожская область УССР",
+      "event": "Начало строительства Днепрогэса",
+      "time": "1920-е гг.",
+      "courseTopicId": 28,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181583"
+      ]
+    },
+    {
+      "factId": "T4-181583-0010",
+      "place": "Припять",
+      "event": "Авария на Чернобыльской АЭС",
+      "time": "1980-е гг.",
+      "courseTopicId": 35,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181583"
+      ]
+    },
+    {
+      "factId": "T4-181583-0011",
+      "place": "Васильков",
+      "event": "восстание Черниговского полка",
+      "time": "1820-е гг.",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181583",
+        "181476",
+        "202365",
+        "184246"
+      ]
+    },
+    {
+      "factId": "T4-181583-0012",
+      "place": "Яссы",
+      "event": "заключение мирного договора между Россией и Турцией",
+      "time": "1790-е гг.",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181583"
+      ]
+    },
+    {
+      "factId": "T4-181594-0013",
+      "place": "Казань",
+      "event": "взятие города русским войском",
+      "time": "1550-е гг.",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181594"
+      ]
+    },
+    {
+      "factId": "T4-181594-0014",
+      "place": "Челябинск",
+      "event": "присвоение городу неофициального названия «Танкоград»",
+      "time": "1940-е гг.",
+      "courseTopicId": 31,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181594"
+      ]
+    },
+    {
+      "factId": "T4-181594-0015",
+      "place": "река Поляновка",
+      "event": "Подписание мирного договора между Россией и Речью Посполитой",
+      "time": "1630-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181594"
+      ]
+    },
+    {
+      "factId": "T4-181594-0016",
+      "place": "река Сить",
+      "event": "Сражение между русскими и монгольскими войсками",
+      "time": "1230-е гг.",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181594"
+      ]
+    },
+    {
+      "factId": "T4-181610-0017",
+      "place": "Тюмень",
+      "event": "Основание города",
+      "time": "1580-е гг.",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181610",
+        "184246"
+      ]
+    },
+    {
+      "factId": "T4-181610-0018",
+      "place": "Царское Село",
+      "event": "строительство первой железной дороги общественного пользования в России",
+      "time": "1830-е гг.",
+      "courseTopicId": 16,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181610"
+      ]
+    },
+    {
+      "factId": "T4-181610-0019",
+      "place": "Луганск",
+      "event": "вхождение в состав Российской Федерации в период проведения Специальной военной операции (СВО)",
+      "time": "2020-е гг.",
+      "courseTopicId": 38,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181610"
+      ]
+    },
+    {
+      "factId": "T4-181610-0020",
+      "place": "Полтава",
+      "event": "Победа русской армии над шведской в период Северной войны",
+      "time": "1700-е гг.",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181610"
+      ]
+    },
+    {
+      "factId": "T4-182523-0021",
+      "place": "Рязань",
+      "event": "Взятие монгольским войском в ходе Батыева нашествия",
+      "time": "1230-е гг.",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182523"
+      ]
+    },
+    {
+      "factId": "T4-182523-0022",
+      "place": "Новгород",
+      "event": "Разгром города опричным войском",
+      "time": "1560-е гг.",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182523"
+      ]
+    },
+    {
+      "factId": "T4-182523-0023",
+      "place": "Киев",
+      "event": "закрепление города за Россией по «Вечному миру» с Речью Посполитой",
+      "time": "1680-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182523",
+        "163233"
+      ]
+    },
+    {
+      "factId": "T4-182523-0024",
+      "place": "Кишинёв",
+      "event": "присоединение города к России в результате русско-турецкой войны",
+      "time": "1810-е гг.",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182523",
+        "163233"
+      ]
+    },
+    {
+      "factId": "T4-182525-0025",
+      "place": "Тверь",
+      "event": "антиордынское восстание",
+      "time": "1320-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182525",
+        "182533"
+      ]
+    },
+    {
+      "factId": "T4-182525-0026",
+      "place": "село Тушино",
+      "event": "Создание лагеря Лжедмитрия II",
+      "time": "1600-е гг.",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182525",
+        "182538",
+        "163230"
+      ]
+    },
+    {
+      "factId": "T4-182525-0027",
+      "place": "Обнинск",
+      "event": "Строительство первой в мире атомной электростанции",
+      "time": "1950-е гг.",
+      "courseTopicId": 32,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182525",
+        "137406",
+        "163229"
+      ]
+    },
+    {
+      "factId": "T4-182525-0028",
+      "place": "Нарва",
+      "event": "поражение русского войска от шведского",
+      "time": "1690-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182525"
+      ]
+    },
+    {
+      "factId": "T4-182527-0029",
+      "place": "Переславль-Залесский",
+      "event": "Включение в состав Русского государства",
+      "time": "1300-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182527",
+        "182528"
+      ]
+    },
+    {
+      "factId": "T4-182527-0030",
+      "place": "Невьянск",
+      "event": "строительство казённого железоплавильного завода",
+      "time": "1700-е гг.",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182527",
+        "182528"
+      ]
+    },
+    {
+      "factId": "T4-182527-0031",
+      "place": "Набережные Челны",
+      "event": "Пуск первой очереди завода по производству грузовых автомобилей “КамАЗ”",
+      "time": "1970-е гг.",
+      "courseTopicId": 35,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182527",
+        "182528"
+      ]
+    },
+    {
+      "factId": "T4-182527-0032",
+      "place": "Москва",
+      "event": "созыв Уложенной комиссии",
+      "time": "1760-е гг.",
+      "courseTopicId": 11,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182527",
+        "182528"
+      ]
+    },
+    {
+      "factId": "T4-182530-0037",
+      "place": "река Рымник",
+      "event": "победа российской армии над турецкой",
+      "time": "1780-е гг.",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182530"
+      ]
+    },
+    {
+      "factId": "T4-182530-0038",
+      "place": "река Шелонь",
+      "event": "Сражение между московским войском и новгородским ополчением",
+      "time": "1470-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182530",
+        "163228"
+      ]
+    },
+    {
+      "factId": "T4-182530-0039",
+      "place": "река Альма",
+      "event": "сражение между российской армией и войсками коалиции Великобритании, Франции и Турции",
+      "time": "1850-е гг.",
+      "courseTopicId": 16,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182530"
+      ]
+    },
+    {
+      "factId": "T4-182530-0040",
+      "place": "река Днепр",
+      "event": "Гибель князя Святослава Игоревича",
+      "time": "970-е гг.",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182530"
+      ]
+    },
+    {
+      "factId": "T4-182531-0041",
+      "place": "Столбово",
+      "event": "Подписание мира между Россией и Швецией",
+      "time": "1610-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182531"
+      ]
+    },
+    {
+      "factId": "T4-182531-0042",
+      "place": "Азов",
+      "event": "Присоединение к России",
+      "time": "1690-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182531"
+      ]
+    },
+    {
+      "factId": "T4-182531-0043",
+      "place": "река Альма",
+      "event": "сражение между российским войском и англо-франко-турецким войском",
+      "time": "1850-е гг.",
+      "courseTopicId": 16,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182531"
+      ]
+    },
+    {
+      "factId": "T4-182531-0044",
+      "place": "Царское Село",
+      "event": "строительство первой в России железной дороги общественного пользования",
+      "time": "1830-е гг.",
+      "courseTopicId": 16,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182531"
+      ]
+    },
+    {
+      "factId": "T4-182533-0045",
+      "place": "Свияжск",
+      "event": "создание базы русских войск при осаде Казани",
+      "time": "1550-е гг.",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182533",
+        "182539"
+      ]
+    },
+    {
+      "factId": "T4-182533-0046",
+      "place": "Санкт-Петербург",
+      "event": "Убийство императора Александра II",
+      "time": "1880-е гг.",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182533"
+      ]
+    },
+    {
+      "factId": "T4-182533-0047",
+      "place": "Омск",
+      "event": "провозглашение А. В. Колчака Верховным правителем России",
+      "time": "1910-е гг.",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182533"
+      ]
+    },
+    {
+      "factId": "T4-182536-0049",
+      "place": "Дмитров",
+      "event": "основание города князем Юрием Долгоруким",
+      "time": "1150-е гг.",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182536"
+      ]
+    },
+    {
+      "factId": "T4-182536-0050",
+      "place": "Ништадт",
+      "event": "Подписание мира между Россией и Швецией",
+      "time": "1720-е гг.",
+      "courseTopicId": 11,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182536"
+      ]
+    },
+    {
+      "factId": "T4-182536-0051",
+      "place": "Кронштадт",
+      "event": "Вооружённое выступление против политики большевиков",
+      "time": "1920-е гг.",
+      "courseTopicId": 28,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182536"
+      ]
+    },
+    {
+      "factId": "T4-182536-0052",
+      "place": "Кишинёв",
+      "event": "присоединение города в результате русско-турецкой войны",
+      "time": "1810-е гг.",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182536"
+      ]
+    },
+    {
+      "factId": "T4-182538-0053",
+      "place": "Ленинград",
+      "event": "убийство С.М. Кирова",
+      "time": "1930-е гг.",
+      "courseTopicId": 28,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182538",
+        "182552",
+        "154908",
+        "156402",
+        "176567"
+      ]
+    },
+    {
+      "factId": "T4-182538-0054",
+      "place": "деревня Лесная",
+      "event": "Разгром Шведского корпуса генерала А. Левенгаупта отрядом русских войск",
+      "time": "1700-е гг.",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182538"
+      ]
+    },
+    {
+      "factId": "T4-182538-0055",
+      "place": "Смоленск",
+      "event": "соединение 1-й и 2-й русских армий",
+      "time": "1810-е гг.",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182538"
+      ]
+    },
+    {
+      "factId": "T4-182539-0057",
+      "place": "Магнитогорск",
+      "event": "Начало строительства крупного металлургического комбината в годы первой пятилетки",
+      "time": "1920-е гг.",
+      "courseTopicId": 28,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182539"
+      ]
+    },
+    {
+      "factId": "T4-182539-0058",
+      "place": "Рязань",
+      "event": "Создание Первого народного (земского) ополчения",
+      "time": "1610-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182539"
+      ]
+    },
+    {
+      "factId": "T4-182539-0060",
+      "place": "Итиль",
+      "event": "захват города князем Святославом Игоревичем",
+      "time": "960-е гг.",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182539"
+      ]
+    },
+    {
+      "factId": "T4-182541-0061",
+      "place": "Царицын",
+      "event": "оборона города частями Красной Армии от войск под командованием генерала А.И. Деникина",
+      "time": "1910-е гг.",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182541"
+      ]
+    },
+    {
+      "factId": "T4-182541-0062",
+      "place": "Ропша",
+      "event": "Смерть императора Петра III",
+      "time": "1769-е гг.",
+      "courseTopicId": 12,
+      "enabled": false,
+      "reviewReason": "В источнике указано «1769-е гг.» для смерти Петра III, правильное десятилетие — 1760-е.",
+      "sourceQuestionIds": [
+        "182541"
+      ]
+    },
+    {
+      "factId": "T4-182541-0063",
+      "place": "Туркманчай",
+      "event": "подписание мирного договора между Россией и Персией",
+      "time": "1820-е гг.",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182541"
+      ]
+    },
+    {
+      "factId": "T4-182541-0064",
+      "place": "Торжок",
+      "event": "Двухнедельная оборона города от войск хана Батыя",
+      "time": "1230-е гг.",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182541"
+      ]
+    },
+    {
+      "factId": "T4-182543-0065",
+      "place": "Нерчинск",
+      "event": "подписание мирного договора между Россией и империей Цин",
+      "time": "1680-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182543"
+      ]
+    },
+    {
+      "factId": "T4-182543-0066",
+      "place": "Дербент",
+      "event": "Вхождение города в состав Российской империи",
+      "time": "1720-е гг.",
+      "courseTopicId": 11,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182543"
+      ]
+    },
+    {
+      "factId": "T4-182543-0067",
+      "place": "Петроград",
+      "event": "оборона города от армии генерала Н.Н. Юденича",
+      "time": "1910-е гг.",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182543"
+      ]
+    },
+    {
+      "factId": "T4-182543-0068",
+      "place": "Ропша",
+      "event": "Смерть императора Петра III",
+      "time": "1760-е гг.",
+      "courseTopicId": 11,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182543"
+      ]
+    },
+    {
+      "factId": "T4-182545-0069",
+      "place": "Крым",
+      "event": "вхождение в состав Российской империи",
+      "time": "1780-е гг.",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182545"
+      ]
+    },
+    {
+      "factId": "T4-182545-0070",
+      "place": "Херсонская область",
+      "event": "Вождение в состав Российской Федерации",
+      "time": "2020-е гг.",
+      "courseTopicId": 38,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182545"
+      ]
+    },
+    {
+      "factId": "T4-182545-0071",
+      "place": "Минск",
+      "event": "Первый съезд РСДРП",
+      "time": "1890-е гг.",
+      "courseTopicId": 18,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182545",
+        "182550"
+      ]
+    },
+    {
+      "factId": "T4-182545-0072",
+      "place": "Нижний Новгород",
+      "event": "Формирование ополчения во главе с Д.М. Пожарским и К. Мининым",
+      "time": "1610-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182545"
+      ]
+    },
+    {
+      "factId": "T4-182550-0073",
+      "place": "Ништадт",
+      "event": "подписание мирного договора Шведским королевством и Русским царством",
+      "time": "1720-е гг.",
+      "courseTopicId": 11,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182550"
+      ]
+    },
+    {
+      "factId": "T4-182550-0075",
+      "place": "Аушвиц",
+      "event": "освобождение войсками Красной Армии узников нацистского лагеря смерти",
+      "time": "1940-е гг.",
+      "courseTopicId": 31,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182550"
+      ]
+    },
+    {
+      "factId": "T4-182550-0076",
+      "place": "Кунерсдорф",
+      "event": "Разгром прусской армии русско-австрийскими войсками",
+      "time": "1750-е гг.",
+      "courseTopicId": 11,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182550"
+      ]
+    },
+    {
+      "factId": "T4-182552-0078",
+      "place": "Малоярославец",
+      "event": "Одно из главных сражений Отечественной войны 1812 г.",
+      "time": "1810-е гг.",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182552"
+      ]
+    },
+    {
+      "factId": "T4-182552-0079",
+      "place": "Свияжск",
+      "event": "основание крепости для организации штурма Казани",
+      "time": "1550-е гг.",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182552"
+      ]
+    },
+    {
+      "factId": "T4-182552-0080",
+      "place": "Тула",
+      "event": "Создание первого оружейного завода в России",
+      "time": "1710-е гг.",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182552"
+      ]
+    },
+    {
+      "factId": "T4-182553-0081",
+      "place": "Полуостров Гангут",
+      "event": "первая морская победа русского флота",
+      "time": "1710-е гг.",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182553"
+      ]
+    },
+    {
+      "factId": "T4-182553-0082",
+      "place": "Луганск",
+      "event": "Вхождение в состав Российской Федерации",
+      "time": "2020-е гг.",
+      "courseTopicId": 38,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182553"
+      ]
+    },
+    {
+      "factId": "T4-182553-0083",
+      "place": "Портсмут",
+      "event": "заключение мирного договора между Российской империей и Японской империей",
+      "time": "1900-е гг.",
+      "courseTopicId": 22,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182553"
+      ]
+    },
+    {
+      "factId": "T4-182553-0084",
+      "place": "Соловецкие острова",
+      "event": "Восстание против реформы патриарха Никона",
+      "time": "1660-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182553"
+      ]
+    },
+    {
+      "factId": "T4-182555-0085",
+      "place": "Киев",
+      "event": "начало великокняжеского правления Мстислава Владимировича",
+      "time": "1120-е гг.",
+      "courseTopicId": 2,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182555"
+      ]
+    },
+    {
+      "factId": "T4-182555-0086",
+      "place": "Новгород",
+      "event": "Включение в состав Русского государства",
+      "time": "1470-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182555"
+      ]
+    },
+    {
+      "factId": "T4-182555-0087",
+      "place": "Константинополь",
+      "event": "крещение княгини Ольги",
+      "time": "950-е гг.",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182555"
+      ]
+    },
+    {
+      "factId": "T4-182555-0088",
+      "place": "река Альта",
+      "event": "Сражение между русскими и половецкими войсками",
+      "time": "1060-е гг.",
+      "courseTopicId": 2,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182555"
+      ]
+    },
+    {
+      "factId": "T4-182556-0089",
+      "place": "Рига",
+      "event": "подписание мирного договора между РСФСР и Польской Республикой",
+      "time": "1920-е гг.",
+      "courseTopicId": 28,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182556"
+      ]
+    },
+    {
+      "factId": "T4-182556-0090",
+      "place": "река Волга",
+      "event": "“Поход за зипунами” под предводительством С.Т. Разина",
+      "time": "1660-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182556"
+      ]
+    },
+    {
+      "factId": "T4-182556-0091",
+      "place": "Вена",
+      "event": "создание Священного союза",
+      "time": "1810-е гг.",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182556"
+      ]
+    },
+    {
+      "factId": "T4-182556-0092",
+      "place": "Псков",
+      "event": "Осада города войсками С. Батория",
+      "time": "1580-е гг.",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182556"
+      ]
+    },
+    {
+      "factId": "T4-182558-0093",
+      "place": "Москва",
+      "event": "ссылка А.Д. Меншикова",
+      "time": "1400-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182558"
+      ]
+    },
+    {
+      "factId": "T4-182558-0094",
+      "place": "Нерчинск",
+      "event": "Вхождение в состав Российской Федерации",
+      "time": "1790-е гг.",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182558"
+      ]
+    },
+    {
+      "factId": "T4-182558-0095",
+      "place": "Углич",
+      "event": "осада города войсками Едигея",
+      "time": "1590-е гг.",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182558"
+      ]
+    },
+    {
+      "factId": "T4-182558-0096",
+      "place": "Албазин",
+      "event": "Заключение мирного договора между Российским государство и империей Цин",
+      "time": "1680-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182558"
+      ]
+    },
+    {
+      "factId": "T4-182560-0098",
+      "place": "Челябинск",
+      "event": "Строительство Транссибирской магистрали",
+      "time": "1890-е гг.",
+      "courseTopicId": 18,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182560"
+      ]
+    },
+    {
+      "factId": "T4-182560-0099",
+      "place": "Выборг",
+      "event": "подписание договоров между Швецией и Россией о военной помощи",
+      "time": "1600-е гг.",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182560"
+      ]
+    },
+    {
+      "factId": "T4-182560-0100",
+      "place": "Смоленск",
+      "event": "Вхождение в состав Российского государства",
+      "time": "1510-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182560"
+      ]
+    },
+    {
+      "factId": "T4-138350-0101",
+      "place": "Москва",
+      "event": "Соляной бунт",
+      "time": "1640-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "138350"
+      ]
+    },
+    {
+      "factId": "T4-138350-0102",
+      "place": "Андрианополь",
+      "event": "Подписание мирного договора между Россией и Турцией",
+      "time": "1820-е гг.",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "138350"
+      ]
+    },
+    {
+      "factId": "T4-138350-0103",
+      "place": "Азов",
+      "event": "Захват донскими и запорожскими казаками",
+      "time": "1630-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "138350",
+        "138152"
+      ]
+    },
+    {
+      "factId": "T4-138350-0104",
+      "place": "Кашлык",
+      "event": "поход казаков Ермака Тимофеевича в Сибирь",
+      "time": "1580-е гг.",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "138350",
+        "158003"
+      ]
+    },
+    {
+      "factId": "T4-138574-0105",
+      "place": "Тула",
+      "event": "осада города войском царя Василия Шуйского",
+      "time": "1600-е гг.",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "138574"
+      ]
+    },
+    {
+      "factId": "T4-138574-0106",
+      "place": "Севастополь",
+      "event": "Оборона от англо-франко-турецких войск",
+      "time": "1850-е гг.",
+      "courseTopicId": 16,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "138574"
+      ]
+    },
+    {
+      "factId": "T4-138574-0107",
+      "place": "Омск",
+      "event": "провозглашение А.В. Колчака Верховным правителем России",
+      "time": "1910-е гг.",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "138574"
+      ]
+    },
+    {
+      "factId": "T4-138574-0108",
+      "place": "Москва",
+      "event": "Перенос кафедры митрополита из Владимира",
+      "time": "1320-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "138574"
+      ]
+    },
+    {
+      "factId": "T4-139103-0109",
+      "place": "Дербент",
+      "event": "Вхождение в состав Российского государства",
+      "time": "1720-е гг.",
+      "courseTopicId": 11,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "139103"
+      ]
+    },
+    {
+      "factId": "T4-139103-0110",
+      "place": "Таганрог",
+      "event": "Смерть императора Александра I",
+      "time": "1820-е гг.",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "139103",
+        "137658"
+      ]
+    },
+    {
+      "factId": "T4-139103-0111",
+      "place": "Владимир",
+      "event": "перенос в город столицы Северо-Восточной Руси",
+      "time": "1150-е гг.",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "139103"
+      ]
+    },
+    {
+      "factId": "T4-139103-0112",
+      "place": "Москва",
+      "event": "провозглашение царями сыновей Алексея Михайловича Романова Ивана и Петра",
+      "time": "1680-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "139103"
+      ]
+    },
+    {
+      "factId": "T4-141505-0113",
+      "place": "Минск",
+      "event": "I съезд Российской социал-демократической рабочей партии",
+      "time": "1890-е гг.",
+      "courseTopicId": 18,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "141505"
+      ]
+    },
+    {
+      "factId": "T4-141505-0114",
+      "place": "о. Корфу",
+      "event": "военная операция русско-турецкого флота против французских войск",
+      "time": "1790-е гг.",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "141505"
+      ]
+    },
+    {
+      "factId": "T4-141505-0115",
+      "place": "Иваново-Вознесенск",
+      "event": "Образование первого совета рабочих депутатов",
+      "time": "1900-е гг.",
+      "courseTopicId": 22,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "141505"
+      ]
+    },
+    {
+      "factId": "T4-141505-0116",
+      "place": "Челябинск",
+      "event": "Мятеж Чехословацкого корпуса",
+      "time": "1910-е гг.",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "141505"
+      ]
+    },
+    {
+      "factId": "T4-141508-0117",
+      "place": "река Прут",
+      "event": "Поход русской армии во главе с Петром I против Османской империи",
+      "time": "1710-е гг.",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "141508"
+      ]
+    },
+    {
+      "factId": "T4-141508-0118",
+      "place": "река Поляновка",
+      "event": "заключение мира с Речью Посполитой",
+      "time": "1630-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "141508"
+      ]
+    },
+    {
+      "factId": "T4-141508-0119",
+      "place": "Саратов",
+      "event": "Восстание под предводительством Е.И. Пугачева",
+      "time": "1770-е гг.",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "141508"
+      ]
+    },
+    {
+      "factId": "T4-141508-0120",
+      "place": "село Молоди",
+      "event": "победа русского войска над крымскими войсками",
+      "time": "1570-е гг.",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "141508",
+        "153655"
+      ]
+    },
+    {
+      "factId": "T4-142736-0121",
+      "place": "село Коломенское",
+      "event": "Медный бунт",
+      "time": "1660-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "142736",
+        "144796",
+        "153655"
+      ]
+    },
+    {
+      "factId": "T4-142736-0122",
+      "place": "Донбасс",
+      "event": "установление трудового рекорда А.Г. Стахановым",
+      "time": "1930-е гг.",
+      "courseTopicId": 28,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "142736",
+        "144796"
+      ]
+    },
+    {
+      "factId": "T4-142736-0123",
+      "place": "Новгород Великий",
+      "event": "Разгром города опричным войском",
+      "time": "1560-е гг.",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "142736",
+        "144796"
+      ]
+    },
+    {
+      "factId": "T4-142736-0124",
+      "place": "Гатчина",
+      "event": "создание первой в мире атомной электростанции",
+      "time": "1880-е гг.",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "142736"
+      ]
+    },
+    {
+      "factId": "T4-142737-0125",
+      "place": "Минск",
+      "event": "Создание Российской социал-демократической рабочей партии",
+      "time": "1890-е гг.",
+      "courseTopicId": 18,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "142737"
+      ]
+    },
+    {
+      "factId": "T4-142737-0126",
+      "place": "Березов",
+      "event": "ссылка А.Д. Меншикова",
+      "time": "1720-е гг.",
+      "courseTopicId": 11,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "142737",
+        "156402",
+        "168730"
+      ]
+    },
+    {
+      "factId": "T4-142737-0127",
+      "place": "Воронеж",
+      "event": "Строительство первых кораблей российского воено-морского флота",
+      "time": "1690-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "142737"
+      ]
+    },
+    {
+      "factId": "T4-142737-0128",
+      "place": "Новочеркасск",
+      "event": "расстрел рабочей демонстрации против повышения цен и снижения трудовых расценок",
+      "time": "1960-е гг.",
+      "courseTopicId": 34,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "142737"
+      ]
+    },
+    {
+      "factId": "T4-144796-0132",
+      "place": "Орехово-Зуево",
+      "event": "Морозовская стачка",
+      "time": "1880-е гг.",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "144796"
+      ]
+    },
+    {
+      "factId": "T4-147716-0133",
+      "place": "река Непрядва",
+      "event": "Куликовская битва",
+      "time": "1370-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "147716"
+      ]
+    },
+    {
+      "factId": "T4-147716-0134",
+      "place": "Любеч",
+      "event": "съезд русских князей",
+      "time": "1090-е гг.",
+      "courseTopicId": 2,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "147716",
+        "175710"
+      ]
+    },
+    {
+      "factId": "T4-147716-0135",
+      "place": "Хазарский каганат",
+      "event": "Походы князя Святослава Игоревича",
+      "time": "960-е гг.",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "147716"
+      ]
+    },
+    {
+      "factId": "T4-147716-0136",
+      "place": "Новгород",
+      "event": "ликвидация в городе вечевого управления",
+      "time": "1470-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "147716"
+      ]
+    },
+    {
+      "factId": "T4-147839-0137",
+      "place": "Смоленск",
+      "event": "Поход Олега Вещего на Киев",
+      "time": "880-е гг.",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "147839"
+      ]
+    },
+    {
+      "factId": "T4-147839-0138",
+      "place": "Тверь",
+      "event": "присоединение города к Московскому княжеству",
+      "time": "1480-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "147839",
+        "163230"
+      ]
+    },
+    {
+      "factId": "T4-147839-0139",
+      "place": "Углич",
+      "event": "Гибель царевича Дмитрия",
+      "time": "1590-е гг.",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "147839",
+        "150531"
+      ]
+    },
+    {
+      "factId": "T4-147839-0140",
+      "place": "река Калка",
+      "event": "первое столкновение русских дружин с монгольским войском",
+      "time": "1220-е гг.",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "147839",
+        "166174"
+      ]
+    },
+    {
+      "factId": "T4-148912-0141",
+      "place": "Псковская земля",
+      "event": "победа князя Александра Невского над Ливонским орденом",
+      "time": "1240-е гг.",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "148912"
+      ]
+    },
+    {
+      "factId": "T4-148912-0142",
+      "place": "река Плюсса",
+      "event": "Перемирие со Швецией, закончившее Ливонскую войну",
+      "time": "1580-е гг.",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "148912",
+        "155415"
+      ]
+    },
+    {
+      "factId": "T4-148912-0143",
+      "place": "Ярославль",
+      "event": "Присоединение города к Московскому княжеству",
+      "time": "1460-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "148912"
+      ]
+    },
+    {
+      "factId": "T4-148912-0144",
+      "place": "Тверь",
+      "event": "восстание против ордынского отряда Чолхана",
+      "time": "1320-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "148912",
+        "151860",
+        "166174"
+      ]
+    },
+    {
+      "factId": "T4-150531-0145",
+      "place": "Владимир",
+      "event": "Взятие и разорение города войсками Батыя",
+      "time": "1230-е гг.",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "150531"
+      ]
+    },
+    {
+      "factId": "T4-150531-0146",
+      "place": "Река Вожа",
+      "event": "разгром ордынского войска войском московского князя",
+      "time": "1370-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "150531",
+        "164076",
+        "176175"
+      ]
+    },
+    {
+      "factId": "T4-150531-0147",
+      "place": "Ярославль",
+      "event": "Присоединение к Московскому княжеству",
+      "time": "1460-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "150531",
+        "166174",
+        "175710",
+        "178473"
+      ]
+    },
+    {
+      "factId": "T4-151860-0149",
+      "place": "река Иртыш",
+      "event": "Поход атамана Ермака",
+      "time": "1580-е гг.",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "151860"
+      ]
+    },
+    {
+      "factId": "T4-151860-0150",
+      "place": "река Угра",
+      "event": "Противостояние московского войска во главе с Иваном III ордынским войскам хана Ахмата",
+      "time": "1480-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "151860",
+        "155415"
+      ]
+    },
+    {
+      "factId": "T4-151860-0151",
+      "place": "Искоростень",
+      "event": "уничтожение города войсками княгини Ольги",
+      "time": "940-е гг.",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "151860"
+      ]
+    },
+    {
+      "factId": "T4-153655-0154",
+      "place": "Можайск",
+      "event": "присоединение города к Московскому княжеству",
+      "time": "1300-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "153655"
+      ]
+    },
+    {
+      "factId": "T4-153655-0155",
+      "place": "Коломна",
+      "event": "Сражение близ города между русскими дружинами и монгольским войском",
+      "time": "1230-е гг.",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "153655"
+      ]
+    },
+    {
+      "factId": "T4-154908-0158",
+      "place": "Смоленск",
+      "event": "арьергардный бой русской армии против войск Наполеона",
+      "time": "1810-е гг.",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "154908",
+        "156402"
+      ]
+    },
+    {
+      "factId": "T4-154908-0159",
+      "place": "Москва",
+      "event": "Казнь Е.И. Пугачёва",
+      "time": "1770-е гг.",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "154908"
+      ]
+    },
+    {
+      "factId": "T4-154908-0160",
+      "place": "река Поляновка",
+      "event": "подписание перемирия Русского государства с Речью Посполитой",
+      "time": "1630-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "154908"
+      ]
+    },
+    {
+      "factId": "T4-155415-0162",
+      "place": "река Амур",
+      "event": "Поход землепроходца В.Д. Пояркова",
+      "time": "1640-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "155415"
+      ]
+    },
+    {
+      "factId": "T4-155415-0164",
+      "place": "река Кагул",
+      "event": "победа российского войска под руководством П.А. Румянцева над турецким",
+      "time": "1760-е гг.",
+      "courseTopicId": 11,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "155415"
+      ]
+    },
+    {
+      "factId": "T4-156402-0168",
+      "place": "Припять",
+      "event": "ликвидация последствий аварии на Чернобыльской АЭС",
+      "time": "1980-е гг.",
+      "courseTopicId": 35,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "156402",
+        "181476"
+      ]
+    },
+    {
+      "factId": "T4-158003-0169",
+      "place": "Порт-Артур",
+      "event": "Оборона города в ходе русско-японской войны",
+      "time": "1900-е гг.",
+      "courseTopicId": 22,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "158003"
+      ]
+    },
+    {
+      "factId": "T4-158003-0171",
+      "place": "Севастополь",
+      "event": "Оборона города в период Крымской войны",
+      "time": "1850-е гг.",
+      "courseTopicId": 16,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "158003"
+      ]
+    },
+    {
+      "factId": "T4-158003-0172",
+      "place": "Черкасск",
+      "event": "гибель предводителя восстания К.А. Булавина",
+      "time": "1700-е гг.",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "158003"
+      ]
+    },
+    {
+      "factId": "T4-159196-0173",
+      "place": "Вена",
+      "event": "Переговоры об устройстве Европы после наполеоновских войн",
+      "time": "1810-е гг.",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "159196"
+      ]
+    },
+    {
+      "factId": "T4-159196-0174",
+      "place": "Портсмут",
+      "event": "заключение мирного договора России с Японией",
+      "time": "1900-е гг.",
+      "courseTopicId": 22,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "159196"
+      ]
+    },
+    {
+      "factId": "T4-159196-0175",
+      "place": "Тегеран",
+      "event": "Первая конференция руководителей стран антигитлеровской коалиции – «Большой тройки»",
+      "time": "1940-е гг.",
+      "courseTopicId": 31,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "159196"
+      ]
+    },
+    {
+      "factId": "T4-159196-0176",
+      "place": "Ништадт",
+      "event": "подписание мира, завершившего Северную войну",
+      "time": "1720-е гг.",
+      "courseTopicId": 11,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "159196"
+      ]
+    },
+    {
+      "factId": "T4-161172-0177",
+      "place": "Ропша",
+      "event": "Убийство Петра III",
+      "time": "1760-е гг.",
+      "courseTopicId": 11,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "161172"
+      ]
+    },
+    {
+      "factId": "T4-161172-0178",
+      "place": "Воронеж",
+      "event": "строительство первых кораблей российского военно-морского флота",
+      "time": "1690-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "161172",
+        "168730"
+      ]
+    },
+    {
+      "factId": "T4-161172-0179",
+      "place": "Царское Село",
+      "event": "постройка первой пассажирской железной дороги в России",
+      "time": "1830-е гг.",
+      "courseTopicId": 16,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "161172"
+      ]
+    },
+    {
+      "factId": "T4-161172-0180",
+      "place": "Тула",
+      "event": "Оборонительные бои против немецких войск под командованием Г. Гудериана",
+      "time": "1940-е гг.",
+      "courseTopicId": 31,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "161172"
+      ]
+    },
+    {
+      "factId": "T4-162296-0181",
+      "place": "Полтава",
+      "event": "Решающее сухопутное сражение Северной войны",
+      "time": "1700-е гг.",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "162296"
+      ]
+    },
+    {
+      "factId": "T4-162296-0182",
+      "place": "село Фили",
+      "event": "принятие М.И. Кутузовым решения об оставлении Москвы неприятелю",
+      "time": "1810-е гг.",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "162296"
+      ]
+    },
+    {
+      "factId": "T4-162296-0183",
+      "place": "село Бездна",
+      "event": "крестьянское выступление против условий отмены крепостного права",
+      "time": "1860-е гг.",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "162296"
+      ]
+    },
+    {
+      "factId": "T4-162296-0184",
+      "place": "Куйбышев",
+      "event": "Эвакуация советского правительства из Москвы",
+      "time": "1940-е гг.",
+      "courseTopicId": 31,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "162296"
+      ]
+    },
+    {
+      "factId": "T4-164076-0185",
+      "place": "Река Альта",
+      "event": "сражение между дружинами Ярослава Владимировича и Святополка Окаянного",
+      "time": "1010-е гг.",
+      "courseTopicId": 2,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "164076",
+        "176175"
+      ]
+    },
+    {
+      "factId": "T4-164076-0186",
+      "place": "Смоленск",
+      "event": "Поход князя Олега Вещего на Киев",
+      "time": "880-е гг.",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "164076"
+      ]
+    },
+    {
+      "factId": "T4-164076-0188",
+      "place": "река Волга",
+      "event": "получение великим князем владимирским Ярославом Всеволодовичем ярлыка от хана Золотой Орды",
+      "time": "1240-е гг.",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "164076"
+      ]
+    },
+    {
+      "factId": "T4-166174-0190",
+      "place": "Река Шелонь",
+      "event": "разгром новгородского войска войском великого московского князя",
+      "time": "1470-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "166174"
+      ]
+    },
+    {
+      "factId": "T4-168730-0195",
+      "place": "Павловск",
+      "event": "Постройка первой железной дороги в России",
+      "time": "1830-е гг.",
+      "courseTopicId": 16,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "168730"
+      ]
+    },
+    {
+      "factId": "T4-168730-0196",
+      "place": "Астрахань",
+      "event": "восстание под руководством Степана Разина",
+      "time": "1660-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "168730"
+      ]
+    },
+    {
+      "factId": "T4-169819-0197",
+      "place": "Азов",
+      "event": "Первые военные походы Петра I",
+      "time": "1690-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169819"
+      ]
+    },
+    {
+      "factId": "T4-169819-0198",
+      "place": "Соловки",
+      "event": "начало восстания против реформ патриарха Никона",
+      "time": "1660-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169819"
+      ]
+    },
+    {
+      "factId": "T4-169819-0199",
+      "place": "Иркутск",
+      "event": "Ссылка декабристов",
+      "time": "1820-е гг.",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169819"
+      ]
+    },
+    {
+      "factId": "T4-169819-0200",
+      "place": "Царицын",
+      "event": "восстание под предводительством Е.И. Пугачёва",
+      "time": "1770-е гг.",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169819"
+      ]
+    },
+    {
+      "factId": "T4-169851-0201",
+      "place": "село Тушино",
+      "event": "Формирование лагеря Лжедмитрия II",
+      "time": "1600-е гг.",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169851"
+      ]
+    },
+    {
+      "factId": "T4-169851-0202",
+      "place": "Смоленск",
+      "event": "присоединение города к Московскому государству",
+      "time": "1510-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169851"
+      ]
+    },
+    {
+      "factId": "T4-169851-0203",
+      "place": "Малоярославец",
+      "event": "Военные действия русских войск против армии Наполеона",
+      "time": "1810-е гг.",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169851"
+      ]
+    },
+    {
+      "factId": "T4-169851-0204",
+      "place": "деревня Лесная",
+      "event": "разгром русскими войсками корпуса генерала Левенгаупта",
+      "time": "1700-е гг.",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169851"
+      ]
+    },
+    {
+      "factId": "T4-169887-0205",
+      "place": "Село Бездна",
+      "event": "Крестьянское восстание против условий отмены крепостного права",
+      "time": "1860-е гг.",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169887"
+      ]
+    },
+    {
+      "factId": "T4-169887-0206",
+      "place": "Новочеркасск",
+      "event": "начало формирования Добровольческой армии генералом М.В. Алексеевым",
+      "time": "1910-е гг.",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169887"
+      ]
+    },
+    {
+      "factId": "T4-169887-0207",
+      "place": "Магнитогорск",
+      "event": "Завершение строительства металлургического комбината",
+      "time": "1930-е гг.",
+      "courseTopicId": 28,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169887"
+      ]
+    },
+    {
+      "factId": "T4-169887-0208",
+      "place": "Екатеринбург",
+      "event": "восстание под предводительством Е.И. Пугачёва",
+      "time": "1770-е гг.",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169887"
+      ]
+    },
+    {
+      "factId": "T4-174384-0209",
+      "place": "Итиль",
+      "event": "Походы князя Святослава Игоревича",
+      "time": "960-е гг.",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "174384"
+      ]
+    },
+    {
+      "factId": "T4-174384-0210",
+      "place": "Москва",
+      "event": "встреча ростово-суздальского князя Юрия Долгорукого с новгород-северским князем Святославом Ольговичем",
+      "time": "1140-е гг.",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "174384"
+      ]
+    },
+    {
+      "factId": "T4-174384-0211",
+      "place": "Дербент",
+      "event": "Каспийский поход Петра I",
+      "time": "1720-е гг.",
+      "courseTopicId": 11,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "174384"
+      ]
+    },
+    {
+      "factId": "T4-174384-0212",
+      "place": "Кашлык",
+      "event": "разгром города отрядом атамана Ермака Тимофеевича",
+      "time": "1580-е гг.",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "174384"
+      ]
+    },
+    {
+      "factId": "T4-175710-0215",
+      "place": "Киев",
+      "event": "Убийство Аскольда и Дира",
+      "time": "880-е гг.",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "175710"
+      ]
+    },
+    {
+      "factId": "T4-175710-0216",
+      "place": "Чигирин",
+      "event": "Борьба России и Османской империи за Правобережную Украину",
+      "time": "1670-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "175710"
+      ]
+    },
+    {
+      "factId": "T4-176175-0217",
+      "place": "река Шелонь",
+      "event": "Битва московского и новгородского войск",
+      "time": "1470-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "176175"
+      ]
+    },
+    {
+      "factId": "T4-176175-0219",
+      "place": "Рязань",
+      "event": "Взятие города войсками Батыя",
+      "time": "1230-е гг.",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "176175"
+      ]
+    },
+    {
+      "factId": "T4-176567-0221",
+      "place": "Царицын",
+      "event": "Восстание под руководством Е.И. Пугачёва",
+      "time": "1770-е гг.",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "176567"
+      ]
+    },
+    {
+      "factId": "T4-176567-0222",
+      "place": "Царское Село",
+      "event": "строительство первой российской железной дороги​​​​​​​",
+      "time": "1830-е гг.",
+      "courseTopicId": 16,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "176567"
+      ]
+    },
+    {
+      "factId": "T4-176567-0224",
+      "place": "Москва",
+      "event": "стрелецкий бунт",
+      "time": "1680-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "176567"
+      ]
+    },
+    {
+      "factId": "T4-177511-0225",
+      "place": "Туркманчай",
+      "event": "Подписание мирного договора с Персией",
+      "time": "1820-е гг.",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177511"
+      ]
+    },
+    {
+      "factId": "T4-177511-0226",
+      "place": "Азов",
+      "event": "захват крепости донскими казаками",
+      "time": "1630-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177511"
+      ]
+    },
+    {
+      "factId": "T4-177511-0227",
+      "place": "Москва",
+      "event": "Заседания Уложенной комиссии",
+      "time": "1760-е гг.",
+      "courseTopicId": 11,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177511"
+      ]
+    },
+    {
+      "factId": "T4-177511-0228",
+      "place": "Новочеркасск",
+      "event": "расстрел демонстрации рабочих",
+      "time": "1960-е гг.",
+      "courseTopicId": 34,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177511"
+      ]
+    },
+    {
+      "factId": "T4-178473-0229",
+      "place": "Тверь",
+      "event": "Восстанние против ордынского отряда Чолхана",
+      "time": "1320-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "178473"
+      ]
+    },
+    {
+      "factId": "T4-178473-0230",
+      "place": "Козельск",
+      "event": "оборона города от войск Батыя",
+      "time": "1230-е гг.",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "178473"
+      ]
+    },
+    {
+      "factId": "T4-178473-0231",
+      "place": "Боголюбово",
+      "event": "Гибель великого князя Андрея Юрьевича",
+      "time": "1170-е гг.",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "178473"
+      ]
+    },
+    {
+      "factId": "T4-181476-0234",
+      "place": "Яссы",
+      "event": "Заключение мирного договора с Османской империей",
+      "time": "1790-е гг.",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181476"
+      ]
+    },
+    {
+      "factId": "T4-181476-0236",
+      "place": "Бухта Чемульпо",
+      "event": "бой крейсера «Варяг» с японскими кораблями",
+      "time": "1900-е гг.",
+      "courseTopicId": 22,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181476"
+      ]
+    },
+    {
+      "factId": "T4-202365-0237",
+      "place": "Милан",
+      "event": "Участие России во второй антифранцузской коалиции",
+      "time": "1790-е гг.",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "202365"
+      ]
+    },
+    {
+      "factId": "T4-202365-0239",
+      "place": "Вена",
+      "event": "Великое посольство Петра I",
+      "time": "1690-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "202365"
+      ]
+    },
+    {
+      "factId": "T4-202365-0240",
+      "place": "Ванкувер",
+      "event": "беспосадочный перелет экипажа В.П. Чкалова",
+      "time": "1930-е гг.",
+      "courseTopicId": 28,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "202365"
+      ]
+    },
+    {
+      "factId": "T4-129285-0241",
+      "place": "П-ов Крым",
+      "event": "походы В.В. Голицына",
+      "time": "1680-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "129285"
+      ]
+    },
+    {
+      "factId": "T4-129285-0242",
+      "place": "Смоленск",
+      "event": "Оборона от польских интервентов",
+      "time": "1600-е гг.",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "129285"
+      ]
+    },
+    {
+      "factId": "T4-129285-0243",
+      "place": "Гросс-Егерсдорф",
+      "event": "сражение русской и прусской армий",
+      "time": "1750-е гг.",
+      "courseTopicId": 11,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "129285"
+      ]
+    },
+    {
+      "factId": "T4-129285-0244",
+      "place": "мыс Гангут",
+      "event": "Победа русского флота",
+      "time": "1710-е гг.",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "129285"
+      ]
+    },
+    {
+      "factId": "T4-136987-0245",
+      "place": "Донецк",
+      "event": "вхождение в состав Российской Федерации",
+      "time": "2020-е гг.",
+      "courseTopicId": 38,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "136987"
+      ]
+    },
+    {
+      "factId": "T4-136987-0246",
+      "place": "Владивосток",
+      "event": "Строительство Транссибирской магистрали",
+      "time": "1890-е гг.",
+      "courseTopicId": 18,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "136987"
+      ]
+    },
+    {
+      "factId": "T4-136987-0247",
+      "place": "Деревня Андрусово",
+      "event": "Подписание перемирия между Россией и Речью Посполитой",
+      "time": "1660-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "136987"
+      ]
+    },
+    {
+      "factId": "T4-136987-0248",
+      "place": "Петроград",
+      "event": "деятельность Всероссийского Учредительного собрания",
+      "time": "1910-е гг.",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "136987",
+        "163240"
+      ]
+    },
+    {
+      "factId": "T4-137406-0249",
+      "place": "Херсон",
+      "event": "вхождение в состав Российской Федерации в период проведения Специальной военной операции (СВО)",
+      "time": "2020-е гг.",
+      "courseTopicId": 38,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "137406"
+      ]
+    },
+    {
+      "factId": "T4-137406-0251",
+      "place": "Берёзов",
+      "event": "ссылка А.Д. Меншикова",
+      "time": "1720-е гг.",
+      "courseTopicId": 11,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "137406",
+        "163229"
+      ]
+    },
+    {
+      "factId": "T4-137406-0252",
+      "place": "Кишинёв",
+      "event": "Присоединение города к России в результате войны с Османской империей",
+      "time": "1810-е гг.",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "137406"
+      ]
+    },
+    {
+      "factId": "T4-137585-0253",
+      "place": "Нижний Новгород",
+      "event": "формирование Второго народного (земского) ополчения",
+      "time": "1610-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "137585"
+      ]
+    },
+    {
+      "factId": "T4-137585-0254",
+      "place": "Омск",
+      "event": "Строительство Транссибирской магистрали",
+      "time": "1890-е гг.",
+      "courseTopicId": 18,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "137585"
+      ]
+    },
+    {
+      "factId": "T4-137585-0255",
+      "place": "Архангелогородская губерния",
+      "event": "первые годы жизни М.В. Ломоносова",
+      "time": "1710-е гг.",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "137585"
+      ]
+    },
+    {
+      "factId": "T4-137585-0256",
+      "place": "Екатеринодар (Краснодар)",
+      "event": "Противостояние Красной армии и Добровольческой армии генерала А.И. Деникина",
+      "time": "1910-е гг.",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "137585"
+      ]
+    },
+    {
+      "factId": "T4-137658-0257",
+      "place": "Петроград",
+      "event": "деятельность Учредительного собрания",
+      "time": "1910-е гг.",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "137658"
+      ]
+    },
+    {
+      "factId": "T4-137658-0258",
+      "place": "река Прут",
+      "event": "Окружение войска Петра I армией Османской империи",
+      "time": "1710-е гг.",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "137658"
+      ]
+    },
+    {
+      "factId": "T4-137658-0260",
+      "place": "Горький",
+      "event": "Пребывание в ссылке академика А.Д. Сахарова",
+      "time": "1980-е гг.",
+      "courseTopicId": 35,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "137658"
+      ]
+    },
+    {
+      "factId": "T4-138152-0262",
+      "place": "Углич",
+      "event": "гибель царевича Дмитрия Ивановича",
+      "time": "1590-е гг.",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "138152"
+      ]
+    },
+    {
+      "factId": "T4-138152-0263",
+      "place": "Айгунь",
+      "event": "Подписание договора между Россией и Китаем",
+      "time": "1850-е гг.",
+      "courseTopicId": 16,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "138152"
+      ]
+    },
+    {
+      "factId": "T4-138152-0264",
+      "place": "Тверь",
+      "event": "подавление антиордынского восстания московско-ордынским войском",
+      "time": "1320-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "138152"
+      ]
+    },
+    {
+      "factId": "T4-197570-0265",
+      "place": "Астрахань",
+      "event": "Подавление восстания стрельцов, казаков и городских низов",
+      "time": "1700-е гг.",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "197570"
+      ]
+    },
+    {
+      "factId": "T4-197570-0266",
+      "place": "Свияжск",
+      "event": "создание лагеря для русских войск при осаде Казани",
+      "time": "1550-е гг.",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "197570"
+      ]
+    },
+    {
+      "factId": "T4-197570-0267",
+      "place": "Итиль",
+      "event": "Завоевание города князем Святославом Игоревичем",
+      "time": "960-е гг.",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "197570"
+      ]
+    },
+    {
+      "factId": "T4-197570-0268",
+      "place": "Ярославль",
+      "event": "захват города в ходе антибольшевистского военного мятежа",
+      "time": "1910-е гг.",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "197570"
+      ]
+    },
+    {
+      "factId": "T4-163228-0269",
+      "place": "Река Неман",
+      "event": "встреча Александра I и Наполеона I",
+      "time": "1800-е гг.",
+      "courseTopicId": 13,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163228"
+      ]
+    },
+    {
+      "factId": "T4-163228-0271",
+      "place": "Река Иртыш",
+      "event": "гибель атамана Ермака",
+      "time": "1580-е гг.",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163228"
+      ]
+    },
+    {
+      "factId": "T4-163228-0272",
+      "place": "река Днепр",
+      "event": "Начало строительства крупнейшей электростанции, предусмотренной планом ГОЭЛРО",
+      "time": "1920-е гг.",
+      "courseTopicId": 28,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163228"
+      ]
+    },
+    {
+      "factId": "T4-163229-0274",
+      "place": "деревня Столбово",
+      "event": "Подписание мирного договора между Россией и Швецией",
+      "time": "1610-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163229"
+      ]
+    },
+    {
+      "factId": "T4-163229-0275",
+      "place": "Санкт-Петербург",
+      "event": "Подписание договора между Россией и Японией",
+      "time": "1870-е гг.",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163229"
+      ]
+    },
+    {
+      "factId": "T4-163230-0277",
+      "place": "Оренбург",
+      "event": "оборона города в период восстания под предводительством Е.И. Пугачёва",
+      "time": "1770-е гг.",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163230"
+      ]
+    },
+    {
+      "factId": "T4-163230-0278",
+      "place": "Одесса",
+      "event": "восстание на броненосце «Князь Потёмкин-Таврический»",
+      "time": "1900-е гг.",
+      "courseTopicId": 22,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163230"
+      ]
+    },
+    {
+      "factId": "T4-163231-0281",
+      "place": "Река Шелонь",
+      "event": "победа московского войска над новгородским ополчением",
+      "time": "1470-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163231"
+      ]
+    },
+    {
+      "factId": "T4-163231-0282",
+      "place": "река Ангара",
+      "event": "Завершение строительства Братской ГЭС",
+      "time": "1960-е гг.",
+      "courseTopicId": 34,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163231"
+      ]
+    },
+    {
+      "factId": "T4-163231-0283",
+      "place": "Река Неман",
+      "event": "переправа наполеоновской армии через реку",
+      "time": "1810-е гг.",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163231"
+      ]
+    },
+    {
+      "factId": "T4-163231-0284",
+      "place": "река Рымник",
+      "event": "Победа войск под командованием А.В. Суворова над численно превосходящими турецкими силами",
+      "time": "1780-е гг.",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163231"
+      ]
+    },
+    {
+      "factId": "T4-163233-0285",
+      "place": "Москва",
+      "event": "Первое упоминание в летописи",
+      "time": "1140-е гг.",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163233"
+      ]
+    },
+    {
+      "factId": "T4-163233-0286",
+      "place": "Псков",
+      "event": "Оборона города в ходе Ливонской войны от войск Стефана Батория",
+      "time": "1580-е гг.",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163233"
+      ]
+    },
+    {
+      "factId": "T4-163236-0289",
+      "place": "Новгород",
+      "event": "призвание варяжских князей на Русь",
+      "time": "860-е гг.",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163236"
+      ]
+    },
+    {
+      "factId": "T4-163236-0290",
+      "place": "Андрусово",
+      "event": "Подписание перемирия с Речью Посполитой, закрепившего возвращение Смоленска России",
+      "time": "1660-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163236"
+      ]
+    },
+    {
+      "factId": "T4-163236-0291",
+      "place": "Тильзит",
+      "event": "подписание мирного договора с Францией, предусматривавшего присоединение России к Континентальной блокаде Англии",
+      "time": "1800-е гг.",
+      "courseTopicId": 13,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163236"
+      ]
+    },
+    {
+      "factId": "T4-163236-0292",
+      "place": "Иркутск",
+      "event": "Расстрел большевиками А.В. Колчака",
+      "time": "1910-е гг.",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163236"
+      ]
+    },
+    {
+      "factId": "T4-163240-0293",
+      "place": "Ярославль",
+      "event": "поход Второго народного (земского) ополчения на Москву",
+      "time": "1610-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163240"
+      ]
+    },
+    {
+      "factId": "T4-163240-0294",
+      "place": "деревня Кючук-Кайнарджа",
+      "event": "Подписание мирного договора между Россией и Османской империей",
+      "time": "1770-е гг.",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163240"
+      ]
+    },
+    {
+      "factId": "T4-163240-0296",
+      "place": "Смоленск",
+      "event": "соединение 1-й и 2-й русских армий в период отражения агрессии со стороны Франции",
+      "time": "1810-е гг.",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163240"
+      ]
+    },
+    {
+      "factId": "T4-163244-0297",
+      "place": "Андрусово",
+      "event": "подписание перемирия между Россией и Речью Посполитой",
+      "time": "1660-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163244"
+      ]
+    },
+    {
+      "factId": "T4-163244-0298",
+      "place": "Тверь",
+      "event": "Начало путешествия Афанасия Никитина в Индию",
+      "time": "1460-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163244"
+      ]
+    },
+    {
+      "factId": "T4-163244-0299",
+      "place": "Екатеринбург",
+      "event": "расстрел Николая II и его семьи",
+      "time": "1910-е гг.",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163244"
+      ]
+    },
+    {
+      "factId": "T4-163244-0300",
+      "place": "Полтава",
+      "event": "Генеральное сражение между российским и шведским войсками",
+      "time": "1700-е гг.",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163244"
+      ]
+    },
+    {
+      "factId": "T4-163248-0301",
+      "place": "Река Рымник",
+      "event": "Сражение между русским и турецким войсками",
+      "time": "1780-е гг.",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163248"
+      ]
+    },
+    {
+      "factId": "T4-163248-0302",
+      "place": "Новгород Великий",
+      "event": "Присоединение к Московскому княжеству",
+      "time": "1470-е гг.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163248"
+      ]
+    },
+    {
+      "factId": "T4-163248-0303",
+      "place": "Рязань",
+      "event": "создание Первого земского ополчения",
+      "time": "1610-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163248"
+      ]
+    },
+    {
+      "factId": "T4-163248-0304",
+      "place": "Брест-Литовск",
+      "event": "подписание сепаратного мирного договора между Россией и Центральными державами",
+      "time": "1910-е гг.",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163248"
+      ]
+    },
+    {
+      "factId": "T4-163250-0305",
+      "place": "Тобольск",
+      "event": "Основание города",
+      "time": "1580-е гг.",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163250"
+      ]
+    },
+    {
+      "factId": "T4-163250-0306",
+      "place": "Торжок",
+      "event": "оборона города от войск Батыя",
+      "time": "1230-е гг.",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163250"
+      ]
+    },
+    {
+      "factId": "T4-163250-0307",
+      "place": "Рига",
+      "event": "Официальное присоединение к России",
+      "time": "1720-е гг.",
+      "courseTopicId": 11,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163250"
+      ]
+    },
+    {
+      "factId": "T4-163250-0308",
+      "place": "Павловск",
+      "event": "строительство первой железной дороги общественного пользования в России",
+      "time": "1830-е гг.",
+      "courseTopicId": 16,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "163250"
+      ]
+    },
+    {
+      "factId": "T4-184246-0309",
+      "place": "река Яуза",
+      "event": "Создание Немецкой слободы",
+      "time": "1650-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "184246"
+      ]
+    },
+    {
+      "factId": "T4-184246-0312",
+      "place": "Якутский острог",
+      "event": "Основание населенного пункта",
+      "time": "1630-е гг.",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "184246"
+      ]
+    },
+    {
+      "factId": "T4-107155-0313",
+      "place": "Варшава",
+      "event": "подписание договора о дружбе, сотрудничестве и взаимной помощи - документа, оформившего создание военного союза европейский социалистических государств при ведущей роли СССР",
+      "time": "1979 г.",
+      "courseTopicId": 35,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "107155"
+      ]
+    },
+    {
+      "factId": "T4-107155-0314",
+      "place": "Хельсинки",
+      "event": "Встреча Н.С. Хрущева с президентом США Д. Кеннеди",
+      "time": "1955 г.",
+      "courseTopicId": 32,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "107155"
+      ]
+    },
+    {
+      "factId": "T4-107155-0315",
+      "place": "о. Даманский",
+      "event": "вооруженные инциденты на советско-китайской границе",
+      "time": "1969 г.",
+      "courseTopicId": 34,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "107155"
+      ]
+    },
+    {
+      "factId": "T4-107155-0316",
+      "place": "Москва",
+      "event": "Подписание Л.И. Брежневым Заключительного акта Совещания по безопасности и сотрудничеству в Европе",
+      "time": "1975 г.",
+      "courseTopicId": 35,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "107155"
+      ]
+    }
+  ]
+}

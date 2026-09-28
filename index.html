@@ -121,6 +121,8 @@
   .atomic-generator input[type="file"] { max-width: 100%; }
   .atomic-generator .match-table { table-layout: fixed; overflow-wrap: anywhere; }
   .atomic-generator .match-table th:first-child { width: 68%; }
+  .atomic-generator[data-task="4"] .match-table th:first-child { width: 28%; }
+  .atomic-generator[data-task="4"] .match-table th:nth-child(2) { width: 44%; }
   @media (max-width: 540px) {
     .shell { padding: 18px 12px 40px; }
     .card { padding: 16px 12px; }
@@ -274,7 +276,12 @@ function gradeAuto(q, answer) {
     for (const v of variants) {
       let sc = 0;
       const g = normDigits(raw), c = normDigits(v);
-      if (mode === "ordered" && /^\d+$/.test(c)) sc = scoreOrdered(g.split(""), c.split(""), q.maxScore);
+      if (mode === "ordered" && /^\d+$/.test(c)) {
+        if (Number(q.ogeNumber)===4 && q.maxScore===3 && c.length===6) {
+          const errors=g.length>c.length?6:[...c].reduce((n,d,i)=>n+(g[i]===d?0:1),0);
+          sc=errors===0?3:errors===1?2:errors<=3?1:0;
+        } else sc = scoreOrdered(g.split(""), c.split(""), q.maxScore);
+      }
       else if (mode === "unordered" && /^\d+$/.test(c)) sc = scoreUnordered(g.split(""), c.split(""), q.maxScore);
       else sc = normalizeShortAnswer(raw) === normalizeShortAnswer(v) ? q.maxScore : 0;
       if (sc > best) best = sc;
@@ -1263,6 +1270,57 @@ function processGenerate(facts,through,mode,count,existing=[]){
   }
   return result;
 }
+function tableValidate(data){
+  if(!data||!Array.isArray(data.facts)||!data.facts.length||!Array.isArray(data.patterns)||!data.patterns.length)throw new Error('В базе №4 нужны facts и patterns.');
+  const ids=new Set();const patterns=data.patterns.map(p=>{
+    if(!Array.isArray(p)||p.length!==6||p.some(x=>!Array.isArray(x)||x.length!==2||!Number.isInteger(x[0])||x[0]<0||x[0]>3||!Number.isInteger(x[1])||x[1]<0||x[1]>2)||[0,1,2].some(c=>p.filter(x=>x[1]===c).length!==2)||new Set(p.map(x=>x.join(':'))).size!==6)throw new Error('Неверная схема пропусков №4.');return p;
+  });
+  const facts=data.facts.map((f,i)=>{if(!f||typeof f.factId!=='string'||ids.has(f.factId)||!String(f.place||'').trim()||!String(f.event||'').trim()||!String(f.time||'').trim()||!COURSE38_BY_ID.has(Number(f.courseTopicId)))throw new Error('Некорректная строка №'+(i+1));ids.add(f.factId);return {...f,courseTopicId:Number(f.courseTopicId),enabled:f.enabled!==false};});
+  return {facts,patterns};
+}
+function tablePool(facts,through,mode){
+  if(!COURSE38_BY_ID.has(Number(through))||!['current','cumulative'].includes(mode))throw new Error('Выберите тему.');
+  return facts.filter(f=>f.enabled!==false&&(mode==='current'?f.courseTopicId===Number(through):f.courseTopicId<=Number(through)));
+}
+function tableCompose(events,extras,pattern,through,mode,selectedFactIds){
+  const values=events.map(f=>[f.place,f.event,f.time]),slots=pattern.slice().sort((a,b)=>a[0]-b[0]||a[1]-b[1]);
+  const correctValues=slots.map(([r,c])=>values[r][c]),wrong=[extras[0].place,extras[1].event,extras[2].time];
+  const options=atomicShuffle([...correctValues,...wrong]);
+  if(new Set(options.map(v=>v.toLocaleLowerCase('ru').trim())).size!==9)throw new Error('Повторяются варианты ответа.');
+  const correctText=correctValues.map(v=>options.indexOf(v)+1).join('');
+  const labels='АБВГДЕ',blank=new Map(slots.map(([r,c],i)=>[r+':'+c,'__________ ('+labels[i]+')']));
+  const clean=v=>String(v).replace(/\|/g,'/').replace(/\n/g,' ').trim();
+  const table='| Географический объект | Событие (явление, процесс) | Время |\n| --- | --- | --- |\n'+values.map((row,r)=>'| '+row.map((v,c)=>clean(blank.get(r+':'+c)||v)).join(' | ')+' |').join('\n');
+  const text='Заполните пустые ячейки таблицы: для каждого пропуска, обозначенного буквой, выберите номер элемента из списка.\n\n'+table+'\n\nПропущенные элементы:\n'+options.map((v,i)=>(i+1)+') '+v).join('\n\n')+'\n\nОтвет запишите шестью цифрами в порядке АБВГДЕ.';
+  const required=[...new Set([...events,...extras].map(f=>f.courseTopicId))].sort((a,b)=>a-b).map(id=>COURSE38_BY_ID.get(id));
+  return {id:uid('atom4'),type:'short',ogeNumber:4,text,correctText,maxScore:3,gradingMode:'ordered',referenceAnswer:slots.map(([r,c],i)=>labels[i]+') '+values[r][c]).join('\n')+'\n\n'+events.map(f=>f.place+' — '+f.event+' — '+f.time).join('\n'),source:'Генератор №4 · строки исходных таблиц',topic:required.map(t=>t.name).join('; '),primaryCourseTopic:required[required.length-1],requiredCourseTopics:required,metadata:{requiredCourseTopics:required,atomic:{version:1,task:4,through:Number(through),mode,events,extras,options,pattern,selectedFactIds}}};
+}
+function tableGenerate(facts,through,mode,count,existing=[],patterns=[]){
+  if(!Number.isInteger(count)||count<1||count>100)throw new Error('Количество заданий: от 1 до 100.');
+  if(mode!=='cumulative')throw new Error('Для №4 используется накопительный режим.');
+  const pool=tablePool(facts,through,mode);
+  if(new Set(pool.map(f=>f.courseTopicId)).size<7)throw new Error('Отметьте строки минимум из семи разных изученных тем: четыре строки таблицы и три лишних варианта.');
+  if(!Array.isArray(patterns)||!patterns.length)throw new Error('Нет схем пропусков №4.');
+  const usage=new Map(),result=[],seen=new Set();
+  existing.filter(q=>q.metadata?.atomic?.task===4).forEach(q=>q.metadata.atomic.events.forEach(f=>usage.set(f.factId,(usage.get(f.factId)||0)+1)));
+  for(let n=0;n<count;n++){
+    let q=null;
+    for(let attempt=0;attempt<250;attempt++){
+      const chosen=[],topics=new Set(),places=new Set(),events=new Set(),times=new Set();
+      for(const f of atomicShuffle(pool).sort((a,b)=>(usage.get(a.factId)||0)-(usage.get(b.factId)||0))){
+        const place=f.place.toLocaleLowerCase('ru'),event=f.event.toLocaleLowerCase('ru'),time=f.time.toLocaleLowerCase('ru');
+        if(topics.has(f.courseTopicId)||places.has(place)||events.has(event)||times.has(time))continue;
+        chosen.push(f);topics.add(f.courseTopicId);places.add(place);events.add(event);times.add(time);if(chosen.length===7)break;
+      }
+      if(chosen.length<7)throw new Error('Не хватает семи строк из разных тем с неповторяющимися местами, событиями и датами. Отметьте другие строки.');
+      const signature=chosen.slice(0,4).map(f=>f.factId).sort().join('|');if(seen.has(signature))continue;
+      try{q=tableCompose(atomicShuffle(chosen.slice(0,4)),chosen.slice(4),atomicShuffle(patterns)[0],through,mode,pool.map(f=>f.factId));seen.add(signature);break;}catch(e){if(!/Повторяются варианты/.test(e.message))throw e;}
+    }
+    if(!q)throw new Error('Не получилось собрать '+count+' разных таблиц. Уменьшите число заданий или расширьте выбор.');
+    result.push(q);q.metadata.atomic.events.forEach(f=>usage.set(f.factId,(usage.get(f.factId)||0)+1));
+  }
+  return result;
+}
 function chronoPool(facts, through, mode) {
   if (!COURSE38_BY_ID.has(Number(through)) || !['cumulative','current'].includes(mode)) throw new Error('Выберите тему и режим.');
   return facts.filter(f => f.enabled !== false && (mode==='current' ? f.courseTopicId===Number(through) : f.courseTopicId<=Number(through)));
@@ -1308,11 +1366,11 @@ function chronoGenerate(facts, through, mode, count, existing=[], composition='r
 function selectedAtomicPool(facts, task, through, mode, ids) {
   const chosen=new Set(ids);
   facts.forEach(f=>{if((f.aliasFactIds||[]).some(id=>chosen.has(id)))chosen.add(f.factId);});
-  return (task===1 ? atomicPool(facts,through,mode) : task===2 ? chronoPool(facts,through,mode) : processPool(facts,through,mode)).filter(f=>chosen.has(f.factId));
+  return (task===1 ? atomicPool(facts,through,mode) : task===2 ? chronoPool(facts,through,mode) : task===3 ? processPool(facts,through,mode) : tablePool(facts,through,mode)).filter(f=>chosen.has(f.factId));
 }
 function generateSelectedAtomic(facts,task,through,mode,count,ids,existing=[],composition='russia') {
   const pool=selectedAtomicPool(facts,task,through,mode,ids);
-  const qs=task===1 ? atomicGenerate(pool,through,mode,count,existing) : task===2 ? chronoGenerate(pool,through,mode,count,existing,composition,pool.filter(f=>f.scope==='world').map(f=>f.factId)) : processGenerate(pool,through,mode,count,existing);
+  const qs=task===1 ? atomicGenerate(pool,through,mode,count,existing) : task===2 ? chronoGenerate(pool,through,mode,count,existing,composition,pool.filter(f=>f.scope==='world').map(f=>f.factId)) : task===3 ? processGenerate(pool,through,mode,count,existing) : tableGenerate(pool,through,mode,count,existing,composition);
   return qs.map(q=>({...q,metadata:{...q.metadata,atomic:{...q.metadata.atomic,task,selectedFactIds:pool.map(f=>f.factId)}}}));
 }
 function atomicReplacementCandidates(q,index,facts) {
@@ -1322,7 +1380,8 @@ function atomicReplacementCandidates(q,index,facts) {
   return pool.filter(f=>f.factId!==a.events[index].factId && (task===1
     ? others.every(o=>atomicOptionsCompatible(o,f))
     : task===2 ? f.scope===a.events[index].scope && others.every(o=>chronoCompatible(o,f))
-    : others.every(o=>o.courseTopicId!==f.courseTopicId && o.process.toLocaleLowerCase('ru')!==f.process.toLocaleLowerCase('ru') && o.fact.toLocaleLowerCase('ru')!==f.fact.toLocaleLowerCase('ru'))));
+    : task===3 ? others.every(o=>o.courseTopicId!==f.courseTopicId && o.process.toLocaleLowerCase('ru')!==f.process.toLocaleLowerCase('ru') && o.fact.toLocaleLowerCase('ru')!==f.fact.toLocaleLowerCase('ru'))
+    : others.every(o=>o.courseTopicId!==f.courseTopicId && o.place.toLocaleLowerCase('ru')!==f.place.toLocaleLowerCase('ru') && o.event.toLocaleLowerCase('ru')!==f.event.toLocaleLowerCase('ru') && o.time.toLocaleLowerCase('ru')!==f.time.toLocaleLowerCase('ru'))));
 }
 function replaceAtomicEvent(q,index,factId,facts) {
   const f=atomicReplacementCandidates(q,index,facts).find(f=>f.factId===factId);
@@ -1335,6 +1394,15 @@ function replaceAtomicEvent(q,index,factId,facts) {
     const pair=[];for(const x of extras)if(!pair.some(y=>y.courseTopicId===x.courseTopicId)){pair.push(x);if(pair.length===2)break;}
     if(pair.length<2)throw new Error('После замены не осталось двух безопасных лишних фактов из других тем.');
     return processCompose(events,atomicShuffle([...events,...pair]),a.through,a.mode,a.selectedFactIds);
+  }
+  if(task===4){
+    const pool=selectedAtomicPool(facts,task,a.through,a.mode,a.selectedFactIds||[]),used=new Set(events.map(e=>e.courseTopicId)),places=new Set(events.map(e=>e.place.toLocaleLowerCase('ru'))),labels=new Set(events.map(e=>e.event.toLocaleLowerCase('ru'))),times=new Set(events.map(e=>e.time.toLocaleLowerCase('ru'))),extras=[];
+    for(const x of atomicShuffle(pool)){
+      if(used.has(x.courseTopicId)||places.has(x.place.toLocaleLowerCase('ru'))||labels.has(x.event.toLocaleLowerCase('ru'))||times.has(x.time.toLocaleLowerCase('ru')))continue;
+      extras.push(x);used.add(x.courseTopicId);places.add(x.place.toLocaleLowerCase('ru'));labels.add(x.event.toLocaleLowerCase('ru'));times.add(x.time.toLocaleLowerCase('ru'));if(extras.length===3)break;
+    }
+    if(extras.length<3)throw new Error('После замены не хватает трёх лишних вариантов из других тем.');
+    return tableCompose(events,extras,a.pattern,a.through,a.mode,a.selectedFactIds);
   }
   let options=a.options, text,correctText,referenceAnswer,required;
   if(task===1) {
@@ -1361,10 +1429,10 @@ function AtomicEventEditor({q,facts,busy,onReplace}) {
     h('p',{className:'q-meta'},'Доступны только факты, выбранные при создании этого задания. Для другого набора создайте новый комплект. Замена создаёт новую версию задания; ранее сохранённые тесты остаются прежними.'),
     q.metadata.atomic.events.map((f,i)=>{
       const candidates=atomicReplacementCandidates(q,i,facts);
-      return h('div',{key:i},h('label',null,((q.ogeNumber===1||q.ogeNumber===3)?'АБВГ'[i]:i+1)+') '+(f.event||f.process),
+      return h('div',{key:i},h('label',null,((q.ogeNumber===1||q.ogeNumber===3||q.ogeNumber===4)?'АБВГ'[i]:i+1)+') '+(f.process||(f.place?f.place+' — '+f.event:f.event)),
         h('select',{'aria-label':'Замена события '+(i+1),value:'',disabled:busy||!candidates.length,onChange:e=>onReplace(i,e.target.value)},
           h('option',{value:''},candidates.length?'Выберите замену…':'Нет подходящей замены в выбранном наборе'),
-          candidates.map(c=>h('option',{key:c.factId,value:c.factId},(c.event||c.process)+' — '+(c.fact||c.dateLabel||(c.year+' г.'))+' · тема '+c.courseTopicId)))));
+          candidates.map(c=>h('option',{key:c.factId,value:c.factId},(c.process||(c.place?c.place+' — '+c.event:c.event))+' — '+(c.fact||c.dateLabel||c.time||(c.year+' г.'))+' · тема '+c.courseTopicId)))));
     }));
 }
 
@@ -1406,6 +1474,46 @@ function ProcessGeneratorTab({onReload,onAdd,constructorScope}){
     h('label',null,'Количество заданий (1–100)'),h('input',{type:'number',min:1,max:100,value:count,onChange:e=>setCount(e.target.value)}),h('button',{className:'btn',disabled:busy||!facts.length,onClick:()=>generate()},'Сгенерировать задания №3')),
     !!questions.length&&h('div',{className:'card'},h('h2',null,'Предпросмотр: '+questions.length),h('label',null,'Название теста'),h('input',{value:name,onChange:e=>{setName(e.target.value);setCreated(null);}}),h('label',{className:'opt'},h('input',{type:'checkbox',checked:training,onChange:e=>setTraining(e.target.checked)}),'Тренировочный режим'),
       h('div',{className:'atomic-actions'},onAdd&&h('button',{className:'btn',onClick:()=>onAdd(questions,{task:3,facts})},'Добавить комплект в конструктор'),h('button',{className:'btn ghost',disabled:busy,onClick:()=>save(false)},'Сохранить в банк'),h('button',{className:'btn',disabled:busy||!!created,onClick:()=>save(true)},'Сохранить и создать тест')),
+      created&&h('div',{className:'notice'},'Код теста: ',h('strong',null,created.code)),questions.map((q,i)=>h('div',{className:'q-list-item',key:q.id},h('h3',null,'Задание '+(i+1)),h(ConstructorPreview,{q}),h(AtomicEventEditor,{q,facts,busy,onReplace:(j,id)=>{try{setQuestions(prev=>prev.map(x=>x.id===q.id?replaceAtomicEvent(q,j,id,facts):x));setCreated(null);}catch(e){setError(e.message);}}}),h('button',{className:'btn ghost small',onClick:()=>generate(i)},'Перегенерировать'),h('button',{className:'btn danger',onClick:()=>setQuestions(prev=>prev.filter(x=>x.id!==q.id))},'Удалить')))));
+}
+function TableGeneratorTab({onReload,onAdd,constructorScope}){
+  const h=React.createElement,cacheKey='history.atomic.task4.v1:'+SUPABASE_URL,presetKey=cacheKey+':presets';
+  const [patterns,setPatterns]=useState([]),[facts,setFacts]=useState([]),[selected,setSelected]=useState([]),[through,setThrough]=useState('8'),[count,setCount]=useState('10');
+  const [search,setSearch]=useState(''),[status,setStatus]=useState('Загружаю базу №4…'),[error,setError]=useState(''),[busy,setBusy]=useState(false);
+  const [questions,setQuestions]=useState([]),[name,setName]=useState(''),[training,setTraining]=useState(true),[created,setCreated]=useState(null),[saved,setSaved]=useState(new Set());
+  const [presetName,setPresetName]=useState(''),[presets,setPresets]=useState(()=>constructorRead(presetKey,[]));
+  useEffect(()=>{if(constructorScope)setThrough(String(constructorScope.through));},[constructorScope?.through]);
+  useEffect(()=>{let live=true;(async()=>{try{let data=constructorRead(cacheKey,null);if(!data){const r=await fetch('history_task_4_facts.json');if(!r.ok)throw new Error('Разместите history_task_4_facts.json рядом с index.html.');data=await r.json();}const parsed=tableValidate(data);if(live){setFacts(parsed.facts);setPatterns(parsed.patterns);setStatus('База №4: '+parsed.facts.filter(f=>f.enabled).length+' доступных строк, '+parsed.facts.filter(f=>!f.enabled).length+' отложено для проверки.');}}catch(e){if(live)setError(e.message);}})();return()=>{live=false;};},[]);
+  const pool=facts.filter(f=>f.enabled&&f.courseTopicId<=Number(through)),chosen=pool.filter(f=>selected.includes(f.factId));
+  const visible=pool.filter(f=>(f.place+' '+f.event+' '+f.time).toLocaleLowerCase('ru').includes(search.toLocaleLowerCase('ru')));
+  function mark(ids,yes){setSelected(prev=>yes?[...new Set([...prev,...ids])]:prev.filter(id=>!ids.includes(id)));}
+  function generate(i){setError('');setCreated(null);try{
+    if(i===undefined){setQuestions(generateSelectedAtomic(facts,4,through,'cumulative',Number(count),selected,[],patterns));setSaved(new Set());}
+    else{const old=questions[i].metadata.atomic,next=generateSelectedAtomic(facts,4,old.through,'cumulative',1,old.selectedFactIds,questions.filter((_,j)=>j!==i),[old.pattern])[0];setQuestions(prev=>prev.map((q,j)=>j===i?next:q));}
+  }catch(e){setError(e.message);}}
+  async function importFile(file){if(!file)return;setError('');try{const data=JSON.parse(await file.text()),parsed=tableValidate(data);setFacts(parsed.facts);setPatterns(parsed.patterns);setSelected([]);setQuestions([]);try{localStorage.setItem(cacheKey,JSON.stringify(data));}catch(_){}setStatus('Загружено '+parsed.facts.length+' строк.');}catch(e){setError('Импорт: '+e.message);}}
+  async function save(makeTest){if(busy||!questions.length)return;if(makeTest&&!name.trim()){setError('Введите название теста.');return;}setBusy(true);setError('');const done=new Set(saved);try{
+    for(const q of questions){if(done.has(q.id))continue;const err=await upsertQuestion(q);if(err)throw err;done.add(q.id);setSaved(new Set(done));}
+    if(makeTest){const t={id:uid('t'),code:genCode(),name:name.trim(),training,questionIds:questions.map(q=>q.id)},err=await insertTest(t);if(err)throw err;setCreated(t);}
+    setStatus('Сохранено заданий №4: '+questions.length+'.');await onReload();
+  }catch(e){setError('Сохранение: '+portalError(e));}finally{setBusy(false);}}
+  function storePreset(){if(!presetName.trim()||!chosen.length){setError('Укажите название и отметьте строки.');return;}const next=[...presets,{id:uid('preset4'),name:presetName.trim(),through,ids:chosen.map(f=>f.factId)}];try{localStorage.setItem(presetKey,JSON.stringify(next));setPresets(next);setStatus('Набор сохранён на этом устройстве.');}catch(e){setError('Не удалось сохранить набор: '+e.message);}}
+  return h('div',{'data-task':4,className:'atomic-generator'},h('div',{className:'card'},h('h2',null,'Генератор №4'),h('div',{className:'notice',role:'status'},status),error&&h('div',{className:'notice',role:'alert'},error),
+    h('label',null,'Загрузить или заменить базу №4 (JSON)'),h('input',{type:'file',accept:'.json,application/json',onChange:e=>{importFile(e.target.files[0]);e.target.value='';}}),
+    h('label',null,'Ученик изучил до темы'),h('select',{value:through,onChange:e=>setThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name))),
+    h('p',null,'Отметьте изученные строки «место — событие — время». В каждой новой таблице — четыре строки, шесть пропусков и девять вариантов ответа. Для однозначности нужны строки минимум из семи разных тем.'),
+    h('label',null,'Поиск места, события или времени'),h('input',{value:search,onChange:e=>setSearch(e.target.value)}),
+    h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',onClick:()=>mark(visible.map(f=>f.factId),true)},'Выбрать все показанные'),h('button',{className:'btn ghost small',onClick:()=>mark(visible.map(f=>f.factId),false)},'Снять выделение')),
+    h('p',{className:'q-meta'},'Выбрано строк: '+chosen.length+' · тем: '+new Set(chosen.map(f=>f.courseTopicId)).size),
+    COURSE38_TOPICS.map(t=>{const rows=visible.filter(f=>f.courseTopicId===t.id);return rows.length>0&&h('details',{key:t.id,'data-topic':t.id},h('summary',null,t.id+'. '+t.name+' — выбрано '+rows.filter(f=>selected.includes(f.factId)).length+' из '+rows.length),
+      h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',onClick:()=>mark(rows.map(f=>f.factId),true)},'Выбрать тему'),h('button',{className:'btn ghost small',onClick:()=>mark(rows.map(f=>f.factId),false)},'Снять тему')),
+      rows.map(f=>h('label',{className:'opt',key:f.factId},h('input',{type:'checkbox',checked:selected.includes(f.factId),onChange:e=>mark([f.factId],e.target.checked)}),f.place+' — '+f.event+' — '+f.time)));}),
+    h('label',null,'Сохранённый набор'),h('select',{value:'',onChange:e=>{const p=presets.find(x=>x.id===e.target.value);if(p){setThrough(p.through);setSelected(p.ids);setPresetName(p.name);}}},h('option',{value:''},'Выберите…'),presets.map(p=>h('option',{key:p.id,value:p.id},p.name))),
+    h('label',null,'Название нового набора'),h('input',{value:presetName,onChange:e=>setPresetName(e.target.value),placeholder:'Саша — изученные темы'}),h('button',{className:'btn ghost',onClick:storePreset},'Сохранить набор'),
+    facts.some(f=>!f.enabled)&&h('details',{className:'notice'},h('summary',null,'Отложенные строки ('+facts.filter(f=>!f.enabled).length+')'),facts.filter(f=>!f.enabled).map(f=>h('p',{key:f.factId},f.place+' — '+f.event+' — '+f.time+'; '+f.reviewReason))),
+    h('label',null,'Количество заданий (1–100)'),h('input',{type:'number',min:1,max:100,value:count,onChange:e=>setCount(e.target.value)}),h('button',{className:'btn',disabled:busy||!facts.length,onClick:()=>generate()},'Сгенерировать задания №4')),
+    !!questions.length&&h('div',{className:'card'},h('h2',null,'Предпросмотр: '+questions.length),h('label',null,'Название теста'),h('input',{value:name,onChange:e=>{setName(e.target.value);setCreated(null);}}),h('label',{className:'opt'},h('input',{type:'checkbox',checked:training,onChange:e=>setTraining(e.target.checked)}),'Тренировочный режим'),
+      h('div',{className:'atomic-actions'},onAdd&&h('button',{className:'btn',onClick:()=>onAdd(questions,{task:4,facts})},'Добавить комплект в конструктор'),h('button',{className:'btn ghost',disabled:busy,onClick:()=>save(false)},'Сохранить в банк'),h('button',{className:'btn',disabled:busy||!!created,onClick:()=>save(true)},'Сохранить и создать тест')),
       created&&h('div',{className:'notice'},'Код теста: ',h('strong',null,created.code)),questions.map((q,i)=>h('div',{className:'q-list-item',key:q.id},h('h3',null,'Задание '+(i+1)),h(ConstructorPreview,{q}),h(AtomicEventEditor,{q,facts,busy,onReplace:(j,id)=>{try{setQuestions(prev=>prev.map(x=>x.id===q.id?replaceAtomicEvent(q,j,id,facts):x));setCreated(null);}catch(e){setError(e.message);}}}),h('button',{className:'btn ghost small',onClick:()=>generate(i)},'Перегенерировать'),h('button',{className:'btn danger',onClick:()=>setQuestions(prev=>prev.filter(x=>x.id!==q.id))},'Удалить')))));
 }
 function AtomicGeneratorTab({ onReload, task = 1, onAdd, constructorScope }) {
@@ -1623,15 +1731,24 @@ function ConstructorTab({bank,onReload}) {
     if(!rows.length)return;
     setGenerated(prev=>{const map=new Map(prev.map(q=>[q.id,q]));rows.forEach(q=>map.set(q.id,constructorQuestion(q)));return [...map.values()];});
     setFactBases(prev=>({...prev,[context.task]:context.facts}));setSelected(prev=>[...new Set([...prev,...rows.map(q=>q.id)])]);
-    if(context.task===3){setMode('cumulative');setThrough(String(Math.max(Number(through),...rows.flatMap(q=>q.requiredCourseTopics.map(t=>Number(t.id))))));}setNotice('В конструктор добавлено '+rows.length+' заданий №'+context.task+'.');setSection('bank');
+    if(context.task===3||context.task===4){setMode('cumulative');setThrough(String(Math.max(Number(through),...rows.flatMap(q=>q.requiredCourseTopics.map(t=>Number(t.id))))));}setNotice('В конструктор добавлено '+rows.length+' заданий №'+context.task+'.');setSection('bank');
   }
   function presetData(){return {...state,variants:[]};}
   function storeSets(next){try{localStorage.setItem(CONSTRUCTOR_KEY+':sets',JSON.stringify(next));setPresets(next);}catch(_){throw new Error('Не удалось сохранить набор. Экспортируйте его в JSON.');}}
   function restore(p){
     if(!p||p.version!==1||!COURSE38_BY_ID.has(Number(p.through))||!['current','cumulative'].includes(p.mode)||!Array.isArray(p.selected)||!Array.isArray(p.generated))throw new Error('Это не набор конструктора версии 1.');
     // Imported generated questions must contain a valid atomic snapshot and selected facts.
-    const bases={};for(const task of [1,2,3])if(p.factBases&&p.factBases[task])bases[task]=(task===1?atomicValidate:task===2?chronoValidate:processValidate)({facts:p.factBases[task]});
-    p.generated.forEach(q=>{if(!q||typeof q.id!=='string'||typeof q.text!=='string'||![1,2,3].includes(q.ogeNumber)||!q.metadata?.atomic||!Array.isArray(q.metadata.atomic.events))throw new Error('Повреждённое автоматически созданное задание.');});
+    const bases={};
+    for(const task of [1,2,3,4])if(p.factBases&&p.factBases[task]){
+      if(task===1)bases[task]=atomicValidate({facts:p.factBases[task]});
+      else if(task===2)bases[task]=chronoValidate({facts:p.factBases[task]});
+      else if(task===3)bases[task]=processValidate({facts:p.factBases[task]});
+      else{
+        const pattern=p.generated.find(q=>q.ogeNumber===4)?.metadata?.atomic?.pattern;
+        bases[task]=tableValidate({facts:p.factBases[task],patterns:pattern?[pattern]:[]}).facts;
+      }
+    }
+    p.generated.forEach(q=>{if(!q||typeof q.id!=='string'||typeof q.text!=='string'||![1,2,3,4].includes(q.ogeNumber)||!q.metadata?.atomic||!Array.isArray(q.metadata.atomic.events))throw new Error('Повреждённое автоматически созданное задание.');});
     setThrough(String(p.through));setMode(p.mode);setSelected(p.selected.filter(x=>typeof x==='string'));setGenerated(p.generated);setFactBases(bases);setQuota(p.quota||{});setCount(String(p.count||1));setName(String(p.name||''));setTraining(p.training!==false);setVariants([]);setActive(0);setError('');setNotice('Набор загружен. Проверьте доступность выбранных заданий и соберите варианты.');
   }
   function signature(rows){return rows.map(constructorIdentity).sort().join('|');}
@@ -1670,7 +1787,7 @@ function ConstructorTab({bank,onReload}) {
   function regenerate(index){
     try{
     const v=variants[active],q=v.questions[index],a=q.metadata.atomic,task=q.ogeNumber;
-      const next=generateSelectedAtomic(factBases[task]||[],task,a.through,a.mode,1,a.selectedFactIds||[],v.questions.filter(x=>x.metadata?.atomic&&x.ogeNumber===task),a.composition||'russia')[0];
+      const next=generateSelectedAtomic(factBases[task]||[],task,a.through,a.mode,1,a.selectedFactIds||[],v.questions.filter(x=>x.metadata?.atomic&&x.ogeNumber===task),task===4?[a.pattern]:a.composition||'russia')[0];
       if(!constructorEligible(next,v.through,v.mode))throw new Error('Новый вопрос выходит за темы варианта.');
       editVariant(active,v=>({...v,questions:v.questions.map((r,i)=>i===index?next:r)}));
     }catch(e){setError(e.message);}
@@ -1704,11 +1821,12 @@ function ConstructorTab({bank,onReload}) {
   return h('fieldset',{className:'constructor',disabled:busy,'data-constructor':true,style:{border:0,padding:0,margin:0,minWidth:0}},
     h('div',{className:'card'},h('h2',null,'Конструктор'),h('p',null,'Выберите изученные темы и конкретный материал. Затем соберите и проверьте варианты.'),
       h('div',{className:'constructor-grid'},h('div',null,h('label',{htmlFor:'constructor-through'},'Последняя изученная тема'),h('select',{id:'constructor-through',value:through,disabled:busy,onChange:e=>setThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name)))),h('div',null,h('label',{htmlFor:'constructor-mode'},'Материал'),h('select',{id:'constructor-mode',value:mode,disabled:busy,onChange:e=>setMode(e.target.value)},h('option',{value:'cumulative'},'Накопительно: темы 1–'+through),h('option',{value:'current'},'Только тема '+through)))),
-      h('div',{className:'tabs'},[['bank','Выбор заданий'],['atom1','Создать №1'],['atom2','Создать №2'],['atom3','Создать №3']].map(([k,s])=>h('button',{key:k,disabled:busy,className:section===k?'active':'',onClick:()=>setSection(k)},s))),
+      h('div',{className:'tabs'},[['bank','Выбор заданий'],['atom1','Создать №1'],['atom2','Создать №2'],['atom3','Создать №3'],['atom4','Создать №4']].map(([k,s])=>h('button',{key:k,disabled:busy,className:section===k?'active':'',onClick:()=>setSection(k)},s))),
       h('p',{className:'q-meta'},'Выбрано доступных заданий: '+chosen.length+(selectedHidden?' · исключено из текущего материала: '+selectedHidden:'')+'. Черновик и наборы сохраняются в этом браузере; для переноса используйте экспорт.')),
     error&&h('div',{className:'notice',role:'alert'},error),notice&&h('div',{className:'notice',role:'status'},notice),
     [1,2].map(task=>h('div',{key:task,style:{display:section==='atom'+task?'block':'none'}},h(AtomicGeneratorTab,{task,onReload,onAdd:addGenerated,constructorScope:{through,mode}}))),
     h('div',{style:{display:section==='atom3'?'block':'none'}},h(ProcessGeneratorTab,{onReload,onAdd:addGenerated,constructorScope:{through,mode}})),
+    h('div',{style:{display:section==='atom4'?'block':'none'}},h(TableGeneratorTab,{onReload,onAdd:addGenerated,constructorScope:{through,mode}})),
     section==='bank'&&h('div',{className:'card'},h('h3',null,'Материал для вариантов'),
       bank===null&&h('p',null,'Загружаю банк…'),
       h('div',{className:'constructor-grid'},h('div',null,h('label',{htmlFor:'constructor-search'},'Поиск по тексту или ID'),h('input',{id:'constructor-search',value:search,onChange:e=>setSearch(e.target.value)})),h('div',null,h('label',{htmlFor:'constructor-number'},'Номер задания'),h('select',{id:'constructor-number',value:number,onChange:e=>setNumber(e.target.value)},h('option',{value:''},'Все номера'),[...new Set(catalog.map(q=>q.ogeNumber).filter(Boolean))].sort((a,b)=>a-b).map(n=>h('option',{key:n,value:n},'№'+n))))),
