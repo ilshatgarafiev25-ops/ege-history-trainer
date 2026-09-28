@@ -613,7 +613,7 @@ function StudentCabinet({me}){
  useEffect(()=>{reload();},[]);
  async function run(fn){setBusy(true);setErr('');try{await fn();}catch(e){setErr(portalError(e));}finally{setBusy(false);}}
  if(active)return h(PortalRunner,{key:active.id,initial:active,me,onBack:()=>{setActive(null);reload();}});
- return h('div',{'data-cabinet':'student'},h('div',{className:'card'},h('h2',null,'Мой кабинет'),h('p',null,me.name),err&&h('p',{className:'notice',role:'alert'},err),h('label',{htmlFor:'join-code'},'Код группы от преподавателя'),h('input',{id:'join-code',value:code,onChange:e=>setCode(e.target.value)}),h('button',{className:'btn',disabled:busy,onClick:()=>run(async()=>{await portalRpc('join',{p_code:code});setCode('');await reload();})},'Вступить в группу'),data?.groups.map(g=>h('p',{key:g.id},g.name+' · изучено до темы '+g.through)),
+ return h('div',{'data-cabinet':'student'},h('div',{className:'card'},h('h2',null,'Мой кабинет'),h('p',null,me.name),!data?.groups?.length&&h('p',{className:'notice'},'Аккаунт создан. Чтобы преподаватель увидел вас, получите код группы, введите его ниже и нажмите «Вступить в группу». Если требуется подтверждение email, сначала откройте письмо и войдите.'),err&&h('p',{className:'notice',role:'alert'},err),h('label',{htmlFor:'join-code'},'Код группы от преподавателя'),h('input',{id:'join-code',value:code,onChange:e=>setCode(e.target.value)}),h('button',{className:'btn',disabled:busy,onClick:()=>run(async()=>{await portalRpc('join',{p_code:code});setCode('');await reload();})},'Вступить в группу'),data?.groups.map(g=>h('p',{key:g.id},'Вы вступили в группу «'+g.name+'» · изучено до темы '+g.through)),
  h('label',{htmlFor:'open-code'},'Код назначенного теста'),h('input',{id:'open-code',value:testCode,onChange:e=>setTestCode(e.target.value)}),h('button',{className:'btn ghost',disabled:busy,onClick:()=>run(async()=>setActive(await portalRpc('start',{p_code:testCode})))},'Открыть по коду')),
  h('div',{className:'card'},h('h2',null,'Назначенные работы'),!data&&h('p',null,'Загружаю…'),data&&!data.assignments.length&&h('p',null,'Пока нет назначений. Вступите в группу или дождитесь работы от преподавателя.'),data?.assignments.map(x=>h('div',{className:'q-list-item',key:x.id},h('strong',null,x.title),h('p',null,x.status==='submitted'?'Сдано':!x.active?'Закрыто':x.attempt_id?'Начато':'К выполнению',x.due_at?' · срок '+new Date(x.due_at).toLocaleString('ru-RU'):''),h('button',{className:'btn',disabled:busy||(!x.active&&!x.attempt_id),onClick:()=>run(async()=>setActive(await portalRpc(x.attempt_id?'attempt':'start',x.attempt_id?{p_id:x.attempt_id}:{p_assignment:x.id})))},x.status==='submitted'?'Посмотреть результат':x.attempt_id?'Продолжить':'Начать')))),
  h('div',{className:'card'},h('h2',null,'Моя практика'),h('p',null,'Решено разных заданий: '+(data?.learning?.seen||0)+' · с ошибками в последнем решении: '+(data?.learning?.errors||0)),h('label',null,'Преподаватель и изученные темы'),h('select',{id:'practice-teacher',value:teacher,onChange:e=>setTeacher(e.target.value)},h('option',{value:''},'Выберите преподавателя'),data?.teachers.map(t=>h('option',{key:t.id,value:t.id},t.name+' · темы 1–'+t.through))),h('label',null,'Режим'),h('select',{id:'practice-mode',value:mode,onChange:e=>setMode(e.target.value)},h('option',{value:'errors'},'Работа над ошибками'),h('option',{value:'unseen'},'Ещё не решал'),h('option',{value:'mixed'},'Ошибки + новые + повторение')),h('label',null,'Номер задания (необязательно)'),h('input',{type:'number',min:1,value:number,onChange:e=>setNumber(e.target.value)}),h('label',null,'Количество (1–30)'),h('input',{id:'practice-count',type:'number',min:1,max:30,value:count,onChange:e=>setCount(e.target.value)}),h('button',{className:'btn',disabled:busy||!teacher,onClick:()=>run(async()=>setActive(await portalRpc('practice',{p_teacher:teacher,p_mode:mode,p_count:Number(count),p_number:number?Number(number):null})))},'Подобрать тренировку'),h('p',{className:'q-meta'},'Подбор использует только изученные темы. Если подходящих вопросов меньше, будет выдан доступный набор. По №1/№2 учитываются также факты внутри заданий. Развёрнутые ответы учитываются после оценки преподавателя.')),
@@ -629,7 +629,7 @@ function TeacherCabinet(){
  if(active&&me)return h(PortalRunner,{key:active.id,initial:active,me,teacher:true,onBack:()=>{setActive(null);reload();}});
  return h('div',{'data-cabinet':'teacher'},err&&h('div',{className:'notice',role:'alert'},err),notice&&h('div',{className:'notice',role:'status'},notice),
  h('div',{className:'card'},h('h2',null,'Группы'),h('label',null,'Название группы'),h('input',{id:'group-name',value:groupName,onChange:e=>setGroupName(e.target.value)}),h('label',null,'Изучено до темы'),h('select',{id:'group-through',value:groupThrough,onChange:e=>setGroupThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{value:t.id,key:t.id},t.id+'. '+t.name))),h('div',{className:'atomic-actions'},h('button',{className:'btn',disabled:busy,onClick:()=>run(async()=>{await portalRpc('group_save',{p_name:groupName,p_through:Number(groupThrough),p_id:editGroup});setEditGroup(null);setGroupName('');await reload();})},editGroup?'Сохранить группу':'Создать группу'),editGroup&&h('button',{className:'btn ghost',onClick:()=>{setEditGroup(null);setGroupName('');}},'Отмена')),data?.groups.map(g=>h('div',{key:g.id,className:'q-list-item'},h('strong',null,g.name),h('p',null,'Темы 1–'+g.course_through+' · код вступления: ',h('strong',null,g.invite_code)),h('button',{className:'btn ghost',onClick:()=>{setEditGroup(g.id);setGroupName(g.name);setGroupThrough(String(g.course_through));}},'Изменить')))),
- h('div',{className:'card'},h('h2',null,'Ученики'),data?.students.map(s=>h('div',{key:s.id,className:'q-list-item'},h('strong',null,s.name||s.id),h('label',null,'Личный предел тем для самостоятельной практики'),h('select',{value:s.through,disabled:busy,onChange:e=>{const n=Number(e.target.value);run(async()=>{await portalRpc('student_topics',{p_student:s.id,p_through:n});await reload();});}},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name)))))),
+ h('div',{className:'card'},h('h2',null,'Ученики'),h('p',{className:'q-meta'},'Ученик появится здесь после входа в свой кабинет и вступления по коду группы выше.'),h('button',{className:'btn ghost small',disabled:busy,onClick:reload},'Обновить список учеников'),data&&!data.students.length&&h('p',null,'Пока никто не вступил в ваши группы.'),data?.students.map(s=>h('div',{key:s.id,className:'q-list-item'},h('strong',null,s.name||s.id),h('label',null,'Личный предел тем для самостоятельной практики'),h('select',{value:s.through,disabled:busy,onChange:e=>{const n=Number(e.target.value);run(async()=>{await portalRpc('student_topics',{p_student:s.id,p_through:n});await reload();});}},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name)))))),
  h('div',{className:'card'},h('h2',null,'Выдать работу'),h('label',null,'Группа или ученик'),h('select',{id:'assign-target',value:target,onChange:e=>setTarget(e.target.value)},h('option',{value:''},'Выберите адресата'),data?.groups.map(g=>h('option',{key:g.id,value:'group:'+g.id},'Группа: '+g.name)),data?.students.map(s=>h('option',{key:s.id,value:'student:'+s.id},'Ученик: '+s.name))),h('label',null,'Тест'),h('select',{id:'assign-test',value:test,onChange:e=>setTest(e.target.value)},h('option',{value:''},'Выберите готовый тест'),tests.map(t=>h('option',{key:t.id,value:t.id},t.name+' · '+t.code))),h('label',null,'Название назначения (необязательно)'),h('input',{value:title,onChange:e=>setTitle(e.target.value)}),h('label',null,'Срок сдачи (необязательно)'),h('input',{type:'datetime-local',value:due,onChange:e=>setDue(e.target.value)}),h('button',{className:'btn',disabled:busy,onClick:()=>run(assign)},'Назначить работу'),
  h('details',null,h('summary',null,'Назначить индивидуальный подбор'),h('p',null,'Для выбранной группы или ученика: каждый получит подборку по собственной истории и личному пределу тем. Если у кого-то нет подходящих вопросов, назначения не создаются; выберите ученика отдельно или смешанный режим.'),h('select',{id:'teacher-practice-mode',value:practiceMode,onChange:e=>setPracticeMode(e.target.value)},h('option',{value:'errors'},'По ошибкам'),h('option',{value:'unseen'},'Ещё не решал'),h('option',{value:'mixed'},'Ошибки + новые + повторение')),h('label',null,'Количество (1–30)'),h('input',{id:'teacher-practice-count',type:'number',min:1,max:30,value:practiceCount,onChange:e=>setPracticeCount(e.target.value)}),h('label',null,'Номер задания (необязательно)'),h('input',{type:'number',min:1,value:practiceNumber,onChange:e=>setPracticeNumber(e.target.value)}),h('label',{className:'opt'},h('input',{type:'checkbox',checked:practiceTraining,onChange:e=>setPracticeTraining(e.target.checked)}),'Тренировка с проверкой по ходу решения'),h('button',{className:'btn',disabled:busy,onClick:()=>run(async()=>{const [kind,id]=target.split(':');if(!id)throw new Error('Выберите адресата выше.');const n=await portalRpc('assign_practice',{p_mode:practiceMode,p_count:Number(practiceCount),p_number:practiceNumber?Number(practiceNumber):null,p_student:kind==='student'?id:null,p_group:kind==='group'?id:null,p_training:practiceTraining,p_due:due?new Date(due).toISOString():null});setNotice('Создано индивидуальных назначений: '+n+'.');await reload();})},'Подобрать и назначить')),
  h('details',null,h('summary',null,'Раздать группе разные готовые варианты'),h('p',null,'Отметьте по одному тесту на каждого ученика. Варианты предварительно создаются в конструкторе. Назначения появятся в личных кабинетах.'),tests.map(t=>h('label',{className:'opt',key:t.id},h('input',{type:'checkbox',checked:selectedTests.includes(t.id),onChange:e=>setSelectedTests(prev=>e.target.checked?[...prev,t.id]:prev.filter(id=>id!==t.id))}),t.name)),h('button',{className:'btn',disabled:busy,onClick:()=>run(distribute)},'Распределить варианты')),
@@ -1220,6 +1220,49 @@ function atomicGenerate(facts,through,mode,count,existing=[]) {
   return result;
 }
 function chronoValidate(data) {const fs=atomicValidate(data);if(fs.some(f=>!['russia','world'].includes(f.scope)))throw new Error('Неизвестный раздел истории.');return fs.map(f=>({...f,dateLabel:atomicDateLabel(f)}));}
+function processValidate(data) {
+  if(!data||!Array.isArray(data.facts)||!data.facts.length)throw new Error('Нет пар «процесс — факт».');
+  const ids=new Set();return data.facts.map((f,i)=>{
+    if(!f||typeof f.factId!=='string'||ids.has(f.factId)||!String(f.process||'').trim()||!String(f.fact||'').trim()||!COURSE38_BY_ID.has(Number(f.courseTopicId)))throw new Error('Некорректная пара №'+(i+1));
+    ids.add(f.factId);return {...f,courseTopicId:Number(f.courseTopicId),enabled:f.enabled!==false};
+  });
+}
+function processPool(facts,through,mode){
+  if(!COURSE38_BY_ID.has(Number(through))||!['current','cumulative'].includes(mode))throw new Error('Выберите изученную тему.');
+  return facts.filter(f=>f.enabled!==false&&(mode==='current'?f.courseTopicId===Number(through):f.courseTopicId<=Number(through)));
+}
+function processCompose(events,options,through,mode,selectedFactIds){
+  const correctMatch=events.map(f=>options.findIndex(o=>o.factId===f.factId)+1);
+  const required=[...new Set(options.map(f=>f.courseTopicId))].sort((a,b)=>a-b).map(id=>COURSE38_BY_ID.get(id));
+  const text='Установите соответствие между процессами (явлениями, событиями) и фактами, относящимися к ним: к каждой позиции первого столбца подберите позицию второго столбца.';
+  return {id:uid('atom3'),type:'matching',ogeNumber:3,text,matchLeft:events.map(f=>f.process),matchRight:options.map(f=>f.fact),correctMatch,maxScore:2,gradingMode:'ordered',source:'Генератор №3 · пары из исходных заданий',referenceAnswer:events.map((f,i)=>'АБВГ'[i]+') '+f.process+' — '+f.fact).join('\n'),topic:required.map(t=>t.name).join('; '),primaryCourseTopic:required[required.length-1],requiredCourseTopics:required,metadata:{requiredCourseTopics:required,atomic:{version:1,task:3,through:Number(through),mode,events,options,selectedFactIds}}};
+}
+function processGenerate(facts,through,mode,count,existing=[]){
+  if(!Number.isInteger(count)||count<1||count>100)throw new Error('Укажите количество от 1 до 100.');
+  if(mode!=='cumulative')throw new Error('Для №3 нужен накопительный режим: шесть разных изученных тем.');
+  const pool=processPool(facts,through,mode);
+  if(new Set(pool.map(f=>f.courseTopicId)).size<6)throw new Error('Выберите пары минимум из шести разных изученных тем: четыре для соответствия и две для лишних вариантов.');
+  const usage=new Map();existing.filter(q=>q.metadata?.atomic?.task===3).forEach(q=>q.metadata.atomic.events.forEach(f=>usage.set(f.factId,(usage.get(f.factId)||0)+1)));
+  const result=[],seen=new Set();
+  for(let n=0;n<count;n++){
+    let chosen;
+    for(let attempt=0;attempt<120;attempt++){
+      const topics=new Set(),processes=new Set(),factsSeen=new Set();chosen=[];
+      for(const f of atomicShuffle(pool).sort((a,b)=>(usage.get(a.factId)||0)-(usage.get(b.factId)||0))){
+        const p=f.process.trim().toLocaleLowerCase('ru'),v=f.fact.trim().toLocaleLowerCase('ru');
+        if(topics.has(f.courseTopicId)||processes.has(p)||factsSeen.has(v))continue;
+        chosen.push(f);topics.add(f.courseTopicId);processes.add(p);factsSeen.add(v);if(chosen.length===6)break;
+      }
+      if(chosen.length<6)throw new Error('Недостаточно разных пар для шести тем. Отметьте другие пары.');
+      const signature=chosen.slice(0,4).map(f=>f.factId).sort().join('|');if(!seen.has(signature)){seen.add(signature);break;}chosen=null;
+    }
+    if(!chosen)throw new Error('Не удалось получить '+count+' разных заданий. Уменьшите количество или расширьте выбор.');
+    const events=atomicShuffle(chosen.slice(0,4)),options=atomicShuffle(chosen);
+    result.push(processCompose(events,options,through,mode,pool.map(f=>f.factId)));
+    events.forEach(f=>usage.set(f.factId,(usage.get(f.factId)||0)+1));
+  }
+  return result;
+}
 function chronoPool(facts, through, mode) {
   if (!COURSE38_BY_ID.has(Number(through)) || !['cumulative','current'].includes(mode)) throw new Error('Выберите тему и режим.');
   return facts.filter(f => f.enabled !== false && (mode==='current' ? f.courseTopicId===Number(through) : f.courseTopicId<=Number(through)));
@@ -1265,11 +1308,11 @@ function chronoGenerate(facts, through, mode, count, existing=[], composition='r
 function selectedAtomicPool(facts, task, through, mode, ids) {
   const chosen=new Set(ids);
   facts.forEach(f=>{if((f.aliasFactIds||[]).some(id=>chosen.has(id)))chosen.add(f.factId);});
-  return (task===1 ? atomicPool(facts,through,mode) : chronoPool(facts,through,mode)).filter(f=>chosen.has(f.factId));
+  return (task===1 ? atomicPool(facts,through,mode) : task===2 ? chronoPool(facts,through,mode) : processPool(facts,through,mode)).filter(f=>chosen.has(f.factId));
 }
 function generateSelectedAtomic(facts,task,through,mode,count,ids,existing=[],composition='russia') {
   const pool=selectedAtomicPool(facts,task,through,mode,ids);
-  const qs=task===1 ? atomicGenerate(pool,through,mode,count,existing) : chronoGenerate(pool,through,mode,count,existing,composition,pool.filter(f=>f.scope==='world').map(f=>f.factId));
+  const qs=task===1 ? atomicGenerate(pool,through,mode,count,existing) : task===2 ? chronoGenerate(pool,through,mode,count,existing,composition,pool.filter(f=>f.scope==='world').map(f=>f.factId)) : processGenerate(pool,through,mode,count,existing);
   return qs.map(q=>({...q,metadata:{...q.metadata,atomic:{...q.metadata.atomic,task,selectedFactIds:pool.map(f=>f.factId)}}}));
 }
 function atomicReplacementCandidates(q,index,facts) {
@@ -1278,12 +1321,21 @@ function atomicReplacementCandidates(q,index,facts) {
   const others=a.events.filter((_,i)=>i!==index);
   return pool.filter(f=>f.factId!==a.events[index].factId && (task===1
     ? others.every(o=>atomicOptionsCompatible(o,f))
-    : f.scope===a.events[index].scope && others.every(o=>chronoCompatible(o,f))));
+    : task===2 ? f.scope===a.events[index].scope && others.every(o=>chronoCompatible(o,f))
+    : others.every(o=>o.courseTopicId!==f.courseTopicId && o.process.toLocaleLowerCase('ru')!==f.process.toLocaleLowerCase('ru') && o.fact.toLocaleLowerCase('ru')!==f.fact.toLocaleLowerCase('ru'))));
 }
 function replaceAtomicEvent(q,index,factId,facts) {
   const f=atomicReplacementCandidates(q,index,facts).find(f=>f.factId===factId);
   if(!f) throw new Error('Это событие нельзя использовать: проверьте выбранные факты, темы и даты.');
   const a=q.metadata.atomic, task=a.task||1, events=a.events.map((e,i)=>i===index?f:e);
+  if(task===3){
+    const pool=selectedAtomicPool(facts,task,a.through,a.mode,a.selectedFactIds||[]);
+    const used=new Set(events.map(e=>e.courseTopicId));
+    const extras=atomicShuffle(pool).filter(x=>!used.has(x.courseTopicId)&&!events.some(e=>e.fact.toLocaleLowerCase('ru')===x.fact.toLocaleLowerCase('ru')));
+    const pair=[];for(const x of extras)if(!pair.some(y=>y.courseTopicId===x.courseTopicId)){pair.push(x);if(pair.length===2)break;}
+    if(pair.length<2)throw new Error('После замены не осталось двух безопасных лишних фактов из других тем.');
+    return processCompose(events,atomicShuffle([...events,...pair]),a.through,a.mode,a.selectedFactIds);
+  }
   let options=a.options, text,correctText,referenceAnswer,required;
   if(task===1) {
     const pool=selectedAtomicPool(facts,task,a.through,a.mode,a.selectedFactIds||[]);
@@ -1309,13 +1361,53 @@ function AtomicEventEditor({q,facts,busy,onReplace}) {
     h('p',{className:'q-meta'},'Доступны только факты, выбранные при создании этого задания. Для другого набора создайте новый комплект. Замена создаёт новую версию задания; ранее сохранённые тесты остаются прежними.'),
     q.metadata.atomic.events.map((f,i)=>{
       const candidates=atomicReplacementCandidates(q,i,facts);
-      return h('div',{key:i},h('label',null,(q.ogeNumber===1?'АБВГ'[i]:i+1)+') '+f.event,
+      return h('div',{key:i},h('label',null,((q.ogeNumber===1||q.ogeNumber===3)?'АБВГ'[i]:i+1)+') '+(f.event||f.process),
         h('select',{'aria-label':'Замена события '+(i+1),value:'',disabled:busy||!candidates.length,onChange:e=>onReplace(i,e.target.value)},
           h('option',{value:''},candidates.length?'Выберите замену…':'Нет подходящей замены в выбранном наборе'),
-          candidates.map(c=>h('option',{key:c.factId,value:c.factId},c.event+' — '+(c.dateLabel||c.year+' г.')+' · тема '+c.courseTopicId)))));
+          candidates.map(c=>h('option',{key:c.factId,value:c.factId},(c.event||c.process)+' — '+(c.fact||c.dateLabel||(c.year+' г.'))+' · тема '+c.courseTopicId)))));
     }));
 }
 
+function ProcessGeneratorTab({onReload,onAdd,constructorScope}){
+  const h=React.createElement,cacheKey='history.atomic.task3.v1:'+SUPABASE_URL,presetKey=cacheKey+':presets';
+  const [facts,setFacts]=useState([]),[selected,setSelected]=useState([]),[through,setThrough]=useState('6'),[count,setCount]=useState('10');
+  const [search,setSearch]=useState(''),[status,setStatus]=useState('Загружаю базу №3…'),[error,setError]=useState(''),[busy,setBusy]=useState(false);
+  const [questions,setQuestions]=useState([]),[name,setName]=useState(''),[training,setTraining]=useState(true),[created,setCreated]=useState(null),[saved,setSaved]=useState(new Set());
+  const [presetName,setPresetName]=useState(''),[presets,setPresets]=useState(()=>constructorRead(presetKey,[]));
+  useEffect(()=>{if(constructorScope)setThrough(String(constructorScope.through));},[constructorScope?.through]);
+  useEffect(()=>{let live=true;(async()=>{try{let data=constructorRead(cacheKey,null);if(!data){const r=await fetch('history_task_3_facts.json');if(!r.ok)throw new Error('Разместите history_task_3_facts.json рядом с index.html.');data=await r.json();}const rows=processValidate(data);if(live){setFacts(rows);setStatus('База №3: '+rows.filter(f=>f.enabled).length+' доступных пар, '+rows.filter(f=>!f.enabled).length+' отложено для проверки.');}}catch(e){if(live)setError(e.message);}})();return()=>{live=false;};},[]);
+  const pool=facts.filter(f=>f.enabled&&f.courseTopicId<=Number(through)),chosen=pool.filter(f=>selected.includes(f.factId));
+  const visible=pool.filter(f=>(f.process+' '+f.fact).toLocaleLowerCase('ru').includes(search.toLocaleLowerCase('ru')));
+  function mark(ids,yes){setSelected(prev=>yes?[...new Set([...prev,...ids])]:prev.filter(id=>!ids.includes(id)));}
+  function generate(i){setError('');setCreated(null);try{
+    if(i===undefined){setQuestions(generateSelectedAtomic(facts,3,through,'cumulative',Number(count),selected));setSaved(new Set());}
+    else{const old=questions[i].metadata.atomic,next=generateSelectedAtomic(facts,3,old.through,'cumulative',1,old.selectedFactIds,questions.filter((_,j)=>j!==i))[0];setQuestions(prev=>prev.map((q,j)=>j===i?next:q));}
+  }catch(e){setError(e.message);}}
+  async function importFile(file){if(!file)return;setError('');try{const data=JSON.parse(await file.text()),rows=processValidate(data);setFacts(rows);setSelected([]);setQuestions([]);try{localStorage.setItem(cacheKey,JSON.stringify(data));}catch(_){}setStatus('Загружено '+rows.length+' пар.');}catch(e){setError('Импорт: '+e.message);}}
+  async function save(makeTest){if(busy||!questions.length)return;if(makeTest&&!name.trim()){setError('Введите название теста.');return;}setBusy(true);setError('');const done=new Set(saved);try{
+    for(const q of questions){if(done.has(q.id))continue;const err=await upsertQuestion(q);if(err)throw err;done.add(q.id);setSaved(new Set(done));}
+    if(makeTest){const t={id:uid('t'),code:genCode(),name:name.trim(),training,questionIds:questions.map(q=>q.id)},err=await insertTest(t);if(err)throw err;setCreated(t);}
+    setStatus('Сохранено заданий №3: '+questions.length+'.');await onReload();
+  }catch(e){setError('Сохранение: '+portalError(e));}finally{setBusy(false);}}
+  function storePreset(){if(!presetName.trim()||!chosen.length){setError('Укажите название и отметьте пары.');return;}const next=[...presets,{id:uid('preset3'),name:presetName.trim(),through,ids:chosen.map(f=>f.factId)}];try{localStorage.setItem(presetKey,JSON.stringify(next));setPresets(next);setStatus('Набор сохранён на этом устройстве.');}catch(e){setError('Не удалось сохранить набор: '+e.message);}}
+  return h('div',{'data-task':3,className:'atomic-generator'},h('div',{className:'card'},h('h2',null,'Генератор №3'),h('div',{className:'notice',role:'status'},status),error&&h('div',{className:'notice',role:'alert'},error),
+    h('label',null,'Загрузить или заменить базу №3 (JSON)'),h('input',{type:'file',accept:'.json,application/json',onChange:e=>{importFile(e.target.files[0]);e.target.value='';}}),
+    h('label',null,'Ученик изучил до темы'),h('select',{value:through,onChange:e=>setThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name))),
+    h('p',null,'Отметьте изученные пары. В каждом задании четыре соответствия и два лишних факта из двух других тем. Всего нужны пары минимум из шести разных тем.'),
+    h('label',null,'Поиск процесса или факта'),h('input',{value:search,onChange:e=>setSearch(e.target.value)}),
+    h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',onClick:()=>mark(visible.map(f=>f.factId),true)},'Выбрать все показанные'),h('button',{className:'btn ghost small',onClick:()=>mark(visible.map(f=>f.factId),false)},'Снять выделение')),
+    h('p',{className:'q-meta'},'Выбрано пар: '+chosen.length+' · тем: '+new Set(chosen.map(f=>f.courseTopicId)).size),
+    COURSE38_TOPICS.map(t=>{const rows=visible.filter(f=>f.courseTopicId===t.id);return rows.length>0&&h('details',{key:t.id,'data-topic':t.id},h('summary',null,t.id+'. '+t.name+' — выбрано '+rows.filter(f=>selected.includes(f.factId)).length+' из '+rows.length),
+      h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',onClick:()=>mark(rows.map(f=>f.factId),true)},'Выбрать тему'),h('button',{className:'btn ghost small',onClick:()=>mark(rows.map(f=>f.factId),false)},'Снять тему')),
+      rows.map(f=>h('label',{className:'opt',key:f.factId},h('input',{type:'checkbox',checked:selected.includes(f.factId),onChange:e=>mark([f.factId],e.target.checked)}),f.process+' — '+f.fact)));}),
+    h('label',null,'Сохранённый набор'),h('select',{value:'',onChange:e=>{const p=presets.find(x=>x.id===e.target.value);if(p){setThrough(p.through);setSelected(p.ids);setPresetName(p.name);}}},h('option',{value:''},'Выберите…'),presets.map(p=>h('option',{key:p.id,value:p.id},p.name))),
+    h('label',null,'Название нового набора'),h('input',{value:presetName,onChange:e=>setPresetName(e.target.value),placeholder:'Саша — изученные темы'}),h('button',{className:'btn ghost',onClick:storePreset},'Сохранить набор'),
+    facts.some(f=>!f.enabled)&&h('details',{className:'notice'},h('summary',null,'Отложенные пары ('+facts.filter(f=>!f.enabled).length+')'),facts.filter(f=>!f.enabled).map(f=>h('p',{key:f.factId},f.process+' — '+f.fact+'; '+f.reviewReason))),
+    h('label',null,'Количество заданий (1–100)'),h('input',{type:'number',min:1,max:100,value:count,onChange:e=>setCount(e.target.value)}),h('button',{className:'btn',disabled:busy||!facts.length,onClick:()=>generate()},'Сгенерировать задания №3')),
+    !!questions.length&&h('div',{className:'card'},h('h2',null,'Предпросмотр: '+questions.length),h('label',null,'Название теста'),h('input',{value:name,onChange:e=>{setName(e.target.value);setCreated(null);}}),h('label',{className:'opt'},h('input',{type:'checkbox',checked:training,onChange:e=>setTraining(e.target.checked)}),'Тренировочный режим'),
+      h('div',{className:'atomic-actions'},onAdd&&h('button',{className:'btn',onClick:()=>onAdd(questions,{task:3,facts})},'Добавить комплект в конструктор'),h('button',{className:'btn ghost',disabled:busy,onClick:()=>save(false)},'Сохранить в банк'),h('button',{className:'btn',disabled:busy||!!created,onClick:()=>save(true)},'Сохранить и создать тест')),
+      created&&h('div',{className:'notice'},'Код теста: ',h('strong',null,created.code)),questions.map((q,i)=>h('div',{className:'q-list-item',key:q.id},h('h3',null,'Задание '+(i+1)),h(ConstructorPreview,{q}),h(AtomicEventEditor,{q,facts,busy,onReplace:(j,id)=>{try{setQuestions(prev=>prev.map(x=>x.id===q.id?replaceAtomicEvent(q,j,id,facts):x));setCreated(null);}catch(e){setError(e.message);}}}),h('button',{className:'btn ghost small',onClick:()=>generate(i)},'Перегенерировать'),h('button',{className:'btn danger',onClick:()=>setQuestions(prev=>prev.filter(x=>x.id!==q.id))},'Удалить')))));
+}
 function AtomicGeneratorTab({ onReload, task = 1, onAdd, constructorScope }) {
   const cacheKey = task === 1 ? ATOMIC_CACHE_KEY : 'history.atomic.task2.pdf.v3:' + SUPABASE_URL;
   const validate = task === 1 ? atomicValidate : chronoValidate;
@@ -1531,15 +1623,15 @@ function ConstructorTab({bank,onReload}) {
     if(!rows.length)return;
     setGenerated(prev=>{const map=new Map(prev.map(q=>[q.id,q]));rows.forEach(q=>map.set(q.id,constructorQuestion(q)));return [...map.values()];});
     setFactBases(prev=>({...prev,[context.task]:context.facts}));setSelected(prev=>[...new Set([...prev,...rows.map(q=>q.id)])]);
-    setNotice('В конструктор добавлено '+rows.length+' заданий №'+context.task+'.');setSection('bank');
+    if(context.task===3){setMode('cumulative');setThrough(String(Math.max(Number(through),...rows.flatMap(q=>q.requiredCourseTopics.map(t=>Number(t.id))))));}setNotice('В конструктор добавлено '+rows.length+' заданий №'+context.task+'.');setSection('bank');
   }
   function presetData(){return {...state,variants:[]};}
   function storeSets(next){try{localStorage.setItem(CONSTRUCTOR_KEY+':sets',JSON.stringify(next));setPresets(next);}catch(_){throw new Error('Не удалось сохранить набор. Экспортируйте его в JSON.');}}
   function restore(p){
     if(!p||p.version!==1||!COURSE38_BY_ID.has(Number(p.through))||!['current','cumulative'].includes(p.mode)||!Array.isArray(p.selected)||!Array.isArray(p.generated))throw new Error('Это не набор конструктора версии 1.');
     // Imported generated questions must contain a valid atomic snapshot and selected facts.
-    const bases={};for(const task of [1,2])if(p.factBases&&p.factBases[task])bases[task]=(task===1?atomicValidate:chronoValidate)({facts:p.factBases[task]});
-    p.generated.forEach(q=>{if(!q||typeof q.id!=='string'||typeof q.text!=='string'||![1,2].includes(q.ogeNumber)||!q.metadata?.atomic||!Array.isArray(q.metadata.atomic.events))throw new Error('Повреждённое автоматически созданное задание.');});
+    const bases={};for(const task of [1,2,3])if(p.factBases&&p.factBases[task])bases[task]=(task===1?atomicValidate:task===2?chronoValidate:processValidate)({facts:p.factBases[task]});
+    p.generated.forEach(q=>{if(!q||typeof q.id!=='string'||typeof q.text!=='string'||![1,2,3].includes(q.ogeNumber)||!q.metadata?.atomic||!Array.isArray(q.metadata.atomic.events))throw new Error('Повреждённое автоматически созданное задание.');});
     setThrough(String(p.through));setMode(p.mode);setSelected(p.selected.filter(x=>typeof x==='string'));setGenerated(p.generated);setFactBases(bases);setQuota(p.quota||{});setCount(String(p.count||1));setName(String(p.name||''));setTraining(p.training!==false);setVariants([]);setActive(0);setError('');setNotice('Набор загружен. Проверьте доступность выбранных заданий и соберите варианты.');
   }
   function signature(rows){return rows.map(constructorIdentity).sort().join('|');}
@@ -1577,7 +1669,7 @@ function ConstructorTab({bank,onReload}) {
   }
   function regenerate(index){
     try{
-      const v=variants[active],q=v.questions[index],a=q.metadata.atomic,task=q.ogeNumber;
+    const v=variants[active],q=v.questions[index],a=q.metadata.atomic,task=q.ogeNumber;
       const next=generateSelectedAtomic(factBases[task]||[],task,a.through,a.mode,1,a.selectedFactIds||[],v.questions.filter(x=>x.metadata?.atomic&&x.ogeNumber===task),a.composition||'russia')[0];
       if(!constructorEligible(next,v.through,v.mode))throw new Error('Новый вопрос выходит за темы варианта.');
       editVariant(active,v=>({...v,questions:v.questions.map((r,i)=>i===index?next:r)}));
@@ -1612,10 +1704,11 @@ function ConstructorTab({bank,onReload}) {
   return h('fieldset',{className:'constructor',disabled:busy,'data-constructor':true,style:{border:0,padding:0,margin:0,minWidth:0}},
     h('div',{className:'card'},h('h2',null,'Конструктор'),h('p',null,'Выберите изученные темы и конкретный материал. Затем соберите и проверьте варианты.'),
       h('div',{className:'constructor-grid'},h('div',null,h('label',{htmlFor:'constructor-through'},'Последняя изученная тема'),h('select',{id:'constructor-through',value:through,disabled:busy,onChange:e=>setThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name)))),h('div',null,h('label',{htmlFor:'constructor-mode'},'Материал'),h('select',{id:'constructor-mode',value:mode,disabled:busy,onChange:e=>setMode(e.target.value)},h('option',{value:'cumulative'},'Накопительно: темы 1–'+through),h('option',{value:'current'},'Только тема '+through)))),
-      h('div',{className:'tabs'},[['bank','Выбор заданий'],['atom1','Создать №1'],['atom2','Создать №2']].map(([k,s])=>h('button',{key:k,disabled:busy,className:section===k?'active':'',onClick:()=>setSection(k)},s))),
+      h('div',{className:'tabs'},[['bank','Выбор заданий'],['atom1','Создать №1'],['atom2','Создать №2'],['atom3','Создать №3']].map(([k,s])=>h('button',{key:k,disabled:busy,className:section===k?'active':'',onClick:()=>setSection(k)},s))),
       h('p',{className:'q-meta'},'Выбрано доступных заданий: '+chosen.length+(selectedHidden?' · исключено из текущего материала: '+selectedHidden:'')+'. Черновик и наборы сохраняются в этом браузере; для переноса используйте экспорт.')),
     error&&h('div',{className:'notice',role:'alert'},error),notice&&h('div',{className:'notice',role:'status'},notice),
     [1,2].map(task=>h('div',{key:task,style:{display:section==='atom'+task?'block':'none'}},h(AtomicGeneratorTab,{task,onReload,onAdd:addGenerated,constructorScope:{through,mode}}))),
+    h('div',{style:{display:section==='atom3'?'block':'none'}},h(ProcessGeneratorTab,{onReload,onAdd:addGenerated,constructorScope:{through,mode}})),
     section==='bank'&&h('div',{className:'card'},h('h3',null,'Материал для вариантов'),
       bank===null&&h('p',null,'Загружаю банк…'),
       h('div',{className:'constructor-grid'},h('div',null,h('label',{htmlFor:'constructor-search'},'Поиск по тексту или ID'),h('input',{id:'constructor-search',value:search,onChange:e=>setSearch(e.target.value)})),h('div',null,h('label',{htmlFor:'constructor-number'},'Номер задания'),h('select',{id:'constructor-number',value:number,onChange:e=>setNumber(e.target.value)},h('option',{value:''},'Все номера'),[...new Set(catalog.map(q=>q.ogeNumber).filter(Boolean))].sort((a,b)=>a-b).map(n=>h('option',{key:n,value:n},'№'+n))))),

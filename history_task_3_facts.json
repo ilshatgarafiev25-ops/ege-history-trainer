@@ -1,0 +1,3038 @@
+{
+  "meta": {
+    "schema": "history-task3-process-fact-v1",
+    "sourceQuestions": 74,
+    "uniquePairs": 273,
+    "enabledPairs": 265,
+    "courseTopicVersion": "course38-v1",
+    "note": "Пары из правильных ответов задания 3. Неоднозначные по теме процессы отключены до проверки."
+  },
+  "facts": [
+    {
+      "factId": "T3-146461-0001",
+      "process": "Смута в России",
+      "fact": "деятельность Лжедмитрия III",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "146461"
+      ]
+    },
+    {
+      "factId": "T3-146461-0002",
+      "process": "экономическое развитие России в XVII в.",
+      "fact": "возникновение общероссийских ярмарок и появление мануфактур",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "146461"
+      ]
+    },
+    {
+      "factId": "T3-146461-0003",
+      "process": "ограничение перехода крестьян от одного землевладельца к другому",
+      "fact": "издание Судебника Ивана III",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "146461"
+      ]
+    },
+    {
+      "factId": "T3-146461-0004",
+      "process": "борьбу русских земель с агрессией с юга",
+      "fact": "поход Девлет-Гирея на Москву",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "146461"
+      ]
+    },
+    {
+      "factId": "T3-177438-0005",
+      "process": "церковная реформа патриарха Никона",
+      "fact": "появление старообрядчества",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177438"
+      ]
+    },
+    {
+      "factId": "T3-177438-0006",
+      "process": "решение Россией Восточного вопроса в первой половине XIX в.",
+      "fact": "заключение Адрианопольского договора между Россией и Османской империей",
+      "courseTopicId": 16,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177438"
+      ]
+    },
+    {
+      "factId": "T3-177438-0007",
+      "process": "Специальная военная операция (СВО)",
+      "fact": "подписание договора о вхождении Херсонской области в состав России",
+      "courseTopicId": 38,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177438"
+      ]
+    },
+    {
+      "factId": "T3-177438-0008",
+      "process": "внешняя политика князя Владимира Святославича",
+      "fact": "осада Корсуни русским войском",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177438"
+      ]
+    },
+    {
+      "factId": "T3-177453-0009",
+      "process": "консервативное направление в общественном движении в период правления Николая I",
+      "fact": "создание «теории официальной народности»",
+      "courseTopicId": 16,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177453"
+      ]
+    },
+    {
+      "factId": "T3-177453-0010",
+      "process": "проведение новой экономической политики (нэпа)",
+      "fact": "проведение финансовой реформы Г.Я. Сокольникова",
+      "courseTopicId": 27,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177453"
+      ]
+    },
+    {
+      "factId": "T3-177453-0011",
+      "process": "установление республиканской формы правления в Новгороде",
+      "fact": "изгнание князя Всеволода Мстиславича",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177453",
+        "137657"
+      ]
+    },
+    {
+      "factId": "T3-177453-0012",
+      "process": "Смутное время в России",
+      "fact": "избрание на престол Михаила Романова",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177453"
+      ]
+    },
+    {
+      "factId": "T3-177469-0013",
+      "process": "Гражданская война",
+      "fact": "формирование Уфимской директории",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177469"
+      ]
+    },
+    {
+      "factId": "T3-177469-0014",
+      "process": "Великие реформы Александра II",
+      "fact": "издание «Положения о губернских и уездных земских учреждениях»",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177469"
+      ]
+    },
+    {
+      "factId": "T3-177469-0015",
+      "process": "внешняя политика Ивана IV",
+      "fact": "оборона Пскова от войск Стефана Батория",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177469"
+      ]
+    },
+    {
+      "factId": "T3-177469-0016",
+      "process": "борьба Руси против половцев",
+      "fact": "Любечский съезд князей",
+      "courseTopicId": 2,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177469"
+      ]
+    },
+    {
+      "factId": "T3-181564-0017",
+      "process": "Гражданская война в России",
+      "fact": "формирование Уфимской директории",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181564"
+      ]
+    },
+    {
+      "factId": "T3-181564-0018",
+      "process": "деятельность Верховного тайного совета",
+      "fact": "составление «Кондиций»",
+      "courseTopicId": 11,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181564"
+      ]
+    },
+    {
+      "factId": "T3-181564-0019",
+      "process": "Смутное время в России",
+      "fact": "создание Тушинского лагеря",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181564"
+      ]
+    },
+    {
+      "factId": "T3-181564-0020",
+      "process": "деятельность княгини Ольги",
+      "fact": "введение уроков и погостов",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181564"
+      ]
+    },
+    {
+      "factId": "T3-181582-0021",
+      "process": "внутренняя политика Ивана III",
+      "fact": "издание первого общерусского Судебника",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181582"
+      ]
+    },
+    {
+      "factId": "T3-181582-0022",
+      "process": "закрепощение крестьян во второй половине XVI в.",
+      "fact": "введение заповедных лет",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181582"
+      ]
+    },
+    {
+      "factId": "T3-181582-0023",
+      "process": "внутренняя политика Александра III",
+      "fact": "начало строительства Транссибирской магистрали",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181582"
+      ]
+    },
+    {
+      "factId": "T3-181582-0024",
+      "process": "индустриализация в СССР",
+      "fact": "строительство Магнитогорского металлургического комбината",
+      "courseTopicId": 28,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181582"
+      ]
+    },
+    {
+      "factId": "T3-181593-0025",
+      "process": "революционные события 1917 г.",
+      "fact": "провозглашение России республикой",
+      "courseTopicId": 24,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181593"
+      ]
+    },
+    {
+      "factId": "T3-181593-0026",
+      "process": "внутренняя политика Павла I",
+      "fact": "издание Манифеста о трёхдневной барщине",
+      "courseTopicId": 13,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181593"
+      ]
+    },
+    {
+      "factId": "T3-181593-0027",
+      "process": "реформы Избранной рады",
+      "fact": "созыв первого Земского собора",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181593",
+        "175707",
+        "130007",
+        "137581"
+      ]
+    },
+    {
+      "factId": "T3-181593-0028",
+      "process": "развитие законодательства Древней Руси",
+      "fact": "создание Устава Владимира Всеволодовича",
+      "courseTopicId": 2,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181593"
+      ]
+    },
+    {
+      "factId": "T3-181609-0029",
+      "process": "начало проведения новой экономической политики (нэпа)",
+      "fact": "восстание моряков Кронштадта",
+      "courseTopicId": 27,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181609"
+      ]
+    },
+    {
+      "factId": "T3-181609-0030",
+      "process": "Московское восстание 1547 г.",
+      "fact": "убийство дяди царя Юрия Глинского",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181609"
+      ]
+    },
+    {
+      "factId": "T3-181609-0031",
+      "process": "борьба за первенство в деле объединения русских земель в XIV в.",
+      "fact": "подавление антиордынского восстания в Твери",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181609"
+      ]
+    },
+    {
+      "factId": "T3-181609-0032",
+      "process": "восстание под предводительством Е.И. Пугачёва",
+      "fact": "осада Оренбурга",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "181609"
+      ]
+    },
+    {
+      "factId": "T3-182522-0033",
+      "process": "междоусобная война второй четверти XV в.",
+      "fact": "ослепление Василия II",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182522"
+      ]
+    },
+    {
+      "factId": "T3-182522-0034",
+      "process": "восстание под предводительством И.И. Болотникова",
+      "fact": "осада Тулы царскими войсками",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182522"
+      ]
+    },
+    {
+      "factId": "T3-182522-0035",
+      "process": "внутренняя политика Екатерины II",
+      "fact": "созыв Уложенной комиссии",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182522"
+      ]
+    },
+    {
+      "factId": "T3-182522-0036",
+      "process": "первые преобразования большевиков",
+      "fact": "издание Декрета об уничтожении сословий и гражданских чинов",
+      "courseTopicId": 25,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182522"
+      ]
+    },
+    {
+      "factId": "T3-182524-0037",
+      "process": "внешняя политика Советской России в первой половине 1920-х гг.",
+      "fact": "заключение Рапалльского договора между Советской Россией и Германией",
+      "courseTopicId": 27,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182524"
+      ]
+    },
+    {
+      "factId": "T3-182524-0038",
+      "process": "Великие реформы Александра II",
+      "fact": "учреждение городских дум и городских управ",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182524"
+      ]
+    },
+    {
+      "factId": "T3-182524-0039",
+      "process": "народные выступления в период Смутного времени в России",
+      "fact": "восстание под предводительством И.И. Болотникова",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182524"
+      ]
+    },
+    {
+      "factId": "T3-182524-0040",
+      "process": "борьба с ордынским владычеством в XV в.",
+      "fact": "стояние на Угре",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182524"
+      ]
+    },
+    {
+      "factId": "T3-182526-0041",
+      "process": "внешняя политика Николая I",
+      "fact": "заключение Туркманчайского мирного договора",
+      "courseTopicId": 16,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182526"
+      ]
+    },
+    {
+      "factId": "T3-182526-0042",
+      "process": "восстание под предводительством С.Т. Разина",
+      "fact": "взятие Царицына",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182526"
+      ]
+    },
+    {
+      "factId": "T3-182526-0043",
+      "process": "Первая мировая война",
+      "fact": "Брусиловский прорыв",
+      "courseTopicId": 23,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182526",
+        "182537",
+        "147838",
+        "161168"
+      ]
+    },
+    {
+      "factId": "T3-182526-0044",
+      "process": "ордынское владычество на Руси",
+      "fact": "казнь князя Михаила Черниговского",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182526"
+      ]
+    },
+    {
+      "factId": "T3-182529-0045",
+      "process": "борьба с ордынским владычеством",
+      "fact": "битва на реке Воже в XVI в.",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182529"
+      ]
+    },
+    {
+      "factId": "T3-182529-0046",
+      "process": "критика культа личности И.В. Сталина",
+      "fact": "XX съезд КПСС",
+      "courseTopicId": 32,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182529"
+      ]
+    },
+    {
+      "factId": "T3-182529-0047",
+      "process": "внешняя политика Екатерины II",
+      "fact": "сражение при Рымнике",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182529"
+      ]
+    },
+    {
+      "factId": "T3-182529-0048",
+      "process": "борьба с набегами войска крымского хана",
+      "fact": "битва при Молодях",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182529"
+      ]
+    },
+    {
+      "factId": "T3-182532-0049",
+      "process": "борьба с экспансией крестоносцев на западных границах Руси",
+      "fact": "Ледовое побоище",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182532"
+      ]
+    },
+    {
+      "factId": "T3-182532-0050",
+      "process": "преобразования Петра I",
+      "fact": "введение ассамблей",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182532"
+      ]
+    },
+    {
+      "factId": "T3-182532-0051",
+      "process": "закрепощение крестьян",
+      "fact": "введение заповедных лет",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182532"
+      ]
+    },
+    {
+      "factId": "T3-182532-0052",
+      "process": "холодная война",
+      "fact": "возведение Берлинской стены",
+      "courseTopicId": 32,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182532"
+      ]
+    },
+    {
+      "factId": "T3-182534-0053",
+      "process": "внешняя политика Ивана VI",
+      "fact": "присоединение к России Астрахани",
+      "courseTopicId": 11,
+      "enabled": false,
+      "reviewReason": "В исходном вопросе ответ противоречит историческому содержанию.",
+      "sourceQuestionIds": [
+        "182534"
+      ]
+    },
+    {
+      "factId": "T3-182534-0054",
+      "process": "холодная война",
+      "fact": "создание Организации Варшавского договора",
+      "courseTopicId": 32,
+      "enabled": false,
+      "reviewReason": "В исходном вопросе ответ противоречит историческому содержанию.",
+      "sourceQuestionIds": [
+        "182534"
+      ]
+    },
+    {
+      "factId": "T3-182534-0055",
+      "process": "северная война",
+      "fact": "Гангутское сражение",
+      "courseTopicId": 9,
+      "enabled": false,
+      "reviewReason": "В исходном вопросе ответ противоречит историческому содержанию.",
+      "sourceQuestionIds": [
+        "182534"
+      ]
+    },
+    {
+      "factId": "T3-182534-0056",
+      "process": "внешняя политика первых русских князей",
+      "fact": "оборона крепости Доростол",
+      "courseTopicId": 1,
+      "enabled": false,
+      "reviewReason": "В исходном вопросе ответ противоречит историческому содержанию.",
+      "sourceQuestionIds": [
+        "182534"
+      ]
+    },
+    {
+      "factId": "T3-182535-0057",
+      "process": "Гражданская война",
+      "fact": "поход армии генерала Н.Н. Юденича на Петроград",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182535"
+      ]
+    },
+    {
+      "factId": "T3-182535-0058",
+      "process": "раскол в Русской Православной Церкви",
+      "fact": "Соловецкое восстание",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182535",
+        "182554",
+        "137404"
+      ]
+    },
+    {
+      "factId": "T3-182535-0059",
+      "process": "Великие реформы 1860-1870-х. гг.",
+      "fact": "учреждение института присяжных заседателей",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182535"
+      ]
+    },
+    {
+      "factId": "T3-182535-0060",
+      "process": "Батыево нашествие на Русь",
+      "fact": "битва на реке Сити",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182535",
+        "182542"
+      ]
+    },
+    {
+      "factId": "T3-182537-0061",
+      "process": "социальные движения в России в XVII веке",
+      "fact": "Медный бунт",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182537"
+      ]
+    },
+    {
+      "factId": "T3-182537-0062",
+      "process": "общественные движения в России в XIX веке",
+      "fact": "восстание на Сенатской площади",
+      "courseTopicId": 16,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182537"
+      ]
+    },
+    {
+      "factId": "T3-182537-0063",
+      "process": "объединение русских земель вокруг Москвы",
+      "fact": "битва на реке Шелони",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182537",
+        "161168"
+      ]
+    },
+    {
+      "factId": "T3-182540-0064",
+      "process": "социальные преобразования эпохи дворцовых переворотов",
+      "fact": "строительство Челябинского тракторного завода",
+      "courseTopicId": 11,
+      "enabled": false,
+      "reviewReason": "В исходном вопросе ответ противоречит историческому содержанию.",
+      "sourceQuestionIds": [
+        "182540"
+      ]
+    },
+    {
+      "factId": "T3-182540-0065",
+      "process": "социалистическая индустриализация",
+      "fact": "отражение походов войска князя Ольгерда",
+      "courseTopicId": 28,
+      "enabled": false,
+      "reviewReason": "В исходном вопросе ответ противоречит историческому содержанию.",
+      "sourceQuestionIds": [
+        "182540"
+      ]
+    },
+    {
+      "factId": "T3-182540-0066",
+      "process": "рост церковно-политической роли Москвы в православном мире",
+      "fact": "осада Пскова войском Стефана Батория",
+      "courseTopicId": 4,
+      "enabled": false,
+      "reviewReason": "В исходном вопросе ответ противоречит историческому содержанию.",
+      "sourceQuestionIds": [
+        "182540"
+      ]
+    },
+    {
+      "factId": "T3-182540-0067",
+      "process": "борьба за власть между сыновьями Владимира Святого",
+      "fact": "осада острова Корфу русско-турецким флотом",
+      "courseTopicId": 2,
+      "enabled": false,
+      "reviewReason": "В исходном вопросе ответ противоречит историческому содержанию.",
+      "sourceQuestionIds": [
+        "182540"
+      ]
+    },
+    {
+      "factId": "T3-182542-0068",
+      "process": "внутренняя политика Александра III",
+      "fact": "введение института земских начальников",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182542"
+      ]
+    },
+    {
+      "factId": "T3-182542-0069",
+      "process": "Гражданская война в России",
+      "fact": "разгром войск П.Н. Врангеля в Крыму",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182542"
+      ]
+    },
+    {
+      "factId": "T3-182542-0070",
+      "process": "церковный раскол XVII в.",
+      "fact": "Соловецкое восстание",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182542",
+        "176566"
+      ]
+    },
+    {
+      "factId": "T3-182544-0071",
+      "process": "междоусобная война второй четверти XV в. в Московском государстве",
+      "fact": "битва под Суздалем, пленение московского князя",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182544"
+      ]
+    },
+    {
+      "factId": "T3-182544-0072",
+      "process": "восстание под предводительством С.Т. Разина",
+      "fact": "осада Симбирска",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182544"
+      ]
+    },
+    {
+      "factId": "T3-182544-0073",
+      "process": "восстание под предводительством Е.И. Пугачёва",
+      "fact": "штурм Казани",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182544"
+      ]
+    },
+    {
+      "factId": "T3-182544-0074",
+      "process": "переход от политики «военного коммунизма» к нэпу",
+      "fact": "антибольшевистское восстание моряков Кронштадта",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182544"
+      ]
+    },
+    {
+      "factId": "T3-182546-0075",
+      "process": "развитие законодательства Древней Руси в ХІ в.",
+      "fact": "создание Правды Ярославичей",
+      "courseTopicId": 2,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182546"
+      ]
+    },
+    {
+      "factId": "T3-182546-0076",
+      "process": "реформы системы управления первой четверти XIX в.",
+      "fact": "создание министерств",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182546"
+      ]
+    },
+    {
+      "factId": "T3-182546-0077",
+      "process": "экономические реформы правительства Н.И. Рыжкова",
+      "fact": "принятие закона об индивидуальной трудовой деятельности",
+      "courseTopicId": 35,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182546"
+      ]
+    },
+    {
+      "factId": "T3-182546-0078",
+      "process": "московская междоусобица во второй четверти XV в.",
+      "fact": "ослепление Василия II",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182546"
+      ]
+    },
+    {
+      "factId": "T3-182547-0079",
+      "process": "движение народников",
+      "fact": "создание организации «Земля и воля»",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182547"
+      ]
+    },
+    {
+      "factId": "T3-182547-0080",
+      "process": "междоусобная война в Московском государстве второй четверти XV в.",
+      "fact": "ослепление Василия II",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182547"
+      ]
+    },
+    {
+      "factId": "T3-182547-0081",
+      "process": "внутрипартийная борьба в СССР",
+      "fact": "ссылка Л.Д. Троцкого в Алма-Ату",
+      "courseTopicId": 28,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182547"
+      ]
+    },
+    {
+      "factId": "T3-182547-0082",
+      "process": "присоединение территорий Западной Сибири",
+      "fact": "поход Ермака Тимофеевича",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182547"
+      ]
+    },
+    {
+      "factId": "T3-182549-0083",
+      "process": "Заграничные походы русской армии",
+      "fact": "«Битва народов» под Лейпцигом",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182549"
+      ]
+    },
+    {
+      "factId": "T3-182549-0084",
+      "process": "реформы Избранной рады",
+      "fact": "отмена кормлений",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182549",
+        "169886"
+      ]
+    },
+    {
+      "factId": "T3-182549-0085",
+      "process": "борьба с экспансией крестоносцев на западных границах Руси",
+      "fact": "сражение на Чудском озере",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182549"
+      ]
+    },
+    {
+      "factId": "T3-182549-0086",
+      "process": "проведение политики разрядки",
+      "fact": "подписание Договора об ограничении стратегических вооружений (ОСВ-1)",
+      "courseTopicId": 34,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182549"
+      ]
+    },
+    {
+      "factId": "T3-182551-0087",
+      "process": "вхождение Западной Сибири в состав Российского государства",
+      "fact": "походы Ермака Тимофеевича",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182551"
+      ]
+    },
+    {
+      "factId": "T3-182551-0088",
+      "process": "Русско-турецкая война 1877-1878 гг.",
+      "fact": "осада Плевны",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182551"
+      ]
+    },
+    {
+      "factId": "T3-182551-0089",
+      "process": "русско-византийские войны",
+      "fact": "оборона крепости Доростол",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182551"
+      ]
+    },
+    {
+      "factId": "T3-182551-0090",
+      "process": "Первая Мировая война",
+      "fact": "оборона крепости Осовец",
+      "courseTopicId": 23,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182551"
+      ]
+    },
+    {
+      "factId": "T3-182554-0091",
+      "process": "нашествие Батыя на Русь",
+      "fact": "оборона Козельска",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182554"
+      ]
+    },
+    {
+      "factId": "T3-182554-0092",
+      "process": "первые преобразования большевиков",
+      "fact": "издание Декрета о национализации банков",
+      "courseTopicId": 25,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182554",
+        "139101"
+      ]
+    },
+    {
+      "factId": "T3-182554-0093",
+      "process": "противодействие реформам Петра I",
+      "fact": "«дело царевича Алексея»",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182554",
+        "130010"
+      ]
+    },
+    {
+      "factId": "T3-182557-0094",
+      "process": "социальные движения XVII в.",
+      "fact": "Медный бунт",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182557"
+      ]
+    },
+    {
+      "factId": "T3-182557-0095",
+      "process": "борьба русских земель с войсками Батыя",
+      "fact": "битва на реке Сити",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182557"
+      ]
+    },
+    {
+      "factId": "T3-182557-0096",
+      "process": "формирование государства Русь",
+      "fact": "объединение Киева и Новгорода под властью Олега",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182557"
+      ]
+    },
+    {
+      "factId": "T3-182557-0097",
+      "process": "реформы XVI в.",
+      "fact": "создание стрелецкого войска",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182557"
+      ]
+    },
+    {
+      "factId": "T3-182559-0098",
+      "process": "раскол в Русской православной церкви",
+      "fact": "восстание в Соловецком монастыре",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182559"
+      ]
+    },
+    {
+      "factId": "T3-182559-0099",
+      "process": "борьба русских земель с ордынскими войсками",
+      "fact": "стояние на Угре",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182559"
+      ]
+    },
+    {
+      "factId": "T3-182559-0100",
+      "process": "расширение территории Российского государства",
+      "fact": "походы казаков под предводительством Ермака в Сибирь",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182559"
+      ]
+    },
+    {
+      "factId": "T3-182559-0101",
+      "process": "реформы Александра ІІ",
+      "fact": "создание суда присяжных заседателей",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "182559"
+      ]
+    },
+    {
+      "factId": "T3-138343-0102",
+      "process": "закрепощение крестьян в XVII в.",
+      "fact": "издание Соборного уложения",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "138343"
+      ]
+    },
+    {
+      "factId": "T3-138343-0103",
+      "process": "внутренняя политика Петра III",
+      "fact": "издание манифеста о вольности дворянской",
+      "courseTopicId": 11,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "138343"
+      ]
+    },
+    {
+      "factId": "T3-138343-0104",
+      "process": "внешняя политика первых русских князей",
+      "fact": "разгром Хазарского каганата",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "138343"
+      ]
+    },
+    {
+      "factId": "T3-138343-0105",
+      "process": "начало проведения новой экономической политики (нэп)",
+      "fact": "антибольшевистское восстание моряков Кронштадта",
+      "courseTopicId": 27,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "138343"
+      ]
+    },
+    {
+      "factId": "T3-138572-0106",
+      "process": "борьба против ордынской зависимости",
+      "fact": "битва на реке Воже",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "138572"
+      ]
+    },
+    {
+      "factId": "T3-138572-0107",
+      "process": "Гражданская война",
+      "fact": "разгром войск генерала П.Н. Врангеля в Крыму",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "138572"
+      ]
+    },
+    {
+      "factId": "T3-138572-0108",
+      "process": "набеги на Москву войска крымского хана Девлет-Гирея",
+      "fact": "битва при Молодях",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "138572"
+      ]
+    },
+    {
+      "factId": "T3-138572-0109",
+      "process": "участие России в антифранцузских коалициях",
+      "fact": "сражение под Лейпцигом",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "138572"
+      ]
+    },
+    {
+      "factId": "T3-139101-0110",
+      "process": "реформы Екатерины II",
+      "fact": "секуляризация церковных земель",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "139101"
+      ]
+    },
+    {
+      "factId": "T3-139101-0111",
+      "process": "междоусобная война в Московском государстве во второй четверти XV в.",
+      "fact": "вступление на московский престол князя Дмитрия Шемяки",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "139101"
+      ]
+    },
+    {
+      "factId": "T3-139101-0112",
+      "process": "экономическое развитие России в XVII в.",
+      "fact": "издание Новоторгового устава",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "139101"
+      ]
+    },
+    {
+      "factId": "T3-141496-0113",
+      "process": "реформы Избранной рады",
+      "fact": "создание стрелецкого войска",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "141496"
+      ]
+    },
+    {
+      "factId": "T3-141496-0114",
+      "process": "развитие системы управления в первой половине XIX в.",
+      "fact": "создание Государственного совета",
+      "courseTopicId": 16,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "141496"
+      ]
+    },
+    {
+      "factId": "T3-141496-0115",
+      "process": "первые реформы советской власти",
+      "fact": "принятие Декрета о земле",
+      "courseTopicId": 25,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "141496"
+      ]
+    },
+    {
+      "factId": "T3-141496-0116",
+      "process": "московская междоусобица второй четверти XV в.",
+      "fact": "ослепление Василия Косого",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "141496"
+      ]
+    },
+    {
+      "factId": "T3-141500-0117",
+      "process": "политика «военного коммунизма»",
+      "fact": "введение продразвёрстки",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "141500",
+        "147715",
+        "87072"
+      ]
+    },
+    {
+      "factId": "T3-141500-0118",
+      "process": "царствование Фёдора Ивановича",
+      "fact": "учреждение патриаршества на Руси",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "141500"
+      ]
+    },
+    {
+      "factId": "T3-141500-0119",
+      "process": "либеральные реформы 1860-1870-х гг.",
+      "fact": "введение всесословной воинской повинности",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "141500"
+      ]
+    },
+    {
+      "factId": "T3-141500-0120",
+      "process": "правление княгини Ольги",
+      "fact": "введение уроков и погостов",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "141500"
+      ]
+    },
+    {
+      "factId": "T3-142729-0121",
+      "process": "русско-турецкая война 1877-1878 гг.",
+      "fact": "осада Шипки",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "142729"
+      ]
+    },
+    {
+      "factId": "T3-142729-0122",
+      "process": "первые княжеские междоусобицы",
+      "fact": "бегство в Польшу Святополка Окаянного",
+      "courseTopicId": 2,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "142729"
+      ]
+    },
+    {
+      "factId": "T3-142729-0123",
+      "process": "Смутное время",
+      "fact": "казнь Ивана Болотникова",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "142729"
+      ]
+    },
+    {
+      "factId": "T3-142729-0124",
+      "process": "Гражданская война в России",
+      "fact": "поход А.И. Деникина на Москву",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "142729"
+      ]
+    },
+    {
+      "factId": "T3-142732-0125",
+      "process": "восстание под предводительством Е.И. Пугачёва",
+      "fact": "осада Уфы",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "142732"
+      ]
+    },
+    {
+      "factId": "T3-142732-0126",
+      "process": "борьба русских земель против власти Орды",
+      "fact": "битва на реке Воже",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "142732",
+        "144799"
+      ]
+    },
+    {
+      "factId": "T3-142732-0127",
+      "process": "Первая мировая война",
+      "fact": "осада Перемышля",
+      "courseTopicId": 23,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "142732",
+        "144799"
+      ]
+    },
+    {
+      "factId": "T3-142732-0128",
+      "process": "присоединение Сибири",
+      "fact": "поход атамана Ермака",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "142732",
+        "144799"
+      ]
+    },
+    {
+      "factId": "T3-144799-0129",
+      "process": "восстание под предводительством E.И. Пугачёва",
+      "fact": "осада Уфы",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "144799"
+      ]
+    },
+    {
+      "factId": "T3-147715-0130",
+      "process": "централизация Русского государства в XVI в.",
+      "fact": "отмена кормлений",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "147715"
+      ]
+    },
+    {
+      "factId": "T3-147715-0131",
+      "process": "«аракчеевщина»",
+      "fact": "развитие системы военных поселений",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "147715"
+      ]
+    },
+    {
+      "factId": "T3-147715-0132",
+      "process": "создание древнерусской государственности",
+      "fact": "объединение Киева и Новгорода под властью князя Олега",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "147715"
+      ]
+    },
+    {
+      "factId": "T3-147838-0133",
+      "process": "Северная война",
+      "fact": "основание Санкт-Петербурга",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "147838"
+      ]
+    },
+    {
+      "factId": "T3-147838-0134",
+      "process": "усиление царской власти в XVII в.",
+      "fact": "принятие Соборного уложения царя Алексея Михайловича",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "147838"
+      ]
+    },
+    {
+      "factId": "T3-147838-0135",
+      "process": "укрепление древнерусской государственности в X–XI вв.",
+      "fact": "создание Русской правды",
+      "courseTopicId": 2,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "147838"
+      ]
+    },
+    {
+      "factId": "T3-148909-0136",
+      "process": "реформы Петра I",
+      "fact": "принятие указа о единонаследии",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "148909"
+      ]
+    },
+    {
+      "factId": "T3-148909-0137",
+      "process": "экономическая политика второй половины XVII в.",
+      "fact": "принятие Новоторгового устава",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "148909"
+      ]
+    },
+    {
+      "factId": "T3-148909-0138",
+      "process": "экономическая политика первых лет советской власти",
+      "fact": "национализация банков, промышленности и транспорта",
+      "courseTopicId": 25,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "148909"
+      ]
+    },
+    {
+      "factId": "T3-148909-0139",
+      "process": "хозяйственное развитие русских земель в XIV–XV вв.",
+      "fact": "распространение системы трёхполья",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "148909"
+      ]
+    },
+    {
+      "factId": "T3-150530-0140",
+      "process": "правление Владимира Мономаха",
+      "fact": "ограничение ростовщического процента по «Уставу о резах»",
+      "courseTopicId": 2,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "150530"
+      ]
+    },
+    {
+      "factId": "T3-150530-0141",
+      "process": "реформы Александра I",
+      "fact": "создание Непременного совета",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "150530"
+      ]
+    },
+    {
+      "factId": "T3-150530-0142",
+      "process": "централизация Русского государства в XVI в.",
+      "fact": "учреждение должности губных старост",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "150530"
+      ]
+    },
+    {
+      "factId": "T3-150530-0143",
+      "process": "внутренняя политика 1920-х гг.",
+      "fact": "процесс над партией эсеров",
+      "courseTopicId": 28,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "150530"
+      ]
+    },
+    {
+      "factId": "T3-151859-0144",
+      "process": "политическая борьба 1920-х гг.",
+      "fact": "ссылка Л.Д. Троцкого",
+      "courseTopicId": 28,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "151859"
+      ]
+    },
+    {
+      "factId": "T3-151859-0145",
+      "process": "правление Ивана III",
+      "fact": "введение пожилого",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "151859"
+      ]
+    },
+    {
+      "factId": "T3-151859-0146",
+      "process": "«просвещённый абсолютизм» Екатерины II",
+      "fact": "созыв Уложенной комиссии",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "151859"
+      ]
+    },
+    {
+      "factId": "T3-151859-0147",
+      "process": "социальные волнения начала XVII в.",
+      "fact": "восстание Хлопка",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "151859"
+      ]
+    },
+    {
+      "factId": "T3-153651-0148",
+      "process": "Первая российская революция",
+      "fact": "издание манифеста о «Булыгинской думе»",
+      "courseTopicId": 21,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "153651"
+      ]
+    },
+    {
+      "factId": "T3-153651-0149",
+      "process": "московская междоусобица второй четверти XV в.",
+      "fact": "отравление Дмитрия Шемяки",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "153651"
+      ]
+    },
+    {
+      "factId": "T3-153651-0150",
+      "process": "политическая борьба 1930-х гг.",
+      "fact": "процесс над «троцкистско-зиновьевским центром»",
+      "courseTopicId": 28,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "153651"
+      ]
+    },
+    {
+      "factId": "T3-153651-0151",
+      "process": "протест против закрепощения",
+      "fact": "восстание Хлопка",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "153651"
+      ]
+    },
+    {
+      "factId": "T3-154907-0152",
+      "process": "утверждение абсолютизма в России",
+      "fact": "принятие указа 1722 г. о престолонаследии",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "154907"
+      ]
+    },
+    {
+      "factId": "T3-154907-0153",
+      "process": "княжение Дмитрия Донского",
+      "fact": "строительство белокаменного Кремля",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "154907"
+      ]
+    },
+    {
+      "factId": "T3-154907-0154",
+      "process": "реформы Избранной рады",
+      "fact": "созыв Земского собора",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "154907"
+      ]
+    },
+    {
+      "factId": "T3-154907-0155",
+      "process": "«Большой террор» 1930-х гг.",
+      "fact": "казнь М. Н. Тухачевского",
+      "courseTopicId": 28,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "154907"
+      ]
+    },
+    {
+      "factId": "T3-155396-0156",
+      "process": "дворцовые перевороты XVIII в.",
+      "fact": "ссылка А.Д. Меншикова",
+      "courseTopicId": 11,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "155396"
+      ]
+    },
+    {
+      "factId": "T3-155396-0157",
+      "process": "борьба за политическую власть 1950-х гг.",
+      "fact": "разгром «антипартийной группы» Молотова, Маленкова, Кагановича",
+      "courseTopicId": 32,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "155396"
+      ]
+    },
+    {
+      "factId": "T3-155396-0158",
+      "process": "Революция 1917 г.",
+      "fact": "I Всероссийский съезд Советов",
+      "courseTopicId": 24,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "155396"
+      ]
+    },
+    {
+      "factId": "T3-155396-0159",
+      "process": "церковный раскол",
+      "fact": "Соловецкое восстание",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "155396"
+      ]
+    },
+    {
+      "factId": "T3-156401-0160",
+      "process": "Великие реформы 1860–1870-х гг.",
+      "fact": "учреждение земств",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "156401"
+      ]
+    },
+    {
+      "factId": "T3-156401-0161",
+      "process": "политика военного коммунизма",
+      "fact": "создание комбедов",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "156401"
+      ]
+    },
+    {
+      "factId": "T3-156401-0162",
+      "process": "правление Ярослава Мудрого",
+      "fact": "разработка Русской правды",
+      "courseTopicId": 2,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "156401"
+      ]
+    },
+    {
+      "factId": "T3-156401-0163",
+      "process": "внутренняя политика Ивана IV",
+      "fact": "разделение государства на опричнину и земщину",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "156401"
+      ]
+    },
+    {
+      "factId": "T3-158001-0164",
+      "process": "закрепощение крестьян в XVII в.",
+      "fact": "принятие Соборного уложения",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "158001"
+      ]
+    },
+    {
+      "factId": "T3-158001-0165",
+      "process": "Батыево нашествие на Русь",
+      "fact": "оборона Козельска",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "158001"
+      ]
+    },
+    {
+      "factId": "T3-158001-0166",
+      "process": "Первая российская революция",
+      "fact": "Декабрьское вооружённое восстание в Москве",
+      "courseTopicId": 21,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "158001"
+      ]
+    },
+    {
+      "factId": "T3-158001-0167",
+      "process": "проведение большевиками новой экономической политики (НЭП)",
+      "fact": "финансовая реформа Г.Я. Сокольникова",
+      "courseTopicId": 27,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "158001",
+        "136985"
+      ]
+    },
+    {
+      "factId": "T3-159195-0168",
+      "process": "начало закрепощения крестьян",
+      "fact": "введение пожилого",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "159195"
+      ]
+    },
+    {
+      "factId": "T3-159195-0169",
+      "process": "стабилизация денежной системы Российской империи во второй четверти XIX в.",
+      "fact": "денежная реформа Е.Ф. Канкрина",
+      "courseTopicId": 16,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "159195"
+      ]
+    },
+    {
+      "factId": "T3-159195-0170",
+      "process": "экономическая политика Михаила Фёдоровича",
+      "fact": "создание мануфактуры А. Виниуса",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "159195"
+      ]
+    },
+    {
+      "factId": "T3-159195-0171",
+      "process": "новая экономическая политика",
+      "fact": "введение новой денежной единицы – червонца",
+      "courseTopicId": 27,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "159195"
+      ]
+    },
+    {
+      "factId": "T3-161168-0172",
+      "process": "внешняя политика России 1860-1880-х гг.",
+      "fact": "подчинение Бухарского эмирата",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "161168"
+      ]
+    },
+    {
+      "factId": "T3-161168-0173",
+      "process": "Великая Отечественная война",
+      "fact": "штурм Кёнигсберга",
+      "courseTopicId": 30,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "161168"
+      ]
+    },
+    {
+      "factId": "T3-162292-0174",
+      "process": "Смутное время",
+      "fact": "восстание под предводительством И.И. Болотникова",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "162292"
+      ]
+    },
+    {
+      "factId": "T3-162292-0175",
+      "process": "социальные движения в России второй половины XVIII в.",
+      "fact": "восстание под предводительством Е.И. Пугачёва",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "162292"
+      ]
+    },
+    {
+      "factId": "T3-162292-0176",
+      "process": "Первая мировая война",
+      "fact": "Варшавско-Ивангородская операция",
+      "courseTopicId": 23,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "162292"
+      ]
+    },
+    {
+      "factId": "T3-162292-0177",
+      "process": "Великая Отечественная война",
+      "fact": "Корсунь-Шевченковская операция",
+      "courseTopicId": 30,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "162292"
+      ]
+    },
+    {
+      "factId": "T3-164073-0178",
+      "process": "реформы Избранной рады",
+      "fact": "принятие «Уложения о службе»",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "164073"
+      ]
+    },
+    {
+      "factId": "T3-164073-0179",
+      "process": "правление Ивана III",
+      "fact": "принятие первого общероссийского Судебника",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "164073"
+      ]
+    },
+    {
+      "factId": "T3-164073-0180",
+      "process": "«просвещённый абсолютизм» Екатерины Второй",
+      "fact": "созыв Уложенной комиссии",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "164073"
+      ]
+    },
+    {
+      "factId": "T3-164073-0181",
+      "process": "революция 1917 г.",
+      "fact": "созыв I Всероссийского съезда Советов",
+      "courseTopicId": 24,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "164073"
+      ]
+    },
+    {
+      "factId": "T3-166172-0182",
+      "process": "правление княгини Ольги",
+      "fact": "замена полюдья системой уроков и погостов",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "166172"
+      ]
+    },
+    {
+      "factId": "T3-166172-0183",
+      "process": "реформы Петра Великого",
+      "fact": "принятие первого Таможенного тарифа",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "166172"
+      ]
+    },
+    {
+      "factId": "T3-166172-0184",
+      "process": "новая экономическая политика",
+      "fact": "снятие запрета с частной торговли",
+      "courseTopicId": 27,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "166172"
+      ]
+    },
+    {
+      "factId": "T3-166172-0185",
+      "process": "реформы Избранной рады",
+      "fact": "установление «большой сохи» как основы поземельного налогообложения",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "166172"
+      ]
+    },
+    {
+      "factId": "T3-168729-0186",
+      "process": "Смутное время",
+      "fact": "«крестоцеловальная запись» Василия Шуйского",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "168729"
+      ]
+    },
+    {
+      "factId": "T3-168729-0187",
+      "process": "Великая Отечественная война",
+      "fact": "создание Центрального штаба партизанского движения",
+      "courseTopicId": 30,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "168729"
+      ]
+    },
+    {
+      "factId": "T3-168729-0188",
+      "process": "политика «просвещённого абсолютизма»",
+      "fact": "созыв Уложенной комиссии",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "168729"
+      ]
+    },
+    {
+      "factId": "T3-168729-0189",
+      "process": "укрепление древнерусской государственности",
+      "fact": "создание первого письменного свода русских законов – «Русской правды»",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "168729"
+      ]
+    },
+    {
+      "factId": "T3-169818-0190",
+      "process": "борьба царской власти и боярской аристократии в XVI в.",
+      "fact": "введение опричнины",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169818"
+      ]
+    },
+    {
+      "factId": "T3-169818-0191",
+      "process": "политическая раздробленность русских земель",
+      "fact": "получение московским князем Юрием Данииловичем ярлыка на великое княжение Владимирское",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169818"
+      ]
+    },
+    {
+      "factId": "T3-169818-0192",
+      "process": "перестройка в СССР",
+      "fact": "принятие Закона об индивидуальной трудовой деятельности",
+      "courseTopicId": 35,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169818",
+        "174381"
+      ]
+    },
+    {
+      "factId": "T3-169818-0193",
+      "process": "реформы начала XIX в.",
+      "fact": "принятие указа о вольных хлебопашцах",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169818"
+      ]
+    },
+    {
+      "factId": "T3-169850-0194",
+      "process": "дворцовые перевороты XVIII в.",
+      "fact": "разрыв кондиций Анной Иоанновной",
+      "courseTopicId": 11,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169850"
+      ]
+    },
+    {
+      "factId": "T3-169850-0195",
+      "process": "опричнина Ивана Грозного",
+      "fact": "разгром Новгорода",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169850"
+      ]
+    },
+    {
+      "factId": "T3-169850-0196",
+      "process": "политическая борьба 1950-х гг.",
+      "fact": "разгром «антипартийной группы Молотова − Маленкова − Кагановича»",
+      "courseTopicId": 32,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169850"
+      ]
+    },
+    {
+      "factId": "T3-169850-0197",
+      "process": "политическая борьба в Северо-Восточной Руси XII−XIII вв.",
+      "fact": "гибель князя Андрея Боголюбского",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169850"
+      ]
+    },
+    {
+      "factId": "T3-169886-0198",
+      "process": "реформы Екатерины II",
+      "fact": "принятие «Учреждений для управления губерниями»",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169886"
+      ]
+    },
+    {
+      "factId": "T3-169886-0199",
+      "process": "сглаживание социальных конфликтов в начале XII в.",
+      "fact": "принятие Устава Владимира Мономаха",
+      "courseTopicId": 2,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169886"
+      ]
+    },
+    {
+      "factId": "T3-169886-0200",
+      "process": "утверждение советской власти",
+      "fact": "создание Совета Народных Комиссаров",
+      "courseTopicId": 25,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "169886"
+      ]
+    },
+    {
+      "factId": "T3-174381-0201",
+      "process": "укрепление древнерусской государственности",
+      "fact": "принятие \"Русской правды\"",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "174381"
+      ]
+    },
+    {
+      "factId": "T3-174381-0202",
+      "process": "внутренняя политика Александра III",
+      "fact": "принятие закона о земских начальниках",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "174381"
+      ]
+    },
+    {
+      "factId": "T3-174381-0203",
+      "process": "укрепление самодержавия при Алексее Михайловиче",
+      "fact": "создание Приказа Тайных дел",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "174381"
+      ]
+    },
+    {
+      "factId": "T3-175707-0204",
+      "process": "реформы Александра II",
+      "fact": "учреждение мирового суда",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "175707"
+      ]
+    },
+    {
+      "factId": "T3-175707-0205",
+      "process": "политическая борьба 1950-х гг.",
+      "fact": "осуждение антипартийной группы Молотова-Маленкова-Кагановича",
+      "courseTopicId": 32,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "175707"
+      ]
+    },
+    {
+      "factId": "T3-175707-0206",
+      "process": "политическая раздробленность на Руси",
+      "fact": "перенос митрополичьей кафедры из Киева во Владимир",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "175707"
+      ]
+    },
+    {
+      "factId": "T3-176174-0207",
+      "process": "правление Василия III",
+      "fact": "создание теории «Москва - Третий Рим»",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "176174"
+      ]
+    },
+    {
+      "factId": "T3-176174-0208",
+      "process": "укрепление древнерусской государственности",
+      "fact": "крещение Руси",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "176174"
+      ]
+    },
+    {
+      "factId": "T3-176174-0209",
+      "process": "«просвещённый абсолютизм» Екатерины Второй",
+      "fact": "секуляризация церковных земель",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "176174"
+      ]
+    },
+    {
+      "factId": "T3-176174-0210",
+      "process": "укрепление большевиков у власти",
+      "fact": "отделение школы от церкви",
+      "courseTopicId": 25,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "176174"
+      ]
+    },
+    {
+      "factId": "T3-176566-0211",
+      "process": "укрепление советской власти",
+      "fact": "издание декрета об отделении церкви от государства",
+      "courseTopicId": 25,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "176566"
+      ]
+    },
+    {
+      "factId": "T3-176566-0212",
+      "process": "политика «просвещённого абсолютизма» Екатерины II",
+      "fact": "секуляризация церковных земель",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "176566"
+      ]
+    },
+    {
+      "factId": "T3-176566-0213",
+      "process": "регулирование социальных конфликтов в русских землях XII в.",
+      "fact": "принятие Устава о резах",
+      "courseTopicId": 2,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "176566"
+      ]
+    },
+    {
+      "factId": "T3-177507-0214",
+      "process": "политика «военного коммунизма»",
+      "fact": "запрет на частную торговлю",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177507"
+      ]
+    },
+    {
+      "factId": "T3-177507-0215",
+      "process": "правление Семибоярщины",
+      "fact": "приглашение на российский престол польского королевича Владислава",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177507"
+      ]
+    },
+    {
+      "factId": "T3-177507-0216",
+      "process": "реформы Александра I",
+      "fact": "учреждение первых министерств",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177507"
+      ]
+    },
+    {
+      "factId": "T3-177507-0217",
+      "process": "политика первых русских князей",
+      "fact": "введение погостов и уроков",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "177507"
+      ]
+    },
+    {
+      "factId": "T3-178472-0218",
+      "process": "правление Ивана III",
+      "fact": "установление пожилого",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "178472"
+      ]
+    },
+    {
+      "factId": "T3-178472-0219",
+      "process": "Гражданская война в России",
+      "fact": "штурм Перекопа",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "178472"
+      ]
+    },
+    {
+      "factId": "T3-178472-0220",
+      "process": "создание регулярной армии в России",
+      "fact": "введение рекрутской повинности",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "178472"
+      ]
+    },
+    {
+      "factId": "T3-178472-0221",
+      "process": "правление Ивана Грозного",
+      "fact": "отмена кормлений",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "178472"
+      ]
+    },
+    {
+      "factId": "T3-179639-0222",
+      "process": "экономическая политика XVII в.",
+      "fact": "принятие Новоторгового устава",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "179639"
+      ]
+    },
+    {
+      "factId": "T3-179639-0223",
+      "process": "проведение политики «военного коммунизма»",
+      "fact": "запрет на частную торговлю",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "179639"
+      ]
+    },
+    {
+      "factId": "T3-179639-0224",
+      "process": "реформы Александра I",
+      "fact": "принятие Цензурного устава",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "179639"
+      ]
+    },
+    {
+      "factId": "T3-179639-0225",
+      "process": "становление древнерусского законодательства",
+      "fact": "принятие Устава о резах",
+      "courseTopicId": 2,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "179639"
+      ]
+    },
+    {
+      "factId": "T3-202359-0226",
+      "process": "Гражданская война в России",
+      "fact": "создание генералами М.В. Алексеевым и Л.Г. Корниловым Добровольческой армии",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "202359"
+      ]
+    },
+    {
+      "factId": "T3-202359-0227",
+      "process": "противостояние Османской империи в XVII в.",
+      "fact": "«Азовское сидение» донских казаков",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "202359"
+      ]
+    },
+    {
+      "factId": "T3-202359-0228",
+      "process": "коллаборационизм в годы Великой Отечественной войны",
+      "fact": "создание Русской Освободительной армии (РОА) во главе с А.А. Власовым",
+      "courseTopicId": 30,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "202359"
+      ]
+    },
+    {
+      "factId": "T3-202359-0229",
+      "process": "борьба с ордынским владычеством",
+      "fact": "битва при реке Воже",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "202359"
+      ]
+    },
+    {
+      "factId": "T3-87072-0230",
+      "process": "Великие реформы 1860––1870-х гг.",
+      "fact": "введение института присяжных заседателей",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "87072"
+      ]
+    },
+    {
+      "factId": "T3-87072-0231",
+      "process": "Ливонская война",
+      "fact": "оборона Пскова от войск Стефана Батория",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "87072"
+      ]
+    },
+    {
+      "factId": "T3-87072-0232",
+      "process": "Русско-византийские войны",
+      "fact": "оборона Доростола",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "87072"
+      ]
+    },
+    {
+      "factId": "T3-87330-0233",
+      "process": "внешняя политика первых царей из династии Романовых",
+      "fact": "заключение Столбовского мирного договора",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "87330"
+      ]
+    },
+    {
+      "factId": "T3-87330-0234",
+      "process": "Великие реформы 1860––1870-х гг.",
+      "fact": "введение суда присяжных",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "87330"
+      ]
+    },
+    {
+      "factId": "T3-87330-0235",
+      "process": "«перестройка» в СССР",
+      "fact": "принятие Закона «О государственном предприятии (объединении)»",
+      "courseTopicId": 35,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "87330"
+      ]
+    },
+    {
+      "factId": "T3-87330-0236",
+      "process": "междоусобная война в Московском княжестве второй четверти XV в.",
+      "fact": "пленение Василия II",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "87330"
+      ]
+    },
+    {
+      "factId": "T3-130007-0237",
+      "process": "борьба Руси против монгольских завоевателей",
+      "fact": "оборона Козельска",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "130007"
+      ]
+    },
+    {
+      "factId": "T3-130007-0238",
+      "process": "промышленный переворот в России",
+      "fact": "строительство Николаевской железной дороги",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "130007"
+      ]
+    },
+    {
+      "factId": "T3-130007-0239",
+      "process": "реформы Н.С. Хрущёва",
+      "fact": "ликвидация машинно-тракторных станций",
+      "courseTopicId": 32,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "130007"
+      ]
+    },
+    {
+      "factId": "T3-130009-0240",
+      "process": "ликвидация зависимости Руси от Орды",
+      "fact": "«стояние» на реке Угре",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "130009",
+        "95987"
+      ]
+    },
+    {
+      "factId": "T3-130009-0241",
+      "process": "городские восстания середины XVII в.",
+      "fact": "Соляной бунт",
+      "courseTopicId": 8,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "130009"
+      ]
+    },
+    {
+      "factId": "T3-130009-0242",
+      "process": "создание советского государственного аппарата",
+      "fact": "учреждение Всероссийской Чрезвычайной Комиссии (ВЧК)",
+      "courseTopicId": 25,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "130009"
+      ]
+    },
+    {
+      "factId": "T3-130009-0243",
+      "process": "формирование абсолютной монархии",
+      "fact": "прекращение деятельности Боярской думы",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "130009"
+      ]
+    },
+    {
+      "factId": "T3-130010-0244",
+      "process": "преодоление Россией последствий Смутного времени",
+      "fact": "Смоленская война",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "130010"
+      ]
+    },
+    {
+      "factId": "T3-130010-0245",
+      "process": "нашествие войск хана Батыя на Русь",
+      "fact": "оборона Козельска",
+      "courseTopicId": 3,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "130010"
+      ]
+    },
+    {
+      "factId": "T3-130010-0246",
+      "process": "Специальная военная операция (СВО)",
+      "fact": "подписание Договора о вхождении ЛНР в состав России",
+      "courseTopicId": 38,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "130010"
+      ]
+    },
+    {
+      "factId": "T3-130011-0247",
+      "process": "преодоление Россией внешнеполитических последствий Смутного времени",
+      "fact": "Смоленская война",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "130011"
+      ]
+    },
+    {
+      "factId": "T3-130011-0248",
+      "process": "преобразования Петра I",
+      "fact": "учреждение Табели о рангах",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "130011"
+      ]
+    },
+    {
+      "factId": "T3-130011-0249",
+      "process": "переход большевиков к проведению новой экономической политики (нэп)",
+      "fact": "замена продразвёрстки продналогом",
+      "courseTopicId": 27,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "130011"
+      ]
+    },
+    {
+      "factId": "T3-130011-0250",
+      "process": "междоусобная война в Московском государстве во второй четверти XV в.",
+      "fact": "пленение Василия II ханом Улу-Мухаммедом",
+      "courseTopicId": 4,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "130011"
+      ]
+    },
+    {
+      "factId": "T3-95987-0251",
+      "process": "переход большевиков к проведению новой экономической политики (нэп)",
+      "fact": "Антибольшевистское восстание моряков Кронштадта",
+      "courseTopicId": 27,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "95987"
+      ]
+    },
+    {
+      "factId": "T3-95987-0252",
+      "process": "Смута в России",
+      "fact": "избрание на царство Михаила Романова",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "95987"
+      ]
+    },
+    {
+      "factId": "T3-95987-0253",
+      "process": "социальные движения во второй половине XVIII в.",
+      "fact": "осада Оренбурга",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "95987"
+      ]
+    },
+    {
+      "factId": "T3-129284-0254",
+      "process": "реформы «Избранной рады»",
+      "fact": "созыв первого Земского собора",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "129284"
+      ]
+    },
+    {
+      "factId": "T3-129284-0255",
+      "process": "усиление влияния России на Балтике",
+      "fact": "победа в Северной войне",
+      "courseTopicId": 9,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "129284"
+      ]
+    },
+    {
+      "factId": "T3-129284-0256",
+      "process": "деятельность П.А. Столыпина",
+      "fact": "создание хуторов и отрубов",
+      "courseTopicId": 22,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "129284"
+      ]
+    },
+    {
+      "factId": "T3-129284-0257",
+      "process": "Смутное время",
+      "fact": "издание крестоцеловальной записи Василия Шуйского",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "129284"
+      ]
+    },
+    {
+      "factId": "T3-136985-0258",
+      "process": "формирование Древнерусского государства",
+      "fact": "объединение Киева и Новгорода под властью одного князя",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "136985"
+      ]
+    },
+    {
+      "factId": "T3-136985-0259",
+      "process": "реформы Избранной рады",
+      "fact": "ограничение местничества на время военных действий",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "136985"
+      ]
+    },
+    {
+      "factId": "T3-136985-0260",
+      "process": "внутренняя политика Николая I",
+      "fact": "издание Свода законов Российской империи",
+      "courseTopicId": 16,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "136985"
+      ]
+    },
+    {
+      "factId": "T3-137404-0261",
+      "process": "Гражданская война",
+      "fact": "разгром армии П.Н. Врангеля в Крыму",
+      "courseTopicId": 26,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "137404"
+      ]
+    },
+    {
+      "factId": "T3-137404-0262",
+      "process": "Отечественная война 1812 г.",
+      "fact": "сражение под Малоярославцем",
+      "courseTopicId": 15,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "137404"
+      ]
+    },
+    {
+      "factId": "T3-137404-0263",
+      "process": "борьба за власть между сыновьями Владимира Святославича",
+      "fact": "убийство князей Бориса и Глеба",
+      "courseTopicId": 2,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "137404"
+      ]
+    },
+    {
+      "factId": "T3-137581-0264",
+      "process": "формирование и развитие законодательства Древнерусского государства",
+      "fact": "принятие Русской Правды",
+      "courseTopicId": 1,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "137581"
+      ]
+    },
+    {
+      "factId": "T3-137581-0265",
+      "process": "проведение политики «просвещённого абсолютизма» в России",
+      "fact": "созыв Уложенной комиссии",
+      "courseTopicId": 12,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "137581"
+      ]
+    },
+    {
+      "factId": "T3-137581-0266",
+      "process": "первые революционные преобразования большевиков",
+      "fact": "принятие Декрета о земле",
+      "courseTopicId": 25,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "137581"
+      ]
+    },
+    {
+      "factId": "T3-137657-0267",
+      "process": "Смутное время",
+      "fact": "осада Смоленска войском Сигизмунда III",
+      "courseTopicId": 7,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "137657"
+      ]
+    },
+    {
+      "factId": "T3-137657-0268",
+      "process": "первые преобразования большевиков",
+      "fact": "принятие Декрета о земле",
+      "courseTopicId": 25,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "137657"
+      ]
+    },
+    {
+      "factId": "T3-137657-0269",
+      "process": "реформы Александра II",
+      "fact": "создание земств",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "137657"
+      ]
+    },
+    {
+      "factId": "T3-197565-0270",
+      "process": "внутренняя политика Александра II",
+      "fact": "отмена крепостного права в России",
+      "courseTopicId": 17,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "197565"
+      ]
+    },
+    {
+      "factId": "T3-197565-0271",
+      "process": "внутренняя политика Владимира Мономаха",
+      "fact": "издание Устава, упорядочивавшего взимание процентов за деньги, взятые в долг, и ограничивавшего произвол ростовщиков",
+      "courseTopicId": 2,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "197565"
+      ]
+    },
+    {
+      "factId": "T3-197565-0272",
+      "process": "сплошная коллективизация в СССР",
+      "fact": "публикация статьи И.В. Сталина «Головокружение от успехов»",
+      "courseTopicId": 28,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "197565"
+      ]
+    },
+    {
+      "factId": "T3-197565-0273",
+      "process": "внутренняя политика России в период правления Елены Глинской",
+      "fact": "введение единой для всей страны денежной единицы – московского рубля",
+      "courseTopicId": 6,
+      "enabled": true,
+      "reviewReason": "",
+      "sourceQuestionIds": [
+        "197565"
+      ]
+    }
+  ]
+}
