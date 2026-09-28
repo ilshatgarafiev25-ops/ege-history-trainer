@@ -127,6 +127,19 @@
     .tabs button { padding: 9px 10px; font-size: 12px; }
     table.match-table { overflow-wrap: anywhere; }
   }
+
+.constructor-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.constructor input,.constructor select {max-width:100%;min-width:0;}
+.constructor .q-list-item,.constructor a,.constructor summary {overflow-wrap:anywhere;}
+.constructor .q-image {max-width:100%;height:auto;}
+.constructor-quota input {max-width:110px;}
+.constructor summary {cursor:pointer;}
+@media(max-width:640px){.constructor-grid{grid-template-columns:1fr}.constructor .atomic-actions .btn{max-width:100%;white-space:normal}.constructor .match-table{table-layout:fixed;overflow-wrap:anywhere}}
+
+[data-cabinet] input,[data-cabinet] select,[data-runner] input,[data-runner] select {max-width:100%;min-width:0;}
+[data-cabinet] .q-list-item,[data-runner] .q-text {overflow-wrap:anywhere;}
+[data-runner] fieldset {min-width:0;}
+@media(max-width:640px){.role-switch{flex-wrap:wrap}.role-switch span{overflow-wrap:anywhere;max-width:100%}}
 </style>
 </head>
 <body>
@@ -244,6 +257,7 @@ function scoreOrdered(given, correct, maxScore) {
 function normDigits(s) {
   return String(s == null ? "" : s).toLowerCase().replace(/[\s,;.]+/g, "");
 }
+function normalizeShortAnswer(s) {return String(s).trim().toLowerCase().replace(/ё/g,'е').replace(/\s+/g,'');}
 function gradeAuto(q, answer) {
   const mode = q.gradingMode || "exact";
   if (mode === "manual") return 0;
@@ -254,7 +268,7 @@ function gradeAuto(q, answer) {
     return mode === "ordered" ? scoreOrdered(given, correct, q.maxScore) : scoreUnordered(given, correct, q.maxScore);
   }
   if (q.type === "short") {
-    const variants = (q.correctText || "").split("|").map((x) => x.trim().toLowerCase()).filter(Boolean);
+    const variants = (q.correctText || "").split(/[|\r\n]+/).map((x) => x.trim().toLowerCase()).filter(Boolean);
     const raw = String(answer || "").trim().toLowerCase();
     let best = 0;
     for (const v of variants) {
@@ -262,7 +276,7 @@ function gradeAuto(q, answer) {
       const g = normDigits(raw), c = normDigits(v);
       if (mode === "ordered" && /^\d+$/.test(c)) sc = scoreOrdered(g.split(""), c.split(""), q.maxScore);
       else if (mode === "unordered" && /^\d+$/.test(c)) sc = scoreUnordered(g.split(""), c.split(""), q.maxScore);
-      else sc = raw === v ? q.maxScore : 0;
+      else sc = normalizeShortAnswer(raw) === normalizeShortAnswer(v) ? q.maxScore : 0;
       if (sc > best) best = sc;
     }
     return best;
@@ -541,14 +555,123 @@ async function fetchSubmissionsForTest(testId) {
 async function updateSubmissionGrades(id, grades, totalScore) {
   await sb.from("submissions").update({ grades, total_score: totalScore }).eq("id", id);
 }
-function App() {
-  const [role, setRole] = useState("student");
-  async function leaveTeacher() {
-    await sb.auth.signOut();
-    setRole("student");
-  }
-  return /* @__PURE__ */ React.createElement("div", { className: "shell" }, /* @__PURE__ */ React.createElement("div", { className: "masthead" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "eyebrow" }, "История ЕГЭ"), /* @__PURE__ */ React.createElement("h1", null, "Тренажёр")), /* @__PURE__ */ React.createElement("div", { className: "role-switch" }, /* @__PURE__ */ React.createElement("button", { className: role !== "teacher" ? "active" : "", onClick: () => setRole("student") }, "Ученик"), /* @__PURE__ */ React.createElement("button", { className: role === "teacher" ? "active" : "", onClick: () => role === "teacher" ? leaveTeacher() : setRole("teacher-login") }, role === "teacher" ? "Выйти из режима преподавателя" : "Вход для преподавателя"))), role === "teacher-login" && /* @__PURE__ */ React.createElement(TeacherLogin, { onSuccess: () => setRole("teacher"), onCancel: () => setRole("student") }), role === "teacher" && /* @__PURE__ */ React.createElement(TeacherView, null), role === "student" && /* @__PURE__ */ React.createElement(StudentView, null));
+async function portalRpc(name,args={}) {const {data,error}=await sb.rpc('trainer_'+name,args);if(error)throw new Error(error.message||String(error));return data;}
+function portalError(e){return e?.message||String(e);}
+function PortalAuth({recovery=false,onRecovered}){
+ const h=React.createElement,[email,setEmail]=useState(''),[pass,setPass]=useState(''),[name,setName]=useState(''),[signup,setSignup]=useState(false),[busy,setBusy]=useState(false),[message,setMessage]=useState('');
+ async function run(action){setBusy(true);setMessage('');try{
+  let r;if(action==='reset'){if(!email.trim())throw new Error('Введите email.');r=await sb.auth.resetPasswordForEmail(email.trim(),{redirectTo:location.origin+location.pathname});}
+  else if(recovery){if(pass.length<8)throw new Error('Пароль должен содержать минимум 8 символов.');r=await sb.auth.updateUser({password:pass});}
+  else if(signup){if(!name.trim()||pass.length<8)throw new Error('Укажите имя и пароль минимум из 8 символов.');r=await sb.auth.signUp({email:email.trim(),password:pass,options:{data:{display_name:name.trim()},emailRedirectTo:location.origin+location.pathname}});}
+  else r=await sb.auth.signInWithPassword({email:email.trim(),password:pass});
+  if(r.error)throw r.error;setMessage(action==='reset'?'Ссылка для восстановления отправлена на email.':recovery?'Пароль изменён.':signup?'Регистрация принята. Если включено подтверждение email, откройте письмо.':'Вход выполнен.');if(recovery&&onRecovered)onRecovered();
+ }catch(e){setMessage(portalError(e));}finally{setBusy(false);}}
+ return h('div',{className:'card'},h('h2',null,recovery?'Новый пароль':signup?'Регистрация ученика':'Вход в личный кабинет'),!recovery&&h('div',null,h('label',{htmlFor:'portal-email'},'Email'),h('input',{id:'portal-email',type:'email',autoComplete:'email',value:email,onChange:e=>setEmail(e.target.value)})),signup&&!recovery&&h('div',null,h('label',{htmlFor:'portal-name'},'Имя и фамилия'),h('input',{id:'portal-name',value:name,onChange:e=>setName(e.target.value)})),h('label',{htmlFor:'portal-pass'},'Пароль'),h('input',{id:'portal-pass',type:'password',autoComplete:signup||recovery?'new-password':'current-password',value:pass,onChange:e=>setPass(e.target.value),onKeyDown:e=>e.key==='Enter'&&!busy&&run()}),message&&h('div',{className:'notice',role:'status'},message),h('div',{className:'atomic-actions'},h('button',{className:'btn',disabled:busy,onClick:()=>run()},busy?'Подождите…':recovery?'Сохранить пароль':signup?'Зарегистрироваться':'Войти'),!recovery&&h('button',{className:'btn ghost',disabled:busy,onClick:()=>setSignup(!signup)},signup?'Уже есть аккаунт':'Создать аккаунт ученика'),!recovery&&h('button',{className:'btn ghost',disabled:busy,onClick:()=>run('reset')},'Забыли пароль?')));
 }
+function App(){
+ const h=React.createElement,[session,setSession]=useState(null),[me,setMe]=useState(null),[loading,setLoading]=useState(true),[error,setError]=useState(''),[view,setView]=useState('cabinet'),[recovery,setRecovery]=useState(false);
+ useEffect(()=>{let live=true;let serial=0;
+  async function load(s){const ticket=++serial;if(!live)return;setSession(s);window.__trainerUserId=s?.user?.id||'';setMe(null);setError('');if(!s){setLoading(false);return;}setLoading(true);try{const p=await portalRpc('me',{p_name:s.user.user_metadata?.display_name||null});if(live&&ticket===serial)setMe(p);}catch(e){if(live&&ticket===serial)setError('Не удалось открыть кабинет: '+portalError(e)+'. Проверьте установку SQL-миграции.');}finally{if(live&&ticket===serial)setLoading(false);}}
+  sb.auth.getSession().then(({data,error})=>{if(error){setError(error.message);setLoading(false);}else load(data.session);});
+  const {data}=sb.auth.onAuthStateChange((event,s)=>{if(event==='PASSWORD_RECOVERY')setRecovery(true);if(event==='SIGNED_OUT'||event==='SIGNED_IN'||event==='INITIAL_SESSION')setTimeout(()=>load(s),0);});
+  return()=>{live=false;data?.subscription?.unsubscribe();};
+ },[]);
+ async function logout(){const {error}=await sb.auth.signOut();if(error)setError(error.message);else{setSession(null);setMe(null);setView('cabinet');}}
+ return h('div',{className:'shell'},h('div',{className:'masthead'},h('div',null,h('div',{className:'eyebrow'},'История ЕГЭ'),h('h1',null,'Тренажёр')),session&&h('div',{className:'role-switch'},h('span',null,me?.name||session.user.email),h('button',{onClick:logout},'Выйти'))),error&&h('div',{className:'notice',role:'alert'},error),
+ recovery?h(PortalAuth,{recovery:true,onRecovered:()=>setRecovery(false)}):loading?h('div',{className:'card'},'Загружаю кабинет…'):!session?h(PortalAuth):me&&h('div',null,me.teacher&&h('div',{className:'tabs'},[['cabinet','Группы и работы'],['constructor','Конструктор и банк'],['student','Кабинет ученика']].map(([k,t])=>h('button',{key:k,className:view===k?'active':'',onClick:()=>setView(k)},t))),
+ me.teacher?h('div',null,h('div',{style:{display:view==='constructor'?'block':'none'}},h(TeacherView)),view==='cabinet'&&h(TeacherCabinet),view==='student'&&h(StudentCabinet,{me})):h(StudentCabinet,{me})));
+}
+function PrivatePhoto({path}){const h=React.createElement,[url,setUrl]=useState(''),[err,setErr]=useState('');useEffect(()=>{let live=true;sb.storage.from('trainer-answers').createSignedUrl(path,3600).then(({data,error})=>{if(live){if(error)setErr(error.message);else setUrl(data.signedUrl);}});return()=>{live=false;};},[path]);return err?h('p',null,'Не удалось открыть лист: '+err):url?h('a',{href:url,target:'_blank',rel:'noopener noreferrer'},h('img',{src:url,className:'q-image',alt:'Рукописный лист',style:{width:'100%',maxWidth:420}})):h('p',null,'Загружаю лист…');}
+function PortalQuestionText({q}){const h=React.createElement;return h('div',null,h('div',{className:'q-text'},renderText(q.text||'')),(q.imageFilenames?.length?q.imageFilenames:q.imageFilename?[q.imageFilename]:[]).map((p,i)=>h('a',{key:i,href:imageUrl(p),target:'_blank',rel:'noopener noreferrer'},h('img',{src:imageUrl(p),className:'q-image',alt:'Материал задания '+(i+1)}))));}
+function PortalRunner({initial,me,onBack,teacher=false,onGraded}){
+ const h=React.createElement,[a,setA]=useState(initial),key='history.portal.answer:'+me.id+':'+initial.id;
+ const [answers,setAnswers]=useState(()=>{const local=constructorRead(key,null);return initial.status==='active'&&local&&typeof local==='object'?{...local,...Object.fromEntries(Object.keys(initial.checked||{}).map(k=>[k,initial.answers[k]]))}:initial.answers||{};});
+ const [busy,setBusy]=useState(false),[err,setErr]=useState(''),[status,setStatus]=useState(''),[marks,setMarks]=useState({}),[comments,setComments]=useState({});
+ const queue=React.useRef(Promise.resolve());const questions=(a.questions||[]).map(rowToQuestion);
+ function enqueue(fn){const next=queue.current.catch(()=>{}).then(fn);queue.current=next;return next;}
+ useEffect(()=>{if(teacher||a.status!=='active')return;try{localStorage.setItem(key,JSON.stringify(answers));}catch(_){}const timer=setTimeout(()=>{enqueue(()=>portalRpc('save',{p_id:a.id,p_answers:answers})).then(()=>setStatus('Черновик сохранён')).catch(e=>setErr('Не сохранено на сервере: '+portalError(e)));},900);return()=>clearTimeout(timer);},[answers,a.status]);
+ function answer(id,v){setAnswers(prev=>({...prev,[id]:v}));setStatus('Сохраняю…');}
+ async function action(type,qid){setBusy(true);setErr('');try{const r=await enqueue(()=>portalRpc(type,{p_id:a.id,p_answers:answers,...(qid?{p_qid:qid}:{})}));setA(r);setAnswers(r.answers||{});if(type==='submit'){localStorage.removeItem(key);setStatus('Работа отправлена.');}}catch(e){setErr(portalError(e));}finally{setBusy(false);}}
+ async function upload(files){setBusy(true);setErr('');try{const list=Array.from(files||[]);if((answers.__pages||[]).length+list.length>20)throw new Error('Можно приложить до 20 листов.');for(const f of list){if(!f.type.startsWith('image/'))throw new Error('Нужны фотографии JPEG, PNG или WebP.');const blob=await compressImageToBlob(f),path=me.id+'/'+a.id+'/'+uid('page')+'.jpg';const {error}=await sb.storage.from('trainer-answers').upload(path,blob,{contentType:'image/jpeg',upsert:false});if(error)throw error;setAnswers(prev=>({...prev,__pages:[...(prev.__pages||[]),path]}));}}catch(e){setErr('Загрузка: '+portalError(e));}finally{setBusy(false);}}
+ async function grade(q){setBusy(true);setErr('');try{const val=marks[q.id]??a.grades[q.id];if(val===''||val==null)throw new Error('Укажите балл.');const next=await portalRpc('grade',{p_id:a.id,p_qid:q.id,p_score:Number(val),p_comment:comments[q.id]??a.comments[q.id]??''});setA(next);onGraded?.();}catch(e){setErr(portalError(e));}finally{setBusy(false);}}
+ return h('div',{className:'card','data-runner':true},h('button',{className:'btn ghost',disabled:busy,onClick:async()=>{if(!teacher&&a.status==='active'){setBusy(true);try{await enqueue(()=>portalRpc('save',{p_id:a.id,p_answers:answers}));onBack();}catch(e){setErr('Не удалось сохранить: '+portalError(e));}finally{setBusy(false);}}else onBack();}},'В кабинет'),h('h2',null,a.title),h('p',{className:'notice'},a.status==='submitted'?'Работа сдана. Баллы: '+a.total+'. Развёрнутые ответы проверяет преподаватель.':a.training?'Тренировка: разбор открывается после проверки ответа.':'Контроль: разбор откроется после отправки всей работы.'),err&&h('div',{className:'notice',role:'alert'},err),status&&h('p',{role:'status'},status),
+ h('fieldset',{disabled:busy,style:{border:0,padding:0,minWidth:0}},
+ (questions.some(q=>q.type==='essay')||(answers.__pages||[]).length>0)&&h('div',null,h('h3',null,'Рукописные листы'),!teacher&&a.status==='active'&&h('div',null,h('p',null,'Укажите номера заданий на бланке. Один лист может содержать несколько ответов. Прикрепляйте фотографии в порядке страниц.'),h('input',{type:'file',id:'portal-pages',multiple:true,accept:'image/jpeg,image/png,image/webp',onChange:e=>{upload(e.target.files);e.target.value='';}})),(answers.__pages||[]).map((path,i)=>h('div',{key:path},h('p',null,'Лист '+(i+1)),h(PrivatePhoto,{path}),!teacher&&a.status==='active'&&h('button',{className:'btn danger',onClick:()=>answer('__pages',(answers.__pages||[]).filter((_,j)=>j!==i))},'Убрать лист')))),
+ questions.map((q,i)=>{const locked=teacher||a.status==='submitted'||!!a.checked[q.id];const ans=answers[q.id];const reveal=teacher||a.status==='submitted'||!!a.checked[q.id];return h('div',{key:q.id,className:'q-list-item'},h('h3',null,(i+1)+'. №'+(q.ogeNumber||'—')+' · максимум '+q.maxScore),h(PortalQuestionText,{q}),q.metadata?.publicCriteria&&renderText(typeof q.metadata.publicCriteria==='string'?q.metadata.publicCriteria:JSON.stringify(q.metadata.publicCriteria)),
+ h('fieldset',{disabled:locked,style:{border:0,padding:0,minWidth:0}},q.type==='short'&&h('input',{'aria-label':'Ответ '+(i+1),placeholder:'Ваш ответ',value:ans||'',onChange:e=>answer(q.id,e.target.value)}),
+ ['single','multi'].includes(q.type)&&q.options.map((s,j)=>h('label',{className:'opt',key:j},h('input',{type:q.type==='single'?'radio':'checkbox',name:q.id,checked:q.type==='single'?ans===j:(ans||[]).includes(j),onChange:e=>answer(q.id,q.type==='single'?j:e.target.checked?[...(ans||[]),j]:(ans||[]).filter(x=>x!==j))}),(j+1)+') '+s)),
+ q.type==='matching'&&q.matchLeft.map((s,j)=>h('div',{key:j},h('label',null,'АБВГДЕЖ'[j]+') '+s),h('select',{'aria-label':'Соответствие '+(j+1),value:(ans||[])[j]||'',onChange:e=>{const next=[...(ans||[])];next[j]=Number(e.target.value)||null;answer(q.id,next);}},h('option',{value:''},'—'),q.matchRight.map((r,k)=>h('option',{key:k,value:k+1},(k+1)+') '+r))))),
+ q.type==='essay'&&h('p',null,'Ответ напишите от руки и приложите листы выше.')),
+ !teacher&&a.status==='active'&&a.training&&!locked&&h('button',{className:'btn ghost',disabled:q.type==='essay'?!(answers.__pages||[]).length:!isAnswered(q,ans),onClick:()=>action('check',q.id)},'Проверить ответ'),
+ reveal&&h('div',{className:'notice'},h('strong',null,a.grades[q.id]==null?'Ожидает проверки преподавателем':'Баллы: '+a.grades[q.id]+' / '+q.maxScore),h('p',null,q.type==='essay'?'Пример ответа и критерии':formatCorrect(q)),renderText(q.referenceAnswer||''),q.metadata?.criteria&&renderText(typeof q.metadata.criteria==='string'?q.metadata.criteria:JSON.stringify(q.metadata.criteria)),a.comments[q.id]&&h('p',null,'Комментарий: '+a.comments[q.id])),
+ teacher&&a.status==='submitted'&&(q.type==='essay'||q.gradingMode==='manual')&&h('div',null,h('label',null,'Баллы'),h('input',{type:'number',min:0,max:q.maxScore,value:marks[q.id]??a.grades[q.id]??'',onChange:e=>setMarks({...marks,[q.id]:e.target.value})}),h('label',null,'Комментарий ученику'),h('textarea',{value:comments[q.id]??a.comments[q.id]??'',onChange:e=>setComments({...comments,[q.id]:e.target.value})}),h('button',{className:'btn',onClick:()=>grade(q)},'Сохранить оценку')));}),
+ !teacher&&a.status==='active'&&h('button',{className:'btn',onClick:()=>action('submit')},'Отправить работу')));
+}
+function StudentCabinet({me}){
+ const h=React.createElement,[data,setData]=useState(null),[active,setActive]=useState(null),[err,setErr]=useState(''),[busy,setBusy]=useState(false),[code,setCode]=useState(''),[testCode,setTestCode]=useState(new URLSearchParams(location.search).get('test')||''),[teacher,setTeacher]=useState(''),[mode,setMode]=useState('errors'),[count,setCount]=useState('10'),[number,setNumber]=useState('');
+ async function reload(){try{setData(await portalRpc('dashboard'));}catch(e){setErr(portalError(e));}}
+ useEffect(()=>{reload();},[]);
+ async function run(fn){setBusy(true);setErr('');try{await fn();}catch(e){setErr(portalError(e));}finally{setBusy(false);}}
+ if(active)return h(PortalRunner,{key:active.id,initial:active,me,onBack:()=>{setActive(null);reload();}});
+ return h('div',{'data-cabinet':'student'},h('div',{className:'card'},h('h2',null,'Мой кабинет'),h('p',null,me.name),err&&h('p',{className:'notice',role:'alert'},err),h('label',{htmlFor:'join-code'},'Код группы от преподавателя'),h('input',{id:'join-code',value:code,onChange:e=>setCode(e.target.value)}),h('button',{className:'btn',disabled:busy,onClick:()=>run(async()=>{await portalRpc('join',{p_code:code});setCode('');await reload();})},'Вступить в группу'),data?.groups.map(g=>h('p',{key:g.id},g.name+' · изучено до темы '+g.through)),
+ h('label',{htmlFor:'open-code'},'Код назначенного теста'),h('input',{id:'open-code',value:testCode,onChange:e=>setTestCode(e.target.value)}),h('button',{className:'btn ghost',disabled:busy,onClick:()=>run(async()=>setActive(await portalRpc('start',{p_code:testCode})))},'Открыть по коду')),
+ h('div',{className:'card'},h('h2',null,'Назначенные работы'),!data&&h('p',null,'Загружаю…'),data&&!data.assignments.length&&h('p',null,'Пока нет назначений. Вступите в группу или дождитесь работы от преподавателя.'),data?.assignments.map(x=>h('div',{className:'q-list-item',key:x.id},h('strong',null,x.title),h('p',null,x.status==='submitted'?'Сдано':!x.active?'Закрыто':x.attempt_id?'Начато':'К выполнению',x.due_at?' · срок '+new Date(x.due_at).toLocaleString('ru-RU'):''),h('button',{className:'btn',disabled:busy||(!x.active&&!x.attempt_id),onClick:()=>run(async()=>setActive(await portalRpc(x.attempt_id?'attempt':'start',x.attempt_id?{p_id:x.attempt_id}:{p_assignment:x.id})))},x.status==='submitted'?'Посмотреть результат':x.attempt_id?'Продолжить':'Начать')))),
+ h('div',{className:'card'},h('h2',null,'Моя практика'),h('p',null,'Решено разных заданий: '+(data?.learning?.seen||0)+' · с ошибками в последнем решении: '+(data?.learning?.errors||0)),h('label',null,'Преподаватель и изученные темы'),h('select',{id:'practice-teacher',value:teacher,onChange:e=>setTeacher(e.target.value)},h('option',{value:''},'Выберите преподавателя'),data?.teachers.map(t=>h('option',{key:t.id,value:t.id},t.name+' · темы 1–'+t.through))),h('label',null,'Режим'),h('select',{id:'practice-mode',value:mode,onChange:e=>setMode(e.target.value)},h('option',{value:'errors'},'Работа над ошибками'),h('option',{value:'unseen'},'Ещё не решал'),h('option',{value:'mixed'},'Ошибки + новые + повторение')),h('label',null,'Номер задания (необязательно)'),h('input',{type:'number',min:1,value:number,onChange:e=>setNumber(e.target.value)}),h('label',null,'Количество (1–30)'),h('input',{id:'practice-count',type:'number',min:1,max:30,value:count,onChange:e=>setCount(e.target.value)}),h('button',{className:'btn',disabled:busy||!teacher,onClick:()=>run(async()=>setActive(await portalRpc('practice',{p_teacher:teacher,p_mode:mode,p_count:Number(count),p_number:number?Number(number):null})))},'Подобрать тренировку'),h('p',{className:'q-meta'},'Подбор использует только изученные темы. Если подходящих вопросов меньше, будет выдан доступный набор. По №1/№2 учитываются также факты внутри заданий. Развёрнутые ответы учитываются после оценки преподавателя.')),
+ h('div',{className:'card'},h('h2',null,'История и результаты'),data?.attempts.map(x=>h('div',{className:'q-list-item',key:x.id},h('strong',null,x.title),h('p',null,x.status==='active'?'Черновик':'Баллы: '+x.total_score+(Number(x.pending)?' · ожидают проверки: '+x.pending:'')),h('button',{className:'btn ghost',disabled:busy,onClick:()=>run(async()=>setActive(await portalRpc('attempt',{p_id:x.id})))},'Открыть')))));
+}
+function TeacherCabinet(){
+ const h=React.createElement,[data,setData]=useState(null),[tests,setTests]=useState([]),[me,setMe]=useState(null),[active,setActive]=useState(null),[err,setErr]=useState(''),[notice,setNotice]=useState(''),[busy,setBusy]=useState(false),[groupName,setGroupName]=useState(''),[groupThrough,setGroupThrough]=useState('1'),[editGroup,setEditGroup]=useState(null),[target,setTarget]=useState(''),[test,setTest]=useState(''),[title,setTitle]=useState(''),[due,setDue]=useState(''),[offset,setOffset]=useState(0),[selectedTests,setSelectedTests]=useState([]),[practiceMode,setPracticeMode]=useState('errors'),[practiceCount,setPracticeCount]=useState('10'),[practiceNumber,setPracticeNumber]=useState(''),[practiceTraining,setPracticeTraining]=useState(true);
+ async function reload(off=offset){try{const [d,t,m]=await Promise.all([portalRpc('teacher_dashboard',{p_offset:off}),fetchTests(),portalRpc('me')]);setData(d);setTests(t);setMe(m);}catch(e){setErr(portalError(e));}}
+ useEffect(()=>{reload();},[offset]);
+ async function run(fn){setBusy(true);setErr('');setNotice('');try{await fn();}catch(e){setErr(portalError(e));}finally{setBusy(false);}}
+ async function assign(){const [kind,id]=target.split(':');if(!id||!test)throw new Error('Выберите адресата и тест.');await portalRpc('assign',{p_test:test,p_title:title||tests.find(t=>t.id===test)?.name||'Работа',p_group:kind==='group'?id:null,p_student:kind==='student'?id:null,p_due:due?new Date(due).toISOString():null});setNotice('Работа назначена и появилась в кабинете ученика.');await reload();}
+ async function distribute(){const [kind,id]=target.split(':');if(kind!=='group')throw new Error('Для распределения выберите группу.');const students=data.students.filter(s=>s.groups.includes(id));if(!students.length)throw new Error('В группе нет учеников.');if(selectedTests.length<students.length)throw new Error('Нужно не меньше разных тестов, чем учеников: '+students.length+'. Создайте варианты в конструкторе.');const n=await portalRpc('distribute',{p_group:id,p_tests:selectedTests,p_title:title,p_due:due?new Date(due).toISOString():null});setNotice('Назначено '+n+' вариантов.');await reload();}
+ if(active&&me)return h(PortalRunner,{key:active.id,initial:active,me,teacher:true,onBack:()=>{setActive(null);reload();}});
+ return h('div',{'data-cabinet':'teacher'},err&&h('div',{className:'notice',role:'alert'},err),notice&&h('div',{className:'notice',role:'status'},notice),
+ h('div',{className:'card'},h('h2',null,'Группы'),h('label',null,'Название группы'),h('input',{id:'group-name',value:groupName,onChange:e=>setGroupName(e.target.value)}),h('label',null,'Изучено до темы'),h('select',{id:'group-through',value:groupThrough,onChange:e=>setGroupThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{value:t.id,key:t.id},t.id+'. '+t.name))),h('div',{className:'atomic-actions'},h('button',{className:'btn',disabled:busy,onClick:()=>run(async()=>{await portalRpc('group_save',{p_name:groupName,p_through:Number(groupThrough),p_id:editGroup});setEditGroup(null);setGroupName('');await reload();})},editGroup?'Сохранить группу':'Создать группу'),editGroup&&h('button',{className:'btn ghost',onClick:()=>{setEditGroup(null);setGroupName('');}},'Отмена')),data?.groups.map(g=>h('div',{key:g.id,className:'q-list-item'},h('strong',null,g.name),h('p',null,'Темы 1–'+g.course_through+' · код вступления: ',h('strong',null,g.invite_code)),h('button',{className:'btn ghost',onClick:()=>{setEditGroup(g.id);setGroupName(g.name);setGroupThrough(String(g.course_through));}},'Изменить')))),
+ h('div',{className:'card'},h('h2',null,'Ученики'),data?.students.map(s=>h('div',{key:s.id,className:'q-list-item'},h('strong',null,s.name||s.id),h('label',null,'Личный предел тем для самостоятельной практики'),h('select',{value:s.through,disabled:busy,onChange:e=>{const n=Number(e.target.value);run(async()=>{await portalRpc('student_topics',{p_student:s.id,p_through:n});await reload();});}},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name)))))),
+ h('div',{className:'card'},h('h2',null,'Выдать работу'),h('label',null,'Группа или ученик'),h('select',{id:'assign-target',value:target,onChange:e=>setTarget(e.target.value)},h('option',{value:''},'Выберите адресата'),data?.groups.map(g=>h('option',{key:g.id,value:'group:'+g.id},'Группа: '+g.name)),data?.students.map(s=>h('option',{key:s.id,value:'student:'+s.id},'Ученик: '+s.name))),h('label',null,'Тест'),h('select',{id:'assign-test',value:test,onChange:e=>setTest(e.target.value)},h('option',{value:''},'Выберите готовый тест'),tests.map(t=>h('option',{key:t.id,value:t.id},t.name+' · '+t.code))),h('label',null,'Название назначения (необязательно)'),h('input',{value:title,onChange:e=>setTitle(e.target.value)}),h('label',null,'Срок сдачи (необязательно)'),h('input',{type:'datetime-local',value:due,onChange:e=>setDue(e.target.value)}),h('button',{className:'btn',disabled:busy,onClick:()=>run(assign)},'Назначить работу'),
+ h('details',null,h('summary',null,'Назначить индивидуальный подбор'),h('p',null,'Для выбранной группы или ученика: каждый получит подборку по собственной истории и личному пределу тем. Если у кого-то нет подходящих вопросов, назначения не создаются; выберите ученика отдельно или смешанный режим.'),h('select',{id:'teacher-practice-mode',value:practiceMode,onChange:e=>setPracticeMode(e.target.value)},h('option',{value:'errors'},'По ошибкам'),h('option',{value:'unseen'},'Ещё не решал'),h('option',{value:'mixed'},'Ошибки + новые + повторение')),h('label',null,'Количество (1–30)'),h('input',{id:'teacher-practice-count',type:'number',min:1,max:30,value:practiceCount,onChange:e=>setPracticeCount(e.target.value)}),h('label',null,'Номер задания (необязательно)'),h('input',{type:'number',min:1,value:practiceNumber,onChange:e=>setPracticeNumber(e.target.value)}),h('label',{className:'opt'},h('input',{type:'checkbox',checked:practiceTraining,onChange:e=>setPracticeTraining(e.target.checked)}),'Тренировка с проверкой по ходу решения'),h('button',{className:'btn',disabled:busy,onClick:()=>run(async()=>{const [kind,id]=target.split(':');if(!id)throw new Error('Выберите адресата выше.');const n=await portalRpc('assign_practice',{p_mode:practiceMode,p_count:Number(practiceCount),p_number:practiceNumber?Number(practiceNumber):null,p_student:kind==='student'?id:null,p_group:kind==='group'?id:null,p_training:practiceTraining,p_due:due?new Date(due).toISOString():null});setNotice('Создано индивидуальных назначений: '+n+'.');await reload();})},'Подобрать и назначить')),
+ h('details',null,h('summary',null,'Раздать группе разные готовые варианты'),h('p',null,'Отметьте по одному тесту на каждого ученика. Варианты предварительно создаются в конструкторе. Назначения появятся в личных кабинетах.'),tests.map(t=>h('label',{className:'opt',key:t.id},h('input',{type:'checkbox',checked:selectedTests.includes(t.id),onChange:e=>setSelectedTests(prev=>e.target.checked?[...prev,t.id]:prev.filter(id=>id!==t.id))}),t.name)),h('button',{className:'btn',disabled:busy,onClick:()=>run(distribute)},'Распределить варианты')),
+ data?.assignments.map(a=>h('div',{className:'q-list-item',key:a.id},h('strong',null,a.title),h('p',null,a.active?'Открыта':'Закрыта'),a.active&&h('button',{className:'btn ghost',disabled:busy,onClick:()=>run(async()=>{await portalRpc('assignment_close',{p_id:a.id});await reload();})},'Закрыть приём'),h('button',{className:'btn ghost',disabled:busy,onClick:()=>run(async()=>{await portalRpc('assignment_reopen',{p_id:a.id,p_due:due?new Date(due).toISOString():null});setNotice('Приём открыт. Срок взят из поля выше; пустое поле снимает ограничение.');await reload();})},'Открыть / обновить срок')))),
+ h('div',{className:'card'},h('h2',null,'Работы и проверка'),h('button',{className:'btn ghost',disabled:busy,onClick:()=>reload()},'Обновить работы'),data?.attempts.map(a=>h('div',{className:'q-list-item',key:a.id},h('strong',null,a.student_name+' — '+a.title),h('p',null,a.status==='active'?'В процессе':'Баллы: '+a.total_score+' · ожидают проверки: '+a.pending),h('button',{className:'btn',disabled:busy,onClick:()=>run(async()=>setActive(await portalRpc('attempt',{p_id:a.id})))},'Открыть работу'))),h('div',{className:'atomic-actions'},h('button',{className:'btn ghost',disabled:offset===0,onClick:()=>setOffset(Math.max(0,offset-100))},'Предыдущие'),h('button',{className:'btn ghost',disabled:!data||data.attempts.length<100,onClick:()=>setOffset(offset+100)},'Следующие'))));
+}
+
+function UniversalBankImport({onReload}){
+ const h=React.createElement,[files,setFiles]=useState([]),[images,setImages]=useState([]),[busy,setBusy]=useState(false),[log,setLog]=useState('');
+ async function run(){setBusy(true);setLog('');try{
+  if(!files.length)throw new Error('Выберите JSON пакета банка.');const all=[];const bytes=new Map();
+  for(const image of images){if(bytes.has(image.name))throw new Error('Повтор имени изображения: '+image.name+'. Используйте уникальные имена.');bytes.set(image.name,image);}
+  for(const f of files){const pack=JSON.parse(await f.text());const rows=Array.isArray(pack)?pack:pack.questions;const materials=Array.isArray(pack.materials)?pack.materials:[];
+   if(!Array.isArray(rows))throw new Error(f.name+': нужен пакет с questions или массив заданий. Атомарные facts загружаются в генераторе.');
+   if(!Array.isArray(pack)&&pack.schemaVersion!==1)throw new Error('Неподдерживаемая версия пакета: '+f.name);
+   for(const q of rows){
+    const number=Number(q.egeNumber||q.ogeNumber);if(!q.id||!['short','single','multi','matching','essay'].includes(q.type)||!q.text||!Number.isInteger(number)||number<1)throw new Error('У задания '+(q.id||'без ID')+' нужны id, type, text и egeNumber. Исходную выгрузку сначала подготовьте в формат банка.');
+    const topics=(q.requiredCourseTopics||q.metadata?.requiredCourseTopics||[]).map(course38Normalize);if(!topics.length||topics.some(x=>!x))throw new Error(q.id+': укажите все необходимые темы курса 1–38.');
+    if(!Number.isInteger(q.maxScore)||q.maxScore<1||q.maxScore>20)throw new Error(q.id+': укажите maxScore 1–20.');
+    if(q.type!=='essay'&&!['exact','ordered','unordered','manual'].includes(q.gradingMode))throw new Error(q.id+': укажите gradingMode.');
+    const opts=q.options||[],left=q.matchLeft||[],right=q.matchRight||[];if(!Array.isArray(opts)||!Array.isArray(left)||!Array.isArray(right))throw new Error(q.id+': options, matchLeft и matchRight должны быть массивами.');const mentioned=(q.mentionedCourseTopics||q.metadata?.mentionedCourseTopics||[]).map(course38Normalize);if(mentioned.some(x=>!x))throw new Error(q.id+': неверная упомянутая тема.');
+    if(q.type==='short'&&!String(q.correctText||'').trim())throw new Error(q.id+': нет правильного ответа.');
+    if(['single','multi'].includes(q.type)&&(!opts.length||!Array.isArray(q.correctIdx)||!q.correctIdx.length||q.correctIdx.some(i=>!Number.isInteger(i)||i<0||i>=opts.length)||(q.type==='single'&&q.correctIdx.length!==1)))throw new Error(q.id+': неверные индексы правильных вариантов.');
+    if(q.type==='matching'&&(!left.length||!right.length||q.correctMatch?.length!==left.length||q.correctMatch.some(i=>!Number.isInteger(i)||i<1||i>right.length)))throw new Error(q.id+': неверная таблица соответствия.');
+    const linked=(q.materialIds||[]).map(id=>materials.find(m=>m.id===id));if(linked.some(m=>!m))throw new Error(q.id+': отсутствует связанный материал.');
+    const texts=linked.filter(m=>m.text).map(m=>(m.title?m.title+'\n':'')+m.text);
+    const names=[...linked.flatMap(m=>m.images||[]),...(q.images||[])];
+    for(const name of names)if(!bytes.has(name))throw new Error(q.id+': не выбрано изображение '+name);
+    all.push({...q,id:String(q.id),ogeNumber:number,text:[...texts,q.text].join('\n\n'),requiredCourseTopics:topics,mentionedCourseTopics:mentioned,primaryCourseTopic:topics.slice().sort((a,b)=>b.id-a.id)[0],gradingMode:q.type==='essay'?'manual':q.gradingMode,referenceAnswer:q.referenceAnswer||'',metadata:{...q.metadata,criteria:q.criteria||q.metadata?.criteria,publicCriteria:q.publicCriteria||q.metadata?.publicCriteria,materialIds:q.materialIds||[],schemaVersion:1,needsReview:!!q.metadata?.needsReview,missingMaterial:!!q.metadata?.missingMaterial},_images:names});
+   }
+  }
+  if(new Set(all.map(q=>q.id)).size!==all.length)throw new Error('Пакеты содержат повторные ID. Объедините записи перед импортом.');
+  // Validate every row and every file before any database writes.
+  const uploaded=new Map();let saved=0;
+  for(const q of all){const names=[];for(const name of q._images){if(!uploaded.has(name)){const f=bytes.get(name);const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',await f.arrayBuffer()))).map(b=>b.toString(16).padStart(2,'0')).join('');const path='bank/'+hash+'.'+(f.name.split('.').pop()||'png');const {error}=await sb.storage.from(IMAGES_BUCKET).upload(path,f,{upsert:false});if(error&&!['409','Duplicate'].includes(String(error.statusCode))&&!/already exists/i.test(error.message||''))throw error;uploaded.set(name,path);}names.push(uploaded.get(name));}
+   const ready={...q,imageFilenames:names,imageFilename:names[0]||''};delete ready._images;const error=await upsertQuestion(ready);if(error)throw error;saved++;setLog('Сохранено '+saved+' из '+all.length+'.');
+  }
+  await onReload();setLog('Импорт завершён: '+saved+' заданий. Повторный импорт тех же ID обновляет банк; выданные попытки сохраняют свои копии.');
+ }catch(e){setLog('Импорт остановлен: '+portalError(e)+'. Уже сохранённые записи остаются в банке; повторная загрузка обновит их по ID.');}finally{setBusy(false);}}
+ return h('div',{className:'card'},h('h2',null,'Загрузка подготовленных банков'),h('p',null,'Выберите один или несколько JSON-пакетов и их изображения. Пакет задаёт номера, темы, типы ответов, источники и критерии. После импорта файлы повторно выбирать не нужно.'),h('label',null,'JSON банков'),h('input',{type:'file',multiple:true,accept:'.json',disabled:busy,onChange:e=>setFiles(Array.from(e.target.files||[]))}),h('label',null,'Изображения к выбранным пакетам'),h('input',{type:'file',multiple:true,accept:'image/*',disabled:busy,onChange:e=>setImages(Array.from(e.target.files||[]))}),h('button',{className:'btn',disabled:busy,onClick:run},busy?'Импортирую…':'Загрузить в банк'),log&&h('div',{className:'notice',role:'status'},log));
+}
+
 function TeacherLogin({ onSuccess, onCancel }) {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
@@ -564,7 +687,7 @@ function TeacherLogin({ onSuccess, onCancel }) {
   return /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h2", null, "Вход для преподавателя"), /* @__PURE__ */ React.createElement("div", { className: "notice" }, "Используется Supabase Auth. Создайте преподавателя в Authentication → Users; пароль не хранится в коде сайта."), /* @__PURE__ */ React.createElement("label", null, "Email"), /* @__PURE__ */ React.createElement("input", { type: "email", value: email, onChange: (e) => setEmail(e.target.value), autoFocus: true }), /* @__PURE__ */ React.createElement("label", null, "Пароль"), /* @__PURE__ */ React.createElement("input", { type: "password", value: pass, onChange: (e) => setPass(e.target.value), onKeyDown: (e) => e.key === "Enter" && submit() }), err && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } }, err), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8 } }, /* @__PURE__ */ React.createElement("button", { className: "btn", disabled: busy, onClick: submit }, busy ? "Вхожу…" : "Войти"), /* @__PURE__ */ React.createElement("button", { className: "btn ghost", onClick: onCancel }, "Отмена")));
 }
 function TeacherView() {
-  const [tab, setTab] = useState("import");
+  const [tab, setTab] = useState("constructor");
   const [bank, setBank] = useState(null);
   const [tests, setTests] = useState(null);
   const [loadError, setLoadError] = useState("");
@@ -577,7 +700,7 @@ function TeacherView() {
   useEffect(() => {
     reload();
   }, [reload]);
-  return /* @__PURE__ */ React.createElement("div", null, loadError && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } }, loadError), /* @__PURE__ */ React.createElement("div", { className: "tabs" }, [["generator", "Генератор №1"], ["generator2", "Генератор №2"], ["import", "\u0418\u043C\u043F\u043E\u0440\u0442 \u0431\u0430\u0437\u044B"], ["bank", "\u0411\u0430\u043D\u043A \u0437\u0430\u0434\u0430\u043D\u0438\u0439"], ["tests", "\u0422\u0435\u0441\u0442\u044B"], ["testimport", "\u0418\u043C\u043F\u043E\u0440\u0442 \u0442\u0435\u0441\u0442\u0430"], ["grade", "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043E\u0442\u0432\u0435\u0442\u043E\u0432"], ["export", "\u042D\u043A\u0441\u043F\u043E\u0440\u0442 / \u0434\u0438\u0430\u0433\u043D\u043E\u0441\u0442\u0438\u043A\u0430"]].map(([k, l]) => /* @__PURE__ */ React.createElement("button", { key: k, className: tab === k ? "active" : "", onClick: () => setTab(k) }, l))), React.createElement("div", { style: { display: tab === "generator" ? "block" : "none" } }, React.createElement(AtomicGeneratorTab, { onReload: reload })), React.createElement("div", { style: { display: tab === "generator2" ? "block" : "none" } }, React.createElement(AtomicGeneratorTab, { onReload: reload, task: 2 })), tab === "import" && /* @__PURE__ */ React.createElement(ImportTab, { bank: bank || [], onReload: reload }), tab === "bank" && /* @__PURE__ */ React.createElement(BankTab, { bank, onReload: reload }), tab === "tests" && /* @__PURE__ */ React.createElement(TestsTab, { bank: bank || [], tests, onReload: reload }), tab === "testimport" && /* @__PURE__ */ React.createElement(TestImportTab, { bank: bank || [], onReload: reload }), tab === "grade" && /* @__PURE__ */ React.createElement(GradeTab, { tests: tests || [], bank: bank || [] }), tab === "export" && /* @__PURE__ */ React.createElement(ExportTab, { bank: bank || [], tests: tests || [] }));
+  return /* @__PURE__ */ React.createElement("div", null, loadError && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } }, loadError), /* @__PURE__ */ React.createElement("div", { className: "tabs" }, [["constructor", "Конструктор"], ["packages", "Загрузка банков"], ["import", "\u0418\u043C\u043F\u043E\u0440\u0442 \u0431\u0430\u0437\u044B"], ["bank", "\u0411\u0430\u043D\u043A \u0437\u0430\u0434\u0430\u043D\u0438\u0439"], ["tests", "\u0422\u0435\u0441\u0442\u044B"], ["testimport", "\u0418\u043C\u043F\u043E\u0440\u0442 \u0442\u0435\u0441\u0442\u0430"], ["grade", "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043E\u0442\u0432\u0435\u0442\u043E\u0432"], ["export", "\u042D\u043A\u0441\u043F\u043E\u0440\u0442 / \u0434\u0438\u0430\u0433\u043D\u043E\u0441\u0442\u0438\u043A\u0430"]].map(([k, l]) => /* @__PURE__ */ React.createElement("button", { key: k, className: tab === k ? "active" : "", onClick: () => setTab(k) }, l))), React.createElement("div", { style: { display: tab === "constructor" ? "block" : "none" } }, React.createElement(ConstructorTab, { bank, onReload: reload })), tab === "packages" && React.createElement(UniversalBankImport, {onReload: reload}), tab === "import" && /* @__PURE__ */ React.createElement(ImportTab, { bank: bank || [], onReload: reload }), tab === "bank" && /* @__PURE__ */ React.createElement(BankTab, { bank: bank === null ? null : bank.filter(q => !(q.metadata || {}).constructorSnapshot), onReload: reload }), tab === "tests" && /* @__PURE__ */ React.createElement(TestsTab, { bank: bank || [], tests, onReload: reload }), tab === "testimport" && /* @__PURE__ */ React.createElement(TestImportTab, { bank: bank || [], onReload: reload }), tab === "grade" && /* @__PURE__ */ React.createElement(GradeTab, { tests: tests || [], bank: bank || [] }), tab === "export" && /* @__PURE__ */ React.createElement(ExportTab, { bank: bank || [], tests: tests || [] }));
 }
 function ImportTab({ bank, onReload }) {
   const [jsonFile, setJsonFile] = useState(null);
@@ -631,6 +754,7 @@ function ImportTab({ bank, onReload }) {
           sourceQuestionHtml: q.sourceQuestionHtml || q.question_html || "", sourceSolutionHtml: q.sourceSolutionHtml || q.solution_html || "",
           metadata: {
             ...(q.metadata || {}),
+            missingMaterial: missing.length > 0 || !!q.metadata?.missingMaterial,
             source: q.source || (q.metadata && q.metadata.source) || "",
             codifierTopics: Array.isArray(q.codifierTopics) ? q.codifierTopics : (Array.isArray(q.codifier_topics) ? q.codifier_topics : (q.topic ? [q.topic] : [])),
             primaryCourseTopic: q.primaryCourseTopic || (q.metadata && q.metadata.primaryCourseTopic) || null,
@@ -1035,72 +1159,73 @@ function course38Primary(q) {
 }
 
 // Atomic task 1 generator: all options are derived exclusively from the allowed facts.
-const ATOMIC_CACHE_KEY = 'history.atomic.course38.v2:' + SUPABASE_URL;
+const ATOMIC_CACHE_KEY = 'history.atomic.course38.pdf.v3:' + SUPABASE_URL;
+function atomicDateBounds(f) {
+  const ys=f.acceptedYears&&f.acceptedYears.length ? f.acceptedYears : [f.year,f.endYear||f.year];
+  return [Math.min(...ys),Math.max(...ys)];
+}
+function atomicDateLabel(f) { return f.dateLabel || (f.endYear && f.endYear!==f.year ? f.year+'–'+f.endYear+' гг.' : f.year+' г.'); }
+function atomicDateKey(f) { return f.year+':'+(f.endYear||f.year); }
+function atomicSameEvent(a,b) {return a.event.toLowerCase()===b.event.toLowerCase() || !!(a.equivalentEventGroup && a.equivalentEventGroup===b.equivalentEventGroup);}
+function atomicDatesSeparate(a,b) { const x=atomicDateBounds(a),y=atomicDateBounds(b);return x[1]<y[0] || y[1]<x[0]; }
+function atomicOptionsCompatible(a,b) {return !atomicSameEvent(a,b) && atomicDatesSeparate(a,b);}
 function atomicValidate(data) {
   if (!data || !Array.isArray(data.facts) || !data.facts.length) throw new Error('В JSON нет непустого массива facts.');
-  const ids = new Set(), events = new Map();
-  return data.facts.map((f, i) => {
-    if (!f || typeof f.factId !== 'string' || !f.factId.trim() || ids.has(f.factId) || typeof f.event !== 'string' || !f.event.trim() || !Number.isInteger(f.year) || f.year < 1 || !Number.isInteger(f.courseTopicId) || !COURSE38_BY_ID.has(f.courseTopicId)) throw new Error('Некорректный факт или повтор factId в строке ' + (i + 1));
+  const ids=new Set();
+  return data.facts.map((f,i)=>{
+    if(!f || typeof f.factId!=='string' || !f.factId.trim() || ids.has(f.factId) || typeof f.event!=='string' || !f.event.trim() || !Number.isInteger(f.year) || f.year<1 || !Number.isInteger(f.courseTopicId) || !COURSE38_BY_ID.has(f.courseTopicId))throw new Error('Некорректный факт или повтор factId в строке '+(i+1));
+    const endYear=f.endYear===undefined?f.year:f.endYear;
+    if(!Number.isInteger(endYear)||endYear<f.year)throw new Error('Некорректный период в строке '+(i+1));
+    if(f.acceptedYears!==undefined && (!Array.isArray(f.acceptedYears)||!f.acceptedYears.length||!f.acceptedYears.every(y=>Number.isInteger(y)&&y>0)||!f.acceptedYears.includes(f.year)))throw new Error('Некорректные допустимые датировки в строке '+(i+1));
     ids.add(f.factId);
-    const event = f.event.trim().replace(/\s+/g, ' '), key = event.toLowerCase();
-    // Repeated generic event labels are handled conservatively by atomicPool.
-    events.set(key, f.year);
-    return { factId: f.factId, event, year: f.year, courseTopicId: f.courseTopicId };
+    return {...f,endYear,enabled:f.enabled!==false,scope:f.scope||'russia',event:f.event.trim(),aliasFactIds:Array.isArray(f.aliasFactIds)?f.aliasFactIds:[]};
   });
 }
-function atomicPool(facts, through, mode) {
-  if (!COURSE38_BY_ID.has(Number(through)) || !['cumulative','current'].includes(mode)) throw new Error('Выберите тему и режим.');
-  const yearsByEvent = new Map();
-  facts.forEach(f => { const key = f.event.toLowerCase(); if (!yearsByEvent.has(key)) yearsByEvent.set(key, new Set()); yearsByEvent.get(key).add(f.year); });
-  return facts.filter(f => yearsByEvent.get(f.event.toLowerCase()).size === 1 && (mode === 'current' ? f.courseTopicId === Number(through) : f.courseTopicId <= Number(through)));
+function atomicPool(facts,through,mode) {
+  if(!COURSE38_BY_ID.has(Number(through))||!['cumulative','current'].includes(mode))throw new Error('Выберите тему и режим.');
+  const active=facts.filter(f=>f.enabled!==false), groups=new Map();
+  active.forEach(f=>{const k=f.event.toLowerCase();if(!groups.has(k))groups.set(k,[]);groups.get(k).push(f);});
+  return active.filter(f=>{
+    const same=groups.get(f.event.toLowerCase());
+    const safe=same.every(o=>atomicDateKey(o)===atomicDateKey(f) || (f.acceptedYears && o.acceptedYears && same.every(x=>f.acceptedYears.includes(x.year)&&o.acceptedYears.includes(x.year))));
+    return safe && (mode==='current'?f.courseTopicId===Number(through):f.courseTopicId<=Number(through));
+  });
 }
-function atomicShuffle(a) {
-  a = a.slice();
-  for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
-  return a;
+function atomicShuffle(a) { a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a; }
+function atomicCompose(events,options,through,mode) {
+  const correctText=events.map(f=>options.findIndex(o=>atomicDateKey(o)===atomicDateKey(f))+1).join('');
+  const required=[...new Set(options.map(f=>f.courseTopicId))].sort((a,b)=>a-b).map(id=>COURSE38_BY_ID.get(id));
+  const clean=s=>s.replace(/[|\r\n]/g,' ');
+  const text='Установите соответствие между событиями и годами: к каждой позиции первого столбца подберите соответствующую позицию второго столбца.\n\n| СОБЫТИЯ | ГОДЫ |\n| --- | --- |\n'+options.map((f,i)=>'| '+(i<4?'АБВГ'[i]+') '+clean(events[i].event):'')+' | '+(i+1)+') '+atomicDateLabel(f)+' |').join('\n')+'\n\nЗапишите выбранные цифры под буквами А, Б, В, Г. Ответ: четыре цифры без пробелов.';
+  return {id:uid('atom1'),type:'short',ogeNumber:1,text,correctText,gradingMode:'ordered',maxScore:2,source:'Генератор №1 · курс 38 тем',topic:required.map(t=>t.name).join('; '),primaryCourseTopic:required[required.length-1],requiredCourseTopics:required,
+    referenceAnswer:events.map((f,i)=>'АБВГ'[i]+') '+f.event+' — '+atomicDateLabel(f)+(f.acceptedYears&&f.acceptedYears.length>1?' (допустимые датировки: '+f.acceptedYears.join(', ')+')':'')).join('\n'),
+    metadata:{atomic:{version:3,task:1,through:Number(through),mode,events,options},requiredCourseTopics:required}};
 }
-function atomicGenerate(facts, through, mode, count, existing = []) {
-  if (!Number.isInteger(count) || count < 1 || count > 100) throw new Error('Количество заданий должно быть целым числом от 1 до 100.');
-  const pool = atomicPool(facts, through, mode), dates = new Set(pool.map(f => f.year));
-  if (dates.size < 6) throw new Error('В выбранном материале ' + pool.length + ' фактов и ' + dates.size + ' разных дат. Для задания нужны 4 события с разными датами и ещё 2 даты. Выберите накопительный режим или дополните базу.');
-  const usage = new Map();
-  const keyOf = f => f.event.toLowerCase();
-  existing.forEach(q => (q.metadata.atomic.events || []).forEach(f => usage.set(keyOf(f), (usage.get(keyOf(f)) || 0) + 1)));
-  const result = [];
-  for (let n = 0; n < count; n++) {
-    const ranked = atomicShuffle(pool).sort((a,b) => (usage.get(keyOf(a)) || 0) - (usage.get(keyOf(b)) || 0));
-    const events = [], usedDates = new Set();
-    for (const f of ranked) { if (!usedDates.has(f.year)) { events.push(f); usedDates.add(f.year); } if (events.length === 4) break; }
-    const distractors = [];
-    for (const f of atomicShuffle(pool)) { if (!usedDates.has(f.year)) { distractors.push(f); usedDates.add(f.year); } if (distractors.length === 2) break; }
-    const options = atomicShuffle([...events, ...distractors]);
-    const correctText = events.map(f => options.findIndex(o => o.year === f.year) + 1).join('');
-    const required = [...new Set([...events,...distractors].map(f => f.courseTopicId))].sort((a,b) => a-b).map(id => COURSE38_BY_ID.get(id));
-    const clean = s => s.replace(/[|\r\n]/g, ' ');
-    const text = 'Установите соответствие между событиями и годами: к каждой позиции первого столбца подберите соответствующую позицию второго столбца.\n\n| СОБЫТИЯ | ГОДЫ |\n| --- | --- |\n' + options.map((f,i) => '| ' + (i < 4 ? 'АБВГ'[i] + ') ' + clean(events[i].event) : '') + ' | ' + (i+1) + ') ' + f.year + ' г. |').join('\n') + '\n\nЗапишите выбранные цифры под буквами А, Б, В, Г. Ответ: четыре цифры без пробелов.';
-    result.push({ id: uid('atom1'), type: 'short', ogeNumber: 1, text, correctText, gradingMode: 'ordered', maxScore: 2,
-      source: 'Генератор №1 · курс 38 тем', topic: required.map(t => t.name).join('; '), primaryCourseTopic: required[required.length-1], requiredCourseTopics: required,
-      referenceAnswer: events.map((f,i) => 'АБВГ'[i] + ') ' + f.event + ' — ' + f.year + ' г.').join('\n'),
-      metadata: { atomic: { version: 1, through: Number(through), mode, events, options }, requiredCourseTopics: required } });
-    events.forEach(f => usage.set(keyOf(f), (usage.get(keyOf(f)) || 0) + 1));
+function atomicGenerate(facts,through,mode,count,existing=[]) {
+  if(!Number.isInteger(count)||count<1||count>100)throw new Error('Количество заданий должно быть целым числом от 1 до 100.');
+  const pool=atomicPool(facts,through,mode),usage=new Map();
+  const key=f=>f.equivalentEventGroup||f.event.toLowerCase();
+  existing.forEach(q=>(q.metadata.atomic.events||[]).forEach(f=>usage.set(key(f),(usage.get(key(f))||0)+1)));
+  const pick=ranked=>{const chosen=[];for(const f of ranked){if(chosen.every(o=>atomicOptionsCompatible(o,f)))chosen.push(f);if(chosen.length===6)break;}return chosen;};
+  const fallback=pick(pool.slice().sort((a,b)=>atomicDateBounds(a)[1]-atomicDateBounds(b)[1]));
+  if(fallback.length<6)throw new Error('Недостаточно совместимых дат: нужно 6 разных непересекающихся дат или периодов. Альтернативные датировки одного события (например, 946/947) считаются одним вариантом. Отметьте больше изученных событий.');
+  const result=[];
+  for(let n=0;n<count;n++){
+    let chosen=[];
+    for(let attempt=0;attempt<16 && chosen.length<6;attempt++)chosen=pick(atomicShuffle(pool).sort((a,b)=>(usage.get(key(a))||0)-(usage.get(key(b))||0)));
+    if(chosen.length<6)chosen=fallback;
+    const events=chosen.slice(0,4),options=atomicShuffle(chosen);
+    result.push(atomicCompose(events,options,through,mode));events.forEach(f=>usage.set(key(f),(usage.get(key(f))||0)+1));
   }
   return result;
 }
-function chronoValidate(data) {
-  if (!data || !Array.isArray(data.facts) || !data.facts.length) throw new Error('Нужна атомарная база №2 с массивом facts. Обычный банк импортируется во вкладке «Импорт базы».');
-  const ids = new Set();
-  return data.facts.map((f,i) => {
-    if (!f || typeof f.factId !== 'string' || !f.factId.trim() || ids.has(f.factId) || typeof f.event !== 'string' || !f.event.trim() || !Number.isInteger(f.year) || f.year < 1 || !Number.isInteger(f.endYear) || f.endYear < f.year || !Number.isInteger(f.courseTopicId) || !COURSE38_BY_ID.has(f.courseTopicId) || !['russia','world'].includes(f.scope)) throw new Error('Некорректный факт №2 в строке '+(i+1));
-    ids.add(f.factId);
-    return { ...f, event:f.event.trim().replace(/\s+/g,' '), enabled:f.enabled !== false, dateLabel: f.dateLabel || (f.year===f.endYear ? f.year+' г.' : f.year+'–'+f.endYear+' гг.') };
-  });
-}
+function chronoValidate(data) {const fs=atomicValidate(data);if(fs.some(f=>!['russia','world'].includes(f.scope)))throw new Error('Неизвестный раздел истории.');return fs.map(f=>({...f,dateLabel:atomicDateLabel(f)}));}
 function chronoPool(facts, through, mode) {
   if (!COURSE38_BY_ID.has(Number(through)) || !['cumulative','current'].includes(mode)) throw new Error('Выберите тему и режим.');
   return facts.filter(f => f.enabled !== false && (mode==='current' ? f.courseTopicId===Number(through) : f.courseTopicId<=Number(through)));
 }
 function chronoCompatible(a,b) {
-  return a.courseTopicId!==b.courseTopicId && a.factId!==b.factId && a.event.toLowerCase()!==b.event.toLowerCase() && (a.endYear < b.year || b.endYear < a.year);
+  return a.courseTopicId!==b.courseTopicId && a.factId!==b.factId && atomicOptionsCompatible(a,b);
 }
 function chronoGenerate(facts, through, mode, count, existing=[], composition='russia', learnedWorld=[]) {
   if (!Number.isInteger(count) || count<1 || count>100) throw new Error('Количество заданий должно быть целым числом от 1 до 100.');
@@ -1139,6 +1264,7 @@ function chronoGenerate(facts, through, mode, count, existing=[], composition='r
 
 function selectedAtomicPool(facts, task, through, mode, ids) {
   const chosen=new Set(ids);
+  facts.forEach(f=>{if((f.aliasFactIds||[]).some(id=>chosen.has(id)))chosen.add(f.factId);});
   return (task===1 ? atomicPool(facts,through,mode) : chronoPool(facts,through,mode)).filter(f=>chosen.has(f.factId));
 }
 function generateSelectedAtomic(facts,task,through,mode,count,ids,existing=[],composition='russia') {
@@ -1151,7 +1277,7 @@ function atomicReplacementCandidates(q,index,facts) {
   const pool=selectedAtomicPool(facts,task,a.through,a.mode,a.selectedFactIds||[]);
   const others=a.events.filter((_,i)=>i!==index);
   return pool.filter(f=>f.factId!==a.events[index].factId && (task===1
-    ? others.every(o=>o.year!==f.year && o.event.toLowerCase()!==f.event.toLowerCase())
+    ? others.every(o=>atomicOptionsCompatible(o,f))
     : f.scope===a.events[index].scope && others.every(o=>chronoCompatible(o,f))));
 }
 function replaceAtomicEvent(q,index,factId,facts) {
@@ -1160,16 +1286,13 @@ function replaceAtomicEvent(q,index,factId,facts) {
   const a=q.metadata.atomic, task=a.task||1, events=a.events.map((e,i)=>i===index?f:e);
   let options=a.options, text,correctText,referenceAnswer,required;
   if(task===1) {
-    const pool=selectedAtomicPool(facts,task,a.through,a.mode,a.selectedFactIds||[]), used=new Set(events.map(e=>e.year));
-    const distractors=[];
-    for(const o of [...(a.options||[]),...pool]) if(!used.has(o.year) && pool.some(p=>p.factId===o.factId)) {distractors.push(o);used.add(o.year);if(distractors.length===2)break;}
-    if(distractors.length<2) throw new Error('Для замены нужны ещё две разные даты из выбранных фактов.');
-    options=atomicShuffle([...events,...distractors]);
-    correctText=events.map(e=>options.findIndex(o=>o.year===e.year)+1).join('');
-    const clean=s=>s.replace(/[|\r\n]/g,' ');
-    text='Установите соответствие между событиями и годами: к каждой позиции первого столбца подберите соответствующую позицию второго столбца.\n\n| СОБЫТИЯ | ГОДЫ |\n| --- | --- |\n'+options.map((o,i)=>'| '+(i<4?'АБВГ'[i]+') '+clean(events[i].event):'')+' | '+(i+1)+') '+o.year+' г. |').join('\n')+'\n\nЗапишите выбранные цифры под буквами А, Б, В, Г. Ответ: четыре цифры без пробелов.';
-    referenceAnswer=events.map((e,i)=>'АБВГ'[i]+') '+e.event+' — '+e.year+' г.').join('\n');
-    required=[...new Set(options.map(e=>e.courseTopicId))];
+    const pool=selectedAtomicPool(facts,task,a.through,a.mode,a.selectedFactIds||[]);
+    const allowed=new Set(pool.map(f=>f.factId));let pair=null;
+    const candidates=[...(a.options||[]).filter(f=>allowed.has(f.factId)),...pool].filter(f=>events.every(e=>atomicOptionsCompatible(e,f)));
+    outer:for(let i=0;i<candidates.length;i++)for(let j=i+1;j<candidates.length;j++)if(atomicOptionsCompatible(candidates[i],candidates[j])){pair=[candidates[i],candidates[j]];break outer;}
+    if(!pair)throw new Error('Для замены не хватает двух совместимых дат-дистракторов из выбранного набора.');
+    const next=atomicCompose(events,atomicShuffle([...events,...pair]),a.through,a.mode);
+    return {...next,metadata:{...next.metadata,atomic:{...a,...next.metadata.atomic,selectedFactIds:a.selectedFactIds}}};
   } else {
     const ordered=events.map((e,i)=>({...e,number:i+1})).sort((x,y)=>x.year-y.year);
     correctText=ordered.map(e=>e.number).join('');
@@ -1193,8 +1316,8 @@ function AtomicEventEditor({q,facts,busy,onReplace}) {
     }));
 }
 
-function AtomicGeneratorTab({ onReload, task = 1 }) {
-  const cacheKey = task === 1 ? ATOMIC_CACHE_KEY : 'history.atomic.task2.v1:' + SUPABASE_URL;
+function AtomicGeneratorTab({ onReload, task = 1, onAdd, constructorScope }) {
+  const cacheKey = task === 1 ? ATOMIC_CACHE_KEY : 'history.atomic.task2.pdf.v3:' + SUPABASE_URL;
   const validate = task === 1 ? atomicValidate : chronoValidate;
   const aid = name => 'atomic-' + name + (task === 1 ? '' : '-2');
   const [composition,setComposition] = useState('russia');
@@ -1213,8 +1336,8 @@ function AtomicGeneratorTab({ onReload, task = 1 }) {
   function loadPreset(id){
     setPresetId(id);const p=presets.find(p=>p.id===id);if(!p)return;
     const available=new Set(facts.map(f=>f.factId));
-    setThrough(String(p.through));setMode(task===2?'cumulative':p.mode);setComposition(p.composition);setSelectedIds(p.ids.filter(id=>available.has(id)));setPresetName(p.name);setError('');
-    setStatus('Загружен набор «'+p.name+'».'+(p.ids.some(id=>!available.has(id))?' Некоторые факты отсутствуют в текущей базе и пропущены.':''));
+    setThrough(String(p.through));setMode(task===2?'cumulative':p.mode);setComposition(p.composition);setSelectedIds(facts.filter(f=>p.ids.includes(f.factId)||(f.aliasFactIds||[]).some(id=>p.ids.includes(id))).map(f=>f.factId));setPresetName(p.name);setError('');
+    setStatus('Загружен набор «'+p.name+'».'+(p.ids.some(id=>!available.has(id)&&!facts.some(f=>(f.aliasFactIds||[]).includes(id)))?' Некоторые факты отсутствуют в текущей базе и пропущены.':''));
   }
   function markFacts(ids,checked){setSelectedIds(prev=>checked?[...new Set([...prev,...ids])]:prev.filter(id=>!ids.includes(id)));}
 
@@ -1223,6 +1346,7 @@ function AtomicGeneratorTab({ onReload, task = 1 }) {
   const [questions, setQuestions] = useState([]), [error, setError] = useState(''), [busy, setBusy] = useState(false);
   const [name, setName] = useState(''), [training, setTraining] = useState(true), [created, setCreated] = useState(null);
   const [saved, setSaved] = useState(new Set());
+  useEffect(()=>{if(constructorScope){setThrough(String(constructorScope.through));setMode(task===2?'cumulative':constructorScope.mode);}},[constructorScope?.through,constructorScope?.mode]);
   useEffect(() => {
     let active = true;
     (async () => {
@@ -1236,7 +1360,7 @@ function AtomicGeneratorTab({ onReload, task = 1 }) {
           if (!response.ok) throw new Error('Файл базы рядом с index.html не найден. Загрузите исходный атомарный JSON ниже.');
           fs = validate(await response.json());
         }
-        if (active) { setFacts(fs); setStatus('База готова: ' + fs.length + ' фактов. Неоднозначные формулировки с разными годами исключаются из генерации.'); }
+        if (active) { setFacts(fs); setStatus('База готова: ' + fs.filter(f=>f.enabled!==false).length + ' доступных фактов; '+fs.filter(f=>f.enabled===false).length+' записей требуют уточнения. Используется разметка загруженной базы.'); }
       } catch (e) { if (active) setStatus('База не загружена. Загрузите атомарный JSON ниже. ' + e.message); }
     })();
     return () => { active = false; };
@@ -1283,7 +1407,7 @@ function AtomicGeneratorTab({ onReload, task = 1 }) {
     } catch(e) { setError('Не удалось завершить сохранение: ' + e.message + '. Успешно сохранённые задания остаются в банке; можно повторить операцию.'); }
     finally { setBusy(false); }
   }
-  const h = React.createElement, pool = task === 1 ? atomicPool(facts, through, mode) : chronoPool(facts, through, mode), dateCount = new Set(pool.map(f => f.year)).size;
+  const h = React.createElement, pool = task === 1 ? atomicPool(facts, through, mode) : chronoPool(facts, through, mode), dateCount = new Set(pool.map(atomicDateKey)).size;
   const visiblePool=pool.filter(f=>(task===1||composition==='mixed'||f.scope==='russia') && (f.event+' '+f.year+' '+(f.dateLabel||'')).toLowerCase().includes(search.toLowerCase()));
   const selectedPool=pool.filter(f=>selectedIds.includes(f.factId) && (task===1||composition==='mixed'||f.scope==='russia'));
   return h('div', {className:'atomic-generator', 'data-task':task},
@@ -1295,7 +1419,7 @@ function AtomicGeneratorTab({ onReload, task = 1 }) {
       task===2 && h('div',null,
         h('label',{htmlFor:aid('composition')},'Состав задания'),
         h('select',{id:aid('composition'),value:composition,disabled:busy,onChange:e=>setComposition(e.target.value)},h('option',{value:'russia'},'Учебный режим: 3 события истории России'),h('option',{value:'mixed'},'2 события России + 1 событие всеобщей истории')),
-        h('p',{className:'q-meta'},'База №2: '+facts.filter(f=>f.enabled!==false).length+' доступных фактов; '+facts.filter(f=>f.enabled===false).length+' отложены до уточнения. Для общего теста №1 + №2 сохраните оба комплекта в банк и выберите их во вкладке «Тесты».'),
+        h('p',{className:'q-meta'},'База №2: '+facts.filter(f=>f.enabled!==false).length+' доступных фактов; '+facts.filter(f=>f.enabled===false).length+' отложены до уточнения. Для смешанного теста добавьте комплект в конструктор.'),
 
       ),
 
@@ -1304,10 +1428,10 @@ function AtomicGeneratorTab({ onReload, task = 1 }) {
         h('p',{className:'q-meta'},'Отметьте конкретные события. Неотмеченные факты не используются. Для №1 отметьте минимум 6 разных дат, включая даты для неправильных вариантов. Для №2 — события минимум из 3 разных тем. Выбор зарубежного события означает, что ученик его изучил.'),
         h('label',{htmlFor:aid('search')},'Поиск события или даты'),h('input',{id:aid('search'),value:search,disabled:busy,onChange:e=>setSearch(e.target.value)}),
         h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',disabled:busy,onClick:()=>markFacts(visiblePool.map(f=>f.factId),true)},'Выбрать все показанные'),h('button',{className:'btn ghost small',disabled:busy,onClick:()=>markFacts(visiblePool.map(f=>f.factId),false)},'Снять выделение показанных')),
-        h('p',{className:'q-meta','data-selection-count':true},'Выбрано в текущем материале: '+selectedPool.length+' событий, '+new Set(selectedPool.map(f=>f.year)).size+' дат, '+new Set(selectedPool.map(f=>f.courseTopicId)).size+' тем.'),
+        h('p',{className:'q-meta','data-selection-count':true},'Выбрано в текущем материале: '+selectedPool.length+' событий, '+new Set(selectedPool.map(atomicDateKey)).size+' дат, '+new Set(selectedPool.map(f=>f.courseTopicId)).size+' тем.'),
         COURSE38_TOPICS.map(t=>{const rows=visiblePool.filter(f=>f.courseTopicId===t.id);return rows.length>0 && h('details',{key:t.id,'data-topic':t.id},h('summary',null,t.id+'. '+t.name+' — выбрано '+rows.filter(f=>selectedIds.includes(f.factId)).length+' из '+rows.length),
           h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',disabled:busy,onClick:()=>markFacts(rows.map(f=>f.factId),true)},'Выбрать события темы'),h('button',{className:'btn ghost small',disabled:busy,onClick:()=>markFacts(rows.map(f=>f.factId),false)},'Снять выделение темы')),
-          rows.map(f=>h('label',{key:f.factId,className:'opt'},h('input',{type:'checkbox','data-fact-id':f.factId,disabled:busy,checked:selectedIds.includes(f.factId),onChange:e=>markFacts([f.factId],e.target.checked)}),f.event+' — '+(f.dateLabel||f.year+' г.')+(f.scope==='world'?' · всеобщая история':''))));}),
+          rows.map(f=>h('label',{key:f.factId,className:'opt'},h('input',{type:'checkbox','data-fact-id':f.factId,disabled:busy,checked:selectedIds.includes(f.factId),onChange:e=>markFacts([f.factId],e.target.checked)}),f.event+' — '+(atomicDateLabel(f))+(f.scope==='world'?' · всеобщая история':''))));}),
         !visiblePool.length && h('p',null,'По выбранным условиям события не найдены.'),
         h('h3',null,'Мои наборы'),
         h('p',{className:'q-meta'},'Наборы сохраняются в этом браузере на этом устройстве отдельно для №1 и №2. После перезагрузки выберите нужный набор из списка.'),
@@ -1315,6 +1439,7 @@ function AtomicGeneratorTab({ onReload, task = 1 }) {
         h('label',{htmlFor:aid('preset-name')},'Название нового набора'),h('input',{id:aid('preset-name'),value:presetName,disabled:busy,placeholder:'Саша — первые три темы',onChange:e=>setPresetName(e.target.value)}),
         h('div',{className:'atomic-actions'},h('button',{className:'btn ghost',disabled:busy,onClick:savePreset},'Сохранить как новый набор'),presetId && h(ConfirmButton,{label:'Удалить набор',confirmLabel:'Точно удалить набор?',onConfirm:()=>{if(storePresets(presets.filter(p=>p.id!==presetId)))setPresetId('');}}))
       ),
+      facts.some(f=>f.enabled===false) && h('details',{className:'notice'},h('summary',null,'Исходные записи, требующие уточнения ('+facts.filter(f=>f.enabled===false).length+')'),h('p',null,'Они сохранены в базе, но не попадают в задания и даты-дистракторы.'),facts.filter(f=>f.enabled===false).map(f=>h('p',{key:f.factId},h('strong',null,f.event+' — '+atomicDateLabel(f)),h('br'),f.reviewReason))),
       h('label',{htmlFor:aid('count')},'Количество заданий (1–100)'),h('input',{id:aid('count'),type:'number',min:1,max:100,value:count,disabled:busy,onChange:e=>setCount(e.target.value)}),
       h('button',{className:'btn',disabled:busy||!facts.length||(task===2 && Number(through)<3),onClick:()=>generate()},'Сгенерировать задания №'+task),
       task===2 && Number(through)<3 && h('p',{className:'q-meta'},'Сначала нужно изучить минимум три темы. В каждом задании будет по одному событию из трёх разных тем.'),
@@ -1325,13 +1450,203 @@ function AtomicGeneratorTab({ onReload, task = 1 }) {
     questions.length>0 && h('div',{className:'card'},h('h2',null,'Предпросмотр: '+questions.length+' заданий'),
       h('label',{htmlFor:aid('name')},'Название теста'),h('input',{id:aid('name'),type:'text',value:name,disabled:busy,onChange:e=>{setName(e.target.value);setCreated(null);}}),
       h('label',{className:'opt'},h('input',{type:'checkbox',checked:training,disabled:busy,onChange:e=>{setTraining(e.target.checked);setCreated(null);}}),'Тренировочный режим (снять для контрольного)'),
-      h('div',{className:'atomic-actions'},h('button',{className:'btn ghost',disabled:busy,onClick:()=>save(false)},'Сохранить в банк'),h('button',{className:'btn',disabled:busy||!!created,onClick:()=>save(true)},busy?'Сохраняю…':'Сохранить и создать тест')),
+      h('div',{className:'atomic-actions'},onAdd && h('button',{className:'btn',disabled:busy,onClick:()=>onAdd(questions,{task,facts})},'Добавить комплект в конструктор'),h('button',{className:'btn ghost',disabled:busy,onClick:()=>save(false)},'Сохранить в банк'),h('button',{className:'btn',disabled:busy||!!created,onClick:()=>save(true)},busy?'Сохраняю…':'Сохранить и создать тест')),
       created && h('div',{className:'notice'},'Тест создан. Код для ученика: ',h('strong',{className:'test-code'},created.code)),
       questions.map((q,i)=>h('div',{key:q.id,className:'q-list-item'},h('div',{className:'q-meta'},'Задание '+(i+1)+' · '+(q.metadata.atomic.mode==='current'?'тема ':'темы 1–')+q.metadata.atomic.through+(task===2?' · темы событий: '+q.metadata.atomic.events.map(f=>f.courseTopicId).join(', '):'')+(saved.has(q.id)?' · сохранено в банк':'')),h('div',{className:'q-text'},renderText(q.text)),
         h(AtomicEventEditor,{q,facts,busy,onReplace:(eventIndex,factId)=>{setError('');try{const next=replaceAtomicEvent(q,eventIndex,factId,facts);setQuestions(questions.map(x=>x.id===q.id?next:x));setCreated(null);}catch(e){setError(e.message);}}}),
         h('details',null,h('summary',null,'Правильный ответ (преподавателю)'),h('p',null,q.correctText),renderText(q.referenceAnswer)),
         h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',disabled:busy,onClick:()=>generate(i)},'Перегенерировать'),h('button',{className:'btn danger',disabled:busy,onClick:()=>{setQuestions(questions.filter(x=>x.id!==q.id));setCreated(null);}},'Удалить из комплекта'))))
     )
+  );
+}
+
+// Unified constructor: uses the existing questions/tests schema.
+function constructorAccountKey(){return 'history.constructor.v2:'+SUPABASE_URL+':'+(window.__trainerUserId||'');}
+
+function constructorRead(key, fallback) {
+  try { const v=JSON.parse(localStorage.getItem(key)); return v===null?fallback:v; } catch (_) { return fallback; }
+}
+function constructorTopics(q) {
+  const m=q.metadata||{};
+  const raw=[...(q.requiredCourseTopics||[]),...(m.requiredCourseTopics||[]),...(q.mentionedCourseTopics||[]),...(m.mentionedCourseTopics||[])];
+  // Invalid topic labels fail closed, rather than silently narrowing the scope.
+  if(raw.some(t=>!course38Normalize(t))) return [];
+  return [...new Set([...course38RequiredIds(q),...raw.map(course38Normalize).filter(Boolean).map(t=>t.id)])].sort((a,b)=>a-b);
+}
+function constructorEligible(q,through,mode) {
+  const m=q.metadata||{}, ids=constructorTopics(q);
+  return !!(q.text||'').trim() && !!q.ogeNumber && ids.length>0 && ids.every(id=>mode==='current'?id===Number(through):id<=Number(through)) && !m.needsReview && !m.missingMaterial && m.enabled!==false;
+}
+function constructorIdentity(q) {
+  const m=q.metadata||{};
+  if(m.atomic) return 'atomic:'+q.ogeNumber+':'+m.atomic.events.map(f=>f.factId).sort().join(',');
+  return 'bank:'+String(m.constructorSourceId||q.sourceId||q.id);
+}
+function constructorDedupe(rows) {
+  const seen=new Set(); return rows.filter(q=>{const k=constructorIdentity(q);if(seen.has(k))return false;seen.add(k);return true;});
+}
+function constructorQuestion(q) { return JSON.parse(JSON.stringify(q)); }
+function constructorLink(code) { const u=new URL(location.href);u.search='';u.hash='';u.searchParams.set('test',code);return u.href; }
+function constructorDownload(name,value) {
+  const u=URL.createObjectURL(new Blob([JSON.stringify(value,null,2)],{type:'application/json'}));
+  const a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);
+}
+function ConstructorPreview({q}) {
+  const h=React.createElement;
+  const images=q.imageFilenames&&q.imageFilenames.length?q.imageFilenames:(q.imageFilename?[q.imageFilename]:[]);
+  return h('div',null,h('div',{className:'q-text'},renderText(q.text||'')),
+    images.map((f,i)=>h('a',{key:i,href:imageUrl(f),target:'_blank',rel:'noopener noreferrer'},h('img',{src:imageUrl(f),className:'q-image',alt:'Материал задания '+(i+1)}))),
+    (q.options||[]).length>0 && h('ol',null,q.options.map((s,i)=>h('li',{key:i},s))),
+    (q.matchLeft||[]).length>0 && h('div',{className:'constructor-grid'},h('div',null,q.matchLeft.map((s,i)=>h('p',{key:i},'АБВГДЕЖ'[i]+') '+s))),h('div',null,(q.matchRight||[]).map((s,i)=>h('p',{key:i},(i+1)+') '+s)))),
+    h('details',null,h('summary',null,'Ответ и разбор — преподавателю'),h('p',null,formatCorrect(q)||'Проверка преподавателем'),renderText(q.referenceAnswer||'Разбор не добавлен.')));
+}
+function ConstructorTab({bank,onReload}) {
+  const CONSTRUCTOR_KEY=constructorAccountKey();
+  const h=React.createElement;
+  const [initial]=useState(()=>{const d=constructorRead(CONSTRUCTOR_KEY,{});return d&&typeof d==='object'&&!Array.isArray(d)?d:{};});
+  const [through,setThrough]=useState(String(initial.through||3)),[mode,setMode]=useState(initial.mode==='current'?'current':'cumulative');
+  const [section,setSection]=useState('bank'),[search,setSearch]=useState(''),[number,setNumber]=useState(''),[source,setSource]=useState('');
+  const [selected,setSelected]=useState(Array.isArray(initial.selected)?initial.selected:[]),[generated,setGenerated]=useState(Array.isArray(initial.generated)?initial.generated:[]);
+  const [factBases,setFactBases]=useState(initial.factBases||{});
+  const [quota,setQuota]=useState(initial.quota||{}),[count,setCount]=useState(initial.count||'1');
+  const [name,setName]=useState(initial.name||''),[training,setTraining]=useState(initial.training!==false);
+  const [variants,setVariants]=useState(Array.isArray(initial.variants)?initial.variants:[]),[active,setActive]=useState(0);
+  const [presets,setPresets]=useState(()=>{const p=constructorRead(CONSTRUCTOR_KEY+':sets',[]);return Array.isArray(p)?p:[];});
+  const [setNameValue,setSetNameValue]=useState(''),[busy,setBusy]=useState(false),[error,setError]=useState(''),[notice,setNotice]=useState('');
+  const [page,setPage]=useState(0),[revision,setRevision]=useState(null),[revisionTopics,setRevisionTopics]=useState([]);
+  const [revisionConfirmed,setRevisionConfirmed]=useState(false);
+  const state={version:1,through,mode,selected,generated,factBases,quota,count,name,training,variants};
+  useEffect(()=>{try{localStorage.setItem(CONSTRUCTOR_KEY,JSON.stringify(state));}catch(_){setError('Черновик не удалось сохранить в браузере. Экспортируйте набор перед закрытием страницы.');}},[through,mode,selected,generated,factBases,quota,count,name,training,variants]);
+  useEffect(()=>{setPage(0);},[search,number,source,through,mode]);
+  const originals=(bank||[]).filter(q=>!(q.metadata||{}).constructorSnapshot);
+  const catalog=[...originals,...generated], byId=new Map(catalog.map(q=>[q.id,q]));
+  const eligible=catalog.filter(q=>constructorEligible(q,through,mode));
+  const visible=eligible.filter(q=>(!number||String(q.ogeNumber)===number)&&(!source||(q.source||'')===source)&&((q.text||'')+' '+(q.sourceId||'')).toLowerCase().includes(search.toLowerCase()));
+  const chosen=constructorDedupe(eligible.filter(q=>selected.includes(q.id)));
+  const groups={};chosen.forEach(q=>(groups[q.ogeNumber]||(groups[q.ogeNumber]=[])).push(q));
+  const numbers=Object.keys(groups).sort((a,b)=>a-b);
+  const selectedHidden=selected.filter(id=>!eligible.some(q=>q.id===id)).length;
+  function toggle(id,yes){setSelected(prev=>yes?[...new Set([...prev,id])]:prev.filter(x=>x!==id));}
+  function addGenerated(rows,context){
+    if(!rows.length)return;
+    setGenerated(prev=>{const map=new Map(prev.map(q=>[q.id,q]));rows.forEach(q=>map.set(q.id,constructorQuestion(q)));return [...map.values()];});
+    setFactBases(prev=>({...prev,[context.task]:context.facts}));setSelected(prev=>[...new Set([...prev,...rows.map(q=>q.id)])]);
+    setNotice('В конструктор добавлено '+rows.length+' заданий №'+context.task+'.');setSection('bank');
+  }
+  function presetData(){return {...state,variants:[]};}
+  function storeSets(next){try{localStorage.setItem(CONSTRUCTOR_KEY+':sets',JSON.stringify(next));setPresets(next);}catch(_){throw new Error('Не удалось сохранить набор. Экспортируйте его в JSON.');}}
+  function restore(p){
+    if(!p||p.version!==1||!COURSE38_BY_ID.has(Number(p.through))||!['current','cumulative'].includes(p.mode)||!Array.isArray(p.selected)||!Array.isArray(p.generated))throw new Error('Это не набор конструктора версии 1.');
+    // Imported generated questions must contain a valid atomic snapshot and selected facts.
+    const bases={};for(const task of [1,2])if(p.factBases&&p.factBases[task])bases[task]=(task===1?atomicValidate:chronoValidate)({facts:p.factBases[task]});
+    p.generated.forEach(q=>{if(!q||typeof q.id!=='string'||typeof q.text!=='string'||![1,2].includes(q.ogeNumber)||!q.metadata?.atomic||!Array.isArray(q.metadata.atomic.events))throw new Error('Повреждённое автоматически созданное задание.');});
+    setThrough(String(p.through));setMode(p.mode);setSelected(p.selected.filter(x=>typeof x==='string'));setGenerated(p.generated);setFactBases(bases);setQuota(p.quota||{});setCount(String(p.count||1));setName(String(p.name||''));setTraining(p.training!==false);setVariants([]);setActive(0);setError('');setNotice('Набор загружен. Проверьте доступность выбранных заданий и соберите варианты.');
+  }
+  function signature(rows){return rows.map(constructorIdentity).sort().join('|');}
+  function drawVariant(usage){
+    const rows=[];
+    for(const n of numbers){
+      const k=Number(quota[n]===undefined?groups[n].length:quota[n]);
+      if(!Number.isInteger(k)||k<0||k>groups[n].length)throw new Error('№'+n+': количество должно быть от 0 до '+groups[n].length+'.');
+      const ranked=atomicShuffle(groups[n]).sort((a,b)=>(usage.get(constructorIdentity(a))||0)-(usage.get(constructorIdentity(b))||0));
+      rows.push(...ranked.slice(0,k).map(constructorQuestion));
+    }
+    return rows;
+  }
+  function build(){
+    setError('');setNotice('');
+    try{
+      if(!chosen.length)throw new Error('Отметьте задания банка или добавьте задания из генератора.');
+      const n=Number(count);if(!Number.isInteger(n)||n<1||n>100)throw new Error('Количество вариантов: целое число от 1 до 100.');
+      const next=[],seen=new Set(),usage=new Map();
+      for(let i=0;i<n;i++){
+        let rows=null;
+        for(let attempt=0;attempt<150;attempt++){const candidate=drawVariant(usage);if(!candidate.length)throw new Error('Укажите хотя бы одно задание в варианте.');if(!seen.has(signature(candidate))){rows=candidate;break;}}
+        if(!rows)throw new Error('Удалось подобрать только '+next.length+' разных вариантов. Увеличьте выбранный пул, уменьшите количество заданий в варианте или число вариантов. Предыдущий предпросмотр сохранён.');
+        seen.add(signature(rows));rows.forEach(q=>usage.set(constructorIdentity(q),(usage.get(constructorIdentity(q))||0)+1));
+        next.push({id:uid('variant'),label:(name.trim()||'Накопительная работа')+(n>1?' — вариант '+(i+1):''),training,through:Number(through),mode,questions:rows,saved:null});
+      }
+      setVariants(next);setActive(0);setNotice('Собрано вариантов: '+next.length+'. Проверьте задания в предпросмотре.');
+    }catch(e){setError(e.message);}
+  }
+  function editVariant(index,fn){setError('');setVariants(prev=>prev.map((v,i)=>i===index?{...fn(v),id:uid('variant'),saved:null,job:null}:v));}
+  function replace(index,id){
+    const v=variants[active],q=byId.get(id);if(!q||!constructorEligible(q,v.through,v.mode)){setError('Замена недоступна в темах этого варианта.');return;}
+    if(v.questions.some((r,i)=>i!==index&&constructorIdentity(r)===constructorIdentity(q))){setError('Это задание уже включено в вариант.');return;}
+    editVariant(active,v=>({...v,questions:v.questions.map((r,i)=>i===index?constructorQuestion(q):r)}));
+  }
+  function regenerate(index){
+    try{
+      const v=variants[active],q=v.questions[index],a=q.metadata.atomic,task=q.ogeNumber;
+      const next=generateSelectedAtomic(factBases[task]||[],task,a.through,a.mode,1,a.selectedFactIds||[],v.questions.filter(x=>x.metadata?.atomic&&x.ogeNumber===task),a.composition||'russia')[0];
+      if(!constructorEligible(next,v.through,v.mode))throw new Error('Новый вопрос выходит за темы варианта.');
+      editVariant(active,v=>({...v,questions:v.questions.map((r,i)=>i===index?next:r)}));
+    }catch(e){setError(e.message);}
+  }
+  async function save(){
+    if(busy)return;setBusy(true);setError('');let next=variants.map(constructorQuestion);
+    try{
+      if(!next.length||next.some(v=>!v.questions.length||!v.label.trim()))throw new Error('Каждому варианту нужны название и хотя бы одно задание.');
+      if(new Set(next.map(v=>signature(v.questions))).size!==next.length)throw new Error('После замен появились одинаковые варианты. Замените одно из заданий или соберите варианты заново.');
+      for(let i=0;i<next.length;i++){
+        const v=next[i];if(v.saved)continue;
+        if(v.questions.some(q=>!constructorEligible(q,v.through,v.mode)))throw new Error('Вариант '+(i+1)+': есть задание вне выбранных тем или требующее проверки.');
+        if(!v.job)v.job={id:uid('t'),code:genCode(),ids:v.questions.map(()=>uid('snapshot'))};
+        setVariants(next.map(constructorQuestion));
+        const rows=v.questions.map((q,j)=>{const snap=constructorQuestion(q);snap.id=v.job.ids[j];snap.metadata={...snap.metadata,constructorSnapshot:true,constructorSourceId:q.metadata?.constructorSourceId||q.sourceId||q.id,constructorVariantId:v.id,constructorThrough:v.through,constructorMode:v.mode};return questionToRow(snap);});
+        for(let j=0;j<rows.length;j+=50){const {error}=await sb.from('questions').upsert(rows.slice(j,j+50));if(error)throw error;}
+        const t={id:v.job.id,code:v.job.code,name:v.label.trim(),training:v.training,questionIds:v.job.ids};
+        // Upsert stable IDs makes retries safe after a lost network response.
+        const {error}=await sb.from('tests').upsert({id:t.id,code:t.code,name:t.name,training:t.training,question_ids:t.questionIds});if(error)throw error;
+        v.saved=t;setVariants(next.map(constructorQuestion));setNotice('Сохранено вариантов: '+next.filter(x=>x.saved).length+' из '+next.length+'.');
+      }
+      await onReload();
+    }catch(e){setError('Сохранение не завершено: '+e.message+'. Уже сохранённые варианты доступны; повторная попытка продолжит сохранение.');}
+    finally{setBusy(false);}
+  }
+  async function saveTopics(){
+    if(!revisionTopics.length||!revisionConfirmed)return;setBusy(true);setError('');
+    try{const ts=revisionTopics.map(id=>COURSE38_BY_ID.get(id));const q={...revision,requiredCourseTopics:ts,mentionedCourseTopics:[],primaryCourseTopic:ts[ts.length-1],metadata:{...revision.metadata,requiredCourseTopics:ts,mentionedCourseTopics:[],constructorTopicsReviewed:true}};const err=await upsertQuestion(q);if(err)throw err;await onReload();setRevision(null);setNotice('Темы задания сохранены.');}catch(e){setError(e.message);}finally{setBusy(false);}
+  }
+  const v=variants[active];
+  return h('fieldset',{className:'constructor',disabled:busy,'data-constructor':true,style:{border:0,padding:0,margin:0,minWidth:0}},
+    h('div',{className:'card'},h('h2',null,'Конструктор'),h('p',null,'Выберите изученные темы и конкретный материал. Затем соберите и проверьте варианты.'),
+      h('div',{className:'constructor-grid'},h('div',null,h('label',{htmlFor:'constructor-through'},'Последняя изученная тема'),h('select',{id:'constructor-through',value:through,disabled:busy,onChange:e=>setThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name)))),h('div',null,h('label',{htmlFor:'constructor-mode'},'Материал'),h('select',{id:'constructor-mode',value:mode,disabled:busy,onChange:e=>setMode(e.target.value)},h('option',{value:'cumulative'},'Накопительно: темы 1–'+through),h('option',{value:'current'},'Только тема '+through)))),
+      h('div',{className:'tabs'},[['bank','Выбор заданий'],['atom1','Создать №1'],['atom2','Создать №2']].map(([k,s])=>h('button',{key:k,disabled:busy,className:section===k?'active':'',onClick:()=>setSection(k)},s))),
+      h('p',{className:'q-meta'},'Выбрано доступных заданий: '+chosen.length+(selectedHidden?' · исключено из текущего материала: '+selectedHidden:'')+'. Черновик и наборы сохраняются в этом браузере; для переноса используйте экспорт.')),
+    error&&h('div',{className:'notice',role:'alert'},error),notice&&h('div',{className:'notice',role:'status'},notice),
+    [1,2].map(task=>h('div',{key:task,style:{display:section==='atom'+task?'block':'none'}},h(AtomicGeneratorTab,{task,onReload,onAdd:addGenerated,constructorScope:{through,mode}}))),
+    section==='bank'&&h('div',{className:'card'},h('h3',null,'Материал для вариантов'),
+      bank===null&&h('p',null,'Загружаю банк…'),
+      h('div',{className:'constructor-grid'},h('div',null,h('label',{htmlFor:'constructor-search'},'Поиск по тексту или ID'),h('input',{id:'constructor-search',value:search,onChange:e=>setSearch(e.target.value)})),h('div',null,h('label',{htmlFor:'constructor-number'},'Номер задания'),h('select',{id:'constructor-number',value:number,onChange:e=>setNumber(e.target.value)},h('option',{value:''},'Все номера'),[...new Set(catalog.map(q=>q.ogeNumber).filter(Boolean))].sort((a,b)=>a-b).map(n=>h('option',{key:n,value:n},'№'+n))))),
+      h('label',{htmlFor:'constructor-source'},'Источник'),h('select',{id:'constructor-source',value:source,onChange:e=>setSource(e.target.value)},h('option',{value:''},'Все источники'),[...new Set(catalog.map(q=>q.source).filter(Boolean))].sort().map(s=>h('option',{key:s,value:s},s))),
+      h('div',{className:'atomic-actions'},h('button',{className:'btn ghost',disabled:busy,onClick:()=>setSelected(prev=>[...new Set([...prev,...visible.map(q=>q.id)])])},'Выбрать все найденные'),h('button',{className:'btn ghost',disabled:busy,onClick:()=>setSelected(prev=>prev.filter(id=>!visible.some(q=>q.id===id)))},'Снять выбор найденных')),
+      h('p',{className:'q-meta'},'Найдено: '+visible.length+'. Показано не более 20 на странице. Карты и источники выбираются вместе с вопросом; условия не перемешиваются.'),
+      visible.slice(page*20,page*20+20).map(q=>h('div',{key:q.id,className:'q-list-item'},h('label',{className:'opt'},h('input',{type:'checkbox',disabled:busy,checked:selected.includes(q.id),'data-constructor-select':q.id,onChange:e=>toggle(q.id,e.target.checked)}),'№'+q.ogeNumber+' · '+(q.source||'Источник не указан')+' · темы '+constructorTopics(q).join(', ')),h('details',null,h('summary',null,(q.text||'').slice(0,170)),h(ConstructorPreview,{q})))),
+      !visible.length&&h('p',null,'Подходящих заданий нет. Добавьте задания генератора, импортируйте подготовленный банк или укажите темы уже загруженных вопросов.'),
+      h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',disabled:page===0,onClick:()=>setPage(page-1)},'Назад'),h('span',null,'Страница '+(page+1)),h('button',{className:'btn ghost small',disabled:(page+1)*20>=visible.length,onClick:()=>setPage(page+1)},'Далее')),
+      h('details',null,h('summary',null,'Задания без подтверждённой привязки к темам ('+originals.filter(q=>!constructorTopics(q).length).length+')'),h('p',null,'Укажите все темы, необходимые для текста, изображения и каждого варианта ответа. Проверьте комплектность материала в банке. Здесь показаны первые 30 совпадений; используйте поиск выше, чтобы найти остальные.'),originals.filter(q=>!constructorTopics(q).length&&((q.text||'')+' '+q.id).toLowerCase().includes(search.toLowerCase())).slice(0,30).map(q=>h('p',{key:q.id},(q.text||'').slice(0,120),' ',h('button',{className:'btn ghost small',onClick:()=>{setRevision(q);setRevisionTopics([]);setRevisionConfirmed(false);}},'Указать темы')))),
+      revision&&h('div',{className:'notice'},h(ConstructorPreview,{q:revision}),COURSE38_TOPICS.map(t=>h('label',{className:'opt',key:t.id},h('input',{type:'checkbox',checked:revisionTopics.includes(t.id),onChange:e=>setRevisionTopics(prev=>e.target.checked?[...prev,t.id].sort((a,b)=>a-b):prev.filter(id=>id!==t.id))}),t.id+'. '+t.name)),h('label',{className:'opt'},h('input',{type:'checkbox',checked:revisionConfirmed,onChange:e=>setRevisionConfirmed(e.target.checked)}),'Проверены все варианты ответа, текст и изображения; нужные темы перечислены полностью.'),h('button',{className:'btn',disabled:busy||!revisionConfirmed||!revisionTopics.length,onClick:saveTopics},'Сохранить темы'),h('button',{className:'btn ghost',onClick:()=>setRevision(null)},'Закрыть'))),
+    h('div',{className:'card'},h('h3',null,'Мои наборы'),h('label',{htmlFor:'constructor-preset-name'},'Название набора'),h('input',{id:'constructor-preset-name',value:setNameValue,placeholder:'Саша — первые три темы',onChange:e=>setSetNameValue(e.target.value)}),
+      h('div',{className:'atomic-actions'},h('button',{className:'btn ghost',disabled:busy,onClick:()=>{try{if(!setNameValue.trim())throw new Error('Введите название набора.');storeSets([...presets,{id:uid('preset'),label:setNameValue.trim(),data:presetData()}]);setNotice('Набор сохранён.');}catch(e){setError(e.message);}}},'Сохранить набор'),h('button',{className:'btn ghost',onClick:()=>constructorDownload('history-constructor-set.json',presetData())},'Экспорт набора')),
+      h('label',{htmlFor:'constructor-preset-import'},'Загрузить набор JSON'),h('input',{id:'constructor-preset-import',type:'file',accept:'.json',disabled:busy,onChange:async e=>{const f=e.target.files[0];e.target.value='';if(f)try{restore(JSON.parse(await f.text()));}catch(err){setError(err.message);}}}),
+      presets.map(p=>h('div',{key:p.id,className:'atomic-actions'},h('span',null,p.label),h('button',{className:'btn ghost small',disabled:busy,onClick:()=>{try{restore(p.data);}catch(e){setError(e.message);}}},'Загрузить набор'),h(ConfirmButton,{label:'Удалить набор',onConfirm:()=>{try{storeSets(presets.filter(x=>x.id!==p.id));}catch(e){setError(e.message);}}})))),
+    h('div',{className:'card'},h('h3',null,'Составить варианты'),
+      h('label',{htmlFor:'constructor-name'},'Название работы / ученик / группа'),h('input',{id:'constructor-name',value:name,onChange:e=>setName(e.target.value),placeholder:'Группа 1 — темы 1–3'}),
+      numbers.map(n=>h('div',{key:n,className:'constructor-quota'},h('label',{htmlFor:'constructor-quota-'+n},'№'+n+': заданий в каждом варианте (выбрано '+groups[n].length+')'),h('input',{id:'constructor-quota-'+n,type:'number',min:0,max:groups[n].length,value:quota[n]===undefined?groups[n].length:quota[n],onChange:e=>setQuota({...quota,[n]:e.target.value})}))),
+      h('label',{htmlFor:'constructor-count'},'Количество разных вариантов (1–100)'),h('input',{id:'constructor-count',type:'number',min:1,max:100,value:count,onChange:e=>setCount(e.target.value)}),
+      h('label',{className:'opt'},h('input',{id:'constructor-training',type:'checkbox',checked:training,onChange:e=>setTraining(e.target.checked)}),'Тренировка с разбором после ответа; снимите отметку для контроля'),
+      h('p',{className:'q-meta'},'Один вариант можно выдать всей группе. Для разных вариантов выберите больше заданий, чем нужно в одном. Различие только в порядке вопросов не считается новым вариантом. Изменение настроек применяется при следующей сборке.'),
+      h('button',{className:'btn',disabled:busy||!chosen.length,onClick:build},'Собрать варианты')),
+    variants.length>0&&h('div',{className:'card'},h('h2',null,'Предпросмотр вариантов'),
+      h('label',{htmlFor:'constructor-variant'},'Вариант'),h('select',{id:'constructor-variant',value:active,onChange:e=>setActive(Number(e.target.value))},variants.map((x,i)=>h('option',{key:x.id,value:i},(i+1)+'. '+x.label+(x.saved?' · сохранён':'')))),
+      v&&h('div',null,h('p',{className:'q-meta'},(v.training?'Тренировка':'Контроль')+' · '+(v.mode==='current'?'тема ':'темы 1–')+v.through),h('label',{htmlFor:'constructor-variant-name'},'Название этого варианта'),h('input',{id:'constructor-variant-name',disabled:busy,value:v.label,onChange:e=>{const s=e.target.value;editVariant(active,v=>({...v,label:s}));}}),
+        v.questions.map((q,i)=>h('div',{key:i+':'+q.id,className:'q-list-item','data-preview-question':true},h('h3',null,(i+1)+'. Задание №'+q.ogeNumber),h(ConstructorPreview,{q}),
+          q.metadata?.atomic&&factBases[q.ogeNumber]&&h(AtomicEventEditor,{q,facts:factBases[q.ogeNumber],busy,onReplace:(idx,id)=>{try{const next=replaceAtomicEvent(q,idx,id,factBases[q.ogeNumber]);if(!constructorEligible(next,v.through,v.mode))throw new Error('Замена выходит за темы варианта.');editVariant(active,v=>({...v,questions:v.questions.map((x,j)=>j===i?next:x)}));}catch(e){setError(e.message);}}}),
+          h('label',null,'Заменить на выбранное задание того же номера'),h('select',{'aria-label':'Замена задания '+(i+1),disabled:busy,value:'',onChange:e=>replace(i,e.target.value)},h('option',{value:''},'Выберите замену…'),chosen.filter(x=>x.ogeNumber===q.ogeNumber&&constructorEligible(x,v.through,v.mode)&&!v.questions.some(r=>constructorIdentity(r)===constructorIdentity(x))).map(x=>h('option',{key:x.id,value:x.id},x.text.slice(0,140)))),
+          h('div',{className:'atomic-actions'},q.metadata?.atomic&&h('button',{className:'btn ghost',disabled:busy,onClick:()=>regenerate(i)},'Перегенерировать задание'),h('button',{className:'btn danger',disabled:busy,onClick:()=>editVariant(active,v=>({...v,questions:v.questions.filter((_,j)=>j!==i)}))},'Удалить из варианта'))))),
+      h('button',{className:'btn',disabled:busy||variants.every(v=>v.saved),onClick:save},busy?'Сохраняю…':'Сохранить варианты и получить ссылки'),
+      variants.filter(v=>v.saved).map(v=>h('div',{className:'notice',key:v.id},h('strong',null,v.saved.name),h('p',null,'Код: ',h('strong',{className:'test-code'},v.saved.code)),h('a',{href:constructorLink(v.saved.code),target:'_blank',rel:'noopener noreferrer'},constructorLink(v.saved.code)),h('p',{className:'q-meta'},'Вариант сохранён. Теперь назначьте его группе или ученику во вкладке «Группы и работы». Ссылка открывается только у получателя назначения.'))))
   );
 }
 
@@ -1950,7 +2265,7 @@ function GradeTab({ tests, bank }) {
     await updateSubmissionGrades(sub.id, grades, total);
     setSubs((prev) => prev.map((s) => s.id === sub.id ? { ...s, grades, totalScore: total } : s));
   }
-  return /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h2", null, "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043E\u0442\u0432\u0435\u0442\u043E\u0432"), /* @__PURE__ */ React.createElement("label", null, "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0442\u0435\u0441\u0442"), /* @__PURE__ */ React.createElement("select", { value: testId, onChange: (e) => load(e.target.value) }, /* @__PURE__ */ React.createElement("option", { value: "" }, "\u2014 \u0432\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u2014"), tests.map((t) => /* @__PURE__ */ React.createElement("option", { key: t.id, value: t.id }, t.name, " (", t.code, ")"))), subs === null && testId && /* @__PURE__ */ React.createElement("div", { className: "loading" }, "\u0417\u0430\u0433\u0440\u0443\u0436\u0430\u044E \u043E\u0442\u0432\u0435\u0442\u044B\u2026"), subs !== null && subs.length === 0 && /* @__PURE__ */ React.createElement("div", { className: "empty" }, "\u041F\u043E\u043A\u0430 \u043D\u0438\u043A\u0442\u043E \u043D\u0435 \u0441\u0434\u0430\u0432\u0430\u043B \u044D\u0442\u043E\u0442 \u0442\u0435\u0441\u0442."), subs !== null && subs.map((sub) => /* @__PURE__ */ React.createElement("div", { className: "q-list-item", key: sub.id }, /* @__PURE__ */ React.createElement("div", { className: "q-text", style: { fontWeight: 600 } }, sub.studentName, " ", /* @__PURE__ */ React.createElement("span", { className: "q-meta" }, "\xB7 ", new Date(sub.submittedAt).toLocaleString("ru-RU"))), /* @__PURE__ */ React.createElement("div", { className: "q-meta", style: { marginBottom: 8 } }, "\u0418\u0442\u043E\u0433: ", sub.totalScore != null ? sub.totalScore : "\u2014", " \u0431\u0430\u043B\u043B\u043E\u0432"), test && React.createElement(NumberSummary, { questionIds: test.questionIds, byId: bankById, sub }), test && sortByNumber(test.questionIds, bankById).map((qid) => {
+  return /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h2", null, "\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043E\u0442\u0432\u0435\u0442\u043E\u0432"), /* @__PURE__ */ React.createElement("label", null, "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0442\u0435\u0441\u0442"), /* @__PURE__ */ React.createElement("select", { value: testId, onChange: (e) => load(e.target.value) }, /* @__PURE__ */ React.createElement("option", { value: "" }, "\u2014 \u0432\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u2014"), tests.map((t) => /* @__PURE__ */ React.createElement("option", { key: t.id, value: t.id }, t.name, " (", t.code, ")"))), subs === null && testId && /* @__PURE__ */ React.createElement("div", { className: "loading" }, "\u0417\u0430\u0433\u0440\u0443\u0436\u0430\u044E \u043E\u0442\u0432\u0435\u0442\u044B\u2026"), subs !== null && subs.length === 0 && /* @__PURE__ */ React.createElement("div", { className: "empty" }, "\u041F\u043E\u043A\u0430 \u043D\u0438\u043A\u0442\u043E \u043D\u0435 \u0441\u0434\u0430\u0432\u0430\u043B \u044D\u0442\u043E\u0442 \u0442\u0435\u0441\u0442."), subs !== null && subs.map((sub) => /* @__PURE__ */ React.createElement("div", { className: "q-list-item", key: sub.id }, /* @__PURE__ */ React.createElement("div", { className: "q-text", style: { fontWeight: 600 } }, sub.studentName, " ", /* @__PURE__ */ React.createElement("span", { className: "q-meta" }, "\xB7 ", new Date(sub.submittedAt).toLocaleString("ru-RU"))), /* @__PURE__ */ React.createElement("div", { className: "q-meta", style: { marginBottom: 8 } }, "\u0418\u0442\u043E\u0433: ", sub.totalScore != null ? sub.totalScore : "\u2014", " \u0431\u0430\u043B\u043B\u043E\u0432"), React.createElement(SubmissionPages, {pages:sub.answers?.__pages||[]}), test && React.createElement(NumberSummary, { questionIds: test.questionIds, byId: bankById, sub }), test && sortByNumber(test.questionIds, bankById).map((qid) => {
     const q = bankById.get(qid);
     if (!q) return null;
     const ans = sub.answers[qid];
@@ -2008,9 +2323,12 @@ function CriteriaBlock({ text }) {
     }, text) : null
   );
 }
+function SubmissionPages({pages,onRemove}) {
+  const h=React.createElement;return h('div',{className:'submission-pages'},(pages||[]).map((url,i)=>h('div',{key:url},h('p',null,'Лист '+(i+1)),h('a',{href:url,target:'_blank',rel:'noopener noreferrer'},h('img',{src:url,className:'q-image',alt:'Рукописный ответ, лист '+(i+1),style:{maxWidth:300,width:'100%'}})),onRemove&&h('button',{className:'btn danger',onClick:()=>onRemove(i)},'Убрать лист '+(i+1)))));
+}
 function StudentView() {
   const [name, setName] = useState("");
-  const [code, setCode] = useState("");
+  const [code, setCode] = useState(() => new URLSearchParams(location.search).get("test") || "");
   const [test, setTest] = useState(null);
   const [bank, setBank] = useState([]);
   const [answers, setAnswers] = useState({});
@@ -2018,6 +2336,20 @@ function StudentView() {
   const [loadErr, setLoadErr] = useState("");
   const [submitted, setSubmitted] = useState(null);
   const [checked, setChecked] = useState({});
+  const [pagesBusy,setPagesBusy]=useState(false),[pagesError,setPagesError]=useState('');
+  function attemptKey(t,n){return 'history.attempt.v1:'+SUPABASE_URL+':'+t.id+':'+n.trim();}
+  useEffect(()=>{if(test&&!submitted){try{localStorage.setItem(attemptKey(test,name),JSON.stringify({answers,checked}));}catch(_){setPagesError('Браузер не сохранил черновик ответов. Не закрывайте страницу до отправки.');}}},[test,answers,checked,submitted]);
+  async function attachPages(files){
+    const list=Array.from(files||[]);if(!list.length)return;setPagesBusy(true);setPagesError('');
+    try{if((answers.__pages||[]).length+list.length>20)throw new Error('Можно приложить до 20 листов.');
+      for(const file of list){if(!file.type.startsWith('image/'))throw new Error('Прикрепите фотографии в формате изображения.');
+        const blob=await compressImageToBlob(file),path='answers/'+test.id+'_page_'+uid('a')+'.jpg';
+        const {error}=await sb.storage.from(IMAGES_BUCKET).upload(path,blob,{upsert:false,contentType:'image/jpeg'});if(error)throw error;
+        const {data}=sb.storage.from(IMAGES_BUCKET).getPublicUrl(path);setAnswers(prev=>({...prev,__pages:[...(prev.__pages||[]),data.publicUrl]}));
+      }
+    }catch(e){setPagesError('Не удалось загрузить все листы: '+e.message+'. Загруженные листы сохранены.');}finally{setPagesBusy(false);}
+  }
+
   async function startTest() {
     setLoadErr("");
     setSubmitted(null);
@@ -2045,12 +2377,13 @@ function StudentView() {
     }
     setTest(t);
     setBank(b);
-    setAnswers({});
-    setChecked({});
+    const draft=constructorRead(attemptKey(t,name),null);
+    setAnswers(draft&&draft.answers&&typeof draft.answers==='object'?draft.answers:{});
+    setChecked(draft&&draft.checked&&typeof draft.checked==='object'?draft.checked:{});
     setBusy(false);
   }
   function setAnswer(qid, val) {
-    setAnswers({ ...answers, [qid]: val });
+    setAnswers(prev => ({ ...prev, [qid]: val }));
   }
   const [imgBusyQid, setImgBusyQid] = useState(null);
   async function attachAnswerImage(qid, file) {
@@ -2068,6 +2401,7 @@ function StudentView() {
   const [subBusy, setSubBusy] = useState(false);
   const [submitErr, setSubmitErr] = useState("");
   async function submit() {
+    if(pagesBusy||imgBusyQid){setSubmitErr("Дождитесь загрузки фотографий.");return;}
     setSubBusy(true);
     setSubmitErr("");
     const bankById = new Map(bank.map((q) => [q.id, q]));
@@ -2090,6 +2424,7 @@ function StudentView() {
       return;
     }
     setSubmitted(sub);
+    try{localStorage.removeItem(attemptKey(test,name));}catch(_){}
   }
   if (!test) {
     return /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h2", null, "\u041F\u0440\u043E\u0439\u0442\u0438 \u0442\u0435\u0441\u0442"), /* @__PURE__ */ React.createElement("label", null, "\u0412\u0430\u0448\u0435 \u0438\u043C\u044F"), /* @__PURE__ */ React.createElement("input", { type: "text", value: name, onChange: (e) => setName(e.target.value), placeholder: "\u0418\u043C\u044F \u0438 \u0444\u0430\u043C\u0438\u043B\u0438\u044F" }), /* @__PURE__ */ React.createElement("label", null, "\u041A\u043E\u0434 \u0442\u0435\u0441\u0442\u0430"), /* @__PURE__ */ React.createElement("input", { type: "text", value: code, onChange: (e) => setCode(e.target.value), placeholder: "\u041D\u0430\u043F\u0440\u0438\u043C\u0435\u0440: 7K3PXQ", style: { textTransform: "uppercase" } }), loadErr && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } }, loadErr), /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("button", { className: "btn", disabled: busy, onClick: startTest }, busy ? "\u0417\u0430\u0433\u0440\u0443\u0436\u0430\u044E\u2026" : "\u041D\u0430\u0447\u0430\u0442\u044C \u0442\u0435\u0441\u0442")));
@@ -2105,7 +2440,7 @@ function StudentView() {
       React.createElement("p", { style: { fontFamily: UI_FONT, fontSize: 14 } }, "Спасибо, ", name, "! Автоматически проверяемая часть: ", submitted.totalScore, " из ", autoTotal, " баллов.", hasEssay ? " Развёрнутые ответы проверит преподаватель." : ""),
       React.createElement("div", { className: "q-meta" }, "Баллы по номерам заданий:"),
       React.createElement(NumberSummary, { questionIds: ids, byId, sub: subView }),
-      test.training ? React.createElement("div", null,
+      (test.training || bank.some(q=>q.metadata?.constructorSnapshot)) ? React.createElement("div", null,
         React.createElement("h3", { style: { fontFamily: UI_FONT } }, "Разбор ответов"),
         ids.map((qid, i) => {
           const q = byId.get(qid);
@@ -2115,12 +2450,17 @@ function StudentView() {
             React.createElement("div", { className: "q-text" }, i + 1, ". ", renderText(q.text)),
             q.imageFilename && React.createElement("img", { src: imageUrl(q.imageFilename), className: "q-image", alt: "" }),
             isAutoType(q.type) ? React.createElement(AnswerCompare, { q, ans, score: gradeAuto(q, ans) }) :
-              React.createElement("div", { className: "q-meta" }, "Ваш ответ: ", ans && ans.text ? ans.text : (ans && ans.image ? "фото приложено" : "нет ответа")),
+              React.createElement("div", { className: "q-meta" }, "Ваш ответ: ", ans && ans.text ? ans.text : (ans && ans.image ? "фото приложено" : submitted.answers.__pages?.length ? "листы ответов приложены" : "нет ответа")),
             React.createElement(RefBlock, { q, title: q.type === "essay" ? "Эталон ответа" : "Разбор" }));
         })) : React.createElement("div", { className: "q-meta" }, "Правильные ответы к контрольной работе преподаватель разберёт на занятии."),
       React.createElement("div", { style: { marginTop: 12 } }, React.createElement("button", { className: "btn secondary", onClick: () => { setTest(null); setSubmitted(null); setAnswers({}); setChecked({}); } }, "Пройти другой тест")));
   }
-  return /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h2", null, test.name), !test.training && React.createElement("div", { className: "notice" }, "Контрольный тест: правильные ответы после отправки не показываются."), test.training && React.createElement("div", { className: "notice" }, "Тренировочный тест: после ответа на задание нажмите «Проверить ответ» — увидите правильный ответ и разбор. После проверки ответ изменить нельзя."), loadErr && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } }, loadErr), (() => {
+  return /* @__PURE__ */ React.createElement("div", { className: "card" }, /* @__PURE__ */ React.createElement("h2", null, test.name),
+    bank.some(q=>q.type==='essay'&&q.metadata?.constructorSnapshot) && React.createElement('div',{className:'notice'},
+      React.createElement('h3',null,'Листы ответов'),React.createElement('p',null,'Пишите развёрнутые ответы на бланке от руки. Указывайте номера заданий. Прикрепите листы в порядке страниц; один лист может содержать несколько ответов.'),
+      React.createElement('label',{htmlFor:'answer-pages'},'Добавить фотографии листов (до 20)'),React.createElement('input',{id:'answer-pages',type:'file',multiple:true,accept:'image/*',disabled:pagesBusy||subBusy,onChange:e=>{attachPages(e.target.files);e.target.value='';}}),
+      pagesBusy&&React.createElement('p',null,'Загружаю листы…'),pagesError&&React.createElement('p',{role:'alert'},pagesError),
+      React.createElement(SubmissionPages,{pages:answers.__pages||[],onRemove:pagesBusy||subBusy?null:i=>setAnswers(prev=>({...prev,__pages:(prev.__pages||[]).filter((_,j)=>j!==i)}))})), !test.training && React.createElement("div", { className: "notice" }, (bank.some(q=>q.metadata?.constructorSnapshot)?"Контрольный тест: разбор откроется после отправки работы.":"Контрольный тест: правильные ответы после отправки не показываются.")), test.training && React.createElement("div", { className: "notice" }, "Тренировочный тест: после ответа на задание нажмите «Проверить ответ» — увидите правильный ответ и разбор. После проверки ответ изменить нельзя."), loadErr && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } }, loadErr), (() => {
     // Критерии оценивания по вопросу; для истории автоматическая проверка задаётся gradingMode
     const EGE_CRITERIA = {
       1: "Часть 1 — максимум 1 балл, порядок цифр не важен.\n1 балл: ответ полностью совпадает с эталоном (все цифры есть, лишних нет).\n0 баллов: любая ошибка.",
@@ -2181,7 +2521,7 @@ function StudentView() {
           borderRadius: 6, padding: "7px 14px", display: "inline-block"
         }
       }, "\u0417\u0430\u0434\u0430\u043d\u0438\u0435 ", group.ogeNumber, " \u0415\u0413\u042d\u00a0\u2014\u00a0", group.questions.length, "\u00a0", group.questions.length === 1 ? "\u0432\u043e\u043f\u0440\u043e\u0441" : group.questions.length < 5 ? "\u0432\u043e\u043f\u0440\u043e\u0441\u0430" : "\u0432\u043e\u043f\u0440\u043e\u0441\u043e\u0432"),
-      EGE_CRITERIA[group.ogeNumber] ? /* @__PURE__ */ React.createElement(CriteriaBlock, { text: EGE_CRITERIA[group.ogeNumber] }) : null
+      React.createElement(CriteriaBlock, {text: group.questions.map(({q})=>'№'+(q.ogeNumber||'')+' — максимум '+q.maxScore+' балл(а). '+(q.type==='essay'?'Проверяет преподаватель по критериям задания.':q.gradingMode==='ordered'?'Порядок элементов ответа важен.':q.gradingMode==='unordered'?'Порядок выбранных элементов не важен.':'Точное совпадение с допустимым ответом.')).filter((s,i,a)=>a.indexOf(s)===i).join('\n')})
     ) : null), group.questions.map(({ q, qid, globalIdx: idx }) => /* @__PURE__ */ React.createElement("div", { key: qid, style: { borderTop: "1px solid var(--line)", padding: "14px 0" } }, /* @__PURE__ */ React.createElement("span", { className: "q-type-tag" }, TYPE_LABEL[q.type]), " ", /* @__PURE__ */ React.createElement("span", { className: "q-meta" }, "\u0431\u0430\u043b\u043b: ", q.maxScore), /* @__PURE__ */ React.createElement("div", { className: "q-text" }, idx + 1, ". ", renderText(q.text)), (q.imageFilenames && q.imageFilenames.length ? q.imageFilenames : (q.imageFilename ? [q.imageFilename] : [])).map((img, ii) => /* @__PURE__ */ React.createElement("img", { key: ii, src: imageUrl(img), className: "q-image", alt: "" })), React.createElement("fieldset", { disabled: !!(test.training && checked[qid]), style: { border: 0, padding: 0, margin: 0, minWidth: 0 } }, q.type === "single" && q.options.map((o, i) => /* @__PURE__ */ React.createElement("label", { className: "opt", key: i }, /* @__PURE__ */ React.createElement("input", { type: "radio", name: qid, checked: answers[qid] === i, onChange: () => setAnswer(qid, i) }), o)), q.type === "multi" && q.options.map((o, i) => /* @__PURE__ */ React.createElement("label", { className: "opt", key: i }, /* @__PURE__ */ React.createElement(
       "input",
       {
@@ -2197,7 +2537,7 @@ function StudentView() {
       const arr = [...answers[qid] || []];
       arr[i] = Number(e.target.value);
       setAnswer(qid, arr);
-    } }, /* @__PURE__ */ React.createElement("option", { value: "" }, "\u2014"), q.matchRight.map((r, ri) => /* @__PURE__ */ React.createElement("option", { key: ri, value: ri + 1 }, ri + 1 + " \u2014 " + r))))))))), q.type === "essay" && /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(
+    } }, /* @__PURE__ */ React.createElement("option", { value: "" }, "\u2014"), q.matchRight.map((r, ri) => /* @__PURE__ */ React.createElement("option", { key: ri, value: ri + 1 }, ri + 1 + " \u2014 " + r))))))))), q.type === "essay" && (q.metadata?.constructorSnapshot ? React.createElement('p',{className:'notice'},'Напишите ответ от руки, укажите номер задания и прикрепите фотографии в разделе «Листы ответов» над заданиями.') : /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(
       "textarea",
       {
         value: answers[qid] && answers[qid].text || "",
@@ -2213,7 +2553,7 @@ function StudentView() {
         onChange: (e) => attachAnswerImage(qid, e.target.files[0])
       }
     ), imgBusyQid === qid && /* @__PURE__ */ React.createElement("div", { className: "q-meta", style: { marginTop: 4 } }, "\u0417\u0430\u0433\u0440\u0443\u0436\u0430\u044E \u0444\u043E\u0442\u043E\u2026"), answers[qid] && answers[qid].image && /* @__PURE__ */ React.createElement("img", { src: answers[qid].image, className: "q-image", style: { maxWidth: 260 }, alt: "" })
-  /* close essay div */ ), test.training && React.createElement(TrainFeedback, { q, qid, answer: answers[qid], checked: !!checked[qid], onCheck: (id) => setChecked((prev) => ({ ...prev, [id]: true })) })
+  /* close essay div */ )), test.training && React.createElement(TrainFeedback, { q, qid, answer: answers[qid], checked: !!checked[qid], onCheck: (id) => setChecked((prev) => ({ ...prev, [id]: true })) })
   /* the next ")" closes q div */
   /* close group.questions.map: */ )
   /* close group wrapper div: */ )
