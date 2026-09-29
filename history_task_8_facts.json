@@ -8,7 +8,14 @@
     "questionsWithRecoveredImagePath": 60,
     "questionsWithoutImageLinkInSource": 40,
     "courseTopicId": 30,
-    "note": "Задание №8: работа с изображением по Великой Отечественной войне. Исходные карточки не смешиваются и не изменяются; генератор выбирает целые вопросы. Для записей без ссылки на изображение задан ожидаемый GitHub-путь images/<theme>/task_<id>_0.png."
+    "note": "Задание №8: работа с изображением по Великой Отечественной войне. Исходные карточки не смешиваются и не изменяются; генератор выбирает целые вопросы. Для записей без ссылки на изображение задан ожидаемый GitHub-путь images/<theme>/task_<id>_0.png.",
+    "finalImageAudit": {
+      "allQuestionsEnabled": true,
+      "enabledQuestions": 100,
+      "restoredMissingImages": 39,
+      "fixedExtensionMismatches": 3,
+      "status": "ready-for-github"
+    }
   },
   "facts": [
     {
@@ -171,7 +178,7 @@
       ],
       "solutionText": "На данной марке изображены члены подпольной организации \"Молодая гвардия\" - О. Кошевой, С. Тюленин, Л. Шевцова, И. Земнухов, У. Громова.",
       "imagePath": "images/13394/task_70977_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -441,7 +448,7 @@
       ],
       "solutionText": "Марка посвящена битве за Днепр. Битва за Днепр — ряд взаимосвязанных стратегических операций Великой Отечественной войны, проведённых РККА, во второй половине 1943 года на берегах Днепра.",
       "imagePath": "images/13394/task_77423_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -471,7 +478,7 @@
       ],
       "solutionText": "Марка посвящена битве за Днепр. Битва за Днепр — ряд взаимосвязанных стратегических операций Великой Отечественной войны, проведённых РККА, во второй половине 1943 года на берегах Днепра.",
       "imagePath": "images/13394/task_77436_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -501,7 +508,7 @@
       ],
       "solutionText": "Марка посвящена Ясско-Кишинёвской операции. Это стратегическая военная операция Вооружённых сил СССР против нацистской Германии и Румынии во время Великой Отечественной войны с целью разгрома крупной немецко-румынской группировки, прикрывавшей балканское направление, освобождения Молдавии и вывода Румынии из войны.",
       "imagePath": "images/13394/task_77454_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -531,7 +538,7 @@
       ],
       "solutionText": "Марка посвящена Курской битве. Это событие произошло летом 1943 года.",
       "imagePath": "images/13394/task_77504_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -561,7 +568,7 @@
       ],
       "solutionText": "\"Молодая гвардия\" - антифашистская подпольная комсомольская организация периода Великой Отечественной войны, которая была основана в городе Краснодон.",
       "imagePath": "images/13394/task_78059_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -591,7 +598,7 @@
       ],
       "solutionText": "Марка посвящена освобождению Белоруссии от немецко-фашистских захватчиков. Эта операция советских войск называлась \"Багратион\" и была осуществлена летом 1944 года.",
       "imagePath": "images/13394/task_81110_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -621,7 +628,7 @@
       ],
       "solutionText": "На марке изображён Виктор Талалихин. Главным подвигом Виктора Талалихина, совершив который в 1941 г. он вошёл в историю, был первый ночной таран.",
       "imagePath": "images/13394/task_82600_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -651,7 +658,7 @@
       ],
       "solutionText": "Марка посвящена битве за Днепр. Битва за Днепр — ряд взаимосвязанных стратегических операций Великой Отечественной войны, проведённых РККА, во второй половине 1943 года на берегах Днепра.",
       "imagePath": "images/13394/task_85046_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -744,7 +751,7 @@
       ],
       "solutionText": "Марка посвящена разгрому фашистских войск под Курском. Это событие произошло в 1943 году.",
       "imagePath": "images/13394/task_101971_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -774,7 +781,7 @@
       ],
       "solutionText": "Медаль посвящена подвигу Панфиловцев. Они совершили его в 1941 году.",
       "imagePath": "images/13394/task_101972_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -804,7 +811,7 @@
       ],
       "solutionText": "Освобождение Орла произошло в рамках советской наступательной операции, во время Курской битвы в 1943 году.",
       "imagePath": "images/13394/task_101973_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -834,7 +841,7 @@
       ],
       "solutionText": "Георгий Семёнович Шпагин — советский конструктор стрелкового оружия, создатель пистолета-пулемёта ППШ",
       "imagePath": "images/13394/task_101974_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -864,7 +871,7 @@
       ],
       "solutionText": "Конструктором самолётов ТУ-42 был Туполев.",
       "imagePath": "images/13394/task_101975_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -894,7 +901,7 @@
       ],
       "solutionText": "Марка посвящена освобождению Варшавы, которое проходило с 14 по 17 января 1945 г.",
       "imagePath": "images/13394/task_101976_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -924,7 +931,7 @@
       ],
       "solutionText": "Марка посвящена событиям Сталинградской битвы, которая длилась с 17 июля 1942 по 2 февраля 1943 г. В задании спрашивается про дату окончания битвы, а это 1943 г.",
       "imagePath": "images/13394/task_101977_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -954,7 +961,7 @@
       ],
       "solutionText": "Марка посвящена первому параду Победы, который прошёл 24 июня 1945 г.",
       "imagePath": "images/13394/task_101978_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -984,7 +991,7 @@
       ],
       "solutionText": "Марка посвящена освобождению Чехословакии, которое проходило с 6 по 11 мая 1945 г.",
       "imagePath": "images/13394/task_101979_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1014,7 +1021,7 @@
       ],
       "solutionText": "Марка посвящена освобождению Румынии, которое произошло в 1944 г.",
       "imagePath": "images/13394/task_101980_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1044,7 +1051,7 @@
       ],
       "solutionText": "На марке изображён танк Т-34, конструктором которого был М. И. Кошкин.",
       "imagePath": "images/13394/task_101981_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1074,7 +1081,7 @@
       ],
       "solutionText": "Георгий Семёнович Шпагин — советский конструктор стрелкового оружия, создатель пистолета-пулемёта ППШ.",
       "imagePath": "images/13394/task_101982_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1104,7 +1111,7 @@
       ],
       "solutionText": "Марка посвящена Курской битве, которая длилась с 5 июля по 23 августа 1943 г.",
       "imagePath": "images/13394/task_101983_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1134,7 +1141,7 @@
       ],
       "solutionText": "Оборона Сталинграда началась в 1942 году.",
       "imagePath": "images/13394/task_101984_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1164,7 +1171,7 @@
       ],
       "solutionText": "На марке указана дата Сталинградской битвы.",
       "imagePath": "images/13394/task_101985_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1194,7 +1201,7 @@
       ],
       "solutionText": "Курская битва началась в июле 1943 года.",
       "imagePath": "images/13394/task_101986_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1224,7 +1231,7 @@
       ],
       "solutionText": "Марка посвящена Ясско-Кишеневской операции, которая длилась с 20 по 29 августа 1944 г.",
       "imagePath": "images/13394/task_101987_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1254,7 +1261,7 @@
       ],
       "solutionText": "На марке изображён М. И. Кошкин, который является создателем танка Т-34.",
       "imagePath": "images/13394/task_101988_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1284,7 +1291,7 @@
       ],
       "solutionText": "В.А. Дегтярёв является создателем стрелкового вооружения.",
       "imagePath": "images/13394/task_101989_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1314,7 +1321,7 @@
       ],
       "solutionText": "Фашистские войска были разгромлены под Ленинградом 27 января 1944 года.",
       "imagePath": "images/13394/task_101990_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1344,7 +1351,7 @@
       ],
       "solutionText": "Марка посвящена освобождению Праги, которое происходило с 6 по 11 мая 1945 г.",
       "imagePath": "images/13394/task_101991_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1374,7 +1381,7 @@
       ],
       "solutionText": "Н. Ф. Гастелло- летчик, совершивший 26 июня 1941 г. \"огненный таран\", за что был посмертно удостоен звания Героя Советского Союза.",
       "imagePath": "images/13394/task_101992_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1404,7 +1411,7 @@
       ],
       "solutionText": "На конверте указано: *\"40-летие освобождения гг. Орла, Белгорода от фашистских захватчиков в Великой Отечественной войне. Орёл и Белгород были освобождены 5 августа 1943 года. Таким образом, юбилейному событию, которому посвящён конверт, соответствует август — месяц освобождения обоих городов.",
       "imagePath": "images/13394/task_101993_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1434,7 +1441,7 @@
       ],
       "solutionText": "Оборона Дома Павлова - важное событие Сталинградской битвы, которое происходило в период с сентября по ноябрь 1942 г.",
       "imagePath": "images/13394/task_101994_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1464,7 +1471,7 @@
       ],
       "solutionText": "На марке изображен А. И. Покрышкин - известный лётчик-ас.",
       "imagePath": "images/13394/task_101995_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1494,7 +1501,7 @@
       ],
       "solutionText": "Марка посвящена Курской битве, которая длилась с 5 июля по 23 августа 1943 г. В вопросе спрашивается месяц окончания битвы, а это август.",
       "imagePath": "images/13394/task_101996_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1524,7 +1531,7 @@
       ],
       "solutionText": "Боевые машины \"Катюша\" впервые нанесли удар в 1941 году.",
       "imagePath": "images/13394/task_101997_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1554,7 +1561,7 @@
       ],
       "solutionText": "Оборона Одессы началась в 1941 г. Оборона Одессы длилась с августа по октябрь 1941 г.",
       "imagePath": "images/13394/task_101998_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1584,7 +1591,7 @@
       ],
       "solutionText": "Оборона города Сталинград, отмеченного на медали, началась в 1942 г. Данная оборона проходила в ходе Сталинградской битвы (17 июля 1942 - 2 февраля 1943 г.)",
       "imagePath": "images/13394/task_101999_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -1614,7 +1621,7 @@
       ],
       "solutionText": "Медаль посвящена взятию Кёнигсберга. Взятие Кёнигсберга произошло 9 апреля 1945 года.",
       "imagePath": "images/13394/task_102000_0.png",
-      "imageStatus": "missing-source-link",
+      "imageStatus": "github-found",
       "originalImageUrl": "",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -2544,8 +2551,8 @@
         "сорокчетвертом"
       ],
       "solutionText": "Освобождение Севастополя от немецко-фашистских войск, 50-летнему юбилею которого посвящена монета, произошло в 1944 году.",
-      "imagePath": "images/13375/task_174393_0.png",
-      "imageStatus": "from-source",
+      "imagePath": "images/13375/task_174393_0.jpg",
+      "imageStatus": "github-found",
       "originalImageUrl": "/st/5/v-thumb/Screenshot_20260322_194643_Chrome__9tg9x.jpg",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -2754,8 +2761,8 @@
         "апрель"
       ],
       "solutionText": "На марке 1995 года присутствует название операции, 50-летнему юбилею которой она посвящена - \"Берлинская операция\". Данная операция началась в апреле 1945 года.",
-      "imagePath": "images/13375/task_178477_0.png",
-      "imageStatus": "from-source",
+      "imagePath": "images/13375/task_178477_0.jpg",
+      "imageStatus": "github-found",
       "originalImageUrl": "/st/5/v-thumb/Screenshot_20260418_144603_OneDrive__a7vc4.jpg",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
@@ -2844,8 +2851,8 @@
         "сорокпятом"
       ],
       "solutionText": "",
-      "imagePath": "images/13394/task_181586_0.png",
-      "imageStatus": "from-source",
+      "imagePath": "images/13394/task_181586_0.jpg",
+      "imageStatus": "github-found",
       "originalImageUrl": "/st/5/v-thumb/image-20260504224833-2__ags56.jpg",
       "courseTopicId": 30,
       "requiredCourseTopicIds": [
