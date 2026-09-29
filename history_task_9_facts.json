@@ -1,0 +1,3811 @@
+{
+  "meta": {
+    "schema": "history-task9-map-whole-question-v1",
+    "courseTopicVersion": "course38-v1",
+    "sourceQuestions": 125,
+    "uniqueQuestions": 123,
+    "sourceDuplicateIds": 2,
+    "sourceThemeIds": [
+      13337,
+      13376,
+      13395,
+      13416
+    ],
+    "note": "Задание №9: работа с исторической картой/схемой. Исходные карточки сохраняются целиком. Изображения восстанавливаются отдельно по точной связи RelatesToQuestionContentId -> dependencies.QuestionContent -> TexSession.Html. До проверки карты записи выключены. courseTopicId оставлен пустым до тематической разметки.",
+    "finalImageAudit": {
+      "allQuestionsEnabled": true,
+      "enabledQuestions": 123,
+      "autoRestoredImages": 122,
+      "manualResolvedImages": 1,
+      "manualResolvedQuestionId": 197579,
+      "status": "ready-for-github"
+    }
+  },
+  "facts": [
+    {
+      "factId": "T9-52775",
+      "title": "Через город Новгород протекает река Волхов, она и обозначена на карте цифрой 2.",
+      "questionText": "Напишите название реки, обозначенной на схеме цифрой «1». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Волхов",
+        "волхов",
+        "ВОЛХОВ"
+      ],
+      "solutionText": "Через город Новгород протекает река Волхов, она и обозначена на карте цифрой 2.",
+      "imagePath": "images/13395/task_52775_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20230223180008-1__1dg3o.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        52775
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=1"
+      ],
+      "sourceName": "22 вар"
+    },
+    {
+      "factId": "T9-61301",
+      "title": "Река, обозначенная в тексте цифрой 1, находится на востоке Росии и впадает в Охотское море.",
+      "questionText": "Напишите название реки, дважды обозначенной на схеме цифрой «1». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Амур",
+        "амур",
+        "АМУР"
+      ],
+      "solutionText": "Река, обозначенная в тексте цифрой 1, находится на востоке Росии и впадает в Охотское море. Это река Амур.",
+      "imagePath": "images/13395/task_61301_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20230519154131-1__1tc3s.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        61301
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=1"
+      ],
+      "sourceName": "вариант 28 ав"
+    },
+    {
+      "factId": "T9-69900",
+      "title": "Цифрой 1 в легенде обозначен поход под Москву.",
+      "questionText": "Укажите имя полководца, поход которого на Русь обозначен в легенде схемы цифрой «1». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Ахмат",
+        "ахмат",
+        "АХМАТ"
+      ],
+      "solutionText": "Цифрой 1 в легенде обозначен поход под Москву. Завершающей точкой похода обозначена битва на реке. Это событие также называется «стояние» на реке Угре. Монгольскими войсками в этой битве, 1480 году руководил хан Ахмат. Битва закончилась победой русских войск и избавлением от ордынской зависимости.",
+      "imagePath": "images/13395/task_69900_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image__289ea.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        69900
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=1"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-70045",
+      "title": "Цифрой 4, там, где Волга сворачивает на запад, обозначен город Казань.",
+      "questionText": "Укажите век, когда в состав Российского государства вошёл город, обозначенный на схеме цифрой «4». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "шестнадцатый",
+        "ШЕСТНАДЦАТЫЙ",
+        "Шестнадцатый"
+      ],
+      "solutionText": "Цифрой 4, там, где Волга сворачивает на запад, обозначен город Казань. Он вошёл в состав России в 1552 году при Иване Грозном, то есть в шестнадцатом веке.",
+      "imagePath": "images/13395/task_70045_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image__290mj.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        70045
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=1"
+      ],
+      "sourceName": "4.9"
+    },
+    {
+      "factId": "T9-70061",
+      "title": "На карте обозначен Тарутинский манёвр, войска движутся из Смоленска.",
+      "questionText": "Назовите имя главнокомандующего войсками неприятеля в период боевых действий, изображённых на схеме. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Наполеон",
+        "наполеон",
+        "НАПОЛЕОН"
+      ],
+      "solutionText": "На карте обозначен Тарутинский манёвр, войска движутся из Смоленска. Значит карта посвящена событиям Отечественной войны 1812 года, а конкретнее Бородинскому сражению. Командующим французской армии был Наполеон.",
+      "imagePath": "images/13395/task_70061_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image__290ll.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        70061
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=1"
+      ],
+      "sourceName": "8.9"
+    },
+    {
+      "factId": "T9-70069",
+      "title": "Стрелками обозначены действия вокруг города Сталинград.",
+      "questionText": "Заполните пропуск в предложении: \n«Боевые действия, обозначенные на схеме стрелками, начались в тысяча девятьсот ________________году».\n Ответ напишите словом (сочетанием слов.)",
+      "answers": [
+        "сороквтором",
+        "Сороквтором",
+        "СОРОКВТОРОМ"
+      ],
+      "solutionText": "Стрелками обозначены действия вокруг города Сталинград. Сталинградская битва началась в 1942 году.",
+      "imagePath": "images/13395/task_70069_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image__9jstz.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        70069
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=1"
+      ],
+      "sourceName": "10.9"
+    },
+    {
+      "factId": "T9-70073",
+      "title": "Карта посвящена Великой Отечественной войне, а именно завершающему этапу.",
+      "questionText": "Закончите предложение: \n«Боевые действия, обозначенные на схеме стрелками, проходили в тысяча девятьсот _____________ году».\n Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокпятом",
+        "СОРОКПЯТОМ",
+        "Сорокпятом"
+      ],
+      "solutionText": "Карта посвящена Великой Отечественной войне, а именно завершающему этапу. Стрелки идут на запад в сторону Германии, обозначена Висло-Одерская операция, стрелки уже дошли до некоторых германских городов. Это значит, что действие происходит в 1945 году.",
+      "imagePath": "images/13395/task_70073_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20231006184414-5__290k8.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        70073
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=1"
+      ],
+      "sourceName": "11.9"
+    },
+    {
+      "factId": "T9-70978",
+      "title": "На карте обозначены походы князя Святослава, они проходили в X веке.",
+      "questionText": "Укажите название города, обозначенного цифрой «2», в период, когда произошли события, которым посвящена схема. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Константинополь",
+        "константинополь",
+        "КОНСТАНТИНОПОЛЬ",
+        "Царьград",
+        "ЦАРЬГРАД",
+        "царьград"
+      ],
+      "solutionText": "На карте обозначены походы князя Святослава, они проходили в X веке. В X веке город, обозначенный цифрой 2 назывался Царьград.",
+      "imagePath": "images/13395/task_70978_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image__2bw25.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        70978
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=1"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-72319",
+      "title": "Цифрой 1 на карте обозначен Порт-Артур - бывший портовый город (незамерзающий порт, военно-морская база) в Китае на Жёлтом море.",
+      "questionText": "Напишите название города, обозначенного на схеме цифрой «1». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Порт-Артур",
+        "порт-артур",
+        "ПОРТ-АРТУР"
+      ],
+      "solutionText": "Цифрой 1 на карте обозначен Порт-Артур - бывший портовый город (незамерзающий порт, военно-морская база) в Китае на Жёлтом море.",
+      "imagePath": "images/13395/task_72319_0.jpg",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://sun9-33.userapi.com/impg/Swj7LRdACi_zgJAKUcB-AcCI4D1v1pxBDhAOWQ/6VqOrp66bKU.jpg?size=679x738&quality=96&sign=2c8f9e9afc356ba5e51d2ad48b34d9c6&type=album",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        72319
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=2"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-72389",
+      "title": "Война на Северо-западе страны у СССР была в 1939-1940 гг.",
+      "questionText": "Укажите название государства, которое было противником СССР в отражённой на схеме войне. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Финляндия",
+        "финляндия",
+        "ФИНЛЯНДИЯ"
+      ],
+      "solutionText": "Война на Северо-западе страны у СССР была в 1939-1940 гг. и называлась Зимняя война. Противником была Финляндия.",
+      "imagePath": "images/13395/task_72389_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250816152034-1__79mac.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        72389
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=2"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-72524",
+      "title": "По реке Непрядва и Засадному полку (передовая тактика ведения боя, успользуемая Дмитрием Донским) можно понять, что на карте схема Куликовской битвы 1380 года, то есть XIV век.",
+      "questionText": "Заполните пропуск в предложении: «\nБитва, представленная на схеме, состоялась в _____________ веке\n». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Четырнадцатом",
+        "четырнадцатом",
+        "ЧЕТЫРНАДЦАТОМ"
+      ],
+      "solutionText": "По реке Непрядва и Засадному полку (передовая тактика ведения боя, успользуемая Дмитрием Донским) можно понять, что на карте схема Куликовской битвы 1380 года, то есть XIV век.",
+      "imagePath": "images/13395/task_72524_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image__2jae9.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        72524
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=1"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-72573",
+      "title": "На карте можно увидеть стрелку, проходящую из Севастополя в Синоп, – отличительный знак Крымской войны.",
+      "questionText": "Укажите название войны, в ходе которой произошли боевые действия, обозначенные на схеме стрелками. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Крымская",
+        "КРЫМСКАЯ",
+        "крымская",
+        "Восточная",
+        "ВОСТОЧНАЯ",
+        "восточная"
+      ],
+      "solutionText": "На карте можно увидеть стрелку, проходящую из Севастополя в Синоп, – отличительный знак Крымской войны.",
+      "imagePath": "images/13395/task_72573_0.jpg",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://sun9-28.userapi.com/impg/qYjRydl07rls-JsjeYvImKHZe9Ih3djDLEjHGw/zZRSdZk5msE.jpg?size=1029x919&quality=96&sign=f4459db2702eb3b57608b3fb1addce77&type=album",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        72573
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=1"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-72675",
+      "title": "На карте обозначено строительство Транссибирской магистрали, которое началось в 1891 году.",
+      "questionText": "Заполните пропуск в предложении: «\nСтроительство железной дороги, обозначенной на схеме, началось в тысяча восемьсот _____________ годах\n» (укажите десятилетие). Ответ запишите словом (сочетанием  слов).",
+      "answers": [
+        "девяностых",
+        "ДЕВЯНОСТЫХ",
+        "Девяностых"
+      ],
+      "solutionText": "На карте обозначено строительство Транссибирской магистрали, которое началось в 1891 году.",
+      "imagePath": "images/13395/task_72675_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20231112225745-3__2jbwc.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        72675
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=1"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-73390",
+      "title": "На карте указаны дата - 1735, в этот год правила Анна Иоанновна.",
+      "questionText": "Назовите монарха, правившего в России в период, когда произошли события, обозначенные на схеме. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "АННАИОАННОВНА",
+        "аннаиоанновна",
+        "Аннаиоанновна"
+      ],
+      "solutionText": "На карте указаны дата - 1735, в этот год правила Анна Иоанновна.",
+      "imagePath": "images/13395/task_73390_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20231120211030-1__2l9o1.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        73390
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=1"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-74102",
+      "title": "На карте обозначено восстание под руководством Емельяна Пугачева, оно относится к 1773-1775 гг.",
+      "questionText": "Заполните пропуск в предложении (укажите десятилетие): \n«\nСобытия, обозначенные на схеме стрелками, произошли в тысяча семьсот ________________ годах\n»\n. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "СЕМИДЕСЯТЫХ",
+        "Семидесятых",
+        "семидесятых"
+      ],
+      "solutionText": "На карте обозначено восстание под руководством Емельяна Пугачева, оно относится к 1773-1775 гг.",
+      "imagePath": "images/13395/task_74102_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20231128004333-1__2n6wp.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        74102
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=1"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-74284",
+      "title": "Цифрой 1 на карте обозначен город, расположенный над озером Ильмень, являющийся племенным центром Ильменских словен.",
+      "questionText": "Напишите название города, обозначенного на схеме цифрой «1». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Новгород",
+        "новгород",
+        "Великийновгород",
+        "ВЕЛИКИЙНОВГОРОД",
+        "великийновгород"
+      ],
+      "solutionText": "Цифрой 1 на карте обозначен город, расположенный над озером Ильмень, являющийся племенным центром Ильменских словен. Это город Новгород.",
+      "imagePath": "images/13395/task_74284_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20231130183042-2__2nup2.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        74284
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=1"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-77424",
+      "title": "Город, обозначенный цифрой 2, находится на разветвлении Днепра, значит это город Киев.",
+      "questionText": "Заполните пропуск в предложении: \n«Перемирие, по которому России передавался сроком на два года город, обозначенный на схеме цифрой «2», было подписано в тысяча шестьсот ______________ году»\n. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "шестьдесятседьмом",
+        "ШЕСТЬДЕСЯТСЕДЬМОМ",
+        "Шестьдесятседьмом"
+      ],
+      "solutionText": "Город, обозначенный цифрой 2, находится на разветвлении Днепра, значит это город Киев. России на два года передавался Киев по Андрусовскому перемирию 1667 года.",
+      "imagePath": "images/13395/task_77424_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image__313jn.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        77424
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=1"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-77441",
+      "title": "Карта посвящена Отечественной войне 1812 года.",
+      "questionText": "Укажите название столицы Российского государства в период, когда произошли отражённые на схеме события. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Санкт-Петербург",
+        "санкт-петербург",
+        "САНКТ-ПЕТЕРБУРГ"
+      ],
+      "solutionText": "Карта посвящена Отечественной войне 1812 года. Это можно понять, например, по битве у Тарутино. В 1812 году столицей Российской империи был город Санкт-Петербург.",
+      "imagePath": "images/13395/task_77441_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20240124233508-2__3149a.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        77441
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=1"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-77455",
+      "title": "Карта посвящена началу Великой Отечественной войны - 1941 году.",
+      "questionText": "Напишите название, которое в период событий, отражённых на схеме, носил город, обозначенный цифрой «2». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Ленинград",
+        "ленинград",
+        "ЛЕНИНГРАД"
+      ],
+      "solutionText": "Карта посвящена началу Великой Отечественной войны - 1941 году. С 1924 года город, обозначенный цифрой 1, назывался Ленинград (до этого с 1914 по 1924 - Петроград).",
+      "imagePath": "images/13395/task_77455_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20240125002657-4__314s0.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        77455
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=1"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-77468",
+      "title": "Город, обозначенный цифрой 1 - Киев, поскольку находится на разветвлении Днепра.",
+      "questionText": "Укажите век, когда в состав Российского государства вошёл город, обозначенный на схеме цифрой «1».\n \nОтвет запишите словом (сочетанием слов).",
+      "answers": [
+        "Семнадцатый",
+        "семнадцатый",
+        "СЕМНАДЦАТЫЙ"
+      ],
+      "solutionText": "Город, обозначенный цифрой 1 - Киев, поскольку находится на разветвлении Днепра. Киев вошёл в состав Российского государства по Вечному миру с Польшей в 1686 году, то есть в семнадцатом веке.",
+      "imagePath": "images/13395/task_77468_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20240125005426-6__3150n.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        77468
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=1"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-77480",
+      "title": "На карте мы видим события Крымской войны.",
+      "questionText": "Укажите век, к которому относятся походы, обозначенные на схеме стрелками. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "девятнадцатый",
+        "Девятнадцатый",
+        "ДЕВЯТНАДЦАТЫЙ"
+      ],
+      "solutionText": "На карте мы видим события Крымской войны. Это можно понять по Синопскому бою на юге карты. Крымская война длилась с 1853 по 1856 год, то есть девятнадцатый век.",
+      "imagePath": "images/13395/task_77480_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image__6yvnt.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        77480
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=2"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-81111",
+      "title": "Под цифрой 5 в легенде схемы с подписью «походы против половцев» обозначена белая стрелка.",
+      "questionText": "Укажите век, когда был совершен поход, обозначенный в легенде схемы цифрой «5». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "двенадцатый",
+        "Двенадцатый",
+        "ДВЕНАДЦАТЫЙ"
+      ],
+      "solutionText": "Под цифрой 5 в легенде схемы с подписью «походы против половцев» обозначена белая стрелка. На карте под такой стрелкой написано «Игорь». Также в легенде указано «граница русских земель и княжеств», что свидетельствует о периоде раздробленности, значит карта событий не ранее 1132 года. Князь Новгород-Северский Игорь Святославич совершил поход против половцев в 1185 году - это двенадцатый век.",
+      "imagePath": "images/13395/task_81111_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20240229173229-2__3cana.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        81111
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=1"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-82604",
+      "title": "Под цифрой «6» обозначен город Минск, он был освобожден в тысяча девятьсот сорок четвертом году.",
+      "questionText": "Заполните пропуск в предложении: \n«Город, обозначенный на схеме цифрой «6», был освобождён от фашистов в тысяча девятьсот _______________ году». \nОтвет запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокчетвертом",
+        "СОРОКЧЕТВЕРТОМ",
+        "Сорокчетвертом",
+        "сорокчетвёртом",
+        "СОРОКЧЕТВЁРТОМ",
+        "Сорокчетвёртом"
+      ],
+      "solutionText": "Под цифрой «6» обозначен город Минск, он был освобожден в тысяча девятьсот сорок четвертом году.",
+      "imagePath": "images/13395/task_82604_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20240320220551-2__3j63h.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        82604
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=1"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-85047",
+      "title": "Перед нами карта периода Великой Отечественной войны.",
+      "questionText": "Напишите название города, обозначенного на схеме цифрой «2». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "курск",
+        "КУРСК",
+        "Курск"
+      ],
+      "solutionText": "Перед нами карта периода Великой Отечественной войны. Опознавательным знаком здесь будет Курская дуга, котора огибает город. Значит город под цифрой 2 - Курск.",
+      "imagePath": "images/13395/task_85047_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image__3rxbr.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        85047
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=2"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-87084",
+      "title": "На карте мы видим результаты внешнеполитической деятельности правителей XVIII века - цифрой II обозначены территории, присоединённые к России в результате раздела Речи Посполитой при Екатерине Великой, цифрой III - присо",
+      "questionText": "Напишите название города, обозначенного на схеме цифрой «1», в период, к которому относится показанная на схеме историческая ситуация. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Санкт-Петербург",
+        "САНКТ-ПЕТЕРБУРГ",
+        "санкт-петербург"
+      ],
+      "solutionText": "На карте мы видим результаты внешнеполитической деятельности правителей XVIII века - цифрой II обозначены территории, присоединённые к России в результате раздела Речи Посполитой при Екатерине Великой, цифрой III - присоединение Крымского ханства к империи при Екатерине Великой, цифрой I - присоединения Петра I по итогам Северной войны. \n\nГород, обозначенный цифрой 1, расположенный на берегу Балтийского моря, в XVIII веке назывался Санкт-Петербург.",
+      "imagePath": "images/13395/task_87084_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20240502214900-2__3xpg2.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        87084
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=2"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-87343",
+      "title": "Чёрными стрелками обозначен поход хана Ахмата, поскольку он ведёт к реке Угре, где в 1480 году произошла битва между русским войском во главе с Иваном III и монгольским войском во главе с ханом Ахматом",
+      "questionText": "Напишите имя правителя, поход войск которого в легенде схемы обозначен буквой «Б». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Ахмат",
+        "АХМАТ",
+        "ахмат"
+      ],
+      "solutionText": "Чёрными стрелками обозначен поход хана Ахмата, поскольку он ведёт к реке Угре, где в 1480 году произошла битва между русским войском во главе с Иваном III и монгольским войском во главе с ханом Ахматом",
+      "imagePath": "images/13395/task_87343_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image__3yj1i.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        87343
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=2"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-89753",
+      "title": "Город, обозначенный цифрой 1 на карте, - Владивосток.",
+      "questionText": "Заполните пропуск в предложении: «\nГород, обозначенный на схеме цифрой \n«\n1\n»\n, был основан по указу императора ________________ \n». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "АлександрВторой",
+        "александрвторой",
+        "АЛЕКСАНДРВТОРОЙ",
+        "Александравторого",
+        "александравторого",
+        "АЛЕКСАНДРАВТОРОГО"
+      ],
+      "solutionText": "Город, обозначенный цифрой 1 на карте, - Владивосток. Он был основан в 1860 году, при Александре II.",
+      "imagePath": "images/13395/task_89753_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20240606134835-1__490k2.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        89753
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=2"
+      ],
+      "sourceName": "1.9"
+    },
+    {
+      "factId": "T9-99453",
+      "title": "На схеме показаны события русско-турецкой войны 1768-1774 гг.",
+      "questionText": "Заполните пропуск в предложении (укажите десятилетие): «\nВойна, события которой отражены на схеме, окончилась в тысяча семьсот ______________ годах\n». Ответ запишите словом.",
+      "answers": [
+        "семидесятых",
+        "СЕМИДЕСЯТЫХ",
+        "Семидесятых"
+      ],
+      "solutionText": "На схеме показаны события русско-турецкой войны 1768-1774 гг. Война, события которой отражены на схеме, окончилась в тысяча семьсот семидесятых годах.",
+      "imagePath": "images/13337/task_99453_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20241103132627-1__5122a.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        99453
+      ],
+      "sourceThemeIds": [
+        13337,
+        13395
+      ],
+      "sourceCategories": [
+        "ЕГЭ прошлых лет",
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13337?Page=1",
+        "https://3.shkolkovo.online/catalog/13395?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-102662",
+      "title": "Проследив по границе на карте, можно обнаружить, что ещё не все племена вошли в состав Руси, вятичи, например, ещё за границей.",
+      "questionText": "Заполните пропуск в предложении: «На схеме обозначена граница государства Русь в начале __________________ века». Ответ запишите словом",
+      "answers": [
+        "десятого",
+        "ДЕСЯТОГО",
+        "Десятого"
+      ],
+      "solutionText": "Проследив по границе на карте, можно обнаружить, что ещё не все племена вошли в состав Руси, вятичи, например, ещё за границей. Это значит, что граница относится к началу десятого века.",
+      "imagePath": "images/13416/task_102662_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20241224201603-1__5ejsp.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        102662
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-102666",
+      "title": "На карте обозначены стрелками походы на Волжскую Булгарию, Хазарский каганат, на юго-западные земли.",
+      "questionText": "Укажите век, к которому относятся события, обозначенные на схеме стрелками. Ответ запишите словом.",
+      "answers": [
+        "ДЕСЯТЫЙ",
+        "десятый",
+        "Десятый"
+      ],
+      "solutionText": "На карте обозначены стрелками походы на Волжскую Булгарию, Хазарский каганат, на юго-западные земли. Эти походы осуществлял Святослав Игоревич в десятом веке.",
+      "imagePath": "images/13416/task_102666_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20241224203644-2__5ek2q.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        102666
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-102669",
+      "title": "Цифрой 6 обозначен поход в Новгород.",
+      "questionText": "Назовите имя киевского князя, походы которого обозначены в легенде схемы цифрой «6».",
+      "answers": [
+        "ЯрославМудрый",
+        "ярославмудрый",
+        "ЯРОСЛАВМУДРЫЙ"
+      ],
+      "solutionText": "Цифрой 6 обозначен поход в Новгород. На Новгород с походом княжить ходил Ярослав Мудрый.",
+      "imagePath": "images/13395/task_102669_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20241224223515-1__5eljm.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        102669
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-102673",
+      "title": "На карте изображены «поход за зипунами» и восстание Степана Разина 1667-1671 гг.",
+      "questionText": "Заполните пропуск в предложении: «\nОбозначенные на схеме события произошли в период правления в России царя _________________\n»\n.",
+      "answers": [
+        "АЛЕКСЕЯМИХАЙЛОВИЧА",
+        "алексеямихайловича",
+        "АлексеяМихайловича",
+        "Алексеямихайловича"
+      ],
+      "solutionText": "На карте изображены «поход за зипунами» и восстание Степана Разина 1667-1671 гг. Московским государством тогда правил Алексей Михайлович Тишайший.",
+      "imagePath": "images/13416/task_102673_0.jpg",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20241225090502-4__5ene2.jpg",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        102673
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-102686",
+      "title": "Цифрой «4» обозначен город Казань.",
+      "questionText": "Укажите век, когда в состав Российского государства вошёл город, обозначенный на схеме цифрой «4». Ответ запишите словом.",
+      "answers": [
+        "шестнадцатый",
+        "ШЕСТНАДЦАТЫЙ",
+        "Шестнадцатый"
+      ],
+      "solutionText": "Цифрой «4» обозначен город Казань. Он вошёл в состав России в 1552 году, при Иване Грозном.",
+      "imagePath": "images/13395/task_102686_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20241225094737-7__5enj2.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        102686
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=2"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T9-102691",
+      "title": "Бои рядом с Запорожской Сечью указывают нам на Русско-польскую войну 1654-1667 гг.",
+      "questionText": "Укажите российского монарха, в годы правления которого произошли события, отражённые на схеме.",
+      "answers": [
+        "АЛЕКСЕЙМИХАЙЛОВИЧ",
+        "АлексейМихайлович",
+        "алексеймихайлович",
+        "Алексеймихайлович"
+      ],
+      "solutionText": "Бои рядом с Запорожской Сечью указывают нам на Русско-польскую войну 1654-1667 гг. Во время этой войны правителем России был Алексей Михайлович.",
+      "imagePath": "images/13395/task_102691_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20241225091957-6__5eng5.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        102691
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-103468",
+      "title": "На схеме показаны события завершающего этапа Гражданской войны: боевые действия сосредоточены в Крыму, что связано с борьбой Красной армии против армии П.Н.",
+      "questionText": "Заполните пропуск в предложении: «\nВоенные действия, обозначенные на схеме, относятся к тысяча девятьсот _________________ году\n». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "ДВАДЦАТОМУ",
+        "двадцатому",
+        "Двадцатому"
+      ],
+      "solutionText": "На схеме показаны события завершающего этапа Гражданской войны: боевые действия сосредоточены в Крыму, что связано с борьбой Красной армии против армии П.Н. Врангеля, действовавшей в 1920 г.; обозначен Юго-Западный фронт, участвовавший в советско-польской войне 1920 г.; указана западная граница Советской республики по мирному договору. Следовательно, военные действия относятся к 1920 году.",
+      "imagePath": "images/13416/task_103468_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260410185807-5__a3ob1.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        103468
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-113608",
+      "title": "Напишите имя императора Франции, с которым велись военные действия, ход которых отражен на данной схеме.",
+      "questionText": "Напишите имя императора Франции, с которым велись военные действия, ход которых отражен на данной схеме.",
+      "answers": [
+        "Наполеон",
+        "НАПОЛЕОН",
+        "наполеон"
+      ],
+      "solutionText": "",
+      "imagePath": "images/13395/task_113608_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250817180755-3__79tyf.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        113608
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=2"
+      ],
+      "sourceName": "Практика Александр I"
+    },
+    {
+      "factId": "T9-114025",
+      "title": "Укажите фамилию государственного деятеля - инициатора реформы, ход которой представлен на схеме.",
+      "questionText": "Укажите фамилию государственного деятеля - инициатора реформы, ход которой представлен на схеме.",
+      "answers": [
+        "СТОЛЫПИН",
+        "столыпин",
+        "Столыпин"
+      ],
+      "solutionText": "",
+      "imagePath": "images/13416/task_114025_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250817183528-8__79u4r.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        114025
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-114051",
+      "title": "Укажите век, в котором произошли обозначенные на схеме события.",
+      "questionText": "Укажите век, в котором произошли обозначенные на схеме события.",
+      "answers": [
+        "Двадцатый",
+        "двадцатый",
+        "ДВАДЦАТЫЙ"
+      ],
+      "solutionText": "",
+      "imagePath": "images/13416/task_114051_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250331012530-2__6ax8l.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        114051
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-114176",
+      "title": "На схеме отражены события Северной войны (1700-1721 гг.).",
+      "questionText": "Укажите век, когда происходили события, отражённые на схеме. Ответ запишите словом.",
+      "answers": [
+        "восемнадцатый",
+        "ВОСЕМНАДЦАТЫЙ",
+        "Восемнадцатый"
+      ],
+      "solutionText": "На схеме отражены события Северной войны (1700-1721 гг.). Эти события относятся к XVIII веку.",
+      "imagePath": "images/13416/task_114176_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250331201529-1__6b7hi.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        114176
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-114196",
+      "title": "Район, обозначенный на схеме буквой «А» — это Урал (район Екатеринбурга), где располагались крупные горнозаводские и металлургические предприятия.",
+      "questionText": "Заполните пропуск в предложении: «Предприятия, сосредоточенные в районе, обозначенном на схеме буквой «А», были основаны в веке». Ответ запишите словом.",
+      "answers": [
+        "восемнадцатом",
+        "ВОСЕМНАДЦАТОМ",
+        "Восемнадцатом"
+      ],
+      "solutionText": "Район, обозначенный на схеме буквой «А» — это Урал (район Екатеринбурга), где располагались крупные горнозаводские и металлургические предприятия. Большинство этих предприятий было основано в период правления Петра I, то есть в XVIII веке.",
+      "imagePath": "images/13416/task_114196_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250331202912-2__6b7ol.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        114196
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-114205",
+      "title": "На схеме обозначены события Семилетней войны (1756-1763 гг.).",
+      "questionText": "Напишите название войны, события которой обозначены на схеме.",
+      "answers": [
+        "семилетняя",
+        "СЕМИЛЕТНЯЯ",
+        "Семилетняя"
+      ],
+      "solutionText": "На схеме обозначены события Семилетней войны (1756-1763 гг.). На это указываю военные действия в Европейской части континента.",
+      "imagePath": "images/13416/task_114205_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250331204405-4__6b7z5.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        114205
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-114216",
+      "title": "Территории, обозначенные на схеме буквой «Б», были присоединены к Российской империи в ходе разделов Речи Посполитой при Екатерине II.",
+      "questionText": "Назовите российского монарха, при котором к Российской империи были присоединены территории, обозначенные на схеме буквой «Б».",
+      "answers": [
+        "ЕкатеринаВторая",
+        "екатеринавторая",
+        "ЕКАТЕРИНАВТОРАЯ"
+      ],
+      "solutionText": "Территории, обозначенные на схеме буквой «Б», были присоединены к Российской империи в ходе разделов Речи Посполитой при Екатерине II.",
+      "imagePath": "images/13416/task_114216_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250331205735-5__6b88d.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        114216
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-114230",
+      "title": "Речь идёт о русско-турецкой войне 1768–1774 гг.",
+      "questionText": "Заполните пропуск в предложении: «Война, события которой отражены на схеме, завершилось в тысяча семьсот ____________________ году». Ответ запишите словом (словосочетанием).",
+      "answers": [
+        "семьдесятчетвертом",
+        "СЕМЬДЕСЯТЧЕТВЕРТОМ",
+        "Семьдесятчетвертом"
+      ],
+      "solutionText": "Речь идёт о русско-турецкой войне 1768–1774 гг. (на схеме показаны Кючук-Кайнарджийский мир, Чесменское сражение, присоединение Крыма и выход России к Чёрному морю).",
+      "imagePath": "images/13416/task_114230_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250331211056-6__6b8hw.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        114230
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-114256",
+      "title": "На схеме отображены действия походов Святослава Храброго, которые проходили в десятом веке.",
+      "questionText": "Укажите век, когда произошли события, обозначенные на схеме стрелками.",
+      "answers": [
+        "Десятый",
+        "десятый",
+        "ДЕСЯТЫЙ"
+      ],
+      "solutionText": "На схеме отображены действия походов Святослава Храброго, которые проходили в десятом веке.",
+      "imagePath": "images/13337/task_114256_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250826140612-4__7bit2.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        114256
+      ],
+      "sourceThemeIds": [
+        13337,
+        13416
+      ],
+      "sourceCategories": [
+        "ЕГЭ прошлых лет",
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13337?Page=1",
+        "https://3.shkolkovo.online/catalog/13416?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-116470",
+      "title": "На данной карте изображены походы Батыя и монголо-татарское нашествие на Русь.",
+      "questionText": "Укажите век, к которому относятся события, обозначенные на схеме стрелками. Ответ запишите словом.",
+      "answers": [
+        "тринадцатый",
+        "ТРИНАДЦАТЫЙ",
+        "Тринадцатый"
+      ],
+      "solutionText": "На данной карте изображены походы Батыя и монголо-татарское нашествие на Русь. Об этом свидетельствуют: направление стрелок с востока на запад — из района Волги через Рязань, Владимир, Коломну, Москву, затем к Киеву и далее в Галицко-Волынское княжество и Центральную Европу (Польшу, Венгрию); обозначенные места сражений совпадают с ключевыми эпизодами монгольского нашествия: битва на р. Калке (1223 г.); разорение Рязани (1237 г.); взятие Владимира (1238 г.); битва на р. Сить (1238 г.); взятие Киева (1240 г.); поход на Суздаль и Ростов; продвижение войск Батыя в Польшу и Венгрию (1241–1242 гг.). Эти события относятся к периоду завоевания Руси монголо-татарами, которое происходило в XIII веке.",
+      "imagePath": "images/13416/task_116470_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250409204608-1__6evl1.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        116470
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-116473",
+      "title": "Заполните пропуск в предложении: «Цифрой «7» на схеме обозначен город, основанный киевским князем в первой половине _____________ века». Ответ запишите словом.",
+      "questionText": "Заполните пропуск в предложении: «Цифрой «7» на схеме обозначен город, основанный киевским князем в первой половине _____________ века». Ответ запишите словом.",
+      "answers": [
+        "тринадцатого",
+        "ТРИНАДЦАТОГО",
+        "Тринадцатого"
+      ],
+      "solutionText": "",
+      "imagePath": "images/13416/task_116473_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250409205654-2__6evvc.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        116473
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-116482",
+      "title": "Хан Тохтамыш — правитель Золотой Орды, в 1382 году он совершил поход на Москву, чтобы восстановить ордынское господство, подорванное после победы Дмитрия Донского на Куликовом поле (1380 г.).",
+      "questionText": "Назовите хана – предводителя похода ордынских войск, обозначенного на схеме цифрой «5». Ответ запишите словом.",
+      "answers": [
+        "тохтамыш",
+        "ТОХТАМЫШ",
+        "Тохтамыш"
+      ],
+      "solutionText": "Хан Тохтамыш — правитель Золотой Орды, в 1382 году он совершил поход на Москву, чтобы восстановить ордынское господство, подорванное после победы Дмитрия Донского на Куликовом поле (1380 г.). Город был взят обманом и разорён.",
+      "imagePath": "images/13416/task_116482_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250409210447-3__6ew0r.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        116482
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-116486",
+      "title": "Цифрой «1» в легенде схемы обозначена территория Московского княжества на момент восшествия на московский престол князя Ивана Третьего, поскольку Нижний Новгород уже присоединён предшественниками, а Великий Новгород и Тв",
+      "questionText": "Заполните пропуск в предложении: «\nЦифрой «1» в легенде схемы обозначена территория Московского княжества на момент восшествия   на московский престол князя _________________\n». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Иванатретьего",
+        "ИВАНАТРЕТЬЕГО",
+        "иванатретьего"
+      ],
+      "solutionText": "Цифрой «1» в легенде схемы обозначена территория Московского княжества на момент восшествия на московский престол князя Ивана Третьего, поскольку Нижний Новгород уже присоединён предшественниками, а Великий Новгород и Тверь, присоединённые Иваном Третьим, ещё не входят в границы государства.",
+      "imagePath": "images/13416/task_116486_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/fa1f764b-8529-45a7-9a06-37208136bf7d__7a41k.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        116486
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-116491",
+      "title": "Город под цифрой «5» расположен на левом берегу реки Волги возле разветвления на приток - реку Каму, следовательно, под цифрой «5» - Казань.",
+      "questionText": "Укажите название города, обозначенного на схеме цифрой «5». Ответ запишите словом.",
+      "answers": [
+        "казань",
+        "КАЗАНЬ",
+        "Казань"
+      ],
+      "solutionText": "Город под цифрой «5» расположен на левом берегу реки Волги возле разветвления на приток - реку Каму, следовательно, под цифрой «5» - Казань.",
+      "imagePath": "images/13416/task_116491_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251210143538-1__8j19u.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        116491
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=1"
+      ],
+      "sourceName": "1"
+    },
+    {
+      "factId": "T9-116495",
+      "title": "Город на Днепре, обозначенный цифрой «7» - Смоленск.",
+      "questionText": "Укажите название города, обозначенного на схеме цифрой «7». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "смоленск",
+        "СМОЛЕНСК",
+        "Смоленск"
+      ],
+      "solutionText": "Город на Днепре, обозначенный цифрой «7» - Смоленск.",
+      "imagePath": "images/13416/task_116495_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250409214357-7__6ews2.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        116495
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-116501",
+      "title": "Город, расположенный на слиянии рек Волги и Оки - Нижний Новгород.",
+      "questionText": "Укажите название города, обозначенного на схеме цифрой «1». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "НижнийНовгород",
+        "нижнийновгород",
+        "НИЖНИЙНОВГОРОД"
+      ],
+      "solutionText": "Город, расположенный на слиянии рек Волги и Оки - Нижний Новгород.",
+      "imagePath": "images/13416/task_116501_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250409220649-9__6ex5m.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        116501
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-116506",
+      "title": "На карте цифрой \"1\" отмечен г.",
+      "questionText": "Заполните пропуск в предложении: «\nЦифрой «1» на схеме обозначен город, вошедший в состав Российского государства   в середине ____________________ века\n». Ответ запишите словом.",
+      "answers": [
+        "шестнадцатого",
+        "ШЕСТНАДЦАТОГО",
+        "Шестнадцатого"
+      ],
+      "solutionText": "На карте цифрой \"1\" отмечен г. Астрахань, который вошел в состав Российского государства при Иване Грозном, а именно в 1556 г.",
+      "imagePath": "images/13416/task_116506_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250409221854-10__6excl.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        116506
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-116515",
+      "title": "Данная территория вошла в состав России к концу XVII в.",
+      "questionText": "Заполните пропуск в предложении: «Ответ запишите словом. \nРимской цифрой «II» в легенде схемы обозначена территория, вошедшая в состав Российского государства к концу ________________ века».",
+      "answers": [
+        "семнадцатого",
+        "СЕМНАДЦАТОГО",
+        "Семнадцатого"
+      ],
+      "solutionText": "Данная территория вошла в состав России к концу XVII в. благодаря русским землепроходцам. Эти территории были присоединены вследствие экспедиций, которые возглавляли следующие землепроходцы XVII в.: В. Поярков, который открыл во второй половине XVII в. Приамурье и новые земли на берегах Охотского моря; В. Атласов, который в 1690-е гг. исследовал Камчатку и Курильские острова; Е. Хабаров, который в 1640-1650-е гг. совершил экспедицию в Приамурье, в Даурию, Маньчжурию, заложил крепость Албазин.",
+      "imagePath": "images/13416/task_116515_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250409222949-11__6exid.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        116515
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-116519",
+      "title": "В легенде схемы обозначены года - 1695 и 1696, которые относятся к периоду правления Петра I, в частности к Азовским походам.",
+      "questionText": "Назовите российского монарха, в годы правления которого произошли события, отражённые на схеме. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "ПетрПервый",
+        "петрпервый",
+        "ПЕТРПЕРВЫЙ",
+        "ПЁТРПЕРВЫЙ",
+        "пётрпервый",
+        "ПётрПервый"
+      ],
+      "solutionText": "В легенде схемы обозначены года - 1695 и 1696, которые относятся к периоду правления Петра I, в частности к Азовским походам.",
+      "imagePath": "images/13416/task_116519_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250409224149-12__6expz.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        116519
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-116590",
+      "title": "На этой карте изображены действия Антифранцузских коалиций.",
+      "questionText": "Назовите правителя государства - основного противника России и её союзников в событиях, отражённых на схеме. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "наполеон",
+        "Наполеон",
+        "НАПОЛЕОН",
+        "НАПОЛЕОНПЕРВЫЙ",
+        "НаполеонПервый",
+        "наполеонпервый",
+        "НАПОЛЕОНБОНАПАРТ",
+        "наполеонбонапарт",
+        "НаполеонБонапарт"
+      ],
+      "solutionText": "На этой карте изображены действия Антифранцузских коалиций. В легенде карты отмечено событие: место заключения мирного договора 1807 года.  Правитель государства-противника (Франции) - Наполеон Бонапарт или Наполеон Первый.",
+      "imagePath": "images/13395/task_116590_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250410123710-13__6f2fc.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        116590
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-116604",
+      "title": "Правильный ответ — \"Тильзит\", так как мирный договор, о котором идет речь, был подписан в 1807 году в Тильзите между Россией и Наполеоновской Францией.",
+      "questionText": "Заполните пропуск в предложении: «Государство, обозначенное на схеме цифрой «2», было создано по условиям мирного договора, подписанного в городе _________________». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "тильзит",
+        "ТИЛЬЗИТ",
+        "Тильзит"
+      ],
+      "solutionText": "Правильный ответ — \"Тильзит\", так как мирный договор, о котором идет речь, был подписан в 1807 году в Тильзите между Россией и Наполеоновской Францией.",
+      "imagePath": "images/13416/task_116604_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250410124617-14__6f2ih.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        116604
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-116611",
+      "title": "Город под цифрой \"1\" - это Лейпциг.",
+      "questionText": "Заполните пропуск в предложении: «\nСражение, произошедшее в районе города, обозначенного на схеме цифрой «1»\n, вошло в историю под образным названием «Битва». Ответ запишите словом.",
+      "answers": [
+        "народов",
+        "НАРОДОВ",
+        "Народов"
+      ],
+      "solutionText": "Город под цифрой \"1\" - это Лейпциг. Именно здесь с 16 по 19 октября 1813 г. произошла Битва под Лейпцигом, известная как Битва народов.",
+      "imagePath": "images/13416/task_116611_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250410125623-15__6f2n8.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        116611
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-116615",
+      "title": "Схема посвящена Восстанию декабристов.",
+      "questionText": "Назовите российского императора, в момент вступления на престол которого произошли события, отражённые на схеме. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "николайпервый",
+        "НИКОЛАЙПЕРВЫЙ",
+        "НиколайПервый"
+      ],
+      "solutionText": "Схема посвящена Восстанию декабристов. Это происходило в момент вступления на престол Николая Первого.",
+      "imagePath": "images/13416/task_116615_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250410130558-16__6f2qy.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        116615
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-116618",
+      "title": "Каспийское — название моря, обозначенного на схеме цифрой «2».",
+      "questionText": "Укажите название моря, обозначенного на схеме цифрой «2». Ответ запишите словом.",
+      "answers": [
+        "каспийское",
+        "КАСПИЙСКОЕ",
+        "Каспийское"
+      ],
+      "solutionText": "Каспийское — название моря, обозначенного на схеме цифрой «2».",
+      "imagePath": "images/13416/task_116618_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250410131425-17__6f2tu.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        116618
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-116660",
+      "title": "В районе Екатеринбурга в период, обозначенный на схеме, были сосредоточены крупные металлургические предприятия.",
+      "questionText": "Заполните пропуск в предложении: «В районе Екатеринбурга в период, обозначенный на схеме, были сосредоточены крупные ________________ предприятия». Ответ запишите словом.",
+      "answers": [
+        "металлургические",
+        "МЕТАЛЛУРГИЧЕСКИЕ",
+        "Металлургические"
+      ],
+      "solutionText": "В районе Екатеринбурга в период, обозначенный на схеме, были сосредоточены крупные металлургические предприятия. Это можно понять по обозначениям из легенды схемы.",
+      "imagePath": "images/13416/task_116660_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250410161501-18__6f59x.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        116660
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-116663",
+      "title": "На карте цифрой \"2\" обозначен город Синоп.",
+      "questionText": "Заполните пропуск в предложении: «Морское сражение около города, обозначенного на схеме цифрой «2», произошло в тысяча восемьсот ________________ году». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "пятьдесяттретьем",
+        "ПЯТЬДЕСЯТТРЕТЬЕМ",
+        "Пятьдесяттретьем"
+      ],
+      "solutionText": "На карте цифрой \"2\" обозначен город Синоп. Именно здесь в 1853 г. произошло Синопское сражение. Оно завершилось разгромом турецкой эскадры русским флотом под командованием П. Нахимова.",
+      "imagePath": "images/13416/task_116663_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250410162512-19__6f5eu.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        116663
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-116666",
+      "title": "Цифрой \"1\" на карте обозначен Стамбул - столица Турции.",
+      "questionText": "Напишите название города, обозначенного цифрой «1», в период событий, отражённых на схеме. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "стамбул",
+        "Стамбул",
+        "СТАМБУЛ"
+      ],
+      "solutionText": "Цифрой \"1\" на карте обозначен Стамбул - столица Турции.",
+      "imagePath": "images/13416/task_116666_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250410163309-20__6f5ke.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        116666
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-122280",
+      "title": "На схеме изображены события Крымской войны.",
+      "questionText": "Заполните пропуск в предложении: «\nВойна, события которой отражены на схеме, началась в тысяча восемьсот __________________ году\n». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "пятьдесяттретьем",
+        "ПЯТЬДЕСЯТТРЕТЬЕМ",
+        "Пятьдесяттретьем"
+      ],
+      "solutionText": "На схеме изображены события Крымской войны. Она началась в 1853 году.",
+      "imagePath": "images/13395/task_122280_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250506171746-1__6plpl.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        122280
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-123273",
+      "title": "Карта отражает боевые действия русской армии в Европе, а также сражение при Гросс-Егерсдорфе (1757 г.), что относится к событиям Семилетней войны.",
+      "questionText": "Укажите название войны, события которой отражены на данной схеме.",
+      "answers": [
+        "семилетняя",
+        "Семилетняя",
+        "СЕМИЛЕТНЯЯ"
+      ],
+      "solutionText": "Карта отражает боевые действия русской армии в Европе, а также сражение при Гросс-Егерсдорфе (1757 г.), что относится к событиям Семилетней войны.",
+      "imagePath": "images/13395/task_123273_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250512161200-1__6rxws.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        123273
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-124260",
+      "title": "Армия под общим командованием Михаила Илларионовича Кутузова двинулась от Москвы по рязанской дороге, развернувшись на юг, встала лагерем при Тарутино, перекрыв пути продвижения войск Наполеона к Туле.",
+      "questionText": "Укажите название населённого пункта, обозначенного на схеме цифрой «1», в котором находился укреплённый лагерь русских войск.",
+      "answers": [
+        "Тарутино",
+        "тарутино",
+        "ТАРУТИНО"
+      ],
+      "solutionText": "Армия под общим командованием Михаила Илларионовича Кутузова двинулась от Москвы по рязанской дороге, развернувшись на юг, встала лагерем при Тарутино, перекрыв пути продвижения войск Наполеона к Туле.",
+      "imagePath": "images/13395/task_124260_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250518110827-1__6tz7u.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        124260
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=2"
+      ],
+      "sourceName": "1"
+    },
+    {
+      "factId": "T9-136995",
+      "title": "Схема посвящена восстанию Степана Разина.",
+      "questionText": "Укажите правителя России в период, когда произошли события, обозначенные на схеме стрелками.",
+      "answers": [
+        "алексеймихайлович",
+        "АЛЕКСЕЙ МИХАЙЛОВИЧ",
+        "Алексеймихайлович",
+        "алексейроманов",
+        "АЛЕКСЕЙРОМАНОВ",
+        "Алексейроманов"
+      ],
+      "solutionText": "Схема посвящена восстанию Степана Разина. Восстание Степана Разина (1667–1671) произошло в период правления Алексея Михайловича Тишайшего, второго царя из династии Романовых.",
+      "imagePath": "images/13337/task_136995_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250823140410-1__7ax9l.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        136995
+      ],
+      "sourceThemeIds": [
+        13337
+      ],
+      "sourceCategories": [
+        "ЕГЭ прошлых лет"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13337?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-137412",
+      "title": "События, обозначенные на схеме стрелками, произошли в 1944 году.",
+      "questionText": "Заполните пропуск в предложении: «События, обозначенные на схеме стрелками, произошли в тысяча девятьсот _____________ году». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокчетвертом",
+        "сорокчетвёртом",
+        "СОРОКЧЕТВЕРТОМ",
+        "СОРОКЧЕТВЁРТОМ",
+        "Сорочетвертом",
+        "Сорокчетвёртом"
+      ],
+      "solutionText": "События, обозначенные на схеме стрелками, произошли в 1944 году. Военные действия уже вышли В Белорусскую ССР и стремятся в европейском направлении.",
+      "imagePath": "images/13337/task_137412_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250825144038-1__7bahz.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        137412
+      ],
+      "sourceThemeIds": [
+        13337
+      ],
+      "sourceCategories": [
+        "ЕГЭ прошлых лет"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13337?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-137677",
+      "title": "Карта посвящена Ливонской войне.",
+      "questionText": "Укажите правителя российского государства в период, когда произошла война, события которой отражены на схеме.",
+      "answers": [
+        "иванчетвертый",
+        "иванчетвёртый",
+        "ивангрозный",
+        "ИВАНЧЕТВЕРТЫЙ",
+        "ИВАНЧЕТВЁРТЫЙ",
+        "ИВАНГРОЗНЫЙ",
+        "Иванчетвертый",
+        "Иванчетвёртый",
+        "Ивангрозный"
+      ],
+      "solutionText": "Карта посвящена Ливонской войне. Правителем в это время был Иван Грозный.",
+      "imagePath": "images/13337/task_137677_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250826174721-7__7bksd.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        137677
+      ],
+      "sourceThemeIds": [
+        13337
+      ],
+      "sourceCategories": [
+        "ЕГЭ прошлых лет"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13337?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-138412",
+      "title": "Карта посвящена событиям Русско-турецкой войны 1768–1774 годов.",
+      "questionText": "Запоните пропуск в предложении (укажите десятилетие): «Война, события которой отражены на схеме, началась в тысяча семьсот ________________ годах». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "шестидесятых",
+        "Шестидесятых",
+        "ШЕСТИДЕСЯТЫХ"
+      ],
+      "solutionText": "Карта посвящена событиям Русско-турецкой войны 1768–1774 годов. Иногда называется «румянцевской войной», потому что главные победы в ней одержал русский военачальник Пётр Румянцев.",
+      "imagePath": "images/13376/task_138412_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250828213602-10__7c0hq.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        138412
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-138592",
+      "title": "На схеме показаны боевые действия Советско-польской войны - наступление Красной армии на Варшаву и последующее отступление в 1920 году.",
+      "questionText": "Заполните пропуск в предложении: «Военные действия, обозначенные на схеме, происходили в тысяча девятьсот _________________ году». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "двадцатом",
+        "ДВАДЦАТОМ",
+        "Двадцатом"
+      ],
+      "solutionText": "На схеме показаны боевые действия Советско-польской войны - наступление Красной армии на Варшаву и последующее отступление в 1920 году.",
+      "imagePath": "images/13376/task_138592_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250829184719-3__7c4sn.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        138592
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-139122",
+      "title": "Контрнаступление под Москвой началось в декабре 1941 г.",
+      "questionText": "Укажите название месяца, когда началось контрнаступление Красной армии от линии фронта, дважды обозначенной на схеме цифрой «3».",
+      "answers": [
+        "декабрь",
+        "Декабрь",
+        "ДЕКАБРЬ"
+      ],
+      "solutionText": "Контрнаступление под Москвой началось в декабре 1941 г.",
+      "imagePath": "images/13376/task_139122_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250831142512-6__7ceth.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        139122
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-141536",
+      "title": "Карта посвящена Отечественной войне 1812 года.",
+      "questionText": "Назовите российского государя, в правление которого происходили обозначенные на схеме события.",
+      "answers": [
+        "АЛЕКСАНДРПЕРВЫЙ",
+        "Александрпервый",
+        "александрпервый"
+      ],
+      "solutionText": "Карта посвящена Отечественной войне 1812 года. Это событие происходило в правление Александра Первого.",
+      "imagePath": "images/13376/task_141536_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250921105157-3__7iszm.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        141536
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=1"
+      ],
+      "sourceName": "№9"
+    },
+    {
+      "factId": "T9-141537",
+      "title": "Заштрихованная территория от Риги до Выборга, а также стрелки, проходящие через деревню Лесная, отсылают к событиям Северной войны, в период которой российским государем был Петр Первый.",
+      "questionText": "Назовите российского государя, к царствованию которого относятся обозначенные на схеме события.",
+      "answers": [
+        "ПЕТРПЕРВЫЙ",
+        "Петрпервый",
+        "петрпервый",
+        "ПЕТРВЕЛИКИЙ",
+        "Петрвеликий",
+        "петрвеликий",
+        "Пётрвеликий",
+        "ПЁТРВЕЛИКИЙ",
+        "пётрвеликий",
+        "пётрпервый",
+        "Пётрпервый",
+        "ПЁТРПЕРВЫЙ"
+      ],
+      "solutionText": "Заштрихованная территория от Риги до Выборга, а также стрелки, проходящие через деревню Лесная, отсылают к событиям Северной войны, в период которой российским государем был Петр Первый.",
+      "imagePath": "images/13376/task_141537_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250927232025-3__7m3c1.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        141537
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=1"
+      ],
+      "sourceName": "№9"
+    },
+    {
+      "factId": "T9-142747",
+      "title": "На схеме отображены события советско-японской войны 1945 года.",
+      "questionText": "Заполните пропуск в предложении: «Военные действия, обозначенные на схеме, происходили в тысяча девятьсот ______________ году».",
+      "answers": [
+        "СОРОКПЯТОМ",
+        "Сорокпятом",
+        "сорокпятом"
+      ],
+      "solutionText": "На схеме отображены события советско-японской войны 1945 года.",
+      "imagePath": "images/13376/task_142747_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251005115406-1__7phmh.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        142747
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=1"
+      ],
+      "sourceName": "№9"
+    },
+    {
+      "factId": "T9-142751",
+      "title": "Карта посвящена завершающему периоду Великой Отечественной войны - действия происходят в апреле 1945 года.",
+      "questionText": "Укажите месяц начала битвы, события которой обозначены на схеме.",
+      "answers": [
+        "АПРЕЛЬ",
+        "Апрель",
+        "апрель"
+      ],
+      "solutionText": "Карта посвящена завершающему периоду Великой Отечественной войны - действия происходят в апреле 1945 года.",
+      "imagePath": "images/13376/task_142751_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251012142931-1__7svyg.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        142751
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=1"
+      ],
+      "sourceName": "№9"
+    },
+    {
+      "factId": "T9-146485",
+      "title": "На схеме обозначены: - район восстания – юго-восток Русского государства; - города: Симбирск, Пенза, Саранск, Саратов, Казань, Белый Яр, Самара, Камышин, Царицын и др.; - направление движения восставших от Дона к Волге; ",
+      "questionText": "Укажите век, в котором происходили события, обозначенные на схеме стрелками. Ответ запишите словом.",
+      "answers": [
+        "СЕМНАДЦАТЫЙ",
+        "семнадцатый",
+        "Семнадцатый"
+      ],
+      "solutionText": "На схеме обозначены:\n\n- район восстания – юго-восток Русского государства;\n\n- города: Симбирск, Пенза, Саранск, Саратов, Казань, Белый Яр, Самара, Камышин, Царицын и др.;\n\n- направление движения восставших от Дона к Волге;\n\n- также указаны «черкасские города» и «Терский городок».\n\nЭто всё указывает на восстание Степана Разина. Таким образом, стрелки на карте обозначают походы и действия войск Степана Разина, происходившие в XVII веке.",
+      "imagePath": "images/13395/task_146485_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251013001953-1__7t93x.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        146485
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-147723",
+      "title": "Схема посвящена событиям Смутного времени.",
+      "questionText": "Напишите название периода отечественной истории, к которому относятся обозначенные на схеме события.",
+      "answers": [
+        "смута",
+        "Смута",
+        "СМУТА",
+        "Смутноевремя",
+        "СМУТНОЕВРЕМЯ",
+        "смутноевремя"
+      ],
+      "solutionText": "Схема посвящена событиям Смутного времени. На это указывают походы самозванцев с европейской стороны.",
+      "imagePath": "images/13376/task_147723_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260510213955-3__ajk3t.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        147723
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-147848",
+      "title": "На карте показаны походы русских войск против Казанского и Астраханского ханств, а также их присоединение к Российскому государству.",
+      "questionText": "Укажите век, в который произошли обозначенные на схеме походы. Ответ запишите словом.",
+      "answers": [
+        "шестнадцатый",
+        "Шестнадцатый",
+        "ШЕСТНАДЦАТЫЙ"
+      ],
+      "solutionText": "На карте показаны походы русских войск против Казанского и Астраханского ханств, а также их присоединение к Российскому государству. Эти события происходили в XVI веке (в 1552 году — взятие Казани, в 1556 году — присоединение Астраханского ханства).",
+      "imagePath": "images/13376/task_147848_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251019165635-1__7wdd6.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        147848
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-148920",
+      "title": "На карте показаны территории Русского государства уже после присоединения Пскова (1510), Смоленска (1514) и Рязани (1521) — именно эти завоевания завершили процесс объединения русских земель вокруг Москвы.",
+      "questionText": "Укажите московского государя, при котором сложились границы Русского государства, обозначенные на схеме.",
+      "answers": [
+        "Василийтретий",
+        "василийтретий",
+        "ВАСИЛИЙТРЕТИЙ"
+      ],
+      "solutionText": "На карте показаны территории Русского государства уже после присоединения Пскова (1510), Смоленска (1514) и Рязани (1521) — именно эти завоевания завершили процесс объединения русских земель вокруг Москвы. Эти события относятся к правлению великого князя Василия III (1505–1533), сына Ивана III. Следовательно, границы Русского государства, обозначенные на схеме, сложились при Василии III.",
+      "imagePath": "images/13376/task_148920_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251025224132-1__7z5qj.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        148920
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-149737",
+      "title": "На схеме отображены события Северной войны: это возможно установить по заштрихованым территориям от Риги до Выборга, стрелкам близ.",
+      "questionText": "Укажите название войны, события которой отражены на схеме. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "северная",
+        "Северная",
+        "СЕВЕРНАЯ"
+      ],
+      "solutionText": "На схеме отображены события Северной войны: это возможно установить по заштрихованым территориям от Риги до Выборга, стрелкам близ. Полтавы, р. Невы.",
+      "imagePath": "images/13376/task_149737_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251213200235-2__8k8ez.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        149737
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-150537",
+      "title": "На карте изображены действия русской армии и флота против Османской империи в период Русско-турецкой войны 1735-1739 годов, происходившей при императрице Анне Иоанновне.",
+      "questionText": "Укажите словом десятилетие XVIII века, к которому относятся военные события, обозначенные на схеме.",
+      "answers": [
+        "тридцатые",
+        "Тридцатые",
+        "ТРИДЦАТЫЕ"
+      ],
+      "solutionText": "На карте изображены действия русской армии и флота против Османской империи в период Русско-турецкой войны 1735-1739 годов, происходившей при императрице Анне Иоанновне. В это время русские войска вели боевые действия на Южном направлении — на Крымском полуострове, у Азова, Очакова и в Молдавии. Война завершилась Белградским мирным договором 1739 года, по которому Россия получила Азов.",
+      "imagePath": "images/13376/task_150537_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251108124509-1__85npk.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        150537
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-151865",
+      "title": "Сражение при Кагуле, а также отсутствие на карте Севастополя в период событий, отраженных на схеме, отсылают нас к русско-турецкой войне 1768-1774 гг.",
+      "questionText": "Укажите словом десятилетие XVIII века, когда началась война, события которой представлены на схеме. Ответ запишите словом.",
+      "answers": [
+        "шестидесятые",
+        "Шестидесятые",
+        "ШЕСТИДЕСЯТЫЕ"
+      ],
+      "solutionText": "Сражение при Кагуле, а также отсутствие на карте Севастополя в период событий, отраженных на схеме, отсылают нас к русско-турецкой войне 1768-1774 гг.",
+      "imagePath": "images/13376/task_151865_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251115210018-1__88ujj.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        151865
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-152633",
+      "title": "На схеме изображены военные действия Российской империи против Османской империи за освоение Причерноморья: отмечены Очаков, Кинбурн, Анапа, Тамань, Измаил, Азов — ключевые центры русско-турецких войн второй половины XVI",
+      "questionText": "Назовите монарха, в чье правление произошли события, обозначенные на схеме стрелками. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "екатеринавторая",
+        "Екатеринавторая",
+        "ЕКАТЕРИНАВТОРАЯ"
+      ],
+      "solutionText": "На схеме изображены военные действия Российской империи против Османской империи за освоение Причерноморья: отмечены Очаков, Кинбурн, Анапа, Тамань, Измаил, Азов — ключевые центры русско-турецких войн второй половины XVIII века. Именно при Екатерине II Россия вела успешные войны с Османской империей (1768-1774 и 1787-1791 гг.), получила выход к Чёрному морю, обеспечила присоединение Крыма и укрепление позиций на южных рубежах. Следовательно, события, обозначенные на схеме, относятся к правлению Екатерины II.",
+      "imagePath": "images/13395/task_152633_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image__89ja0.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        152633
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-153661",
+      "title": "На схеме отображены события Отечественной войны 1812-ого года - на это указывает, например, имя Барклая-де-Толли под стрелкой на карте, а также направление войск неприятеля (через Кенигсберг к Москве) и русских войск (со",
+      "questionText": "Заполните пропуск в предложении: «\nВоенные действия, обозначенные на схеме, происходили в тысяча восемьсот ___________________ году\n». Ответ запишите словом (словосочетанием).",
+      "answers": [
+        "двенадцатом",
+        "Двенадцатом",
+        "ДВЕНАДЦАТОМ"
+      ],
+      "solutionText": "На схеме отображены события Отечественной войны 1812-ого года - на это указывает, например, имя Барклая-де-Толли под стрелкой на карте, а также направление войск неприятеля (через Кенигсберг к Москве) и русских войск (соединение двух армий в Смоленске).",
+      "imagePath": "images/13376/task_153661_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251122132536-1__8brt5.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        153661
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-154913",
+      "title": "На карте обозначено Андрусово, где в 1667 году было заключено перемирие между Россией и Речью Посполитой, положившее конец военным действиям в русско-польской войне 1654-1667 годов.",
+      "questionText": "Укажите век, к которому относятся военные действия, обозначенные на схеме. Ответ запишите словом.",
+      "answers": [
+        "семнадцатый",
+        "Семнадцатый",
+        "СЕМНАДЦАТЫЙ"
+      ],
+      "solutionText": "На карте обозначено Андрусово, где в 1667 году было заключено перемирие между Россией и Речью Посполитой, положившее конец военным действиям в русско-польской войне 1654-1667 годов. Значит век событий — семнадцатый.",
+      "imagePath": "images/13376/task_154913_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260503183154-1__ag2mo.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        154913
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-155453",
+      "title": "Границы, показанные на схеме - это границы Российской империи после завершения присоединения Средней Азии (Среднеазиатские походы, завоевание Туркестана, Хивинского и Кокандского ханств, Бухарского эмирата).",
+      "questionText": "Назовите российского государя, в царствование которого сложились обозначенные в легенде схемы границы Российской империи.",
+      "answers": [
+        "Александртретий",
+        "александртретий",
+        "АЛЕКСАНДРТРЕТИЙ"
+      ],
+      "solutionText": "Границы, показанные на схеме - это границы Российской империи после завершения присоединения Средней Азии (Среднеазиатские походы, завоевание Туркестана, Хивинского и Кокандского ханств, Бухарского эмирата). Окончательное оформление границ произошло в 1880-е годы, при императоре Александре III.",
+      "imagePath": "images/13376/task_155453_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251130210351-1__8fguk.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        155453
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-156407",
+      "title": "Поход «1» на схеме направлен к району Добрыничей, где произошла битва при Добрыничах, которая состоялась 21 января 1605 года между войсками Лжедмитрия I и царя Бориса Годунова.",
+      "questionText": "Укажите российского государя, в правление которого начался поход, обозначенный в легенде схемы цифрой «1».",
+      "answers": [
+        "Борисгодунов",
+        "борисгодунов",
+        "БОРИСГОДУНОВ"
+      ],
+      "solutionText": "Поход «1» на схеме направлен к району Добрыничей, где произошла битва при Добрыничах, которая состоялась 21 января 1605 года между войсками Лжедмитрия I и царя Бориса Годунова.",
+      "imagePath": "images/13376/task_156407_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251207152722-1__8hw7b.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        156407
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-159201",
+      "title": "Восстание Степана Разина охватило огромные территории Приволжья, Дона, стрелочки на городах - Царицын, Саратов, Самара, Саранск.",
+      "questionText": "Укажите фамилию руководителя восстания, район которого обозначен на схеме. Ответ запишите словом.",
+      "answers": [
+        "разин",
+        "Разин",
+        "РАЗИН"
+      ],
+      "solutionText": "Восстание Степана Разина охватило огромные территории Приволжья, Дона, стрелочки на городах - Царицын, Саратов, Самара, Саранск.",
+      "imagePath": "images/13376/task_159201_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251221155741-1__8n4k7.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        159201
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-161195",
+      "title": "Заштрихованная территория «1» соответствует Поволжью и Нижнему Поволжью, присоединённым в результате завоевания Казанского ханства (1552 г.) и Астраханского ханства (1556 г.) в правление Ивана IV.",
+      "questionText": "Назовите российского государя, при котором были присоединены территории, обозначенные на схеме цифрой «1».",
+      "answers": [
+        "ивангрозный",
+        "иванчетвёртый",
+        "ИВАНГРОЗНЫЙ",
+        "ИВАНЧЕТВЁРТЫЙ"
+      ],
+      "solutionText": "Заштрихованная территория «1» соответствует Поволжью и Нижнему Поволжью, присоединённым в результате завоевания Казанского ханства (1552 г.) и Астраханского ханства (1556 г.) в правление Ивана IV.",
+      "imagePath": "images/13376/task_161195_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260112081008-1__8ukb4.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        161195
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-162314",
+      "title": "На карте изображено формирование централизованного государства в XVI в.",
+      "questionText": "Назовите российского государя, к концу правления которого сложились обозначенные на схеме границы.",
+      "answers": [
+        "Василийтретий",
+        "ВАСИЛИЙТРЕТИЙ",
+        "василийтретий"
+      ],
+      "solutionText": "На карте изображено формирование централизованного государства в XVI в. при Василии Третьем  - присоединены территории Рязани, Смоленска, Пскова.",
+      "imagePath": "images/13376/task_162314_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260117223149-1__8x6hu.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        162314
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-164082",
+      "title": "Русско-турецкая война 1735-1739 гг.",
+      "questionText": "Укажите императора (императрицу), занимавшего(-ую) российский престол в период войны, события которой отражены на схеме.",
+      "answers": [
+        "Аннаиоанновна",
+        "аннаиоанновна",
+        "АННАИОАННОВНА"
+      ],
+      "solutionText": "Русско-турецкая война 1735-1739 гг. происходила в период правления императрицы Анны Иоанновны, занимавшей российский престол с 1730 по 1740 год.",
+      "imagePath": "images/13376/task_164082_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260123232501-1__90am6.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        164082
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=1"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-166182",
+      "title": "Русско-турецкая война 1768-1774 годов проходила в период правления императрицы Екатерины II.",
+      "questionText": "Укажите императора (императрицу), занимавшего(-ую) российский престол в период войны, события которой отражены на схеме.",
+      "answers": [
+        "Екатеринавторая",
+        "екатеринавторая",
+        "ЕКАТЕРИНАВТОРАЯ",
+        "Екатеринавеликая",
+        "екатеринавеликая",
+        "ЕКАТЕРИНАВЕЛИКАЯ"
+      ],
+      "solutionText": "Русско-турецкая война 1768-1774 годов проходила в период правления императрицы Екатерины II. Именно при ней Россия вела активные боевые действия против Османской империи, завершившиеся Кючук-Кайнарджийским миром.",
+      "imagePath": "images/13376/task_166182_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260130175611-1__93nlg.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        166182
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-166347",
+      "title": "На схеме показаны боевые действия Гражданской войны в России с указанием линии фронта в начале марта, к концу апреля и к концу июля.",
+      "questionText": "Заполните пропуск в предложении: «\nОбозначенные на схеме события произошли в тысяча девятьсот __________________ году\n». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "девятнадцатом",
+        "ДЕВЯТНАДЦАТОМ",
+        "Девятнадцатом"
+      ],
+      "solutionText": "На схеме показаны боевые действия Гражданской войны в России с указанием линии фронта в начале марта, к концу апреля и к концу июля. Отражены наступления войск адмирала Колчака на Восточном фронте и действия белых армий на Юге России, что характерно именно для кампании 1919 года.",
+      "imagePath": "images/13395/task_166347_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260131012202-1__93utp.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        166347
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-168735",
+      "title": "На схеме показаны походы московских войск против Новгорода, Твери и Орды, а также расширение границ Московского государства во второй половине XV века.",
+      "questionText": "Укажите московского государя, в правление которого были совершены обозначенные на схеме стрелками походы.",
+      "answers": [
+        "Ивантретий",
+        "ивантретий",
+        "ИВАНТРЕТИЙ",
+        "Иванвеликий",
+        "иванвеликий",
+        "ИВАНВЕЛИКИЙ"
+      ],
+      "solutionText": "На схеме показаны походы московских войск против Новгорода, Твери и Орды, а также расширение границ Московского государства во второй половине XV века. Именно в этот период произошли: присоединение Новгорода (1478), подчинение Твери (1485), стояние на реке Угре (1480) - конец ордынского ига. Все эти события относятся к правлению Ивана III.",
+      "imagePath": "images/13376/task_168735_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260214140754-1__9arn0.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        168735
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-169107",
+      "title": "На схеме изображены события Гражданской войны в России.",
+      "questionText": "Заполните пропуск в предложении: «\nЛиния фронта, обозначенная на схеме цифрой «2», образовалась летом тысяча девятьсот _________________ года\n». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "девятнадцатого",
+        "Девятнадцатого",
+        "ДЕВЯТНАДЦАТОГО"
+      ],
+      "solutionText": "На схеме изображены события Гражданской войны в России. Показано наступление белых войск с юга на Москву через Харьков, Курск и Орёл. Этот этап войны относится к лету 1919 года и известен как «поход Деникина на Москву». Следовательно, линия фронта, обозначенная на схеме цифрой «2», образовалась летом 1919 года.",
+      "imagePath": "images/13395/task_169107_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260216195313-2__9bx16.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        169107
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-169827",
+      "title": "На схеме показаны военные действия 1577 года в районе Ливонии (Дерпт, Феллин, Рига, Полоцк), то есть события Ливонской войны.",
+      "questionText": "Назовите российского государя, к царствованию которого относятся обозначенные на схеме военные события.",
+      "answers": [
+        "Иванчетвёртый",
+        "Иванчетвертый",
+        "Ивангрозный",
+        "иванчетвёртый",
+        "иванчетвертый",
+        "ивангрозный",
+        "ИВАНЧЕТВЁРТЫЙ",
+        "ИВАНЧЕТВЕРТЫЙ",
+        "ИВАНГРОЗНЫЙ"
+      ],
+      "solutionText": "На схеме показаны военные действия 1577 года в районе Ливонии (Дерпт, Феллин, Рига, Полоцк), то есть события Ливонской войны. Ливонская война велась в 1558-1583 годах и приходится на царствование Ивана IV. Следовательно, российский государь - Иван IV Грозный.",
+      "imagePath": "images/13376/task_169827_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260221173008-1__9ebhw.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        169827
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-169856",
+      "title": "На схеме показаны действия захватчиков и русских дружин на территории Владимиро-Суздальского княжества, Рязанского и Муромского земель, а также места крупнейших сражений.",
+      "questionText": "Укажите век, к которому относятся отображённые на схеме стрелками боевые действия. Ответ запишите словом.",
+      "answers": [
+        "тринадцатый",
+        "Тринадцатый",
+        "ТРИНАДЦАТЫЙ"
+      ],
+      "solutionText": "На схеме показаны действия захватчиков и русских дружин на территории Владимиро-Суздальского княжества, Рязанского и Муромского земель, а также места крупнейших сражений. Это соответствует нашествию монголо-татар (походу Батыя) на Русь в 1237-1240 гг. Следовательно, данные события относятся к XIII веку.",
+      "imagePath": "images/13376/task_169856_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260221205802-1__9ef6p.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        169856
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-169895",
+      "title": "На схеме показаны походы русских князей на Византию (Константинополь), в Причерноморье, к Азовскому и Каспийскому морям, а также действия противника.",
+      "questionText": "Укажите век, к которому относятся отображённые на схеме стрелками боевые действия. Ответ запишите словом.",
+      "answers": [
+        "десятый",
+        "Десятый",
+        "ДЕСЯТЫЙ"
+      ],
+      "solutionText": "На схеме показаны походы русских князей на Византию (Константинополь), в Причерноморье, к Азовскому и Каспийскому морям, а также действия противника. Такие походы совершались киевскими князьями (Олег, Игорь, Святослав) в период существования Древнерусского государства. Эти события относятся к X веку.",
+      "imagePath": "images/13376/task_169895_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260221230258-4__9ehoe.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        169895
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-174394",
+      "title": "Карта посвящена событиям Северной войны – это можно понять по обозначению сражения у Лесной и продвижению войск противника с территории Речи Посполитой.",
+      "questionText": "Укажите название войны, события которой обозначены на схеме.",
+      "answers": [
+        "Северная",
+        "северная",
+        "СЕВЕРНАЯ"
+      ],
+      "solutionText": "Карта посвящена событиям Северной войны – это можно понять по обозначению сражения у Лесной и продвижению войск противника с территории Речи Посполитой.",
+      "imagePath": "images/13376/task_174394_0.jpg",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/Screenshot_20260322_195523_Drive__9tge2.jpg",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        174394
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-175721",
+      "title": "Данная карта посвящена события русско-турецкой войны 1768-1774 гг.: основные боевые действия идут в Крыму и на Балканах.",
+      "questionText": "Назовите российского императора (императрицу) в период войны, события которой обозначены на схеме.",
+      "answers": [
+        "екатеринавторая",
+        "Екатеринавторая",
+        "ЕКАТЕРИНАВТОРАЯ",
+        "екатеринавеликая",
+        "Екатеринавеликая",
+        "ЕКАТЕРИНАВЕЛИКАЯ"
+      ],
+      "solutionText": "Данная карта посвящена события русско-турецкой войны 1768-1774 гг.: основные боевые действия идут в Крыму и на Балканах.",
+      "imagePath": "images/13376/task_175721_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260329230245-1__9x2l2.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        175721
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-176189",
+      "title": "Карта посвящена походам Святослава Игоревича в X в.",
+      "questionText": "Укажите название города, обозначенного на схеме цифрой «1», в период, к которому относятся отражённые на схеме события.",
+      "answers": [
+        "Константинополь",
+        "константинополь",
+        "КОНСТАНТИНОПОЛЬ",
+        "Царьград",
+        "царьград",
+        "ЦАРЬГРАД"
+      ],
+      "solutionText": "Карта посвящена походам Святослава Игоревича в X в. Цифрой 1 обозначен Константинополь или Царьград.",
+      "imagePath": "images/13376/task_176189_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260401234737-1__9ytir.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        176189
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-176552",
+      "title": "Цифрой \"2\" на схеме обозначена Польша (столица — Варшава, положение между Германией и СССР).",
+      "questionText": "Напишите название государства, обозначенного на схеме цифрой \"2\".",
+      "answers": [
+        "Польша",
+        "польша",
+        "ПОЛЬША",
+        "ПНР",
+        "пнр",
+        "Пнр"
+      ],
+      "solutionText": "Цифрой \"2\" на схеме  обозначена Польша (столица — Варшава, положение  между Германией и СССР).",
+      "imagePath": "images/13416/task_176552_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260404125411-1__a03qn.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        176552
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-176573",
+      "title": "На карте отображено наступление войск А.",
+      "questionText": "Укажите название войны, события которой обозначены на схеме.",
+      "answers": [
+        "Гражданская",
+        "гражданская",
+        "ГРАЖДАНСКАЯ",
+        "Гражданскаявойна",
+        "гражданскаявойна",
+        "ГРАЖДАНСКАЯВОЙНА"
+      ],
+      "solutionText": "На карте отображено наступление войск А. Деникина на Москву в 1919 году.",
+      "imagePath": "images/13376/task_176573_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260404140025-1__a051w.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        176573
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-177375",
+      "title": "Речь идёт о нападении японского флота на Порт-Артур (обозначен цифрой «1»).",
+      "questionText": "Заполните пропуск в предложении: «\nКорабли противника напали на город, обозначенный на схеме цифрой «1», в январе тысяча девятьсот _______________ года\n». Ответ запишите словом.",
+      "answers": [
+        "четвертого",
+        "Четвертого",
+        "ЧЕТВЕРТОГО",
+        "четвёртого",
+        "Четвёртого",
+        "ЧЕТВЁРТОГО"
+      ],
+      "solutionText": "Речь идёт о нападении японского флота на Порт-Артур (обозначен цифрой «1»). Это событие произошло в январе 1904 года.",
+      "imagePath": "images/13416/task_177375_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260410172231-1__a3m93.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        177375
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-177381",
+      "title": "На схеме показаны события Первой мировой войны на Восточном фронте и Балканах.",
+      "questionText": "Укажите название государства, обозначенного на схеме цифрой «3».",
+      "answers": [
+        "сербия",
+        "Сербия",
+        "СЕРБИЯ"
+      ],
+      "solutionText": "На схеме показаны события Первой мировой войны на Восточном фронте и Балканах. Цифра «3» стоит в районе Балкан - к югу от Австро-Венгрии, рядом с Адриатическим морем. Это территория Сербии.",
+      "imagePath": "images/13416/task_177381_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260410181151-2__a3n76.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        177381
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-177387",
+      "title": "На схеме показано наступление русских войск летом 1916 г.",
+      "questionText": "Укажите фамилию военачальника (командующего фронтом), под руководством которого русские войска предприняли наступление, обозначенное на схеме.",
+      "answers": [
+        "брусилов",
+        "Брусилов",
+        "БРУСИЛОВ"
+      ],
+      "solutionText": "На схеме показано наступление русских войск летом 1916 г. - Брусиловский прорыв (Юго-Западный фронт). Командующим этим фронтом был генерал Алексей Алексеевич Брусилов.",
+      "imagePath": "images/13416/task_177387_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260410182624-3__a3nkj.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        177387
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-177392",
+      "title": "На схеме показаны фронты Гражданской войны в России: Южный и Восточный фронты (районы Царицына, Уфы, Самары и др.).",
+      "questionText": "Заполните пропуск в предложении: «\nЛинии фронта, обозначенные на схеме, образовались в тысяча девятьсот ____________  году\n». Ответ запишите словом.",
+      "answers": [
+        "девятнадцатом",
+        "Девятнадцатом",
+        "ДЕВЯТНАДЦАТОМ"
+      ],
+      "solutionText": "На схеме показаны фронты Гражданской войны в России: Южный и Восточный фронты (районы Царицына, Уфы, Самары и др.). Эти линии фронта окончательно оформились в ходе развертывания масштабных боевых действий между Красной армией и Белыми в 1919 году (наступления Колчака на Востоке и Деникина на Юге).",
+      "imagePath": "images/13416/task_177392_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260410183951-4__a3nwh.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        177392
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-177397",
+      "title": "Западные границы СССР окончательно сформировались в результате территориальных изменений 1939-1940 гг., при этом окончательное оформление произошло в 1940 г.",
+      "questionText": "Заполните пропуск в предложении: «\nЗападные границы СССР, обозначенные на схеме, оформились в тысяча ___________ девятьсот году\n». Ответ запишите словом.",
+      "answers": [
+        "сороковом",
+        "Сороковом",
+        "СОРОКОВОМ"
+      ],
+      "solutionText": "Западные границы СССР окончательно сформировались в результате территориальных изменений 1939-1940 гг., при этом окончательное оформление произошло в 1940 г. после присоединения Прибалтики и Бессарабии.",
+      "imagePath": "images/13416/task_177397_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260410190902-6__a3oi6.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        177397
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-177405",
+      "title": "Город под цифрой «3» - Брест, в котором находилась крепость, защитники которой проявили массовый героизм в первые дни войны.",
+      "questionText": "Укажите название крепости, находившейся в городе, обозначенном на схеме цифрой «3», защитники которой прославились своим героизмом в ходе данных событий",
+      "answers": [
+        "брестская",
+        "БРЕСТСКАЯ",
+        "Брестская"
+      ],
+      "solutionText": "Город под цифрой «3» - Брест, в котором находилась крепость, защитники которой проявили массовый героизм в первые дни войны.",
+      "imagePath": "images/13416/task_177405_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260410192405-7__a3ovj.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        177405
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-177522",
+      "title": "На схеме обозначены германская и российская империи, ведущие боевые действия на восточном фронте, что позволяет нам идентифицировать схему как отражающую события первой мировой войны.",
+      "questionText": "Заполните пропуск в предложении: «\nСобытия, обозначенные на схеме, произошли в период ___________________ войны\n». Ответ запишите словом (словосочетанием).",
+      "answers": [
+        "Первоймировой",
+        "первоймировой",
+        "ПЕРВОЙМИРОВОЙ"
+      ],
+      "solutionText": "На схеме обозначены германская и российская империи, ведущие боевые действия на восточном фронте, что позволяет нам идентифицировать схему как отражающую события первой мировой войны.",
+      "imagePath": "images/13376/task_177522_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260411131049-7__a40ie.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        177522
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-178479",
+      "title": "На карте стрелками показан поход князя из Новгорода на юг вдоль пути \"из варяг в греки\" через Смоленск и Любеч до Киева; это поход князя Олега 882 года, завершившийся объединением этих городов и обрпзованием Древнеруског",
+      "questionText": "Назовите князя, завоевательный поход которого обозначен на схеме стрелками.",
+      "answers": [
+        "Олег",
+        "олег",
+        "ОЛЕГ",
+        "Олегвещий",
+        "олегвещий",
+        "ОЛЕГВЕЩИЙ"
+      ],
+      "solutionText": "На карте стрелками показан поход князя из Новгорода на юг вдоль пути \"из варяг в греки\" через Смоленск и Любеч до Киева; это поход князя Олега 882 года, завершившийся объединением этих городов и обрпзованием Древнеруского государства.",
+      "imagePath": "images/13376/task_178479_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260418181001-1__a7z4t.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        178479
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-179203",
+      "title": "Цифрой «2» на схеме обозначен город Курск.",
+      "questionText": "Укажите название месяца, когда началось настyпление войск вермахта в направлении города, обозначенного на схеме цифрой \"2\".",
+      "answers": [
+        "июль",
+        "Июль",
+        "ИЮЛЬ"
+      ],
+      "solutionText": "Цифрой «2» на схеме обозначен город Курск. На схеме изображены события Курской битвы (1943 г.) - наступление немецких войск (операция «Цитадель») началось 5 июля 1943 года.",
+      "imagePath": "images/13416/task_179203_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260422215027-1__aadhc.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        179203
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-179208",
+      "title": "Цифрой «5» в легенде схемы обозначена линия фронта, сложившаяся после завершения зимнего наступления советских войск, то есть к концу марта 1943 года, что соответствует итогам Сталинградской битвы и последующих операций ",
+      "questionText": "Заполните пропуск в предложении: «\nЛиния фронта, обозначенная в легенде схемы цифрой «5», оформилась к концу тысяча девятьсот _____________ года\n». Ответ запишите словом (словосочетанием).",
+      "answers": [
+        "сороктретьего",
+        "Сороктретьего",
+        "СОРОКТРЕТЬЕГО"
+      ],
+      "solutionText": "Цифрой «5» в легенде схемы обозначена линия фронта, сложившаяся после завершения зимнего наступления советских войск, то есть к концу марта 1943 года, что соответствует итогам Сталинградской битвы и последующих операций зимы 1942–1943 годов.",
+      "imagePath": "images/13416/task_179208_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260422220414-2__aadwc.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        179208
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-179213",
+      "title": "На схеме обозначены линия фронта на 1 января и на 31 декабря, а также действия Красной армии и войск противника.",
+      "questionText": "Заполните пропуск в предложении: «\nСобытия, обозначенные на схеме, произошли в тысяча девятьсот ________________ году\n». Ответ запишите словом (словосочетанием).",
+      "answers": [
+        "сорокчетвертом",
+        "Сорокчетвертом",
+        "СОРОКЧЕТВЕРТОМ",
+        "сорокчетвёртом",
+        "Сорокчетвёртом",
+        "СОРОКЕТВЁРТОМ"
+      ],
+      "solutionText": "На схеме обозначены линия фронта на 1 января и на 31 декабря, а также действия Красной армии и войск противника. На карте видно масштабное наступление советских войск на широком фронте - от Прибалтики до Румынии и Венгрии, освобождение Белоруссии, Украины, выход к границам Польши и странам Восточной Европы. Это соответствует событиям 1944 года - году десяти сталинских ударов.",
+      "imagePath": "images/13416/task_179213_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260422221811-3__aae8w.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        179213
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-179220",
+      "title": "На схеме обозначены линия фронта к концу декабря, рубеж выхода советских войск и войск союзников к концу войны, действия Красной армии, союзников и Народно-освободительной армии Югославии.",
+      "questionText": "Заполните пропуск в предложении: «\nСобытия, обозначенные на схеме, произошли в тысяча девятьсот _________________ году\n». Ответ запишите словом (словосочетанием)",
+      "answers": [
+        "сорокпятом",
+        "Сорокпятом",
+        "СОРОКПЯТОМ"
+      ],
+      "solutionText": "На схеме обозначены линия фронта к концу декабря, рубеж выхода советских войск и войск союзников к концу войны, действия Красной армии, союзников и Народно-освободительной армии Югославии. На карте видно, что советские войска находятся уже на территории Германии, взят Берлин, войска вышли на рубеж встречи с союзниками. Это соответствует завершающему году Великой Отечественной войны -1945 году.",
+      "imagePath": "images/13416/task_179220_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260422223548-4__aaeph.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        179220
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-179234",
+      "title": "На схеме обозначены действия советских войск против Японии — наступление с территории СССР, Монголии, воздушные и морские десанты на Корейском полуострове и Сахалине.",
+      "questionText": "Заполните пропуск в предложении: «\nСобытия, обозначенные на схеме, произошли в тысяча девятьсот ___________________ году\n». Ответ запишите словом (словосочетанием).",
+      "answers": [
+        "сорокпятом",
+        "Сорокпятом",
+        "СОРОКПЯТОМ"
+      ],
+      "solutionText": "На схеме обозначены действия советских войск против Японии — наступление с территории СССР, Монголии, воздушные и морские десанты на Корейском полуострове и Сахалине. Это соответствует советско-японской войне, которая проходила в августе–сентябре 1945 года.",
+      "imagePath": "images/13416/task_179234_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260422224833-5__aaezc.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        179234
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=3"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-179240",
+      "title": "На схеме обозначены границы СССР, включающие Калининград, Прибалтийские республики (Эстонская, Латвийская, Литовская ССР), Молдавскую ССР и западные территории Украины и Белоруссии — все эти территории вошли в состав ССС",
+      "questionText": "Заполните пропуск в предложении (укажите десятилетие): «\nГраницы СССР, обозначенные на схеме, оформились в тысяча девятьсот _______________ годах\n». Ответ запишите словом.",
+      "answers": [
+        "сороковых",
+        "СОРОКОВЫХ",
+        "Сороковых"
+      ],
+      "solutionText": "На схеме обозначены границы СССР, включающие Калининград, Прибалтийские республики (Эстонская, Латвийская, Литовская ССР), Молдавскую ССР и западные территории Украины и Белоруссии — все эти территории вошли в состав СССР в результате событий 1939-1940 годов и были окончательно закреплены после Второй мировой войны. Границы СССР в обозначенном на схеме виде оформились в 1940-х годах.",
+      "imagePath": "images/13416/task_179240_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260422225936-6__aaf7u.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        179240
+      ],
+      "sourceThemeIds": [
+        13416
+      ],
+      "sourceCategories": [
+        "Артасов, \"Отличный результат\""
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13416?Page=3"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-179650",
+      "title": "На схеме обозначены даты - 1577 год.",
+      "questionText": "Назовите российского государя, правившего во время событий, обозначенных на схеме.",
+      "answers": [
+        "ивангрозный",
+        "Ивангрозный",
+        "ИВАНГРОЗНЫЙ",
+        "ИВАНЧЕТВЕРТЫЙ",
+        "Иванчетвертый",
+        "иванчетвертый",
+        "ИВАНЧЕТВЁРТЫЙ",
+        "Иванчетвёртый",
+        "иванчетвёртый"
+      ],
+      "solutionText": "На схеме обозначены даты - 1577 год. Это период правления Ивана Грозного. Иван Грозный царь с 1547 по 1584 год.",
+      "imagePath": "images/13376/task_179650_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260426213344-1__acjbj.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        179650
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=2"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-183236",
+      "title": "Укажите век, к которому относятся походы, обозначенные на схеме стрелками. Ответ запишите словом.",
+      "questionText": "Укажите век, к которому относятся походы, обозначенные на схеме стрелками. Ответ запишите словом.",
+      "answers": [
+        "десятый",
+        "Десятый",
+        "ДЕСЯТЫЙ"
+      ],
+      "solutionText": "",
+      "imagePath": "images/13395/task_183236_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260521191801-1__aoc4o.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        183236
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=3"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-183260",
+      "title": "Заполните пропуск в предложении: «События, обозначенные на схеме, произошли в тысяча девятьсот ________________ году». Ответ запишите словом (сочетанием слов).",
+      "questionText": "Заполните пропуск в предложении:  «События, обозначенные на схеме, произошли в тысяча девятьсот ________________ году». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "пятнадцатом",
+        "Пятнадцатом",
+        "ПЯТНАДЦАТОМ"
+      ],
+      "solutionText": "",
+      "imagePath": "images/13395/task_183260_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260521192603-2__aoc8j.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        183260
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=3"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-183277",
+      "title": "Напишите название городаа, обозначенной на схеме цифрой «1». Ответ запишите словом (сочетанием слов).",
+      "questionText": "Напишите название городаа, обозначенной на схеме цифрой «1». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Смоленск",
+        "смоленск",
+        "СМОЛЕНСК"
+      ],
+      "solutionText": "",
+      "imagePath": "images/13395/task_183277_0.png",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260521193621-3__aocef.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        183277
+      ],
+      "sourceThemeIds": [
+        13395
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13395?Page=3"
+      ],
+      "sourceName": "9"
+    },
+    {
+      "factId": "T9-197579",
+      "title": "Карта посвящена Восточно-Прусской операции, она началась 13 января 1945 г.",
+      "questionText": "Заполните пропуск в предложении: «События, обозначенные на схеме стрелками, начались в тысяча девятьсот _____________ году».",
+      "answers": [
+        "сорокпятом",
+        "СОРОКПЯТОМ",
+        "Сорокпятом"
+      ],
+      "solutionText": "Карта посвящена Восточно-Прусской операции, она началась 13 января 1945 г. Она проводилась войсками 2-го и 3-го Белорусских фронтов против немецкой группировки в Восточной Пруссии.",
+      "imagePath": "images/13337/task_197579_0.jpg",
+      "imageStatus": "github-ready-manual-fix",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/photo_2026-08-29_13-54-42__bglw4.jpg",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        197579
+      ],
+      "sourceThemeIds": [
+        13337
+      ],
+      "sourceCategories": [
+        "ЕГЭ прошлых лет"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13337?Page=1"
+      ],
+      "sourceName": "ДЕМО"
+    },
+    {
+      "factId": "T9-202373",
+      "title": "Граница Российского государства, обозначенная на схеме, сложилась в начале 16 века.",
+      "questionText": "Заполните пропуск в предложении: «\nГраница Российского государства, обозначенная на схеме, сложилась в начале _____ века\n». Ответ запишите словом (словосочетанием).",
+      "answers": [
+        "ШЕСТНАДЦАТОГО",
+        "Шестнадцатого",
+        "шестнадцатого"
+      ],
+      "solutionText": "Граница Российского государства, обозначенная на схеме, сложилась в начале 16 века. Поскольку в составе государства уже есть Смоленск (обозначен цифрой \"4\", присоединён в 1514), Псков (обозначен цифрой \"3\", присоединён в 1510).",
+      "imagePath": "images/13376/task_202373_0.jpg",
+      "imageStatus": "github-ready",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/8dNqLKOFNnSnUioM-fiEZ15sADnlPFnnFuHbhiHLRHxlghO9x8y7Md6If2Pn_-OUCIgH2KCF8TV1867pVBMX3Jk7__bu673.jpg",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        202373
+      ],
+      "sourceThemeIds": [
+        13376
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13376?Page=2"
+      ],
+      "sourceName": "9"
+    }
+  ]
+}
