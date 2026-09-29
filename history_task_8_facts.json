@@ -1,0 +1,3020 @@
+{
+  "meta": {
+    "schema": "history-task8-vov-image-short-v1",
+    "courseTopicVersion": "course38-v1",
+    "sourceQuestions": 101,
+    "uniqueQuestions": 100,
+    "sourceDuplicateIds": 1,
+    "questionsWithRecoveredImagePath": 60,
+    "questionsWithoutImageLinkInSource": 40,
+    "courseTopicId": 30,
+    "note": "Задание №8: работа с изображением по Великой Отечественной войне. Исходные карточки не смешиваются и не изменяются; генератор выбирает целые вопросы. Для записей без ссылки на изображение задан ожидаемый GitHub-путь images/<theme>/task_<id>_0.png."
+  },
+  "facts": [
+    {
+      "factId": "T8-52773",
+      "title": "Зоя Космодемьянская погибла в 1941 году",
+      "questionText": "Заполните пропуск в предложении: « Девушка, портрет которой представлен на конверте, погибла в тысяча девятьсот ___________ году». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокпервом"
+      ],
+      "solutionText": "Зоя Космодемьянская погибла в 1941 году. Зою Космодемьянскую пытали после захвата в плен и казнили через повешение. Перед смертью Космодемьянская произнесла легендарную речь, призывая жителей села бороться с нацистами и не бояться смерти в этой борьбе. Зоя Космодемьянская стала одним из символов героизма советского народа во Второй мировой войне.",
+      "imagePath": "images/13394/task_52773_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20230223175852-1__1dg3f.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        52773
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=1"
+      ],
+      "sourceName": "22 вар"
+    },
+    {
+      "factId": "T8-54221",
+      "title": "Данная марка посвящена Постдамской конференции, которая была собрана в 1945 году.",
+      "questionText": "Заполните пропуск в предложении: «Событие, которому посвящена данная медаль, завершилось в тысяча девятьсот ____________ году». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокпятом"
+      ],
+      "solutionText": "Данная марка посвящена Постдамской конференции, которая была собрана в 1945 году.",
+      "imagePath": "images/13394/task_54221_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20230309161434-1__1fr6d.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        54221
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=1"
+      ],
+      "sourceName": "дз 46 ав"
+    },
+    {
+      "factId": "T8-58690",
+      "title": "Данная монета посвящена 50-летию Курской битве, которая произошла в летом 1943 года",
+      "questionText": "Заполните пропуск в предложении: «Данная монета выпущена в тысяча девятьсот ____________ году». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "девяностотретьем"
+      ],
+      "solutionText": "Данная монета посвящена 50-летию Курской битве, которая произошла в летом 1943 года. Значит монета была выпущена в 1993 году.",
+      "imagePath": "images/13394/task_58690_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20230420192611-1__1nkcu.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        58690
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=1"
+      ],
+      "sourceName": "вариант 26 ав"
+    },
+    {
+      "factId": "T8-61300",
+      "title": "Ленд-лиз — государственный акт Соединённых Штатов Америки (США), позволивший в 1941—1945 годы поставлять их союзникам во Второй мировой войне боевые п",
+      "questionText": "Укажите название государственной программы США, в рамках которой совершались конвои, в память о которых выпущена данная монета. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "ленд-лиз",
+        "лендлиз"
+      ],
+      "solutionText": "Ленд-лиз — государственный акт Соединённых Штатов Америки (США), позволивший в 1941—1945 годы поставлять их союзникам во Второй мировой войне боевые припасы, технику.",
+      "imagePath": "images/13394/task_61300_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20230519154007-1__1tc3m.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        61300
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=1"
+      ],
+      "sourceName": "вариант 28 ав"
+    },
+    {
+      "factId": "T8-70467",
+      "title": "На марке можно увидеть две даты: 2005 г",
+      "questionText": ". Укажите название месяца, в котором произошло изображённое на марке событие. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "июнь"
+      ],
+      "solutionText": "На марке можно увидеть две даты: 2005 г. и 60 лет. Можно сделать вывод, что на марке изображено событие, после которого в 2005 г. прошло 60 лет. Следовательно, событие на марке произошло в 1945 г. Также можно обратить внимание, что на марке изображен парад со знаменами. В июне 1945 году прошел победный парад войск Красной армии.",
+      "imagePath": "images/13394/task_70467_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20231112184643-2__2j8zr.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        70467
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=1"
+      ],
+      "sourceName": "1.8 "
+    },
+    {
+      "factId": "T8-70977",
+      "title": "На данной марке изображены члены подпольной организации \"Молодая гвардия\" - О",
+      "questionText": "Укажите название подпольной организации, членам которой посвящена данная марка. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Молодаягвардия"
+      ],
+      "solutionText": "На данной марке изображены члены подпольной организации \"Молодая гвардия\" - О. Кошевой, С. Тюленин, Л. Шевцова, И. Земнухов, У. Громова.",
+      "imagePath": "images/13394/task_70977_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        70977
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=2"
+      ],
+      "sourceName": "1.8"
+    },
+    {
+      "factId": "T8-72472",
+      "title": "Марка посвящена освобождению Белоруси от немецко-фашистских захватчиков",
+      "questionText": ". Заполните пропуск в предложении: «Военная операция, в память о которой выпущена марка, была проведена в тысяча девятьсот _____________ году» . Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокчетвертом"
+      ],
+      "solutionText": "Марка посвящена освобождению Белоруси от немецко-фашистских захватчиков. Название этой советской операции \"Багратион\", она проводиласть летом 1944 года.",
+      "imagePath": "images/13394/task_72472_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20231112170115-1__2j7fi.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        72472
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=1"
+      ],
+      "sourceName": "1.8"
+    },
+    {
+      "factId": "T8-72487",
+      "title": "Курская битва состоялась в 1943 г., монета издана в честь 50-летия Курской битвы",
+      "questionText": ". Заполните пропуск в предложении: «Данная монета выпущена в тысяча девятьсот _______ году». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "девяностотретьем"
+      ],
+      "solutionText": "Курская битва состоялась в 1943 г., монета издана в честь 50-летия Курской битвы. Значит, она выпущена в тысяча девятьсот девяносто третьем году.",
+      "imagePath": "images/13394/task_72487_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20231112172841-2__2j7sj.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        72487
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=1"
+      ],
+      "sourceName": "1.8"
+    },
+    {
+      "factId": "T8-72494",
+      "title": "На марке указан город Белград, который являлся столицей Югославии.",
+      "questionText": ". Укажите название европейского государства, за освобождение столицы которого вручалась медаль, изображённая на марке.",
+      "answers": [
+        "Югославия"
+      ],
+      "solutionText": "На марке указан город Белград, который являлся столицей Югославии.",
+      "imagePath": "images/13394/task_72494_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20231112174233-3__2j7yu.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        72494
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=1"
+      ],
+      "sourceName": "1.8"
+    },
+    {
+      "factId": "T8-72521",
+      "title": "На карикатуре русский солдат закидывает в Гитлера кольца с названиями битв",
+      "questionText": ". Заполните пропуск в предложении: «Данная карикатура была создана не раньше тысяча девятьсот _______________ года» . Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокчетвертого"
+      ],
+      "solutionText": "На карикатуре русский солдат закидывает в Гитлера кольца с названиями битв. Последняя из них - Корсунь-Шевченовская наступательная операция, которая была проведена в 1944 году.",
+      "imagePath": "images/13394/task_72521_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20231112182109-7__2j8md.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        72521
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=1"
+      ],
+      "sourceName": "1.8"
+    },
+    {
+      "factId": "T8-72571",
+      "title": "Встрече на Эльбе, которой посвящена медаль, произошла в апреле 1945 г., когда недалеко от города Торгау войска 1 Украинского фронта армии СССР и войск",
+      "questionText": ". Заполните пропуск в предложении: «Событие, изображённое на данной медали, произошло в тысяча девятьсот ___________ году» . Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "СОРОКПЯТОМ"
+      ],
+      "solutionText": "Встрече на Эльбе, которой посвящена медаль, произошла в апреле 1945 г., когда недалеко от города Торгау войска 1 Украинского фронта армии СССР и войска армии США встретились. Так как по заданию нужно заполнить пропуск, \"в тысяча девятьсот\" уже есть, добавляем «сорок пятом».",
+      "imagePath": "images/13394/task_72571_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20231112192011-17__2j9el.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        72571
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=1"
+      ],
+      "sourceName": "1.8"
+    },
+    {
+      "factId": "T8-72601",
+      "title": "Город, к освобождению которого призывает данный плакат – Минск",
+      "questionText": ". Заполните пропуск в предложении: «Город, к освобождению которого призывает данный плакат, был освобождён советскими войсками в тысяча девятьсот _____________ году». Ответ запишите словом.",
+      "answers": [
+        "СОРОКЧЕТВЕРТОМ"
+      ],
+      "solutionText": "Город, к освобождению которого призывает данный плакат – Минск. Город Минск был освобожден советскими войсками в 1944 г. Так как по заданию нужно заполнить пропуск, в «тысяча девятьсот» уже есть, добавляем словами «Сорокчетвертом»",
+      "imagePath": "images/13394/task_72601_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20231112201845-3__2ja2p.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        72601
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=1"
+      ],
+      "sourceName": "1.8"
+    },
+    {
+      "factId": "T8-72620",
+      "title": "Виктор Васильевич Талалихин – советский военный летчик, который одним из первых совершил ночной таран.",
+      "questionText": ". Заполните пропуск в предложении: «На конверте изображён исторический деятель, который в ночном воздушном бою над Москвой одним из первых совершил __________________». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "таран"
+      ],
+      "solutionText": "Виктор Васильевич Талалихин – советский военный летчик, который одним из первых совершил ночной таран.",
+      "imagePath": "images/13394/task_72620_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20231112210431-5__2jao6.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        72620
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=1"
+      ],
+      "sourceName": "1.8"
+    },
+    {
+      "factId": "T8-72636",
+      "title": "Прага была освобождена в ходе Пражской наступательной операции, длившейся с 6 по 11 мая 1945 г.",
+      "questionText": ". Укажите месяц, когда была завершена военная операция, участники которой награждались данной медалью. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "май"
+      ],
+      "solutionText": "Прага была освобождена в ходе Пражской наступательной операции, длившейся с 6 по 11 мая 1945 г.",
+      "imagePath": "images/13394/task_72636_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20231112212840-6__2jayv.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        72636
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=1"
+      ],
+      "sourceName": "1.8"
+    },
+    {
+      "factId": "T8-77423",
+      "title": "Марка посвящена битве за Днепр",
+      "questionText": "Заполните пропуск в предложении: «Данная монета посвящена событию, произошедшему в тысяча девятьсот ___________________ году». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сороктретьем"
+      ],
+      "solutionText": "Марка посвящена битве за Днепр. Битва за Днепр — ряд взаимосвязанных стратегических операций Великой Отечественной войны, проведённых РККА, во второй половине 1943 года на берегах Днепра.",
+      "imagePath": "images/13394/task_77423_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        77423
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=2"
+      ],
+      "sourceName": "1.8"
+    },
+    {
+      "factId": "T8-77436",
+      "title": "Марка посвящена битве за Днепр",
+      "questionText": "Заполните пропуск в предложении: \"Данный плакат посвящен событиям тысяча девятьсот __________ года.\" ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сороктретьего"
+      ],
+      "solutionText": "Марка посвящена битве за Днепр. Битва за Днепр — ряд взаимосвязанных стратегических операций Великой Отечественной войны, проведённых РККА, во второй половине 1943 года на берегах Днепра.",
+      "imagePath": "images/13394/task_77436_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        77436
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=2"
+      ],
+      "sourceName": "1.8"
+    },
+    {
+      "factId": "T8-77454",
+      "title": "Марка посвящена Ясско-Кишинёвской операции",
+      "questionText": "Заполните пропуск в предложении: «Данная монета посвящена событиям тысяча девятьсот ___________________ года». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Сорокчетвертого"
+      ],
+      "solutionText": "Марка посвящена Ясско-Кишинёвской операции. Это стратегическая военная операция Вооружённых сил СССР против нацистской Германии и Румынии во время Великой Отечественной войны с целью разгрома крупной немецко-румынской группировки, прикрывавшей балканское направление, освобождения Молдавии и вывода Румынии из войны.",
+      "imagePath": "images/13394/task_77454_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        77454
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=2"
+      ],
+      "sourceName": "1.8"
+    },
+    {
+      "factId": "T8-77504",
+      "title": "Марка посвящена Курской битве",
+      "questionText": "Заполните пропуск в предложении: «Данная монета посвящена событию, произошедшему в тысяча девятьсот ___________________ году». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Сороктретьем"
+      ],
+      "solutionText": "Марка посвящена Курской битве. Это событие произошло летом 1943 года.",
+      "imagePath": "images/13394/task_77504_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        77504
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=2"
+      ],
+      "sourceName": "1.8"
+    },
+    {
+      "factId": "T8-78059",
+      "title": "\"Молодая гвардия\" - антифашистская подпольная комсомольская организация периода Великой Отечественной войны, которая была основана в городе Краснодон.",
+      "questionText": "Заполните пропуск в предложении: «Антифашистская подпольная комсомольская организация периода Великой Отечественной войны, памяти участников которой посвящён плакат, была создана в городе ____________». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Краснодон"
+      ],
+      "solutionText": "\"Молодая гвардия\" - антифашистская подпольная комсомольская организация периода Великой Отечественной войны, которая была основана в городе Краснодон.",
+      "imagePath": "images/13394/task_78059_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        78059
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=2"
+      ],
+      "sourceName": "1.8"
+    },
+    {
+      "factId": "T8-81110",
+      "title": "Марка посвящена освобождению Белоруссии от немецко-фашистских захватчиков",
+      "questionText": "Заполните пропуск в предложении: «Военная операция, в память о которой выпущена марка, была проведена в тысяча девятьсот ________ году.» Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокчетвёртом"
+      ],
+      "solutionText": "Марка посвящена освобождению Белоруссии от немецко-фашистских захватчиков. Эта операция советских войск называлась \"Багратион\" и была осуществлена летом 1944 года.",
+      "imagePath": "images/13394/task_81110_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        81110
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=2"
+      ],
+      "sourceName": "1.8"
+    },
+    {
+      "factId": "T8-82600",
+      "title": "На марке изображён Виктор Талалихин",
+      "questionText": "Заполните пропуск в предложении: «На конверте изображён исторический деятель, который в ночном воздушном бою над Москвой одним из первых совершил __________________». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "таран"
+      ],
+      "solutionText": "На марке изображён Виктор Талалихин. Главным подвигом Виктора Талалихина, совершив который в 1941 г. он вошёл в историю, был первый ночной таран.",
+      "imagePath": "images/13394/task_82600_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        82600
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=2"
+      ],
+      "sourceName": "1.8"
+    },
+    {
+      "factId": "T8-85046",
+      "title": "Марка посвящена битве за Днепр",
+      "questionText": "Заполните пропуск в предложении: «Данный плакат посвящён событиям тысяча девятьсот ___________________ года» . Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сороктретьего"
+      ],
+      "solutionText": "Марка посвящена битве за Днепр. Битва за Днепр — ряд взаимосвязанных стратегических операций Великой Отечественной войны, проведённых РККА, во второй половине 1943 года на берегах Днепра.",
+      "imagePath": "images/13394/task_85046_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        85046
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=2"
+      ],
+      "sourceName": "1.8"
+    },
+    {
+      "factId": "T8-89752",
+      "title": "В мае 1945 г",
+      "questionText": "Укажите название города, в котором произошло изображённое на данной монете событие. Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Берлин"
+      ],
+      "solutionText": "В мае 1945 г. М. А. Егоров и М. В. Кантария повесили \"Знамя Победы\" на крыше рейхстага в Берлине во время штурма здания.",
+      "imagePath": "images/13336/task_89752_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        89752
+      ],
+      "sourceThemeIds": [
+        13336
+      ],
+      "sourceCategories": [
+        "ЕГЭ прошлых лет"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13336?Page=1"
+      ],
+      "sourceName": "1.8"
+    },
+    {
+      "factId": "T8-99452",
+      "title": "На карикатуре обозначена схема Курской дуги, также снизу подписано название - Орловско-Курская дуга, значит действие происходит во время Курской битвы",
+      "questionText": "Заполните пропуск в предложении: « Данная карикатура создана в память о событиях тысяча девятьсот ___________________ года ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сороктретьего"
+      ],
+      "solutionText": "На карикатуре обозначена схема Курской дуги, также снизу подписано название - Орловско-Курская дуга, значит действие происходит во время Курской битвы. Курская битва была летом 1943 года.",
+      "imagePath": "images/13336/task_99452_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20241103132057-3__5120d.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        99452
+      ],
+      "sourceThemeIds": [
+        13336,
+        13394
+      ],
+      "sourceCategories": [
+        "ЕГЭ прошлых лет",
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13336?Page=1",
+        "https://3.shkolkovo.online/catalog/13394?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101971",
+      "title": "Марка посвящена разгрому фашистских войск под Курском",
+      "questionText": "Заполните пропуск в предложении: « Событие, юбилею которого посвящена марка, произошло в тысяча девятьсот ________________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сороктретьем"
+      ],
+      "solutionText": "Марка посвящена разгрому фашистских войск под Курском. Это событие произошло в 1943 году.",
+      "imagePath": "images/13394/task_101971_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101971
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101972",
+      "title": "Медаль посвящена подвигу Панфиловцев",
+      "questionText": "Заполните пропуск в предложении: « Событие, годовщине которого посвящена данная памятная медаль, произошло в тысяча девятьсот ________________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокпервом"
+      ],
+      "solutionText": "Медаль посвящена подвигу Панфиловцев. Они совершили его в 1941 году.",
+      "imagePath": "images/13394/task_101972_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101972
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101973",
+      "title": "Освобождение Орла произошло в рамках советской наступательной операции, во время Курской битвы в 1943 году.",
+      "questionText": "Заполните пропуск в предложении: « Событие, юбилею которого посвящена данная памятная медаль, произошло в тысяча девятьсот ________________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сороктретьем"
+      ],
+      "solutionText": "Освобождение Орла произошло в рамках советской наступательной операции, во время Курской битвы в 1943 году.",
+      "imagePath": "images/13394/task_101973_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101973
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101974",
+      "title": "Георгий Семёнович Шпагин — советский конструктор стрелкового оружия, создатель пистолета-пулемёта ППШ",
+      "questionText": "Укажите фамилию конструктора оружия, изображенного на данном жетоне.",
+      "answers": [
+        "Шпагин"
+      ],
+      "solutionText": "Георгий Семёнович Шпагин — советский конструктор стрелкового оружия, создатель пистолета-пулемёта ППШ",
+      "imagePath": "images/13394/task_101974_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101974
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101975",
+      "title": "Конструктором самолётов ТУ-42 был Туполев.",
+      "questionText": "Укажите фамилию конструктора самолета, изображенного на данной монете.",
+      "answers": [
+        "Туполев"
+      ],
+      "solutionText": "Конструктором самолётов ТУ-42 был Туполев.",
+      "imagePath": "images/13394/task_101975_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101975
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101976",
+      "title": "Марка посвящена освобождению Варшавы, которое проходило с 14 по 17 января 1945 г.",
+      "questionText": "Заполните пропуск в предложении: « Данной медалью награждались участники событий, произошедших в тысяча девятьсот ________________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокпятом"
+      ],
+      "solutionText": "Марка посвящена освобождению Варшавы, которое проходило с 14 по 17 января 1945 г.",
+      "imagePath": "images/13394/task_101976_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101976
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101977",
+      "title": "Марка посвящена событиям Сталинградской битвы, которая длилась с 17 июля 1942 по 2 февраля 1943 г",
+      "questionText": "Заполните пропуск в предложении: « Битва, к которой непосредственно относится размещенное на марке изображение, окончилась в тысяча девятьсот ________________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сороктретьем"
+      ],
+      "solutionText": "Марка посвящена событиям Сталинградской битвы, которая длилась с 17 июля 1942 по 2 февраля 1943 г. В задании спрашивается про дату окончания битвы, а это 1943 г.",
+      "imagePath": "images/13394/task_101977_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101977
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101978",
+      "title": "Марка посвящена первому параду Победы, который прошёл 24 июня 1945 г.",
+      "questionText": "Укажите название месяца, в котором произошло изображенное на марке событие.",
+      "answers": [
+        "июнь"
+      ],
+      "solutionText": "Марка посвящена первому параду Победы, который прошёл 24 июня 1945 г.",
+      "imagePath": "images/13394/task_101978_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101978
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101979",
+      "title": "Марка посвящена освобождению Чехословакии, которое проходило с 6 по 11 мая 1945 г.",
+      "questionText": "Заполните пропуск в предложении: « Событие, годовщине которого посвящена марка, произошло в тысяча девятьсот ________________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокпятом"
+      ],
+      "solutionText": "Марка посвящена освобождению Чехословакии, которое проходило с 6 по 11 мая 1945 г.",
+      "imagePath": "images/13394/task_101979_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101979
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101980",
+      "title": "Марка посвящена освобождению Румынии, которое произошло в 1944 г.",
+      "questionText": "Заполните пропуск в предложении: « Событие, юбилею которого посвящена марка, произошло в тысяча девятьсот ________________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокчетвертом"
+      ],
+      "solutionText": "Марка посвящена освобождению Румынии, которое произошло в 1944 г.",
+      "imagePath": "images/13394/task_101980_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101980
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101981",
+      "title": "На марке изображён танк Т-34, конструктором которого был М",
+      "questionText": "Укажите фамилию конструктора, под руководством которого был разработан изображенный на марке танк.",
+      "answers": [
+        "Кошкин"
+      ],
+      "solutionText": "На марке изображён танк Т-34, конструктором которого был М. И. Кошкин.",
+      "imagePath": "images/13394/task_101981_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101981
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101982",
+      "title": "Георгий Семёнович Шпагин — советский конструктор стрелкового оружия, создатель пистолета-пулемёта ППШ.",
+      "questionText": "Укажите фамилию изобретателя стрелкового оружия ППШ, изображенного на марке.",
+      "answers": [
+        "Шпагин"
+      ],
+      "solutionText": "Георгий Семёнович Шпагин — советский конструктор стрелкового оружия, создатель пистолета-пулемёта ППШ.",
+      "imagePath": "images/13394/task_101982_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101982
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=3"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101983",
+      "title": "Марка посвящена Курской битве, которая длилась с 5 июля по 23 августа 1943 г.",
+      "questionText": "Заполните пропуск в предложении: « Битва, которая изображена на данной марке произошла в тысяча девятьсот ________________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сороктретьем"
+      ],
+      "solutionText": "Марка посвящена Курской битве, которая длилась с 5 июля по 23 августа 1943 г.",
+      "imagePath": "images/13394/task_101983_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101983
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=3"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101984",
+      "title": "Оборона Сталинграда началась в 1942 году.",
+      "questionText": "Заполните пропуск в предложении: « Оборона, за участие в которой вручалась данная награда, началась в тысяча девятьсот ________________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сороквтором"
+      ],
+      "solutionText": "Оборона Сталинграда началась в 1942 году.",
+      "imagePath": "images/13394/task_101984_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101984
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=3"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101985",
+      "title": "На марке указана дата Сталинградской битвы.",
+      "questionText": "Укажите название битвы, которой посвящена данная памятная медаль.",
+      "answers": [
+        "Сталинградская"
+      ],
+      "solutionText": "На марке указана дата Сталинградской битвы.",
+      "imagePath": "images/13394/task_101985_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101985
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=3"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101986",
+      "title": "Курская битва началась в июле 1943 года.",
+      "questionText": "Укажите название месяца, когда началась битва, юбилею которой посвящена марка.",
+      "answers": [
+        "июль"
+      ],
+      "solutionText": "Курская битва началась в июле 1943 года.",
+      "imagePath": "images/13394/task_101986_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101986
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=3"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101987",
+      "title": "Марка посвящена Ясско-Кишеневской операции, которая длилась с 20 по 29 августа 1944 г.",
+      "questionText": "Заполните пропуск в предложении: « Событие, которому посвящен данный значок произошло в тысяча девятьсот ________________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокчетвертом"
+      ],
+      "solutionText": "Марка посвящена Ясско-Кишеневской операции, которая длилась с 20 по 29 августа 1944 г.",
+      "imagePath": "images/13394/task_101987_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101987
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=3"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101988",
+      "title": "На марке изображён М",
+      "questionText": "Укажите вид вооружения, создателем которого был изображенный на конверте конструктор.",
+      "answers": [
+        "танк"
+      ],
+      "solutionText": "На марке изображён М. И. Кошкин, который является создателем танка Т-34.",
+      "imagePath": "images/13394/task_101988_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101988
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=3"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101989",
+      "title": "В.А",
+      "questionText": "Укажите вид вооружения, создателем которого был изображенный на конверте конструктор.",
+      "answers": [
+        "стрелковоеоружие"
+      ],
+      "solutionText": "В.А. Дегтярёв является создателем стрелкового вооружения.",
+      "imagePath": "images/13394/task_101989_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101989
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=3"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101990",
+      "title": "Фашистские войска были разгромлены под Ленинградом 27 января 1944 года.",
+      "questionText": "Заполните пропуск в предложении: « Событие, юбилею которого посвящена данная марка, произошло в тысяча девятьсот ________________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокчетвертом"
+      ],
+      "solutionText": "Фашистские войска были разгромлены под Ленинградом 27 января 1944 года.",
+      "imagePath": "images/13394/task_101990_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101990
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=3"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101991",
+      "title": "Марка посвящена освобождению Праги, которое происходило с 6 по 11 мая 1945 г.",
+      "questionText": "Укажите месяц, когда произошло событие, которому посвящена данная марка.",
+      "answers": [
+        "май"
+      ],
+      "solutionText": "Марка посвящена освобождению Праги, которое происходило с 6 по 11 мая 1945 г.",
+      "imagePath": "images/13394/task_101991_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101991
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=3"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101992",
+      "title": "Н",
+      "questionText": "Укажите военную профессию исторического деятеля, в память о котором выпущен данный значок.",
+      "answers": [
+        "летчик"
+      ],
+      "solutionText": "Н. Ф. Гастелло- летчик, совершивший 26 июня 1941 г. \"огненный таран\", за что был посмертно удостоен звания Героя Советского Союза.",
+      "imagePath": "images/13394/task_101992_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101992
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=3"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101993",
+      "title": "На конверте указано: *\"40-летие освобождения гг",
+      "questionText": "Укажите месяц, когда произошло событие, юбилею которого посвящен данный почтовый конверт.",
+      "answers": [
+        "август"
+      ],
+      "solutionText": "На конверте указано: *\"40-летие освобождения гг. Орла, Белгорода от фашистских захватчиков в Великой Отечественной войне. Орёл и Белгород были освобождены 5 августа 1943 года. Таким образом, юбилейному событию, которому посвящён конверт, соответствует август — месяц освобождения обоих городов.",
+      "imagePath": "images/13394/task_101993_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101993
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=3"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101994",
+      "title": "Оборона Дома Павлова - важное событие Сталинградской битвы, которое происходило в период с сентября по ноябрь 1942 г.",
+      "questionText": "Укажите название битвы, в память, об одном из событий которой создан мемориальный памятник, названный на почтовом конверте.",
+      "answers": [
+        "Сталинградская"
+      ],
+      "solutionText": "Оборона Дома Павлова - важное событие Сталинградской битвы, которое происходило в период с сентября по ноябрь 1942 г.",
+      "imagePath": "images/13394/task_101994_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101994
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=3"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101995",
+      "title": "На марке изображен А",
+      "questionText": "Укажите военную специальность исторического деятеля, изображенного на данной марке.",
+      "answers": [
+        "летчик"
+      ],
+      "solutionText": "На марке изображен А. И. Покрышкин - известный лётчик-ас.",
+      "imagePath": "images/13394/task_101995_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101995
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=3"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101996",
+      "title": "Марка посвящена Курской битве, которая длилась с 5 июля по 23 августа 1943 г",
+      "questionText": "Укажите название месяца, когда завершилась битва, юбилею которой посвящена марка.",
+      "answers": [
+        "август"
+      ],
+      "solutionText": "Марка посвящена Курской битве, которая длилась с 5 июля по 23 августа 1943 г. В вопросе спрашивается месяц окончания битвы, а это август.",
+      "imagePath": "images/13394/task_101996_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101996
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=3"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101997",
+      "title": "Боевые машины \"Катюша\" впервые нанесли удар в 1941 году.",
+      "questionText": "Заполните пропуск в предложении: « Изображенные на памятной монете боевые машины впервые нанесли удар по врагу в тысяча девятьсот ________________ году ». Ответ запишите словом (сочетанием слов)",
+      "answers": [
+        "сорокпервом"
+      ],
+      "solutionText": "Боевые машины \"Катюша\" впервые нанесли удар в 1941 году.",
+      "imagePath": "images/13394/task_101997_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101997
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=3"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101998",
+      "title": "Оборона Одессы началась в 1941 г",
+      "questionText": "Заполните пропуск в предложении: « Оборона города, названного на медали, началась в тысяча девятьсот ________________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокпервом"
+      ],
+      "solutionText": "Оборона Одессы началась в 1941 г. Оборона Одессы длилась с августа по октябрь 1941 г.",
+      "imagePath": "images/13394/task_101998_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101998
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=3"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-101999",
+      "title": "Оборона города Сталинград, отмеченного на медали, началась в 1942 г",
+      "questionText": "Заполните пропуск в предложении: « Оборона города, названного на медали, началась в тысяча девятьсот ________________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сороквтором"
+      ],
+      "solutionText": "Оборона города Сталинград, отмеченного на медали, началась в 1942 г. Данная оборона проходила в ходе Сталинградской битвы (17 июля 1942 - 2 февраля 1943 г.)",
+      "imagePath": "images/13394/task_101999_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        101999
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=3"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-102000",
+      "title": "Медаль посвящена взятию Кёнигсберга",
+      "questionText": "Заполните пропуск в предложении: « Событие, участники которого награждались данной медалью, произошло в тысяча девятьсот ________________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокпятом"
+      ],
+      "solutionText": "Медаль посвящена взятию Кёнигсберга. Взятие Кёнигсберга произошло 9 апреля 1945 года.",
+      "imagePath": "images/13394/task_102000_0.png",
+      "imageStatus": "missing-source-link",
+      "originalImageUrl": "",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        102000
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=3"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-129289",
+      "title": "Данная карикатура посвящена событиям Курской битвы, которая происходила в период с 5 июля по 23 августа 1943 г.",
+      "questionText": "Заполните пропуск в предложении: « События, изображенные на карикатуре, относятся к тысяча девятьсот ________________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Сороктретьем"
+      ],
+      "solutionText": "Данная карикатура посвящена событиям Курской битвы, которая происходила в период с 5 июля по 23 августа 1943 г.",
+      "imagePath": "images/13336/task_129289_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20250708232146-1__71g8i.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        129289
+      ],
+      "sourceThemeIds": [
+        13336
+      ],
+      "sourceCategories": [
+        "ЕГЭ прошлых лет"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13336?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-136994",
+      "title": "Номер газеты посвящён взятию Варшавы советскими войсками",
+      "questionText": "Заполните пропуск в предложении: «Этот номер газеты вышел в тысяча девятьсот ____________________ году». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокпятом"
+      ],
+      "solutionText": "Номер газеты посвящён взятию Варшавы советскими войсками. 17 января 1945 года — дата освобождения Варшавы Красной армией.",
+      "imagePath": "images/13336/task_136994_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20250823122000-1__7awlk.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        136994
+      ],
+      "sourceThemeIds": [
+        13336
+      ],
+      "sourceCategories": [
+        "ЕГЭ прошлых лет"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13336?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-137411",
+      "title": "Плакат посвящён победе в Великой Отечественной войне",
+      "questionText": "Заполните пропуск в предложении: «Событие, юбилею которого посвящён плакат, произошло в тысяча девятьсот _____________________ году». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "СОРОКПЯТОМ"
+      ],
+      "solutionText": "Плакат посвящён победе в Великой Отечественной войне. Это событие произошло в мае 1945 года.",
+      "imagePath": "images/13336/task_137411_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20250825143728-1__7bahm.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        137411
+      ],
+      "sourceThemeIds": [
+        13336
+      ],
+      "sourceCategories": [
+        "ЕГЭ прошлых лет"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13336?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-137669",
+      "title": "Монета посвящена Ясско-Кишинёвской операции",
+      "questionText": "Заполните пропуск в предложении: « Событие, которому посвящена монета, произошло в тысяча девятьсот __________________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокчетвертом"
+      ],
+      "solutionText": "Монета посвящена Ясско-Кишинёвской операции. Ясско-Кишинёвская операция проводилась 20–29 августа 1944 года.",
+      "imagePath": "images/13336/task_137669_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20250826174245-3__7bkr9.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        137669
+      ],
+      "sourceThemeIds": [
+        13336
+      ],
+      "sourceCategories": [
+        "ЕГЭ прошлых лет"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13336?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-138408",
+      "title": "Монета посвящена Курской битве, она началась в июле 1943 года.",
+      "questionText": "Укажите название месяца, когда началась битва, юбилею победы в которой посвящена данная монета.",
+      "answers": [
+        "июль"
+      ],
+      "solutionText": "Монета посвящена Курской битве, она началась в июле 1943 года.",
+      "imagePath": "images/13375/task_138408_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20250828213109-1__7c0gx.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        138408
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-138591",
+      "title": "Марат Казей был участником партизанского движения.",
+      "questionText": "Заполните пропуск в предложении: « Исторический деятель, портрет которого помещен на конверте, в годы Великой Отечественной войны был участником _______________ движения ».",
+      "answers": [
+        "партизанского"
+      ],
+      "solutionText": "Марат Казей был участником партизанского движения.",
+      "imagePath": "images/13375/task_138591_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20250829184104-1__7c4rp.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        138591
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-139120",
+      "title": "Значок посвящён юбилею Корсунь-Шевчнковской операции",
+      "questionText": "Заполните пропуск в предложении: « Событие, к годовщине которого выпущен данный значок произошло в тысяча девятьсот ________________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокчетвертом"
+      ],
+      "solutionText": "Значок посвящён юбилею Корсунь-Шевчнковской операции. Корсунь-Шевченковская операция проводилась с 24 января по 17 февраля 1944 года.",
+      "imagePath": "images/13375/task_139120_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20250831141728-2__7cerg.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        139120
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-141530",
+      "title": "Этикетка посвящена освобождению Минска от немецко-фашистских захватчиков",
+      "questionText": "Заполните пропуск в предложении: « Событие, которому посвящена спичечная этикетка, произошло в тысяча девятьсот __________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "СОРОКЧЕТВЕРТОМ"
+      ],
+      "solutionText": "Этикетка посвящена освобождению Минска от немецко-фашистских захватчиков. Это произошло в 1944 году в рамках операции \"Багратион\".",
+      "imagePath": "images/13375/task_141530_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20250921104608-2__7isx4.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        141530
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=1"
+      ],
+      "sourceName": "№8"
+    },
+    {
+      "factId": "T8-141533",
+      "title": "Марка посвящена Сталинградской битве",
+      "questionText": "Заполните пропуск в предложении: « Начало битвы, которой посвящена марка, относится к тысяча девятьсот ___________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "СОРОКВТОРОМУ"
+      ],
+      "solutionText": "Марка посвящена Сталинградской битве. Начало Сталинградской битвы - июля 1942 года.",
+      "imagePath": "images/13375/task_141533_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20250927223901-2__7m2ex.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        141533
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=1"
+      ],
+      "sourceName": "№8"
+    },
+    {
+      "factId": "T8-142746",
+      "title": "Марка посвящена окончания Сталинградской битвы",
+      "questionText": "Заполните пропуск в предложении: « Окончание битвы, которой посвящена марка, произошло в тысяча девятьсот ___________ году ».",
+      "answers": [
+        "СОРОКТРЕТЬЕМ"
+      ],
+      "solutionText": "Марка посвящена окончания Сталинградской битвы. 2 февраля 1943 года — дата окончания Сталинградской битвы (продолжалась с 17 июля 1942 года по 2 февраля 1943 года).",
+      "imagePath": "images/13375/task_142746_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20251012142613-2__7svvk.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        142746
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=1"
+      ],
+      "sourceName": "№8"
+    },
+    {
+      "factId": "T8-144798",
+      "title": "На картинке обозначен город Курск, что позволяет отнести её к 20-ти летию Курской битвы.",
+      "questionText": "Напишите название битвы Великой Отечественной войны, годовщине которой посвящена марка.",
+      "answers": [
+        "КУРСКАЯ",
+        "КУРСКАЯБИТВА"
+      ],
+      "solutionText": "На картинке обозначен город Курск, что позволяет отнести её к 20-ти летию Курской битвы.",
+      "imagePath": "images/13375/task_144798_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20251005115203-1__7phl6.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        144798
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=1"
+      ],
+      "sourceName": "№8"
+    },
+    {
+      "factId": "T8-147720",
+      "title": "Данный памятник посвящён битве за Москву",
+      "questionText": "Заполните пропуск в предложении: « Данный памятник посвящен битве Великой Отечественной войны, которая началась в тысяча девятьсот ___________________ году ». Ответ запишите словом (словосочетанием).",
+      "answers": [
+        "сорокпервом"
+      ],
+      "solutionText": "Данный памятник посвящён битве за Москву. Эта битва началась 30 сентября 1941 года.",
+      "imagePath": "images/13375/task_147720_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20251018200814-1__7vygf.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        147720
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-147846",
+      "title": "На открытке изображён генерал-майор Иван Васильевич Панфилов (1893–1941)",
+      "questionText": "Напишите название битвы Великой Отечественной войны, в ходе которой героически погиб изображённый на открытке советский военачальник.",
+      "answers": [
+        "Московская"
+      ],
+      "solutionText": "На открытке изображён генерал-майор Иван Васильевич Панфилов (1893–1941). Он героически погиб в ходе Битвы за Москву.",
+      "imagePath": "images/13375/task_147846_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20251019165351-1__7wd9g.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        147846
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-148919",
+      "title": "На почтовой марке изображена сцена, посвящённая обороне Ленинграда в годы Великой Отечественной войны",
+      "questionText": "Заполните пропуск в предложении: « Начало обороны города в период Великой Отечественной войны, которой посвящена марка, относится к тысяча девятьсот ____________________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокпервому"
+      ],
+      "solutionText": "На почтовой марке изображена сцена, посвящённая обороне Ленинграда в годы Великой Отечественной войны. На переднем плане показан рабочий у орудия, на заднем — контуры Ленинграда и символика медали «За оборону Ленинграда». Оборона Ленинграда — одно из самых героических событий войны. Она началась 8 сентября 1941 года, когда немецкие войска замкнули кольцо блокады вокруг города. Блокада продолжалась почти 900 дней — до 27 января 1944 года. Таким образом, начало обороны города, которой посвящена марка, относится к тысяча девятьсот сорок первому году.",
+      "imagePath": "images/13375/task_148919_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20251025223504-1__7z5l4.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        148919
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-150535",
+      "title": "На монете изображена сцена, посвящённая Курской битве — одному из решающих сражений Великой Отечественной войны",
+      "questionText": "Заполните пропуск в предложении: « Битва, которой посвящена монета, произошло в тысяча девятьсот ________________________ году ».",
+      "answers": [
+        "сороктретьем"
+      ],
+      "solutionText": "На монете изображена сцена, посвящённая Курской битве — одному из решающих сражений Великой Отечественной войны. Это сражение происходило летом 1943 года и стало крупнейшим танковым сражением в истории человечества. Победа Красной армии под Курском окончательно переломила ход войны в пользу СССР.",
+      "imagePath": "images/13375/task_150535_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20251108123833-1__85nlp.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        150535
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-151864",
+      "title": "Белорусская операция или операция \"Багратион\", в ходе которой произошло освобождение Беларуси, проходила в 1944 году.",
+      "questionText": "Заполните пропуск в предложении: « Событие, которому посвящена марка, произошло в тысяча девятьсот ________________________ году ».",
+      "answers": [
+        "сорокчетвёртом"
+      ],
+      "solutionText": "Белорусская операция или операция \"Багратион\", в ходе которой произошло освобождение Беларуси, проходила в 1944 году.",
+      "imagePath": "images/13375/task_151864_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20251115205624-3__88ugz.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        151864
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-153659",
+      "title": "Освобождение Ленинграда, которому посвящен плакат, произошло в 1944 году.",
+      "questionText": "Заполните пропуск в предложении: «Событие, которому посвящён плакат, произошло в тысяча девятьсот ___________________ году». Ответ запишите словом (словосочетанием).",
+      "answers": [
+        "сорокчетвертом"
+      ],
+      "solutionText": "Освобождение Ленинграда, которому посвящен плакат, произошло в 1944 году.",
+      "imagePath": "images/13375/task_153659_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20251122132418-1__8brsq.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        153659
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-154912",
+      "title": "В ночь на 7 августа 1941 года Виктор Талалихин совершил свой подвиг — произвёл таран в ночном воздушном бою над Москвой, сбив бомбардировщик He-111.",
+      "questionText": "Заполните пропуск в предложении: «Герой Советского союза, которому посвящена открытка, совершил свой подвиг в тысяча девятьсот _____________ году». Ответ запишите словом (словосочетанием).",
+      "answers": [
+        "сорокпервом"
+      ],
+      "solutionText": "В ночь на 7 августа 1941 года Виктор Талалихин совершил свой подвиг — произвёл таран в ночном воздушном бою над Москвой, сбив бомбардировщик He-111.",
+      "imagePath": "images/13375/task_154912_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260426212651-1__acj5j.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        154912
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-155434",
+      "title": "На марке указано: «20-летие освобождения Вены Советской Армией»",
+      "questionText": "Заполните пропуск в предложении: « Событие, годовщине которого посвящена марка, произошло в тысяча девятьсот ___________________ году ». Ответ запишите словом (словосочетанием).",
+      "answers": [
+        "сорокпятом"
+      ],
+      "solutionText": "На марке указано: «20-летие освобождения Вены Советской Армией». Освобождение Вены произошло в 1945 году.",
+      "imagePath": "images/13375/task_155434_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20251130204456-1__8fghs.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        155434
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-156406",
+      "title": "На значке указано «XXV лет Смоленское сражение» — 25-летие со дня Смоленского сражения Великой Отечественной войны",
+      "questionText": "Заполните пропуск в предложении: « Сражение, которому посвящён значок, состоялось в тысяча девятьсот _________________ году ».",
+      "answers": [
+        "сорокпервом"
+      ],
+      "solutionText": "На значке указано «XXV лет Смоленское сражение» — 25-летие со дня Смоленского сражения Великой Отечественной войны. Смоленское сражение произошло в 1941 году.",
+      "imagePath": "images/13375/task_156406_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20251207152345-2__8hw4w.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        156406
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-158015",
+      "title": "Орел и Белгород были освобождены от фашистов в ходе Курской битвы 1943 года.",
+      "questionText": "Заполните пропуск в предложении: « Данный номер газеты вышел в тысяча девятьсот ______________________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сороктретьем"
+      ],
+      "solutionText": "Орел и Белгород были освобождены от фашистов в ходе Курской битвы 1943 года.",
+      "imagePath": "images/13375/task_158015_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20251213195515-1__8k8a0.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        158015
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-159200",
+      "title": "Приказ на марке - \"Ни шагу назад\", он был издан в 1942 году.",
+      "questionText": "Заполните пропуск в предложении: « Приказ наркома обороны СССР, слова из которого приведены на марке, был издан в тысяча девятьсот _________________ году ».",
+      "answers": [
+        "сороквтором"
+      ],
+      "solutionText": "Приказ на марке - \"Ни шагу назад\", он был издан в 1942 году.",
+      "imagePath": "images/13375/task_159200_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20251221155319-1__8n4hl.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        159200
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-161194",
+      "title": "На марке изображён план ликвидации немецко-фашистских войск под Сталинградом (Сталинградская битва, операция «Уран» и последующая операция «Кольцо»)",
+      "questionText": "Заполните пропуск в предложении: «Военная операция, план которой показан на марке, была завершена в тысяча девятьсот __________ году».",
+      "answers": [
+        "сороктретьем"
+      ],
+      "solutionText": "На марке изображён план ликвидации немецко-фашистских войск под Сталинградом (Сталинградская битва, операция «Уран» и последующая операция «Кольцо»). Военная операция, план которой показан на марке, была завершена в 1943 году.",
+      "imagePath": "images/13375/task_161194_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260109185316-1__8tmi4.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        161194
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-162310",
+      "title": "Значок посвящён Курской битве",
+      "questionText": "Напишите название месяца начала битвы, которой посвящён значок.",
+      "answers": [
+        "июль"
+      ],
+      "solutionText": "Значок посвящён Курской битве. Курская битва началась в июле 1943 года.",
+      "imagePath": "images/13375/task_162310_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260117222825-1__8x6f8.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        162310
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-164081",
+      "title": "Медаль посвящена взятию Кёнигсберга",
+      "questionText": "Заполните пропуск в предложении: « Битва Великой Отечественной войны, которой посвящена медаль, произошла в тысяча девятьсот _____________ году ».",
+      "answers": [
+        "сорокпятом"
+      ],
+      "solutionText": "Медаль посвящена взятию Кёнигсберга. Это событие произошло в 1945 году (апрель 1945 г., в ходе Восточно-Прусской операции).",
+      "imagePath": "images/13375/task_164081_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260123232304-3__90alg.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        164081
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-166181",
+      "title": "На марке изображена советская военная операция «Багратион», проведённая летом 1944 года в ходе Великой Отечественной войны",
+      "questionText": "Напишите название советской союзной республики, территория которой была освобождена в ходе советской военной операции, которой посвящена марка.",
+      "answers": [
+        "Белорусская"
+      ],
+      "solutionText": "На марке изображена советская военная операция «Багратион», проведённая летом 1944 года в ходе Великой Отечественной войны. В результате этой операции были разгромлены основные силы немецкой группы армий «Центр» и освобождена территория Белоруссии. Белоруссия в указанный период являлась союзной республикой СССР.",
+      "imagePath": "images/13375/task_166181_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260130175324-1__93njs.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        166181
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-168734",
+      "title": "На марке изображена Берлинская операция (апрель-май 1945 г.)",
+      "questionText": "Заполните пропуск в предложении (напишите пропущенную фамилию): « В военной операции, которой посвящена марка, участвовали войска 1-го Белорусского фронта под командованием маршала ________________ ».",
+      "answers": [
+        "Жуков"
+      ],
+      "solutionText": "На марке изображена Берлинская операция (апрель-май 1945 г.). В ходе этой операции войска 1-го Белорусского фронта наступали на Берлин под командованием маршала Георгия Константиновича Жукова.",
+      "imagePath": "images/13375/task_168734_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260214140458-1__9arlj.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        168734
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-169825",
+      "title": "На медали написано «За освобождение Праги»",
+      "questionText": "Заполните пропуск в предложении (словами): « Советская военная операция, которой посвящена медаль, была проведена в тысяча девятьсот _____________________ году ».",
+      "answers": [
+        "сорокпятом"
+      ],
+      "solutionText": "На медали написано «За освобождение Праги». Речь идёт о Пражской наступательной операции Красной армии, которая проводилась в мае 1945 года и стала одной из последних операций Великой Отечественной войны.",
+      "imagePath": "images/13375/task_169825_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260221172436-2__9ebeq.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        169825
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-169855",
+      "title": "На марке указано: «30-летие прорыва блокады Ленинграда»",
+      "questionText": "Заполните пропуск в предложении: « Событие, юбилею которого посвящена марка, произошло в тысяча девятьсот ____________________ году ».",
+      "answers": [
+        "сороктретьем"
+      ],
+      "solutionText": "На марке указано: «30-летие прорыва блокады Ленинграда». Прорыв блокады Ленинграда произошёл в январе 1943 года (операция «Искра»). Следовательно, событие произошло в 1943 году.",
+      "imagePath": "images/13375/task_169855_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260221205453-3__9ef43.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        169855
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-169894",
+      "title": "На марке указано: «30 лет разгрома фашистских войск под Курском»",
+      "questionText": "Заполните пропуск в предложении: « Событие, юбилею которого посвящена марка, произошло в тысяча девятьсот ____________________ году ».",
+      "answers": [
+        "сороктретьем"
+      ],
+      "solutionText": "На марке указано: «30 лет разгрома фашистских войск под Курском». Курская битва произошла летом 1943 года. Следовательно, событие произошло в 1943 году.",
+      "imagePath": "images/13375/task_169894_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260221230028-4__9ehmc.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        169894
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-174393",
+      "title": "Освобождение Севастополя от немецко-фашистских войск, 50-летнему юбилею которого посвящена монета, произошло в 1944 году.",
+      "questionText": "Заполните пропуск в предложении: «Событие, которому посвящена данная монета, произошло в тысяча девятьсот _______________________ году». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокчетвертом"
+      ],
+      "solutionText": "Освобождение Севастополя от немецко-фашистских войск, 50-летнему юбилею которого посвящена монета, произошло в 1944 году.",
+      "imagePath": "images/13375/task_174393_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/Screenshot_20260322_194643_Chrome__9tg9x.jpg",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        174393
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-175720",
+      "title": "На плакате есть надпись «слава вооруженным силам СССР, одержавшим победу над Японией»",
+      "questionText": "Заполните пропуск в предложении: « Окончание боевых действий, которым посвящён плакат, произошло в тысяча девятьсот году ». Ответ запишите словом (словосочетанием).",
+      "answers": [
+        "сорокпятом"
+      ],
+      "solutionText": "На плакате есть надпись «слава вооруженным силам СССР, одержавшим победу над Японией». Япония подписала акт о капитуляции 2 сентября 1945 г.",
+      "imagePath": "images/13375/task_175720_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260329225754-1__9x2h0.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        175720
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-176184",
+      "title": "Приказ №227, известный как «Ни шагу назад!», О мерах по укреплению дисциплины и порядка в Красной Армии и запрещении самовольного отхода с боевых пози",
+      "questionText": "Заполните пропуск в предложении: «Приказ наркома обороны СССР, слова из которого приведены на марке, был издан в тысяча девятьсот _________________ году». Ответ запишите словом (словосочетанием).",
+      "answers": [
+        "сороквтором"
+      ],
+      "solutionText": "Приказ №227, известный как «Ни шагу назад!», О мерах по укреплению дисциплины и порядка в Красной Армии и запрещении самовольного отхода с боевых позиций был опубликован И. Сталиным в июле 1942 г.",
+      "imagePath": "images/13375/task_176184_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260401234444-1__9ytfc.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        176184
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-176572",
+      "title": "На аверсе монеты находится надпись, сообщающая, что выпуск монеты посвящён Крымской наступательной операции",
+      "questionText": "Заполните пропуск в предложении: « Военная операция, которой посвящена данная монета, была осуществлена в тысяча девятьсот _____________ году ». Ответ запишите словом (словосочетанием).",
+      "answers": [
+        "сорокчетвёртом"
+      ],
+      "solutionText": "На аверсе монеты находится надпись, сообщающая, что выпуск монеты посвящён Крымской наступательной операции. Крымская наступательная операция проводилась в 1944 году.",
+      "imagePath": "images/13375/task_176572_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260404135817-1__a0505.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        176572
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-177444",
+      "title": "Укажите фамилию военачальника, который командовал парадом, изображённым на марке.",
+      "questionText": "Укажите фамилию военачальника, который командовал парадом, изображённым на марке.",
+      "answers": [
+        "рокоссовский"
+      ],
+      "solutionText": "",
+      "imagePath": "images/13394/task_177444_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260410231958-6__a3u3m.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        177444
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-177458",
+      "title": "Заполните пропуск в предложении: « Битва, которой посвящены изображённые на марке памятники, началась в тысяча девятьсот ______________ году ». Ответ ",
+      "questionText": "Заполните пропуск в предложении: « Битва, которой посвящены изображённые на марке памятники, началась в тысяча девятьсот ______________ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сороквтором"
+      ],
+      "solutionText": "",
+      "imagePath": "images/13394/task_177458_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260410231426-5__a3u13.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        177458
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-177520",
+      "title": "Окончание обороны Севастополя произошло в июле 1942 года, оборона длилась 250 дней (30 октября 1941 — 4 июля 1942 гг.).",
+      "questionText": "Заполните пропуск в предложении: « Окончание битвы, которой посвящена данная монета, произошло в тысяча девятьсот _____________ году ». Ответ запишите словом (словосочетанием).",
+      "answers": [
+        "сороквтором"
+      ],
+      "solutionText": "Окончание обороны Севастополя произошло в июле 1942 года, оборона длилась 250 дней (30 октября 1941 — 4 июля 1942 гг.).",
+      "imagePath": "images/13375/task_177520_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260411130758-7__a40gk.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        177520
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-178477",
+      "title": "На марке 1995 года присутствует название операции, 50-летнему юбилею которой она посвящена - \"Берлинская операция\"",
+      "questionText": "Напишите название месяца начала советской военной операции, которой посвящена данная марка.",
+      "answers": [
+        "апрель"
+      ],
+      "solutionText": "На марке 1995 года присутствует название операции, 50-летнему юбилею которой она посвящена - \"Берлинская операция\". Данная операция началась в апреле 1945 года.",
+      "imagePath": "images/13375/task_178477_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/Screenshot_20260418_144603_OneDrive__a7vc4.jpg",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        178477
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-181482",
+      "title": "Марка посвящена операции \"Багратион\" - это операция по освобождению Беларуси в рамках ВОВ, была проведена летом 1944 года.",
+      "questionText": "Заполните пропуск в предложении: « Событие, которому посвящена марка, произошло в тысяча девятьсот ________________________ году ». Ответ запишите словом (словосочетанием).",
+      "answers": [
+        "сорокчетвертом"
+      ],
+      "solutionText": "Марка посвящена операции \"Багратион\" - это операция по освобождению Беларуси в рамках ВОВ, была проведена летом 1944 года.",
+      "imagePath": "images/13375/task_181482_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260503181246-1__ag27e.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        181482
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-181572",
+      "title": "Укажите название города, заретушированное на медали.",
+      "questionText": "Укажите название города, заретушированное на медали.",
+      "answers": [
+        "ленинград"
+      ],
+      "solutionText": "",
+      "imagePath": "images/13394/task_181572_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260504220843-1__agqye.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        181572
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-181586",
+      "title": "Заполните пропуск в предложении: «Событие, юбилею которого посвящена данная марка, произошло в тысяча девятьсот _______________ году». Ответ запишите ",
+      "questionText": "Заполните пропуск в предложении: «Событие, юбилею которого посвящена данная марка, произошло в тысяча девятьсот _______________ году». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "сорокпятом"
+      ],
+      "solutionText": "",
+      "imagePath": "images/13394/task_181586_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260504224833-2__ags56.jpg",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        181586
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-181597",
+      "title": "Укажите название битвы, героям которой посвящён монумент, изображённый на данной монете.",
+      "questionText": "Укажите название битвы, героям которой посвящён монумент, изображённый на данной монете.",
+      "answers": [
+        "сталинградская"
+      ],
+      "solutionText": "",
+      "imagePath": "images/13394/task_181597_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260504232600-3__agta7.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        181597
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-181613",
+      "title": "Укажите фамилию авиаконструктора, под руководством которого был разработан изображённый на данной марке самолёт.",
+      "questionText": "Укажите фамилию авиаконструктора, под руководством которого был разработан изображённый на данной марке самолёт.",
+      "answers": [
+        "яковлев"
+      ],
+      "solutionText": "",
+      "imagePath": "images/13394/task_181613_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260505010901-4__agv0j.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        181613
+      ],
+      "sourceThemeIds": [
+        13394
+      ],
+      "sourceCategories": [
+        "Артасов, 30 вариантов"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13394?Page=1"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-197575",
+      "title": "Изображение посвящено освобождению Минска от немецко-фашистских захватчиков",
+      "questionText": "Заполните пропуск в предложении: «Событие, юбилею которого посвящена данная спичечная этикетка, произошло в тысяча девятьсот _____________________ году». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "СОРОКЧЕТВЁРТОМ"
+      ],
+      "solutionText": "Изображение посвящено освобождению Минска от немецко-фашистских захватчиков. Это произошло в ходе стратегической наступательной операции «Багратион» 3 июля 1944 года. Следовательно, в пропуске должно стоять: сорок четвёртом",
+      "imagePath": "images/13336/task_197575_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260829000124-1__bgig0.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        197575
+      ],
+      "sourceThemeIds": [
+        13336
+      ],
+      "sourceCategories": [
+        "ЕГЭ прошлых лет"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13336?Page=1"
+      ],
+      "sourceName": "ДЕМО"
+    },
+    {
+      "factId": "T8-202372",
+      "title": "На изображении медаль «За оборону Одессы»",
+      "questionText": "Заполните пропуск в предложении: « Битва, которой посвящён данный памятный жетон, состоялась в тысяча девятьсот _____ году ». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "СОРОКПЕРВОМ"
+      ],
+      "solutionText": "На изображении медаль «За оборону Одессы». Оборона Одессы проходила с 5 августа по 16 октября 1941 года.",
+      "imagePath": "images/13375/task_202372_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260922211356-1__bu5mt.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        202372
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=2"
+      ],
+      "sourceName": "8"
+    },
+    {
+      "factId": "T8-202615",
+      "title": "На изображении жетон, посвященный 80-летию Курской битвы",
+      "questionText": "Заполните пропуск в предложении: \"Битва, которой посвящён данный памятный жетон, состоялась в тысяча девятьсот ____________ году\". Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Сороктретьем"
+      ],
+      "solutionText": "На изображении жетон, посвященный 80-летию Курской битвы. Курская битва проходила с 5 июля по 23 августа 1943 года.",
+      "imagePath": "images/13375/task_202615_0.png",
+      "imageStatus": "from-source",
+      "originalImageUrl": "/st/5/v-thumb/image-20260923210238-2__bus5e.png",
+      "courseTopicId": 30,
+      "requiredCourseTopicIds": [
+        30
+      ],
+      "enabled": true,
+      "sourceQuestionIds": [
+        202615
+      ],
+      "sourceThemeIds": [
+        13375
+      ],
+      "sourceCategories": [
+        "СтатГрад и ЕГКР"
+      ],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13375?Page=2"
+      ],
+      "sourceName": "8"
+    }
+  ]
+}

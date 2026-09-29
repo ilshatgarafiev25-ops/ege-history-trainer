@@ -321,7 +321,10 @@ function compressImageToBlob(file) {
 }
 function imageUrl(filename) {
   if (!filename) return "";
-  const { data } = sb.storage.from(IMAGES_BUCKET).getPublicUrl(filename);
+  const s=String(filename);
+  if (/^https?:\/\//i.test(s)) return s;
+  if (s.startsWith('images/') || s.startsWith('./images/') || s.startsWith('/images/')) return s;
+  const { data } = sb.storage.from(IMAGES_BUCKET).getPublicUrl(s);
   return data.publicUrl;
 }
 function rowToQuestion(r) {
@@ -1270,6 +1273,176 @@ function processGenerate(facts,through,mode,count,existing=[]){
   }
   return result;
 }
+function cultureValidate(data){
+  if(!data||!Array.isArray(data.facts)||!data.facts.length)throw new Error('Нужна база №7 с произведениями и деятелями культуры.');
+  const ids=new Set();
+  return data.facts.map((f,i)=>{
+    if(!f||typeof f.factId!=='string'||ids.has(f.factId)||typeof f.title!=='string'||typeof f.instruction!=='string'||!f.instruction.trim()||!Array.isArray(f.left)||f.left.length!==4||!Array.isArray(f.right)||f.right.length!==6||!Array.isArray(f.correctMatch)||f.correctMatch.length!==4)throw new Error('Некорректный комплект №'+(i+1));
+    if([...f.left,...f.right].some(s=>typeof s!=='string'||!s.trim())||new Set(f.left.map(s=>s.trim().toLocaleLowerCase('ru'))).size!==4||new Set(f.right.map(s=>s.trim().toLocaleLowerCase('ru'))).size!==6||f.correctMatch.some(n=>!Number.isInteger(n)||n<1||n>6)||new Set(f.correctMatch).size!==4)throw new Error('Повреждены варианты или ключ в комплекте №'+(i+1));
+    if(!COURSE38_BY_ID.has(Number(f.courseTopicId))||!Array.isArray(f.requiredCourseTopicIds)||!f.requiredCourseTopicIds.length||f.requiredCourseTopicIds.some(t=>!COURSE38_BY_ID.has(Number(t))))throw new Error('Не указаны темы комплекта №'+(i+1));
+    ids.add(f.factId);
+    return {...f,enabled:f.enabled!==false,courseTopicId:Number(f.courseTopicId),requiredCourseTopicIds:[...new Set([Number(f.courseTopicId),...f.requiredCourseTopicIds.map(Number)])].sort((a,b)=>a-b)};
+  });
+}
+function culturePool(facts,through,mode){
+  if(!COURSE38_BY_ID.has(Number(through))||!['current','cumulative'].includes(mode))throw new Error('Выберите изученную тему.');
+  return facts.filter(f=>f.enabled!==false&&f.requiredCourseTopicIds.every(t=>mode==='current'?t===Number(through):t<=Number(through)));
+}
+function cultureCompose(f,leftOrder,rightOrder,through,mode,selectedFactIds){
+  if(!culturePool([f],through,mode).length||leftOrder.length!==4||rightOrder.length!==6||leftOrder.slice().sort().join('')!=='0123'||rightOrder.slice().sort().join('')!=='012345')throw new Error('Некорректный порядок столбцов или темы задания №7.');
+  const matchLeft=leftOrder.map(i=>f.left[i]),matchRight=rightOrder.map(i=>f.right[i]);
+  const correctMatch=leftOrder.map(i=>rightOrder.indexOf(f.correctMatch[i]-1)+1);
+  const required=f.requiredCourseTopicIds.map(id=>COURSE38_BY_ID.get(id));
+  return {id:uid('atom7'),type:'matching',ogeNumber:7,text:f.instruction,matchLeft,matchRight,correctMatch,maxScore:2,gradingMode:'ordered',
+    source:'Генератор №7 · присланный архив',sourceId:String(f.sourceQuestionIds?.[0]||''),
+    referenceAnswer:'Ответ: '+correctMatch.join('')+'\n\n'+matchLeft.map((s,i)=>'АБВГ'[i]+') '+s+' — '+matchRight[correctMatch[i]-1]).join('\n'),
+    topic:required.map(t=>t.name).join('; '),primaryCourseTopic:COURSE38_BY_ID.get(f.courseTopicId),requiredCourseTopics:required,
+    metadata:{requiredCourseTopics:required,sourceQuestionIds:f.sourceQuestionIds||[],atomic:{version:1,task:7,through:Number(through),mode,events:[f],leftOrder,rightOrder,selectedFactIds}}};
+}
+function cultureGenerate(facts,through,mode,count,existing=[]){
+  if(!Number.isInteger(count)||count<1||count>100)throw new Error('Укажите количество от 1 до 100.');
+  const used=new Set(existing.filter(q=>q.metadata?.atomic?.task===7).map(q=>q.metadata.atomic.events[0].factId));
+  const selected=culturePool(facts,through,mode),pool=selected.filter(f=>!used.has(f.factId));
+  if(pool.length<count)throw new Error('Доступно неповторяющихся комплектов: '+pool.length+'. Уменьшите количество или отметьте больше комплектов.');
+  return atomicShuffle(pool).slice(0,count).map(f=>cultureCompose(f,atomicShuffle([0,1,2,3]),atomicShuffle([0,1,2,3,4,5]),through,mode,selected.map(x=>x.factId)));
+}
+function CultureCatalogCard({f,selected,mark}){
+  const h=React.createElement;
+  return h('div',{className:'q-list-item'},
+    h('label',{className:'opt'},h('input',{type:'checkbox',checked:selected.includes(f.factId),onChange:e=>mark([f.factId],e.target.checked)}),f.title),
+    h('p',{className:'q-meta'},'Исходные вопросы: '+(f.sourceQuestionIds||[]).join(', ')+' · темы: '+f.requiredCourseTopicIds.join(', ')),
+    h('details',null,h('summary',null,'Показать оба столбца'),h('p',null,f.instruction),
+      h('div',{className:'constructor-grid'},
+        h('div',null,f.left.map((v,i)=>h('p',{key:i},'АБВГ'[i]+') '+v))),
+        h('div',null,f.right.map((v,i)=>h('p',{key:i},(i+1)+') '+v))))),
+    h('details',null,h('summary',null,'Ключ и разбор исходника — преподавателю'),h('p',null,f.correctMatch.join('')),
+      (f.explanations||[]).map((v,i)=>v&&h('p',{key:i},'АБВГ'[i]+') '+v)))
+  );
+}
+
+function CultureSourceEditor({q,facts,busy,onReplace}){
+  const h=React.createElement,candidates=atomicReplacementCandidates(q,0,facts);
+  return h('details',null,h('summary',null,'Заменить задание'),h('p',{className:'q-meta'},'Выберите другой отмеченный вами комплект соответствий.'),
+    h('select',{'aria-label':'Замена задания по культуре',value:'',disabled:busy||!candidates.length,onChange:e=>onReplace(0,e.target.value)},
+      h('option',{value:''},candidates.length?'Выберите другой комплект…':'Нет другого выбранного комплекта'),candidates.map(f=>h('option',{key:f.factId,value:f.factId},f.title))));
+}
+
+function documentValidate(data){
+  if(!data||!Array.isArray(data.facts)||!data.facts.length)throw new Error('Нужна база №6 с историческими текстами и суждениями.');
+  const ids=new Set();
+  return data.facts.map((f,i)=>{
+    if(!f||typeof f.factId!=='string'||ids.has(f.factId)||typeof f.passage!=='string'||!f.passage.trim()||typeof f.title!=='string'||!COURSE38_BY_ID.has(Number(f.courseTopicId))||!Array.isArray(f.sets))throw new Error('Некорректный текст №'+(i+1));
+    ids.add(f.factId);const setIds=new Set();
+    const sets=f.sets.map(s=>{
+      if(!s||typeof s.setId!=='string'||setIds.has(s.setId)||!Array.isArray(s.statements)||s.statements.length!==6||!Array.isArray(s.requiredCourseTopicIds)||!s.requiredCourseTopicIds.length||s.requiredCourseTopicIds.some(t=>!COURSE38_BY_ID.has(Number(t))))throw new Error('Некорректный набор суждений в тексте №'+(i+1));
+      setIds.add(s.setId);
+      if(s.statements.some(v=>!v||typeof v.statementId!=='string'||typeof v.text!=='string'||!v.text.trim()||typeof v.correct!=='boolean')||new Set(s.statements.map(v=>v.statementId)).size!==6||new Set(s.statements.map(v=>v.text.trim().toLocaleLowerCase('ru'))).size!==6)throw new Error('Повторяющиеся или повреждённые суждения в тексте №'+(i+1));
+      const correct=s.statements.filter(v=>v.correct).length;if(correct<2||correct>4)throw new Error('В исходном наборе №6 должны быть от двух до четырёх верных суждений.');
+      return {...s,requiredCourseTopicIds:[...new Set([Number(f.courseTopicId),...s.requiredCourseTopicIds.map(Number)])].sort((a,b)=>a-b)};
+    });
+    if(f.enabled!==false&&!sets.length)throw new Error('В доступном тексте отсутствуют суждения.');
+    return {...f,courseTopicId:Number(f.courseTopicId),enabled:f.enabled!==false,sets};
+  });
+}
+function documentSets(f,through,mode){return f.sets.filter(s=>s.requiredCourseTopicIds.every(t=>mode==='current'?t===Number(through):t<=Number(through)));}
+function documentPool(facts,through,mode){
+  if(!COURSE38_BY_ID.has(Number(through))||!['current','cumulative'].includes(mode))throw new Error('Выберите изученную тему.');
+  return facts.filter(f=>f.enabled!==false&&documentSets(f,through,mode).length>0);
+}
+function documentCompose(f,set,statements,through,mode,selectedFactIds){
+  if(!documentSets(f,through,mode).some(s=>s.setId===set.setId)||statements.length!==6||new Set(statements.map(s=>s.statementId)).size!==6||statements.some(s=>!set.statements.some(o=>o.statementId===s.statementId&&o.text===s.text&&o.correct===s.correct)))throw new Error('Суждения должны относиться к выбранному тексту и изученным темам.');
+  const required=set.requiredCourseTopicIds.map(id=>COURSE38_BY_ID.get(id));
+  const correctIdx=statements.flatMap((s,i)=>s.correct?[i]:[]);
+  return {id:uid('atom6'),type:'multi',ogeNumber:6,
+    text:f.passage+'\n\nИспользуя отрывок и знания по истории, выберите в приведённом списке верные суждения. Отметьте все верные суждения.',
+    options:statements.map(s=>s.text),correctIdx,maxScore:2,gradingMode:'unordered',
+    source:'Генератор №6 · присланный архив',sourceId:String(set.sourceQuestionIds?.[0]||''),
+    referenceAnswer:'Ответ: '+correctIdx.map(i=>i+1).join('')+'\n\n'+statements.map((s,i)=>(i+1)+') '+(s.correct?'Верно. ':'Неверно. ')+s.text+(s.explanation?'\n'+s.explanation:'')).join('\n\n'),
+    topic:required.map(t=>t.name).join('; '),primaryCourseTopic:COURSE38_BY_ID.get(f.courseTopicId),requiredCourseTopics:required,
+    metadata:{requiredCourseTopics:required,sourceQuestionIds:set.sourceQuestionIds||[],atomic:{version:1,task:6,through:Number(through),mode,events:[f],options:statements,sourceSetId:set.setId,selectedFactIds}}};
+}
+function documentGenerate(facts,through,mode,count,existing=[]){
+  if(!Number.isInteger(count)||count<1||count>100)throw new Error('Укажите количество от 1 до 100.');
+  const used=new Set(existing.filter(q=>q.metadata?.atomic?.task===6).map(q=>q.metadata.atomic.events[0].factId));
+  const selected=documentPool(facts,through,mode),pool=selected.filter(f=>!used.has(f.factId));
+  if(pool.length<count)throw new Error('Доступно неповторяющихся текстов: '+pool.length+'. Уменьшите количество или отметьте больше текстов.');
+  return atomicShuffle(pool).slice(0,count).map(f=>{
+    const set=atomicShuffle(documentSets(f,through,mode))[0];
+    return documentCompose(f,set,atomicShuffle(set.statements),through,mode,selected.map(x=>x.factId));
+  });
+}
+function DocumentSourceEditor({q,facts,busy,onReplace}){
+  const h=React.createElement,candidates=atomicReplacementCandidates(q,0,facts);
+  return h('details',null,h('summary',null,'Заменить текст'),h('p',{className:'q-meta'},'Замена берёт другой выбранный вами текст вместе с его суждениями.'),
+    h('select',{'aria-label':'Замена исторического текста',value:'',disabled:busy||!candidates.length,onChange:e=>onReplace(0,e.target.value)},
+      h('option',{value:''},candidates.length?'Выберите другой текст…':'Нет другого выбранного текста'),candidates.map(f=>h('option',{key:f.factId,value:f.factId},f.title))));
+}
+
+function participantKey(s){return String(s).toLocaleLowerCase('ru').replace(/ё/g,'е').replace(/[^а-яa-z0-9]/g,'');}
+function participantValidate(data){
+  if(!data||!Array.isArray(data.facts)||!data.facts.length)throw new Error('Нужна база №5 с парами «событие — участник».');
+  const ids=new Set(),known=new Map();
+  const rows=data.facts.map((f,i)=>{
+    if(!f||typeof f.factId!=='string'||ids.has(f.factId)||typeof f.event!=='string'||!f.event.trim()||typeof f.person!=='string'||!f.person.trim()||!COURSE38_BY_ID.has(Number(f.courseTopicId)))throw new Error('Некорректная пара №'+(i+1)+' в базе задания 5.');
+    if(f.knownParticipantKeys!==undefined&&(!Array.isArray(f.knownParticipantKeys)||f.knownParticipantKeys.some(k=>typeof k!=='string')))throw new Error('Некорректные связи участников в паре №'+(i+1));
+    ids.add(f.factId);
+    const row={...f,courseTopicId:Number(f.courseTopicId),enabled:f.enabled!==false,eventKey:String(f.eventKey||participantKey(f.event)),personKey:String(f.personKey||participantKey(f.person))};
+    if(row.enabled){if(!known.has(row.eventKey))known.set(row.eventKey,new Set());known.get(row.eventKey).add(row.personKey);}
+    return row;
+  });
+  return rows.map(f=>({...f,knownParticipantKeys:[...new Set([...(f.knownParticipantKeys||[]),...(known.get(f.eventKey)||[]),f.personKey])]}));
+}
+function participantCompatible(a,b){
+  return a.courseTopicId!==b.courseTopicId&&a.eventKey!==b.eventKey&&a.personKey!==b.personKey
+    &&!(a.knownParticipantKeys||[]).includes(b.personKey)&&!(b.knownParticipantKeys||[]).includes(a.personKey);
+}
+function participantCompose(events,options,through,mode,selectedFactIds){
+  if(events.length!==4||options.length!==6||options.some((f,i)=>options.slice(i+1).some(g=>!participantCompatible(f,g))))throw new Error('Варианты №5 неоднозначны. Выберите другие пары.');
+  const correctMatch=events.map(f=>options.findIndex(o=>o.personKey===f.personKey)+1);
+  if(correctMatch.some(n=>n<1))throw new Error('Для события отсутствует правильный участник.');
+  const required=[...new Set(options.map(f=>f.courseTopicId))].sort((a,b)=>a-b).map(id=>COURSE38_BY_ID.get(id));
+  return {id:uid('atom5'),type:'matching',ogeNumber:5,
+    text:'Установите соответствие между событиями (явлениями, процессами) и участниками этих событий: к каждой позиции первого столбца подберите соответствующую позицию второго столбца. Два участника — лишние.',
+    matchLeft:events.map(f=>f.event),matchRight:options.map(f=>f.person),correctMatch,maxScore:2,gradingMode:'ordered',
+    source:'Генератор №5 · присланный архив',
+    referenceAnswer:events.map((f,i)=>'АБВГ'[i]+') '+f.event+' — '+f.person+' (исходные вопросы: '+(f.sourceQuestionIds||[]).join(', ')+')').join('\n'),
+    topic:required.map(t=>t.name).join('; '),primaryCourseTopic:required[required.length-1],requiredCourseTopics:required,
+    metadata:{requiredCourseTopics:required,sourceQuestionIds:[...new Set(options.flatMap(f=>f.sourceQuestionIds||[]))],atomic:{version:1,task:5,through:Number(through),mode,events,options,selectedFactIds}}};
+}
+function participantGenerate(facts,through,mode,count,existing=[]){
+  if(!Number.isInteger(count)||count<1||count>100)throw new Error('Укажите количество от 1 до 100.');
+  if(mode!=='cumulative')throw new Error('Для №5 выберите накопительный режим.');
+  const pool=processPool(facts,through,mode);
+  if(new Set(pool.map(f=>f.courseTopicId)).size<6)throw new Error('Выберите пары минимум из шести изученных тем: четыре события и два лишних участника.');
+  const usage=new Map(),signature=events=>events.map(f=>f.factId).sort().join('|');
+  const seen=new Set(existing.filter(q=>q.metadata?.atomic?.task===5).map(q=>signature(q.metadata.atomic.events)));
+  existing.filter(q=>q.metadata?.atomic?.task===5).forEach(q=>q.metadata.atomic.events.forEach(f=>usage.set(f.factId,(usage.get(f.factId)||0)+1)));
+  const result=[];
+  for(let n=0;n<count;n++){
+    let chosen=null;
+    for(let attempt=0;attempt<160;attempt++){
+      const candidate=[];
+      for(const f of atomicShuffle(pool).sort((a,b)=>(usage.get(a.factId)||0)-(usage.get(b.factId)||0))){
+        if(candidate.every(g=>participantCompatible(f,g)))candidate.push(f);
+        if(candidate.length===6)break;
+      }
+      if(candidate.length===6&&!seen.has(signature(candidate.slice(0,4)))){chosen=candidate;break;}
+    }
+    if(!chosen)throw new Error('Не хватает однозначных сочетаний для '+count+' заданий. Выберите больше пар или уменьшите количество.');
+    const events=atomicShuffle(chosen.slice(0,4));seen.add(signature(events));
+    result.push(participantCompose(events,atomicShuffle(chosen),through,mode,pool.map(f=>f.factId)));
+    events.forEach(f=>usage.set(f.factId,(usage.get(f.factId)||0)+1));
+  }
+  return result;
+}
+function participantReplace(q,index,f,facts){
+  const a=q.metadata.atomic,events=a.events.map((e,i)=>i===index?f:e);
+  const pool=selectedAtomicPool(facts,5,a.through,a.mode,a.selectedFactIds||[]);
+  const extras=atomicShuffle(pool).filter(x=>events.every(e=>participantCompatible(x,e)));
+  for(let i=0;i<extras.length;i++)for(let j=i+1;j<extras.length;j++)if(participantCompatible(extras[i],extras[j]))return participantCompose(events,atomicShuffle([...events,extras[i],extras[j]]),a.through,a.mode,a.selectedFactIds);
+  throw new Error('После замены не осталось двух однозначных лишних участников. Выберите другую пару.');
+}
+
 function tableValidate(data){
   if(!data||!Array.isArray(data.facts)||!data.facts.length||!Array.isArray(data.patterns)||!data.patterns.length)throw new Error('В базе №4 нужны facts и patterns.');
   const ids=new Set();const patterns=data.patterns.map(p=>{
@@ -1363,23 +1536,70 @@ function chronoGenerate(facts, through, mode, count, existing=[], composition='r
   return result;
 }
 
+function visualValidate(data){
+  if(!data||!Array.isArray(data.facts)||!data.facts.length)throw new Error('Нужна база №8 с вопросами по изображениям ВОВ.');
+  const ids=new Set();
+  return data.facts.map((f,i)=>{
+    if(!f||typeof f.factId!=='string'||ids.has(f.factId)||typeof f.questionText!=='string'||!f.questionText.trim()||!Array.isArray(f.answers)||!f.answers.length||f.answers.some(a=>typeof a!=='string'||!a.trim())||typeof f.imagePath!=='string'||!f.imagePath.trim())throw new Error('Некорректная карточка №8 №'+(i+1));
+    if(!COURSE38_BY_ID.has(Number(f.courseTopicId))||!Array.isArray(f.requiredCourseTopicIds)||!f.requiredCourseTopicIds.length)throw new Error('Не указана тема карточки №8 №'+(i+1));
+    ids.add(f.factId);
+    return {...f,enabled:f.enabled!==false,courseTopicId:Number(f.courseTopicId),requiredCourseTopicIds:[...new Set(f.requiredCourseTopicIds.map(Number))].sort((a,b)=>a-b)};
+  });
+}
+function visualPool(facts,through,mode){
+  if(!COURSE38_BY_ID.has(Number(through))||!['current','cumulative'].includes(mode))throw new Error('Выберите изученную тему.');
+  return facts.filter(f=>f.enabled!==false&&f.requiredCourseTopicIds.every(t=>mode==='current'?t===Number(through):t<=Number(through)));
+}
+function visualCompose(f,through,mode,selectedFactIds){
+  if(!visualPool([f],through,mode).length)throw new Error('Карточка №8 выходит за изученные темы.');
+  const required=f.requiredCourseTopicIds.map(id=>COURSE38_BY_ID.get(id));
+  return {id:uid('atom8'),type:'short',ogeNumber:8,text:f.questionText,correctText:f.answers.join('|'),maxScore:1,gradingMode:'exact',
+    imageFilename:f.imagePath,imageFilenames:[f.imagePath],source:'Генератор №8 · '+(f.sourceCategories||[]).join('; '),sourceId:String(f.sourceQuestionIds?.[0]||''),
+    referenceAnswer:f.solutionText||('Ответ: '+f.answers[0]),topic:required.map(t=>t.name).join('; '),primaryCourseTopic:COURSE38_BY_ID.get(f.courseTopicId),requiredCourseTopics:required,
+    metadata:{requiredCourseTopics:required,sourceQuestionIds:f.sourceQuestionIds||[],sourceThemeIds:f.sourceThemeIds||[],imageStatus:f.imageStatus||'',originalImageUrl:f.originalImageUrl||'',atomic:{version:1,task:8,through:Number(through),mode,events:[f],selectedFactIds}}};
+}
+function visualGenerate(facts,through,mode,count,existing=[]){
+  if(!Number.isInteger(count)||count<1||count>100)throw new Error('Укажите количество от 1 до 100.');
+  const used=new Set(existing.filter(q=>q.metadata?.atomic?.task===8).map(q=>q.metadata.atomic.events[0].factId));
+  const selected=visualPool(facts,through,mode),pool=selected.filter(f=>!used.has(f.factId));
+  if(pool.length<count)throw new Error('Доступно неповторяющихся карточек №8: '+pool.length+'. Уменьшите количество или отметьте больше вопросов.');
+  return atomicShuffle(pool).slice(0,count).map(f=>visualCompose(f,through,mode,selected.map(x=>x.factId)));
+}
+function VisualCatalogCard({f,selected,mark}){
+  const h=React.createElement;
+  return h('div',{className:'q-list-item'},
+    h('label',{className:'opt'},h('input',{type:'checkbox',checked:selected.includes(f.factId),onChange:e=>mark([f.factId],e.target.checked)}),f.title||('Вопрос '+(f.sourceQuestionIds||[]).join(', '))),
+    h('p',{className:'q-meta'},'Исходный вопрос: '+(f.sourceQuestionIds||[]).join(', ')+' · '+(f.sourceCategories||[]).join('; ')+' · '+f.imagePath),
+    f.imageStatus==='missing-source-link'&&h('div',{className:'notice'},'В исходном JSON не было ссылки на картинку. На GitHub положите её под именем: '+f.imagePath),
+    h('details',null,h('summary',null,'Показать вопрос, ответ и разбор'),h('img',{src:imageUrl(f.imagePath),className:'q-image',alt:'Изображение задания №8'}),h('p',null,f.questionText),h('p',{className:'q-meta'},'Ответ: '+f.answers.join(' / ')),f.solutionText&&h('p',null,f.solutionText))
+  );
+}
+function VisualSourceEditor({q,facts,busy,onReplace}){
+  const h=React.createElement,candidates=atomicReplacementCandidates(q,0,facts);
+  return h('details',null,h('summary',null,'Заменить задание'),h('p',{className:'q-meta'},'Выберите другую отмеченную карточку №8.'),
+    h('select',{'aria-label':'Замена задания №8',value:'',disabled:busy||!candidates.length,onChange:e=>onReplace(0,e.target.value)},
+      h('option',{value:''},candidates.length?'Выберите другой вопрос…':'Нет другого выбранного вопроса'),candidates.map(f=>h('option',{key:f.factId,value:f.factId},(f.sourceQuestionIds||[]).join(', ')+' · '+f.title))));
+}
+
 function selectedAtomicPool(facts, task, through, mode, ids) {
   const chosen=new Set(ids);
   facts.forEach(f=>{if((f.aliasFactIds||[]).some(id=>chosen.has(id)))chosen.add(f.factId);});
-  return (task===1 ? atomicPool(facts,through,mode) : task===2 ? chronoPool(facts,through,mode) : task===3 ? processPool(facts,through,mode) : tablePool(facts,through,mode)).filter(f=>chosen.has(f.factId));
+  return (task===8 ? visualPool(facts,through,mode) : task===7 ? culturePool(facts,through,mode) : task===6 ? documentPool(facts,through,mode) : task===1 ? atomicPool(facts,through,mode) : task===2 ? chronoPool(facts,through,mode) : (task===3||task===5) ? processPool(facts,through,mode) : tablePool(facts,through,mode)).filter(f=>chosen.has(f.factId));
 }
 function generateSelectedAtomic(facts,task,through,mode,count,ids,existing=[],composition='russia') {
   const pool=selectedAtomicPool(facts,task,through,mode,ids);
-  const qs=task===1 ? atomicGenerate(pool,through,mode,count,existing) : task===2 ? chronoGenerate(pool,through,mode,count,existing,composition,pool.filter(f=>f.scope==='world').map(f=>f.factId)) : task===3 ? processGenerate(pool,through,mode,count,existing) : tableGenerate(pool,through,mode,count,existing,composition);
+  const qs=task===8 ? visualGenerate(pool,through,mode,count,existing) : task===7 ? cultureGenerate(pool,through,mode,count,existing) : task===6 ? documentGenerate(pool,through,mode,count,existing) : task===1 ? atomicGenerate(pool,through,mode,count,existing) : task===2 ? chronoGenerate(pool,through,mode,count,existing,composition,pool.filter(f=>f.scope==='world').map(f=>f.factId)) : task===3 ? processGenerate(pool,through,mode,count,existing) : task===5 ? participantGenerate(pool,through,mode,count,existing) : tableGenerate(pool,through,mode,count,existing,composition);
   return qs.map(q=>({...q,metadata:{...q.metadata,atomic:{...q.metadata.atomic,task,selectedFactIds:pool.map(f=>f.factId)}}}));
 }
 function atomicReplacementCandidates(q,index,facts) {
   const a=q.metadata.atomic, task=a.task||1;
   const pool=selectedAtomicPool(facts,task,a.through,a.mode,a.selectedFactIds||[]);
   const others=a.events.filter((_,i)=>i!==index);
+  if(task===6||task===7||task===8)return pool.filter(f=>f.factId!==a.events[index].factId);
   return pool.filter(f=>f.factId!==a.events[index].factId && (task===1
     ? others.every(o=>atomicOptionsCompatible(o,f))
     : task===2 ? f.scope===a.events[index].scope && others.every(o=>chronoCompatible(o,f))
+    : task===5 ? others.every(o=>participantCompatible(o,f))
     : task===3 ? others.every(o=>o.courseTopicId!==f.courseTopicId && o.process.toLocaleLowerCase('ru')!==f.process.toLocaleLowerCase('ru') && o.fact.toLocaleLowerCase('ru')!==f.fact.toLocaleLowerCase('ru'))
     : others.every(o=>o.courseTopicId!==f.courseTopicId && o.place.toLocaleLowerCase('ru')!==f.place.toLocaleLowerCase('ru') && o.event.toLocaleLowerCase('ru')!==f.event.toLocaleLowerCase('ru') && o.time.toLocaleLowerCase('ru')!==f.time.toLocaleLowerCase('ru'))));
 }
@@ -1387,6 +1607,10 @@ function replaceAtomicEvent(q,index,factId,facts) {
   const f=atomicReplacementCandidates(q,index,facts).find(f=>f.factId===factId);
   if(!f) throw new Error('Это событие нельзя использовать: проверьте выбранные факты, темы и даты.');
   const a=q.metadata.atomic, task=a.task||1, events=a.events.map((e,i)=>i===index?f:e);
+  if(task===8)return visualCompose(f,a.through,a.mode,a.selectedFactIds);
+  if(task===7)return cultureCompose(f,atomicShuffle([0,1,2,3]),atomicShuffle([0,1,2,3,4,5]),a.through,a.mode,a.selectedFactIds);
+  if(task===6){const set=atomicShuffle(documentSets(f,a.through,a.mode))[0];return documentCompose(f,set,atomicShuffle(set.statements),a.through,a.mode,a.selectedFactIds);}
+  if(task===5)return participantReplace(q,index,f,facts);
   if(task===3){
     const pool=selectedAtomicPool(facts,task,a.through,a.mode,a.selectedFactIds||[]);
     const used=new Set(events.map(e=>e.courseTopicId));
@@ -1425,14 +1649,17 @@ function replaceAtomicEvent(q,index,factId,facts) {
 }
 function AtomicEventEditor({q,facts,busy,onReplace}) {
   const h=React.createElement;
+  if(q.ogeNumber===6)return h(DocumentSourceEditor,{q,facts,busy,onReplace});
+  if(q.ogeNumber===8)return h(VisualSourceEditor,{q,facts,busy,onReplace});
+  if(q.ogeNumber===7)return h(CultureSourceEditor,{q,facts,busy,onReplace});
   return h('details',{className:'atomic-editor'},h('summary',null,'Заменить событие'),
     h('p',{className:'q-meta'},'Доступны только факты, выбранные при создании этого задания. Для другого набора создайте новый комплект. Замена создаёт новую версию задания; ранее сохранённые тесты остаются прежними.'),
     q.metadata.atomic.events.map((f,i)=>{
       const candidates=atomicReplacementCandidates(q,i,facts);
-      return h('div',{key:i},h('label',null,((q.ogeNumber===1||q.ogeNumber===3||q.ogeNumber===4)?'АБВГ'[i]:i+1)+') '+(f.process||(f.place?f.place+' — '+f.event:f.event)),
+      return h('div',{key:i},h('label',null,((q.ogeNumber===1||q.ogeNumber===3||q.ogeNumber===4||q.ogeNumber===5)?'АБВГ'[i]:i+1)+') '+(f.process||(f.place?f.place+' — '+f.event:f.event)),
         h('select',{'aria-label':'Замена события '+(i+1),value:'',disabled:busy||!candidates.length,onChange:e=>onReplace(i,e.target.value)},
           h('option',{value:''},candidates.length?'Выберите замену…':'Нет подходящей замены в выбранном наборе'),
-          candidates.map(c=>h('option',{key:c.factId,value:c.factId},(c.process||(c.place?c.place+' — '+c.event:c.event))+' — '+(c.fact||c.dateLabel||c.time||(c.year+' г.'))+' · тема '+c.courseTopicId)))));
+          candidates.map(c=>h('option',{key:c.factId,value:c.factId},(c.process||(c.place?c.place+' — '+c.event:c.event))+' — '+(c.person||c.fact||c.dateLabel||c.time||(c.year+' г.'))+' · тема '+c.courseTopicId)))));
     }));
 }
 
@@ -1475,6 +1702,166 @@ function ProcessGeneratorTab({onReload,onAdd,constructorScope}){
     !!questions.length&&h('div',{className:'card'},h('h2',null,'Предпросмотр: '+questions.length),h('label',null,'Название теста'),h('input',{value:name,onChange:e=>{setName(e.target.value);setCreated(null);}}),h('label',{className:'opt'},h('input',{type:'checkbox',checked:training,onChange:e=>setTraining(e.target.checked)}),'Тренировочный режим'),
       h('div',{className:'atomic-actions'},onAdd&&h('button',{className:'btn',onClick:()=>onAdd(questions,{task:3,facts})},'Добавить комплект в конструктор'),h('button',{className:'btn ghost',disabled:busy,onClick:()=>save(false)},'Сохранить в банк'),h('button',{className:'btn',disabled:busy||!!created,onClick:()=>save(true)},'Сохранить и создать тест')),
       created&&h('div',{className:'notice'},'Код теста: ',h('strong',null,created.code)),questions.map((q,i)=>h('div',{className:'q-list-item',key:q.id},h('h3',null,'Задание '+(i+1)),h(ConstructorPreview,{q}),h(AtomicEventEditor,{q,facts,busy,onReplace:(j,id)=>{try{setQuestions(prev=>prev.map(x=>x.id===q.id?replaceAtomicEvent(q,j,id,facts):x));setCreated(null);}catch(e){setError(e.message);}}}),h('button',{className:'btn ghost small',onClick:()=>generate(i)},'Перегенерировать'),h('button',{className:'btn danger',onClick:()=>setQuestions(prev=>prev.filter(x=>x.id!==q.id))},'Удалить')))));
+}
+function DocumentGeneratorTab({onReload,onAdd,constructorScope}){
+  const h=React.createElement,cacheKey='history.atomic.task6.v1:'+SUPABASE_URL,presetKey=cacheKey+':presets';
+  const [facts,setFacts]=useState([]),[selected,setSelected]=useState([]),[through,setThrough]=useState('6'),[count,setCount]=useState('10');
+  const [search,setSearch]=useState(''),[status,setStatus]=useState('Загружаю базу №6…'),[error,setError]=useState(''),[busy,setBusy]=useState(false);
+  const [questions,setQuestions]=useState([]),[name,setName]=useState(''),[training,setTraining]=useState(true),[created,setCreated]=useState(null),[saved,setSaved]=useState(new Set());
+  const [presetName,setPresetName]=useState(''),[presets,setPresets]=useState(()=>constructorRead(presetKey,[]));
+  useEffect(()=>{if(constructorScope)setThrough(String(constructorScope.through));},[constructorScope?.through]);
+  useEffect(()=>{let live=true;(async()=>{try{let data=constructorRead(cacheKey,null);if(!data){const r=await fetch('history_task_6_facts.json');if(!r.ok)throw new Error('Разместите history_task_6_facts.json рядом с index.html.');data=await r.json();}const rows=documentValidate(data);if(live){setFacts(rows);setStatus('База №6: '+rows.filter(f=>f.enabled).length+' доступных текстов. Записей для проверки: '+rows.reduce((n,f)=>n+(f.reviewReasons||[]).length,0)+'.');}}catch(e){if(live)setError(e.message);}})();return()=>{live=false;};},[]);
+  const pool=documentPool(facts,through,'cumulative'),chosen=pool.filter(f=>selected.includes(f.factId));
+  const visible=pool.filter(f=>(f.title+' '+f.passage+' '+(f.sourceQuestionIds||[]).join(' ')).toLocaleLowerCase('ru').includes(search.toLocaleLowerCase('ru')));
+  function mark(ids,yes){setSelected(prev=>yes?[...new Set([...prev,...ids])]:prev.filter(id=>!ids.includes(id)));}
+  function generate(i){setError('');setCreated(null);try{
+    if(i===undefined){setQuestions(generateSelectedAtomic(facts,6,through,'cumulative',Number(count),selected));setSaved(new Set());}
+    else{const old=questions[i].metadata.atomic,next=generateSelectedAtomic(facts,6,old.through,'cumulative',1,old.selectedFactIds,questions.filter((_,j)=>j!==i))[0];setQuestions(prev=>prev.map((q,j)=>j===i?next:q));}
+  }catch(e){setError(e.message);}}
+  async function importFile(file){if(!file)return;setError('');try{const data=JSON.parse(await file.text()),rows=documentValidate(data);setFacts(rows);setSelected([]);setQuestions([]);try{localStorage.setItem(cacheKey,JSON.stringify(data));}catch(_){}setStatus('Загружено '+rows.filter(f=>f.enabled).length+' доступных текстов.');}catch(e){setError('Импорт: '+e.message);}}
+  async function save(makeTest){if(busy||!questions.length)return;if(makeTest&&!name.trim()){setError('Введите название теста.');return;}setBusy(true);setError('');const done=new Set(saved);try{
+    for(const q of questions){if(done.has(q.id))continue;const err=await upsertQuestion(q);if(err)throw err;done.add(q.id);setSaved(new Set(done));}
+    if(makeTest){const t={id:uid('t'),code:genCode(),name:name.trim(),training,questionIds:questions.map(q=>q.id)},err=await insertTest(t);if(err)throw err;setCreated(t);}
+    setStatus('Сохранено заданий №6: '+questions.length+'.');await onReload();
+  }catch(e){setError('Сохранение: '+portalError(e));}finally{setBusy(false);}}
+  function storePreset(){if(!presetName.trim()||!chosen.length){setError('Укажите название и отметьте тексты.');return;}const next=[...presets,{id:uid('preset6'),name:presetName.trim(),through,ids:chosen.map(f=>f.factId)}];try{localStorage.setItem(presetKey,JSON.stringify(next));setPresets(next);setStatus('Набор сохранён на этом устройстве.');}catch(e){setError('Не удалось сохранить набор: '+e.message);}}
+  return h('fieldset',{'data-task':6,className:'atomic-generator',disabled:busy,style:{border:0,padding:0,margin:0,minWidth:0}},h('div',{className:'card'},h('h2',null,'Генератор №6'),h('div',{className:'notice',role:'status'},status),error&&h('div',{className:'notice',role:'alert'},error),
+    h('label',null,'Загрузить или заменить базу №6 (JSON)'),h('input',{type:'file',accept:'.json,application/json',onChange:e=>{importFile(e.target.files[0]);e.target.value='';}}),
+    h('label',null,'Ученик изучил до темы'),h('select',{value:through,onChange:e=>setThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name))),
+    h('p',null,'Отметьте тексты по изученным темам. Для каждого текста сохраняются шесть исходных суждений; их порядок и правильные номера меняются. Можно выбрать одну тему. В одном комплекте текст не повторяется.'),
+    h('label',null,'Поиск по тексту или номеру источника'),h('input',{value:search,onChange:e=>setSearch(e.target.value)}),
+    h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',onClick:()=>mark(visible.map(f=>f.factId),true)},'Выбрать все показанные'),h('button',{className:'btn ghost small',onClick:()=>mark(visible.map(f=>f.factId),false)},'Снять выделение')),
+    h('p',{className:'q-meta'},'Выбрано текстов: '+chosen.length+' · тем: '+new Set(chosen.map(f=>f.courseTopicId)).size),
+    COURSE38_TOPICS.map(t=>{const rows=visible.filter(f=>f.courseTopicId===t.id);return rows.length>0&&h('details',{key:t.id,'data-topic':t.id},h('summary',null,t.id+'. '+t.name+' — выбрано '+rows.filter(f=>selected.includes(f.factId)).length+' из '+rows.length),
+      h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',onClick:()=>mark(rows.map(f=>f.factId),true)},'Выбрать тему'),h('button',{className:'btn ghost small',onClick:()=>mark(rows.map(f=>f.factId),false)},'Снять тему')),
+      rows.map(f=>h('div',{className:'q-list-item',key:f.factId},h('label',{className:'opt'},h('input',{type:'checkbox',checked:selected.includes(f.factId),onChange:e=>mark([f.factId],e.target.checked)}),f.title),h('p',{className:'q-meta'},'Исходные вопросы: '+(f.sourceQuestionIds||[]).join(', ')),h('p',null,f.passage.slice(0,220)+(f.passage.length>220?'…':'')),h('details',null,h('summary',null,'Показать текст и суждения'),h('div',{className:'q-text'},renderText(f.passage)),documentSets(f,through,'cumulative').map(st=>h('div',{key:st.setId},h('ol',null,st.statements.map(v=>h('li',{key:v.statementId},v.text))),h('details',null,h('summary',null,'Ключ исходника — преподавателю'),st.sourceAnswer)))))));}),
+    h('label',null,'Сохранённый набор'),h('select',{value:'',onChange:e=>{const p=presets.find(x=>x.id===e.target.value);if(p){setThrough(p.through);setSelected(p.ids);setPresetName(p.name);}}},h('option',{value:''},'Выберите…'),presets.map(p=>h('option',{key:p.id,value:p.id},p.name))),
+    h('label',null,'Название нового набора'),h('input',{value:presetName,onChange:e=>setPresetName(e.target.value),placeholder:'Саша — изученные темы'}),h('button',{className:'btn ghost',onClick:storePreset},'Сохранить набор'),
+    facts.some(f=>(f.reviewReasons||[]).length)&&h('details',{className:'notice'},h('summary',null,'Исходные записи, отложенные для проверки'),facts.flatMap(f=>(f.reviewReasons||[]).map((reason,i)=>h('p',{key:f.factId+'-'+i},reason)))),
+    h('p',{className:'q-meta'},'Текст доступен после изучения его основной темы и дополнительных тем, названных в суждениях. Сейчас доступны '+pool.length+' текстов.'),h('label',null,'Количество заданий (1–100, не больше выбранных текстов)'),h('input',{type:'number',min:1,max:100,value:count,onChange:e=>setCount(e.target.value)}),h('button',{className:'btn',disabled:busy||!facts.length,onClick:()=>generate()},'Сгенерировать задания №6')),
+    !!questions.length&&h('div',{className:'card'},h('h2',null,'Предпросмотр: '+questions.length),h('label',null,'Название теста'),h('input',{value:name,onChange:e=>{setName(e.target.value);setCreated(null);}}),h('label',{className:'opt'},h('input',{type:'checkbox',checked:training,onChange:e=>setTraining(e.target.checked)}),'Тренировочный режим'),
+      h('div',{className:'atomic-actions'},onAdd&&h('button',{className:'btn',onClick:()=>onAdd(questions,{task:6,facts})},'Добавить комплект в конструктор'),h('button',{className:'btn ghost',disabled:busy,onClick:()=>save(false)},'Сохранить в банк'),h('button',{className:'btn',disabled:busy||!!created,onClick:()=>save(true)},'Сохранить и создать тест')),
+      created&&h('div',{className:'notice'},'Код теста: ',h('strong',null,created.code)),questions.map((q,i)=>h('div',{className:'q-list-item',key:q.id},h('h3',null,'Задание '+(i+1)),h(ConstructorPreview,{q}),h(AtomicEventEditor,{q,facts,busy,onReplace:(j,id)=>{try{setQuestions(prev=>prev.map(x=>x.id===q.id?replaceAtomicEvent(q,j,id,facts):x));setCreated(null);}catch(e){setError(e.message);}}}),h('button',{className:'btn ghost small',onClick:()=>generate(i)},'Перегенерировать'),h('button',{className:'btn danger',onClick:()=>{setQuestions(prev=>prev.filter(x=>x.id!==q.id));setCreated(null);}},'Удалить')))));
+}
+function CultureGeneratorTab({onReload,onAdd,constructorScope}){
+  const h=React.createElement,cacheKey='history.atomic.task7.v1:'+SUPABASE_URL,presetKey=cacheKey+':presets';
+  const [facts,setFacts]=useState([]),[selected,setSelected]=useState([]),[through,setThrough]=useState('6'),[count,setCount]=useState('10');
+  const [search,setSearch]=useState(''),[status,setStatus]=useState('Загружаю базу №7…'),[error,setError]=useState(''),[busy,setBusy]=useState(false);
+  const [questions,setQuestions]=useState([]),[name,setName]=useState(''),[training,setTraining]=useState(true),[created,setCreated]=useState(null),[saved,setSaved]=useState(new Set());
+  const [presetName,setPresetName]=useState(''),[presets,setPresets]=useState(()=>constructorRead(presetKey,[]));
+  useEffect(()=>{if(constructorScope)setThrough(String(constructorScope.through));},[constructorScope?.through]);
+  useEffect(()=>{let live=true;(async()=>{try{let data=constructorRead(cacheKey,null);if(!data){const r=await fetch('history_task_7_facts.json');if(!r.ok)throw new Error('Разместите history_task_7_facts.json рядом с index.html.');data=await r.json();}const rows=cultureValidate(data);if(live){setFacts(rows);setStatus('База №7: '+rows.filter(f=>f.enabled).length+' доступных комплектов. Исправлений в исходниках: '+rows.reduce((n,f)=>n+(f.corrections||[]).length,0)+'.');}}catch(e){if(live)setError(e.message);}})();return()=>{live=false;};},[]);
+  const pool=culturePool(facts,through,'cumulative'),chosen=pool.filter(f=>selected.includes(f.factId));
+  const visible=pool.filter(f=>(f.title+' '+f.right.join(' ')+' '+(f.sourceQuestionIds||[]).join(' ')).toLocaleLowerCase('ru').includes(search.toLocaleLowerCase('ru')));
+  function mark(ids,yes){setSelected(prev=>yes?[...new Set([...prev,...ids])]:prev.filter(id=>!ids.includes(id)));}
+  function generate(i){setError('');setCreated(null);try{
+    if(i===undefined){setQuestions(generateSelectedAtomic(facts,7,through,'cumulative',Number(count),selected));setSaved(new Set());}
+    else{const old=questions[i].metadata.atomic,next=generateSelectedAtomic(facts,7,old.through,'cumulative',1,old.selectedFactIds,questions.filter((_,j)=>j!==i))[0];setQuestions(prev=>prev.map((q,j)=>j===i?next:q));}
+  }catch(e){setError(e.message);}}
+  async function importFile(file){if(!file)return;setError('');try{const data=JSON.parse(await file.text()),rows=cultureValidate(data);setFacts(rows);setSelected([]);setQuestions([]);try{localStorage.setItem(cacheKey,JSON.stringify(data));}catch(_){}setStatus('Загружено '+rows.filter(f=>f.enabled).length+' доступных комплектов.');}catch(e){setError('Импорт: '+e.message);}}
+  async function save(makeTest){if(busy||!questions.length)return;if(makeTest&&!name.trim()){setError('Введите название теста.');return;}setBusy(true);setError('');const done=new Set(saved);try{
+    for(const q of questions){if(done.has(q.id))continue;const err=await upsertQuestion(q);if(err)throw err;done.add(q.id);setSaved(new Set(done));}
+    if(makeTest){const t={id:uid('t'),code:genCode(),name:name.trim(),training,questionIds:questions.map(q=>q.id)},err=await insertTest(t);if(err)throw err;setCreated(t);}
+    setStatus('Сохранено заданий №7: '+questions.length+'.');await onReload();
+  }catch(e){setError('Сохранение: '+portalError(e));}finally{setBusy(false);}}
+  function storePreset(){if(!presetName.trim()||!chosen.length){setError('Укажите название и отметьте комплекты.');return;}const next=[...presets,{id:uid('preset7'),name:presetName.trim(),through,ids:chosen.map(f=>f.factId)}];try{localStorage.setItem(presetKey,JSON.stringify(next));setPresets(next);setStatus('Набор сохранён на этом устройстве.');}catch(e){setError('Не удалось сохранить набор: '+e.message);}}
+  return h('fieldset',{'data-task':7,className:'atomic-generator',disabled:busy,style:{border:0,padding:0,margin:0,minWidth:0}},h('div',{className:'card'},h('h2',null,'Генератор №7'),h('div',{className:'notice',role:'status'},status),error&&h('div',{className:'notice',role:'alert'},error),
+    h('label',null,'Загрузить или заменить базу №7 (JSON)'),h('input',{type:'file',accept:'.json,application/json',onChange:e=>{importFile(e.target.files[0]);e.target.value='';}}),
+    h('label',null,'Ученик изучил до темы'),h('select',{value:through,onChange:e=>setThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name))),
+    h('p',null,'Отметьте комплекты по изученным темам. Генератор перемешивает четыре позиции слева и шесть вариантов справа, затем пересчитывает ключ. В одном комплекте теста исходное задание не повторяется.'),
+    h('label',null,'Поиск произведения, деятеля или номера источника'),h('input',{value:search,onChange:e=>setSearch(e.target.value)}),
+    h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',onClick:()=>mark(visible.map(f=>f.factId),true)},'Выбрать все показанные'),h('button',{className:'btn ghost small',onClick:()=>mark(visible.map(f=>f.factId),false)},'Снять выделение')),
+    h('p',{className:'q-meta'},'Выбрано комплектов: '+chosen.length+' · тем: '+new Set(chosen.map(f=>f.courseTopicId)).size),
+    COURSE38_TOPICS.map(t=>{const rows=visible.filter(f=>f.courseTopicId===t.id);return rows.length>0&&h('details',{key:t.id,'data-topic':t.id},h('summary',null,t.id+'. '+t.name+' — выбрано '+rows.filter(f=>selected.includes(f.factId)).length+' из '+rows.length),
+      h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',onClick:()=>mark(rows.map(f=>f.factId),true)},'Выбрать тему'),h('button',{className:'btn ghost small',onClick:()=>mark(rows.map(f=>f.factId),false)},'Снять тему')),
+      rows.map(f=>h(CultureCatalogCard,{key:f.factId,f,selected,mark})));}),
+    h('label',null,'Сохранённый набор'),h('select',{value:'',onChange:e=>{const p=presets.find(x=>x.id===e.target.value);if(p){setThrough(p.through);setSelected(p.ids);setPresetName(p.name);}}},h('option',{value:''},'Выберите…'),presets.map(p=>h('option',{key:p.id,value:p.id},p.name))),
+    h('label',null,'Название нового набора'),h('input',{value:presetName,onChange:e=>setPresetName(e.target.value),placeholder:'Саша — изученные темы'}),h('button',{className:'btn ghost',onClick:storePreset},'Сохранить набор'),
+    facts.some(f=>(f.corrections||[]).length)&&h('details',{className:'notice'},h('summary',null,'Исправления исходных записей'),facts.flatMap(f=>(f.corrections||[]).map((c,i)=>h('p',{key:f.factId+'-'+i},'Вопрос '+c.sourceQuestionId+': '+c.original+' → '+c.corrected+'. '+c.reason)))),
+    h('p',{className:'q-meta'},'Комплект доступен после изучения всех указанных для него тем. Сейчас доступны '+pool.length+' комплектов.'),h('label',null,'Количество заданий (1–100, не больше выбранных комплектов)'),h('input',{type:'number',min:1,max:100,value:count,onChange:e=>setCount(e.target.value)}),h('button',{className:'btn',disabled:busy||!facts.length,onClick:()=>generate()},'Сгенерировать задания №7')),
+    !!questions.length&&h('div',{className:'card'},h('h2',null,'Предпросмотр: '+questions.length),h('label',null,'Название теста'),h('input',{value:name,onChange:e=>{setName(e.target.value);setCreated(null);}}),h('label',{className:'opt'},h('input',{type:'checkbox',checked:training,onChange:e=>setTraining(e.target.checked)}),'Тренировочный режим'),
+      h('div',{className:'atomic-actions'},onAdd&&h('button',{className:'btn',onClick:()=>onAdd(questions,{task:7,facts})},'Добавить комплект в конструктор'),h('button',{className:'btn ghost',disabled:busy,onClick:()=>save(false)},'Сохранить в банк'),h('button',{className:'btn',disabled:busy||!!created,onClick:()=>save(true)},'Сохранить и создать тест')),
+      created&&h('div',{className:'notice'},'Код теста: ',h('strong',null,created.code)),questions.map((q,i)=>h('div',{className:'q-list-item',key:q.id},h('h3',null,'Задание '+(i+1)),h(ConstructorPreview,{q}),h(AtomicEventEditor,{q,facts,busy,onReplace:(j,id)=>{try{setQuestions(prev=>prev.map(x=>x.id===q.id?replaceAtomicEvent(q,j,id,facts):x));setCreated(null);}catch(e){setError(e.message);}}}),h('button',{className:'btn ghost small',onClick:()=>generate(i)},'Перегенерировать'),h('button',{className:'btn danger',onClick:()=>{setQuestions(prev=>prev.filter(x=>x.id!==q.id));setCreated(null);}},'Удалить')))));
+}
+function VisualGeneratorTab({onReload,onAdd,constructorScope}){
+  const h=React.createElement,cacheKey='history.atomic.task8.v1:'+SUPABASE_URL,presetKey=cacheKey+':presets';
+  const [facts,setFacts]=useState([]),[selected,setSelected]=useState([]),[through,setThrough]=useState('30'),[count,setCount]=useState('10');
+  const [search,setSearch]=useState(''),[status,setStatus]=useState('Загружаю базу №8…'),[error,setError]=useState(''),[busy,setBusy]=useState(false);
+  const [questions,setQuestions]=useState([]),[name,setName]=useState(''),[training,setTraining]=useState(true),[created,setCreated]=useState(null),[saved,setSaved]=useState(new Set());
+  const [presetName,setPresetName]=useState(''),[presets,setPresets]=useState(()=>constructorRead(presetKey,[]));
+  useEffect(()=>{if(constructorScope)setThrough(String(Math.max(30,Number(constructorScope.through)||30)));},[constructorScope?.through]);
+  useEffect(()=>{let live=true;(async()=>{try{let data=constructorRead(cacheKey,null);if(!data){const r=await fetch('history_task_8_facts.json');if(!r.ok)throw new Error('Разместите history_task_8_facts.json рядом с index.html.');data=await r.json();}const rows=visualValidate(data);if(live){setFacts(rows);setSelected(rows.map(f=>f.factId));setStatus('База №8: '+rows.filter(f=>f.enabled).length+' вопросов. Без исходной ссылки на картинку: '+rows.filter(f=>f.imageStatus==='missing-source-link').length+'.');}}catch(e){if(live)setError(e.message);}})();return()=>{live=false;};},[]);
+  const pool=visualPool(facts,through,'cumulative'),chosen=pool.filter(f=>selected.includes(f.factId));
+  const visible=pool.filter(f=>((f.title||'')+' '+f.questionText+' '+(f.solutionText||'')+' '+(f.sourceQuestionIds||[]).join(' ')).toLocaleLowerCase('ru').includes(search.toLocaleLowerCase('ru')));
+  function mark(ids,yes){setSelected(prev=>yes?[...new Set([...prev,...ids])]:prev.filter(id=>!ids.includes(id)));}
+  function generate(i){setError('');setCreated(null);try{
+    if(i===undefined){setQuestions(generateSelectedAtomic(facts,8,through,'cumulative',Number(count),selected));setSaved(new Set());}
+    else{const old=questions[i].metadata.atomic,next=generateSelectedAtomic(facts,8,old.through,'cumulative',1,old.selectedFactIds,questions.filter((_,j)=>j!==i))[0];setQuestions(prev=>prev.map((q,j)=>j===i?next:q));}
+  }catch(e){setError(e.message);}}
+  async function importFile(file){if(!file)return;setError('');try{const data=JSON.parse(await file.text()),rows=visualValidate(data);setFacts(rows);setSelected(rows.map(f=>f.factId));setQuestions([]);try{localStorage.setItem(cacheKey,JSON.stringify(data));}catch(_){}setStatus('Загружено '+rows.filter(f=>f.enabled).length+' вопросов №8.');}catch(e){setError('Импорт: '+e.message);}}
+  async function save(makeTest){if(busy||!questions.length)return;if(makeTest&&!name.trim()){setError('Введите название теста.');return;}setBusy(true);setError('');const done=new Set(saved);try{
+    for(const q of questions){if(done.has(q.id))continue;const err=await upsertQuestion(q);if(err)throw err;done.add(q.id);setSaved(new Set(done));}
+    if(makeTest){const t={id:uid('t'),code:genCode(),name:name.trim(),training,questionIds:questions.map(q=>q.id)},err=await insertTest(t);if(err)throw err;setCreated(t);}
+    setStatus('Сохранено заданий №8: '+questions.length+'.');await onReload();
+  }catch(e){setError('Сохранение: '+portalError(e));}finally{setBusy(false);}}
+  function storePreset(){if(!presetName.trim()||!chosen.length){setError('Укажите название и отметьте вопросы.');return;}const next=[...presets,{id:uid('preset8'),name:presetName.trim(),through,ids:chosen.map(f=>f.factId)}];try{localStorage.setItem(presetKey,JSON.stringify(next));setPresets(next);setStatus('Набор №8 сохранён на этом устройстве.');}catch(e){setError('Не удалось сохранить набор: '+e.message);}}
+  return h('fieldset',{'data-task':8,className:'atomic-generator',disabled:busy,style:{border:0,padding:0,margin:0,minWidth:0}},h('div',{className:'card'},h('h2',null,'Генератор №8'),h('div',{className:'notice',role:'status'},status),error&&h('div',{className:'notice',role:'alert'},error),
+    h('label',null,'Загрузить или заменить базу №8 (JSON)'),h('input',{type:'file',accept:'.json,application/json',onChange:e=>{importFile(e.target.files[0]);e.target.value='';}}),
+    h('label',null,'Ученик изучил до темы'),h('select',{value:through,onChange:e=>setThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name))),
+    Number(through)<30&&h('div',{className:'notice'},'№8 относится к теме 30 «Великая Отечественная война» и станет доступен после её изучения.'),
+    h('p',null,'Генератор №8 не изменяет исходные вопросы: он выбирает целые карточки «изображение + вопрос + ответ + разбор». За одну генерацию карточка не повторяется.'),
+    h('label',null,'Поиск по вопросу, событию или номеру источника'),h('input',{value:search,onChange:e=>setSearch(e.target.value)}),
+    h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',onClick:()=>mark(visible.map(f=>f.factId),true)},'Выбрать все показанные'),h('button',{className:'btn ghost small',onClick:()=>mark(visible.map(f=>f.factId),false)},'Снять выделение')),
+    h('p',{className:'q-meta'},'Выбрано вопросов: '+chosen.length+' из '+pool.length),
+    visible.map(f=>h(VisualCatalogCard,{key:f.factId,f,selected,mark})),
+    h('label',null,'Сохранённый набор'),h('select',{value:'',onChange:e=>{const p=presets.find(x=>x.id===e.target.value);if(p){setThrough(p.through);setSelected(p.ids);setPresetName(p.name);}}},h('option',{value:''},'Выберите…'),presets.map(p=>h('option',{key:p.id,value:p.id},p.name))),
+    h('label',null,'Название нового набора'),h('input',{value:presetName,onChange:e=>setPresetName(e.target.value),placeholder:'Саша — ВОВ, изображения'}),h('button',{className:'btn ghost',onClick:storePreset},'Сохранить набор'),
+    h('label',null,'Количество заданий (1–100, не больше выбранных)'),h('input',{type:'number',min:1,max:100,value:count,onChange:e=>setCount(e.target.value)}),h('button',{className:'btn',disabled:busy||!facts.length||Number(through)<30,onClick:()=>generate()},'Сгенерировать задания №8')),
+    !!questions.length&&h('div',{className:'card'},h('h2',null,'Предпросмотр: '+questions.length),h('label',null,'Название теста'),h('input',{value:name,onChange:e=>{setName(e.target.value);setCreated(null);}}),h('label',{className:'opt'},h('input',{type:'checkbox',checked:training,onChange:e=>setTraining(e.target.checked)}),'Тренировочный режим'),
+      h('div',{className:'atomic-actions'},onAdd&&h('button',{className:'btn',onClick:()=>onAdd(questions,{task:8,facts})},'Добавить комплект в конструктор'),h('button',{className:'btn ghost',disabled:busy,onClick:()=>save(false)},'Сохранить в банк'),h('button',{className:'btn',disabled:busy||!!created,onClick:()=>save(true)},'Сохранить и создать тест')),
+      created&&h('div',{className:'notice'},'Код теста: ',h('strong',null,created.code)),questions.map((q,i)=>h('div',{className:'q-list-item',key:q.id},h('h3',null,'Задание '+(i+1)),h(ConstructorPreview,{q}),h(AtomicEventEditor,{q,facts,busy,onReplace:(j,id)=>{try{setQuestions(prev=>prev.map(x=>x.id===q.id?replaceAtomicEvent(q,j,id,facts):x));setCreated(null);}catch(e){setError(e.message);}}}),h('button',{className:'btn ghost small',onClick:()=>generate(i)},'Перегенерировать'),h('button',{className:'btn danger',onClick:()=>{setQuestions(prev=>prev.filter(x=>x.id!==q.id));setCreated(null);}},'Удалить')))));
+}
+
+function ParticipantGeneratorTab({onReload,onAdd,constructorScope}){
+  const h=React.createElement,cacheKey='history.atomic.task5.v1:'+SUPABASE_URL,presetKey=cacheKey+':presets';
+  const [facts,setFacts]=useState([]),[selected,setSelected]=useState([]),[through,setThrough]=useState('6'),[count,setCount]=useState('10');
+  const [search,setSearch]=useState(''),[status,setStatus]=useState('Загружаю базу №5…'),[error,setError]=useState(''),[busy,setBusy]=useState(false);
+  const [questions,setQuestions]=useState([]),[name,setName]=useState(''),[training,setTraining]=useState(true),[created,setCreated]=useState(null),[saved,setSaved]=useState(new Set());
+  const [presetName,setPresetName]=useState(''),[presets,setPresets]=useState(()=>constructorRead(presetKey,[]));
+  useEffect(()=>{if(constructorScope)setThrough(String(constructorScope.through));},[constructorScope?.through]);
+  useEffect(()=>{let live=true;(async()=>{try{let data=constructorRead(cacheKey,null);if(!data){const r=await fetch('history_task_5_facts.json');if(!r.ok)throw new Error('Разместите history_task_5_facts.json рядом с index.html.');data=await r.json();}const rows=participantValidate(data);if(live){setFacts(rows);setStatus('База №5: '+rows.filter(f=>f.enabled).length+' доступных пар, '+rows.filter(f=>!f.enabled).length+' отложено для проверки.');}}catch(e){if(live)setError(e.message);}})();return()=>{live=false;};},[]);
+  const pool=facts.filter(f=>f.enabled&&f.courseTopicId<=Number(through)),chosen=pool.filter(f=>selected.includes(f.factId));
+  const visible=pool.filter(f=>(f.event+' '+f.person).toLocaleLowerCase('ru').includes(search.toLocaleLowerCase('ru')));
+  function mark(ids,yes){setSelected(prev=>yes?[...new Set([...prev,...ids])]:prev.filter(id=>!ids.includes(id)));}
+  function generate(i){setError('');setCreated(null);try{
+    if(i===undefined){setQuestions(generateSelectedAtomic(facts,5,through,'cumulative',Number(count),selected));setSaved(new Set());}
+    else{const old=questions[i].metadata.atomic,next=generateSelectedAtomic(facts,5,old.through,'cumulative',1,old.selectedFactIds,questions.filter((_,j)=>j!==i))[0];setQuestions(prev=>prev.map((q,j)=>j===i?next:q));}
+  }catch(e){setError(e.message);}}
+  async function importFile(file){if(!file)return;setError('');try{const data=JSON.parse(await file.text()),rows=participantValidate(data);setFacts(rows);setSelected([]);setQuestions([]);try{localStorage.setItem(cacheKey,JSON.stringify(data));}catch(_){}setStatus('Загружено '+rows.length+' пар.');}catch(e){setError('Импорт: '+e.message);}}
+  async function save(makeTest){if(busy||!questions.length)return;if(makeTest&&!name.trim()){setError('Введите название теста.');return;}setBusy(true);setError('');const done=new Set(saved);try{
+    for(const q of questions){if(done.has(q.id))continue;const err=await upsertQuestion(q);if(err)throw err;done.add(q.id);setSaved(new Set(done));}
+    if(makeTest){const t={id:uid('t'),code:genCode(),name:name.trim(),training,questionIds:questions.map(q=>q.id)},err=await insertTest(t);if(err)throw err;setCreated(t);}
+    setStatus('Сохранено заданий №5: '+questions.length+'.');await onReload();
+  }catch(e){setError('Сохранение: '+portalError(e));}finally{setBusy(false);}}
+  function storePreset(){if(!presetName.trim()||!chosen.length){setError('Укажите название и отметьте пары.');return;}const next=[...presets,{id:uid('preset5'),name:presetName.trim(),through,ids:chosen.map(f=>f.factId)}];try{localStorage.setItem(presetKey,JSON.stringify(next));setPresets(next);setStatus('Набор сохранён на этом устройстве.');}catch(e){setError('Не удалось сохранить набор: '+e.message);}}
+  return h('div',{'data-task':5,className:'atomic-generator'},h('div',{className:'card'},h('h2',null,'Генератор №5'),h('div',{className:'notice',role:'status'},status),error&&h('div',{className:'notice',role:'alert'},error),
+    h('label',null,'Загрузить или заменить базу №5 (JSON)'),h('input',{type:'file',accept:'.json,application/json',onChange:e=>{importFile(e.target.files[0]);e.target.value='';}}),
+    h('label',null,'Ученик изучил до темы'),h('select',{value:through,onChange:e=>setThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name))),
+    h('p',null,'Отметьте изученные пары. В каждом задании четыре соответствия и два лишних участника из двух других тем. Всего нужны пары минимум из шести разных тем.'),
+    h('label',null,'Поиск события или участника'),h('input',{value:search,onChange:e=>setSearch(e.target.value)}),
+    h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',onClick:()=>mark(visible.map(f=>f.factId),true)},'Выбрать все показанные'),h('button',{className:'btn ghost small',onClick:()=>mark(visible.map(f=>f.factId),false)},'Снять выделение')),
+    h('p',{className:'q-meta'},'Выбрано пар: '+chosen.length+' · тем: '+new Set(chosen.map(f=>f.courseTopicId)).size),
+    COURSE38_TOPICS.map(t=>{const rows=visible.filter(f=>f.courseTopicId===t.id);return rows.length>0&&h('details',{key:t.id,'data-topic':t.id},h('summary',null,t.id+'. '+t.name+' — выбрано '+rows.filter(f=>selected.includes(f.factId)).length+' из '+rows.length),
+      h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',onClick:()=>mark(rows.map(f=>f.factId),true)},'Выбрать тему'),h('button',{className:'btn ghost small',onClick:()=>mark(rows.map(f=>f.factId),false)},'Снять тему')),
+      rows.map(f=>h('label',{className:'opt',key:f.factId},h('input',{type:'checkbox',checked:selected.includes(f.factId),onChange:e=>mark([f.factId],e.target.checked)}),f.event+' — '+f.person,h('small',{className:'q-meta'},' · исходные вопросы: '+(f.sourceQuestionIds||[]).join(', ')))));}),
+    h('label',null,'Сохранённый набор'),h('select',{value:'',onChange:e=>{const p=presets.find(x=>x.id===e.target.value);if(p){setThrough(p.through);setSelected(p.ids);setPresetName(p.name);}}},h('option',{value:''},'Выберите…'),presets.map(p=>h('option',{key:p.id,value:p.id},p.name))),
+    h('label',null,'Название нового набора'),h('input',{value:presetName,onChange:e=>setPresetName(e.target.value),placeholder:'Саша — изученные темы'}),h('button',{className:'btn ghost',onClick:storePreset},'Сохранить набор'),
+    facts.some(f=>!f.enabled)&&h('details',{className:'notice'},h('summary',null,'Отложенные пары ('+facts.filter(f=>!f.enabled).length+')'),facts.filter(f=>!f.enabled).map(f=>h('p',{key:f.factId},f.event+' — '+f.person+'; '+f.reviewReason))),
+    facts.some(f=>f.correction)&&h('details',{className:'notice'},h('summary',null,'Исправлены ошибки исходных ключей ('+facts.filter(f=>f.correction).length+')'),facts.filter(f=>f.correction).map(f=>h('p',{key:f.factId},f.event+': '+f.correction.originalPerson+' → '+f.person+'. '+f.correction.reason))),
+    h('label',null,'Количество заданий (1–100)'),h('input',{type:'number',min:1,max:100,value:count,onChange:e=>setCount(e.target.value)}),h('button',{className:'btn',disabled:busy||!facts.length,onClick:()=>generate()},'Сгенерировать задания №5')),
+    !!questions.length&&h('div',{className:'card'},h('h2',null,'Предпросмотр: '+questions.length),h('label',null,'Название теста'),h('input',{value:name,onChange:e=>{setName(e.target.value);setCreated(null);}}),h('label',{className:'opt'},h('input',{type:'checkbox',checked:training,onChange:e=>setTraining(e.target.checked)}),'Тренировочный режим'),
+      h('div',{className:'atomic-actions'},onAdd&&h('button',{className:'btn',onClick:()=>onAdd(questions,{task:5,facts})},'Добавить комплект в конструктор'),h('button',{className:'btn ghost',disabled:busy,onClick:()=>save(false)},'Сохранить в банк'),h('button',{className:'btn',disabled:busy||!!created,onClick:()=>save(true)},'Сохранить и создать тест')),
+      created&&h('div',{className:'notice'},'Код теста: ',h('strong',null,created.code)),questions.map((q,i)=>h('div',{className:'q-list-item',key:q.id},h('h3',null,'Задание '+(i+1)),h(ConstructorPreview,{q}),h(AtomicEventEditor,{q,facts,busy,onReplace:(j,id)=>{try{setQuestions(prev=>prev.map(x=>x.id===q.id?replaceAtomicEvent(q,j,id,facts):x));setCreated(null);}catch(e){setError(e.message);}}}),h('button',{className:'btn ghost small',onClick:()=>generate(i)},'Перегенерировать'),h('button',{className:'btn danger',onClick:()=>{setQuestions(prev=>prev.filter(x=>x.id!==q.id));setCreated(null);}},'Удалить')))));
 }
 function TableGeneratorTab({onReload,onAdd,constructorScope}){
   const h=React.createElement,cacheKey='history.atomic.task4.v1:'+SUPABASE_URL,presetKey=cacheKey+':presets';
@@ -1679,6 +2066,7 @@ function constructorEligible(q,through,mode) {
 }
 function constructorIdentity(q) {
   const m=q.metadata||{};
+  if(m.atomic?.task===6)return 'atomic:6:'+m.atomic.events[0].factId+':'+m.atomic.sourceSetId;
   if(m.atomic) return 'atomic:'+q.ogeNumber+':'+m.atomic.events.map(f=>f.factId).sort().join(',');
   return 'bank:'+String(m.constructorSourceId||q.sourceId||q.id);
 }
@@ -1731,7 +2119,7 @@ function ConstructorTab({bank,onReload}) {
     if(!rows.length)return;
     setGenerated(prev=>{const map=new Map(prev.map(q=>[q.id,q]));rows.forEach(q=>map.set(q.id,constructorQuestion(q)));return [...map.values()];});
     setFactBases(prev=>({...prev,[context.task]:context.facts}));setSelected(prev=>[...new Set([...prev,...rows.map(q=>q.id)])]);
-    if(context.task===3||context.task===4){setMode('cumulative');setThrough(String(Math.max(Number(through),...rows.flatMap(q=>q.requiredCourseTopics.map(t=>Number(t.id))))));}setNotice('В конструктор добавлено '+rows.length+' заданий №'+context.task+'.');setSection('bank');
+    if(context.task===3||context.task===4||context.task===5||context.task===6||context.task===7||context.task===8){setMode('cumulative');setThrough(String(Math.max(Number(through),...rows.flatMap(q=>q.requiredCourseTopics.map(t=>Number(t.id))))));}setNotice('В конструктор добавлено '+rows.length+' заданий №'+context.task+'.');setSection('bank');
   }
   function presetData(){return {...state,variants:[]};}
   function storeSets(next){try{localStorage.setItem(CONSTRUCTOR_KEY+':sets',JSON.stringify(next));setPresets(next);}catch(_){throw new Error('Не удалось сохранить набор. Экспортируйте его в JSON.');}}
@@ -1739,16 +2127,20 @@ function ConstructorTab({bank,onReload}) {
     if(!p||p.version!==1||!COURSE38_BY_ID.has(Number(p.through))||!['current','cumulative'].includes(p.mode)||!Array.isArray(p.selected)||!Array.isArray(p.generated))throw new Error('Это не набор конструктора версии 1.');
     // Imported generated questions must contain a valid atomic snapshot and selected facts.
     const bases={};
-    for(const task of [1,2,3,4])if(p.factBases&&p.factBases[task]){
+    for(const task of [1,2,3,4,5,6,7,8])if(p.factBases&&p.factBases[task]){
       if(task===1)bases[task]=atomicValidate({facts:p.factBases[task]});
       else if(task===2)bases[task]=chronoValidate({facts:p.factBases[task]});
       else if(task===3)bases[task]=processValidate({facts:p.factBases[task]});
+      else if(task===5)bases[task]=participantValidate({facts:p.factBases[task]});
+      else if(task===6)bases[task]=documentValidate({facts:p.factBases[task]});
+      else if(task===7)bases[task]=cultureValidate({facts:p.factBases[task]});
+      else if(task===8)bases[task]=visualValidate({facts:p.factBases[task]});
       else{
         const pattern=p.generated.find(q=>q.ogeNumber===4)?.metadata?.atomic?.pattern;
         bases[task]=tableValidate({facts:p.factBases[task],patterns:pattern?[pattern]:[]}).facts;
       }
     }
-    p.generated.forEach(q=>{if(!q||typeof q.id!=='string'||typeof q.text!=='string'||![1,2,3,4].includes(q.ogeNumber)||!q.metadata?.atomic||!Array.isArray(q.metadata.atomic.events))throw new Error('Повреждённое автоматически созданное задание.');});
+    p.generated.forEach(q=>{if(!q||typeof q.id!=='string'||typeof q.text!=='string'||![1,2,3,4,5,6,7,8].includes(q.ogeNumber)||!q.metadata?.atomic||!Array.isArray(q.metadata.atomic.events))throw new Error('Повреждённое автоматически созданное задание.');});
     setThrough(String(p.through));setMode(p.mode);setSelected(p.selected.filter(x=>typeof x==='string'));setGenerated(p.generated);setFactBases(bases);setQuota(p.quota||{});setCount(String(p.count||1));setName(String(p.name||''));setTraining(p.training!==false);setVariants([]);setActive(0);setError('');setNotice('Набор загружен. Проверьте доступность выбранных заданий и соберите варианты.');
   }
   function signature(rows){return rows.map(constructorIdentity).sort().join('|');}
@@ -1821,12 +2213,16 @@ function ConstructorTab({bank,onReload}) {
   return h('fieldset',{className:'constructor',disabled:busy,'data-constructor':true,style:{border:0,padding:0,margin:0,minWidth:0}},
     h('div',{className:'card'},h('h2',null,'Конструктор'),h('p',null,'Выберите изученные темы и конкретный материал. Затем соберите и проверьте варианты.'),
       h('div',{className:'constructor-grid'},h('div',null,h('label',{htmlFor:'constructor-through'},'Последняя изученная тема'),h('select',{id:'constructor-through',value:through,disabled:busy,onChange:e=>setThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name)))),h('div',null,h('label',{htmlFor:'constructor-mode'},'Материал'),h('select',{id:'constructor-mode',value:mode,disabled:busy,onChange:e=>setMode(e.target.value)},h('option',{value:'cumulative'},'Накопительно: темы 1–'+through),h('option',{value:'current'},'Только тема '+through)))),
-      h('div',{className:'tabs'},[['bank','Выбор заданий'],['atom1','Создать №1'],['atom2','Создать №2'],['atom3','Создать №3'],['atom4','Создать №4']].map(([k,s])=>h('button',{key:k,disabled:busy,className:section===k?'active':'',onClick:()=>setSection(k)},s))),
+      h('div',{className:'tabs'},[['bank','Выбор заданий'],['atom1','Создать №1'],['atom2','Создать №2'],['atom3','Создать №3'],['atom4','Создать №4'],['atom5','Создать №5'],['atom6','Создать №6'],['atom7','Создать №7'],['atom8','Создать №8']].map(([k,s])=>h('button',{key:k,disabled:busy,className:section===k?'active':'',onClick:()=>setSection(k)},s))),
       h('p',{className:'q-meta'},'Выбрано доступных заданий: '+chosen.length+(selectedHidden?' · исключено из текущего материала: '+selectedHidden:'')+'. Черновик и наборы сохраняются в этом браузере; для переноса используйте экспорт.')),
     error&&h('div',{className:'notice',role:'alert'},error),notice&&h('div',{className:'notice',role:'status'},notice),
     [1,2].map(task=>h('div',{key:task,style:{display:section==='atom'+task?'block':'none'}},h(AtomicGeneratorTab,{task,onReload,onAdd:addGenerated,constructorScope:{through,mode}}))),
     h('div',{style:{display:section==='atom3'?'block':'none'}},h(ProcessGeneratorTab,{onReload,onAdd:addGenerated,constructorScope:{through,mode}})),
     h('div',{style:{display:section==='atom4'?'block':'none'}},h(TableGeneratorTab,{onReload,onAdd:addGenerated,constructorScope:{through,mode}})),
+    h('div',{style:{display:section==='atom5'?'block':'none'}},h(ParticipantGeneratorTab,{onReload,onAdd:addGenerated,constructorScope:{through,mode}})),
+    h('div',{style:{display:section==='atom6'?'block':'none'}},h(DocumentGeneratorTab,{onReload,onAdd:addGenerated,constructorScope:{through,mode}})),
+    h('div',{style:{display:section==='atom7'?'block':'none'}},h(CultureGeneratorTab,{onReload,onAdd:addGenerated,constructorScope:{through,mode}})),
+    h('div',{style:{display:section==='atom8'?'block':'none'}},h(VisualGeneratorTab,{onReload,onAdd:addGenerated,constructorScope:{through,mode}})),
     section==='bank'&&h('div',{className:'card'},h('h3',null,'Материал для вариантов'),
       bank===null&&h('p',null,'Загружаю банк…'),
       h('div',{className:'constructor-grid'},h('div',null,h('label',{htmlFor:'constructor-search'},'Поиск по тексту или ID'),h('input',{id:'constructor-search',value:search,onChange:e=>setSearch(e.target.value)})),h('div',null,h('label',{htmlFor:'constructor-number'},'Номер задания'),h('select',{id:'constructor-number',value:number,onChange:e=>setNumber(e.target.value)},h('option',{value:''},'Все номера'),[...new Set(catalog.map(q=>q.ogeNumber).filter(Boolean))].sort((a,b)=>a-b).map(n=>h('option',{key:n,value:n},'№'+n))))),
@@ -2771,7 +3167,7 @@ function StudentView() {
   /* close groups.map: */ ))
   })(), submitErr && /* @__PURE__ */ React.createElement("div", { className: "notice", style: { borderLeftColor: "var(--red)" } }, submitErr), /* @__PURE__ */ React.createElement("button", { className: "btn", disabled: subBusy, onClick: submit }, subBusy ? "\u041E\u0442\u043F\u0440\u0430\u0432\u043B\u044F\u044E\u2026" : "\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u043E\u0442\u0432\u0435\u0442\u044B"));
 }
-ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(React.Fragment, null, React.createElement(App, null), React.createElement("div", { style: { textAlign: "center", color: "#999", fontSize: 11, fontFamily: "-apple-system, Segoe UI, sans-serif", margin: "24px 0" } }, "версия SAFE38-GEN1-GEN2-2026-09-26")));
+ReactDOM.createRoot(document.getElementById("root")).render(React.createElement(React.Fragment, null, React.createElement(App, null), React.createElement("div", { style: { textAlign: "center", color: "#999", fontSize: 11, fontFamily: "-apple-system, Segoe UI, sans-serif", margin: "24px 0" } }, "версия SAFE38-GEN1–7-2026-09-29")));
 
 </script>
 
