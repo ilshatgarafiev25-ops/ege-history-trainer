@@ -1,0 +1,948 @@
+{
+  "meta": {
+    "schema": "history-task10-shared-map-v3",
+    "enabledQuestions": 33
+  },
+  "facts": [
+    {
+      "factId": "T10-99454",
+      "title": "Укажите название города-крепости, обозначенного на схеме цифрой «2».",
+      "questionText": "Укажите название города-крепости, обозначенного на схеме цифрой «2».",
+      "answers": [
+        "азов",
+        "АЗОВ",
+        "Азов"
+      ],
+      "solutionText": "Цифрой 2 обозначен город, который расположен на месте, где Дон впадает в Азовское море. Это город Азов.",
+      "imagePath": "images/13337/task_99453_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20241103132627-1__5122a.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        99454
+      ],
+      "sourceThemeIds": [
+        13340
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13340?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-114257",
+      "title": "Укажите имя князя, походы которого обозначены в легенде схемы цифрой «1».",
+      "questionText": "Укажите имя князя, походы которого обозначены в легенде схемы цифрой «1».",
+      "answers": [
+        "святослав",
+        "СВЯТОСЛАВ",
+        "Святослав",
+        "святославигоревич",
+        "СВЯТОСЛАВИГОРЕВИЧ",
+        "Святославигоревич"
+      ],
+      "solutionText": "Цифрой \"1\" обозначены Дунайский поход Святослава Игоревича и его поход на Хазарский каганат.",
+      "imagePath": "images/13337/task_114256_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250826140612-4__7bit2.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        114257
+      ],
+      "sourceThemeIds": [
+        13340
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13340?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-136996",
+      "title": "Укажите название города, обозначенного на схеме цифрой «2», в период, когда произошли события, отражённые на схеме.",
+      "questionText": "Укажите название города, обозначенного на схеме цифрой «2», в период, когда произошли события, отражённые на схеме.",
+      "answers": [
+        "симбирск",
+        "СИМБИРСК",
+        "Симбирск"
+      ],
+      "solutionText": "Цифрой «2» на схеме обозначен город, расположенный по течению Волги над Саратовом и Самарой. Это город Симбирск.",
+      "imagePath": "images/13337/task_136995_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250823140410-1__7ax9l.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        136996
+      ],
+      "sourceThemeIds": [
+        13340
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13340?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-137414",
+      "title": "Укажите фамилию российского военачальника, в честь которого была названа военная операция советских войск, проводившаяся в районе, обозначенном на схеме цифрой «1».",
+      "questionText": "Укажите фамилию российского военачальника, в честь которого была названа военная операция советских войск, проводившаяся в районе, обозначенном на схеме цифрой «1».",
+      "answers": [
+        "Багратион",
+        "багратион",
+        "БАГРАТИОН"
+      ],
+      "solutionText": "Цифрой \"1\" обозначена Белорусская ССР. Операция по её освобождению называлась \"Багратион\".",
+      "imagePath": "images/13337/task_137412_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250825144038-1__7bahz.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        137414
+      ],
+      "sourceThemeIds": [
+        13340
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13340?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-137682",
+      "title": "Укажите название города, обозначенного на схеме цифрой «6».",
+      "questionText": "Укажите название города, обозначенного на схеме цифрой «6».",
+      "answers": [
+        "псков",
+        "Псков",
+        "ПСКОВ"
+      ],
+      "solutionText": "Цифрой 6 на карте обозначен город под Чудским озером. Это город Псков.",
+      "imagePath": "images/13337/task_137677_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250826174721-7__7bksd.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        137682
+      ],
+      "sourceThemeIds": [
+        13340
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13340?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-138413",
+      "title": "Укажите название города, обозначенного на схеме цифрой «1».",
+      "questionText": "Укажите название города, обозначенного на схеме цифрой «1».",
+      "answers": [
+        "киев",
+        "КИЕВ",
+        "Киев"
+      ],
+      "solutionText": "Цифрой \"1\" обозначен город на разветвлении Днепра. Это горд Киев.",
+      "imagePath": "images/13376/task_138412_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250828213602-10__7c0hq.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        138413
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-138594",
+      "title": "Укажите фамилию командующего обозначенным на схеме Южным фронтом в период отраженных на ней событий.",
+      "questionText": "Укажите фамилию командующего обозначенным на схеме Южным фронтом в период отраженных на ней событий.",
+      "answers": [
+        "фрунзе",
+        "Фрунзе",
+        "ФРУНЗЕ"
+      ],
+      "solutionText": "На схеме показаны боевые действия 1920 года - это Советско-польская война. Видны направления наступления Красной армии на Варшаву, линия фронта, а также Южный фронт на территории Украины. В 1920 году Южным фронтом РККА командовал Михаил Васильевич Фрунзе. Он руководил войсками на южном направлении в период отражённых на схеме событий.",
+      "imagePath": "images/13376/task_138592_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250829184719-3__7c4sn.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        138594
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-139123",
+      "title": "Укажите название города, обозначенного цифрой «4», в период отраженных на схеме событий.",
+      "questionText": "Укажите название города, обозначенного цифрой «4», в период отраженных на схеме событий.",
+      "answers": [
+        "Ленинград",
+        "ленинград",
+        "ЛЕНИНГРАД"
+      ],
+      "solutionText": "Цифрой \"4\" на схеме обозначен город Ленинград.",
+      "imagePath": "images/13376/task_139122_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250831142512-6__7ceth.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        139123
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-141538",
+      "title": "Напишите название города, обозначенного на схеме цифрой «2».",
+      "questionText": "Напишите название города, обозначенного на схеме цифрой «2».",
+      "answers": [
+        "РИГА",
+        "рига",
+        "Рига"
+      ],
+      "solutionText": "Город, расположенный рядом с местом впадения Западной Двины в Балтийское море через Рижский залив - Рига.",
+      "imagePath": "images/13376/task_141537_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250927232025-3__7m3c1.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        141538
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=1"
+      ],
+      "sourceName": "№10"
+    },
+    {
+      "factId": "T10-142748",
+      "title": "Напишите фамилию главнокомандующего советскими войсками в операции, действия которой обозначены на схеме.",
+      "questionText": "Напишите фамилию главнокомандующего советскими войсками в операции, действия которой обозначены на схеме.",
+      "answers": [
+        "ВАСИЛЕВСКИЙ",
+        "Василевский"
+      ],
+      "solutionText": "Главнокомандующим советскими войсками в советско-японской войне 1945 года являлся Александр Михайлович Василевский.",
+      "imagePath": "images/13376/task_142747_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251005115406-1__7phmh.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        142748
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=1"
+      ],
+      "sourceName": "№10"
+    },
+    {
+      "factId": "T10-142752",
+      "title": "Напишите название города, обозначенного на схеме цифрой «1».",
+      "questionText": "Напишите название города, обозначенного на схеме цифрой «1».",
+      "answers": [
+        "БЕРЛИН",
+        "Берлин"
+      ],
+      "solutionText": "Цифрой \"1\" на карте обозначен европейский город Берлин.",
+      "imagePath": "images/13376/task_142751_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251012142931-1__7svyg.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        142752
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=1"
+      ],
+      "sourceName": "№10"
+    },
+    {
+      "factId": "T10-147724",
+      "title": "Напишите название государства, действия отрядов которого обозначены в легенде схемы цифрой «1»",
+      "questionText": "Напишите название государства, действия отрядов которого обозначены в легенде схемы цифрой «1»",
+      "answers": [
+        "швеция",
+        "Швеция",
+        "ШВЕЦИЯ"
+      ],
+      "solutionText": "Цифрой «1» обозначены действия Швеции. Это государство находится на северо-западе от России, на берегу Балтийского моря.",
+      "imagePath": "images/13376/task_147723_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260510213955-3__ajk3t.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        147724
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-147849",
+      "title": "Напишите название реки, русло которой четырежды обозначено на схеме цифрой «3».",
+      "questionText": "Напишите название реки, русло которой четырежды обозначено на схеме цифрой «3».",
+      "answers": [
+        "Волга",
+        "волга",
+        "ВОЛГА"
+      ],
+      "solutionText": "На схеме цифрой «3» четырежды обозначено русло реки Волги.\n\nНаправление русла. Линия с цифрой «3» идёт с севера на юг и впадает в Каспийское море — именно так протекает Волга.\n\nГорода вдоль реки. На схеме видно, что вдоль обозначенного русла расположены Ярославль, Саратов, Сарай, Астрахань — все они находятся на Волге.\n\nИсторический контекст. На карте показаны походы, связанные с присоединением Казанского и Астраханского ханств. Эти события проходили именно на Волге, которая была главным направлением русских походов в XVI веке.",
+      "imagePath": "images/13376/task_147848_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251019165635-1__7wdd6.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        147849
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-148922",
+      "title": "Укажите название города, обозначенного на схеме цифрой «3».",
+      "questionText": "Укажите название города, обозначенного на схеме цифрой «3».",
+      "answers": [
+        "Казань",
+        "казань",
+        "КАЗАНЬ"
+      ],
+      "solutionText": "На схеме под цифрой 3 обозначен город Казань. Он расположен в восточной части карты, на реке Волге, за пределами обозначенных границ Русского государства. По его положению видно, что город ещё не входил в состав Московского государства на момент, показанный на схеме. В это время Казань была столицей Казанского ханства, самостоятельного государства на восточной окраине Руси. Позднее, при Иване IV Грозном, в 1552 году, город был завоёван и присоединён к России.",
+      "imagePath": "images/13376/task_148920_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251025224132-1__7z5qj.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        148922
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-150538",
+      "title": "Напишите фамилию командующего российскими войсками, походы которых под его руководством обозначены на схеме цифрой «1».",
+      "questionText": "Напишите фамилию командующего российскими войсками, походы которых под его руководством обозначены на схеме цифрой «1».",
+      "answers": [
+        "Миних",
+        "миних",
+        "МИНИХ"
+      ],
+      "solutionText": "Цифрой «1» на схеме обозначены походы русской армии, направленные против Крымского ханства и Османской империи в ходе Русско-турецкой войны 1735-1739 годов. В этот период русскими войсками командовал фельдмаршал Бурхард Христофор Миних. Под его руководством в 1736-1737 годах были проведены Крымские походы и взятие крепостей Перекоп, Бахчисарай и Очаков, обозначенные на карте как основные направления русских наступлений.",
+      "imagePath": "images/13376/task_150537_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251108124509-1__85npk.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        150538
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-151866",
+      "title": "Напишите название реки, течение которой обозначено на схеме цифрой «1». Ответ запишите словом (сочетанием слов).",
+      "questionText": "Напишите название реки, течение которой обозначено на схеме цифрой «1». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Кубань",
+        "кубань",
+        "КУБАНЬ"
+      ],
+      "solutionText": "Цифрой \"1\" на схеме обозначена река Кубань.",
+      "imagePath": "images/13376/task_151865_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251115210018-1__88ujj.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        151866
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-153662",
+      "title": "Напишите название города, обозначенного на схеме цифрой «5». Ответ запишите словом (сочетанием слов).",
+      "questionText": "Напишите название города, обозначенного на схеме цифрой «5». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Калуга",
+        "калуга",
+        "КАЛУГА"
+      ],
+      "solutionText": "Под цифрой «5» - Калуга, расположенная по карте влево вниз от Москвы, на реке Оке.",
+      "imagePath": "images/13376/task_153661_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251122132536-1__8brt5.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        153662
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-154914",
+      "title": "Укажите название государства, обозначенного на схеме цифрой «1», в период событий, представленных на схеме.",
+      "questionText": "Укажите название государства, обозначенного на схеме цифрой «1», в период событий, представленных на схеме.",
+      "answers": [
+        "речьпосполитая",
+        "РЕЧЬПОСПОЛИТАЯ",
+        "Речьпосполитая"
+      ],
+      "solutionText": "Цифрой “1” на западе России расположено государство Речь Посполитая.",
+      "imagePath": "images/13376/task_154913_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260503183154-1__ag2mo.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        154914
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=2"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-155456",
+      "title": "Напишите название реки, русло которой обозначено на схеме цифрой «1».",
+      "questionText": "Напишите название реки, русло которой обозначено на схеме цифрой «1».",
+      "answers": [
+        "Урал",
+        "урал",
+        "УРАЛ"
+      ],
+      "solutionText": "На схеме под цифрой «1» показано русло реки, вдоль которой проходили главные линии продвижения из Оренбурга, Орска и далее на юг. Эта река - Урал (историческое название - Яик).",
+      "imagePath": "images/13376/task_155453_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251130210351-1__8fguk.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        155456
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-156408",
+      "title": "Напишите название периода отечественной истории, который начался с походом, обозначенным в легенде схемы цифрой «1». Ответ запишите словом (сочетанием слов).",
+      "questionText": "Напишите название периода отечественной истории, который начался с походом, обозначенным в легенде схемы цифрой «1». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Смута",
+        "смута",
+        "СМУТА",
+        "Смутноевремя",
+        "смутноевремя",
+        "СМУТНОЕ ВРЕМЯ"
+      ],
+      "solutionText": "Поход «1» связан с выступлением Лжедмитрия I и приводит к началу масштабного политического кризиса. С этого события начинается период, называемый Смута.",
+      "imagePath": "images/13376/task_156407_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251207152722-1__8hw7b.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        156408
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-159202",
+      "title": "Напишите название реки, течение которой обозначено на схеме цифрой «1». Ответ запишите словом.",
+      "questionText": "Напишите название реки, течение которой обозначено на схеме цифрой «1». Ответ запишите словом.",
+      "answers": [
+        "волга",
+        "Волга",
+        "ВОЛГА"
+      ],
+      "solutionText": "На схеме цифрой «1» обозначена Волга, на этой реке стоят города - Царицын, Самара.",
+      "imagePath": "images/13376/task_159201_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251221155741-1__8n4k7.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        159202
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-161196",
+      "title": "Напишите название страны, которой от России перешли обозначенные цифрой «2» территории в конце царствования российского государя, при котором были присоединены территории, обозначенные на схеме цифрой «1».",
+      "questionText": "Напишите название страны, которой от России перешли обозначенные цифрой «2» территории в конце царствования российского государя, при котором были присоединены территории, обозначенные на схеме цифрой «1».",
+      "answers": [
+        "Швеция",
+        "Шведскоекоролевство",
+        "ШВЕЦИЯ",
+        "ШВЕДСКОЕКОРОЛЕВСТВО",
+        "швеция",
+        "шведскоекоролевство"
+      ],
+      "solutionText": "Территории, обозначенные на схеме цифрой «2», перешли от России к Швеции по итогам неудачного завершения Ливонской войны (Плюсское перемирие 1583 г.).",
+      "imagePath": "images/13376/task_161195_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260112081008-1__8ukb4.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        161196
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-162316",
+      "title": "Напишите название города, обозначенного на схеме цифрой «1».",
+      "questionText": "Напишите название города, обозначенного на схеме цифрой «1».",
+      "answers": [
+        "Смоленск",
+        "смоленск",
+        "СМОЛЕНСК"
+      ],
+      "solutionText": "Цифрой \"1\" обозначен город, расположенные на месте, где Днепр уходит вправо. Это город Смоленск.",
+      "imagePath": "images/13376/task_162314_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260117223149-1__8x6hu.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        162316
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-164083",
+      "title": "Напишите название города, обозначенного на схеме цифрой «1». Ответ запишите словом (сочетанием слов).",
+      "questionText": "Напишите название города, обозначенного на схеме цифрой «1». Ответ запишите словом (сочетанием слов).",
+      "answers": [
+        "Бахчисарай",
+        "бахчисарай",
+        "БАХЧИСАРАЙ"
+      ],
+      "solutionText": "На карте изображены события русско-турецкой войны 1735-1739 гг. Цифрой «1» обозначен город Бахчисарай.",
+      "imagePath": "images/13376/task_164082_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260123232501-1__90am6.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        164083
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-166184",
+      "title": "Напишите название крепости, обозначенной на схеме цифрой «1».",
+      "questionText": "Напишите название крепости, обозначенной на схеме цифрой «1».",
+      "answers": [
+        "Азов",
+        "азов",
+        "АЗОВ"
+      ],
+      "solutionText": "На схеме под цифрой «1» обозначена крепость Азов, располагавшаяся у устья реки Дон и имевшая важное стратегическое значение в ходе русско-турецкой войны 1768-1774 гг.",
+      "imagePath": "images/13376/task_166182_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260130175611-1__93nlg.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        166184
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=1"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-168736",
+      "title": "Укажите иноземного правителя, возглавлявшего обозначенный на схеме цифрой «1» поход.",
+      "questionText": "Укажите иноземного правителя, возглавлявшего обозначенный на схеме цифрой «1» поход.",
+      "answers": [
+        "ханахмат",
+        "Ханахмат",
+        "ХАНАХМАТ",
+        "Ахмат",
+        "ахмат",
+        "АХМАТ"
+      ],
+      "solutionText": "Поход, обозначенный на схеме цифрой «1», связан с противостоянием Московского государства и Большой Орды. Этот поход возглавлял ордынский хан Ахмат.",
+      "imagePath": "images/13376/task_168735_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260214140754-1__9arn0.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        168736
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=2"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-175722",
+      "title": "Укажите название реки, русло которой дважды обозначено на схеме цифрой «1».",
+      "questionText": "Укажите название реки, русло которой дважды обозначено на схеме цифрой «1».",
+      "answers": [
+        "днепр",
+        "Днепр",
+        "ДНЕПР"
+      ],
+      "solutionText": "Цифрой «1» обозначена р. Днепр, так как она впадает в Черное море и к тому же, выше на карте на этой реке стоит Киев.",
+      "imagePath": "images/13376/task_175721_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260329230245-1__9x2l2.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        175722
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=2"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-176574",
+      "title": "Укажите фамилию командующего вооружёнными силами, осуществлявшими действия, обозначенные в легенде схемы цифрой «1».",
+      "questionText": "Укажите фамилию командующего вооружёнными силами, осуществлявшими действия, обозначенные в легенде схемы цифрой «1».",
+      "answers": [
+        "Деникин",
+        "деникин",
+        "ДЕНИКИН"
+      ],
+      "solutionText": "На карте отображено наступление войск А. Деникина на Москву в 1919 году.",
+      "imagePath": "images/13376/task_176573_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260404140025-1__a051w.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        176574
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=2"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-177525",
+      "title": "Закончите предложение « Линия фронта, обозначенная в легенде схемы цифрой «1», сложилась к началу тысяча девятьсот ________________ года ». Ответ запишите словом (словосочетанием).",
+      "questionText": "Закончите предложение «\nЛиния фронта, обозначенная в легенде схемы цифрой «1», сложилась к началу тысяча девятьсот ________________ года\n». Ответ запишите словом (словосочетанием).",
+      "answers": [
+        "пятнадцатого",
+        "Пятнадцатого",
+        "ПЯТНАДЦАТОГО"
+      ],
+      "solutionText": "1914 - данная линия расположена западнее всего, такие позиции российская армия в первой мировой войне занимала в 1914 году, перед великим отступлением.",
+      "imagePath": "images/13376/task_177522_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260411131049-7__a40ie.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        177525
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=2"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-178520",
+      "title": "Укажите название государства, территория которого обозначена в легенде схемы цифрой «2».",
+      "questionText": "Укажите название государства, территория которого обозначена в легенде схемы цифрой «2».",
+      "answers": [
+        "Хазарскийкаганат",
+        "хазарскийкаганат",
+        "ХАЗАРСКИЙКАГАНАТ",
+        "Хазария",
+        "хазария",
+        "ХАЗАРИЯ"
+      ],
+      "solutionText": "Мы видим, что территория, обозначенная в легенде цифрой \"2\", расположена в низовьях Волги и Дона, включает крепость Саркел и граничит с Чёрным и Азовским морями; исходя из этих признаков, можно понять - это Хазарский каганат, государство, соседствовавшее с Древней Русью в IX–X веках.",
+      "imagePath": "images/13376/task_178479_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260418181001-1__a7z4t.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        178520
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=2"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-179653",
+      "title": "Напишите название города, обозначенного на схеме цифрой «4».",
+      "questionText": "Напишите название города, обозначенного на схеме цифрой «4».",
+      "answers": [
+        "рига",
+        "Рига",
+        "РИГА"
+      ],
+      "solutionText": "Цифрой “4” обозначен город Рига.",
+      "imagePath": "images/13376/task_179650_0.png",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260426213344-1__acjbj.png",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        179653
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=2"
+      ],
+      "sourceName": "10"
+    },
+    {
+      "factId": "T10-197582",
+      "title": "Укажите название города, обозначенного на схеме цифрой «1», в период, когда произошли отражённые на схеме события.",
+      "questionText": "Укажите название города, обозначенного на схеме цифрой «1», в период, когда произошли отражённые на схеме события.",
+      "answers": [
+        "КЁНИГСБЕРГ",
+        "КЕНИГСБЕРГ",
+        "Кёнигсберг",
+        "Кенигсберг",
+        "кёнигсберг",
+        "кенигсберг"
+      ],
+      "solutionText": "На схеме цифрой 1 обозначен главный город Восточной Пруссии - Кёнигсберг. Кёнигсберг был важнейшим военно-стратегическим и политическим центром Восточной Пруссии. В ходе Восточно-Прусской операции советские войска окружили город, а в апреле 1945 г. провели его штурм",
+      "imagePath": "images/13337/task_197579_0.jpg",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/photo_2026-08-29_13-54-42__bglw4.jpg",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        197582
+      ],
+      "sourceThemeIds": [
+        13340
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13340?Page=1"
+      ],
+      "sourceName": "ДЕМО"
+    },
+    {
+      "factId": "T10-202375",
+      "title": "Напишите название реки, русло которой обозначено на схеме цифрой «6».",
+      "questionText": "Напишите название реки, русло которой обозначено на схеме цифрой «6».",
+      "answers": [
+        "ВОЛХОВ",
+        "Волхов",
+        "волхов"
+      ],
+      "solutionText": "Река, вытекающая из озера Ильмень, — Волхов. На карте она обозначена цифрой 6.",
+      "imagePath": "images/13376/task_202373_0.jpg",
+      "imageStatus": "shared-map-block",
+      "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/8dNqLKOFNnSnUioM-fiEZ15sADnlPFnnFuHbhiHLRHxlghO9x8y7Md6If2Pn_-OUCIgH2KCF8TV1867pVBMX3Jk7__bu673.jpg",
+      "courseTopicId": null,
+      "requiredCourseTopicIds": [],
+      "enabled": true,
+      "sourceQuestionIds": [
+        202375
+      ],
+      "sourceThemeIds": [
+        13429
+      ],
+      "sourceCategories": [],
+      "sourcePages": [
+        "https://3.shkolkovo.online/catalog/13429?Page=2"
+      ],
+      "sourceName": "11"
+    }
+  ]
+}
