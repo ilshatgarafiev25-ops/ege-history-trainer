@@ -1,0 +1,743 @@
+[
+  {
+    "id": 197595,
+    "name": "20",
+    "question_html": "<p style=\"text-align:justify\">Вспомните смысл понятия<strong> &laquo;бортничество&raquo; </strong>и ответьте на вопросы. Как бортничество связано с международной торговлей Руси? Представители каких слоев древнерусского общества были задействованы в международной торговле?</p>\n",
+    "question_text": "Вспомните смысл понятия\n «бортничество» \nи ответьте на вопросы. Как бортничество связано с международной торговлей Руси? Представители каких слоев древнерусского общества были задействованы в международной торговле?",
+    "answer": "",
+    "solution_html": "<p>1) товары бортничества - мед и воск, экспортировались из Древней Руси, в первую очередь, в христианские страны.</p>\n\n<p>2) в международной торговле участвовали купцы - торговцы, на раннем этапе существования государства князь и дружинники - представители княжеского войска, сбывали в Византии товары, полученные в ходе полюдья.&nbsp;</p>\n",
+    "solution_text": "1) товары бортничества - мед и воск, экспортировались из Древней Руси, в первую очередь, в христианские страны.\n\n2) в международной торговле участвовали купцы - торговцы, на раннем этапе существования государства князь и дружинники - представители княжеского войска, сбывали в Византии товары, полученные в ходе полюдья.",
+    "image_urls": [],
+    "local_image_paths": [],
+    "source_page": "https://3.shkolkovo.online/catalog/14575?Page=1",
+    "theme_label": "14575",
+    "theme_id": 14575,
+    "taskNumber": 20,
+    "ogeNumber": 20,
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "imageFilename": "",
+    "imageFilenames": [],
+    "metadata": {
+      "enabled": true,
+      "task20": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "constructorTopicsReviewed": true
+    }
+  },
+  {
+    "id": 197600,
+    "name": "20",
+    "question_html": "<p style=\"text-align:justify\">Вспомните смысл понятия<strong> &laquo;кровная месть&raquo;</strong> и ответьте на вопросы. Каким образом принятие христианства повлияло на отмену кровной мести? Каким штрафом заменялась кровная месть и кто ведал его сбором?</p>\n",
+    "question_text": "Вспомните смысл понятия\n «кровная месть»\n и ответьте на вопросы. Каким образом принятие христианства повлияло на отмену кровной мести? Каким штрафом заменялась кровная месть и кто ведал его сбором?",
+    "answer": "",
+    "solution_html": "<p>1) <strong>моральные нормы христианской веры осуждали кровную месть,</strong> так как центральной властью было принято решение о крещении населения, стремление к утверждению веры среди племен повлияло на законодательный запрет в XI столетии кровной мести.&nbsp;</p>\n\n<p>2) кровная месть заменялась штрафом - <strong>вирой,</strong> которую взимал <strong>вирник.</strong></p>\n",
+    "solution_text": "1) \nморальные нормы христианской веры осуждали кровную месть,\n так как центральной властью было принято решение о крещении населения, стремление к утверждению веры среди племен повлияло на законодательный запрет в XI столетии кровной мести. \n\n2) кровная месть заменялась штрафом - \nвирой,\n которую взимал \nвирник.",
+    "image_urls": [],
+    "local_image_paths": [],
+    "source_page": "https://3.shkolkovo.online/catalog/14575?Page=1",
+    "theme_label": "14575",
+    "theme_id": 14575,
+    "taskNumber": 20,
+    "ogeNumber": 20,
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "imageFilename": "",
+    "imageFilenames": [],
+    "metadata": {
+      "enabled": true,
+      "task20": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "constructorTopicsReviewed": true
+    }
+  },
+  {
+    "id": 197605,
+    "name": "20",
+    "question_html": "<p style=\"text-align:justify\">Вспомните смысл понятия <strong>&laquo;полюдье&raquo; </strong>и ответьте на вопросы. Как полюдье связано со смертью князя Игоря? Кто, помимо князя, отправлялся в полюдье?</p>\n",
+    "question_text": "Вспомните смысл понятия \n«полюдье» \nи ответьте на вопросы. Как полюдье связано со смертью князя Игоря? Кто, помимо князя, отправлялся в полюдье?",
+    "answer": "",
+    "solution_html": "<p>1) в ходе процесса сбора дани - полюдья, князь традиционно объезжал подвластные племена, в 945 году Игорь<strong> вторично пошел за данью</strong> к племени древлян, чем спровоцировал восстание и был убит.</p>\n\n<p>2) помимо князя в полюдье принимало участие <strong>войско</strong> князя - <strong>представители старшей и младшей дружины</strong>.&nbsp;</p>\n",
+    "solution_text": "1) в ходе процесса сбора дани - полюдья, князь традиционно объезжал подвластные племена, в 945 году Игорь\n вторично пошел за данью\n к племени древлян, чем спровоцировал восстание и был убит.\n\n2) помимо князя в полюдье принимало участие \nвойско\n князя - \nпредставители старшей и младшей дружины\n.",
+    "image_urls": [],
+    "local_image_paths": [],
+    "source_page": "https://3.shkolkovo.online/catalog/14575?Page=1",
+    "theme_label": "14575",
+    "theme_id": 14575,
+    "taskNumber": 20,
+    "ogeNumber": 20,
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "imageFilename": "",
+    "imageFilenames": [],
+    "metadata": {
+      "enabled": true,
+      "task20": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "constructorTopicsReviewed": true
+    }
+  },
+  {
+    "id": 197616,
+    "name": "20",
+    "question_html": "<p style=\"text-align:justify\">Вспомните смысл понятия &laquo;<strong>полюдье</strong>&raquo; и ответьте на вопросы. <strong>Как полюдье связано с восстанием древлян? Чем заменила полюдье княгиня Ольга?</strong></p>\n\n<p>&nbsp;</p>\n",
+    "question_text": "Вспомните смысл понятия «\nполюдье\n» и ответьте на вопросы. \nКак полюдье связано с восстанием древлян? Чем заменила полюдье княгиня Ольга?",
+    "answer": "",
+    "solution_html": "<p style=\"text-align:justify\">1) ответ на первый вопрос: в ходе полюдья Игорь решил повторно собрать дань, чем спровоцировал восстание древлян;</p>\n\n<p style=\"text-align:justify\">2) ответ на второй вопрос: княгиня Ольга вместо полюдья установила сбор дани через погосты (специальные места для сбора дани, куда её должны были привозить) и уроки (фиксированный размер дани).</p>\n\n<p>&nbsp;</p>\n",
+    "solution_text": "1) ответ на первый вопрос: в ходе полюдья Игорь решил повторно собрать дань, чем спровоцировал восстание древлян;\n\n2) ответ на второй вопрос: княгиня Ольга вместо полюдья установила сбор дани через погосты (специальные места для сбора дани, куда её должны были привозить) и уроки (фиксированный размер дани).",
+    "image_urls": [],
+    "local_image_paths": [],
+    "source_page": "https://3.shkolkovo.online/catalog/14575?Page=1",
+    "theme_label": "14575",
+    "theme_id": 14575,
+    "taskNumber": 20,
+    "ogeNumber": 20,
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "imageFilename": "",
+    "imageFilenames": [],
+    "metadata": {
+      "enabled": true,
+      "task20": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "constructorTopicsReviewed": true
+    }
+  },
+  {
+    "id": 199647,
+    "name": "20",
+    "question_html": "<p>Вспомните смысл понятия <strong>&laquo;колонизация&raquo;</strong> и ответьте на вопросы. Какую территорию колонизировали восточные славяне в ходе великого переселения народов? С какими народами ассимилировались восточные славяне на новых территориях?</p>\n",
+    "question_text": "Вспомните смысл понятия \n«колонизация»\n и ответьте на вопросы. Какую территорию колонизировали восточные славяне в ходе великого переселения народов? С какими народами ассимилировались восточные славяне на новых территориях?",
+    "answer": "",
+    "solution_html": "<p>1) восточные славяне в ходе великого переселения народов колонизировали <strong>территорию Восточно - Европейской равнины</strong>.&nbsp;</p>\n\n<p>2) восточные славяне ассимилировались с<strong> балтами и финно - уграми</strong>.&nbsp;</p>\n",
+    "solution_text": "1) восточные славяне в ходе великого переселения народов колонизировали \nтерриторию Восточно - Европейской равнины\n. \n\n2) восточные славяне ассимилировались с\n балтами и финно - уграми\n.",
+    "image_urls": [],
+    "local_image_paths": [],
+    "source_page": "https://3.shkolkovo.online/catalog/14575?Page=1",
+    "theme_label": "14575",
+    "theme_id": 14575,
+    "taskNumber": 20,
+    "ogeNumber": 20,
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "imageFilename": "",
+    "imageFilenames": [],
+    "metadata": {
+      "enabled": true,
+      "task20": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "constructorTopicsReviewed": true
+    }
+  },
+  {
+    "id": 199649,
+    "name": "20",
+    "question_html": "<p>Вспомните смысл понятия&nbsp;<strong>&laquo;финно-угры&raquo;</strong>&nbsp;и ответьте на вопросы. Почему восточные славяне и финно-угорские племена ассимилировались, а не враждовали друг с другом? Какие финно-угорские племена (не более 2) участвовали в призвании варягов?</p>\n",
+    "question_text": "Вспомните смысл понятия \n«финно-угры»\n и ответьте на вопросы. Почему восточные славяне и финно-угорские племена ассимилировались, а не враждовали друг с другом? Какие финно-угорские племена (не более 2) участвовали в призвании варягов?",
+    "answer": "",
+    "solution_html": "<p>1) восточные славяне и финно-угорские племена<strong> заселили территорию Восточно-Европейской равнины, которая имела обширную площадь</strong>, у них не возникало конкуренции за ресурсы, поэтому произошла ассимиляция.&nbsp;</p>\n\n<p>2) племена<strong> весь, чудь</strong> участвовали в призвании варягов.</p>\n",
+    "solution_text": "1) восточные славяне и финно-угорские племена\n заселили территорию Восточно-Европейской равнины, которая имела обширную площадь\n, у них не возникало конкуренции за ресурсы, поэтому произошла ассимиляция. \n\n2) племена\n весь, чудь\n участвовали в призвании варягов.",
+    "image_urls": [],
+    "local_image_paths": [],
+    "source_page": "https://3.shkolkovo.online/catalog/14575?Page=1",
+    "theme_label": "14575",
+    "theme_id": 14575,
+    "taskNumber": 20,
+    "ogeNumber": 20,
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "imageFilename": "",
+    "imageFilenames": [],
+    "metadata": {
+      "enabled": true,
+      "task20": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "constructorTopicsReviewed": true
+    }
+  },
+  {
+    "id": 199839,
+    "name": "20",
+    "question_html": "<p>Вспомните смысл понятия&nbsp;<strong>&laquo;посадник&raquo;</strong>&nbsp;и ответьте на вопросы. Какими полномочиями в республиканском Новгороде был наделен посадник? Представители какого сословия могли претендовать на должность посадника?</p>\n",
+    "question_text": "Вспомните смысл понятия \n«посадник»\n и ответьте на вопросы. Какими полномочиями в республиканском Новгороде был наделен посадник? Представители какого сословия могли претендовать на должность посадника?",
+    "answer": "",
+    "solution_html": "<p>1) посадник являлся <strong>главой исполнительной власти </strong>в Новгороде, он созывал вече, контролировал действия князя, ведал охраной правопорядка.</p>\n\n<p>2) на должность посадника избирались представители<strong> боярского сословия.</strong></p>\n",
+    "solution_text": "1) посадник являлся \nглавой исполнительной власти \nв Новгороде, он созывал вече, контролировал действия князя, ведал охраной правопорядка.\n\n2) на должность посадника избирались представители\n боярского сословия.",
+    "image_urls": [],
+    "local_image_paths": [],
+    "source_page": "https://3.shkolkovo.online/catalog/14575?Page=1",
+    "theme_label": "14575",
+    "theme_id": 14575,
+    "taskNumber": 20,
+    "ogeNumber": 20,
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "imageFilename": "",
+    "imageFilenames": [],
+    "metadata": {
+      "enabled": true,
+      "task20": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "constructorTopicsReviewed": true
+    }
+  },
+  {
+    "id": 199840,
+    "name": "20",
+    "question_html": "<p style=\"text-align:justify\"><span style=\"color:black\"><span style=\"background-color:white\">Вспомните смысл понятия&nbsp;</span></span><strong>&laquo;ярлык&raquo;</strong><span style=\"color:black\"><span style=\"background-color:white\"><span style=\"color:rgba(0, 0, 0, 0.85)\">&nbsp;и ответьте на вопросы. Как ярлык связан с зависимостью русских земель? Какие еще формы ордынской зависимости существовали с XIII по XV вв.?</span></span></span></p>\n",
+    "question_text": "Вспомните смысл понятия \n«ярлык»\n и ответьте на вопросы. Как ярлык связан с зависимостью русских земель? Какие еще формы ордынской зависимости существовали с XIII по XV вв.?",
+    "answer": "",
+    "solution_html": "<p>1) русские князья из земель, которые подверглись нападению войск Батыя были вынуждены получать <strong>разрешение на княжение от хана - ярлык, тем самым выражалась политическая зависимость</strong> княжеств.&nbsp;</p>\n\n<p>2) русские земли <strong>платили выход</strong> - дань, также в русских землях до XIV века присутствовали <strong>представители хана - баскаки</strong>, которые ведали сбором дани и следили за повиновением населения.&nbsp;</p>\n",
+    "solution_text": "1) русские князья из земель, которые подверглись нападению войск Батыя были вынуждены получать \nразрешение на княжение от хана - ярлык, тем самым выражалась политическая зависимость\n княжеств. \n\n2) русские земли \nплатили выход\n - дань, также в русских землях до XIV века присутствовали \nпредставители хана - баскаки\n, которые ведали сбором дани и следили за повиновением населения.",
+    "image_urls": [],
+    "local_image_paths": [],
+    "source_page": "https://3.shkolkovo.online/catalog/14575?Page=1",
+    "theme_label": "14575",
+    "theme_id": 14575,
+    "taskNumber": 20,
+    "ogeNumber": 20,
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "imageFilename": "",
+    "imageFilenames": [],
+    "metadata": {
+      "enabled": true,
+      "task20": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "constructorTopicsReviewed": true
+    }
+  },
+  {
+    "id": 199851,
+    "name": "20",
+    "question_html": "<p style=\"text-align:justify\"><span style=\"color:black\"><span style=\"background-color:white\">Вспомните смысл понятия&nbsp;</span></span><strong>&laquo;тысяцкий&raquo;</strong><span style=\"color:black\"><span style=\"background-color:white\">&nbsp;и ответьте на вопросы. Какими полномочиями в республиканском Новгороде был наделен тысяцкий? Представители каких слоев общества могли претендовать на должность тысяцкого?</span></span></p>\n",
+    "question_text": "Вспомните смысл понятия \n«тысяцкий»\n и ответьте на вопросы. Какими полномочиями в республиканском Новгороде был наделен тысяцкий? Представители каких слоев общества могли претендовать на должность тысяцкого?",
+    "answer": "",
+    "solution_html": "<p>1) тысяцкий являлся<strong> помощником посадника</strong>, возглавлял ополчение, осуществлял надзор за порядком.</p>\n\n<p>2) на должность тысяцкого избирали<strong> бояр, горожан</strong>.</p>\n",
+    "solution_text": "1) тысяцкий являлся\n помощником посадника\n, возглавлял ополчение, осуществлял надзор за порядком.\n\n2) на должность тысяцкого избирали\n бояр, горожан\n.",
+    "image_urls": [],
+    "local_image_paths": [],
+    "source_page": "https://3.shkolkovo.online/catalog/14575?Page=1",
+    "theme_label": "14575",
+    "theme_id": 14575,
+    "taskNumber": 20,
+    "ogeNumber": 20,
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "imageFilename": "",
+    "imageFilenames": [],
+    "metadata": {
+      "enabled": true,
+      "task20": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "constructorTopicsReviewed": true
+    }
+  },
+  {
+    "id": 200771,
+    "name": "20",
+    "question_html": "<p>Вспомните смысл понятия&nbsp;<strong>&laquo;вече&raquo;</strong>&nbsp;и ответьте на вопросы. Какие вопросы поднимались и решались на вече? В каких регионах Руси вечевые традиции были развиты наиболее сильно?&nbsp;</p>\n",
+    "question_text": "Вспомните смысл понятия \n«вече»\n и ответьте на вопросы. Какие вопросы поднимались и решались на вече? В каких регионах Руси вечевые традиции были развиты наиболее сильно?",
+    "answer": "",
+    "solution_html": "<p>1) на вече обсуждались вопросы <strong>войны и мира</strong>, поддержки или противостояния действующей власти и другие.&nbsp;</p>\n\n<p>2) вечевые традиции были особенно развиты в <strong>Киеве, Новгороде.</strong></p>\n",
+    "solution_text": "1) на вече обсуждались вопросы \nвойны и мира\n, поддержки или противостояния действующей власти и другие. \n\n2) вечевые традиции были особенно развиты в \nКиеве, Новгороде.",
+    "image_urls": [],
+    "local_image_paths": [],
+    "source_page": "https://3.shkolkovo.online/catalog/14575?Page=1",
+    "theme_label": "14575",
+    "theme_id": 14575,
+    "taskNumber": 20,
+    "ogeNumber": 20,
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "imageFilename": "",
+    "imageFilenames": [],
+    "metadata": {
+      "enabled": true,
+      "task20": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "constructorTopicsReviewed": true
+    }
+  },
+  {
+    "id": 200772,
+    "name": "20",
+    "question_html": "<p>Вспомните смысл понятия&nbsp;<strong>&laquo;великое переселение народов&raquo;</strong>&nbsp;и ответьте на вопросы. Как великое переселение народов отразилось на развитии славян? Какие группы славян выделились из единой общности в первом тысячелетии нашей эры?&nbsp;</p>\n",
+    "question_text": "Вспомните смысл понятия \n«великое переселение народов»\n и ответьте на вопросы. Как великое переселение народов отразилось на развитии славян? Какие группы славян выделились из единой общности в первом тысячелетии нашей эры?",
+    "answer": "",
+    "solution_html": "<p>1) в ходе великого переселения народов славяне <strong>начали миграцию </strong>и покинули прежние места проживания.&nbsp;</p>\n\n<p>2) <strong>западные, южные, восточные</strong> славяне.</p>\n",
+    "solution_text": "1) в ходе великого переселения народов славяне \nначали миграцию \nи покинули прежние места проживания. \n\n2) \nзападные, южные, восточные\n славяне.",
+    "image_urls": [],
+    "local_image_paths": [],
+    "source_page": "https://3.shkolkovo.online/catalog/14575?Page=1",
+    "theme_label": "14575",
+    "theme_id": 14575,
+    "taskNumber": 20,
+    "ogeNumber": 20,
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "imageFilename": "",
+    "imageFilenames": [],
+    "metadata": {
+      "enabled": true,
+      "task20": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "constructorTopicsReviewed": true
+    }
+  },
+  {
+    "id": 200773,
+    "name": "20",
+    "question_html": "<p>Вспомните смысл понятия&nbsp;<strong>&laquo;варяги&raquo;</strong>&nbsp;и ответьте на вопросы. Какое влияние варяги оказали на развитие восточных славян? Какие две теории были сформулированы в XVIII веке относительно этого вопроса?&nbsp;</p>\n",
+    "question_text": "Вспомните смысл понятия \n«варяги»\n и ответьте на вопросы. Какое влияние варяги оказали на развитие восточных славян? Какие две теории были сформулированы в XVIII веке относительно этого вопроса?",
+    "answer": "",
+    "solution_html": "<p>1) варяги <strong>объединили восточнославянские племена</strong> в единое государство и создали первую <strong>правящую династию</strong> в их землях.&nbsp;</p>\n\n<p>2) <strong>норманнская и антинорманнская</strong> теории.</p>\n",
+    "solution_text": "1) варяги \nобъединили восточнославянские племена\n в единое государство и создали первую \nправящую династию\n в их землях. \n\n2) \nнорманнская и антинорманнская\n теории.",
+    "image_urls": [],
+    "local_image_paths": [],
+    "source_page": "https://3.shkolkovo.online/catalog/14575?Page=1",
+    "theme_label": "14575",
+    "theme_id": 14575,
+    "taskNumber": 20,
+    "ogeNumber": 20,
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "imageFilename": "",
+    "imageFilenames": [],
+    "metadata": {
+      "enabled": true,
+      "task20": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "constructorTopicsReviewed": true
+    }
+  },
+  {
+    "id": 200774,
+    "name": "20",
+    "question_html": "<p>Вспомните смысл понятия&nbsp;<strong>&laquo;усобица&raquo;</strong>&nbsp;и ответьте на вопросы. По каким причинам на Руси возникали усобицы между князьями? Назовите участников первой усобицы в семье Рюриковичей.</p>\n",
+    "question_text": "Вспомните смысл понятия \n«усобица»\n и ответьте на вопросы. По каким причинам на Руси возникали усобицы между князьями? Назовите участников первой усобицы в семье Рюриковичей.",
+    "answer": "",
+    "solution_html": "<p>1) князья воевали за право <strong>стать киевским князем,</strong> или князем другого значимого центра, <strong>территории </strong>внутри удела.&nbsp;</p>\n\n<p>2)<strong> Ярополк, Олег, Владимир Святославичи</strong> являлись участниками первой усобицы на Руси.</p>\n",
+    "solution_text": "1) князья воевали за право \nстать киевским князем,\n или князем другого значимого центра, \nтерритории \nвнутри удела. \n\n2)\n Ярополк, Олег, Владимир Святославичи\n являлись участниками первой усобицы на Руси.",
+    "image_urls": [],
+    "local_image_paths": [],
+    "source_page": "https://3.shkolkovo.online/catalog/14575?Page=1",
+    "theme_label": "14575",
+    "theme_id": 14575,
+    "taskNumber": 20,
+    "ogeNumber": 20,
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "imageFilename": "",
+    "imageFilenames": [],
+    "metadata": {
+      "enabled": true,
+      "task20": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "constructorTopicsReviewed": true
+    }
+  },
+  {
+    "id": 200775,
+    "name": "20",
+    "question_html": "<p>Вспомните смысл понятия&nbsp;<strong>&laquo;митрополит&raquo;</strong>&nbsp;и ответьте на вопросы. Кто назначал митрополита на Руси до XI века и почему Русь претендовала на самостоятельный выбор главы религиозного центра? Кто стал первым митрополитом на Руси славянского происхождения?&nbsp;</p>\n",
+    "question_text": "Вспомните смысл понятия \n«митрополит»\n и ответьте на вопросы. Кто назначал митрополита на Руси до XI века и почему Русь претендовала на самостоятельный выбор главы религиозного центра? Кто стал первым митрополитом на Руси славянского происхождения?",
+    "answer": "",
+    "solution_html": "<p>1) митрополита на Руси назначал <strong>константинопольский патриарх</strong>, Русь претендовала на самостоятельный выбор митрополита с целью&nbsp;<strong>обозначения религиозной независимости</strong> для повышения международного статуса.&nbsp;</p>\n\n<p>2) первым митрополитом славянского происхождения был<strong> Иларион</strong>.&nbsp;</p>\n",
+    "solution_text": "1) митрополита на Руси назначал \nконстантинопольский патриарх\n, Русь претендовала на самостоятельный выбор митрополита с целью \nобозначения религиозной независимости\n для повышения международного статуса. \n\n2) первым митрополитом славянского происхождения был\n Иларион\n.",
+    "image_urls": [],
+    "local_image_paths": [],
+    "source_page": "https://3.shkolkovo.online/catalog/14575?Page=1",
+    "theme_label": "14575",
+    "theme_id": 14575,
+    "taskNumber": 20,
+    "ogeNumber": 20,
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "imageFilename": "",
+    "imageFilenames": [],
+    "metadata": {
+      "enabled": true,
+      "task20": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "constructorTopicsReviewed": true
+    }
+  },
+  {
+    "id": 200776,
+    "name": "20",
+    "question_html": "<p>Вспомните смысл понятия&nbsp;<strong>&laquo;закуп&raquo;</strong>&nbsp;и ответьте на вопросы. Каким образом общинник мог перейти в статус закупа? Какой князь издал закон, ограничивающий закупов от произвола ростовщиков?&nbsp;</p>\n",
+    "question_text": "Вспомните смысл понятия \n«закуп»\n и ответьте на вопросы. Каким образом общинник мог перейти в статус закупа? Какой князь издал закон, ограничивающий закупов от произвола ростовщиков?",
+    "answer": "",
+    "solution_html": "<p>1) свободный общинник, который <strong>брал в долг под проценты</strong>, обращался в закупа.</p>\n\n<p>2) <strong>Владимир Мономах </strong>издал закон,ограничивающий процент по долгу, который могли установить ростовщики.&nbsp;</p>\n",
+    "solution_text": "1) свободный общинник, который \nбрал в долг под проценты\n, обращался в закупа.\n\n2) \nВладимир Мономах \nиздал закон,ограничивающий процент по долгу, который могли установить ростовщики.",
+    "image_urls": [],
+    "local_image_paths": [],
+    "source_page": "https://3.shkolkovo.online/catalog/14575?Page=1",
+    "theme_label": "14575",
+    "theme_id": 14575,
+    "taskNumber": 20,
+    "ogeNumber": 20,
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "imageFilename": "",
+    "imageFilenames": [],
+    "metadata": {
+      "enabled": true,
+      "task20": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "constructorTopicsReviewed": true
+    }
+  },
+  {
+    "id": 200777,
+    "name": "20",
+    "question_html": "<p>Вспомните смысл понятия&nbsp;<strong>&laquo;холоп&raquo;</strong>&nbsp;и ответьте на вопросы. Каким образом человек на Руси мог стать холопом? Каким документом регулировалось правовое положение холопов?&nbsp;</p>\n",
+    "question_text": "Вспомните смысл понятия \n«холоп»\n и ответьте на вопросы. Каким образом человек на Руси мог стать холопом? Каким документом регулировалось правовое положение холопов?",
+    "answer": "",
+    "solution_html": "<p>1) <strong>закуп, который не возвращал долг,</strong> становился холопом, <strong>рядович</strong>, который продолжал работы на прежнего хозяина,<strong> не заключив нового договора</strong>.&nbsp;</p>\n\n<p>2) <strong>Русская Правда</strong> определяла положение холопов в обществе.</p>\n",
+    "solution_text": "1) \nзакуп, который не возвращал долг,\n становился холопом, \nрядович\n, который продолжал работы на прежнего хозяина,\n не заключив нового договора\n. \n\n2) \nРусская Правда\n определяла положение холопов в обществе.",
+    "image_urls": [],
+    "local_image_paths": [],
+    "source_page": "https://3.shkolkovo.online/catalog/14575?Page=1",
+    "theme_label": "14575",
+    "theme_id": 14575,
+    "taskNumber": 20,
+    "ogeNumber": 20,
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "imageFilename": "",
+    "imageFilenames": [],
+    "metadata": {
+      "enabled": true,
+      "task20": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "constructorTopicsReviewed": true
+    }
+  },
+  {
+    "id": 200778,
+    "name": "20",
+    "question_html": "<p>Вспомните смысл понятия&nbsp;<strong>&laquo;вотчина&raquo;</strong>&nbsp;и ответьте на вопросы. Какие права на вотчину существовали у ее хозяина? Представители какого сословия владели вотчинами?&nbsp;</p>\n",
+    "question_text": "Вспомните смысл понятия \n«вотчина»\n и ответьте на вопросы. Какие права на вотчину существовали у ее хозяина? Представители какого сословия владели вотчинами?",
+    "answer": "",
+    "solution_html": "<p>1) вотчину можно было <strong>передавать по наследству, делить, отдавать в дар </strong>монастырю.&nbsp;</p>\n\n<p>2) владельцами вотчин являлись<strong> бояре</strong>.&nbsp;</p>\n",
+    "solution_text": "1) вотчину можно было \nпередавать по наследству, делить, отдавать в дар \nмонастырю. \n\n2) владельцами вотчин являлись\n бояре\n.",
+    "image_urls": [],
+    "local_image_paths": [],
+    "source_page": "https://3.shkolkovo.online/catalog/14575?Page=1",
+    "theme_label": "14575",
+    "theme_id": 14575,
+    "taskNumber": 20,
+    "ogeNumber": 20,
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "imageFilename": "",
+    "imageFilenames": [],
+    "metadata": {
+      "enabled": true,
+      "task20": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "constructorTopicsReviewed": true
+    }
+  },
+  {
+    "id": 202352,
+    "name": "20",
+    "question_html": "<p style=\"text-align:justify\">Вспомните смысл понятия &laquo;<strong>посадник</strong>&raquo; и ответьте на вопросы. Какую роль играл посадник в Великом Новгороде в XII&ndash;XV вв.? Чем прославилась &laquo;посадница&raquo; Марфа Борецкая?</p>\n",
+    "question_text": "Вспомните смысл понятия «\nпосадник\n» и ответьте на вопросы. Какую роль играл посадник в Великом Новгороде в XII–XV вв.? Чем прославилась «посадница» Марфа Борецкая?",
+    "answer": "",
+    "solution_html": "<p style=\"list-style-type:decimal; text-align:justify\">1. Посадник ведал управлением и судом в городе, представлял интересы новгородцев на мирных переговорах.&nbsp;</p>\n\n<p style=\"list-style-type:decimal; text-align:justify\">2. Марфа Борецкая прославилась как вдова посадника Исаака Борецкого, возглавившая бояр, желавших объединиться с Литвой, в борьбе против подчинения, после присоединения Новгорода была выслана Иваном III.</p>\n",
+    "solution_text": "1. Посадник ведал управлением и судом в городе, представлял интересы новгородцев на мирных переговорах. \n\n2. Марфа Борецкая прославилась как вдова посадника Исаака Борецкого, возглавившая бояр, желавших объединиться с Литвой, в борьбе против подчинения, после присоединения Новгорода была выслана Иваном III.",
+    "image_urls": [],
+    "local_image_paths": [],
+    "source_page": "https://3.shkolkovo.online/catalog/14575?Page=1",
+    "theme_label": "14575",
+    "theme_id": 14575,
+    "taskNumber": 20,
+    "ogeNumber": 20,
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "imageFilename": "",
+    "imageFilenames": [],
+    "metadata": {
+      "enabled": true,
+      "task20": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "constructorTopicsReviewed": true
+    }
+  },
+  {
+    "id": 199434,
+    "name": "20",
+    "question_html": "<p style=\"text-align:start\"><span style=\"color:black\"><span style=\"background-color:white\">Вспомните смысл понятия&nbsp;</span></span><strong>&laquo;шатровый стиль&raquo;</strong><strong>&nbsp;</strong><span style=\"color:black\"><span style=\"background-color:white\"><span style=\"color:rgba(0, 0, 0, 0.85)\">и ответьте на вопросы. Что такое шатровый стиль? Какими видами живописи украшаются церкви?</span></span></span></p>\n",
+    "question_text": "Вспомните смысл понятия \n«шатровый стиль»\n \nи ответьте на вопросы. Что такое шатровый стиль? Какими видами живописи украшаются церкви?",
+    "answer": "",
+    "solution_html": "<p>1) <strong>Шатровый стиль</strong> &ndash; это архитектурный стиль, используемый при возведении религиозных сооружений, для которого характерно завершение постройки в виде шатра.</p>\n\n<p>2) Церкви украшаются фресками и иконами.</p>\n",
+    "solution_text": "1) \nШатровый стиль\n – это архитектурный стиль, используемый при возведении религиозных сооружений, для которого характерно завершение постройки в виде шатра.\n\n2) Церкви украшаются фресками и иконами.",
+    "image_urls": [],
+    "local_image_paths": [],
+    "source_page": "https://3.shkolkovo.online/catalog/14600?Page=1",
+    "theme_label": "14600",
+    "theme_id": 14600,
+    "taskNumber": 20,
+    "ogeNumber": 20,
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "imageFilename": "",
+    "imageFilenames": [],
+    "metadata": {
+      "enabled": true,
+      "task20": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "constructorTopicsReviewed": true
+    }
+  }
+]
