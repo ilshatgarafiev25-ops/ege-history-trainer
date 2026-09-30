@@ -3074,6 +3074,87 @@ function Task18Tab({onReload,constructorScope}){
 }
 
 
+
+// === TASK 20 GENERATOR COURSE38 v1 ===
+function task20Validate(data){
+ const rows=Array.isArray(data)?data:[];
+ if(!rows.length) throw new Error("База №20 пустая");
+ rows.forEach(q=>{
+   if(!q.id || !(q.question_text||q.text||"").trim()) throw new Error("Ошибка базы №20");
+   if(!q.courseTopicId) throw new Error("Нет темы курса у №20 "+q.id);
+ });
+ return rows;
+}
+
+function task20Question(raw){
+ const tid=Number(raw.courseTopicId);
+ const topic={id:tid,name:raw.courseTopicName||COURSE38_BY_ID.get(tid)?.name||""};
+ return {
+ id:uid("task20"),
+ type:"essay",
+ ogeNumber:20,
+ text:raw.question_text||raw.text||"",
+ maxScore:3,
+ gradingMode:"manual",
+ source:"Задание №20",
+ sourceId:String(raw.id),
+ referenceAnswer:raw.solution_text||raw.answer||"",
+ topic:topic.name,
+ primaryCourseTopic:topic,
+ requiredCourseTopics:[topic],
+ metadata:{task20:true,courseTopicId:tid,courseTopicName:topic.name}
+ };
+}
+
+function Task20Tab({onReload,constructorScope}){
+ const h=React.createElement;
+ const [rows,setRows]=useState([]);
+ const [questions,setQuestions]=useState([]);
+ const [count,setCount]=useState("10");
+ const [name,setName]=useState("");
+ const [created,setCreated]=useState(null);
+ const [error,setError]=useState("");
+
+ useEffect(()=>{
+  fetch("history_task_20_questions.json",{cache:"no-store"})
+   .then(r=>r.json())
+   .then(d=>setRows(task20Validate(d)))
+   .catch(e=>setError(e.message));
+ },[]);
+
+ const through=Math.max(1,Math.min(38,Number(constructorScope?.through||38)));
+ const mode=constructorScope?.mode==="current"?"current":"cumulative";
+ const available=rows.filter(q=>mode==="current"?Number(q.courseTopicId)===through:Number(q.courseTopicId)<=through);
+
+ function make(){
+  const n=Number(count);
+  setQuestions(atomicShuffle(available).slice(0,n).map(task20Question));
+ }
+
+ async function save(test){
+  for(const q of questions) await upsertQuestion(q);
+  if(test){
+    const t={id:uid("t"),code:genCode(),name:name||"Тест №20",training:true,questionIds:questions.map(q=>q.id)};
+    await insertTest(t);
+    setCreated(t);
+  }
+  await onReload();
+ }
+
+ return h("div",{className:"card"},
+  h("h2",null,"Генератор №20"),
+  error&&h("div",{className:"notice"},error),
+  h("p",null,"Режим: "+(mode==="current"?"тема "+through:"накопительно")),
+  h("input",{type:"number",value:count,onChange:e=>setCount(e.target.value)}),
+  h("button",{className:"btn",onClick:make},"Создать"),
+  h("input",{value:name,onChange:e=>setName(e.target.value),placeholder:"Название теста"}),
+  h("button",{className:"btn ghost",onClick:()=>save(false)},"Сохранить"),
+  h("button",{className:"btn",onClick:()=>save(true)},"Создать тест"),
+  created&&h("div",{className:"notice"},"Код: "+created.code),
+  questions.map((q,i)=>h("div",{className:"q-list-item",key:q.id},h("h3",null,"№20 "+(i+1)),h(ConstructorPreview,{q})))
+ );
+}
+
 // === TASK 19 GENERATOR COURSE38 v1 ===
 function task19Validate(data){
   const rows=Array.isArray(data)?data:[];
@@ -3746,7 +3827,7 @@ function ConstructorTab({bank,onReload}) {
   return h('fieldset',{className:'constructor',disabled:busy,'data-constructor':true,style:{border:0,padding:0,margin:0,minWidth:0}},
     h('div',{className:'card'},h('h2',null,'Конструктор'),h('p',null,'Выберите изученные темы и конкретный материал. Затем соберите и проверьте варианты.'),
       h('div',{className:'constructor-grid'},h('div',null,h('label',{htmlFor:'constructor-through'},'Последняя изученная тема'),h('select',{id:'constructor-through',value:through,disabled:busy,onChange:e=>setThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name)))),h('div',null,h('label',{htmlFor:'constructor-mode'},'Материал'),h('select',{id:'constructor-mode',value:mode,disabled:busy,onChange:e=>setMode(e.target.value)},h('option',{value:'cumulative'},'Накопительно: темы 1–'+through),h('option',{value:'current'},'Только тема '+through)))),
-      h('div',{className:'tabs'},[['bank','Выбор заданий'],['atom1','Создать №1'],['atom2','Создать №2'],['atom3','Создать №3'],['atom4','Создать №4'],['atom5','Создать №5'],['atom6','Создать №6'],['atom7','Создать №7'],['atom8','Создать №8'],['map912','Карты №9–12'],['text1315','Тексты №13–15'],['task16','Создать №16'],['task17','Создать №17'],['task18','Создать №18'],['task19','Создать №19']].map(([k,s])=>h('button',{key:k,disabled:busy,className:section===k?'active':'',onClick:()=>setSection(k)},s))),
+      h('div',{className:'tabs'},[['bank','Выбор заданий'],['atom1','Создать №1'],['atom2','Создать №2'],['atom3','Создать №3'],['atom4','Создать №4'],['atom5','Создать №5'],['atom6','Создать №6'],['atom7','Создать №7'],['atom8','Создать №8'],['map912','Карты №9–12'],['text1315','Тексты №13–15'],['task16','Создать №16'],['task17','Создать №17'],['task18','Создать №18'],['task19','Создать №19'],['task20','Создать №20']].map(([k,s])=>h('button',{key:k,disabled:busy,className:section===k?'active':'',onClick:()=>setSection(k)},s))),
       h('p',{className:'q-meta'},'Выбрано доступных заданий: '+chosen.length+(selectedHidden?' · исключено из текущего материала: '+selectedHidden:'')+'. Черновик и наборы сохраняются в этом браузере; для переноса используйте экспорт.')),
     error&&h('div',{className:'notice',role:'alert'},error),notice&&h('div',{className:'notice',role:'status'},notice),
     [1,2].map(task=>section==='atom'+task?h('div',{key:task},h(AtomicGeneratorTab,{task,onReload,onAdd:addGenerated,constructorScope:{through,mode}})):null),
