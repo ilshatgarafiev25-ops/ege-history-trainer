@@ -3151,8 +3151,7 @@ function Task20Tab({onReload}){
   return h('fieldset',{className:'atomic-generator','data-task':20,disabled:busy,style:{border:0,padding:0,margin:0,minWidth:0}},
     h('div',{className:'card'},h('h2',null,'Генератор №20'),h('div',{className:'notice',role:'status'},status),error&&h('div',{className:'notice',role:'alert'},error),
       h('label',null,'Тема курса'),h('select',{value:through,onChange:e=>setThrough(e.target.value)},topicIds.map(id=>{const t=COURSE38_BY_ID.get(id);return h('option',{key:id,value:id},'Тема '+id+'. '+(t?.name||''));})),
-      h('label',null,'Режим'),h('select',{value:mode,onChange:e=>setMode(e.target.value)},h('option',{value:'current'},'Только текущая тема'),h('option',{value:'cumulative'},'Накопительно'),
-     h('option',{value:'all'},'Все 38 тем')),
+      h('label',null,'Режим'),h('select',{value:mode,onChange:e=>setMode(e.target.value)},h('option',{value:'current'},'Только текущая тема'),h('option',{value:'cumulative'},'Накопительно')),
       h('div',{className:'notice'},modeText+' · доступно: '+eligible.length+' · выбрано: '+chosen.length+'.'),
       groups.map(g=>h('details',{key:g.id,'data-topic':g.id,open:true},h('summary',null,'Тема '+g.id+'. '+(g.topic?.name||'')+' — '+g.rows.length+' заданий'),h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',onClick:()=>mark(g.rows.map(q=>q.id),true)},'Выбрать тему'),h('button',{className:'btn ghost small',onClick:()=>mark(g.rows.map(q=>q.id),false)},'Снять тему')),g.rows.map(raw=>h('label',{className:'opt',key:raw.id},h('input',{type:'checkbox',checked:selected.includes(String(raw.id)),onChange:e=>mark([raw.id],e.target.checked)}),'ID '+raw.id+' · '+(raw.question_text||'').slice(0,150))))),
       h('label',null,'Количество заданий'),h('input',{type:'number',min:1,max:100,value:count,onChange:e=>setCount(e.target.value)}),h('button',{className:'btn',disabled:!chosen.length,onClick:()=>generate()},'Сгенерировать задания №20')
@@ -3161,197 +3160,135 @@ function Task20Tab({onReload}){
   );
 }
 
-// === TASK 21 GENERATOR COURSE38 v4 ===
-// Полная версия: все 38 тем курса, без автоподбора всей базы,
-// корректная фильтрация по темам и накопительный режим.
-
+// === TASK 21 GENERATOR COURSE38 v5 ===
+// Все 38 тем курса. Каждое задание привязано к основной теме (самая поздняя из нужных)
+// и к списку всех тем, знание которых требуется для ответа (requiredCourseTopics).
 function task21Validate(data){
   const rows=Array.isArray(data)?data:[];
+  if(!rows.length)throw new Error('База №21 пуста.');
   const ids=new Set();
-  rows.forEach((q,i)=>{
-    if(!q || q.id==null || ids.has(String(q.id))) throw new Error('Ошибка ID №21 строка '+(i+1));
+  return rows.map((q,i)=>{
+    if(!q||q.id==null||ids.has(String(q.id)))throw new Error('Дублирующийся или пустой ID №21 в строке '+(i+1)+'.');
     ids.add(String(q.id));
-    if(!(q.question_text||q.text||'').trim()) throw new Error('Нет текста у задания №21 '+q.id);
-    if(Number(q.taskNumber??q.ogeNumber)!==21) throw new Error('Неверный номер задания '+q.id);
+    if(!(q.question_text||q.text||'').trim())throw new Error('У задания №21 ID '+q.id+' нет текста.');
+    if(Number(q.taskNumber??q.ogeNumber)!==21)throw new Error('У задания ID '+q.id+' неверный номер задания.');
     const tid=Number(q.courseTopicId);
-    if(!Number.isInteger(tid)) throw new Error('Нет темы курса '+q.id);
+    if(!Number.isInteger(tid)||!COURSE38_BY_ID.has(tid))throw new Error('У задания №21 ID '+q.id+' неверная тема курса ('+q.courseTopicId+').');
+    let req=(Array.isArray(q.requiredCourseTopics)?q.requiredCourseTopics:[]).map(t=>Number(t&&typeof t==='object'?t.id:t)).filter(n=>COURSE38_BY_ID.has(n));
+    if(!req.includes(tid))req.push(tid);
+    req=[...new Set(req)].sort((a,b)=>a-b);
+    return {...q,courseTopicId:tid,_req:req};
   });
-  return rows;
 }
 
 function task21Question(raw){
   const tid=Number(raw.courseTopicId);
-  const topic=COURSE38_BY_ID.get(tid)||{id:tid,name:raw.courseTopicName||''};
+  const topic=COURSE38_BY_ID.get(tid);
+  const req=(raw._req||[tid]).map(id=>COURSE38_BY_ID.get(id));
   return {
-    id:uid('task21'),
-    type:'essay',
-    ogeNumber:21,
-    text:raw.question_text||raw.text||'',
-    correctText:'',
-    maxScore:3,
-    gradingMode:'manual',
-    source:'Задание №21 · тема '+tid,
-    sourceId:String(raw.id),
-    referenceAnswer:raw.solution_text||raw.answer||'',
-    topic:topic.name,
-    primaryCourseTopic:topic,
-    requiredCourseTopics:[topic],
-    mentionedCourseTopics:[],
-    metadata:{
-      task21:true,
-      sourceQuestionId:raw.id,
-      courseTopicId:tid,
-      courseTopicName:topic.name,
-      missingReferenceAnswer:!(raw.solution_text||raw.answer||'').trim()
-    }
+    id:uid('task21'),type:'essay',ogeNumber:21,text:raw.question_text||raw.text||'',correctText:'',maxScore:3,
+    gradingMode:'manual',imageFilename:'',imageFilenames:[],source:'Задание №21 · тема '+tid,
+    sourceId:String(raw.id),sourceThemeId:raw.theme_id||null,sourcePage:raw.source_page||'',
+    referenceAnswer:raw.solution_text||raw.answer||'',topic:req.map(t=>t.name).join('; '),primaryCourseTopic:topic,
+    requiredCourseTopics:req,mentionedCourseTopics:[],
+    metadata:{enabled:true,task21:true,constructorSnapshot:true,sourceQuestionId:raw.id,
+      missingReferenceAnswer:!String(raw.solution_text||raw.answer||'').trim(),
+      courseTopicId:tid,courseTopicName:topic.name,primaryCourseTopic:topic,
+      requiredCourseTopics:req,mentionedCourseTopics:[]}
   };
 }
 
+// Равномерный выбор по темам: по кругу берём по одному случайному заданию из каждой темы.
 function task21BalancedPick(list,n){
   const groups=new Map();
-  list.forEach(q=>{
-    const id=Number(q.courseTopicId);
-    if(!groups.has(id)) groups.set(id,[]);
-    groups.get(id).push(q);
-  });
-  const keys=[...groups.keys()].sort((a,b)=>a-b);
-  const result=[];
-  let i=0;
-  while(result.length<n && keys.length){
-    const k=keys[i%keys.length];
-    const arr=groups.get(k);
-    if(arr.length) result.push(...atomicShuffle(arr.splice(0,1)));
-    i++;
-    if(i>10000) break;
-  }
-  return result.slice(0,n);
+  list.forEach(q=>{const id=Number(q.courseTopicId);if(!groups.has(id))groups.set(id,[]);groups.get(id).push(q);});
+  const pools=atomicShuffle([...groups.values()].map(a=>atomicShuffle(a)));
+  const out=[];
+  while(out.length<n&&pools.some(p=>p.length)){for(const p of pools){if(out.length>=n)break;if(p.length)out.push(p.shift());}}
+  return out;
 }
 
 function Task21Tab({onReload}){
- const h=React.createElement;
- const [rows,setRows]=useState([]);
- const [selected,setSelected]=useState([]);
- const [through,setThrough]=useState('1');
- const [mode,setMode]=useState('current');
- const [count,setCount]=useState('10');
- const [questions,setQuestions]=useState([]);
- const [name,setName]=useState('');
- const [training,setTraining]=useState(true);
- const [created,setCreated]=useState(null);
- const [error,setError]=useState('');
- const [status,setStatus]=useState('Загружаю базу №21');
+  const h=React.createElement;
+  const [rows,setRows]=useState([]),[selected,setSelected]=useState([]),[through,setThrough]=useState('38');
+  const [mode,setMode]=useState('cumulative'),[count,setCount]=useState('10'),[balanced,setBalanced]=useState(true);
+  const [questions,setQuestions]=useState([]),[openAll,setOpenAll]=useState(false);
+  const [name,setName]=useState(''),[training,setTraining]=useState(true),[created,setCreated]=useState(null);
+  const [saved,setSaved]=useState(new Set()),[busy,setBusy]=useState(false),[error,setError]=useState('');
+  const [status,setStatus]=useState('Загружаю базу №21…');
 
- useEffect(()=>{
-   let live=true;
-   (async()=>{
-    try{
-      const r=await fetch('history_task_21_questions_38themes_v2.json',{cache:'no-store'});
+  useEffect(()=>{
+    let live=true;
+    (async()=>{try{
+      const r=await fetch('history_task_21_questions.json',{cache:'no-store'});
+      if(!r.ok)throw new Error('Положите history_task_21_questions.json рядом с index.html.');
       const data=task21Validate(await r.json());
-      if(live){
-        setRows(data);
-        // Сразу показываем все вопросы всех 38 тем для проверки банка
-        setSelected([]);
-        setThrough('1');
-        setMode('current');
-        setStatus('База №21: '+data.length+' заданий. Загружены все 38 тем. Выберите режим подготовки.');
+      const tids=new Set(data.map(q=>q.courseTopicId));
+      if(live){setRows(data);setSelected(data.map(q=>String(q.id)));
+        setStatus('База №21: '+data.length+' заданий · тем с заданиями: '+tids.size+' из 38.');}
+    }catch(e){if(live){setError(e.message);setStatus('База №21 не загружена.');}}})();
+    return()=>{live=false;};
+  },[]);
+
+  const countBy=new Map();rows.forEach(q=>countBy.set(q.courseTopicId,(countBy.get(q.courseTopicId)||0)+1));
+  const missingAnswers=rows.filter(q=>!String(q.solution_text||q.answer||'').trim());
+  const eligible=rows.filter(q=>mode==='current'?q.courseTopicId===Number(through):q.courseTopicId<=Number(through));
+  const selSet=new Set(selected);
+  const chosen=eligible.filter(q=>selSet.has(String(q.id)));
+  const groups=COURSE38_TOPICS.map(t=>({id:t.id,topic:t,rows:eligible.filter(q=>q.courseTopicId===t.id)})).filter(g=>g.rows.length);
+  const modeText=mode==='current'?'Только тема '+through:'Накопительно: темы 1–'+through;
+  function mark(ids,yes){const s=ids.map(String);setSelected(p=>{if(yes)return [...new Set([...p,...s])];const x=new Set(s);return p.filter(v=>!x.has(v));});}
+  function reqText(q){return (q._req||[]).length>1?' · темы: '+q._req.join(', '):'';}
+  function generate(index){
+    setError('');setCreated(null);
+    try{
+      if(index===undefined){
+        const n=Number(count);
+        if(!Number.isInteger(n)||n<1||n>100)throw new Error('Количество заданий — от 1 до 100.');
+        if(chosen.length<n)throw new Error('Выбрано '+chosen.length+' заданий, а нужно '+n+'.');
+        const picked=balanced?task21BalancedPick(chosen,n):atomicShuffle(chosen).slice(0,n);
+        setQuestions(picked.map(task21Question));setSaved(new Set());setStatus('Сгенерировано заданий №21: '+n+'.');
+      }else{
+        const used=new Set(questions.filter((_,i)=>i!==index).map(q=>String(q.sourceId)));
+        const c=atomicShuffle(chosen).find(q=>!used.has(String(q.id)));
+        if(!c)throw new Error('Нет другого выбранного задания для замены.');
+        setQuestions(p=>p.map((q,i)=>i===index?task21Question(c):q));
       }
-    }catch(e){if(live)setError(e.message);}
-   })();
-   return()=>live=false;
- },[]);
-
- const available=rows.filter(q=>
-    mode==='current'
-    ? Number(q.courseTopicId)===Number(through)
-    : mode==='all'
-      ? true
-      : Number(q.courseTopicId)<=Number(through)
- );
-
- const groups=COURSE38_TOPICS.map(t=>({
-    id:t.id,
-    topic:t,
-    rows:available.filter(q=>Number(q.courseTopicId)===t.id)
- }));
-
- const chosen=available.filter(q=>selected.includes(String(q.id)));
-
- function toggleTopic(id,on){
-   const ids=rows.filter(q=>Number(q.courseTopicId)===id).map(q=>String(q.id));
-   setSelected(p=>on?[...new Set([...p,...ids])]:p.filter(x=>!ids.includes(x)));
- }
-
- function generate(){
-   setError('');
-   const n=Number(count);
-   if(chosen.length<n){
-     setError('Выбрано только '+chosen.length+' заданий.');
-     return;
-   }
-   const picked=task21BalancedPick(chosen,n);
-   setQuestions(picked.map(task21Question));
- }
-
- async function save(makeTest){
-   if(!questions.length)return;
-   if(makeTest&&!name.trim()){setError('Введите название теста');return;}
-   try{
-    for(const q of questions){
-      const e=await upsertQuestion(q);
-      if(e)throw e;
-    }
-    if(makeTest){
-      const t={id:uid('t'),code:genCode(),name:name.trim(),training,questionIds:questions.map(q=>q.id)};
-      const e=await insertTest(t);
-      if(e)throw e;
-      setCreated(t);
-    }
-    await onReload();
-   }catch(e){setError(portalError(e));}
- }
-
- return h('fieldset',{className:'atomic-generator','data-task':21},
-  h('div',{className:'card'},
-   h('h2',null,'Генератор №21'),
-   h('div',{className:'notice'},status),
-   error&&h('div',{className:'notice'},error),
-   h('label',null,'Последняя изученная тема'),
-   h('select',{value:through,onChange:e=>setThrough(e.target.value)},
-     COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},'Тема '+t.id+'. '+t.name))
-   ),
-   h('label',null,'Режим'),
-   h('select',{value:mode,onChange:e=>setMode(e.target.value)},
-     h('option',{value:'current'},'Только текущая тема'),
-     h('option',{value:'cumulative'},'Накопительно'),
-     h('option',{value:'all'},'Все 38 тем')
-   ),
-   h('div',{className:'notice'},
-     'Доступно: '+available.length+' · выбрано: '+chosen.length
-   ),
-   groups.map(g=>h('details',{key:g.id},
-     h('summary',null,'Тема '+g.id+'. '+g.topic.name+' — '+g.rows.length+' заданий'),
-     g.rows.length>0&&h('button',{className:'btn ghost small',onClick:()=>toggleTopic(g.id,true)},'Выбрать тему'),
-     g.rows.length>0&&g.rows.map(q=>h('label',{className:'opt',key:q.id},
-       h('input',{
-         type:'checkbox',
-         checked:selected.includes(String(q.id)),
-         onChange:e=>setSelected(p=>e.target.checked?[...p,String(q.id)]:p.filter(x=>x!==String(q.id)))
-       }),
-       'ID '+q.id+' · '+(q.question_text||q.text||'')
-     ))
-   )),
-   h('label',null,'Количество заданий'),
-   h('input',{type:'number',value:count,onChange:e=>setCount(e.target.value)}),
-   h('button',{className:'btn',onClick:generate},'Создать задания №21')
-  ),
-  questions.length>0&&h('div',{className:'card'},
-    h('h2',null,'Предпросмотр '+questions.length),
-    h('input',{value:name,onChange:e=>setName(e.target.value),placeholder:'№21'}),
-    h('button',{className:'btn',onClick:()=>save(true)},'Создать тест'),
-    created&&h('div',{className:'notice'},'Код теста: '+created.code),
-    questions.map((q,i)=>h('div',{className:'q-list-item',key:q.id},h('b',null,'№'+(i+1)),h(ConstructorPreview,{q})))
-  )
- );
+    }catch(e){setError(e.message);}
+  }
+  async function save(makeTest){
+    if(busy||!questions.length)return;if(makeTest&&!name.trim()){setError('Введите название теста.');return;}
+    setBusy(true);setError('');const done=new Set(saved);
+    try{for(const q of questions){if(done.has(q.id))continue;const err=await upsertQuestion(q);if(err)throw err;done.add(q.id);setSaved(new Set(done));}
+      if(makeTest){const t={id:uid('t'),code:genCode(),name:name.trim(),training,questionIds:questions.map(q=>q.id)};const err=await insertTest(t);if(err)throw err;setCreated(t);}
+      setStatus('Сохранено заданий №21: '+questions.length+'.');await onReload();
+    }catch(e){setError('Сохранение: '+portalError(e));}finally{setBusy(false);}
+  }
+  return h('fieldset',{className:'atomic-generator','data-task':21,disabled:busy,style:{border:0,padding:0,margin:0,minWidth:0}},
+    h('div',{className:'card'},h('h2',null,'Генератор №21'),h('div',{className:'notice',role:'status'},status),error&&h('div',{className:'notice',role:'alert'},error),
+      missingAnswers.length>0&&h('div',{className:'notice'},'Без эталонного ответа: '+missingAnswers.length+' (ID '+missingAnswers.map(q=>q.id).join(', ')+'). Эти задания проверяет преподаватель.'),
+      h('label',null,mode==='current'?'Тема курса':'Изучено до темы'),
+      h('select',{value:through,onChange:e=>setThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},'Тема '+t.id+'. '+t.name+' ('+(countBy.get(t.id)||0)+')'))),
+      h('label',null,'Режим'),
+      h('select',{value:mode,onChange:e=>setMode(e.target.value)},h('option',{value:'cumulative'},'Накопительно (все темы до выбранной)'),h('option',{value:'current'},'Только выбранная тема')),
+      h('div',{className:'notice'},modeText+' · доступно: '+eligible.length+' · выбрано: '+chosen.length+'.'),
+      h('div',{className:'atomic-actions'},
+        h('button',{className:'btn ghost small',onClick:()=>mark(eligible.map(q=>q.id),true)},'Выбрать все доступные'),
+        h('button',{className:'btn ghost small',onClick:()=>mark(eligible.map(q=>q.id),false)},'Снять все доступные'),
+        h('button',{className:'btn ghost small',onClick:()=>setOpenAll(v=>!v)},openAll?'Свернуть темы':'Развернуть все темы')),
+      !groups.length&&rows.length>0&&h('div',{className:'notice'},'По выбранной теме заданий №21 нет — выберите другую тему или накопительный режим.'),
+      groups.map(g=>{const sel=g.rows.filter(q=>selSet.has(String(q.id))).length;
+        return h('details',{key:g.id+(openAll?'o':'c'),'data-topic':g.id,open:openAll||mode==='current'},
+          h('summary',null,'Тема '+g.id+'. '+g.topic.name+' — '+g.rows.length+' заданий (выбрано '+sel+')'),
+          h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',onClick:()=>mark(g.rows.map(q=>q.id),true)},'Выбрать тему'),h('button',{className:'btn ghost small',onClick:()=>mark(g.rows.map(q=>q.id),false)},'Снять тему')),
+          g.rows.map(raw=>h('label',{className:'opt',key:raw.id},h('input',{type:'checkbox',checked:selSet.has(String(raw.id)),onChange:e=>mark([raw.id],e.target.checked)}),'ID '+raw.id+reqText(raw)+' · '+(raw.question_text||'').replace(/\s+/g,' ').slice(0,180))));}),
+      h('label',null,'Количество заданий'),h('input',{type:'number',min:1,max:100,value:count,onChange:e=>setCount(e.target.value)}),
+      h('label',{className:'opt'},h('input',{type:'checkbox',checked:balanced,onChange:e=>setBalanced(e.target.checked)}),'Распределять задания равномерно по темам'),
+      h('button',{className:'btn',disabled:!chosen.length,onClick:()=>generate()},'Сгенерировать задания №21')
+    ),
+    questions.length>0&&h('div',{className:'card'},h('h2',null,'Предпросмотр: '+questions.length),h('label',null,'Название теста'),h('input',{value:name,onChange:e=>{setName(e.target.value);setCreated(null);},placeholder:'№21 — сравнение исторических явлений'}),h('label',{className:'opt'},h('input',{type:'checkbox',checked:training,onChange:e=>setTraining(e.target.checked)}),'Тренировочный режим'),h('div',{className:'atomic-actions'},h('button',{className:'btn ghost',onClick:()=>save(false)},'Сохранить в банк'),h('button',{className:'btn',onClick:()=>save(true)},'Сохранить и создать тест')),created&&h('div',{className:'notice'},'Код теста: ',h('strong',null,created.code)),
+      questions.map((q,i)=>h('div',{className:'q-list-item',key:q.id},h('h3',null,'Задание '+(i+1)+' · №21 · тема '+q.metadata.courseTopicId+'. '+q.metadata.courseTopicName),h(ConstructorPreview,{q}),q.metadata.missingReferenceAnswer&&h('div',{className:'notice'},'Для задания ID '+q.sourceId+' в исходной базе нет эталонного ответа. Проверка преподавателем.'),h('button',{className:'btn ghost small',onClick:()=>generate(i)},'Заменить'))))
+  );
 }
 
 // === TASK 19 GENERATOR COURSE38 v1 ===
