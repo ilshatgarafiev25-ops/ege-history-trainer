@@ -3194,7 +3194,7 @@ function task21Question(raw){
 
 function Task21Tab({onReload}){
   const h=React.createElement;
-  const [rows,setRows]=useState([]),[selected,setSelected]=useState([]),[through,setThrough]=useState('10');
+  const [rows,setRows]=useState([]),[selected,setSelected]=useState([]),[through,setThrough]=useState('1');
   const [mode,setMode]=useState('cumulative'),[count,setCount]=useState('10'),[questions,setQuestions]=useState([]);
   const [name,setName]=useState(''),[training,setTraining]=useState(true),[created,setCreated]=useState(null);
   const [saved,setSaved]=useState(new Set()),[busy,setBusy]=useState(false),[error,setError]=useState('');
@@ -3207,44 +3207,75 @@ function Task21Tab({onReload}){
       if(!r.ok)throw new Error('Положите history_task_21_questions.json рядом с index.html.');
       const data=task21Validate(await r.json());
       const tids=[...new Set(data.map(q=>Number(q.courseTopicId)))].sort((a,b)=>a-b);
-      if(live){setRows(data);setSelected(data.map(q=>String(q.id)));setThrough(String(tids[tids.length-1]));
+      if(live){setRows(data);setSelected([]);setThrough(String(tids[0]||1));
         setStatus('База №21: '+data.length+' заданий · тем: '+tids.length+'.');}
     }catch(e){if(live){setError(e.message);setStatus('База №21 не загружена.');}}})();
     return()=>{live=false;};
   },[]);
 
-  const missingAnswers=rows.filter(q=>!String(q.solution_text||q.answer||'').trim());
   const topicIds=[...new Set(rows.map(q=>Number(q.courseTopicId)))].sort((a,b)=>a-b);
   const eligible=rows.filter(q=>mode==='current'?Number(q.courseTopicId)===Number(through):Number(q.courseTopicId)<=Number(through));
   const chosen=eligible.filter(q=>selected.includes(String(q.id)));
   const groups=topicIds.map(id=>({id,topic:COURSE38_BY_ID.get(id),rows:eligible.filter(q=>Number(q.courseTopicId)===id)})).filter(g=>g.rows.length);
-  const modeText=mode==='current'?'только тема '+through:'накопительно: темы из базы до '+through;
+  const modeText=mode==='current'?'только тема '+through:'накопительно: темы 1–'+through;
+
   function mark(ids,yes){const s=ids.map(String);setSelected(p=>yes?[...new Set([...p,...s])]:p.filter(x=>!s.includes(x)));}
+
+  function makeBalanced(source,n){
+    const byTopic={};
+    source.forEach(q=>(byTopic[q.courseTopicId]??=[]).push(q));
+    Object.values(byTopic).forEach(a=>atomicShuffle(a));
+    const result=[]; const keys=Object.keys(byTopic).sort((a,b)=>Number(a)-Number(b));
+    let i=0;
+    while(result.length<n && keys.length){
+      const k=keys[i%keys.length];
+      if(byTopic[k].length) result.push(byTopic[k].shift());
+      else keys.splice(i%keys.length,1);
+      i++;
+    }
+    return atomicShuffle(result);
+  }
+
   function generate(index){
     setError('');setCreated(null);
     try{
-      if(index===undefined){const n=Number(count);if(!Number.isInteger(n)||n<1||n>100)throw new Error('Количество заданий — от 1 до 100.');if(chosen.length<n)throw new Error('Выбрано '+chosen.length+' заданий, а нужно '+n+'.');setQuestions(atomicShuffle(chosen).slice(0,n).map(task21Question));setSaved(new Set());setStatus('Сгенерировано заданий №21: '+n+'.');}
-      else{const used=new Set(questions.filter((_,i)=>i!==index).map(q=>String(q.sourceId)));const c=atomicShuffle(chosen).find(q=>!used.has(String(q.id)));if(!c)throw new Error('Нет другого выбранного задания для замены.');setQuestions(p=>p.map((q,i)=>i===index?task21Question(c):q));setCreated(null);}
+      if(index===undefined){
+        const n=Number(count);
+        if(!Number.isInteger(n)||n<1||n>100)throw new Error('Количество заданий — от 1 до 100.');
+        if(chosen.length<n)throw new Error('Выбрано '+chosen.length+' заданий, а нужно '+n+'.');
+        setQuestions(makeBalanced(chosen,n).map(task21Question));
+        setSaved(new Set());
+        setStatus('Сгенерировано заданий №21: '+n+' с распределением по темам.');
+      }else{
+        const used=new Set(questions.filter((_,i)=>i!==index).map(q=>String(q.sourceId)));
+        const c=makeBalanced(chosen,chosen.length).find(q=>!used.has(String(q.id)));
+        if(!c)throw new Error('Нет другого выбранного задания для замены.');
+        setQuestions(p=>p.map((q,i)=>i===index?task21Question(c):q));
+      }
     }catch(e){setError(e.message);}
   }
+
   async function save(makeTest){
-    if(busy||!questions.length)return;if(makeTest&&!name.trim()){setError('Введите название теста.');return;}
-    setBusy(true);setError('');const done=new Set(saved);
-    try{for(const q of questions){if(done.has(q.id))continue;const err=await upsertQuestion(q);if(err)throw err;done.add(q.id);setSaved(new Set(done));}
+    if(busy||!questions.length)return;
+    if(makeTest&&!name.trim()){setError('Введите название теста.');return;}
+    setBusy(true);setError('');
+    const done=new Set(saved);
+    try{
+      for(const q of questions){if(done.has(q.id))continue;const err=await upsertQuestion(q);if(err)throw err;done.add(q.id);setSaved(new Set(done));}
       if(makeTest){const t={id:uid('t'),code:genCode(),name:name.trim(),training,questionIds:questions.map(q=>q.id)};const err=await insertTest(t);if(err)throw err;setCreated(t);}
       setStatus('Сохранено заданий №21: '+questions.length+'.');await onReload();
     }catch(e){setError('Сохранение: '+portalError(e));}finally{setBusy(false);}
   }
+
   return h('fieldset',{className:'atomic-generator','data-task':21,disabled:busy,style:{border:0,padding:0,margin:0,minWidth:0}},
     h('div',{className:'card'},h('h2',null,'Генератор №21'),h('div',{className:'notice',role:'status'},status),error&&h('div',{className:'notice',role:'alert'},error),
-      missingAnswers.length>0&&h('div',{className:'notice'},'Без эталонного ответа: '+missingAnswers.length+' (ID '+missingAnswers.map(q=>q.id).join(', ')+'). Эти задания доступны для ручной проверки преподавателем.'),
       h('label',null,'Тема курса'),h('select',{value:through,onChange:e=>setThrough(e.target.value)},topicIds.map(id=>{const t=COURSE38_BY_ID.get(id);return h('option',{key:id,value:id},'Тема '+id+'. '+(t?.name||''));})),
       h('label',null,'Режим'),h('select',{value:mode,onChange:e=>setMode(e.target.value)},h('option',{value:'current'},'Только текущая тема'),h('option',{value:'cumulative'},'Накопительно')),
       h('div',{className:'notice'},modeText+' · доступно: '+eligible.length+' · выбрано: '+chosen.length+'.'),
-      groups.map(g=>h('details',{key:g.id,'data-topic':g.id,open:true},h('summary',null,'Тема '+g.id+'. '+(g.topic?.name||'')+' — '+g.rows.length+' заданий'),h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',onClick:()=>mark(g.rows.map(q=>q.id),true)},'Выбрать тему'),h('button',{className:'btn ghost small',onClick:()=>mark(g.rows.map(q=>q.id),false)},'Снять тему')),g.rows.map(raw=>h('label',{className:'opt',key:raw.id},h('input',{type:'checkbox',checked:selected.includes(String(raw.id)),onChange:e=>mark([raw.id],e.target.checked)}),'ID '+raw.id+' · '+(raw.question_text||'').slice(0,150))))),
+      groups.map(g=>h('details',{key:g.id,'data-topic':g.id,open:false},h('summary',null,'Тема '+g.id+'. '+(g.topic?.name||'')+' — '+g.rows.length+' заданий'),h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',onClick:()=>mark(g.rows.map(q=>q.id),true)},'Выбрать тему'),h('button',{className:'btn ghost small',onClick:()=>mark(g.rows.map(q=>q.id),false)},'Снять тему')),g.rows.map(raw=>h('label',{className:'opt',key:raw.id},h('input',{type:'checkbox',checked:selected.includes(String(raw.id)),onChange:e=>mark([raw.id],e.target.checked)}),'ID '+raw.id+' · '+(raw.question_text||'').slice(0,150))))),
       h('label',null,'Количество заданий'),h('input',{type:'number',min:1,max:100,value:count,onChange:e=>setCount(e.target.value)}),h('button',{className:'btn',disabled:!chosen.length,onClick:()=>generate()},'Сгенерировать задания №21')
     ),
-    questions.length>0&&h('div',{className:'card'},h('h2',null,'Предпросмотр: '+questions.length),h('label',null,'Название теста'),h('input',{value:name,onChange:e=>{setName(e.target.value);setCreated(null);},placeholder:'№21 — сравнение исторических явлений'}),h('label',{className:'opt'},h('input',{type:'checkbox',checked:training,onChange:e=>setTraining(e.target.checked)}),'Тренировочный режим'),h('div',{className:'atomic-actions'},h('button',{className:'btn ghost',onClick:()=>save(false)},'Сохранить в банк'),h('button',{className:'btn',onClick:()=>save(true)},'Сохранить и создать тест')),created&&h('div',{className:'notice'},'Код теста: ',h('strong',null,created.code)),questions.map((q,i)=>h('div',{className:'q-list-item',key:q.id},h('h3',null,'Задание '+(i+1)+' · №21'),h(ConstructorPreview,{q}),q.metadata.missingReferenceAnswer&&h('div',{className:'notice'},'Для задания ID '+q.sourceId+' в исходной базе отсутствует эталонный ответ. Проверка преподавателем.'),h('button',{className:'btn ghost small',onClick:()=>generate(i)},'Заменить'))))
+    questions.length>0&&h('div',{className:'card'},h('h2',null,'Предпросмотр: '+questions.length),h('label',null,'Название теста'),h('input',{value:name,onChange:e=>{setName(e.target.value);setCreated(null);},placeholder:'№21 — сравнение исторических явлений'}),h('label',{className:'opt'},h('input',{type:'checkbox',checked:training,onChange:e=>setTraining(e.target.checked)}),'Тренировочный режим'),h('div',{className:'atomic-actions'},h('button',{className:'btn ghost',onClick:()=>save(false)},'Сохранить в банк'),h('button',{className:'btn',onClick:()=>save(true)},'Сохранить и создать тест')),created&&h('div',{className:'notice'},'Код теста: ',h('strong',null,created.code)),questions.map((q,i)=>h('div',{className:'q-list-item',key:q.id},h('h3',null,'Задание '+(i+1)+' · №21'),h(ConstructorPreview,{q}),h('button',{className:'btn ghost small',onClick:()=>generate(i)},'Заменить'))))
   );
 }
 
