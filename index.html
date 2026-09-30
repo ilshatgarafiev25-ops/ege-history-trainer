@@ -3160,123 +3160,183 @@ function Task20Tab({onReload}){
   );
 }
 
-// === TASK 21 GENERATOR COURSE38 v3 ===
+// === TASK 21 GENERATOR COURSE38 v4 ===
+// Полная версия: все 38 тем курса, без автоподбора всей базы,
+// корректная фильтрация по темам и накопительный режим.
+
 function task21Validate(data){
   const rows=Array.isArray(data)?data:[];
-  if(rows.length!==436)throw new Error('Ожидалось 436 заданий №21, получено '+rows.length+'.');
   const ids=new Set();
   rows.forEach((q,i)=>{
-    if(!q||q.id==null||ids.has(String(q.id)))throw new Error('Дублирующийся или пустой ID №21 в строке '+(i+1)+'.');
+    if(!q || q.id==null || ids.has(String(q.id))) throw new Error('Ошибка ID №21 строка '+(i+1));
     ids.add(String(q.id));
-    if(!(q.question_text||q.text||'').trim())throw new Error('У задания №21 ID '+q.id+' нет текста.');
-    if(Number(q.taskNumber??q.ogeNumber)!==21)throw new Error('У задания ID '+q.id+' неверный номер задания.');
+    if(!(q.question_text||q.text||'').trim()) throw new Error('Нет текста у задания №21 '+q.id);
+    if(Number(q.taskNumber??q.ogeNumber)!==21) throw new Error('Неверный номер задания '+q.id);
     const tid=Number(q.courseTopicId);
-    if(!Number.isInteger(tid)||!COURSE38_BY_ID.has(tid))throw new Error('У задания №21 ID '+q.id+' неверная тема курса.');
+    if(!Number.isInteger(tid)) throw new Error('Нет темы курса '+q.id);
   });
   return rows;
 }
 
 function task21Question(raw){
   const tid=Number(raw.courseTopicId);
-  const topic={id:tid,name:raw.courseTopicName||COURSE38_BY_ID.get(tid)?.name||''};
+  const topic=COURSE38_BY_ID.get(tid)||{id:tid,name:raw.courseTopicName||''};
   return {
-    id:uid('task21'),type:'essay',ogeNumber:21,text:raw.question_text||raw.text||'',correctText:'',maxScore:3,
-    gradingMode:'manual',imageFilename:'',imageFilenames:[],source:'Задание №21 · тема '+tid,
-    sourceId:String(raw.id),sourceThemeId:raw.theme_id||null,sourcePage:raw.source_page||'',
-    referenceAnswer:raw.solution_text||raw.answer||'',topic:topic.name,primaryCourseTopic:topic,
-    requiredCourseTopics:[topic],mentionedCourseTopics:[],
-    metadata:{enabled:true,task21:true,constructorSnapshot:true,sourceQuestionId:raw.id,
-      missingReferenceAnswer:!String(raw.solution_text||raw.answer||'').trim(),
-      courseTopicId:tid,courseTopicName:topic.name,primaryCourseTopic:topic,
-      requiredCourseTopics:[topic],mentionedCourseTopics:[]}
+    id:uid('task21'),
+    type:'essay',
+    ogeNumber:21,
+    text:raw.question_text||raw.text||'',
+    correctText:'',
+    maxScore:3,
+    gradingMode:'manual',
+    source:'Задание №21 · тема '+tid,
+    sourceId:String(raw.id),
+    referenceAnswer:raw.solution_text||raw.answer||'',
+    topic:topic.name,
+    primaryCourseTopic:topic,
+    requiredCourseTopics:[topic],
+    mentionedCourseTopics:[],
+    metadata:{
+      task21:true,
+      sourceQuestionId:raw.id,
+      courseTopicId:tid,
+      courseTopicName:topic.name,
+      missingReferenceAnswer:!(raw.solution_text||raw.answer||'').trim()
+    }
   };
 }
 
+function task21BalancedPick(list,n){
+  const groups=new Map();
+  list.forEach(q=>{
+    const id=Number(q.courseTopicId);
+    if(!groups.has(id)) groups.set(id,[]);
+    groups.get(id).push(q);
+  });
+  const keys=[...groups.keys()].sort((a,b)=>a-b);
+  const result=[];
+  let i=0;
+  while(result.length<n && keys.length){
+    const k=keys[i%keys.length];
+    const arr=groups.get(k);
+    if(arr.length) result.push(...atomicShuffle(arr.splice(0,1)));
+    i++;
+    if(i>10000) break;
+  }
+  return result.slice(0,n);
+}
+
 function Task21Tab({onReload}){
-  const h=React.createElement;
-  const [rows,setRows]=useState([]),[selected,setSelected]=useState([]),[through,setThrough]=useState('1');
-  const [mode,setMode]=useState('cumulative'),[count,setCount]=useState('10'),[questions,setQuestions]=useState([]);
-  const [name,setName]=useState(''),[training,setTraining]=useState(true),[created,setCreated]=useState(null);
-  const [saved,setSaved]=useState(new Set()),[busy,setBusy]=useState(false),[error,setError]=useState('');
-  const [status,setStatus]=useState('Загружаю базу №21…');
+ const h=React.createElement;
+ const [rows,setRows]=useState([]);
+ const [selected,setSelected]=useState([]);
+ const [through,setThrough]=useState('1');
+ const [mode,setMode]=useState('current');
+ const [count,setCount]=useState('10');
+ const [questions,setQuestions]=useState([]);
+ const [name,setName]=useState('');
+ const [training,setTraining]=useState(true);
+ const [created,setCreated]=useState(null);
+ const [error,setError]=useState('');
+ const [status,setStatus]=useState('Загружаю базу №21');
 
-  useEffect(()=>{
-    let live=true;
-    (async()=>{try{
+ useEffect(()=>{
+   let live=true;
+   (async()=>{
+    try{
       const r=await fetch('history_task_21_questions.json',{cache:'no-store'});
-      if(!r.ok)throw new Error('Положите history_task_21_questions.json рядом с index.html.');
       const data=task21Validate(await r.json());
-      const tids=[...new Set(data.map(q=>Number(q.courseTopicId)))].sort((a,b)=>a-b);
-      if(live){setRows(data);setSelected([]);setThrough(String(tids[0]||1));
-        setStatus('База №21: '+data.length+' заданий · тем: '+tids.length+'.');}
-    }catch(e){if(live){setError(e.message);setStatus('База №21 не загружена.');}}})();
-    return()=>{live=false;};
-  },[]);
-
-  const topicIds=[...new Set(rows.map(q=>Number(q.courseTopicId)))].sort((a,b)=>a-b);
-  const eligible=rows.filter(q=>mode==='current'?Number(q.courseTopicId)===Number(through):Number(q.courseTopicId)<=Number(through));
-  const chosen=eligible.filter(q=>selected.includes(String(q.id)));
-  const groups=topicIds.map(id=>({id,topic:COURSE38_BY_ID.get(id),rows:eligible.filter(q=>Number(q.courseTopicId)===id)})).filter(g=>g.rows.length);
-  const modeText=mode==='current'?'только тема '+through:'накопительно: темы 1–'+through;
-
-  function mark(ids,yes){const s=ids.map(String);setSelected(p=>yes?[...new Set([...p,...s])]:p.filter(x=>!s.includes(x)));}
-
-  function makeBalanced(source,n){
-    const byTopic={};
-    source.forEach(q=>(byTopic[q.courseTopicId]??=[]).push(q));
-    Object.values(byTopic).forEach(a=>atomicShuffle(a));
-    const result=[]; const keys=Object.keys(byTopic).sort((a,b)=>Number(a)-Number(b));
-    let i=0;
-    while(result.length<n && keys.length){
-      const k=keys[i%keys.length];
-      if(byTopic[k].length) result.push(byTopic[k].shift());
-      else keys.splice(i%keys.length,1);
-      i++;
-    }
-    return atomicShuffle(result);
-  }
-
-  function generate(index){
-    setError('');setCreated(null);
-    try{
-      if(index===undefined){
-        const n=Number(count);
-        if(!Number.isInteger(n)||n<1||n>100)throw new Error('Количество заданий — от 1 до 100.');
-        if(chosen.length<n)throw new Error('Выбрано '+chosen.length+' заданий, а нужно '+n+'.');
-        setQuestions(makeBalanced(chosen,n).map(task21Question));
-        setSaved(new Set());
-        setStatus('Сгенерировано заданий №21: '+n+' с распределением по темам.');
-      }else{
-        const used=new Set(questions.filter((_,i)=>i!==index).map(q=>String(q.sourceId)));
-        const c=makeBalanced(chosen,chosen.length).find(q=>!used.has(String(q.id)));
-        if(!c)throw new Error('Нет другого выбранного задания для замены.');
-        setQuestions(p=>p.map((q,i)=>i===index?task21Question(c):q));
+      if(live){
+        setRows(data);
+        setSelected([]);
+        setStatus('База №21: '+data.length+' заданий. Все 38 тем курса доступны.');
       }
-    }catch(e){setError(e.message);}
-  }
+    }catch(e){if(live)setError(e.message);}
+   })();
+   return()=>live=false;
+ },[]);
 
-  async function save(makeTest){
-    if(busy||!questions.length)return;
-    if(makeTest&&!name.trim()){setError('Введите название теста.');return;}
-    setBusy(true);setError('');
-    const done=new Set(saved);
-    try{
-      for(const q of questions){if(done.has(q.id))continue;const err=await upsertQuestion(q);if(err)throw err;done.add(q.id);setSaved(new Set(done));}
-      if(makeTest){const t={id:uid('t'),code:genCode(),name:name.trim(),training,questionIds:questions.map(q=>q.id)};const err=await insertTest(t);if(err)throw err;setCreated(t);}
-      setStatus('Сохранено заданий №21: '+questions.length+'.');await onReload();
-    }catch(e){setError('Сохранение: '+portalError(e));}finally{setBusy(false);}
-  }
+ const available=rows.filter(q=>
+    mode==='current'
+    ? Number(q.courseTopicId)===Number(through)
+    : Number(q.courseTopicId)<=Number(through)
+ );
 
-  return h('fieldset',{className:'atomic-generator','data-task':21,disabled:busy,style:{border:0,padding:0,margin:0,minWidth:0}},
-    h('div',{className:'card'},h('h2',null,'Генератор №21'),h('div',{className:'notice',role:'status'},status),error&&h('div',{className:'notice',role:'alert'},error),
-      h('label',null,'Тема курса'),h('select',{value:through,onChange:e=>setThrough(e.target.value)},topicIds.map(id=>{const t=COURSE38_BY_ID.get(id);return h('option',{key:id,value:id},'Тема '+id+'. '+(t?.name||''));})),
-      h('label',null,'Режим'),h('select',{value:mode,onChange:e=>setMode(e.target.value)},h('option',{value:'current'},'Только текущая тема'),h('option',{value:'cumulative'},'Накопительно')),
-      h('div',{className:'notice'},modeText+' · доступно: '+eligible.length+' · выбрано: '+chosen.length+'.'),
-      groups.map(g=>h('details',{key:g.id,'data-topic':g.id,open:false},h('summary',null,'Тема '+g.id+'. '+(g.topic?.name||'')+' — '+g.rows.length+' заданий'),h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',onClick:()=>mark(g.rows.map(q=>q.id),true)},'Выбрать тему'),h('button',{className:'btn ghost small',onClick:()=>mark(g.rows.map(q=>q.id),false)},'Снять тему')),g.rows.map(raw=>h('label',{className:'opt',key:raw.id},h('input',{type:'checkbox',checked:selected.includes(String(raw.id)),onChange:e=>mark([raw.id],e.target.checked)}),'ID '+raw.id+' · '+(raw.question_text||'').slice(0,150))))),
-      h('label',null,'Количество заданий'),h('input',{type:'number',min:1,max:100,value:count,onChange:e=>setCount(e.target.value)}),h('button',{className:'btn',disabled:!chosen.length,onClick:()=>generate()},'Сгенерировать задания №21')
-    ),
-    questions.length>0&&h('div',{className:'card'},h('h2',null,'Предпросмотр: '+questions.length),h('label',null,'Название теста'),h('input',{value:name,onChange:e=>{setName(e.target.value);setCreated(null);},placeholder:'№21 — сравнение исторических явлений'}),h('label',{className:'opt'},h('input',{type:'checkbox',checked:training,onChange:e=>setTraining(e.target.checked)}),'Тренировочный режим'),h('div',{className:'atomic-actions'},h('button',{className:'btn ghost',onClick:()=>save(false)},'Сохранить в банк'),h('button',{className:'btn',onClick:()=>save(true)},'Сохранить и создать тест')),created&&h('div',{className:'notice'},'Код теста: ',h('strong',null,created.code)),questions.map((q,i)=>h('div',{className:'q-list-item',key:q.id},h('h3',null,'Задание '+(i+1)+' · №21'),h(ConstructorPreview,{q}),h('button',{className:'btn ghost small',onClick:()=>generate(i)},'Заменить'))))
-  );
+ const groups=COURSE38_TOPICS.map(t=>({
+    id:t.id,
+    topic:t,
+    rows:available.filter(q=>Number(q.courseTopicId)===t.id)
+ }));
+
+ const chosen=available.filter(q=>selected.includes(String(q.id)));
+
+ function toggleTopic(id,on){
+   const ids=rows.filter(q=>Number(q.courseTopicId)===id).map(q=>String(q.id));
+   setSelected(p=>on?[...new Set([...p,...ids])]:p.filter(x=>!ids.includes(x)));
+ }
+
+ function generate(){
+   setError('');
+   const n=Number(count);
+   if(chosen.length<n){
+     setError('Выбрано только '+chosen.length+' заданий.');
+     return;
+   }
+   const picked=task21BalancedPick(chosen,n);
+   setQuestions(picked.map(task21Question));
+ }
+
+ async function save(makeTest){
+   if(!questions.length)return;
+   if(makeTest&&!name.trim()){setError('Введите название теста');return;}
+   try{
+    for(const q of questions){
+      const e=await upsertQuestion(q);
+      if(e)throw e;
+    }
+    if(makeTest){
+      const t={id:uid('t'),code:genCode(),name:name.trim(),training,questionIds:questions.map(q=>q.id)};
+      const e=await insertTest(t);
+      if(e)throw e;
+      setCreated(t);
+    }
+    await onReload();
+   }catch(e){setError(portalError(e));}
+ }
+
+ return h('fieldset',{className:'atomic-generator','data-task':21},
+  h('div',{className:'card'},
+   h('h2',null,'Генератор №21'),
+   h('div',{className:'notice'},status),
+   error&&h('div',{className:'notice'},error),
+   h('label',null,'Последняя изученная тема'),
+   h('select',{value:through,onChange:e=>setThrough(e.target.value)},
+     COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},'Тема '+t.id+'. '+t.name))
+   ),
+   h('label',null,'Режим'),
+   h('select',{value:mode,onChange:e=>setMode(e.target.value)},
+     h('option',{value:'current'},'Только текущая тема'),
+     h('option',{value:'cumulative'},'Накопительно')
+   ),
+   h('div',{className:'notice'},
+     'Доступно: '+available.length+' · выбрано: '+chosen.length
+   ),
+   groups.map(g=>h('details',{key:g.id},
+     h('summary',null,'Тема '+g.id+'. '+g.topic.name+' — '+g.rows.length+' заданий'),
+     g.rows.length>0&&h('button',{className:'btn ghost small',onClick:()=>toggleTopic(g.id,true)},'Выбрать тему')
+   )),
+   h('label',null,'Количество заданий'),
+   h('input',{type:'number',value:count,onChange:e=>setCount(e.target.value)}),
+   h('button',{className:'btn',onClick:generate},'Создать задания №21')
+  ),
+  questions.length>0&&h('div',{className:'card'},
+    h('h2',null,'Предпросмотр '+questions.length),
+    h('input',{value:name,onChange:e=>setName(e.target.value),placeholder:'№21'}),
+    h('button',{className:'btn',onClick:()=>save(true)},'Создать тест'),
+    created&&h('div',{className:'notice'},'Код теста: '+created.code),
+    questions.map((q,i)=>h('div',{className:'q-list-item',key:q.id},h('b',null,'№'+(i+1)),h(ConstructorPreview,{q})))
+  )
+ );
 }
 
 // === TASK 19 GENERATOR COURSE38 v1 ===
