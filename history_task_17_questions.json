@@ -30,7 +30,40 @@
       "images/13344/task_99460_1.png",
       "images/13344/task_99460_2.png",
       "images/13344/task_99460_3.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 129295,
@@ -54,7 +87,40 @@
     "imageFilename": "images/13344/task_129295_0.png",
     "imageFilenames": [
       "images/13344/task_129295_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 137002,
@@ -78,7 +144,40 @@
     "imageFilename": "images/13344/task_137002_0.png",
     "imageFilenames": [
       "images/13344/task_137002_0.png"
-    ]
+    ],
+    "courseTopicId": 14,
+    "courseTopicName": "Культура XVIII века",
+    "topic": "Культура XVIII века",
+    "primaryCourseTopic": {
+      "id": 14,
+      "name": "Культура XVIII века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 14,
+        "name": "Культура XVIII века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 14,
+      "courseTopicName": "Культура XVIII века",
+      "primaryCourseTopic": {
+        "id": 14,
+        "name": "Культура XVIII века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 14,
+          "name": "Культура XVIII века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 137448,
@@ -102,7 +201,40 @@
     "imageFilename": "images/13344/task_137448_0.png",
     "imageFilenames": [
       "images/13344/task_137448_0.png"
-    ]
+    ],
+    "courseTopicId": 5,
+    "courseTopicName": "Культура Руси IX–XV вв.",
+    "topic": "Культура Руси IX–XV вв.",
+    "primaryCourseTopic": {
+      "id": 5,
+      "name": "Культура Руси IX–XV вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 5,
+      "courseTopicName": "Культура Руси IX–XV вв.",
+      "primaryCourseTopic": {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 5,
+          "name": "Культура Руси IX–XV вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 137622,
@@ -126,7 +258,40 @@
     "imageFilename": "images/13344/task_137622_0.png",
     "imageFilenames": [
       "images/13344/task_137622_0.png"
-    ]
+    ],
+    "courseTopicId": 33,
+    "courseTopicName": "Культура 1945–1964 гг.",
+    "topic": "Культура 1945–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 33,
+      "name": "Культура 1945–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 33,
+        "name": "Культура 1945–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 33,
+      "courseTopicName": "Культура 1945–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 33,
+        "name": "Культура 1945–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 33,
+          "name": "Культура 1945–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 137959,
@@ -150,7 +315,40 @@
     "imageFilename": "images/13344/task_137959_0.png",
     "imageFilenames": [
       "images/13344/task_137959_0.png"
-    ]
+    ],
+    "courseTopicId": 5,
+    "courseTopicName": "Культура Руси IX–XV вв.",
+    "topic": "Культура Руси IX–XV вв.",
+    "primaryCourseTopic": {
+      "id": 5,
+      "name": "Культура Руси IX–XV вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 5,
+      "courseTopicName": "Культура Руси IX–XV вв.",
+      "primaryCourseTopic": {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 5,
+          "name": "Культура Руси IX–XV вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 197610,
@@ -174,7 +372,40 @@
     "imageFilename": "images/13344/task_197610_0.jpg",
     "imageFilenames": [
       "images/13344/task_197610_0.jpg"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 138512,
@@ -198,7 +429,40 @@
     "imageFilename": "images/13382/task_138512_0.png",
     "imageFilenames": [
       "images/13382/task_138512_0.png"
-    ]
+    ],
+    "courseTopicId": 5,
+    "courseTopicName": "Культура Руси IX–XV вв.",
+    "topic": "Культура Руси IX–XV вв.",
+    "primaryCourseTopic": {
+      "id": 5,
+      "name": "Культура Руси IX–XV вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 5,
+      "courseTopicName": "Культура Руси IX–XV вв.",
+      "primaryCourseTopic": {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 5,
+          "name": "Культура Руси IX–XV вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 138867,
@@ -222,7 +486,40 @@
     "imageFilename": "images/13382/task_138867_0.png",
     "imageFilenames": [
       "images/13382/task_138867_0.png"
-    ]
+    ],
+    "courseTopicId": 10,
+    "courseTopicName": "Культура XVI–XVII вв.",
+    "topic": "Культура XVI–XVII вв.",
+    "primaryCourseTopic": {
+      "id": 10,
+      "name": "Культура XVI–XVII вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 10,
+      "courseTopicName": "Культура XVI–XVII вв.",
+      "primaryCourseTopic": {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 10,
+          "name": "Культура XVI–XVII вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 139191,
@@ -246,7 +543,40 @@
     "imageFilename": "images/13382/task_139191_0.png",
     "imageFilenames": [
       "images/13382/task_139191_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 141103,
@@ -270,7 +600,40 @@
     "imageFilename": "images/13382/task_141103_0.png",
     "imageFilenames": [
       "images/13382/task_141103_0.png"
-    ]
+    ],
+    "courseTopicId": 5,
+    "courseTopicName": "Культура Руси IX–XV вв.",
+    "topic": "Культура Руси IX–XV вв.",
+    "primaryCourseTopic": {
+      "id": 5,
+      "name": "Культура Руси IX–XV вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 5,
+      "courseTopicName": "Культура Руси IX–XV вв.",
+      "primaryCourseTopic": {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 5,
+          "name": "Культура Руси IX–XV вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 141766,
@@ -294,7 +657,40 @@
     "imageFilename": "images/13382/task_141766_0.png",
     "imageFilenames": [
       "images/13382/task_141766_0.png"
-    ]
+    ],
+    "courseTopicId": 10,
+    "courseTopicName": "Культура XVI–XVII вв.",
+    "topic": "Культура XVI–XVII вв.",
+    "primaryCourseTopic": {
+      "id": 10,
+      "name": "Культура XVI–XVII вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 10,
+      "courseTopicName": "Культура XVI–XVII вв.",
+      "primaryCourseTopic": {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 10,
+          "name": "Культура XVI–XVII вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 142319,
@@ -318,7 +714,40 @@
     "imageFilename": "images/13382/task_142319_0.png",
     "imageFilenames": [
       "images/13382/task_142319_0.png"
-    ]
+    ],
+    "courseTopicId": 14,
+    "courseTopicName": "Культура XVIII века",
+    "topic": "Культура XVIII века",
+    "primaryCourseTopic": {
+      "id": 14,
+      "name": "Культура XVIII века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 14,
+        "name": "Культура XVIII века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 14,
+      "courseTopicName": "Культура XVIII века",
+      "primaryCourseTopic": {
+        "id": 14,
+        "name": "Культура XVIII века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 14,
+          "name": "Культура XVIII века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 142724,
@@ -342,7 +771,40 @@
     "imageFilename": "images/13382/task_142724_0.png",
     "imageFilenames": [
       "images/13382/task_142724_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 147741,
@@ -366,7 +828,40 @@
     "imageFilename": "images/13382/task_147741_0.png",
     "imageFilenames": [
       "images/13382/task_147741_0.png"
-    ]
+    ],
+    "courseTopicId": 10,
+    "courseTopicName": "Культура XVI–XVII вв.",
+    "topic": "Культура XVI–XVII вв.",
+    "primaryCourseTopic": {
+      "id": 10,
+      "name": "Культура XVI–XVII вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 10,
+      "courseTopicName": "Культура XVI–XVII вв.",
+      "primaryCourseTopic": {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 10,
+          "name": "Культура XVI–XVII вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 147857,
@@ -390,7 +885,40 @@
     "imageFilename": "images/13382/task_147857_0.png",
     "imageFilenames": [
       "images/13382/task_147857_0.png"
-    ]
+    ],
+    "courseTopicId": 14,
+    "courseTopicName": "Культура XVIII века",
+    "topic": "Культура XVIII века",
+    "primaryCourseTopic": {
+      "id": 14,
+      "name": "Культура XVIII века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 14,
+        "name": "Культура XVIII века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 14,
+      "courseTopicName": "Культура XVIII века",
+      "primaryCourseTopic": {
+        "id": 14,
+        "name": "Культура XVIII века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 14,
+          "name": "Культура XVIII века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 148928,
@@ -414,7 +942,40 @@
     "imageFilename": "images/13382/task_148928_0.png",
     "imageFilenames": [
       "images/13382/task_148928_0.png"
-    ]
+    ],
+    "courseTopicId": 14,
+    "courseTopicName": "Культура XVIII века",
+    "topic": "Культура XVIII века",
+    "primaryCourseTopic": {
+      "id": 14,
+      "name": "Культура XVIII века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 14,
+        "name": "Культура XVIII века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 14,
+      "courseTopicName": "Культура XVIII века",
+      "primaryCourseTopic": {
+        "id": 14,
+        "name": "Культура XVIII века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 14,
+          "name": "Культура XVIII века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 150545,
@@ -438,7 +999,40 @@
     "imageFilename": "images/13382/task_150545_0.png",
     "imageFilenames": [
       "images/13382/task_150545_0.png"
-    ]
+    ],
+    "courseTopicId": 14,
+    "courseTopicName": "Культура XVIII века",
+    "topic": "Культура XVIII века",
+    "primaryCourseTopic": {
+      "id": 14,
+      "name": "Культура XVIII века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 14,
+        "name": "Культура XVIII века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 14,
+      "courseTopicName": "Культура XVIII века",
+      "primaryCourseTopic": {
+        "id": 14,
+        "name": "Культура XVIII века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 14,
+          "name": "Культура XVIII века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 151889,
@@ -462,7 +1056,40 @@
     "imageFilename": "images/13382/task_151889_0.png",
     "imageFilenames": [
       "images/13382/task_151889_0.png"
-    ]
+    ],
+    "courseTopicId": 10,
+    "courseTopicName": "Культура XVI–XVII вв.",
+    "topic": "Культура XVI–XVII вв.",
+    "primaryCourseTopic": {
+      "id": 10,
+      "name": "Культура XVI–XVII вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 10,
+      "courseTopicName": "Культура XVI–XVII вв.",
+      "primaryCourseTopic": {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 10,
+          "name": "Культура XVI–XVII вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 153668,
@@ -486,7 +1113,40 @@
     "imageFilename": "images/13382/task_153668_0.png",
     "imageFilenames": [
       "images/13382/task_153668_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 154920,
@@ -510,7 +1170,40 @@
     "imageFilename": "images/13382/task_154920_0.png",
     "imageFilenames": [
       "images/13382/task_154920_0.png"
-    ]
+    ],
+    "courseTopicId": 14,
+    "courseTopicName": "Культура XVIII века",
+    "topic": "Культура XVIII века",
+    "primaryCourseTopic": {
+      "id": 14,
+      "name": "Культура XVIII века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 14,
+        "name": "Культура XVIII века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 14,
+      "courseTopicName": "Культура XVIII века",
+      "primaryCourseTopic": {
+        "id": 14,
+        "name": "Культура XVIII века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 14,
+          "name": "Культура XVIII века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 155479,
@@ -534,7 +1227,40 @@
     "imageFilename": "images/13382/task_155479_0.png",
     "imageFilenames": [
       "images/13382/task_155479_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 156414,
@@ -558,7 +1284,40 @@
     "imageFilename": "images/13382/task_156414_0.png",
     "imageFilenames": [
       "images/13382/task_156414_0.png"
-    ]
+    ],
+    "courseTopicId": 5,
+    "courseTopicName": "Культура Руси IX–XV вв.",
+    "topic": "Культура Руси IX–XV вв.",
+    "primaryCourseTopic": {
+      "id": 5,
+      "name": "Культура Руси IX–XV вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 5,
+      "courseTopicName": "Культура Руси IX–XV вв.",
+      "primaryCourseTopic": {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 5,
+          "name": "Культура Руси IX–XV вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 158032,
@@ -582,7 +1341,40 @@
     "imageFilename": "images/13382/task_158032_0.png",
     "imageFilenames": [
       "images/13382/task_158032_0.png"
-    ]
+    ],
+    "courseTopicId": 10,
+    "courseTopicName": "Культура XVI–XVII вв.",
+    "topic": "Культура XVI–XVII вв.",
+    "primaryCourseTopic": {
+      "id": 10,
+      "name": "Культура XVI–XVII вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 10,
+      "courseTopicName": "Культура XVI–XVII вв.",
+      "primaryCourseTopic": {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 10,
+          "name": "Культура XVI–XVII вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 159208,
@@ -606,7 +1398,40 @@
     "imageFilename": "images/13382/task_159208_0.png",
     "imageFilenames": [
       "images/13382/task_159208_0.png"
-    ]
+    ],
+    "courseTopicId": 5,
+    "courseTopicName": "Культура Руси IX–XV вв.",
+    "topic": "Культура Руси IX–XV вв.",
+    "primaryCourseTopic": {
+      "id": 5,
+      "name": "Культура Руси IX–XV вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 5,
+      "courseTopicName": "Культура Руси IX–XV вв.",
+      "primaryCourseTopic": {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 5,
+          "name": "Культура Руси IX–XV вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 161202,
@@ -630,7 +1455,40 @@
     "imageFilename": "images/13382/task_161202_0.png",
     "imageFilenames": [
       "images/13382/task_161202_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 162335,
@@ -654,7 +1512,40 @@
     "imageFilename": "images/13382/task_162335_0.png",
     "imageFilenames": [
       "images/13382/task_162335_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 164090,
@@ -678,7 +1569,40 @@
     "imageFilename": "images/13382/task_164090_0.png",
     "imageFilenames": [
       "images/13382/task_164090_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 166195,
@@ -702,7 +1626,40 @@
     "imageFilename": "images/13382/task_166195_0.png",
     "imageFilenames": [
       "images/13382/task_166195_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 168746,
@@ -726,7 +1683,40 @@
     "imageFilename": "images/13382/task_168746_0.png",
     "imageFilenames": [
       "images/13382/task_168746_0.png"
-    ]
+    ],
+    "courseTopicId": 5,
+    "courseTopicName": "Культура Руси IX–XV вв.",
+    "topic": "Культура Руси IX–XV вв.",
+    "primaryCourseTopic": {
+      "id": 5,
+      "name": "Культура Руси IX–XV вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 5,
+      "courseTopicName": "Культура Руси IX–XV вв.",
+      "primaryCourseTopic": {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 5,
+          "name": "Культура Руси IX–XV вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 169836,
@@ -750,7 +1740,40 @@
     "imageFilename": "images/13382/task_169836_0.png",
     "imageFilenames": [
       "images/13382/task_169836_0.png"
-    ]
+    ],
+    "courseTopicId": 5,
+    "courseTopicName": "Культура Руси IX–XV вв.",
+    "topic": "Культура Руси IX–XV вв.",
+    "primaryCourseTopic": {
+      "id": 5,
+      "name": "Культура Руси IX–XV вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 5,
+      "courseTopicName": "Культура Руси IX–XV вв.",
+      "primaryCourseTopic": {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 5,
+          "name": "Культура Руси IX–XV вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 169865,
@@ -774,7 +1797,40 @@
     "imageFilename": "images/13382/task_169865_0.png",
     "imageFilenames": [
       "images/13382/task_169865_0.png"
-    ]
+    ],
+    "courseTopicId": 5,
+    "courseTopicName": "Культура Руси IX–XV вв.",
+    "topic": "Культура Руси IX–XV вв.",
+    "primaryCourseTopic": {
+      "id": 5,
+      "name": "Культура Руси IX–XV вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 5,
+      "courseTopicName": "Культура Руси IX–XV вв.",
+      "primaryCourseTopic": {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 5,
+          "name": "Культура Руси IX–XV вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 169904,
@@ -798,7 +1854,40 @@
     "imageFilename": "images/13382/task_169904_0.png",
     "imageFilenames": [
       "images/13382/task_169904_0.png"
-    ]
+    ],
+    "courseTopicId": 5,
+    "courseTopicName": "Культура Руси IX–XV вв.",
+    "topic": "Культура Руси IX–XV вв.",
+    "primaryCourseTopic": {
+      "id": 5,
+      "name": "Культура Руси IX–XV вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 5,
+      "courseTopicName": "Культура Руси IX–XV вв.",
+      "primaryCourseTopic": {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 5,
+          "name": "Культура Руси IX–XV вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 174435,
@@ -822,7 +1911,40 @@
     "imageFilename": "images/13382/task_174435_0.jpg",
     "imageFilenames": [
       "images/13382/task_174435_0.jpg"
-    ]
+    ],
+    "courseTopicId": 37,
+    "courseTopicName": "Россия в 1990-е гг. + культура",
+    "topic": "Россия в 1990-е гг. + культура",
+    "primaryCourseTopic": {
+      "id": 37,
+      "name": "Россия в 1990-е гг. + культура"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 37,
+        "name": "Россия в 1990-е гг. + культура"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 37,
+      "courseTopicName": "Россия в 1990-е гг. + культура",
+      "primaryCourseTopic": {
+        "id": 37,
+        "name": "Россия в 1990-е гг. + культура"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 37,
+          "name": "Россия в 1990-е гг. + культура"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 175733,
@@ -846,7 +1968,40 @@
     "imageFilename": "images/13382/task_175733_0.png",
     "imageFilenames": [
       "images/13382/task_175733_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 176206,
@@ -870,7 +2025,40 @@
     "imageFilename": "images/13382/task_176206_0.png",
     "imageFilenames": [
       "images/13382/task_176206_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 176580,
@@ -894,7 +2082,40 @@
     "imageFilename": "images/13382/task_176580_0.png",
     "imageFilenames": [
       "images/13382/task_176580_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 177665,
@@ -918,7 +2139,40 @@
     "imageFilename": "images/13382/task_177665_0.png",
     "imageFilenames": [
       "images/13382/task_177665_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 178527,
@@ -942,7 +2196,40 @@
     "imageFilename": "images/13382/task_178527_0.png",
     "imageFilenames": [
       "images/13382/task_178527_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 181485,
@@ -966,7 +2253,40 @@
     "imageFilename": "images/13382/task_181485_0.png",
     "imageFilenames": [
       "images/13382/task_181485_0.png"
-    ]
+    ],
+    "courseTopicId": 10,
+    "courseTopicName": "Культура XVI–XVII вв.",
+    "topic": "Культура XVI–XVII вв.",
+    "primaryCourseTopic": {
+      "id": 10,
+      "name": "Культура XVI–XVII вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 10,
+      "courseTopicName": "Культура XVI–XVII вв.",
+      "primaryCourseTopic": {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 10,
+          "name": "Культура XVI–XVII вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 202342,
@@ -990,7 +2310,40 @@
     "imageFilename": "images/13382/task_202342_0.jpg",
     "imageFilenames": [
       "images/13382/task_202342_0.jpg"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95572,
@@ -1014,7 +2367,40 @@
     "imageFilename": "images/13402/task_95572_0.png",
     "imageFilenames": [
       "images/13402/task_95572_0.png"
-    ]
+    ],
+    "courseTopicId": 37,
+    "courseTopicName": "Россия в 1990-е гг. + культура",
+    "topic": "Россия в 1990-е гг. + культура",
+    "primaryCourseTopic": {
+      "id": 37,
+      "name": "Россия в 1990-е гг. + культура"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 37,
+        "name": "Россия в 1990-е гг. + культура"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 37,
+      "courseTopicName": "Россия в 1990-е гг. + культура",
+      "primaryCourseTopic": {
+        "id": 37,
+        "name": "Россия в 1990-е гг. + культура"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 37,
+          "name": "Россия в 1990-е гг. + культура"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95586,
@@ -1038,7 +2424,40 @@
     "imageFilename": "images/13402/task_95586_0.png",
     "imageFilenames": [
       "images/13402/task_95586_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95588,
@@ -1062,7 +2481,40 @@
     "imageFilename": "images/13402/task_95588_0.png",
     "imageFilenames": [
       "images/13402/task_95588_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95589,
@@ -1086,7 +2538,40 @@
     "imageFilename": "images/13402/task_95589_0.png",
     "imageFilenames": [
       "images/13402/task_95589_0.png"
-    ]
+    ],
+    "courseTopicId": 14,
+    "courseTopicName": "Культура XVIII века",
+    "topic": "Культура XVIII века",
+    "primaryCourseTopic": {
+      "id": 14,
+      "name": "Культура XVIII века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 14,
+        "name": "Культура XVIII века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 14,
+      "courseTopicName": "Культура XVIII века",
+      "primaryCourseTopic": {
+        "id": 14,
+        "name": "Культура XVIII века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 14,
+          "name": "Культура XVIII века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95590,
@@ -1110,7 +2595,40 @@
     "imageFilename": "images/13402/task_95590_0.png",
     "imageFilenames": [
       "images/13402/task_95590_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95591,
@@ -1134,7 +2652,40 @@
     "imageFilename": "images/13402/task_95591_0.png",
     "imageFilenames": [
       "images/13402/task_95591_0.png"
-    ]
+    ],
+    "courseTopicId": 37,
+    "courseTopicName": "Россия в 1990-е гг. + культура",
+    "topic": "Россия в 1990-е гг. + культура",
+    "primaryCourseTopic": {
+      "id": 37,
+      "name": "Россия в 1990-е гг. + культура"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 37,
+        "name": "Россия в 1990-е гг. + культура"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 37,
+      "courseTopicName": "Россия в 1990-е гг. + культура",
+      "primaryCourseTopic": {
+        "id": 37,
+        "name": "Россия в 1990-е гг. + культура"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 37,
+          "name": "Россия в 1990-е гг. + культура"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95592,
@@ -1158,7 +2709,40 @@
     "imageFilename": "images/13402/task_95592_0.png",
     "imageFilenames": [
       "images/13402/task_95592_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95593,
@@ -1182,7 +2766,40 @@
     "imageFilename": "images/13402/task_95593_0.png",
     "imageFilenames": [
       "images/13402/task_95593_0.png"
-    ]
+    ],
+    "courseTopicId": 33,
+    "courseTopicName": "Культура 1945–1964 гг.",
+    "topic": "Культура 1945–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 33,
+      "name": "Культура 1945–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 33,
+        "name": "Культура 1945–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 33,
+      "courseTopicName": "Культура 1945–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 33,
+        "name": "Культура 1945–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 33,
+          "name": "Культура 1945–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95594,
@@ -1206,7 +2823,40 @@
     "imageFilename": "images/13402/task_95594_0.png",
     "imageFilenames": [
       "images/13402/task_95594_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95595,
@@ -1230,7 +2880,40 @@
     "imageFilename": "images/13402/task_95595_0.png",
     "imageFilenames": [
       "images/13402/task_95595_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95596,
@@ -1254,7 +2937,40 @@
     "imageFilename": "images/13402/task_95596_0.png",
     "imageFilenames": [
       "images/13402/task_95596_0.png"
-    ]
+    ],
+    "courseTopicId": 33,
+    "courseTopicName": "Культура 1945–1964 гг.",
+    "topic": "Культура 1945–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 33,
+      "name": "Культура 1945–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 33,
+        "name": "Культура 1945–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 33,
+      "courseTopicName": "Культура 1945–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 33,
+        "name": "Культура 1945–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 33,
+          "name": "Культура 1945–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95597,
@@ -1278,7 +2994,40 @@
     "imageFilename": "images/13402/task_95597_0.png",
     "imageFilenames": [
       "images/13402/task_95597_0.png"
-    ]
+    ],
+    "courseTopicId": 14,
+    "courseTopicName": "Культура XVIII века",
+    "topic": "Культура XVIII века",
+    "primaryCourseTopic": {
+      "id": 14,
+      "name": "Культура XVIII века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 14,
+        "name": "Культура XVIII века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 14,
+      "courseTopicName": "Культура XVIII века",
+      "primaryCourseTopic": {
+        "id": 14,
+        "name": "Культура XVIII века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 14,
+          "name": "Культура XVIII века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95598,
@@ -1302,7 +3051,40 @@
     "imageFilename": "images/13402/task_95598_0.png",
     "imageFilenames": [
       "images/13402/task_95598_0.png"
-    ]
+    ],
+    "courseTopicId": 33,
+    "courseTopicName": "Культура 1945–1964 гг.",
+    "topic": "Культура 1945–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 33,
+      "name": "Культура 1945–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 33,
+        "name": "Культура 1945–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 33,
+      "courseTopicName": "Культура 1945–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 33,
+        "name": "Культура 1945–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 33,
+          "name": "Культура 1945–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95599,
@@ -1326,7 +3108,40 @@
     "imageFilename": "images/13402/task_95599_0.png",
     "imageFilenames": [
       "images/13402/task_95599_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95601,
@@ -1350,7 +3165,40 @@
     "imageFilename": "images/13402/task_95601_0.png",
     "imageFilenames": [
       "images/13402/task_95601_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95602,
@@ -1374,7 +3222,40 @@
     "imageFilename": "images/13402/task_95602_0.png",
     "imageFilenames": [
       "images/13402/task_95602_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95604,
@@ -1398,7 +3279,40 @@
     "imageFilename": "images/13402/task_95604_0.png",
     "imageFilenames": [
       "images/13402/task_95604_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95605,
@@ -1422,7 +3336,40 @@
     "imageFilename": "images/13402/task_95605_0.png",
     "imageFilenames": [
       "images/13402/task_95605_0.png"
-    ]
+    ],
+    "courseTopicId": 33,
+    "courseTopicName": "Культура 1945–1964 гг.",
+    "topic": "Культура 1945–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 33,
+      "name": "Культура 1945–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 33,
+        "name": "Культура 1945–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 33,
+      "courseTopicName": "Культура 1945–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 33,
+        "name": "Культура 1945–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 33,
+          "name": "Культура 1945–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95607,
@@ -1446,7 +3393,40 @@
     "imageFilename": "images/13402/task_95607_0.png",
     "imageFilenames": [
       "images/13402/task_95607_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95608,
@@ -1470,7 +3450,40 @@
     "imageFilename": "images/13402/task_95608_0.png",
     "imageFilenames": [
       "images/13402/task_95608_0.png"
-    ]
+    ],
+    "courseTopicId": 5,
+    "courseTopicName": "Культура Руси IX–XV вв.",
+    "topic": "Культура Руси IX–XV вв.",
+    "primaryCourseTopic": {
+      "id": 5,
+      "name": "Культура Руси IX–XV вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 5,
+      "courseTopicName": "Культура Руси IX–XV вв.",
+      "primaryCourseTopic": {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 5,
+          "name": "Культура Руси IX–XV вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95609,
@@ -1494,7 +3507,40 @@
     "imageFilename": "images/13402/task_95609_0.png",
     "imageFilenames": [
       "images/13402/task_95609_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95611,
@@ -1518,7 +3564,40 @@
     "imageFilename": "images/13402/task_95611_0.png",
     "imageFilenames": [
       "images/13402/task_95611_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95612,
@@ -1542,7 +3621,40 @@
     "imageFilename": "images/13402/task_95612_0.png",
     "imageFilenames": [
       "images/13402/task_95612_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95614,
@@ -1566,7 +3678,40 @@
     "imageFilename": "images/13402/task_95614_0.png",
     "imageFilenames": [
       "images/13402/task_95614_0.png"
-    ]
+    ],
+    "courseTopicId": 10,
+    "courseTopicName": "Культура XVI–XVII вв.",
+    "topic": "Культура XVI–XVII вв.",
+    "primaryCourseTopic": {
+      "id": 10,
+      "name": "Культура XVI–XVII вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 10,
+      "courseTopicName": "Культура XVI–XVII вв.",
+      "primaryCourseTopic": {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 10,
+          "name": "Культура XVI–XVII вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95616,
@@ -1590,7 +3735,40 @@
     "imageFilename": "images/13402/task_95616_0.png",
     "imageFilenames": [
       "images/13402/task_95616_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95617,
@@ -1617,7 +3795,40 @@
     "imageFilenames": [
       "images/13402/task_95617_0.png",
       "images/13402/task_95617_1.png"
-    ]
+    ],
+    "courseTopicId": 10,
+    "courseTopicName": "Культура XVI–XVII вв.",
+    "topic": "Культура XVI–XVII вв.",
+    "primaryCourseTopic": {
+      "id": 10,
+      "name": "Культура XVI–XVII вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 10,
+      "courseTopicName": "Культура XVI–XVII вв.",
+      "primaryCourseTopic": {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 10,
+          "name": "Культура XVI–XVII вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95618,
@@ -1641,7 +3852,40 @@
     "imageFilename": "images/13402/task_95618_0.png",
     "imageFilenames": [
       "images/13402/task_95618_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95619,
@@ -1665,7 +3909,40 @@
     "imageFilename": "images/13402/task_95619_0.png",
     "imageFilenames": [
       "images/13402/task_95619_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95620,
@@ -1689,7 +3966,40 @@
     "imageFilename": "images/13402/task_95620_0.png",
     "imageFilenames": [
       "images/13402/task_95620_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95621,
@@ -1713,7 +4023,40 @@
     "imageFilename": "images/13402/task_95621_0.png",
     "imageFilenames": [
       "images/13402/task_95621_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 96003,
@@ -1746,7 +4089,40 @@
       "images/13402/task_96003_1.png",
       "images/13402/task_96003_2.png",
       "images/13402/task_96003_3.jpg"
-    ]
+    ],
+    "courseTopicId": 14,
+    "courseTopicName": "Культура XVIII века",
+    "topic": "Культура XVIII века",
+    "primaryCourseTopic": {
+      "id": 14,
+      "name": "Культура XVIII века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 14,
+        "name": "Культура XVIII века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 14,
+      "courseTopicName": "Культура XVIII века",
+      "primaryCourseTopic": {
+        "id": 14,
+        "name": "Культура XVIII века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 14,
+          "name": "Культура XVIII века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 102910,
@@ -1773,7 +4149,40 @@
     "imageFilenames": [
       "images/13402/task_102910_0.png",
       "images/13402/task_102910_1.png"
-    ]
+    ],
+    "courseTopicId": 14,
+    "courseTopicName": "Культура XVIII века",
+    "topic": "Культура XVIII века",
+    "primaryCourseTopic": {
+      "id": 14,
+      "name": "Культура XVIII века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 14,
+        "name": "Культура XVIII века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 14,
+      "courseTopicName": "Культура XVIII века",
+      "primaryCourseTopic": {
+        "id": 14,
+        "name": "Культура XVIII века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 14,
+          "name": "Культура XVIII века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 102912,
@@ -1797,7 +4206,40 @@
     "imageFilename": "images/13402/task_102912_0.png",
     "imageFilenames": [
       "images/13402/task_102912_0.png"
-    ]
+    ],
+    "courseTopicId": 10,
+    "courseTopicName": "Культура XVI–XVII вв.",
+    "topic": "Культура XVI–XVII вв.",
+    "primaryCourseTopic": {
+      "id": 10,
+      "name": "Культура XVI–XVII вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 10,
+      "courseTopicName": "Культура XVI–XVII вв.",
+      "primaryCourseTopic": {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 10,
+          "name": "Культура XVI–XVII вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 102914,
@@ -1821,7 +4263,40 @@
     "imageFilename": "images/13402/task_102914_0.png",
     "imageFilenames": [
       "images/13402/task_102914_0.png"
-    ]
+    ],
+    "courseTopicId": 14,
+    "courseTopicName": "Культура XVIII века",
+    "topic": "Культура XVIII века",
+    "primaryCourseTopic": {
+      "id": 14,
+      "name": "Культура XVIII века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 14,
+        "name": "Культура XVIII века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 14,
+      "courseTopicName": "Культура XVIII века",
+      "primaryCourseTopic": {
+        "id": 14,
+        "name": "Культура XVIII века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 14,
+          "name": "Культура XVIII века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116183,
@@ -1845,7 +4320,40 @@
     "imageFilename": "images/13402/task_116183_0.png",
     "imageFilenames": [
       "images/13402/task_116183_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116192,
@@ -1869,7 +4377,40 @@
     "imageFilename": "images/13402/task_116192_0.png",
     "imageFilenames": [
       "images/13402/task_116192_0.png"
-    ]
+    ],
+    "courseTopicId": 37,
+    "courseTopicName": "Россия в 1990-е гг. + культура",
+    "topic": "Россия в 1990-е гг. + культура",
+    "primaryCourseTopic": {
+      "id": 37,
+      "name": "Россия в 1990-е гг. + культура"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 37,
+        "name": "Россия в 1990-е гг. + культура"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 37,
+      "courseTopicName": "Россия в 1990-е гг. + культура",
+      "primaryCourseTopic": {
+        "id": 37,
+        "name": "Россия в 1990-е гг. + культура"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 37,
+          "name": "Россия в 1990-е гг. + культура"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116196,
@@ -1893,7 +4434,40 @@
     "imageFilename": "images/13402/task_116196_0.png",
     "imageFilenames": [
       "images/13402/task_116196_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116198,
@@ -1917,7 +4491,40 @@
     "imageFilename": "images/13402/task_116198_0.png",
     "imageFilenames": [
       "images/13402/task_116198_0.png"
-    ]
+    ],
+    "courseTopicId": 10,
+    "courseTopicName": "Культура XVI–XVII вв.",
+    "topic": "Культура XVI–XVII вв.",
+    "primaryCourseTopic": {
+      "id": 10,
+      "name": "Культура XVI–XVII вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 10,
+      "courseTopicName": "Культура XVI–XVII вв.",
+      "primaryCourseTopic": {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 10,
+          "name": "Культура XVI–XVII вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116202,
@@ -1941,7 +4548,40 @@
     "imageFilename": "images/13402/task_116202_0.png",
     "imageFilenames": [
       "images/13402/task_116202_0.png"
-    ]
+    ],
+    "courseTopicId": 5,
+    "courseTopicName": "Культура Руси IX–XV вв.",
+    "topic": "Культура Руси IX–XV вв.",
+    "primaryCourseTopic": {
+      "id": 5,
+      "name": "Культура Руси IX–XV вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 5,
+      "courseTopicName": "Культура Руси IX–XV вв.",
+      "primaryCourseTopic": {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 5,
+          "name": "Культура Руси IX–XV вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116205,
@@ -1965,7 +4605,40 @@
     "imageFilename": "images/13402/task_116205_0.png",
     "imageFilenames": [
       "images/13402/task_116205_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116208,
@@ -1989,7 +4662,40 @@
     "imageFilename": "images/13402/task_116208_0.png",
     "imageFilenames": [
       "images/13402/task_116208_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116211,
@@ -2013,7 +4719,40 @@
     "imageFilename": "images/13402/task_116211_0.png",
     "imageFilenames": [
       "images/13402/task_116211_0.png"
-    ]
+    ],
+    "courseTopicId": 5,
+    "courseTopicName": "Культура Руси IX–XV вв.",
+    "topic": "Культура Руси IX–XV вв.",
+    "primaryCourseTopic": {
+      "id": 5,
+      "name": "Культура Руси IX–XV вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 5,
+      "courseTopicName": "Культура Руси IX–XV вв.",
+      "primaryCourseTopic": {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 5,
+          "name": "Культура Руси IX–XV вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116215,
@@ -2037,7 +4776,40 @@
     "imageFilename": "images/13402/task_116215_0.png",
     "imageFilenames": [
       "images/13402/task_116215_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116218,
@@ -2061,7 +4833,40 @@
     "imageFilename": "images/13402/task_116218_0.png",
     "imageFilenames": [
       "images/13402/task_116218_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116220,
@@ -2085,7 +4890,40 @@
     "imageFilename": "images/13402/task_116220_0.png",
     "imageFilenames": [
       "images/13402/task_116220_0.png"
-    ]
+    ],
+    "courseTopicId": 14,
+    "courseTopicName": "Культура XVIII века",
+    "topic": "Культура XVIII века",
+    "primaryCourseTopic": {
+      "id": 14,
+      "name": "Культура XVIII века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 14,
+        "name": "Культура XVIII века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 14,
+      "courseTopicName": "Культура XVIII века",
+      "primaryCourseTopic": {
+        "id": 14,
+        "name": "Культура XVIII века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 14,
+          "name": "Культура XVIII века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116222,
@@ -2109,7 +4947,40 @@
     "imageFilename": "images/13402/task_116222_0.png",
     "imageFilenames": [
       "images/13402/task_116222_0.png"
-    ]
+    ],
+    "courseTopicId": 10,
+    "courseTopicName": "Культура XVI–XVII вв.",
+    "topic": "Культура XVI–XVII вв.",
+    "primaryCourseTopic": {
+      "id": 10,
+      "name": "Культура XVI–XVII вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 10,
+      "courseTopicName": "Культура XVI–XVII вв.",
+      "primaryCourseTopic": {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 10,
+          "name": "Культура XVI–XVII вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116224,
@@ -2133,7 +5004,40 @@
     "imageFilename": "images/13402/task_116224_0.png",
     "imageFilenames": [
       "images/13402/task_116224_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116227,
@@ -2157,7 +5061,40 @@
     "imageFilename": "images/13402/task_116227_0.png",
     "imageFilenames": [
       "images/13402/task_116227_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116231,
@@ -2181,7 +5118,40 @@
     "imageFilename": "images/13402/task_116231_0.png",
     "imageFilenames": [
       "images/13402/task_116231_0.png"
-    ]
+    ],
+    "courseTopicId": 10,
+    "courseTopicName": "Культура XVI–XVII вв.",
+    "topic": "Культура XVI–XVII вв.",
+    "primaryCourseTopic": {
+      "id": 10,
+      "name": "Культура XVI–XVII вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 10,
+      "courseTopicName": "Культура XVI–XVII вв.",
+      "primaryCourseTopic": {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 10,
+          "name": "Культура XVI–XVII вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116236,
@@ -2205,7 +5175,40 @@
     "imageFilename": "images/13402/task_116236_0.png",
     "imageFilenames": [
       "images/13402/task_116236_0.png"
-    ]
+    ],
+    "courseTopicId": 33,
+    "courseTopicName": "Культура 1945–1964 гг.",
+    "topic": "Культура 1945–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 33,
+      "name": "Культура 1945–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 33,
+        "name": "Культура 1945–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 33,
+      "courseTopicName": "Культура 1945–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 33,
+        "name": "Культура 1945–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 33,
+          "name": "Культура 1945–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116239,
@@ -2229,7 +5232,40 @@
     "imageFilename": "images/13402/task_116239_0.png",
     "imageFilenames": [
       "images/13402/task_116239_0.png"
-    ]
+    ],
+    "courseTopicId": 37,
+    "courseTopicName": "Россия в 1990-е гг. + культура",
+    "topic": "Россия в 1990-е гг. + культура",
+    "primaryCourseTopic": {
+      "id": 37,
+      "name": "Россия в 1990-е гг. + культура"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 37,
+        "name": "Россия в 1990-е гг. + культура"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 37,
+      "courseTopicName": "Россия в 1990-е гг. + культура",
+      "primaryCourseTopic": {
+        "id": 37,
+        "name": "Россия в 1990-е гг. + культура"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 37,
+          "name": "Россия в 1990-е гг. + культура"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116241,
@@ -2253,7 +5289,40 @@
     "imageFilename": "images/13402/task_116241_0.png",
     "imageFilenames": [
       "images/13402/task_116241_0.png"
-    ]
+    ],
+    "courseTopicId": 33,
+    "courseTopicName": "Культура 1945–1964 гг.",
+    "topic": "Культура 1945–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 33,
+      "name": "Культура 1945–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 33,
+        "name": "Культура 1945–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 33,
+      "courseTopicName": "Культура 1945–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 33,
+        "name": "Культура 1945–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 33,
+          "name": "Культура 1945–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116243,
@@ -2277,7 +5346,40 @@
     "imageFilename": "images/13402/task_116243_0.png",
     "imageFilenames": [
       "images/13402/task_116243_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116246,
@@ -2301,7 +5403,40 @@
     "imageFilename": "images/13402/task_116246_0.png",
     "imageFilenames": [
       "images/13402/task_116246_0.png"
-    ]
+    ],
+    "courseTopicId": 10,
+    "courseTopicName": "Культура XVI–XVII вв.",
+    "topic": "Культура XVI–XVII вв.",
+    "primaryCourseTopic": {
+      "id": 10,
+      "name": "Культура XVI–XVII вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 10,
+      "courseTopicName": "Культура XVI–XVII вв.",
+      "primaryCourseTopic": {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 10,
+          "name": "Культура XVI–XVII вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116248,
@@ -2325,7 +5460,40 @@
     "imageFilename": "images/13402/task_116248_0.png",
     "imageFilenames": [
       "images/13402/task_116248_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116252,
@@ -2349,7 +5517,40 @@
     "imageFilename": "images/13402/task_116252_0.png",
     "imageFilenames": [
       "images/13402/task_116252_0.png"
-    ]
+    ],
+    "courseTopicId": 5,
+    "courseTopicName": "Культура Руси IX–XV вв.",
+    "topic": "Культура Руси IX–XV вв.",
+    "primaryCourseTopic": {
+      "id": 5,
+      "name": "Культура Руси IX–XV вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 5,
+      "courseTopicName": "Культура Руси IX–XV вв.",
+      "primaryCourseTopic": {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 5,
+          "name": "Культура Руси IX–XV вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116255,
@@ -2373,7 +5574,40 @@
     "imageFilename": "images/13402/task_116255_0.png",
     "imageFilenames": [
       "images/13402/task_116255_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116257,
@@ -2397,7 +5631,40 @@
     "imageFilename": "images/13402/task_116257_0.png",
     "imageFilenames": [
       "images/13402/task_116257_0.png"
-    ]
+    ],
+    "courseTopicId": 14,
+    "courseTopicName": "Культура XVIII века",
+    "topic": "Культура XVIII века",
+    "primaryCourseTopic": {
+      "id": 14,
+      "name": "Культура XVIII века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 14,
+        "name": "Культура XVIII века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 14,
+      "courseTopicName": "Культура XVIII века",
+      "primaryCourseTopic": {
+        "id": 14,
+        "name": "Культура XVIII века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 14,
+          "name": "Культура XVIII века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116261,
@@ -2421,7 +5688,40 @@
     "imageFilename": "images/13402/task_116261_0.png",
     "imageFilenames": [
       "images/13402/task_116261_0.png"
-    ]
+    ],
+    "courseTopicId": 10,
+    "courseTopicName": "Культура XVI–XVII вв.",
+    "topic": "Культура XVI–XVII вв.",
+    "primaryCourseTopic": {
+      "id": 10,
+      "name": "Культура XVI–XVII вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 10,
+      "courseTopicName": "Культура XVI–XVII вв.",
+      "primaryCourseTopic": {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 10,
+          "name": "Культура XVI–XVII вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116264,
@@ -2445,7 +5745,40 @@
     "imageFilename": "images/13402/task_116264_0.png",
     "imageFilenames": [
       "images/13402/task_116264_0.png"
-    ]
+    ],
+    "courseTopicId": 33,
+    "courseTopicName": "Культура 1945–1964 гг.",
+    "topic": "Культура 1945–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 33,
+      "name": "Культура 1945–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 33,
+        "name": "Культура 1945–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 33,
+      "courseTopicName": "Культура 1945–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 33,
+        "name": "Культура 1945–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 33,
+          "name": "Культура 1945–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 177448,
@@ -2469,7 +5802,40 @@
     "imageFilename": "images/13402/task_177448_0.png",
     "imageFilenames": [
       "images/13402/task_177448_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 177466,
@@ -2493,7 +5859,40 @@
     "imageFilename": "images/13402/task_177466_0.png",
     "imageFilenames": [
       "images/13402/task_177466_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 181617,
@@ -2517,7 +5916,40 @@
     "imageFilename": "images/13402/task_181617_0.png",
     "imageFilenames": [
       "images/13402/task_181617_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183461,
@@ -2541,7 +5973,40 @@
     "imageFilename": "images/13402/task_183461_0.png",
     "imageFilenames": [
       "images/13402/task_183461_0.png"
-    ]
+    ],
+    "courseTopicId": 33,
+    "courseTopicName": "Культура 1945–1964 гг.",
+    "topic": "Культура 1945–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 33,
+      "name": "Культура 1945–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 33,
+        "name": "Культура 1945–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 33,
+      "courseTopicName": "Культура 1945–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 33,
+        "name": "Культура 1945–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 33,
+          "name": "Культура 1945–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183463,
@@ -2565,7 +6030,40 @@
     "imageFilename": "images/13402/task_183463_0.png",
     "imageFilenames": [
       "images/13402/task_183463_0.png"
-    ]
+    ],
+    "courseTopicId": 10,
+    "courseTopicName": "Культура XVI–XVII вв.",
+    "topic": "Культура XVI–XVII вв.",
+    "primaryCourseTopic": {
+      "id": 10,
+      "name": "Культура XVI–XVII вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 10,
+      "courseTopicName": "Культура XVI–XVII вв.",
+      "primaryCourseTopic": {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 10,
+          "name": "Культура XVI–XVII вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183465,
@@ -2589,7 +6087,40 @@
     "imageFilename": "images/13402/task_183465_0.png",
     "imageFilenames": [
       "images/13402/task_183465_0.png"
-    ]
+    ],
+    "courseTopicId": 14,
+    "courseTopicName": "Культура XVIII века",
+    "topic": "Культура XVIII века",
+    "primaryCourseTopic": {
+      "id": 14,
+      "name": "Культура XVIII века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 14,
+        "name": "Культура XVIII века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 14,
+      "courseTopicName": "Культура XVIII века",
+      "primaryCourseTopic": {
+        "id": 14,
+        "name": "Культура XVIII века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 14,
+          "name": "Культура XVIII века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183468,
@@ -2613,7 +6144,40 @@
     "imageFilename": "images/13402/task_183468_0.png",
     "imageFilenames": [
       "images/13402/task_183468_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183470,
@@ -2637,7 +6201,40 @@
     "imageFilename": "images/13402/task_183470_0.png",
     "imageFilenames": [
       "images/13402/task_183470_0.png"
-    ]
+    ],
+    "courseTopicId": 14,
+    "courseTopicName": "Культура XVIII века",
+    "topic": "Культура XVIII века",
+    "primaryCourseTopic": {
+      "id": 14,
+      "name": "Культура XVIII века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 14,
+        "name": "Культура XVIII века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 14,
+      "courseTopicName": "Культура XVIII века",
+      "primaryCourseTopic": {
+        "id": 14,
+        "name": "Культура XVIII века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 14,
+          "name": "Культура XVIII века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183472,
@@ -2661,7 +6258,40 @@
     "imageFilename": "images/13402/task_183472_0.png",
     "imageFilenames": [
       "images/13402/task_183472_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183473,
@@ -2685,7 +6315,40 @@
     "imageFilename": "images/13402/task_183473_0.png",
     "imageFilenames": [
       "images/13402/task_183473_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183475,
@@ -2709,7 +6372,40 @@
     "imageFilename": "images/13402/task_183475_0.png",
     "imageFilenames": [
       "images/13402/task_183475_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183477,
@@ -2733,7 +6429,40 @@
     "imageFilename": "images/13402/task_183477_0.png",
     "imageFilenames": [
       "images/13402/task_183477_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183479,
@@ -2757,7 +6486,40 @@
     "imageFilename": "images/13402/task_183479_0.png",
     "imageFilenames": [
       "images/13402/task_183479_0.png"
-    ]
+    ],
+    "courseTopicId": 14,
+    "courseTopicName": "Культура XVIII века",
+    "topic": "Культура XVIII века",
+    "primaryCourseTopic": {
+      "id": 14,
+      "name": "Культура XVIII века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 14,
+        "name": "Культура XVIII века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 14,
+      "courseTopicName": "Культура XVIII века",
+      "primaryCourseTopic": {
+        "id": 14,
+        "name": "Культура XVIII века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 14,
+          "name": "Культура XVIII века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183481,
@@ -2781,7 +6543,40 @@
     "imageFilename": "images/13402/task_183481_0.png",
     "imageFilenames": [
       "images/13402/task_183481_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183483,
@@ -2805,7 +6600,40 @@
     "imageFilename": "images/13402/task_183483_0.png",
     "imageFilenames": [
       "images/13402/task_183483_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183485,
@@ -2829,7 +6657,40 @@
     "imageFilename": "images/13402/task_183485_0.png",
     "imageFilenames": [
       "images/13402/task_183485_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183487,
@@ -2853,7 +6714,40 @@
     "imageFilename": "images/13402/task_183487_0.png",
     "imageFilenames": [
       "images/13402/task_183487_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183489,
@@ -2877,7 +6771,40 @@
     "imageFilename": "images/13402/task_183489_0.png",
     "imageFilenames": [
       "images/13402/task_183489_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183491,
@@ -2901,7 +6828,40 @@
     "imageFilename": "images/13402/task_183491_0.png",
     "imageFilenames": [
       "images/13402/task_183491_0.png"
-    ]
+    ],
+    "courseTopicId": 35,
+    "courseTopicName": "Перестройка",
+    "topic": "Перестройка",
+    "primaryCourseTopic": {
+      "id": 35,
+      "name": "Перестройка"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 35,
+        "name": "Перестройка"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 35,
+      "courseTopicName": "Перестройка",
+      "primaryCourseTopic": {
+        "id": 35,
+        "name": "Перестройка"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 35,
+          "name": "Перестройка"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183493,
@@ -2925,7 +6885,40 @@
     "imageFilename": "images/13402/task_183493_0.png",
     "imageFilenames": [
       "images/13402/task_183493_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183495,
@@ -2949,6 +6942,39 @@
     "imageFilename": "images/13402/task_183495_0.png",
     "imageFilenames": [
       "images/13402/task_183495_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task17": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   }
 ]

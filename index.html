@@ -2445,6 +2445,343 @@ function Task16Tab({onReload,constructorScope}){
   );
 }
 
+
+// === TASK 17 GENERATOR COURSE38 v1 ===
+function task17Validate(data){
+  const rows=Array.isArray(data)?data:[];
+  if(rows.length!==122)throw new Error('Ожидалось 122 задания №17, получено '+rows.length+'.');
+  const seen=new Set();
+  rows.forEach((q,i)=>{
+    if(q==null||q.id==null)throw new Error('У задания №17 #'+(i+1)+' нет id.');
+    if(seen.has(String(q.id)))throw new Error('Дубль id №17: '+q.id);
+    seen.add(String(q.id));
+    const imgs=Array.isArray(q.local_image_paths)?q.local_image_paths.filter(Boolean):[];
+    if(!imgs.length)throw new Error('У задания №17 id '+q.id+' нет изображения.');
+    if(!(q.question_text||'').trim())throw new Error('У задания №17 id '+q.id+' нет текста вопроса.');
+    const tid=Number(q.courseTopicId);
+    if(!Number.isInteger(tid)||tid<1||tid>38||!COURSE38_BY_ID.has(tid))
+      throw new Error('У задания №17 id '+q.id+' нет корректной темы курса.');
+  });
+  return rows;
+}
+
+function task17Question(raw){
+  const images=(raw.local_image_paths||[]).filter(Boolean);
+  const tid=Number(raw.courseTopicId);
+  const topic={id:tid,name:raw.courseTopicName||COURSE38_BY_ID.get(tid)?.name||''};
+  return {
+    id:uid('task17'),
+    type:'essay',
+    ogeNumber:17,
+    text:raw.question_text||'',
+    correctText:'',
+    maxScore:2,
+    gradingMode:'manual',
+    imageFilename:images[0]||'',
+    imageFilenames:images,
+    source:'Задание №17 · тема '+tid+' · Школково · '+(raw.theme_id||''),
+    sourceId:String(raw.id==null?'':raw.id),
+    sourceThemeId:raw.theme_id||null,
+    sourcePage:raw.source_page||'',
+    referenceAnswer:raw.solution_text||raw.answer||'',
+    topic:topic.name,
+    primaryCourseTopic:topic,
+    requiredCourseTopics:[topic],
+    mentionedCourseTopics:[],
+    metadata:{
+      enabled:true,
+      task17:true,
+      constructorSnapshot:true,
+      sourceQuestionId:raw.id||null,
+      sourceThemeId:raw.theme_id||null,
+      originalImageUrls:raw.image_urls||[],
+      courseTopicId:tid,
+      courseTopicName:topic.name,
+      primaryCourseTopic:topic,
+      requiredCourseTopics:[topic],
+      mentionedCourseTopics:[],
+      missingCourseTopic:false,
+      constructorTopicsReviewed:true
+    }
+  };
+}
+
+function Task17Tab({onReload,constructorScope}){
+  const h=React.createElement;
+  const [rows,setRows]=useState([]);
+  const [selected,setSelected]=useState([]);
+  const [search,setSearch]=useState('');
+  const [count,setCount]=useState('10');
+  const [questions,setQuestions]=useState([]);
+  const [name,setName]=useState('');
+  const [training,setTraining]=useState(true);
+  const [created,setCreated]=useState(null);
+  const [saved,setSaved]=useState(new Set());
+  const [busy,setBusy]=useState(false);
+  const [error,setError]=useState('');
+  const [status,setStatus]=useState('Загружаю базу №17…');
+
+  useEffect(()=>{
+    let live=true;
+    (async()=>{
+      try{
+        const r=await fetch('history_task_17_questions.json',{cache:'no-store'});
+        if(!r.ok)throw new Error('Положите history_task_17_questions.json рядом с index.html.');
+        const data=task17Validate(await r.json());
+        if(live){
+          setRows(data);
+          setSelected(data.map(q=>String(q.id)));
+          setStatus('База №17: '+data.length+' заданий · изображения и разметка по темам загружены.');
+        }
+      }catch(e){
+        if(live)setError(e.message);
+      }
+    })();
+    return()=>{live=false;};
+  },[]);
+
+  const through=Math.max(1,Math.min(38,Number(constructorScope?.through||38)));
+  const mode=constructorScope?.mode==='current'?'current':'cumulative';
+  const eligible=rows.filter(q=>mode==='current'
+    ? Number(q.courseTopicId)===through
+    : Number(q.courseTopicId)<=through
+  );
+  const needle=search.trim().toLocaleLowerCase('ru');
+  const visible=eligible.filter(q=>{
+    if(!needle)return true;
+    return (
+      (q.question_text||'')+' '+(q.solution_text||'')+' '+q.id+' '+
+      (q.theme_id||'')+' '+(q.courseTopicName||'')
+    ).toLocaleLowerCase('ru').includes(needle);
+  });
+  const chosen=eligible.filter(q=>selected.includes(String(q.id)));
+  const groups=COURSE38_TOPICS
+    .map(t=>({topic:t,rows:visible.filter(q=>Number(q.courseTopicId)===Number(t.id))}))
+    .filter(g=>g.rows.length);
+  const modeText=mode==='current'?'только тема '+through:'накопительно: темы 1–'+through;
+
+  function mark(ids,yes){
+    const sids=ids.map(String);
+    setSelected(prev=>yes
+      ? [...new Set([...prev,...sids])]
+      : prev.filter(id=>!sids.includes(id))
+    );
+  }
+
+  function generate(index){
+    setError('');
+    setCreated(null);
+    try{
+      if(index===undefined){
+        const n=Number(count);
+        if(!Number.isInteger(n)||n<1||n>100)
+          throw new Error('Количество заданий — от 1 до 100.');
+        if(chosen.length<n)
+          throw new Error('Выбрано '+chosen.length+' заданий, а нужно '+n+'.');
+        const picked=atomicShuffle(chosen).slice(0,n);
+        setQuestions(picked.map(task17Question));
+        setSaved(new Set());
+        setStatus('Сгенерировано заданий №17: '+n+'.');
+      }else{
+        if(!chosen.length)throw new Error('Нет выбранных заданий для замены.');
+        const used=new Set(
+          questions.filter((_,i)=>i!==index).map(q=>String(q.sourceId))
+        );
+        const candidates=atomicShuffle(chosen).filter(q=>!used.has(String(q.id)));
+        if(!candidates.length)
+          throw new Error('Нет другого выбранного задания для замены.');
+        setQuestions(prev=>prev.map((q,i)=>
+          i===index?task17Question(candidates[0]):q
+        ));
+      }
+    }catch(e){
+      setError(e.message);
+    }
+  }
+
+  async function save(makeTest){
+    if(busy||!questions.length)return;
+    if(makeTest&&!name.trim()){
+      setError('Введите название теста.');
+      return;
+    }
+    setBusy(true);
+    setError('');
+    const done=new Set(saved);
+    try{
+      for(const q of questions){
+        if(done.has(q.id))continue;
+        const err=await upsertQuestion(q);
+        if(err)throw err;
+        done.add(q.id);
+        setSaved(new Set(done));
+      }
+      if(makeTest){
+        const t={
+          id:uid('t'),
+          code:genCode(),
+          name:name.trim(),
+          training,
+          questionIds:questions.map(q=>q.id)
+        };
+        const err=await insertTest(t);
+        if(err)throw err;
+        setCreated(t);
+      }
+      setStatus('Сохранено заданий №17: '+questions.length+'.');
+      await onReload();
+    }catch(e){
+      setError('Сохранение: '+portalError(e));
+    }finally{
+      setBusy(false);
+    }
+  }
+
+  return h('fieldset',{
+      'data-task':17,
+      className:'atomic-generator',
+      disabled:busy,
+      style:{border:0,padding:0,margin:0,minWidth:0}
+    },
+    h('div',{className:'card'},
+      h('h2',null,'Генератор №17'),
+      h('div',{className:'notice',role:'status'},status),
+      error&&h('div',{className:'notice',role:'alert'},error),
+
+      h('p',null,
+        'Это отдельная база задания №17. №16 не смешивается с №17. '+
+        'Карточка сохраняет все изображения, относящиеся к конкретному вопросу.'
+      ),
+      h('div',{className:'notice'},
+        'Разбивка выполнена по нашим 38 темам. Сейчас используется настройка конструктора: ',
+        h('strong',null,modeText),'.'
+      ),
+
+      h('label',null,'Поиск по вопросу, ответу, теме или ID'),
+      h('input',{
+        value:search,
+        onChange:e=>setSearch(e.target.value),
+        placeholder:'архитектура, Репин, 95591…'
+      }),
+
+      h('div',{className:'atomic-actions'},
+        h('button',{className:'btn ghost small',onClick:()=>mark(visible.map(q=>q.id),true)},
+          'Выбрать все показанные'),
+        h('button',{className:'btn ghost small',onClick:()=>mark(visible.map(q=>q.id),false)},
+          'Снять показанные')
+      ),
+      h('p',{className:'q-meta'},
+        'Доступно по выбранным темам: '+eligible.length+
+        ' · показано: '+visible.length+
+        ' · выбрано: '+chosen.length+' из 122.'
+      ),
+
+      groups.map(g=>h('details',{
+          key:g.topic.id,
+          'data-topic':g.topic.id,
+          open:g.rows.length<=5
+        },
+        h('summary',null,
+          'Тема '+g.topic.id+'. '+g.topic.name+' — '+g.rows.length+' заданий'
+        ),
+        h('div',{className:'atomic-actions'},
+          h('button',{className:'btn ghost small',onClick:()=>mark(g.rows.map(q=>q.id),true)},
+            'Выбрать тему'),
+          h('button',{className:'btn ghost small',onClick:()=>mark(g.rows.map(q=>q.id),false)},
+            'Снять тему')
+        ),
+        g.rows.map(raw=>{
+          const images=(raw.local_image_paths||[]).filter(Boolean);
+          return h('details',{className:'q-list-item',key:raw.id},
+            h('summary',null,
+              h('label',{className:'opt',onClick:e=>e.stopPropagation()},
+                h('input',{
+                  type:'checkbox',
+                  checked:selected.includes(String(raw.id)),
+                  onChange:e=>mark([raw.id],e.target.checked)
+                }),
+                'ID '+raw.id+' · '+(raw.question_text||'').slice(0,120)
+              )
+            ),
+            h('p',{className:'q-meta'},
+              'Тема '+raw.courseTopicId+'. '+raw.courseTopicName+
+              ' · изображений: '+images.length
+            ),
+            images.map((img,i)=>h('img',{
+              key:i,
+              src:imageUrl(img),
+              className:'q-image',
+              alt:'Материал задания №17 '+(i+1)
+            })),
+            h('p',null,raw.question_text||''),
+            h('details',null,
+              h('summary',null,'Ответ и разбор'),
+              h('p',null,raw.solution_text||'Разбор отсутствует.')
+            )
+          );
+        })
+      )),
+
+      h('label',null,'Количество заданий (1–100, не больше выбранных)'),
+      h('input',{
+        type:'number',min:1,max:100,value:count,
+        onChange:e=>setCount(e.target.value)
+      }),
+      h('button',{
+        className:'btn',
+        disabled:busy||!chosen.length,
+        onClick:()=>generate()
+      },'Сгенерировать задания №17')
+    ),
+
+    questions.length>0&&h('div',{className:'card'},
+      h('h2',null,'Предпросмотр: '+questions.length),
+      h('label',null,'Название теста'),
+      h('input',{
+        value:name,
+        onChange:e=>{setName(e.target.value);setCreated(null);},
+        placeholder:'№17 — культура'
+      }),
+      h('label',{className:'opt'},
+        h('input',{
+          type:'checkbox',
+          checked:training,
+          onChange:e=>setTraining(e.target.checked)
+        }),
+        'Тренировочный режим'
+      ),
+      h('div',{className:'atomic-actions'},
+        h('button',{className:'btn ghost',disabled:busy,onClick:()=>save(false)},
+          'Сохранить в банк'),
+        h('button',{className:'btn',disabled:busy||!!created,onClick:()=>save(true)},
+          'Сохранить и создать тест')
+      ),
+      created&&h('div',{className:'notice'},
+        'Код теста: ',h('strong',null,created.code),' ',
+        h('a',{
+          href:constructorLink(created.code),
+          target:'_blank',
+          rel:'noopener noreferrer'
+        },constructorLink(created.code))
+      ),
+      questions.map((q,i)=>h('div',{className:'q-list-item',key:q.id},
+        h('h3',null,'Задание '+(i+1)+' · №17'),
+        h(ConstructorPreview,{q}),
+        h('div',{className:'atomic-actions'},
+          h('button',{className:'btn ghost small',onClick:()=>generate(i)},'Заменить'),
+          h('button',{
+            className:'btn danger',
+            onClick:()=>{
+              setQuestions(prev=>prev.filter((_,j)=>j!==i));
+              setCreated(null);
+            }
+          },'Удалить')
+        )
+      ))
+    )
+  );
+}
+
 // MAP912_TOPIC38_V3
 function map912Validate(data){
   if(!data||!Array.isArray(data.blocks)||data.blocks.length!==123)throw new Error('Ожидалось ровно 123 блока карт №9–12.');
@@ -2810,7 +3147,7 @@ function ConstructorTab({bank,onReload}) {
   return h('fieldset',{className:'constructor',disabled:busy,'data-constructor':true,style:{border:0,padding:0,margin:0,minWidth:0}},
     h('div',{className:'card'},h('h2',null,'Конструктор'),h('p',null,'Выберите изученные темы и конкретный материал. Затем соберите и проверьте варианты.'),
       h('div',{className:'constructor-grid'},h('div',null,h('label',{htmlFor:'constructor-through'},'Последняя изученная тема'),h('select',{id:'constructor-through',value:through,disabled:busy,onChange:e=>setThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name)))),h('div',null,h('label',{htmlFor:'constructor-mode'},'Материал'),h('select',{id:'constructor-mode',value:mode,disabled:busy,onChange:e=>setMode(e.target.value)},h('option',{value:'cumulative'},'Накопительно: темы 1–'+through),h('option',{value:'current'},'Только тема '+through)))),
-      h('div',{className:'tabs'},[['bank','Выбор заданий'],['atom1','Создать №1'],['atom2','Создать №2'],['atom3','Создать №3'],['atom4','Создать №4'],['atom5','Создать №5'],['atom6','Создать №6'],['atom7','Создать №7'],['atom8','Создать №8'],['map912','Карты №9–12'],['text1315','Тексты №13–15'],['task16','Создать №16']].map(([k,s])=>h('button',{key:k,disabled:busy,className:section===k?'active':'',onClick:()=>setSection(k)},s))),
+      h('div',{className:'tabs'},[['bank','Выбор заданий'],['atom1','Создать №1'],['atom2','Создать №2'],['atom3','Создать №3'],['atom4','Создать №4'],['atom5','Создать №5'],['atom6','Создать №6'],['atom7','Создать №7'],['atom8','Создать №8'],['map912','Карты №9–12'],['text1315','Тексты №13–15'],['task16','Создать №16'],['task17','Создать №17']].map(([k,s])=>h('button',{key:k,disabled:busy,className:section===k?'active':'',onClick:()=>setSection(k)},s))),
       h('p',{className:'q-meta'},'Выбрано доступных заданий: '+chosen.length+(selectedHidden?' · исключено из текущего материала: '+selectedHidden:'')+'. Черновик и наборы сохраняются в этом браузере; для переноса используйте экспорт.')),
     error&&h('div',{className:'notice',role:'alert'},error),notice&&h('div',{className:'notice',role:'status'},notice),
     [1,2].map(task=>section==='atom'+task?h('div',{key:task},h(AtomicGeneratorTab,{task,onReload,onAdd:addGenerated,constructorScope:{through,mode}})):null),
@@ -2823,6 +3160,7 @@ function ConstructorTab({bank,onReload}) {
     section==='map912'&&h(TrainerPanelBoundary,{label:'Карты №9–12'},h(MapTopic912Tab,{onReload,constructorScope:{through,mode}})),
     section==='text1315'&&h(TrainerPanelBoundary,{label:'Тексты №13–15'},h(Text1315Tab,{onReload,constructorScope:{through,mode}})),
     section==='task16'&&h(TrainerPanelBoundary,{label:'Создать №16'},h(Task16Tab,{onReload,constructorScope:{through,mode}})),
+    section==='task17'&&h(TrainerPanelBoundary,{label:'Создать №17'},h(Task17Tab,{onReload,constructorScope:{through,mode}})),
     section==='bank'&&h('div',{className:'card'},h('h3',null,'Материал для вариантов'),
       bank===null&&h('p',null,'Загружаю банк…'),
       h('div',{className:'constructor-grid'},h('div',null,h('label',{htmlFor:'constructor-search'},'Поиск по тексту или ID'),h('input',{id:'constructor-search',value:search,onChange:e=>setSearch(e.target.value)})),h('div',null,h('label',{htmlFor:'constructor-number'},'Номер задания'),h('select',{id:'constructor-number',value:number,onChange:e=>setNumber(e.target.value)},h('option',{value:''},'Все номера'),[...new Set(catalog.map(q=>q.ogeNumber).filter(Boolean))].sort((a,b)=>a-b).map(n=>h('option',{key:n,value:n},'№'+n))))),
