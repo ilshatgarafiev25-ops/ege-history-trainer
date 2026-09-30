@@ -6829,33 +6829,33 @@
     "imageFilenames": [
       "images/13402/task_183491_0.png"
     ],
-    "courseTopicId": 35,
-    "courseTopicName": "Перестройка",
-    "topic": "Перестройка",
+    "courseTopicId": 33,
+    "courseTopicName": "Культура 1945–1964 гг.",
+    "topic": "Культура 1945–1964 гг.",
     "primaryCourseTopic": {
-      "id": 35,
-      "name": "Перестройка"
+      "id": 33,
+      "name": "Культура 1945–1964 гг."
     },
     "requiredCourseTopics": [
       {
-        "id": 35,
-        "name": "Перестройка"
+        "id": 33,
+        "name": "Культура 1945–1964 гг."
       }
     ],
     "mentionedCourseTopics": [],
     "metadata": {
       "enabled": true,
       "task17": true,
-      "courseTopicId": 35,
-      "courseTopicName": "Перестройка",
+      "courseTopicId": 33,
+      "courseTopicName": "Культура 1945–1964 гг.",
       "primaryCourseTopic": {
-        "id": 35,
-        "name": "Перестройка"
+        "id": 33,
+        "name": "Культура 1945–1964 гг."
       },
       "requiredCourseTopics": [
         {
-          "id": 35,
-          "name": "Перестройка"
+          "id": 33,
+          "name": "Культура 1945–1964 гг."
         }
       ],
       "mentionedCourseTopics": [],
