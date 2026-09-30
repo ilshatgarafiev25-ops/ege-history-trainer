@@ -14,28 +14,22 @@
     "theme_id": 14575,
     "taskNumber": 20,
     "ogeNumber": 20,
-    "courseTopicId": 20,
-    "courseTopicName": "Культура XIX века",
-    "topic": "Культура XIX века",
+    "courseTopicId": 1,
+    "courseTopicName": "Восточные славяне и первые русские князья",
+    "topic": "Восточные славяне и первые русские князья",
     "primaryCourseTopic": {
-      "id": 20,
-      "name": "Культура XIX века"
+      "id": 1,
+      "name": "Восточные славяне и первые русские князья"
     },
     "requiredCourseTopics": [
       {
-        "id": 20,
-        "name": "Культура XIX века"
+        "id": 1,
+        "name": "Восточные славяне и первые русские князья"
       }
     ],
-    "mentionedCourseTopics": [],
-    "imageFilename": "",
-    "imageFilenames": [],
     "metadata": {
-      "enabled": true,
-      "task20": true,
-      "courseTopicId": 20,
-      "courseTopicName": "Культура XIX века",
-      "constructorTopicsReviewed": true
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья"
     }
   },
   {
@@ -53,28 +47,22 @@
     "theme_id": 14575,
     "taskNumber": 20,
     "ogeNumber": 20,
-    "courseTopicId": 20,
-    "courseTopicName": "Культура XIX века",
-    "topic": "Культура XIX века",
+    "courseTopicId": 1,
+    "courseTopicName": "Восточные славяне и первые русские князья",
+    "topic": "Восточные славяне и первые русские князья",
     "primaryCourseTopic": {
-      "id": 20,
-      "name": "Культура XIX века"
+      "id": 1,
+      "name": "Восточные славяне и первые русские князья"
     },
     "requiredCourseTopics": [
       {
-        "id": 20,
-        "name": "Культура XIX века"
+        "id": 1,
+        "name": "Восточные славяне и первые русские князья"
       }
     ],
-    "mentionedCourseTopics": [],
-    "imageFilename": "",
-    "imageFilenames": [],
     "metadata": {
-      "enabled": true,
-      "task20": true,
-      "courseTopicId": 20,
-      "courseTopicName": "Культура XIX века",
-      "constructorTopicsReviewed": true
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья"
     }
   },
   {
@@ -92,28 +80,22 @@
     "theme_id": 14575,
     "taskNumber": 20,
     "ogeNumber": 20,
-    "courseTopicId": 20,
-    "courseTopicName": "Культура XIX века",
-    "topic": "Культура XIX века",
+    "courseTopicId": 1,
+    "courseTopicName": "Восточные славяне и первые русские князья",
+    "topic": "Восточные славяне и первые русские князья",
     "primaryCourseTopic": {
-      "id": 20,
-      "name": "Культура XIX века"
+      "id": 1,
+      "name": "Восточные славяне и первые русские князья"
     },
     "requiredCourseTopics": [
       {
-        "id": 20,
-        "name": "Культура XIX века"
+        "id": 1,
+        "name": "Восточные славяне и первые русские князья"
       }
     ],
-    "mentionedCourseTopics": [],
-    "imageFilename": "",
-    "imageFilenames": [],
     "metadata": {
-      "enabled": true,
-      "task20": true,
-      "courseTopicId": 20,
-      "courseTopicName": "Культура XIX века",
-      "constructorTopicsReviewed": true
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья"
     }
   },
   {
@@ -131,28 +113,22 @@
     "theme_id": 14575,
     "taskNumber": 20,
     "ogeNumber": 20,
-    "courseTopicId": 20,
-    "courseTopicName": "Культура XIX века",
-    "topic": "Культура XIX века",
+    "courseTopicId": 1,
+    "courseTopicName": "Восточные славяне и первые русские князья",
+    "topic": "Восточные славяне и первые русские князья",
     "primaryCourseTopic": {
-      "id": 20,
-      "name": "Культура XIX века"
+      "id": 1,
+      "name": "Восточные славяне и первые русские князья"
     },
     "requiredCourseTopics": [
       {
-        "id": 20,
-        "name": "Культура XIX века"
+        "id": 1,
+        "name": "Восточные славяне и первые русские князья"
       }
     ],
-    "mentionedCourseTopics": [],
-    "imageFilename": "",
-    "imageFilenames": [],
     "metadata": {
-      "enabled": true,
-      "task20": true,
-      "courseTopicId": 20,
-      "courseTopicName": "Культура XIX века",
-      "constructorTopicsReviewed": true
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья"
     }
   },
   {
@@ -170,28 +146,22 @@
     "theme_id": 14575,
     "taskNumber": 20,
     "ogeNumber": 20,
-    "courseTopicId": 20,
-    "courseTopicName": "Культура XIX века",
-    "topic": "Культура XIX века",
+    "courseTopicId": 1,
+    "courseTopicName": "Восточные славяне и первые русские князья",
+    "topic": "Восточные славяне и первые русские князья",
     "primaryCourseTopic": {
-      "id": 20,
-      "name": "Культура XIX века"
+      "id": 1,
+      "name": "Восточные славяне и первые русские князья"
     },
     "requiredCourseTopics": [
       {
-        "id": 20,
-        "name": "Культура XIX века"
+        "id": 1,
+        "name": "Восточные славяне и первые русские князья"
       }
     ],
-    "mentionedCourseTopics": [],
-    "imageFilename": "",
-    "imageFilenames": [],
     "metadata": {
-      "enabled": true,
-      "task20": true,
-      "courseTopicId": 20,
-      "courseTopicName": "Культура XIX века",
-      "constructorTopicsReviewed": true
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья"
     }
   },
   {
@@ -209,28 +179,22 @@
     "theme_id": 14575,
     "taskNumber": 20,
     "ogeNumber": 20,
-    "courseTopicId": 20,
-    "courseTopicName": "Культура XIX века",
-    "topic": "Культура XIX века",
+    "courseTopicId": 1,
+    "courseTopicName": "Восточные славяне и первые русские князья",
+    "topic": "Восточные славяне и первые русские князья",
     "primaryCourseTopic": {
-      "id": 20,
-      "name": "Культура XIX века"
+      "id": 1,
+      "name": "Восточные славяне и первые русские князья"
     },
     "requiredCourseTopics": [
       {
-        "id": 20,
-        "name": "Культура XIX века"
+        "id": 1,
+        "name": "Восточные славяне и первые русские князья"
       }
     ],
-    "mentionedCourseTopics": [],
-    "imageFilename": "",
-    "imageFilenames": [],
     "metadata": {
-      "enabled": true,
-      "task20": true,
-      "courseTopicId": 20,
-      "courseTopicName": "Культура XIX века",
-      "constructorTopicsReviewed": true
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья"
     }
   },
   {
@@ -248,28 +212,22 @@
     "theme_id": 14575,
     "taskNumber": 20,
     "ogeNumber": 20,
-    "courseTopicId": 20,
-    "courseTopicName": "Культура XIX века",
-    "topic": "Культура XIX века",
+    "courseTopicId": 3,
+    "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада",
+    "topic": "Раздробленность Руси. Нашествие с Востока и Запада",
     "primaryCourseTopic": {
-      "id": 20,
-      "name": "Культура XIX века"
+      "id": 3,
+      "name": "Раздробленность Руси. Нашествие с Востока и Запада"
     },
     "requiredCourseTopics": [
       {
-        "id": 20,
-        "name": "Культура XIX века"
+        "id": 3,
+        "name": "Раздробленность Руси. Нашествие с Востока и Запада"
       }
     ],
-    "mentionedCourseTopics": [],
-    "imageFilename": "",
-    "imageFilenames": [],
     "metadata": {
-      "enabled": true,
-      "task20": true,
-      "courseTopicId": 20,
-      "courseTopicName": "Культура XIX века",
-      "constructorTopicsReviewed": true
+      "courseTopicId": 3,
+      "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада"
     }
   },
   {
@@ -287,28 +245,22 @@
     "theme_id": 14575,
     "taskNumber": 20,
     "ogeNumber": 20,
-    "courseTopicId": 20,
-    "courseTopicName": "Культура XIX века",
-    "topic": "Культура XIX века",
+    "courseTopicId": 3,
+    "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада",
+    "topic": "Раздробленность Руси. Нашествие с Востока и Запада",
     "primaryCourseTopic": {
-      "id": 20,
-      "name": "Культура XIX века"
+      "id": 3,
+      "name": "Раздробленность Руси. Нашествие с Востока и Запада"
     },
     "requiredCourseTopics": [
       {
-        "id": 20,
-        "name": "Культура XIX века"
+        "id": 3,
+        "name": "Раздробленность Руси. Нашествие с Востока и Запада"
       }
     ],
-    "mentionedCourseTopics": [],
-    "imageFilename": "",
-    "imageFilenames": [],
     "metadata": {
-      "enabled": true,
-      "task20": true,
-      "courseTopicId": 20,
-      "courseTopicName": "Культура XIX века",
-      "constructorTopicsReviewed": true
+      "courseTopicId": 3,
+      "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада"
     }
   },
   {
@@ -326,28 +278,22 @@
     "theme_id": 14575,
     "taskNumber": 20,
     "ogeNumber": 20,
-    "courseTopicId": 20,
-    "courseTopicName": "Культура XIX века",
-    "topic": "Культура XIX века",
+    "courseTopicId": 1,
+    "courseTopicName": "Восточные славяне и первые русские князья",
+    "topic": "Восточные славяне и первые русские князья",
     "primaryCourseTopic": {
-      "id": 20,
-      "name": "Культура XIX века"
+      "id": 1,
+      "name": "Восточные славяне и первые русские князья"
     },
     "requiredCourseTopics": [
       {
-        "id": 20,
-        "name": "Культура XIX века"
+        "id": 1,
+        "name": "Восточные славяне и первые русские князья"
       }
     ],
-    "mentionedCourseTopics": [],
-    "imageFilename": "",
-    "imageFilenames": [],
     "metadata": {
-      "enabled": true,
-      "task20": true,
-      "courseTopicId": 20,
-      "courseTopicName": "Культура XIX века",
-      "constructorTopicsReviewed": true
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья"
     }
   },
   {
@@ -365,28 +311,22 @@
     "theme_id": 14575,
     "taskNumber": 20,
     "ogeNumber": 20,
-    "courseTopicId": 20,
-    "courseTopicName": "Культура XIX века",
-    "topic": "Культура XIX века",
+    "courseTopicId": 3,
+    "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада",
+    "topic": "Раздробленность Руси. Нашествие с Востока и Запада",
     "primaryCourseTopic": {
-      "id": 20,
-      "name": "Культура XIX века"
+      "id": 3,
+      "name": "Раздробленность Руси. Нашествие с Востока и Запада"
     },
     "requiredCourseTopics": [
       {
-        "id": 20,
-        "name": "Культура XIX века"
+        "id": 3,
+        "name": "Раздробленность Руси. Нашествие с Востока и Запада"
       }
     ],
-    "mentionedCourseTopics": [],
-    "imageFilename": "",
-    "imageFilenames": [],
     "metadata": {
-      "enabled": true,
-      "task20": true,
-      "courseTopicId": 20,
-      "courseTopicName": "Культура XIX века",
-      "constructorTopicsReviewed": true
+      "courseTopicId": 3,
+      "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада"
     }
   },
   {
@@ -404,28 +344,22 @@
     "theme_id": 14575,
     "taskNumber": 20,
     "ogeNumber": 20,
-    "courseTopicId": 20,
-    "courseTopicName": "Культура XIX века",
-    "topic": "Культура XIX века",
+    "courseTopicId": 1,
+    "courseTopicName": "Восточные славяне и первые русские князья",
+    "topic": "Восточные славяне и первые русские князья",
     "primaryCourseTopic": {
-      "id": 20,
-      "name": "Культура XIX века"
+      "id": 1,
+      "name": "Восточные славяне и первые русские князья"
     },
     "requiredCourseTopics": [
       {
-        "id": 20,
-        "name": "Культура XIX века"
+        "id": 1,
+        "name": "Восточные славяне и первые русские князья"
       }
     ],
-    "mentionedCourseTopics": [],
-    "imageFilename": "",
-    "imageFilenames": [],
     "metadata": {
-      "enabled": true,
-      "task20": true,
-      "courseTopicId": 20,
-      "courseTopicName": "Культура XIX века",
-      "constructorTopicsReviewed": true
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья"
     }
   },
   {
@@ -443,28 +377,22 @@
     "theme_id": 14575,
     "taskNumber": 20,
     "ogeNumber": 20,
-    "courseTopicId": 20,
-    "courseTopicName": "Культура XIX века",
-    "topic": "Культура XIX века",
+    "courseTopicId": 1,
+    "courseTopicName": "Восточные славяне и первые русские князья",
+    "topic": "Восточные славяне и первые русские князья",
     "primaryCourseTopic": {
-      "id": 20,
-      "name": "Культура XIX века"
+      "id": 1,
+      "name": "Восточные славяне и первые русские князья"
     },
     "requiredCourseTopics": [
       {
-        "id": 20,
-        "name": "Культура XIX века"
+        "id": 1,
+        "name": "Восточные славяне и первые русские князья"
       }
     ],
-    "mentionedCourseTopics": [],
-    "imageFilename": "",
-    "imageFilenames": [],
     "metadata": {
-      "enabled": true,
-      "task20": true,
-      "courseTopicId": 20,
-      "courseTopicName": "Культура XIX века",
-      "constructorTopicsReviewed": true
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья"
     }
   },
   {
@@ -482,28 +410,22 @@
     "theme_id": 14575,
     "taskNumber": 20,
     "ogeNumber": 20,
-    "courseTopicId": 20,
-    "courseTopicName": "Культура XIX века",
-    "topic": "Культура XIX века",
+    "courseTopicId": 1,
+    "courseTopicName": "Восточные славяне и первые русские князья",
+    "topic": "Восточные славяне и первые русские князья",
     "primaryCourseTopic": {
-      "id": 20,
-      "name": "Культура XIX века"
+      "id": 1,
+      "name": "Восточные славяне и первые русские князья"
     },
     "requiredCourseTopics": [
       {
-        "id": 20,
-        "name": "Культура XIX века"
+        "id": 1,
+        "name": "Восточные славяне и первые русские князья"
       }
     ],
-    "mentionedCourseTopics": [],
-    "imageFilename": "",
-    "imageFilenames": [],
     "metadata": {
-      "enabled": true,
-      "task20": true,
-      "courseTopicId": 20,
-      "courseTopicName": "Культура XIX века",
-      "constructorTopicsReviewed": true
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья"
     }
   },
   {
@@ -521,28 +443,22 @@
     "theme_id": 14575,
     "taskNumber": 20,
     "ogeNumber": 20,
-    "courseTopicId": 20,
-    "courseTopicName": "Культура XIX века",
-    "topic": "Культура XIX века",
+    "courseTopicId": 2,
+    "courseTopicName": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда",
+    "topic": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда",
     "primaryCourseTopic": {
-      "id": 20,
-      "name": "Культура XIX века"
+      "id": 2,
+      "name": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда"
     },
     "requiredCourseTopics": [
       {
-        "id": 20,
-        "name": "Культура XIX века"
+        "id": 2,
+        "name": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда"
       }
     ],
-    "mentionedCourseTopics": [],
-    "imageFilename": "",
-    "imageFilenames": [],
     "metadata": {
-      "enabled": true,
-      "task20": true,
-      "courseTopicId": 20,
-      "courseTopicName": "Культура XIX века",
-      "constructorTopicsReviewed": true
+      "courseTopicId": 2,
+      "courseTopicName": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда"
     }
   },
   {
@@ -560,28 +476,22 @@
     "theme_id": 14575,
     "taskNumber": 20,
     "ogeNumber": 20,
-    "courseTopicId": 20,
-    "courseTopicName": "Культура XIX века",
-    "topic": "Культура XIX века",
+    "courseTopicId": 2,
+    "courseTopicName": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда",
+    "topic": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда",
     "primaryCourseTopic": {
-      "id": 20,
-      "name": "Культура XIX века"
+      "id": 2,
+      "name": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда"
     },
     "requiredCourseTopics": [
       {
-        "id": 20,
-        "name": "Культура XIX века"
+        "id": 2,
+        "name": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда"
       }
     ],
-    "mentionedCourseTopics": [],
-    "imageFilename": "",
-    "imageFilenames": [],
     "metadata": {
-      "enabled": true,
-      "task20": true,
-      "courseTopicId": 20,
-      "courseTopicName": "Культура XIX века",
-      "constructorTopicsReviewed": true
+      "courseTopicId": 2,
+      "courseTopicName": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда"
     }
   },
   {
@@ -599,28 +509,22 @@
     "theme_id": 14575,
     "taskNumber": 20,
     "ogeNumber": 20,
-    "courseTopicId": 20,
-    "courseTopicName": "Культура XIX века",
-    "topic": "Культура XIX века",
+    "courseTopicId": 2,
+    "courseTopicName": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда",
+    "topic": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда",
     "primaryCourseTopic": {
-      "id": 20,
-      "name": "Культура XIX века"
+      "id": 2,
+      "name": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда"
     },
     "requiredCourseTopics": [
       {
-        "id": 20,
-        "name": "Культура XIX века"
+        "id": 2,
+        "name": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда"
       }
     ],
-    "mentionedCourseTopics": [],
-    "imageFilename": "",
-    "imageFilenames": [],
     "metadata": {
-      "enabled": true,
-      "task20": true,
-      "courseTopicId": 20,
-      "courseTopicName": "Культура XIX века",
-      "constructorTopicsReviewed": true
+      "courseTopicId": 2,
+      "courseTopicName": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда"
     }
   },
   {
@@ -638,28 +542,22 @@
     "theme_id": 14575,
     "taskNumber": 20,
     "ogeNumber": 20,
-    "courseTopicId": 20,
-    "courseTopicName": "Культура XIX века",
-    "topic": "Культура XIX века",
+    "courseTopicId": 2,
+    "courseTopicName": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда",
+    "topic": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда",
     "primaryCourseTopic": {
-      "id": 20,
-      "name": "Культура XIX века"
+      "id": 2,
+      "name": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда"
     },
     "requiredCourseTopics": [
       {
-        "id": 20,
-        "name": "Культура XIX века"
+        "id": 2,
+        "name": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда"
       }
     ],
-    "mentionedCourseTopics": [],
-    "imageFilename": "",
-    "imageFilenames": [],
     "metadata": {
-      "enabled": true,
-      "task20": true,
-      "courseTopicId": 20,
-      "courseTopicName": "Культура XIX века",
-      "constructorTopicsReviewed": true
+      "courseTopicId": 2,
+      "courseTopicName": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда"
     }
   },
   {
@@ -677,28 +575,22 @@
     "theme_id": 14575,
     "taskNumber": 20,
     "ogeNumber": 20,
-    "courseTopicId": 20,
-    "courseTopicName": "Культура XIX века",
-    "topic": "Культура XIX века",
+    "courseTopicId": 3,
+    "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада",
+    "topic": "Раздробленность Руси. Нашествие с Востока и Запада",
     "primaryCourseTopic": {
-      "id": 20,
-      "name": "Культура XIX века"
+      "id": 3,
+      "name": "Раздробленность Руси. Нашествие с Востока и Запада"
     },
     "requiredCourseTopics": [
       {
-        "id": 20,
-        "name": "Культура XIX века"
+        "id": 3,
+        "name": "Раздробленность Руси. Нашествие с Востока и Запада"
       }
     ],
-    "mentionedCourseTopics": [],
-    "imageFilename": "",
-    "imageFilenames": [],
     "metadata": {
-      "enabled": true,
-      "task20": true,
-      "courseTopicId": 20,
-      "courseTopicName": "Культура XIX века",
-      "constructorTopicsReviewed": true
+      "courseTopicId": 3,
+      "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада"
     }
   },
   {
@@ -716,28 +608,22 @@
     "theme_id": 14600,
     "taskNumber": 20,
     "ogeNumber": 20,
-    "courseTopicId": 20,
-    "courseTopicName": "Культура XIX века",
-    "topic": "Культура XIX века",
+    "courseTopicId": 10,
+    "courseTopicName": "Культура XVI–XVII вв.",
+    "topic": "Культура XVI–XVII вв.",
     "primaryCourseTopic": {
-      "id": 20,
-      "name": "Культура XIX века"
+      "id": 10,
+      "name": "Культура XVI–XVII вв."
     },
     "requiredCourseTopics": [
       {
-        "id": 20,
-        "name": "Культура XIX века"
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
       }
     ],
-    "mentionedCourseTopics": [],
-    "imageFilename": "",
-    "imageFilenames": [],
     "metadata": {
-      "enabled": true,
-      "task20": true,
-      "courseTopicId": 20,
-      "courseTopicName": "Культура XIX века",
-      "constructorTopicsReviewed": true
+      "courseTopicId": 10,
+      "courseTopicName": "Культура XVI–XVII вв."
     }
   }
 ]
