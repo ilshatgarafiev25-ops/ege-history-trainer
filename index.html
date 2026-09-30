@@ -3103,7 +3103,7 @@ function essayQuestion(task,raw){
   const req=(raw._req||[tid]).map(id=>COURSE38_BY_ID.get(id));
   const ref=raw.solution_text||raw.answer||'';
   return {
-    id:uid('task'+task),type:'essay',ogeNumber:task,text:raw.question_text||raw.text||'',correctText:'',maxScore:3,
+    id:uid('task'+task),type:'essay',ogeNumber:task,text:raw.question_text||raw.text||'',correctText:'',maxScore:task===22?2:3,
     gradingMode:'manual',imageFilename:'',imageFilenames:[],source:'Задание №'+task+' · тема '+tid,
     sourceId:String(raw.id),sourceThemeId:raw.theme_id||null,sourcePage:raw.source_page||'',
     referenceAnswer:ref,topic:req.map(t=>t.name).join('; '),primaryCourseTopic:topic,
@@ -3235,6 +3235,7 @@ function EssayTaskTab({task,file,placeholder,onReload,constructorScope}){
 }
 
 function Task20Tab(p){return React.createElement(EssayTaskTab,{...p,task:20,file:'history_task_20_questions.json',placeholder:'Петр I, реформы, 1861, ID…'});}
+function Task22Tab(p){return React.createElement(EssayTaskTab,{...p,task:22,file:'history_task_22_questions.json',placeholder:'Крещение Руси, 1812, оттепель, ID…'});}
 function Task21Tab(p){return React.createElement(EssayTaskTab,{...p,task:21,file:'history_task_21_questions.json',placeholder:'Иван IV, Пётр I, НЭП, ID…'});}
 
 // === TASK 19 GENERATOR COURSE38 v1 ===
@@ -3909,7 +3910,7 @@ function ConstructorTab({bank,onReload}) {
   return h('fieldset',{className:'constructor',disabled:busy,'data-constructor':true,style:{border:0,padding:0,margin:0,minWidth:0}},
     h('div',{className:'card'},h('h2',null,'Конструктор'),h('p',null,'Выберите изученные темы и конкретный материал. Затем соберите и проверьте варианты.'),
       h('div',{className:'constructor-grid'},h('div',null,h('label',{htmlFor:'constructor-through'},'Последняя изученная тема'),h('select',{id:'constructor-through',value:through,disabled:busy,onChange:e=>setThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name)))),h('div',null,h('label',{htmlFor:'constructor-mode'},'Материал'),h('select',{id:'constructor-mode',value:mode,disabled:busy,onChange:e=>setMode(e.target.value)},h('option',{value:'cumulative'},'Накопительно: темы 1–'+through),h('option',{value:'current'},'Только тема '+through)))),
-      h('div',{className:'tabs'},[['bank','Выбор заданий'],['atom1','Создать №1'],['atom2','Создать №2'],['atom3','Создать №3'],['atom4','Создать №4'],['atom5','Создать №5'],['atom6','Создать №6'],['atom7','Создать №7'],['atom8','Создать №8'],['map912','Карты №9–12'],['text1315','Тексты №13–15'],['task16','Создать №16'],['task17','Создать №17'],['task18','Создать №18'],['task19','Создать №19'],['task20','Создать №20'],['task21','Создать №21']].map(([k,s])=>h('button',{key:k,disabled:busy,className:section===k?'active':'',onClick:()=>setSection(k)},s))),
+      h('div',{className:'tabs'},[['bank','Выбор заданий'],['atom1','Создать №1'],['atom2','Создать №2'],['atom3','Создать №3'],['atom4','Создать №4'],['atom5','Создать №5'],['atom6','Создать №6'],['atom7','Создать №7'],['atom8','Создать №8'],['map912','Карты №9–12'],['text1315','Тексты №13–15'],['task16','Создать №16'],['task17','Создать №17'],['task18','Создать №18'],['task19','Создать №19'],['task20','Создать №20'],['task21','Создать №21'],['task22','Создать №22']].map(([k,s])=>h('button',{key:k,disabled:busy,className:section===k?'active':'',onClick:()=>setSection(k)},s))),
       h('p',{className:'q-meta'},'Выбрано доступных заданий: '+chosen.length+(selectedHidden?' · исключено из текущего материала: '+selectedHidden:'')+'. Черновик и наборы сохраняются в этом браузере; для переноса используйте экспорт.')),
     error&&h('div',{className:'notice',role:'alert'},error),notice&&h('div',{className:'notice',role:'status'},notice),
     [1,2].map(task=>section==='atom'+task?h('div',{key:task},h(AtomicGeneratorTab,{task,onReload,onAdd:addGenerated,constructorScope:{through,mode}})):null),
@@ -3927,6 +3928,7 @@ function ConstructorTab({bank,onReload}) {
     section==='task19'&&h(TrainerPanelBoundary,{label:'Создать №19'},h(Task19Tab,{onReload,constructorScope:{through,mode}})),
     section==='task20'&&h(TrainerPanelBoundary,{label:'Создать №20'},h(Task20Tab,{onReload,constructorScope:{through,mode}})),
     section==='task21'&&h(TrainerPanelBoundary,{label:'Создать №21'},h(Task21Tab,{onReload,constructorScope:{through,mode}})),
+    section==='task22'&&h(TrainerPanelBoundary,{label:'Создать №22'},h(Task22Tab,{onReload,constructorScope:{through,mode}})),
     section==='bank'&&h('div',{className:'card'},h('h3',null,'Материал для вариантов'),
       bank===null&&h('p',null,'Загружаю банк…'),
       h('div',{className:'constructor-grid'},h('div',null,h('label',{htmlFor:'constructor-search'},'Поиск по тексту или ID'),h('input',{id:'constructor-search',value:search,onChange:e=>setSearch(e.target.value)})),h('div',null,h('label',{htmlFor:'constructor-number'},'Номер задания'),h('select',{id:'constructor-number',value:number,onChange:e=>setNumber(e.target.value)},h('option',{value:''},'Все номера'),[...new Set(catalog.map(q=>q.ogeNumber).filter(Boolean))].sort((a,b)=>a-b).map(n=>h('option',{key:n,value:n},'№'+n))))),
