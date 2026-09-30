@@ -1704,6 +1704,177 @@ function MapTopic912Tab({onReload,constructorScope}){
   );
 }
 
+
+// === TEXT GENERATOR 13-15 COURSE38 v1 ===
+function text1315Validate(data){
+  const rows=Array.isArray(data)?data:(data&&Array.isArray(data.blocks)?data.blocks:[]);
+  if(!rows.length)throw new Error('В history_task_13_15_blocks.json нет массива blocks.');
+  rows.forEach(b=>{
+    if(!b.blockId||!b.contentId||!b.sourceText)throw new Error('Повреждён блок текста '+(b.contentId||'?'));
+    if(!Number.isInteger(Number(b.courseTopicId))||Number(b.courseTopicId)<1||Number(b.courseTopicId)>38)throw new Error('У текста '+b.contentId+' неверная тема курса.');
+    if(!Array.isArray(b.questions13)||!b.questions13.length||!Array.isArray(b.questions14)||!b.questions14.length)throw new Error('У текста '+b.contentId+' нет точной пары №13+14.');
+  });
+  return rows;
+}
+function text1315Pick(arr){return Array.isArray(arr)&&arr.length?atomicShuffle(arr)[0]:null;}
+function text1315Question(block,n,raw){
+  const topic={id:Number(block.courseTopicId),name:block.courseTopicName};
+  const passage='ИСТОЧНИК ДЛЯ ЗАДАНИЙ №13–15\n\n'+block.sourceText+'\n\nЗАДАНИЕ №'+n+'\n'+(raw.question_text||raw.questionText||'');
+  const sid=raw.id==null?'':String(raw.id);
+  return {
+    id:uid('text1315_'+n),type:'essay',ogeNumber:Number(n),text:passage,correctText:'',maxScore:2,gradingMode:'manual',imageFilename:'',imageFilenames:[],
+    source:'Тексты №13–15 · тема '+block.courseTopicId+' · '+block.textTitle,sourceId:sid,sourceThemeId:raw.theme_id||null,sourcePage:raw.source_page||'',referenceAnswer:raw.solution_text||raw.answer||'',
+    topic:block.courseTopicName,primaryCourseTopic:topic,requiredCourseTopics:[topic],
+    metadata:{enabled:true,constructorSnapshot:true,text1315:true,textBlockId:block.blockId,textContentId:block.contentId,textTitle:block.textTitle,courseTopicId:Number(block.courseTopicId),courseTopicName:block.courseTopicName,requiredCourseTopics:[topic],primaryCourseTopic:topic,sourceName:block.sourceName||'',sourceQuestionId:raw.id||null,pairingProvenance:raw.pairingProvenance||block.pairing13_14||''}
+  };
+}
+function text1315VariantQuestions(blocks,full){
+  const out=[];
+  blocks.forEach(b=>{
+    const q13=text1315Pick(b.questions13),q14=text1315Pick(b.questions14),q15=full?text1315Pick(b.questions15):null;
+    if(q13)out.push(text1315Question(b,13,q13));
+    if(q14)out.push(text1315Question(b,14,q14));
+    if(q15)out.push(text1315Question(b,15,q15));
+  });
+  return out;
+}
+function Text1315Tab({onReload,constructorScope}){
+  const h=React.createElement;
+  const [blocks,setBlocks]=useState([]),[selected,setSelected]=useState([]),[search,setSearch]=useState('');
+  const [bundleMode,setBundleMode]=useState('full'),[textsPerVariant,setTextsPerVariant]=useState('1'),[variantCount,setVariantCount]=useState('1');
+  const [variants,setVariants]=useState([]),[active,setActive]=useState(0),[name,setName]=useState(''),[training,setTraining]=useState(false);
+  const [busy,setBusy]=useState(false),[error,setError]=useState(''),[status,setStatus]=useState('Загружаю тексты…');
+  useEffect(()=>{
+    let live=true;
+    (async()=>{try{
+      const r=await fetch('history_task_13_15_blocks.json',{cache:'no-store'});
+      if(!r.ok)throw new Error('Положите history_task_13_15_blocks.json рядом с index.html.');
+      const data=await r.json(),rows=text1315Validate(data);
+      if(live){
+        setBlocks(rows);setSelected(rows.map(b=>b.blockId));
+        const fullCount=rows.filter(b=>b.hasTask15).length;
+        setStatus('Загружено '+rows.length+' общих текстов №13+14; полных подтверждённых комплектов №13–15: '+fullCount+'.');
+      }
+    }catch(e){if(live)setError(e.message);}})();
+    return()=>{live=false;};
+  },[]);
+  const through=Math.max(1,Math.min(38,Number(constructorScope?.through||38)));
+  const mode=constructorScope?.mode==='current'?'current':'cumulative';
+  const full=bundleMode==='full';
+  const topicEligible=blocks.filter(b=>b.enabled!==false&&(mode==='current'?Number(b.courseTopicId)===through:Number(b.courseTopicId)<=through));
+  const eligible=topicEligible.filter(b=>!full||b.hasTask15);
+  const visible=eligible.filter(b=>{
+    const q=search.trim().toLowerCase();
+    if(!q)return true;
+    const hay=(b.textTitle||'')+' '+b.contentId+' '+b.courseTopicName+' '+b.sourceText+' '+b.questions13.map(x=>x.question_text).join(' ')+' '+b.questions14.map(x=>x.question_text).join(' ');
+    return hay.toLowerCase().includes(q);
+  });
+  const chosen=eligible.filter(b=>selected.includes(b.blockId));
+  const groups=COURSE38_TOPICS.map(t=>({topic:t,rows:visible.filter(b=>Number(b.courseTopicId)===Number(t.id))})).filter(g=>g.rows.length);
+  function mark(ids,yes){setSelected(p=>yes?[...new Set([...p,...ids])]:p.filter(x=>!ids.includes(x)));}
+  function build(){
+    setError('');
+    try{
+      const k=Number(textsPerVariant),v=Number(variantCount);
+      if(!Number.isInteger(k)||k<1)throw new Error('Текстов в варианте должно быть не меньше 1.');
+      if(!Number.isInteger(v)||v<1||v>100)throw new Error('Количество вариантов — от 1 до 100.');
+      if(chosen.length<k)throw new Error('Выбрано текстов '+chosen.length+', а в варианте требуется '+k+'.');
+      const usage=new Map(),out=[];
+      for(let i=0;i<v;i++){
+        const ranked=atomicShuffle(chosen).sort((a,b)=>(usage.get(a.blockId)||0)-(usage.get(b.blockId)||0));
+        const texts=ranked.slice(0,k);texts.forEach(b=>usage.set(b.blockId,(usage.get(b.blockId)||0)+1));
+        out.push({id:uid('text1315v'),label:(name.trim()||(full?'Тексты №13–15':'Тексты №13–14'))+(v>1?' — вариант '+(i+1):''),texts,questions:text1315VariantQuestions(texts,full),training,saved:null,job:{id:uid('t'),code:genCode()}});
+      }
+      setVariants(out);setActive(0);setStatus('Собрано вариантов: '+out.length+'. В каждом '+k+' источник(а) / '+(k*(full?3:2))+' заданий.');
+    }catch(e){setError(e.message);}
+  }
+  async function save(){
+    if(busy||!variants.length)return;
+    setBusy(true);setError('');
+    try{
+      const next=variants.map(v=>({...v}));
+      for(let i=0;i<next.length;i++){
+        const v=next[i];if(v.saved)continue;
+        const ids=[];
+        for(const q of v.questions){ids.push(q.id);const err=await upsertQuestion(q);if(err)throw err;}
+        const t={id:v.job.id,code:v.job.code,name:v.label,training:v.training,questionIds:ids};
+        const err=await insertTest(t);if(err)throw err;v.saved=t;setVariants(next.map(x=>({...x})));
+      }
+      setStatus('Все варианты сохранены.');await onReload();
+    }catch(e){setError('Сохранение не завершено: '+portalError(e));}finally{setBusy(false);}
+  }
+  function renderTaskPreview(n,a){
+    return h('div',{key:n},
+      h('p',{className:'q-meta'},'№'+n),
+      h('p',null,a[0].question_text),
+      h('details',null,h('summary',null,'Эталон преподавателю'),h('div',{className:'q-text',style:{whiteSpace:'pre-wrap'}},a[0].solution_text||''))
+    );
+  }
+  function renderCatalogBlock(b){
+    const items=[
+      h('summary',{key:'s'},h('label',{className:'opt',onClick:e=>e.stopPropagation()},h('input',{type:'checkbox',checked:selected.includes(b.blockId),onChange:e=>mark([b.blockId],e.target.checked)}),b.textTitle+' · источник '+b.contentId+(b.hasTask15?' · №13–15':' · №13–14'))),
+      h('p',{key:'m',className:'q-meta'},'Тема '+b.courseTopicId+'. '+b.courseTopicName+' · вариантов №13: '+b.questions13.length+' · №14: '+b.questions14.length+' · №15: '+b.questions15.length),
+      h('details',{key:'src'},h('summary',null,'Показать исторический источник'),h('div',{className:'q-text',style:{whiteSpace:'pre-wrap'}},b.sourceText)),
+      renderTaskPreview(13,b.questions13),renderTaskPreview(14,b.questions14)
+    ];
+    if(b.hasTask15)items.push(renderTaskPreview(15,b.questions15));
+    return h('details',{className:'q-list-item',key:b.blockId},...items);
+  }
+  function renderTopic(g){
+    return h('details',{key:g.topic.id,'data-topic':g.topic.id,open:g.rows.length<=4},
+      h('summary',null,'Тема '+g.topic.id+'. '+g.topic.name+' — '+g.rows.length+' текстов'),
+      h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',onClick:()=>mark(g.rows.map(b=>b.blockId),true)},'Выбрать тему'),h('button',{className:'btn ghost small',onClick:()=>mark(g.rows.map(b=>b.blockId),false)},'Снять тему')),
+      ...g.rows.map(renderCatalogBlock)
+    );
+  }
+  function renderPreviewBlock(b,bi,current){
+    const qs=current.questions.filter(q=>q.metadata.textBlockId===b.blockId);
+    return h('div',{className:'q-list-item',key:b.blockId},
+      h('h3',null,'Источник '+(bi+1)+' · '+b.textTitle),
+      h('p',{className:'q-meta'},'Тема '+b.courseTopicId+'. '+b.courseTopicName),
+      h('div',{className:'q-text',style:{whiteSpace:'pre-wrap'}},b.sourceText),
+      ...qs.map(q=>h('div',{key:q.id},h('p',{className:'q-meta'},'Задание №'+q.ogeNumber),h('p',null,q.text.split('ЗАДАНИЕ №'+q.ogeNumber+'\n').slice(-1)[0]),h('details',null,h('summary',null,'Эталон преподавателю'),h('div',{className:'q-text',style:{whiteSpace:'pre-wrap'}},q.referenceAnswer||''))))
+    );
+  }
+  const current=variants[active];
+  const modeText=mode==='current'?'только тема '+through:'накопительно: темы 1–'+through;
+  const catalogCard=h('div',{className:'card'},
+    h('h2',null,'Единый генератор текстов №13–15 по 38 темам'),
+    h('div',{className:'notice'},status),
+    error&&h('div',{className:'notice',role:'alert'},error),
+    h('p',null,'Один исторический источник считается единым блоком. №13, №14 и №15 никогда не связываются с вопросами от другого текста.'),
+    h('div',{className:'notice'},'Настройка курса: ',h('strong',null,modeText),'. Она берётся из полей «Ученик изучил до темы» и «Режим материала» выше.'),
+    h('label',null,'Какой банк использовать'),
+    h('select',{value:bundleMode,onChange:e=>{setBundleMode(e.target.value);setVariants([]);}},h('option',{value:'full'},'Только полные №13+14+15 (подтверждённые)'),h('option',{value:'pair'},'Все тексты №13+14 (№15 ещё нет в исходнике)')),
+    full&&h('div',{className:'notice'},'Важно: в предоставленном банке №15 пока только два подтверждённых полных комплекта. Генератор не придумывает №15 и не связывает его по одной лишь эпохе.'),
+    h('h3',null,'Тексты по темам курса'),
+    h('label',null,'Поиск по названию, содержанию текста или вопросу'),
+    h('input',{value:search,onChange:e=>setSearch(e.target.value),placeholder:'Смута, 1812, Столыпин, 1917…'}),
+    h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',onClick:()=>mark(visible.map(b=>b.blockId),true)},'Выбрать все показанные'),h('button',{className:'btn ghost small',onClick:()=>mark(visible.map(b=>b.blockId),false)},'Снять показанные')),
+    h('p',{className:'q-meta'},'Доступно: '+eligible.length+' текстов · отмечено: '+chosen.length+'.'),
+    ...groups.map(renderTopic),
+    h('h3',null,'Составить варианты'),
+    h('div',{className:'constructor-grid'},h('div',null,h('label',null,'Текстов в одном варианте'),h('input',{type:'number',min:1,max:139,value:textsPerVariant,onChange:e=>setTextsPerVariant(e.target.value)})),h('div',null,h('label',null,'Количество вариантов'),h('input',{type:'number',min:1,max:100,value:variantCount,onChange:e=>setVariantCount(e.target.value)}))),
+    h('label',null,'Название работы'),h('input',{value:name,onChange:e=>setName(e.target.value),placeholder:'Тексты — темы 1–8'}),
+    h('label',{className:'opt'},h('input',{type:'checkbox',checked:training,onChange:e=>setTraining(e.target.checked)}),'Тренировочный режим'),
+    h('button',{className:'btn',disabled:!chosen.length,onClick:build},'Собрать варианты')
+  );
+  let preview=null;
+  if(variants.length>0){
+    const savedLinks=variants.filter(v=>v.saved).map(v=>h('div',{className:'notice',key:v.id},h('strong',null,v.saved.name),h('p',null,'Код: ',h('strong',{className:'test-code'},v.saved.code)),h('a',{href:constructorLink(v.saved.code),target:'_blank',rel:'noopener noreferrer'},constructorLink(v.saved.code))));
+    preview=h('div',{className:'card'},
+      h('h2',null,'Предпросмотр'),
+      h('label',null,'Вариант'),
+      h('select',{value:active,onChange:e=>setActive(Number(e.target.value))},...variants.map((v,i)=>h('option',{value:i,key:v.id},(i+1)+'. '+v.label+(v.saved?' · сохранён':'')))),
+      current&&h('div',null,...current.texts.map((b,bi)=>renderPreviewBlock(b,bi,current))),
+      h('button',{className:'btn',disabled:variants.every(v=>v.saved),onClick:save},busy?'Сохраняю…':'Сохранить варианты и получить ссылки'),
+      ...savedLinks
+    );
+  }
+  return h('fieldset',{disabled:busy,style:{border:0,padding:0,margin:0,minWidth:0}},catalogCard,preview);
+}
+// === END TEXT GENERATOR 13-15 COURSE38 v1 ===
+
 function ConstructorTab({bank,onReload}) {
   const CONSTRUCTOR_KEY=constructorAccountKey();
   const h=React.createElement;
@@ -1829,7 +2000,7 @@ function ConstructorTab({bank,onReload}) {
   return h('fieldset',{className:'constructor',disabled:busy,'data-constructor':true,style:{border:0,padding:0,margin:0,minWidth:0}},
     h('div',{className:'card'},h('h2',null,'Конструктор'),h('p',null,'Выберите изученные темы и конкретный материал. Затем соберите и проверьте варианты.'),
       h('div',{className:'constructor-grid'},h('div',null,h('label',{htmlFor:'constructor-through'},'Последняя изученная тема'),h('select',{id:'constructor-through',value:through,disabled:busy,onChange:e=>setThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name)))),h('div',null,h('label',{htmlFor:'constructor-mode'},'Материал'),h('select',{id:'constructor-mode',value:mode,disabled:busy,onChange:e=>setMode(e.target.value)},h('option',{value:'cumulative'},'Накопительно: темы 1–'+through),h('option',{value:'current'},'Только тема '+through)))),
-      h('div',{className:'tabs'},[['bank','Выбор заданий'],['atom1','Создать №1'],['atom2','Создать №2'],['atom3','Создать №3'],['atom4','Создать №4'],['atom5','Создать №5'],['atom6','Создать №6'],['atom7','Создать №7'],['atom8','Создать №8'],['map912','Карты №9–12']].map(([k,s])=>h('button',{key:k,disabled:busy,className:section===k?'active':'',onClick:()=>setSection(k)},s))),
+      h('div',{className:'tabs'},[['bank','Выбор заданий'],['atom1','Создать №1'],['atom2','Создать №2'],['atom3','Создать №3'],['atom4','Создать №4'],['atom5','Создать №5'],['atom6','Создать №6'],['atom7','Создать №7'],['atom8','Создать №8'],['map912','Карты №9–12'],['text1315','Тексты №13–15']].map(([k,s])=>h('button',{key:k,disabled:busy,className:section===k?'active':'',onClick:()=>setSection(k)},s))),
       h('p',{className:'q-meta'},'Выбрано доступных заданий: '+chosen.length+(selectedHidden?' · исключено из текущего материала: '+selectedHidden:'')+'. Черновик и наборы сохраняются в этом браузере; для переноса используйте экспорт.')),
     error&&h('div',{className:'notice',role:'alert'},error),notice&&h('div',{className:'notice',role:'status'},notice),
     [1,2].map(task=>h('div',{key:task,style:{display:section==='atom'+task?'block':'none'}},h(AtomicGeneratorTab,{task,onReload,onAdd:addGenerated,constructorScope:{through,mode}}))),
@@ -1840,6 +2011,7 @@ function ConstructorTab({bank,onReload}) {
     h('div',{style:{display:section==='atom7'?'block':'none'}},h(CultureGeneratorTab,{onReload,onAdd:addGenerated,constructorScope:{through,mode}})),
     h('div',{style:{display:section==='atom8'?'block':'none'}},h(VisualGeneratorTab,{onReload,onAdd:addGenerated,constructorScope:{through,mode}})),
     h('div',{style:{display:section==='map912'?'block':'none'}},h(MapTopic912Tab,{onReload,constructorScope:{through,mode}})),
+    h('div',{style:{display:section==='text1315'?'block':'none'}},h(Text1315Tab,{onReload,constructorScope:{through,mode}})),
     section==='bank'&&h('div',{className:'card'},h('h3',null,'Материал для вариантов'),
       bank===null&&h('p',null,'Загружаю банк…'),
       h('div',{className:'constructor-grid'},h('div',null,h('label',{htmlFor:'constructor-search'},'Поиск по тексту или ID'),h('input',{id:'constructor-search',value:search,onChange:e=>setSearch(e.target.value)})),h('div',null,h('label',{htmlFor:'constructor-number'},'Номер задания'),h('select',{id:'constructor-number',value:number,onChange:e=>setNumber(e.target.value)},h('option',{value:''},'Все номера'),[...new Set(catalog.map(q=>q.ogeNumber).filter(Boolean))].sort((a,b)=>a-b).map(n=>h('option',{key:n,value:n},'№'+n))))),
