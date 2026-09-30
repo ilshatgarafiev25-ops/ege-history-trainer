@@ -3238,6 +3238,271 @@ function Task20Tab(p){return React.createElement(EssayTaskTab,{...p,task:20,file
 function Task22Tab(p){return React.createElement(EssayTaskTab,{...p,task:22,file:'history_task_22_questions.json',placeholder:'Крещение Руси, 1812, оттепель, ID…'});}
 function Task21Tab(p){return React.createElement(EssayTaskTab,{...p,task:21,file:'history_task_21_questions.json',placeholder:'Иван IV, Пётр I, НЭП, ID…'});}
 
+// === MOCK EXAM EGE 1–22 v1 ===
+// Пробный вариант: по одному заданию на каждый номер 1–22 (карта №9–12 и текст №13–15 — блоками),
+// только по пройденным темам (накопительно 1–N). Номер без подходящих заданий пропускается с пометкой.
+const MOCK_SLOTS=[
+  {key:'1',label:'№1'},{key:'2',label:'№2'},{key:'3',label:'№3'},{key:'4',label:'№4'},{key:'5',label:'№5'},
+  {key:'6',label:'№6'},{key:'7',label:'№7'},{key:'8',label:'№8'},{key:'map',label:'№9–12 (карта)'},
+  {key:'text',label:'№13–15 (исторический источник)'},{key:'16',label:'№16'},{key:'17',label:'№17'},{key:'18',label:'№18'},
+  {key:'19',label:'№19'},{key:'20',label:'№20'},{key:'21',label:'№21'},{key:'22',label:'№22'}
+];
+async function mockFetchJson(file){
+  const r=await fetch(file,{cache:'no-store'});
+  if(!r.ok)throw new Error('Нет файла '+file+' рядом с index.html.');
+  return r.json();
+}
+async function mockCachedAtomic(key,file,validate,raw){
+  // Та же логика, что во вкладках «Создать №…»: сначала база, загруженная в этом браузере, затем файл.
+  try{
+    const c=raw?localStorage.getItem(key):constructorRead(key,null);
+    if(c){const v=validate(raw?JSON.parse(c):c);if(v)return v;}
+  }catch(_){}
+  return validate(await mockFetchJson(file));
+}
+async function mockLoadBases(){
+  const loaders={
+    '1':()=>mockCachedAtomic(ATOMIC_CACHE_KEY,'history_task_1_facts.json',atomicValidate,true),
+    '2':()=>mockCachedAtomic('history.atomic.task2.pdf.v3:'+SUPABASE_URL,'history_task_2_facts.json',chronoValidate,true),
+    '3':()=>mockCachedAtomic('history.atomic.task3.v1:'+SUPABASE_URL,'history_task_3_facts.json',processValidate),
+    '4':()=>mockCachedAtomic('history.atomic.task4.v1:'+SUPABASE_URL,'history_task_4_facts.json',tableValidate),
+    '5':()=>mockCachedAtomic('history.atomic.task5.v1:'+SUPABASE_URL,'history_task_5_facts.json',participantValidate),
+    '6':()=>mockCachedAtomic('history.atomic.task6.v1:'+SUPABASE_URL,'history_task_6_facts.json',documentValidate),
+    '7':()=>mockCachedAtomic('history.atomic.task7.v1:'+SUPABASE_URL,'history_task_7_facts.json',cultureValidate),
+    '8':()=>mockCachedAtomic('history.atomic.task8.v1:'+SUPABASE_URL,'history_task_8_facts.json',visualValidate),
+    'map':async()=>map912Validate(await mockFetchJson('history_task_9_12_blocks.json')),
+    'text':async()=>text1315Validate(await mockFetchJson('history_task_13_15_blocks.json')),
+    '16':async()=>task16Validate(await mockFetchJson('history_task_16_questions.json')),
+    '17':async()=>task17Validate(await mockFetchJson('history_task_17_questions.json')),
+    '18':async()=>task18Validate(await mockFetchJson('history_task_18_questions.json')),
+    '19':async()=>task19Validate(await mockFetchJson('history_task_19_questions.json')),
+    '20':async()=>essayValidate(20,await mockFetchJson('history_task_20_questions.json')),
+    '21':async()=>essayValidate(21,await mockFetchJson('history_task_21_questions.json')),
+    '22':async()=>essayValidate(22,await mockFetchJson('history_task_22_questions.json'))
+  };
+  const bases={},errors={};
+  await Promise.all(Object.entries(loaders).map(async([k,fn])=>{try{bases[k]=await fn();}catch(e){errors[k]=e.message||String(e);}}));
+  return {bases,errors};
+}
+function mockTopicIds(q){
+  const m=q.metadata||{};
+  const t=[...(q.requiredCourseTopics||[]),...(m.requiredCourseTopics||[])].map(x=>Number(x&&typeof x==='object'?x.id:x)).filter(n=>COURSE38_BY_ID.has(n));
+  return [...new Set(t)].sort((a,b)=>a-b);
+}
+function mockPrimary(q){const t=mockTopicIds(q);return t.length?t[t.length-1]:null;}
+function mockSourceKey(key,item){
+  if(key==='map')return item.blockId;
+  if(key==='text')return item.blockId;
+  return String(item.id);
+}
+// Выбор из банка: сначала то, чего ещё не было в других вариантах, затем темы, реже встречавшиеся в этом варианте.
+function mockPickBank(key,list,ctx,excludeKeys){
+  const used=ctx.used[key]||new Set();
+  const fresh=list.filter(x=>!excludeKeys.has(mockSourceKey(key,x)));
+  if(!fresh.length)return null;
+  const topicOf=x=>Number(x.courseTopicId);
+  const ranked=atomicShuffle(fresh).sort((a,b)=>{
+    const ua=used.has(mockSourceKey(key,a))?1:0,ub=used.has(mockSourceKey(key,b))?1:0;
+    if(ua!==ub)return ua-ub;
+    return (ctx.topicCount.get(topicOf(a))||0)-(ctx.topicCount.get(topicOf(b))||0);
+  });
+  return ranked[0];
+}
+function mockReason(key,msg,through){
+  if(/минимум из шести/.test(msg))return 'Для №'+key+' нужны задания минимум из 6 разных пройденных тем, пока их меньше.';
+  if(/минимум из семи/.test(msg))return 'Для №4 нужны задания минимум из 7 разных пройденных тем, пока их меньше.';
+  if(/минимум трёх тем|менее трёх разных/.test(msg))return 'Для №2 нужно минимум 3 пройденные темы с событиями.';
+  if(/Доступно неповторяющихся[^:]*: 0/.test(msg))return key==='8'?'Задание №8 — по материалам Великой Отечественной войны, доступно после темы 30.':'Нет заданий по пройденным темам (1–'+through+').';
+  if(/Недостаточно совместимых дат/.test(msg))return 'Не хватает событий с разными датами по пройденным темам.';
+  return msg;
+}
+// Для повторной попытки: не учитываем другие варианты, исключаем только текущий вариант (замену).
+function slotExcludeOnly(key,ctx,excl){return (ctx.existing[key]||[]).filter(q=>excl.has(constructorIdentity(q)));}
+function mockBuildSlot(key,bases,errors,ctx,exclude){
+  // exclude — ключи источников, которые нельзя брать (используется при замене).
+  const through=ctx.through,excl=exclude||new Set();
+  const skip=reason=>({key,questions:[],skipped:reason,sourceKeys:[]});
+  if(errors[key])return skip('База не загружена: '+errors[key]);
+  const base=bases[key];if(!base)return skip('База не загружена.');
+  try{
+    if(['1','2','3','4','5','6','7','8'].includes(key)){
+      const task=Number(key),facts=task===4?base.facts:base;
+      const ids=facts.map(f=>f.factId);
+      const existing=[...(ctx.existing[key]||[])];
+      const tryGen=ex=>{
+        let q=null,err=null;
+        for(let attempt=0;attempt<8&&!q;attempt++){
+          try{
+            const cand=generateSelectedAtomic(facts,task,through,'cumulative',1,ids,ex,task===4?base.patterns:'russia')[0];
+            if(excl.has(constructorIdentity(cand))){ex.push(cand);continue;}
+            q=cand;
+          }catch(e){err=e;break;}
+        }
+        return {q,err};
+      };
+      let r=tryGen(existing);
+      // Если неповторяющиеся задания закончились в других вариантах, разрешаем повтор — лучше, чем пропуск номера.
+      if(!r.q&&(ctx.existing[key]||[]).length)r=tryGen(slotExcludeOnly(key,ctx,excl));
+      const q=r.q;
+      if(!q)return skip(mockReason(key,r.err?r.err.message:'Не удалось собрать другое задание.',through));
+      return {key,questions:[q],skipped:null,sourceKeys:[constructorIdentity(q)]};
+    }
+    if(key==='map'){
+      const list=base.filter(b=>b.enabled!==false&&b.courseTopicId<=through);
+      if(!list.length)return skip('Нет карт по пройденным темам (1–'+through+').');
+      const b=mockPickBank(key,list,ctx,excl);if(!b)return skip('Нет другой карты по пройденным темам.');
+      return {key,questions:map912VariantQuestions([b]),skipped:null,sourceKeys:[b.blockId]};
+    }
+    if(key==='text'){
+      const list=base.filter(b=>b.enabled!==false&&Number(b.courseTopicId)<=through);
+      if(!list.length)return skip('Нет исторических источников по пройденным темам (1–'+through+').');
+      const full=list.filter(b=>b.hasTask15&&!excl.has(b.blockId));
+      const b=(ctx.prefer15&&full.length?mockPickBank(key,full,ctx,excl):null)||mockPickBank(key,list,ctx,excl);
+      if(!b)return skip('Нет другого источника по пройденным темам.');
+      const qs=text1315VariantQuestions([b],!!b.hasTask15);
+      const has15=qs.some(q=>q.ogeNumber===15);
+      return {key,questions:qs,skipped:null,partial:has15?null:'№15 пропущен: '+(full.length||list.some(x=>x.hasTask15)?'у выбранного источника нет задания №15.':'по пройденным темам нет источников с заданием №15.'),sourceKeys:[b.blockId]};
+    }
+    const build={'16':task16Question,'17':task17Question,'18':task18Question,'19':task19Question,
+      '20':r=>essayQuestion(20,r),'21':r=>essayQuestion(21,r),'22':r=>essayQuestion(22,r)}[key];
+    const list=key==='18'?(through>=30?base:[]):base.filter(q=>Number(q.courseTopicId)<=through);
+    if(!list.length)return skip(key==='18'?'Задание №18 — по Великой Отечественной войне, доступно после темы 30.':'Нет заданий по пройденным темам (1–'+through+').');
+    const raw=mockPickBank(key,list,ctx,excl);if(!raw)return skip('Нет другого задания по пройденным темам.');
+    return {key,questions:[build(raw)],skipped:null,sourceKeys:[String(raw.id)]};
+  }catch(e){return skip(e.message||String(e));}
+}
+function mockRegister(ctx,slot){
+  if(!ctx.used[slot.key])ctx.used[slot.key]=new Set();
+  slot.sourceKeys.forEach(k=>ctx.used[slot.key].add(k));
+  if(!ctx.existing[slot.key])ctx.existing[slot.key]=[];
+  slot.questions.forEach(q=>{ctx.existing[slot.key].push(q);const t=mockPrimary(q);if(t)ctx.topicCount.set(t,(ctx.topicCount.get(t)||0)+1);});
+}
+function mockBuildVariant(bases,errors,through,shared,prefer15){
+  const ctx={through,prefer15,used:shared.used,existing:shared.existing,topicCount:new Map()};
+  const slots=MOCK_SLOTS.map(s=>{const slot=mockBuildSlot(s.key,bases,errors,ctx);mockRegister(ctx,slot);return slot;});
+  return slots;
+}
+function mockQuestions(v){return v.slots.flatMap(s=>s.questions);}
+function mockMaxScore(v){return mockQuestions(v).reduce((n,q)=>n+(Number(q.maxScore)||0),0);}
+function mockMissing(v){
+  const out=[];
+  v.slots.forEach(s=>{
+    const meta=MOCK_SLOTS.find(x=>x.key===s.key);
+    if(s.skipped)out.push({label:meta.label,reason:s.skipped});
+    else if(s.partial)out.push({label:'№15',reason:s.partial});
+  });
+  return out;
+}
+
+function MockExamTab({onReload,constructorScope}){
+  const h=React.createElement;
+  const [bases,setBases]=useState(null),[errors,setErrors]=useState({}),[status,setStatus]=useState('Загружаю базы всех заданий…');
+  const [count,setCount]=useState('1'),[name,setName]=useState(''),[training,setTraining]=useState(false),[prefer15,setPrefer15]=useState(true);
+  const [variants,setVariants]=useState([]),[active,setActive]=useState(0),[busy,setBusy]=useState(false),[error,setError]=useState('');
+  const through=Math.max(1,Math.min(38,Number(constructorScope?.through||38)));
+
+  useEffect(()=>{
+    let live=true;
+    (async()=>{
+      const r=await mockLoadBases();
+      if(!live)return;
+      setBases(r.bases);setErrors(r.errors);
+      const bad=Object.keys(r.errors);
+      setStatus(bad.length?'Базы загружены, кроме: '+bad.map(k=>MOCK_SLOTS.find(s=>s.key===k)?.label||k).join(', ')+'. Эти номера будут пропущены.':'Все базы №1–22 загружены.');
+    })();
+    return()=>{live=false;};
+  },[]);
+
+  function build(){
+    setError('');
+    try{
+      if(!bases)throw new Error('Базы ещё загружаются.');
+      const n=Number(count);if(!Number.isInteger(n)||n<1||n>30)throw new Error('Количество вариантов — от 1 до 30.');
+      const shared={used:{},existing:{}},out=[];
+      const base=name.trim()||('Пробный ЕГЭ по истории · темы 1–'+through);
+      for(let i=0;i<n;i++){
+        const slots=mockBuildVariant(bases,errors,through,shared,prefer15);
+        out.push({id:uid('mock'),label:base+(n>1?' — вариант '+(i+1):''),through,training,slots,saved:null,job:null});
+      }
+      setVariants(out);setActive(0);
+      const miss=mockMissing(out[0]);
+      setStatus('Собрано вариантов: '+out.length+'. '+(miss.length?'Пропущено номеров в варианте 1: '+miss.length+'.':'Все номера заполнены.'));
+    }catch(e){setError(e.message);}
+  }
+  function replaceSlot(slotIndex){
+    setError('');
+    try{
+      const v=variants[active],slot=v.slots[slotIndex];
+      // Контекст: все остальные задания всех вариантов, чтобы замена не совпала с уже выбранными.
+      const shared={used:{},existing:{}};
+      variants.forEach((vv,vi)=>vv.slots.forEach((s,si)=>{if(vi===active&&si===slotIndex)return;mockRegister({...shared,topicCount:new Map()},s);}));
+      const ctx={through:v.through,prefer15,used:shared.used,existing:shared.existing,topicCount:new Map()};
+      v.slots.forEach((s,si)=>{if(si!==slotIndex)s.questions.forEach(q=>{const t=mockPrimary(q);if(t)ctx.topicCount.set(t,(ctx.topicCount.get(t)||0)+1);});});
+      const exclude=new Set([...(slot.sourceKeys||[]),...v.slots.filter((s,si)=>si!==slotIndex&&s.key===slot.key).flatMap(s=>s.sourceKeys)]);
+      if(['1','2','3','4','5','6','7','8'].includes(slot.key))slot.questions.forEach(q=>ctx.existing[slot.key]=[...(ctx.existing[slot.key]||[]),q]);
+      const next=mockBuildSlot(slot.key,bases,errors,ctx,exclude);
+      if(next.skipped)throw new Error(MOCK_SLOTS[slotIndex].label+': '+next.skipped);
+      setVariants(prev=>prev.map((vv,vi)=>vi!==active?vv:{...vv,saved:null,job:null,slots:vv.slots.map((s,si)=>si===slotIndex?next:s)}));
+    }catch(e){setError(e.message);}
+  }
+  async function save(){
+    if(busy||!variants.length)return;
+    setBusy(true);setError('');
+    const next=variants.map(v=>({...v}));
+    try{
+      for(let i=0;i<next.length;i++){
+        const v=next[i];if(v.saved)continue;
+        const qs=mockQuestions(v);if(!qs.length)throw new Error('В варианте '+(i+1)+' нет заданий.');
+        if(!v.job)v.job={id:uid('t'),code:genCode(),ids:qs.map(()=>uid('snapshot'))};
+        const rows=qs.map((q,j)=>{const snap=JSON.parse(JSON.stringify(q));snap.id=v.job.ids[j];snap.metadata={...(snap.metadata||{}),constructorSnapshot:true,constructorSourceId:q.sourceId||q.id,mockExam:true,mockVariantId:v.id,constructorThrough:v.through,constructorMode:'cumulative'};return questionToRow(snap);});
+        for(let j=0;j<rows.length;j+=50){const {error}=await sb.from('questions').upsert(rows.slice(j,j+50));if(error)throw error;}
+        const t={id:v.job.id,code:v.job.code,name:v.label.trim(),training:v.training,questionIds:v.job.ids};
+        const {error}=await sb.from('tests').upsert({id:t.id,code:t.code,name:t.name,training:t.training,question_ids:t.questionIds});if(error)throw error;
+        v.saved=t;setVariants(next.map(x=>({...x})));
+      }
+      setStatus('Сохранено вариантов: '+next.length+'.');
+      await onReload();
+    }catch(e){setError('Сохранение не завершено: '+portalError(e)+'. Повторная попытка продолжит с того же места.');setVariants(next.map(x=>({...x})));}
+    finally{setBusy(false);}
+  }
+
+  const v=variants[active];
+  const miss=v?mockMissing(v):[];
+  return h('fieldset',{'data-task':'mock',className:'atomic-generator',disabled:busy,style:{border:0,padding:0,margin:0,minWidth:0}},
+    h('div',{className:'card'},
+      h('h2',null,'Пробный вариант ЕГЭ (№1–22)'),
+      h('div',{className:'notice',role:'status'},status),
+      error&&h('div',{className:'notice',role:'alert'},error),
+      h('p',null,'Собирает полный вариант в порядке экзамена: по одному заданию на номер, карта №9–12 и источник №13–15 — единым блоком. Берутся только пройденные темы. Если для номера нет подходящих заданий, он пропускается, и это видно в варианте.'),
+      h('div',{className:'notice'},'Пройденные темы: ',h('strong',null,'1–'+through+' (накопительно)'),'. Меняется в поле «Последняя изученная тема» выше. Пробник всегда собирается накопительно, даже если выше выбрано «Только тема».'),
+      h('div',{className:'constructor-grid'},
+        h('div',null,h('label',null,'Количество вариантов'),h('input',{type:'number',min:1,max:30,value:count,onChange:e=>setCount(e.target.value)})),
+        h('div',null,h('label',null,'Название'),h('input',{value:name,onChange:e=>setName(e.target.value),placeholder:'Пробный ЕГЭ по истории · темы 1–'+through}))),
+      h('label',{className:'opt'},h('input',{type:'checkbox',checked:prefer15,onChange:e=>setPrefer15(e.target.checked)}),'Для №13–15 брать источник с заданием №15, если такой есть по пройденным темам'),
+      h('label',{className:'opt'},h('input',{type:'checkbox',checked:training,onChange:e=>setTraining(e.target.checked)}),'Тренировочный режим (выключен — как на экзамене)'),
+      h('button',{className:'btn',disabled:!bases,onClick:build},bases?'Собрать вариант':'Загружаю базы…')
+    ),
+    v&&h('div',{className:'card'},
+      h('h2',null,'Предпросмотр'),
+      variants.length>1&&h('div',null,h('label',null,'Вариант'),h('select',{value:active,onChange:e=>setActive(Number(e.target.value))},variants.map((x,i)=>h('option',{key:x.id,value:i},(i+1)+'. '+x.label+(x.saved?' · сохранён':''))))),
+      h('div',{className:'notice'},'Заданий: '+mockQuestions(v).length+' · максимум первичных баллов: '+mockMaxScore(v)+' · номеров пропущено: '+miss.length+'.'),
+      miss.length>0&&h('div',{className:'notice',role:'alert'},h('strong',null,'Вариант неполный.'),h('ul',null,miss.map((m,i)=>h('li',{key:i},m.label+' — '+m.reason)))),
+      v.slots.map((s,si)=>{
+        const meta=MOCK_SLOTS[si];
+        const topics=[...new Set(s.questions.flatMap(mockTopicIds))];
+        return h('div',{className:'q-list-item',key:si,'data-slot':s.key},
+          h('h3',null,meta.label+(topics.length?' · темы: '+topics.join(', '):'')),
+          s.skipped?h('div',{className:'notice'},'Пропущено: '+s.skipped):h('div',null,
+            s.partial&&h('div',{className:'notice'},s.partial),
+            s.questions.map(q=>h('div',{key:q.id},s.questions.length>1&&h('p',{className:'q-meta'},'Задание №'+q.ogeNumber+' · '+q.maxScore+' б.'),h(ConstructorPreview,{q}))),
+            h('button',{className:'btn ghost small',onClick:()=>replaceSlot(si)},'Заменить '+(s.questions.length>1?'блок':'задание'))));
+      }),
+      h('div',{className:'atomic-actions'},h('button',{className:'btn',disabled:busy||variants.every(x=>x.saved),onClick:save},busy?'Сохраняю…':(variants.length>1?'Сохранить все варианты и получить коды':'Сохранить вариант и получить код'))),
+      variants.filter(x=>x.saved).map(x=>h('div',{className:'notice',key:x.id},h('strong',null,x.saved.name),h('p',null,'Код: ',h('strong',{className:'test-code'},x.saved.code)),h('a',{href:constructorLink(x.saved.code),target:'_blank',rel:'noopener noreferrer'},'Открыть тест')))
+    )
+  );
+}
+
 // === TASK 19 GENERATOR COURSE38 v1 ===
 function task19Validate(data){
   const rows=Array.isArray(data)?data:[];
@@ -3910,7 +4175,7 @@ function ConstructorTab({bank,onReload}) {
   return h('fieldset',{className:'constructor',disabled:busy,'data-constructor':true,style:{border:0,padding:0,margin:0,minWidth:0}},
     h('div',{className:'card'},h('h2',null,'Конструктор'),h('p',null,'Выберите изученные темы и конкретный материал. Затем соберите и проверьте варианты.'),
       h('div',{className:'constructor-grid'},h('div',null,h('label',{htmlFor:'constructor-through'},'Последняя изученная тема'),h('select',{id:'constructor-through',value:through,disabled:busy,onChange:e=>setThrough(e.target.value)},COURSE38_TOPICS.map(t=>h('option',{key:t.id,value:t.id},t.id+'. '+t.name)))),h('div',null,h('label',{htmlFor:'constructor-mode'},'Материал'),h('select',{id:'constructor-mode',value:mode,disabled:busy,onChange:e=>setMode(e.target.value)},h('option',{value:'cumulative'},'Накопительно: темы 1–'+through),h('option',{value:'current'},'Только тема '+through)))),
-      h('div',{className:'tabs'},[['bank','Выбор заданий'],['atom1','Создать №1'],['atom2','Создать №2'],['atom3','Создать №3'],['atom4','Создать №4'],['atom5','Создать №5'],['atom6','Создать №6'],['atom7','Создать №7'],['atom8','Создать №8'],['map912','Карты №9–12'],['text1315','Тексты №13–15'],['task16','Создать №16'],['task17','Создать №17'],['task18','Создать №18'],['task19','Создать №19'],['task20','Создать №20'],['task21','Создать №21'],['task22','Создать №22']].map(([k,s])=>h('button',{key:k,disabled:busy,className:section===k?'active':'',onClick:()=>setSection(k)},s))),
+      h('div',{className:'tabs'},[['bank','Выбор заданий'],['mock','Пробный вариант ЕГЭ'],['atom1','Создать №1'],['atom2','Создать №2'],['atom3','Создать №3'],['atom4','Создать №4'],['atom5','Создать №5'],['atom6','Создать №6'],['atom7','Создать №7'],['atom8','Создать №8'],['map912','Карты №9–12'],['text1315','Тексты №13–15'],['task16','Создать №16'],['task17','Создать №17'],['task18','Создать №18'],['task19','Создать №19'],['task20','Создать №20'],['task21','Создать №21'],['task22','Создать №22']].map(([k,s])=>h('button',{key:k,disabled:busy,className:section===k?'active':'',onClick:()=>setSection(k)},s))),
       h('p',{className:'q-meta'},'Выбрано доступных заданий: '+chosen.length+(selectedHidden?' · исключено из текущего материала: '+selectedHidden:'')+'. Черновик и наборы сохраняются в этом браузере; для переноса используйте экспорт.')),
     error&&h('div',{className:'notice',role:'alert'},error),notice&&h('div',{className:'notice',role:'status'},notice),
     [1,2].map(task=>section==='atom'+task?h('div',{key:task},h(AtomicGeneratorTab,{task,onReload,onAdd:addGenerated,constructorScope:{through,mode}})):null),
@@ -3929,6 +4194,7 @@ function ConstructorTab({bank,onReload}) {
     section==='task20'&&h(TrainerPanelBoundary,{label:'Создать №20'},h(Task20Tab,{onReload,constructorScope:{through,mode}})),
     section==='task21'&&h(TrainerPanelBoundary,{label:'Создать №21'},h(Task21Tab,{onReload,constructorScope:{through,mode}})),
     section==='task22'&&h(TrainerPanelBoundary,{label:'Создать №22'},h(Task22Tab,{onReload,constructorScope:{through,mode}})),
+    section==='mock'&&h(TrainerPanelBoundary,{label:'Пробный вариант ЕГЭ'},h(MockExamTab,{onReload,constructorScope:{through,mode}})),
     section==='bank'&&h('div',{className:'card'},h('h3',null,'Материал для вариантов'),
       bank===null&&h('p',null,'Загружаю банк…'),
       h('div',{className:'constructor-grid'},h('div',null,h('label',{htmlFor:'constructor-search'},'Поиск по тексту или ID'),h('input',{id:'constructor-search',value:search,onChange:e=>setSearch(e.target.value)})),h('div',null,h('label',{htmlFor:'constructor-number'},'Номер задания'),h('select',{id:'constructor-number',value:number,onChange:e=>setNumber(e.target.value)},h('option',{value:''},'Все номера'),[...new Set(catalog.map(q=>q.ogeNumber).filter(Boolean))].sort((a,b)=>a-b).map(n=>h('option',{key:n,value:n},'№'+n))))),
