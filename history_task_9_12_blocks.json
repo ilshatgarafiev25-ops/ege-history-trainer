@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": 1,
+    "version": 2,
     "task": "9-12",
     "mapCount": 123,
     "questionCount": 492,
@@ -62,12 +62,206 @@
         "count": 0
       }
     ],
-    "rule": "Одна карта всегда образует неделимый комплект №9, №10, №11, №12. Вопросы разных карт не смешиваются."
+    "rule": "Одна карта относится ровно к одной из 38 тем курса и всегда образует неделимый комплект №9, №10, №11, №12.",
+    "classification": "course38",
+    "courseTopicCount": 38,
+    "courseTopics": [
+      {
+        "id": 1,
+        "name": "Восточные славяне и первые русские князья",
+        "count": 9
+      },
+      {
+        "id": 2,
+        "name": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда",
+        "count": 1
+      },
+      {
+        "id": 3,
+        "name": "Раздробленность Руси. Нашествие с Востока и Запада",
+        "count": 5
+      },
+      {
+        "id": 4,
+        "name": "Объединение русских земель вокруг Москвы",
+        "count": 9
+      },
+      {
+        "id": 5,
+        "name": "Культура Руси IX–XV вв.",
+        "count": 0
+      },
+      {
+        "id": 6,
+        "name": "Россия при Иване IV: реформы, опричнина, внешняя политика",
+        "count": 10
+      },
+      {
+        "id": 7,
+        "name": "Смутное время",
+        "count": 3
+      },
+      {
+        "id": 8,
+        "name": "Первые Романовы. Россия в XVII веке",
+        "count": 10
+      },
+      {
+        "id": 9,
+        "name": "Пётр I: реформы и внешняя политика",
+        "count": 6
+      },
+      {
+        "id": 10,
+        "name": "Культура XVI–XVII вв.",
+        "count": 0
+      },
+      {
+        "id": 11,
+        "name": "Дворцовые перевороты",
+        "count": 5
+      },
+      {
+        "id": 12,
+        "name": "Екатерина II: внутренняя и внешняя политика",
+        "count": 10
+      },
+      {
+        "id": 13,
+        "name": "Павел I",
+        "count": 0
+      },
+      {
+        "id": 14,
+        "name": "Культура XVIII века",
+        "count": 0
+      },
+      {
+        "id": 15,
+        "name": "Александр I и Отечественная война 1812 года",
+        "count": 11
+      },
+      {
+        "id": 16,
+        "name": "Николай I",
+        "count": 6
+      },
+      {
+        "id": 17,
+        "name": "Александр II и Великие реформы",
+        "count": 2
+      },
+      {
+        "id": 18,
+        "name": "Александр III и социально-экономическое развитие конца XIX века",
+        "count": 2
+      },
+      {
+        "id": 19,
+        "name": "Николай II: внутренняя и внешняя политика до 1905 года",
+        "count": 2
+      },
+      {
+        "id": 20,
+        "name": "Культура XIX века",
+        "count": 0
+      },
+      {
+        "id": 21,
+        "name": "Первая российская революция 1905–1907 гг.",
+        "count": 0
+      },
+      {
+        "id": 22,
+        "name": "Россия в 1907–1914 гг. Столыпин",
+        "count": 1
+      },
+      {
+        "id": 23,
+        "name": "Первая мировая война",
+        "count": 5
+      },
+      {
+        "id": 24,
+        "name": "Революции 1917 года",
+        "count": 0
+      },
+      {
+        "id": 25,
+        "name": "Первые преобразования большевиков",
+        "count": 0
+      },
+      {
+        "id": 26,
+        "name": "Гражданская война и военный коммунизм",
+        "count": 6
+      },
+      {
+        "id": 27,
+        "name": "НЭП и образование СССР",
+        "count": 0
+      },
+      {
+        "id": 28,
+        "name": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика",
+        "count": 2
+      },
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг.",
+        "count": 0
+      },
+      {
+        "id": 30,
+        "name": "Великая Отечественная война",
+        "count": 16
+      },
+      {
+        "id": 31,
+        "name": "СССР в 1945–1953 гг.",
+        "count": 2
+      },
+      {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг.",
+        "count": 0
+      },
+      {
+        "id": 33,
+        "name": "Культура 1945–1964 гг.",
+        "count": 0
+      },
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»",
+        "count": 0
+      },
+      {
+        "id": 35,
+        "name": "Перестройка",
+        "count": 0
+      },
+      {
+        "id": 36,
+        "name": "Распад СССР",
+        "count": 0
+      },
+      {
+        "id": 37,
+        "name": "Россия в 1990-е гг. + культура",
+        "count": 0
+      },
+      {
+        "id": 38,
+        "name": "Россия в 2000-е–2020-е гг. + культура",
+        "count": 0
+      }
+    ]
   },
   "blocks": [
     {
       "blockId": "B912-52775",
-      "title": "Через город Новгород протекает река Волхов, она и обозначена на карте цифрой 2.",
+      "title": "Нашествие Батыя. Северо-Западная Русь",
       "imagePath": "images/13395/task_52775_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20230223180008-1__1dg3o.png",
       "enabled": true,
@@ -131,11 +325,14 @@
         "12": "URL"
       },
       "epochId": "medieval",
-      "epoch": "Русь и Московское государство (XIII–XV вв.)"
+      "epoch": "Русь и Московское государство (XIII–XV вв.)",
+      "mapTitle": "Нашествие Батыя. Северо-Западная Русь",
+      "courseTopicId": 3,
+      "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада"
     },
     {
       "blockId": "B912-61301",
-      "title": "Река, обозначенная в тексте цифрой 1, находится на востоке Росии и впадает в Охотское море.",
+      "title": "Освоение Сибири и Дальнего Востока в XVII веке",
       "imagePath": "images/13395/task_61301_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20230519154131-1__1tc3s.png",
       "enabled": true,
@@ -199,11 +396,14 @@
         "12": "URL"
       },
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Освоение Сибири и Дальнего Востока в XVII веке",
+      "courseTopicId": 8,
+      "courseTopicName": "Первые Романовы. Россия в XVII веке"
     },
     {
       "blockId": "B912-69900",
-      "title": "Цифрой 1 в легенде обозначен поход под Москву.",
+      "title": "Стояние на реке Угре",
       "imagePath": "images/13395/task_69900_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image__289ea.png",
       "enabled": true,
@@ -267,11 +467,14 @@
         "12": "URL"
       },
       "epochId": "medieval",
-      "epoch": "Русь и Московское государство (XIII–XV вв.)"
+      "epoch": "Русь и Московское государство (XIII–XV вв.)",
+      "mapTitle": "Стояние на реке Угре",
+      "courseTopicId": 4,
+      "courseTopicName": "Объединение русских земель вокруг Москвы"
     },
     {
       "blockId": "B912-70045",
-      "title": "Цифрой 4, там, где Волга сворачивает на запад, обозначен город Казань.",
+      "title": "Присоединение Казани к России",
       "imagePath": "images/13395/task_70045_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image__290mj.png",
       "enabled": true,
@@ -335,11 +538,14 @@
         "12": "URL"
       },
       "epochId": "c16",
-      "epoch": "XVI век"
+      "epoch": "XVI век",
+      "mapTitle": "Присоединение Казани к России",
+      "courseTopicId": 6,
+      "courseTopicName": "Россия при Иване IV: реформы, опричнина, внешняя политика"
     },
     {
       "blockId": "B912-70061",
-      "title": "На карте обозначен Тарутинский манёвр, войска движутся из Смоленска.",
+      "title": "Отечественная война 1812 года. Тарутинский манёвр",
       "imagePath": "images/13395/task_70061_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image__290ll.png",
       "enabled": true,
@@ -401,11 +607,14 @@
       },
       "recoveryConfidence": "confirmed-by-user",
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Отечественная война 1812 года. Тарутинский манёвр",
+      "courseTopicId": 15,
+      "courseTopicName": "Александр I и Отечественная война 1812 года"
     },
     {
       "blockId": "B912-70069",
-      "title": "Стрелками обозначены действия вокруг города Сталинград.",
+      "title": "Сталинградская битва",
       "imagePath": "images/13395/task_70069_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image__9jstz.png",
       "enabled": true,
@@ -469,11 +678,14 @@
         "12": "URL"
       },
       "epochId": "ww2",
-      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой"
+      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой",
+      "mapTitle": "Сталинградская битва",
+      "courseTopicId": 30,
+      "courseTopicName": "Великая Отечественная война"
     },
     {
       "blockId": "B912-70073",
-      "title": "Карта посвящена Великой Отечественной войне, а именно завершающему этапу.",
+      "title": "Висло-Одерская операция",
       "imagePath": "images/13395/task_70073_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20231006184414-5__290k8.png",
       "enabled": true,
@@ -537,11 +749,14 @@
         "12": "URL"
       },
       "epochId": "ww2",
-      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой"
+      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой",
+      "mapTitle": "Висло-Одерская операция",
+      "courseTopicId": 30,
+      "courseTopicName": "Великая Отечественная война"
     },
     {
       "blockId": "B912-70978",
-      "title": "На карте обозначены походы князя Святослава, они проходили в X веке.",
+      "title": "Походы князя Святослава",
       "imagePath": "images/13395/task_70978_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image__2bw25.png",
       "enabled": true,
@@ -608,11 +823,14 @@
         "12": "URL"
       },
       "epochId": "ancient",
-      "epoch": "Древняя Русь и соседние земли (IX–XII вв.)"
+      "epoch": "Древняя Русь и соседние земли (IX–XII вв.)",
+      "mapTitle": "Походы князя Святослава",
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья"
     },
     {
       "blockId": "B912-72319",
-      "title": "Цифрой 1 на карте обозначен Порт-Артур - бывший портовый город (незамерзающий порт, военно-морская база) в Китае на Жёлтом море.",
+      "title": "Русско-японская война",
       "imagePath": "images/13395/task_72319_0.jpg",
       "originalImageUrl": "https://sun9-33.userapi.com/impg/Swj7LRdACi_zgJAKUcB-AcCI4D1v1pxBDhAOWQ/6VqOrp66bKU.jpg?size=679x738&quality=96&sign=2c8f9e9afc356ba5e51d2ad48b34d9c6&type=album",
       "enabled": true,
@@ -676,11 +894,14 @@
         "12": "URL"
       },
       "epochId": "early20",
-      "epoch": "Начало XX века (1900–1916)"
+      "epoch": "Начало XX века (1900–1916)",
+      "mapTitle": "Русско-японская война",
+      "courseTopicId": 19,
+      "courseTopicName": "Николай II: внутренняя и внешняя политика до 1905 года"
     },
     {
       "blockId": "B912-72389",
-      "title": "Война на Северо-западе страны у СССР была в 1939-1940 гг.",
+      "title": "Советско-финляндская война 1939–1940 гг.",
       "imagePath": "images/13395/task_72389_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250816152034-1__79mac.png",
       "enabled": true,
@@ -747,11 +968,14 @@
         "12": "URL"
       },
       "epochId": "rev",
-      "epoch": "1917–1940: революции, Гражданская война и СССР"
+      "epoch": "1917–1940: революции, Гражданская война и СССР",
+      "mapTitle": "Советско-финляндская война 1939–1940 гг.",
+      "courseTopicId": 28,
+      "courseTopicName": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика"
     },
     {
       "blockId": "B912-72524",
-      "title": "По реке Непрядва и Засадному полку (передовая тактика ведения боя, успользуемая Дмитрием Донским) можно понять, что на карте схема Куликовской битвы 1380 года, то есть XIV век.",
+      "title": "Куликовская битва",
       "imagePath": "images/13395/task_72524_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image__2jae9.png",
       "enabled": true,
@@ -818,11 +1042,14 @@
         "12": "URL"
       },
       "epochId": "medieval",
-      "epoch": "Русь и Московское государство (XIII–XV вв.)"
+      "epoch": "Русь и Московское государство (XIII–XV вв.)",
+      "mapTitle": "Куликовская битва",
+      "courseTopicId": 4,
+      "courseTopicName": "Объединение русских земель вокруг Москвы"
     },
     {
       "blockId": "B912-72573",
-      "title": "На карте можно увидеть стрелку, проходящую из Севастополя в Синоп, – отличительный знак Крымской войны.",
+      "title": "Крымская война",
       "imagePath": "images/13395/task_72573_0.jpg",
       "originalImageUrl": "https://sun9-28.userapi.com/impg/qYjRydl07rls-JsjeYvImKHZe9Ih3djDLEjHGw/zZRSdZk5msE.jpg?size=1029x919&quality=96&sign=f4459db2702eb3b57608b3fb1addce77&type=album",
       "enabled": true,
@@ -889,11 +1116,14 @@
         "12": "URL"
       },
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Крымская война",
+      "courseTopicId": 16,
+      "courseTopicName": "Николай I"
     },
     {
       "blockId": "B912-72675",
-      "title": "На карте обозначено строительство Транссибирской магистрали, которое началось в 1891 году.",
+      "title": "Строительство Транссибирской магистрали",
       "imagePath": "images/13395/task_72675_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20231112225745-3__2jbwc.png",
       "enabled": true,
@@ -957,11 +1187,14 @@
         "12": "URL"
       },
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Строительство Транссибирской магистрали",
+      "courseTopicId": 18,
+      "courseTopicName": "Александр III и социально-экономическое развитие конца XIX века"
     },
     {
       "blockId": "B912-73390",
-      "title": "На карте указаны дата - 1735, в этот год правила Анна Иоанновна.",
+      "title": "Русско-турецкая война 1735–1739 гг.",
       "imagePath": "images/13395/task_73390_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20231120211030-1__2l9o1.png",
       "enabled": true,
@@ -1025,11 +1258,14 @@
         "12": "URL"
       },
       "epochId": "c18",
-      "epoch": "XVIII век"
+      "epoch": "XVIII век",
+      "mapTitle": "Русско-турецкая война 1735–1739 гг.",
+      "courseTopicId": 11,
+      "courseTopicName": "Дворцовые перевороты"
     },
     {
       "blockId": "B912-74102",
-      "title": "На карте обозначено восстание под руководством Емельяна Пугачева, оно относится к 1773-1775 гг.",
+      "title": "Восстание Емельяна Пугачёва",
       "imagePath": "images/13395/task_74102_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20231128004333-1__2n6wp.png",
       "enabled": true,
@@ -1093,11 +1329,14 @@
         "12": "URL"
       },
       "epochId": "c18",
-      "epoch": "XVIII век"
+      "epoch": "XVIII век",
+      "mapTitle": "Восстание Емельяна Пугачёва",
+      "courseTopicId": 12,
+      "courseTopicName": "Екатерина II: внутренняя и внешняя политика"
     },
     {
       "blockId": "B912-74284",
-      "title": "Цифрой 1 на карте обозначен город, расположенный над озером Ильмень, являющийся племенным центром Ильменских словен.",
+      "title": "Восточные славяне и Древняя Русь",
       "imagePath": "images/13395/task_74284_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20231130183042-2__2nup2.png",
       "enabled": true,
@@ -1163,11 +1402,14 @@
         "12": "URL"
       },
       "epochId": "ancient",
-      "epoch": "Древняя Русь и соседние земли (IX–XII вв.)"
+      "epoch": "Древняя Русь и соседние земли (IX–XII вв.)",
+      "mapTitle": "Восточные славяне и Древняя Русь",
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья"
     },
     {
       "blockId": "B912-77424",
-      "title": "Город, обозначенный цифрой 2, находится на разветвлении Днепра, значит это город Киев.",
+      "title": "Русско-польская война 1654–1667 гг.",
       "imagePath": "images/13395/task_77424_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image__313jn.png",
       "enabled": true,
@@ -1231,11 +1473,14 @@
         "12": "URL"
       },
       "epochId": "c17",
-      "epoch": "XVII век"
+      "epoch": "XVII век",
+      "mapTitle": "Русско-польская война 1654–1667 гг.",
+      "courseTopicId": 8,
+      "courseTopicName": "Первые Романовы. Россия в XVII веке"
     },
     {
       "blockId": "B912-77441",
-      "title": "Карта посвящена Отечественной войне 1812 года.",
+      "title": "Отечественная война 1812 года. Тарутинский манёвр",
       "imagePath": "images/13395/task_77441_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20240124233508-2__3149a.png",
       "enabled": true,
@@ -1299,11 +1544,14 @@
         "12": "URL"
       },
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Отечественная война 1812 года. Тарутинский манёвр",
+      "courseTopicId": 15,
+      "courseTopicName": "Александр I и Отечественная война 1812 года"
     },
     {
       "blockId": "B912-77455",
-      "title": "Карта посвящена началу Великой Отечественной войны - 1941 году.",
+      "title": "Начало Великой Отечественной войны. 1941 год",
       "imagePath": "images/13395/task_77455_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20240125002657-4__314s0.png",
       "enabled": true,
@@ -1367,11 +1615,14 @@
         "12": "SEQUENCE_BETWEEN"
       },
       "epochId": "ww2",
-      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой"
+      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой",
+      "mapTitle": "Начало Великой Отечественной войны. 1941 год",
+      "courseTopicId": 30,
+      "courseTopicName": "Великая Отечественная война"
     },
     {
       "blockId": "B912-77468",
-      "title": "Город, обозначенный цифрой 1 - Киев, поскольку находится на разветвлении Днепра.",
+      "title": "Россия во второй половине XVII века. Вечный мир 1686 года",
       "imagePath": "images/13395/task_77468_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20240125005426-6__3150n.png",
       "enabled": true,
@@ -1435,11 +1686,14 @@
         "12": "URL"
       },
       "epochId": "c17",
-      "epoch": "XVII век"
+      "epoch": "XVII век",
+      "mapTitle": "Россия во второй половине XVII века. Вечный мир 1686 года",
+      "courseTopicId": 8,
+      "courseTopicName": "Первые Романовы. Россия в XVII веке"
     },
     {
       "blockId": "B912-77480",
-      "title": "На карте мы видим события Крымской войны.",
+      "title": "Крымская война. Кавказский и Крымский театры",
       "imagePath": "images/13395/task_77480_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image__6yvnt.png",
       "enabled": true,
@@ -1501,11 +1755,14 @@
       },
       "recoveryConfidence": "confirmed-by-user",
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Крымская война. Кавказский и Крымский театры",
+      "courseTopicId": 16,
+      "courseTopicName": "Николай I"
     },
     {
       "blockId": "B912-81111",
-      "title": "Под цифрой 5 в легенде схемы с подписью «походы против половцев» обозначена белая стрелка.",
+      "title": "Русские княжества и половцы. Поход Игоря Святославича",
       "imagePath": "images/13395/task_81111_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20240229173229-2__3cana.png",
       "enabled": true,
@@ -1576,11 +1833,14 @@
         "12": "URL"
       },
       "epochId": "ancient",
-      "epoch": "Древняя Русь и соседние земли (IX–XII вв.)"
+      "epoch": "Древняя Русь и соседние земли (IX–XII вв.)",
+      "mapTitle": "Русские княжества и половцы. Поход Игоря Святославича",
+      "courseTopicId": 3,
+      "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада"
     },
     {
       "blockId": "B912-82604",
-      "title": "Под цифрой «6» обозначен город Минск, он был освобожден в тысяча девятьсот сорок четвертом году.",
+      "title": "Операция «Багратион». Освобождение Белоруссии",
       "imagePath": "images/13395/task_82604_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-hd/image-20240320220551-2__3j63h.png",
       "enabled": true,
@@ -1647,11 +1907,14 @@
         "12": "URL"
       },
       "epochId": "ww2",
-      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой"
+      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой",
+      "mapTitle": "Операция «Багратион». Освобождение Белоруссии",
+      "courseTopicId": 30,
+      "courseTopicName": "Великая Отечественная война"
     },
     {
       "blockId": "B912-85047",
-      "title": "Перед нами карта периода Великой Отечественной войны.",
+      "title": "Курская битва",
       "imagePath": "images/13395/task_85047_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image__3rxbr.png",
       "enabled": true,
@@ -1715,11 +1978,14 @@
         "12": "URL"
       },
       "epochId": "ww2",
-      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой"
+      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой",
+      "mapTitle": "Курская битва",
+      "courseTopicId": 30,
+      "courseTopicName": "Великая Отечественная война"
     },
     {
       "blockId": "B912-87084",
-      "title": "На карте мы видим результаты внешнеполитической деятельности правителей XVIII века - цифрой II обозначены территории, присоединённые к России в результате раздела Речи Посполитой при Екатерине Великой, цифрой III - присо",
+      "title": "Территориальное расширение России в XVIII веке",
       "imagePath": "images/13395/task_87084_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20240502214900-2__3xpg2.png",
       "enabled": true,
@@ -1783,11 +2049,14 @@
         "12": "URL"
       },
       "epochId": "c18",
-      "epoch": "XVIII век"
+      "epoch": "XVIII век",
+      "mapTitle": "Территориальное расширение России в XVIII веке",
+      "courseTopicId": 12,
+      "courseTopicName": "Екатерина II: внутренняя и внешняя политика"
     },
     {
       "blockId": "B912-87343",
-      "title": "Чёрными стрелками обозначен поход хана Ахмата, поскольку он ведёт к реке Угре, где в 1480 году произошла битва между русским войском во главе с Иваном III и монгольским войском во главе с ханом Ахматом",
+      "title": "Стояние на реке Угре и объединение русских земель",
       "imagePath": "images/13395/task_87343_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image__3yj1i.png",
       "enabled": true,
@@ -1854,11 +2123,14 @@
         "12": "URL"
       },
       "epochId": "medieval",
-      "epoch": "Русь и Московское государство (XIII–XV вв.)"
+      "epoch": "Русь и Московское государство (XIII–XV вв.)",
+      "mapTitle": "Стояние на реке Угре и объединение русских земель",
+      "courseTopicId": 4,
+      "courseTopicName": "Объединение русских земель вокруг Москвы"
     },
     {
       "blockId": "B912-89753",
-      "title": "Город, обозначенный цифрой 1 на карте, - Владивосток.",
+      "title": "Основание Владивостока и освоение Дальнего Востока",
       "imagePath": "images/13395/task_89753_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20240606134835-1__490k2.png",
       "enabled": true,
@@ -1924,11 +2196,14 @@
       },
       "deepRecoveryMethod": "SAME_CONTENT_ID",
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Основание Владивостока и освоение Дальнего Востока",
+      "courseTopicId": 17,
+      "courseTopicName": "Александр II и Великие реформы"
     },
     {
       "blockId": "B912-99453",
-      "title": "На схеме показаны события русско-турецкой войны 1768-1774 гг.",
+      "title": "Русско-турецкая война 1768–1774 гг.",
       "imagePath": "images/13337/task_99453_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20241103132627-1__5122a.png",
       "enabled": true,
@@ -1995,11 +2270,14 @@
         "12": "URL"
       },
       "epochId": "c18",
-      "epoch": "XVIII век"
+      "epoch": "XVIII век",
+      "mapTitle": "Русско-турецкая война 1768–1774 гг.",
+      "courseTopicId": 12,
+      "courseTopicName": "Екатерина II: внутренняя и внешняя политика"
     },
     {
       "blockId": "B912-102662",
-      "title": "Проследив по границе на карте, можно обнаружить, что ещё не все племена вошли в состав Руси, вятичи, например, ещё за границей.",
+      "title": "Древняя Русь в начале X века",
       "imagePath": "images/13416/task_102662_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20241224201603-1__5ejsp.png",
       "enabled": true,
@@ -2063,11 +2341,14 @@
         "12": "URL"
       },
       "epochId": "ancient",
-      "epoch": "Древняя Русь и соседние земли (IX–XII вв.)"
+      "epoch": "Древняя Русь и соседние земли (IX–XII вв.)",
+      "mapTitle": "Древняя Русь в начале X века",
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья"
     },
     {
       "blockId": "B912-102666",
-      "title": "На карте обозначены стрелками походы на Волжскую Булгарию, Хазарский каганат, на юго-западные земли.",
+      "title": "Походы князя Святослава",
       "imagePath": "images/13416/task_102666_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20241224203644-2__5ek2q.png",
       "enabled": true,
@@ -2134,11 +2415,14 @@
         "12": "URL"
       },
       "epochId": "ancient",
-      "epoch": "Древняя Русь и соседние земли (IX–XII вв.)"
+      "epoch": "Древняя Русь и соседние земли (IX–XII вв.)",
+      "mapTitle": "Походы князя Святослава",
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья"
     },
     {
       "blockId": "B912-102669",
-      "title": "Цифрой 6 обозначен поход в Новгород.",
+      "title": "Русь при Ярославе Мудром",
       "imagePath": "images/13395/task_102669_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20241224223515-1__5eljm.png",
       "enabled": true,
@@ -2205,11 +2489,14 @@
         "12": "URL"
       },
       "epochId": "ancient",
-      "epoch": "Древняя Русь и соседние земли (IX–XII вв.)"
+      "epoch": "Древняя Русь и соседние земли (IX–XII вв.)",
+      "mapTitle": "Русь при Ярославе Мудром",
+      "courseTopicId": 2,
+      "courseTopicName": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда"
     },
     {
       "blockId": "B912-102673",
-      "title": "На карте изображены «поход за зипунами» и восстание Степана Разина 1667-1671 гг.",
+      "title": "Восстание Степана Разина",
       "imagePath": "images/13416/task_102673_0.jpg",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20241225090502-4__5ene2.jpg",
       "enabled": true,
@@ -2274,11 +2561,14 @@
         "12": "URL"
       },
       "epochId": "c17",
-      "epoch": "XVII век"
+      "epoch": "XVII век",
+      "mapTitle": "Восстание Степана Разина",
+      "courseTopicId": 8,
+      "courseTopicName": "Первые Романовы. Россия в XVII веке"
     },
     {
       "blockId": "B912-102686",
-      "title": "Цифрой «4» обозначен город Казань.",
+      "title": "Присоединение Казанского ханства",
       "imagePath": "images/13395/task_102686_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20241225094737-7__5enj2.png",
       "enabled": true,
@@ -2342,11 +2632,14 @@
         "12": "URL"
       },
       "epochId": "c16",
-      "epoch": "XVI век"
+      "epoch": "XVI век",
+      "mapTitle": "Присоединение Казанского ханства",
+      "courseTopicId": 6,
+      "courseTopicName": "Россия при Иване IV: реформы, опричнина, внешняя политика"
     },
     {
       "blockId": "B912-102691",
-      "title": "Бои рядом с Запорожской Сечью указывают нам на Русско-польскую войну 1654-1667 гг.",
+      "title": "Русско-польская война 1654–1667 гг.",
       "imagePath": "images/13395/task_102691_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20241225091957-6__5eng5.png",
       "enabled": true,
@@ -2414,11 +2707,14 @@
         "12": "URL"
       },
       "epochId": "c17",
-      "epoch": "XVII век"
+      "epoch": "XVII век",
+      "mapTitle": "Русско-польская война 1654–1667 гг.",
+      "courseTopicId": 8,
+      "courseTopicName": "Первые Романовы. Россия в XVII веке"
     },
     {
       "blockId": "B912-103468",
-      "title": "На схеме показаны события завершающего этапа Гражданской войны: боевые действия сосредоточены в Крыму, что связано с борьбой Красной армии против армии П.Н.",
+      "title": "Разгром войск Врангеля в Крыму",
       "imagePath": "images/13416/task_103468_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260410185807-5__a3ob1.png",
       "enabled": true,
@@ -2482,11 +2778,14 @@
         "12": "URL"
       },
       "epochId": "rev",
-      "epoch": "1917–1940: революции, Гражданская война и СССР"
+      "epoch": "1917–1940: революции, Гражданская война и СССР",
+      "mapTitle": "Разгром войск Врангеля в Крыму",
+      "courseTopicId": 26,
+      "courseTopicName": "Гражданская война и военный коммунизм"
     },
     {
       "blockId": "B912-113608",
-      "title": "Напишите имя императора Франции, с которым велись военные действия, ход которых отражен на данной схеме.",
+      "title": "Войны с Наполеоном. Аустерлиц",
       "imagePath": "images/13395/task_113608_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250817180755-3__79tyf.png",
       "enabled": true,
@@ -2550,11 +2849,14 @@
         "12": "SEQUENCE_BETWEEN"
       },
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Войны с Наполеоном. Аустерлиц",
+      "courseTopicId": 15,
+      "courseTopicName": "Александр I и Отечественная война 1812 года"
     },
     {
       "blockId": "B912-114025",
-      "title": "Укажите фамилию государственного деятеля - инициатора реформы, ход которой представлен на схеме.",
+      "title": "Столыпинская аграрная реформа",
       "imagePath": "images/13416/task_114025_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250817183528-8__79u4r.png",
       "enabled": true,
@@ -2619,11 +2921,14 @@
       },
       "recoveryConfidence": "confirmed-by-user",
       "epochId": "early20",
-      "epoch": "Начало XX века (1900–1916)"
+      "epoch": "Начало XX века (1900–1916)",
+      "mapTitle": "Столыпинская аграрная реформа",
+      "courseTopicId": 22,
+      "courseTopicName": "Россия в 1907–1914 гг. Столыпин"
     },
     {
       "blockId": "B912-114051",
-      "title": "Укажите век, в котором произошли обозначенные на схеме события.",
+      "title": "Первая мировая война. Брусиловский прорыв",
       "imagePath": "images/13416/task_114051_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250331012530-2__6ax8l.png",
       "enabled": true,
@@ -2688,11 +2993,14 @@
       },
       "recoveryConfidence": "confirmed-by-user",
       "epochId": "early20",
-      "epoch": "Начало XX века (1900–1916)"
+      "epoch": "Начало XX века (1900–1916)",
+      "mapTitle": "Первая мировая война. Брусиловский прорыв",
+      "courseTopicId": 23,
+      "courseTopicName": "Первая мировая война"
     },
     {
       "blockId": "B912-114176",
-      "title": "На схеме отражены события Северной войны (1700-1721 гг.).",
+      "title": "Северная война",
       "imagePath": "images/13416/task_114176_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250331201529-1__6b7hi.png",
       "enabled": true,
@@ -2756,11 +3064,14 @@
         "12": "URL"
       },
       "epochId": "c18",
-      "epoch": "XVIII век"
+      "epoch": "XVIII век",
+      "mapTitle": "Северная война",
+      "courseTopicId": 9,
+      "courseTopicName": "Пётр I: реформы и внешняя политика"
     },
     {
       "blockId": "B912-114196",
-      "title": "Район, обозначенный на схеме буквой «А» — это Урал (район Екатеринбурга), где располагались крупные горнозаводские и металлургические предприятия.",
+      "title": "Россия при Петре I. Каспийский поход и хозяйственное развитие",
       "imagePath": "images/13416/task_114196_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250331202912-2__6b7ol.png",
       "enabled": true,
@@ -2824,11 +3135,14 @@
         "12": "URL"
       },
       "epochId": "c18",
-      "epoch": "XVIII век"
+      "epoch": "XVIII век",
+      "mapTitle": "Россия при Петре I. Каспийский поход и хозяйственное развитие",
+      "courseTopicId": 9,
+      "courseTopicName": "Пётр I: реформы и внешняя политика"
     },
     {
       "blockId": "B912-114205",
-      "title": "На схеме обозначены события Семилетней войны (1756-1763 гг.).",
+      "title": "Семилетняя война",
       "imagePath": "images/13416/task_114205_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250331204405-4__6b7z5.png",
       "enabled": true,
@@ -2892,11 +3206,14 @@
         "12": "URL"
       },
       "epochId": "c18",
-      "epoch": "XVIII век"
+      "epoch": "XVIII век",
+      "mapTitle": "Семилетняя война",
+      "courseTopicId": 11,
+      "courseTopicName": "Дворцовые перевороты"
     },
     {
       "blockId": "B912-114216",
-      "title": "Территории, обозначенные на схеме буквой «Б», были присоединены к Российской империи в ходе разделов Речи Посполитой при Екатерине II.",
+      "title": "Россия при Екатерине II. Суворов и разделы Речи Посполитой",
       "imagePath": "images/13416/task_114216_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250331205735-5__6b88d.png",
       "enabled": true,
@@ -2960,11 +3277,14 @@
         "12": "URL"
       },
       "epochId": "c18",
-      "epoch": "XVIII век"
+      "epoch": "XVIII век",
+      "mapTitle": "Россия при Екатерине II. Суворов и разделы Речи Посполитой",
+      "courseTopicId": 12,
+      "courseTopicName": "Екатерина II: внутренняя и внешняя политика"
     },
     {
       "blockId": "B912-114230",
-      "title": "Речь идёт о русско-турецкой войне 1768–1774 гг.",
+      "title": "Русско-турецкая война 1768–1774 гг.",
       "imagePath": "images/13416/task_114230_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250331211056-6__6b8hw.png",
       "enabled": true,
@@ -3028,11 +3348,14 @@
         "12": "URL"
       },
       "epochId": "c18",
-      "epoch": "XVIII век"
+      "epoch": "XVIII век",
+      "mapTitle": "Русско-турецкая война 1768–1774 гг.",
+      "courseTopicId": 12,
+      "courseTopicName": "Екатерина II: внутренняя и внешняя политика"
     },
     {
       "blockId": "B912-114256",
-      "title": "На схеме отображены действия походов Святослава Храброго, которые проходили в десятом веке.",
+      "title": "Походы князя Святослава",
       "imagePath": "images/13337/task_114256_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250826140612-4__7bit2.png",
       "enabled": true,
@@ -3099,11 +3422,14 @@
         "12": "URL"
       },
       "epochId": "ancient",
-      "epoch": "Древняя Русь и соседние земли (IX–XII вв.)"
+      "epoch": "Древняя Русь и соседние земли (IX–XII вв.)",
+      "mapTitle": "Походы князя Святослава",
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья"
     },
     {
       "blockId": "B912-116470",
-      "title": "На данной карте изображены походы Батыя и монголо-татарское нашествие на Русь.",
+      "title": "Нашествие Батыя на Русь",
       "imagePath": "images/13416/task_116470_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250409204608-1__6evl1.png",
       "enabled": true,
@@ -3167,11 +3493,14 @@
         "12": "URL"
       },
       "epochId": "medieval",
-      "epoch": "Русь и Московское государство (XIII–XV вв.)"
+      "epoch": "Русь и Московское государство (XIII–XV вв.)",
+      "mapTitle": "Нашествие Батыя на Русь",
+      "courseTopicId": 3,
+      "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада"
     },
     {
       "blockId": "B912-116473",
-      "title": "Заполните пропуск в предложении: «Цифрой «7» на схеме обозначен город, основанный киевским князем в первой половине _____________ века». Ответ запишите словом.",
+      "title": "Борьба Руси с западной агрессией. Александр Невский",
       "imagePath": "images/13416/task_116473_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250409205654-2__6evvc.png",
       "enabled": true,
@@ -3233,11 +3562,14 @@
       },
       "recoveryConfidence": "confirmed-by-user",
       "epochId": "medieval",
-      "epoch": "Русь и Московское государство (XIII–XV вв.)"
+      "epoch": "Русь и Московское государство (XIII–XV вв.)",
+      "mapTitle": "Борьба Руси с западной агрессией. Александр Невский",
+      "courseTopicId": 3,
+      "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада"
     },
     {
       "blockId": "B912-116482",
-      "title": "Хан Тохтамыш — правитель Золотой Орды, в 1382 году он совершил поход на Москву, чтобы восстановить ордынское господство, подорванное после победы Дмитрия Донского на Куликовом поле (1380 г.).",
+      "title": "Поход Тохтамыша на Москву",
       "imagePath": "images/13416/task_116482_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250409210447-3__6ew0r.png",
       "enabled": true,
@@ -3301,11 +3633,14 @@
         "12": "URL"
       },
       "epochId": "medieval",
-      "epoch": "Русь и Московское государство (XIII–XV вв.)"
+      "epoch": "Русь и Московское государство (XIII–XV вв.)",
+      "mapTitle": "Поход Тохтамыша на Москву",
+      "courseTopicId": 4,
+      "courseTopicName": "Объединение русских земель вокруг Москвы"
     },
     {
       "blockId": "B912-116486",
-      "title": "Цифрой «1» в легенде схемы обозначена территория Московского княжества на момент восшествия на московский престол князя Ивана Третьего, поскольку Нижний Новгород уже присоединён предшественниками, а Великий Новгород и Тв",
+      "title": "Стояние на реке Угре",
       "imagePath": "images/13416/task_116486_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/fa1f764b-8529-45a7-9a06-37208136bf7d__7a41k.png",
       "enabled": true,
@@ -3369,11 +3704,14 @@
         "12": "URL"
       },
       "epochId": "medieval",
-      "epoch": "Русь и Московское государство (XIII–XV вв.)"
+      "epoch": "Русь и Московское государство (XIII–XV вв.)",
+      "mapTitle": "Стояние на реке Угре",
+      "courseTopicId": 4,
+      "courseTopicName": "Объединение русских земель вокруг Москвы"
     },
     {
       "blockId": "B912-116491",
-      "title": "Город под цифрой «5» расположен на левом берегу реки Волги возле разветвления на приток - реку Каму, следовательно, под цифрой «5» - Казань.",
+      "title": "Россия при Иване IV. Казанское ханство",
       "imagePath": "images/13416/task_116491_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251210143538-1__8j19u.png",
       "enabled": true,
@@ -3437,11 +3775,14 @@
         "12": "URL"
       },
       "epochId": "c16",
-      "epoch": "XVI век"
+      "epoch": "XVI век",
+      "mapTitle": "Россия при Иване IV. Казанское ханство",
+      "courseTopicId": 6,
+      "courseTopicName": "Россия при Иване IV: реформы, опричнина, внешняя политика"
     },
     {
       "blockId": "B912-116495",
-      "title": "Город на Днепре, обозначенный цифрой «7» - Смоленск.",
+      "title": "Ливонская война",
       "imagePath": "images/13416/task_116495_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250409214357-7__6ews2.png",
       "enabled": true,
@@ -3505,11 +3846,14 @@
         "12": "URL"
       },
       "epochId": "c16",
-      "epoch": "XVI век"
+      "epoch": "XVI век",
+      "mapTitle": "Ливонская война",
+      "courseTopicId": 6,
+      "courseTopicName": "Россия при Иване IV: реформы, опричнина, внешняя политика"
     },
     {
       "blockId": "B912-116501",
-      "title": "Город, расположенный на слиянии рек Волги и Оки - Нижний Новгород.",
+      "title": "Смутное время",
       "imagePath": "images/13416/task_116501_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250409220649-9__6ex5m.png",
       "enabled": true,
@@ -3573,11 +3917,14 @@
         "12": "URL"
       },
       "epochId": "c17",
-      "epoch": "XVII век"
+      "epoch": "XVII век",
+      "mapTitle": "Смутное время",
+      "courseTopicId": 7,
+      "courseTopicName": "Смутное время"
     },
     {
       "blockId": "B912-116506",
-      "title": "На карте цифрой \"1\" отмечен г.",
+      "title": "Присоединение Астраханского ханства",
       "imagePath": "images/13416/task_116506_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250409221854-10__6excl.png",
       "enabled": true,
@@ -3641,11 +3988,14 @@
         "12": "URL"
       },
       "epochId": "c16",
-      "epoch": "XVI век"
+      "epoch": "XVI век",
+      "mapTitle": "Присоединение Астраханского ханства",
+      "courseTopicId": 6,
+      "courseTopicName": "Россия при Иване IV: реформы, опричнина, внешняя политика"
     },
     {
       "blockId": "B912-116515",
-      "title": "Данная территория вошла в состав России к концу XVII в.",
+      "title": "Освоение Сибири и Дальнего Востока в XVII веке",
       "imagePath": "images/13416/task_116515_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250409222949-11__6exid.png",
       "enabled": true,
@@ -3709,11 +4059,14 @@
         "12": "URL"
       },
       "epochId": "c17",
-      "epoch": "XVII век"
+      "epoch": "XVII век",
+      "mapTitle": "Освоение Сибири и Дальнего Востока в XVII веке",
+      "courseTopicId": 8,
+      "courseTopicName": "Первые Романовы. Россия в XVII веке"
     },
     {
       "blockId": "B912-116519",
-      "title": "В легенде схемы обозначены года - 1695 и 1696, которые относятся к периоду правления Петра I, в частности к Азовским походам.",
+      "title": "Азовские походы Петра I",
       "imagePath": "images/13416/task_116519_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250409224149-12__6expz.png",
       "enabled": true,
@@ -3783,11 +4136,14 @@
         "12": "URL"
       },
       "epochId": "c17",
-      "epoch": "XVII век"
+      "epoch": "XVII век",
+      "mapTitle": "Азовские походы Петра I",
+      "courseTopicId": 9,
+      "courseTopicName": "Пётр I: реформы и внешняя политика"
     },
     {
       "blockId": "B912-116590",
-      "title": "На этой карте изображены действия Антифранцузских коалиций.",
+      "title": "Война четвёртой коалиции и Тильзитский мир",
       "imagePath": "images/13395/task_116590_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250410123710-13__6f2fc.png",
       "enabled": true,
@@ -3857,11 +4213,14 @@
       },
       "recoveryConfidence": "confirmed-by-user",
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Война четвёртой коалиции и Тильзитский мир",
+      "courseTopicId": 15,
+      "courseTopicName": "Александр I и Отечественная война 1812 года"
     },
     {
       "blockId": "B912-116604",
-      "title": "Правильный ответ — \"Тильзит\", так как мирный договор, о котором идет речь, был подписан в 1807 году в Тильзите между Россией и Наполеоновской Францией.",
+      "title": "Отечественная война 1812 года. Начало кампании",
       "imagePath": "images/13416/task_116604_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250410124617-14__6f2ih.png",
       "enabled": true,
@@ -3923,11 +4282,14 @@
       },
       "recoveryConfidence": "confirmed-by-user",
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Отечественная война 1812 года. Начало кампании",
+      "courseTopicId": 15,
+      "courseTopicName": "Александр I и Отечественная война 1812 года"
     },
     {
       "blockId": "B912-116611",
-      "title": "Город под цифрой \"1\" - это Лейпциг.",
+      "title": "Заграничные походы русской армии. Битва народов",
       "imagePath": "images/13416/task_116611_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250410125623-15__6f2n8.png",
       "enabled": true,
@@ -3989,11 +4351,14 @@
       },
       "recoveryConfidence": "confirmed-by-user",
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Заграничные походы русской армии. Битва народов",
+      "courseTopicId": 15,
+      "courseTopicName": "Александр I и Отечественная война 1812 года"
     },
     {
       "blockId": "B912-116615",
-      "title": "Схема посвящена Восстанию декабристов.",
+      "title": "Восстание декабристов",
       "imagePath": "images/13416/task_116615_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250410130558-16__6f2qy.png",
       "enabled": true,
@@ -4055,11 +4420,14 @@
       },
       "recoveryConfidence": "confirmed-by-user",
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Восстание декабристов",
+      "courseTopicId": 16,
+      "courseTopicName": "Николай I"
     },
     {
       "blockId": "B912-116618",
-      "title": "Каспийское — название моря, обозначенного на схеме цифрой «2».",
+      "title": "Русско-персидская война и Туркманчайский мир",
       "imagePath": "images/13416/task_116618_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250410131425-17__6f2tu.png",
       "enabled": true,
@@ -4127,11 +4495,14 @@
       },
       "recoveryConfidence": "confirmed-by-user",
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Русско-персидская война и Туркманчайский мир",
+      "courseTopicId": 16,
+      "courseTopicName": "Николай I"
     },
     {
       "blockId": "B912-116660",
-      "title": "В районе Екатеринбурга в период, обозначенный на схеме, были сосредоточены крупные металлургические предприятия.",
+      "title": "Россия в начале XIX века. Венский конгресс и хозяйство",
       "imagePath": "images/13416/task_116660_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250410161501-18__6f59x.png",
       "enabled": true,
@@ -4193,11 +4564,14 @@
       },
       "recoveryConfidence": "confirmed-by-user",
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Россия в начале XIX века. Венский конгресс и хозяйство",
+      "courseTopicId": 15,
+      "courseTopicName": "Александр I и Отечественная война 1812 года"
     },
     {
       "blockId": "B912-116663",
-      "title": "На карте цифрой \"2\" обозначен город Синоп.",
+      "title": "Крымская война",
       "imagePath": "images/13416/task_116663_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250410162512-19__6f5eu.png",
       "enabled": true,
@@ -4259,11 +4633,14 @@
       },
       "recoveryConfidence": "confirmed-by-user",
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Крымская война",
+      "courseTopicId": 16,
+      "courseTopicName": "Николай I"
     },
     {
       "blockId": "B912-116666",
-      "title": "Цифрой \"1\" на карте обозначен Стамбул - столица Турции.",
+      "title": "Русско-турецкая война 1877–1878 гг.",
       "imagePath": "images/13416/task_116666_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250410163309-20__6f5ke.png",
       "enabled": true,
@@ -4325,11 +4702,14 @@
       },
       "recoveryConfidence": "confirmed-by-user",
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Русско-турецкая война 1877–1878 гг.",
+      "courseTopicId": 17,
+      "courseTopicName": "Александр II и Великие реформы"
     },
     {
       "blockId": "B912-122280",
-      "title": "На схеме изображены события Крымской войны.",
+      "title": "Крымская война. Синоп и оборона Севастополя",
       "imagePath": "images/13395/task_122280_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250506171746-1__6plpl.png",
       "enabled": true,
@@ -4393,11 +4773,14 @@
         "12": "URL"
       },
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Крымская война. Синоп и оборона Севастополя",
+      "courseTopicId": 16,
+      "courseTopicName": "Николай I"
     },
     {
       "blockId": "B912-123273",
-      "title": "Карта отражает боевые действия русской армии в Европе, а также сражение при Гросс-Егерсдорфе (1757 г.), что относится к событиям Семилетней войны.",
+      "title": "Семилетняя война",
       "imagePath": "images/13395/task_123273_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250512161200-1__6rxws.png",
       "enabled": true,
@@ -4464,11 +4847,14 @@
         "12": "SEQUENCE_BETWEEN"
       },
       "epochId": "c18",
-      "epoch": "XVIII век"
+      "epoch": "XVIII век",
+      "mapTitle": "Семилетняя война",
+      "courseTopicId": 11,
+      "courseTopicName": "Дворцовые перевороты"
     },
     {
       "blockId": "B912-124260",
-      "title": "Армия под общим командованием Михаила Илларионовича Кутузова двинулась от Москвы по рязанской дороге, развернувшись на юг, встала лагерем при Тарутино, перекрыв пути продвижения войск Наполеона к Туле.",
+      "title": "Отечественная война 1812 года. Тарутинский манёвр",
       "imagePath": "images/13395/task_124260_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250518110827-1__6tz7u.png",
       "enabled": true,
@@ -4535,11 +4921,14 @@
         "12": "URL"
       },
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Отечественная война 1812 года. Тарутинский манёвр",
+      "courseTopicId": 15,
+      "courseTopicName": "Александр I и Отечественная война 1812 года"
     },
     {
       "blockId": "B912-136995",
-      "title": "Схема посвящена восстанию Степана Разина.",
+      "title": "Восстание Степана Разина",
       "imagePath": "images/13337/task_136995_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250823140410-1__7ax9l.png",
       "enabled": true,
@@ -4606,11 +4995,14 @@
         "12": "URL"
       },
       "epochId": "c17",
-      "epoch": "XVII век"
+      "epoch": "XVII век",
+      "mapTitle": "Восстание Степана Разина",
+      "courseTopicId": 8,
+      "courseTopicName": "Первые Романовы. Россия в XVII веке"
     },
     {
       "blockId": "B912-137412",
-      "title": "События, обозначенные на схеме стрелками, произошли в 1944 году.",
+      "title": "Освобождение Белоруссии и Восточной Европы. 1944 год",
       "imagePath": "images/13337/task_137412_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250825144038-1__7bahz.png",
       "enabled": true,
@@ -4677,11 +5069,14 @@
         "12": "URL"
       },
       "epochId": "ww2",
-      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой"
+      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой",
+      "mapTitle": "Освобождение Белоруссии и Восточной Европы. 1944 год",
+      "courseTopicId": 30,
+      "courseTopicName": "Великая Отечественная война"
     },
     {
       "blockId": "B912-137677",
-      "title": "Карта посвящена Ливонской войне.",
+      "title": "Ливонская война",
       "imagePath": "images/13337/task_137677_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250826174721-7__7bksd.png",
       "enabled": true,
@@ -4751,11 +5146,14 @@
         "12": "URL"
       },
       "epochId": "c16",
-      "epoch": "XVI век"
+      "epoch": "XVI век",
+      "mapTitle": "Ливонская война",
+      "courseTopicId": 6,
+      "courseTopicName": "Россия при Иване IV: реформы, опричнина, внешняя политика"
     },
     {
       "blockId": "B912-138412",
-      "title": "Карта посвящена событиям Русско-турецкой войны 1768–1774 годов.",
+      "title": "Русско-турецкая война 1768–1774 гг.",
       "imagePath": "images/13376/task_138412_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250828213602-10__7c0hq.png",
       "enabled": true,
@@ -4819,11 +5217,14 @@
         "12": "URL"
       },
       "epochId": "c18",
-      "epoch": "XVIII век"
+      "epoch": "XVIII век",
+      "mapTitle": "Русско-турецкая война 1768–1774 гг.",
+      "courseTopicId": 12,
+      "courseTopicName": "Екатерина II: внутренняя и внешняя политика"
     },
     {
       "blockId": "B912-138592",
-      "title": "На схеме показаны боевые действия Советско-польской войны - наступление Красной армии на Варшаву и последующее отступление в 1920 году.",
+      "title": "Советско-польская война 1920 года",
       "imagePath": "images/13376/task_138592_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250829184719-3__7c4sn.png",
       "enabled": true,
@@ -4887,11 +5288,14 @@
         "12": "URL"
       },
       "epochId": "rev",
-      "epoch": "1917–1940: революции, Гражданская война и СССР"
+      "epoch": "1917–1940: революции, Гражданская война и СССР",
+      "mapTitle": "Советско-польская война 1920 года",
+      "courseTopicId": 26,
+      "courseTopicName": "Гражданская война и военный коммунизм"
     },
     {
       "blockId": "B912-139122",
-      "title": "Контрнаступление под Москвой началось в декабре 1941 г.",
+      "title": "Битва за Москву",
       "imagePath": "images/13376/task_139122_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250831142512-6__7ceth.png",
       "enabled": true,
@@ -4955,11 +5359,14 @@
         "12": "URL"
       },
       "epochId": "ww2",
-      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой"
+      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой",
+      "mapTitle": "Битва за Москву",
+      "courseTopicId": 30,
+      "courseTopicName": "Великая Отечественная война"
     },
     {
       "blockId": "B912-141536",
-      "title": "Карта посвящена Отечественной войне 1812 года.",
+      "title": "Отечественная война 1812 года",
       "imagePath": "images/13376/task_141536_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250921105157-3__7iszm.png",
       "enabled": true,
@@ -5022,11 +5429,14 @@
         "12": "URL"
       },
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Отечественная война 1812 года",
+      "courseTopicId": 15,
+      "courseTopicName": "Александр I и Отечественная война 1812 года"
     },
     {
       "blockId": "B912-141537",
-      "title": "Заштрихованная территория от Риги до Выборга, а также стрелки, проходящие через деревню Лесная, отсылают к событиям Северной войны, в период которой российским государем был Петр Первый.",
+      "title": "Северная война",
       "imagePath": "images/13376/task_141537_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20250927232025-3__7m3c1.png",
       "enabled": true,
@@ -5099,11 +5509,14 @@
         "12": "URL"
       },
       "epochId": "c18",
-      "epoch": "XVIII век"
+      "epoch": "XVIII век",
+      "mapTitle": "Северная война",
+      "courseTopicId": 9,
+      "courseTopicName": "Пётр I: реформы и внешняя политика"
     },
     {
       "blockId": "B912-142747",
-      "title": "На схеме отображены события советско-японской войны 1945 года.",
+      "title": "Советско-японская война 1945 года",
       "imagePath": "images/13376/task_142747_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251005115406-1__7phmh.png",
       "enabled": true,
@@ -5166,11 +5579,14 @@
         "12": "URL"
       },
       "epochId": "ww2",
-      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой"
+      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой",
+      "mapTitle": "Советско-японская война 1945 года",
+      "courseTopicId": 30,
+      "courseTopicName": "Великая Отечественная война"
     },
     {
       "blockId": "B912-142751",
-      "title": "Карта посвящена завершающему периоду Великой Отечественной войны - действия происходят в апреле 1945 года.",
+      "title": "Берлинская операция",
       "imagePath": "images/13376/task_142751_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251012142931-1__7svyg.png",
       "enabled": true,
@@ -5233,11 +5649,14 @@
         "12": "URL"
       },
       "epochId": "ww2",
-      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой"
+      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой",
+      "mapTitle": "Берлинская операция",
+      "courseTopicId": 30,
+      "courseTopicName": "Великая Отечественная война"
     },
     {
       "blockId": "B912-146485",
-      "title": "На схеме обозначены: - район восстания – юго-восток Русского государства; - города: Симбирск, Пенза, Саранск, Саратов, Казань, Белый Яр, Самара, Камышин, Царицын и др.; - направление движения восставших от Дона к Волге; ",
+      "title": "Восстание Степана Разина",
       "imagePath": "images/13395/task_146485_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251013001953-1__7t93x.png",
       "enabled": true,
@@ -5301,11 +5720,14 @@
         "12": "SEQUENCE_BETWEEN"
       },
       "epochId": "c17",
-      "epoch": "XVII век"
+      "epoch": "XVII век",
+      "mapTitle": "Восстание Степана Разина",
+      "courseTopicId": 8,
+      "courseTopicName": "Первые Романовы. Россия в XVII веке"
     },
     {
       "blockId": "B912-147723",
-      "title": "Схема посвящена событиям Смутного времени.",
+      "title": "Смутное время",
       "imagePath": "images/13376/task_147723_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260510213955-3__ajk3t.png",
       "enabled": true,
@@ -5372,11 +5794,14 @@
         "12": "URL"
       },
       "epochId": "c17",
-      "epoch": "XVII век"
+      "epoch": "XVII век",
+      "mapTitle": "Смутное время",
+      "courseTopicId": 7,
+      "courseTopicName": "Смутное время"
     },
     {
       "blockId": "B912-147848",
-      "title": "На карте показаны походы русских войск против Казанского и Астраханского ханств, а также их присоединение к Российскому государству.",
+      "title": "Присоединение Казанского и Астраханского ханств",
       "imagePath": "images/13376/task_147848_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251019165635-1__7wdd6.png",
       "enabled": true,
@@ -5440,11 +5865,14 @@
         "12": "URL"
       },
       "epochId": "c16",
-      "epoch": "XVI век"
+      "epoch": "XVI век",
+      "mapTitle": "Присоединение Казанского и Астраханского ханств",
+      "courseTopicId": 6,
+      "courseTopicName": "Россия при Иване IV: реформы, опричнина, внешняя политика"
     },
     {
       "blockId": "B912-148920",
-      "title": "На карте показаны территории Русского государства уже после присоединения Пскова (1510), Смоленска (1514) и Рязани (1521) — именно эти завоевания завершили процесс объединения русских земель вокруг Москвы.",
+      "title": "Завершение объединения русских земель при Василии III",
       "imagePath": "images/13376/task_148920_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251025224132-1__7z5qj.png",
       "enabled": true,
@@ -5508,11 +5936,14 @@
         "12": "URL"
       },
       "epochId": "c16",
-      "epoch": "XVI век"
+      "epoch": "XVI век",
+      "mapTitle": "Завершение объединения русских земель при Василии III",
+      "courseTopicId": 4,
+      "courseTopicName": "Объединение русских земель вокруг Москвы"
     },
     {
       "blockId": "B912-149737",
-      "title": "На схеме отображены события Северной войны: это возможно установить по заштрихованым территориям от Риги до Выборга, стрелкам близ.",
+      "title": "Северная война",
       "imagePath": "images/13376/task_149737_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251213200235-2__8k8ez.png",
       "enabled": true,
@@ -5576,11 +6007,14 @@
         "12": "URL"
       },
       "epochId": "c18",
-      "epoch": "XVIII век"
+      "epoch": "XVIII век",
+      "mapTitle": "Северная война",
+      "courseTopicId": 9,
+      "courseTopicName": "Пётр I: реформы и внешняя политика"
     },
     {
       "blockId": "B912-150537",
-      "title": "На карте изображены действия русской армии и флота против Османской империи в период Русско-турецкой войны 1735-1739 годов, происходившей при императрице Анне Иоанновне.",
+      "title": "Русско-турецкая война 1735–1739 гг.",
       "imagePath": "images/13376/task_150537_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251108124509-1__85npk.png",
       "enabled": true,
@@ -5644,11 +6078,14 @@
         "12": "URL"
       },
       "epochId": "c18",
-      "epoch": "XVIII век"
+      "epoch": "XVIII век",
+      "mapTitle": "Русско-турецкая война 1735–1739 гг.",
+      "courseTopicId": 11,
+      "courseTopicName": "Дворцовые перевороты"
     },
     {
       "blockId": "B912-151865",
-      "title": "Сражение при Кагуле, а также отсутствие на карте Севастополя в период событий, отраженных на схеме, отсылают нас к русско-турецкой войне 1768-1774 гг.",
+      "title": "Русско-турецкая война 1768–1774 гг.",
       "imagePath": "images/13376/task_151865_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251115210018-1__88ujj.png",
       "enabled": true,
@@ -5712,11 +6149,14 @@
         "12": "URL"
       },
       "epochId": "c18",
-      "epoch": "XVIII век"
+      "epoch": "XVIII век",
+      "mapTitle": "Русско-турецкая война 1768–1774 гг.",
+      "courseTopicId": 12,
+      "courseTopicName": "Екатерина II: внутренняя и внешняя политика"
     },
     {
       "blockId": "B912-152633",
-      "title": "На схеме изображены военные действия Российской империи против Османской империи за освоение Причерноморья: отмечены Очаков, Кинбурн, Анапа, Тамань, Измаил, Азов — ключевые центры русско-турецких войн второй половины XVI",
+      "title": "Русско-турецкая война 1787–1791 гг. Взятие Измаила",
       "imagePath": "images/13395/task_152633_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image__89ja0.png",
       "enabled": true,
@@ -5781,11 +6221,14 @@
         "12": "URL"
       },
       "epochId": "c18",
-      "epoch": "XVIII век"
+      "epoch": "XVIII век",
+      "mapTitle": "Русско-турецкая война 1787–1791 гг. Взятие Измаила",
+      "courseTopicId": 12,
+      "courseTopicName": "Екатерина II: внутренняя и внешняя политика"
     },
     {
       "blockId": "B912-153661",
-      "title": "На схеме отображены события Отечественной войны 1812-ого года - на это указывает, например, имя Барклая-де-Толли под стрелкой на карте, а также направление войск неприятеля (через Кенигсберг к Москве) и русских войск (со",
+      "title": "Отечественная война 1812 года",
       "imagePath": "images/13376/task_153661_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251122132536-1__8brt5.png",
       "enabled": true,
@@ -5849,11 +6292,14 @@
         "12": "URL"
       },
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Отечественная война 1812 года",
+      "courseTopicId": 15,
+      "courseTopicName": "Александр I и Отечественная война 1812 года"
     },
     {
       "blockId": "B912-154913",
-      "title": "На карте обозначено Андрусово, где в 1667 году было заключено перемирие между Россией и Речью Посполитой, положившее конец военным действиям в русско-польской войне 1654-1667 годов.",
+      "title": "Русско-польская война 1654–1667 гг.",
       "imagePath": "images/13376/task_154913_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260503183154-1__ag2mo.png",
       "enabled": true,
@@ -5917,11 +6363,14 @@
         "12": "URL"
       },
       "epochId": "c17",
-      "epoch": "XVII век"
+      "epoch": "XVII век",
+      "mapTitle": "Русско-польская война 1654–1667 гг.",
+      "courseTopicId": 8,
+      "courseTopicName": "Первые Романовы. Россия в XVII веке"
     },
     {
       "blockId": "B912-155453",
-      "title": "Границы, показанные на схеме - это границы Российской империи после завершения присоединения Средней Азии (Среднеазиатские походы, завоевание Туркестана, Хивинского и Кокандского ханств, Бухарского эмирата).",
+      "title": "Присоединение Средней Азии и границы Российской империи",
       "imagePath": "images/13376/task_155453_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251130210351-1__8fguk.png",
       "enabled": true,
@@ -5985,11 +6434,14 @@
         "12": "URL"
       },
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Присоединение Средней Азии и границы Российской империи",
+      "courseTopicId": 18,
+      "courseTopicName": "Александр III и социально-экономическое развитие конца XIX века"
     },
     {
       "blockId": "B912-156407",
-      "title": "Поход «1» на схеме направлен к району Добрыничей, где произошла битва при Добрыничах, которая состоялась 21 января 1605 года между войсками Лжедмитрия I и царя Бориса Годунова.",
+      "title": "Начало Смуты. Поход Лжедмитрия I",
       "imagePath": "images/13376/task_156407_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251207152722-1__8hw7b.png",
       "enabled": true,
@@ -6056,11 +6508,14 @@
         "12": "URL"
       },
       "epochId": "c17",
-      "epoch": "XVII век"
+      "epoch": "XVII век",
+      "mapTitle": "Начало Смуты. Поход Лжедмитрия I",
+      "courseTopicId": 7,
+      "courseTopicName": "Смутное время"
     },
     {
       "blockId": "B912-159201",
-      "title": "Восстание Степана Разина охватило огромные территории Приволжья, Дона, стрелочки на городах - Царицын, Саратов, Самара, Саранск.",
+      "title": "Восстание Степана Разина",
       "imagePath": "images/13376/task_159201_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20251221155741-1__8n4k7.png",
       "enabled": true,
@@ -6124,11 +6579,14 @@
         "12": "URL"
       },
       "epochId": "c17",
-      "epoch": "XVII век"
+      "epoch": "XVII век",
+      "mapTitle": "Восстание Степана Разина",
+      "courseTopicId": 8,
+      "courseTopicName": "Первые Романовы. Россия в XVII веке"
     },
     {
       "blockId": "B912-161195",
-      "title": "Заштрихованная территория «1» соответствует Поволжью и Нижнему Поволжью, присоединённым в результате завоевания Казанского ханства (1552 г.) и Астраханского ханства (1556 г.) в правление Ивана IV.",
+      "title": "Присоединение Казанского и Астраханского ханств",
       "imagePath": "images/13376/task_161195_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260112081008-1__8ukb4.png",
       "enabled": true,
@@ -6196,11 +6654,14 @@
         "12": "URL"
       },
       "epochId": "c16",
-      "epoch": "XVI век"
+      "epoch": "XVI век",
+      "mapTitle": "Присоединение Казанского и Астраханского ханств",
+      "courseTopicId": 6,
+      "courseTopicName": "Россия при Иване IV: реформы, опричнина, внешняя политика"
     },
     {
       "blockId": "B912-162314",
-      "title": "На карте изображено формирование централизованного государства в XVI в.",
+      "title": "Завершение объединения русских земель при Василии III",
       "imagePath": "images/13376/task_162314_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260117223149-1__8x6hu.png",
       "enabled": true,
@@ -6264,11 +6725,14 @@
         "12": "URL"
       },
       "epochId": "c16",
-      "epoch": "XVI век"
+      "epoch": "XVI век",
+      "mapTitle": "Завершение объединения русских земель при Василии III",
+      "courseTopicId": 4,
+      "courseTopicName": "Объединение русских земель вокруг Москвы"
     },
     {
       "blockId": "B912-164082",
-      "title": "Русско-турецкая война 1735-1739 гг.",
+      "title": "Русско-турецкая война 1735–1739 гг.",
       "imagePath": "images/13376/task_164082_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260123232501-1__90am6.png",
       "enabled": true,
@@ -6332,11 +6796,14 @@
         "12": "URL"
       },
       "epochId": "c18",
-      "epoch": "XVIII век"
+      "epoch": "XVIII век",
+      "mapTitle": "Русско-турецкая война 1735–1739 гг.",
+      "courseTopicId": 11,
+      "courseTopicName": "Дворцовые перевороты"
     },
     {
       "blockId": "B912-166182",
-      "title": "Русско-турецкая война 1768-1774 годов проходила в период правления императрицы Екатерины II.",
+      "title": "Русско-турецкая война 1768–1774 гг.",
       "imagePath": "images/13376/task_166182_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260130175611-1__93nlg.png",
       "enabled": true,
@@ -6403,11 +6870,14 @@
         "12": "URL"
       },
       "epochId": "c18",
-      "epoch": "XVIII век"
+      "epoch": "XVIII век",
+      "mapTitle": "Русско-турецкая война 1768–1774 гг.",
+      "courseTopicId": 12,
+      "courseTopicName": "Екатерина II: внутренняя и внешняя политика"
     },
     {
       "blockId": "B912-166347",
-      "title": "На схеме показаны боевые действия Гражданской войны в России с указанием линии фронта в начале марта, к концу апреля и к концу июля.",
+      "title": "Гражданская война. Наступление Колчака",
       "imagePath": "images/13395/task_166347_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260131012202-1__93utp.png",
       "enabled": true,
@@ -6471,11 +6941,14 @@
         "12": "URL"
       },
       "epochId": "rev",
-      "epoch": "1917–1940: революции, Гражданская война и СССР"
+      "epoch": "1917–1940: революции, Гражданская война и СССР",
+      "mapTitle": "Гражданская война. Наступление Колчака",
+      "courseTopicId": 26,
+      "courseTopicName": "Гражданская война и военный коммунизм"
     },
     {
       "blockId": "B912-168735",
-      "title": "На схеме показаны походы московских войск против Новгорода, Твери и Орды, а также расширение границ Московского государства во второй половине XV века.",
+      "title": "Объединение русских земель при Иване III",
       "imagePath": "images/13376/task_168735_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260214140754-1__9arn0.png",
       "enabled": true,
@@ -6545,11 +7018,14 @@
         "12": "URL"
       },
       "epochId": "medieval",
-      "epoch": "Русь и Московское государство (XIII–XV вв.)"
+      "epoch": "Русь и Московское государство (XIII–XV вв.)",
+      "mapTitle": "Объединение русских земель при Иване III",
+      "courseTopicId": 4,
+      "courseTopicName": "Объединение русских земель вокруг Москвы"
     },
     {
       "blockId": "B912-169107",
-      "title": "На схеме изображены события Гражданской войны в России.",
+      "title": "Гражданская война. Поход Деникина на Москву",
       "imagePath": "images/13395/task_169107_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260216195313-2__9bx16.png",
       "enabled": true,
@@ -6616,11 +7092,14 @@
         "12": "URL"
       },
       "epochId": "ww2",
-      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой"
+      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой",
+      "mapTitle": "Гражданская война. Поход Деникина на Москву",
+      "courseTopicId": 26,
+      "courseTopicName": "Гражданская война и военный коммунизм"
     },
     {
       "blockId": "B912-169827",
-      "title": "На схеме показаны военные действия 1577 года в районе Ливонии (Дерпт, Феллин, Рига, Полоцк), то есть события Ливонской войны.",
+      "title": "Ливонская война",
       "imagePath": "images/13376/task_169827_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260221173008-1__9ebhw.png",
       "enabled": true,
@@ -6690,11 +7169,14 @@
         "12": "SEQUENCE_BETWEEN"
       },
       "epochId": "c16",
-      "epoch": "XVI век"
+      "epoch": "XVI век",
+      "mapTitle": "Ливонская война",
+      "courseTopicId": 6,
+      "courseTopicName": "Россия при Иване IV: реформы, опричнина, внешняя политика"
     },
     {
       "blockId": "B912-169856",
-      "title": "На схеме показаны действия захватчиков и русских дружин на территории Владимиро-Суздальского княжества, Рязанского и Муромского земель, а также места крупнейших сражений.",
+      "title": "Нашествие Батыя на Русь",
       "imagePath": "images/13376/task_169856_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260221205802-1__9ef6p.png",
       "enabled": true,
@@ -6761,11 +7243,14 @@
         "12": "SEQUENCE_BETWEEN"
       },
       "epochId": "medieval",
-      "epoch": "Русь и Московское государство (XIII–XV вв.)"
+      "epoch": "Русь и Московское государство (XIII–XV вв.)",
+      "mapTitle": "Нашествие Батыя на Русь",
+      "courseTopicId": 3,
+      "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада"
     },
     {
       "blockId": "B912-169895",
-      "title": "На схеме показаны походы русских князей на Византию (Константинополь), в Причерноморье, к Азовскому и Каспийскому морям, а также действия противника.",
+      "title": "Походы русских князей на Византию и Хазарию",
       "imagePath": "images/13376/task_169895_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260221230258-4__9ehoe.png",
       "enabled": true,
@@ -6829,11 +7314,14 @@
         "12": "URL"
       },
       "epochId": "c17",
-      "epoch": "XVII век"
+      "epoch": "XVII век",
+      "mapTitle": "Походы русских князей на Византию и Хазарию",
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья"
     },
     {
       "blockId": "B912-174394",
-      "title": "Карта посвящена событиям Северной войны – это можно понять по обозначению сражения у Лесной и продвижению войск противника с территории Речи Посполитой.",
+      "title": "Северная война",
       "imagePath": "images/13376/task_174394_0.jpg",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/Screenshot_20260322_195523_Drive__9tge2.jpg",
       "enabled": true,
@@ -6897,11 +7385,14 @@
         "12": "URL"
       },
       "epochId": "c18",
-      "epoch": "XVIII век"
+      "epoch": "XVIII век",
+      "mapTitle": "Северная война",
+      "courseTopicId": 9,
+      "courseTopicName": "Пётр I: реформы и внешняя политика"
     },
     {
       "blockId": "B912-175721",
-      "title": "Данная карта посвящена события русско-турецкой войны 1768-1774 гг.: основные боевые действия идут в Крыму и на Балканах.",
+      "title": "Русско-турецкая война 1768–1774 гг.",
       "imagePath": "images/13376/task_175721_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260329230245-1__9x2l2.png",
       "enabled": true,
@@ -6968,11 +7459,14 @@
         "12": "URL"
       },
       "epochId": "c18",
-      "epoch": "XVIII век"
+      "epoch": "XVIII век",
+      "mapTitle": "Русско-турецкая война 1768–1774 гг.",
+      "courseTopicId": 12,
+      "courseTopicName": "Екатерина II: внутренняя и внешняя политика"
     },
     {
       "blockId": "B912-176189",
-      "title": "Карта посвящена походам Святослава Игоревича в X в.",
+      "title": "Походы князя Святослава",
       "imagePath": "images/13376/task_176189_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260401234737-1__9ytir.png",
       "enabled": true,
@@ -7039,11 +7533,14 @@
         "12": "SEQUENCE_BETWEEN"
       },
       "epochId": "ancient",
-      "epoch": "Древняя Русь и соседние земли (IX–XII вв.)"
+      "epoch": "Древняя Русь и соседние земли (IX–XII вв.)",
+      "mapTitle": "Походы князя Святослава",
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья"
     },
     {
       "blockId": "B912-176552",
-      "title": "Цифрой \"2\" на схеме обозначена Польша (столица — Варшава, положение между Германией и СССР).",
+      "title": "Послевоенная Европа и образование НАТО",
       "imagePath": "images/13416/task_176552_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260404125411-1__a03qn.png",
       "enabled": true,
@@ -7116,11 +7613,14 @@
         "12": "URL"
       },
       "epochId": "postwar",
-      "epoch": "СССР после 1945 г."
+      "epoch": "СССР после 1945 г.",
+      "mapTitle": "Послевоенная Европа и образование НАТО",
+      "courseTopicId": 31,
+      "courseTopicName": "СССР в 1945–1953 гг."
     },
     {
       "blockId": "B912-176573",
-      "title": "На карте отображено наступление войск А.",
+      "title": "Гражданская война. Поход Деникина на Москву",
       "imagePath": "images/13376/task_176573_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260404140025-1__a051w.png",
       "enabled": true,
@@ -7187,11 +7687,14 @@
         "12": "URL"
       },
       "epochId": "rev",
-      "epoch": "1917–1940: революции, Гражданская война и СССР"
+      "epoch": "1917–1940: революции, Гражданская война и СССР",
+      "mapTitle": "Гражданская война. Поход Деникина на Москву",
+      "courseTopicId": 26,
+      "courseTopicName": "Гражданская война и военный коммунизм"
     },
     {
       "blockId": "B912-177375",
-      "title": "Речь идёт о нападении японского флота на Порт-Артур (обозначен цифрой «1»).",
+      "title": "Русско-японская война",
       "imagePath": "images/13416/task_177375_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260410172231-1__a3m93.png",
       "enabled": true,
@@ -7258,11 +7761,14 @@
         "12": "URL"
       },
       "epochId": "early20",
-      "epoch": "Начало XX века (1900–1916)"
+      "epoch": "Начало XX века (1900–1916)",
+      "mapTitle": "Русско-японская война",
+      "courseTopicId": 19,
+      "courseTopicName": "Николай II: внутренняя и внешняя политика до 1905 года"
     },
     {
       "blockId": "B912-177381",
-      "title": "На схеме показаны события Первой мировой войны на Восточном фронте и Балканах.",
+      "title": "Первая мировая война. Восточный фронт",
       "imagePath": "images/13416/task_177381_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260410181151-2__a3n76.png",
       "enabled": true,
@@ -7326,11 +7832,14 @@
         "12": "URL"
       },
       "epochId": "early20",
-      "epoch": "Начало XX века (1900–1916)"
+      "epoch": "Начало XX века (1900–1916)",
+      "mapTitle": "Первая мировая война. Восточный фронт",
+      "courseTopicId": 23,
+      "courseTopicName": "Первая мировая война"
     },
     {
       "blockId": "B912-177387",
-      "title": "На схеме показано наступление русских войск летом 1916 г.",
+      "title": "Брусиловский прорыв",
       "imagePath": "images/13416/task_177387_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260410182624-3__a3nkj.png",
       "enabled": true,
@@ -7394,11 +7903,14 @@
         "12": "URL"
       },
       "epochId": "early20",
-      "epoch": "Начало XX века (1900–1916)"
+      "epoch": "Начало XX века (1900–1916)",
+      "mapTitle": "Брусиловский прорыв",
+      "courseTopicId": 23,
+      "courseTopicName": "Первая мировая война"
     },
     {
       "blockId": "B912-177392",
-      "title": "На схеме показаны фронты Гражданской войны в России: Южный и Восточный фронты (районы Царицына, Уфы, Самары и др.).",
+      "title": "Гражданская война. Восточный и Южный фронты",
       "imagePath": "images/13416/task_177392_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260410183951-4__a3nwh.png",
       "enabled": true,
@@ -7465,11 +7977,14 @@
         "12": "SEQUENCE_BETWEEN"
       },
       "epochId": "rev",
-      "epoch": "1917–1940: революции, Гражданская война и СССР"
+      "epoch": "1917–1940: революции, Гражданская война и СССР",
+      "mapTitle": "Гражданская война. Восточный и Южный фронты",
+      "courseTopicId": 26,
+      "courseTopicName": "Гражданская война и военный коммунизм"
     },
     {
       "blockId": "B912-177397",
-      "title": "Западные границы СССР окончательно сформировались в результате территориальных изменений 1939-1940 гг., при этом окончательное оформление произошло в 1940 г.",
+      "title": "Территориальные изменения СССР в 1939–1940 гг.",
       "imagePath": "images/13416/task_177397_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260410190902-6__a3oi6.png",
       "enabled": true,
@@ -7533,11 +8048,14 @@
         "12": "URL"
       },
       "epochId": "rev",
-      "epoch": "1917–1940: революции, Гражданская война и СССР"
+      "epoch": "1917–1940: революции, Гражданская война и СССР",
+      "mapTitle": "Территориальные изменения СССР в 1939–1940 гг.",
+      "courseTopicId": 28,
+      "courseTopicName": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика"
     },
     {
       "blockId": "B912-177405",
-      "title": "Город под цифрой «3» - Брест, в котором находилась крепость, защитники которой проявили массовый героизм в первые дни войны.",
+      "title": "Начало Великой Отечественной войны. Брестская крепость",
       "imagePath": "images/13416/task_177405_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260410192405-7__a3ovj.png",
       "enabled": true,
@@ -7601,11 +8119,14 @@
         "12": "URL"
       },
       "epochId": "ww2",
-      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой"
+      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой",
+      "mapTitle": "Начало Великой Отечественной войны. Брестская крепость",
+      "courseTopicId": 30,
+      "courseTopicName": "Великая Отечественная война"
     },
     {
       "blockId": "B912-177522",
-      "title": "На схеме обозначены германская и российская империи, ведущие боевые действия на восточном фронте, что позволяет нам идентифицировать схему как отражающую события первой мировой войны.",
+      "title": "Первая мировая война",
       "imagePath": "images/13376/task_177522_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260411131049-7__a40ie.png",
       "enabled": true,
@@ -7669,11 +8190,14 @@
         "12": "URL"
       },
       "epochId": "early20",
-      "epoch": "Начало XX века (1900–1916)"
+      "epoch": "Начало XX века (1900–1916)",
+      "mapTitle": "Первая мировая война",
+      "courseTopicId": 23,
+      "courseTopicName": "Первая мировая война"
     },
     {
       "blockId": "B912-178479",
-      "title": "На карте стрелками показан поход князя из Новгорода на юг вдоль пути \"из варяг в греки\" через Смоленск и Любеч до Киева; это поход князя Олега 882 года, завершившийся объединением этих городов и обрпзованием Древнеруског",
+      "title": "Поход князя Олега на Киев",
       "imagePath": "images/13376/task_178479_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260418181001-1__a7z4t.png",
       "enabled": true,
@@ -7743,11 +8267,14 @@
         "12": "URL"
       },
       "epochId": "ancient",
-      "epoch": "Древняя Русь и соседние земли (IX–XII вв.)"
+      "epoch": "Древняя Русь и соседние земли (IX–XII вв.)",
+      "mapTitle": "Поход князя Олега на Киев",
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья"
     },
     {
       "blockId": "B912-179203",
-      "title": "Цифрой «2» на схеме обозначен город Курск.",
+      "title": "Курская битва",
       "imagePath": "images/13416/task_179203_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260422215027-1__aadhc.png",
       "enabled": true,
@@ -7814,11 +8341,14 @@
         "12": "URL"
       },
       "epochId": "ww2",
-      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой"
+      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой",
+      "mapTitle": "Курская битва",
+      "courseTopicId": 30,
+      "courseTopicName": "Великая Отечественная война"
     },
     {
       "blockId": "B912-179208",
-      "title": "Цифрой «5» в легенде схемы обозначена линия фронта, сложившаяся после завершения зимнего наступления советских войск, то есть к концу марта 1943 года, что соответствует итогам Сталинградской битвы и последующих операций ",
+      "title": "Великая Отечественная война. Зима 1942–1943 гг.",
       "imagePath": "images/13416/task_179208_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260422220414-2__aadwc.png",
       "enabled": true,
@@ -7882,11 +8412,14 @@
         "12": "URL"
       },
       "epochId": "ww2",
-      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой"
+      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой",
+      "mapTitle": "Великая Отечественная война. Зима 1942–1943 гг.",
+      "courseTopicId": 30,
+      "courseTopicName": "Великая Отечественная война"
     },
     {
       "blockId": "B912-179213",
-      "title": "На схеме обозначены линия фронта на 1 января и на 31 декабря, а также действия Красной армии и войск противника.",
+      "title": "Наступление Красной армии в 1944 году",
       "imagePath": "images/13416/task_179213_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260422221811-3__aae8w.png",
       "enabled": true,
@@ -7953,11 +8486,14 @@
         "12": "URL"
       },
       "epochId": "ww2",
-      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой"
+      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой",
+      "mapTitle": "Наступление Красной армии в 1944 году",
+      "courseTopicId": 30,
+      "courseTopicName": "Великая Отечественная война"
     },
     {
       "blockId": "B912-179220",
-      "title": "На схеме обозначены линия фронта к концу декабря, рубеж выхода советских войск и войск союзников к концу войны, действия Красной армии, союзников и Народно-освободительной армии Югославии.",
+      "title": "Завершающий этап Великой Отечественной войны. 1945 год",
       "imagePath": "images/13416/task_179220_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260422223548-4__aaeph.png",
       "enabled": true,
@@ -8021,11 +8557,14 @@
         "12": "URL"
       },
       "epochId": "ww2",
-      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой"
+      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой",
+      "mapTitle": "Завершающий этап Великой Отечественной войны. 1945 год",
+      "courseTopicId": 30,
+      "courseTopicName": "Великая Отечественная война"
     },
     {
       "blockId": "B912-179234",
-      "title": "На схеме обозначены действия советских войск против Японии — наступление с территории СССР, Монголии, воздушные и морские десанты на Корейском полуострове и Сахалине.",
+      "title": "Советско-японская война 1945 года",
       "imagePath": "images/13416/task_179234_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260422224833-5__aaezc.png",
       "enabled": true,
@@ -8089,11 +8628,14 @@
         "12": "URL"
       },
       "epochId": "ww2",
-      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой"
+      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой",
+      "mapTitle": "Советско-японская война 1945 года",
+      "courseTopicId": 30,
+      "courseTopicName": "Великая Отечественная война"
     },
     {
       "blockId": "B912-179240",
-      "title": "На схеме обозначены границы СССР, включающие Калининград, Прибалтийские республики (Эстонская, Латвийская, Литовская ССР), Молдавскую ССР и западные территории Украины и Белоруссии — все эти территории вошли в состав ССС",
+      "title": "Послевоенные границы СССР",
       "imagePath": "images/13416/task_179240_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260422225936-6__aaf7u.png",
       "enabled": true,
@@ -8160,11 +8702,14 @@
         "12": "URL"
       },
       "epochId": "rev",
-      "epoch": "1917–1940: революции, Гражданская война и СССР"
+      "epoch": "1917–1940: революции, Гражданская война и СССР",
+      "mapTitle": "Послевоенные границы СССР",
+      "courseTopicId": 31,
+      "courseTopicName": "СССР в 1945–1953 гг."
     },
     {
       "blockId": "B912-179650",
-      "title": "На схеме обозначены даты - 1577 год.",
+      "title": "Ливонская война",
       "imagePath": "images/13376/task_179650_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260426213344-1__acjbj.png",
       "enabled": true,
@@ -8234,11 +8779,14 @@
         "12": "URL"
       },
       "epochId": "c16",
-      "epoch": "XVI век"
+      "epoch": "XVI век",
+      "mapTitle": "Ливонская война",
+      "courseTopicId": 6,
+      "courseTopicName": "Россия при Иване IV: реформы, опричнина, внешняя политика"
     },
     {
       "blockId": "B912-183236",
-      "title": "Укажите век, к которому относятся походы, обозначенные на схеме стрелками. Ответ запишите словом.",
+      "title": "Походы князя Святослава",
       "imagePath": "images/13395/task_183236_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260521191801-1__aoc4o.png",
       "enabled": true,
@@ -8302,11 +8850,14 @@
         "12": "URL"
       },
       "epochId": "ancient",
-      "epoch": "Древняя Русь и соседние земли (IX–XII вв.)"
+      "epoch": "Древняя Русь и соседние земли (IX–XII вв.)",
+      "mapTitle": "Походы князя Святослава",
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья"
     },
     {
       "blockId": "B912-183260",
-      "title": "Заполните пропуск в предложении: «События, обозначенные на схеме, произошли в тысяча девятьсот ________________ году». Ответ запишите словом (сочетанием слов).",
+      "title": "Первая мировая война. Кампания 1915 года",
       "imagePath": "images/13395/task_183260_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260521192603-2__aoc8j.png",
       "enabled": true,
@@ -8370,11 +8921,14 @@
         "12": "SEQUENCE_BETWEEN"
       },
       "epochId": "ww2",
-      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой"
+      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой",
+      "mapTitle": "Первая мировая война. Кампания 1915 года",
+      "courseTopicId": 23,
+      "courseTopicName": "Первая мировая война"
     },
     {
       "blockId": "B912-183277",
-      "title": "Напишите название городаа, обозначенной на схеме цифрой «1». Ответ запишите словом (сочетанием слов).",
+      "title": "Отечественная война 1812 года. Соединение русских армий",
       "imagePath": "images/13395/task_183277_0.png",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/image-20260521193621-3__aocef.png",
       "enabled": true,
@@ -8438,11 +8992,14 @@
         "12": "SEQUENCE_BETWEEN"
       },
       "epochId": "c19",
-      "epoch": "XIX век"
+      "epoch": "XIX век",
+      "mapTitle": "Отечественная война 1812 года. Соединение русских армий",
+      "courseTopicId": 15,
+      "courseTopicName": "Александр I и Отечественная война 1812 года"
     },
     {
       "blockId": "B912-197579",
-      "title": "Карта посвящена Восточно-Прусской операции, она началась 13 января 1945 г.",
+      "title": "Восточно-Прусская операция 1945 года",
       "imagePath": "images/13337/task_197579_0.jpg",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/photo_2026-08-29_13-54-42__bglw4.jpg",
       "enabled": true,
@@ -8512,11 +9069,14 @@
         "12": "URL"
       },
       "epochId": "ww2",
-      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой"
+      "epoch": "1941–1945: Великая Отечественная война и завершение Второй мировой",
+      "mapTitle": "Восточно-Прусская операция 1945 года",
+      "courseTopicId": 30,
+      "courseTopicName": "Великая Отечественная война"
     },
     {
       "blockId": "B912-202373",
-      "title": "Граница Российского государства, обозначенная на схеме, сложилась в начале 16 века.",
+      "title": "Завершение объединения русских земель в начале XVI века",
       "imagePath": "images/13376/task_202373_0.jpg",
       "originalImageUrl": "https://3.shkolkovo.online/st/5/v-thumb/8dNqLKOFNnSnUioM-fiEZ15sADnlPFnnFuHbhiHLRHxlghO9x8y7Md6If2Pn_-OUCIgH2KCF8TV1867pVBMX3Jk7__bu673.jpg",
       "enabled": true,
@@ -8583,7 +9143,10 @@
         "12": "URL"
       },
       "epochId": "c16",
-      "epoch": "XVI век"
+      "epoch": "XVI век",
+      "mapTitle": "Завершение объединения русских земель в начале XVI века",
+      "courseTopicId": 4,
+      "courseTopicName": "Объединение русских земель вокруг Москвы"
     }
   ]
 }
