@@ -3124,7 +3124,12 @@ function Task20Tab({onReload,constructorScope}){
 
  const through=Math.max(1,Math.min(38,Number(constructorScope?.through||38)));
  const mode=constructorScope?.mode==="current"?"current":"cumulative";
- const available=rows.filter(q=>mode==="current"?Number(q.courseTopicId)===through:Number(q.courseTopicId)<=through);
+ const available=rows.filter(q=>{
+   if(mode==="current"){
+     return Number(q.courseTopicId)===Number(q.courseTopicId);
+   }
+   return Number(q.courseTopicId)<=through;
+ });
 
  function make(){
   const n=Number(count);
