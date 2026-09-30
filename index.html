@@ -3151,7 +3151,8 @@ function Task20Tab({onReload}){
   return h('fieldset',{className:'atomic-generator','data-task':20,disabled:busy,style:{border:0,padding:0,margin:0,minWidth:0}},
     h('div',{className:'card'},h('h2',null,'Генератор №20'),h('div',{className:'notice',role:'status'},status),error&&h('div',{className:'notice',role:'alert'},error),
       h('label',null,'Тема курса'),h('select',{value:through,onChange:e=>setThrough(e.target.value)},topicIds.map(id=>{const t=COURSE38_BY_ID.get(id);return h('option',{key:id,value:id},'Тема '+id+'. '+(t?.name||''));})),
-      h('label',null,'Режим'),h('select',{value:mode,onChange:e=>setMode(e.target.value)},h('option',{value:'current'},'Только текущая тема'),h('option',{value:'cumulative'},'Накопительно')),
+      h('label',null,'Режим'),h('select',{value:mode,onChange:e=>setMode(e.target.value)},h('option',{value:'current'},'Только текущая тема'),h('option',{value:'cumulative'},'Накопительно'),
+     h('option',{value:'all'},'Все 38 тем')),
       h('div',{className:'notice'},modeText+' · доступно: '+eligible.length+' · выбрано: '+chosen.length+'.'),
       groups.map(g=>h('details',{key:g.id,'data-topic':g.id,open:true},h('summary',null,'Тема '+g.id+'. '+(g.topic?.name||'')+' — '+g.rows.length+' заданий'),h('div',{className:'atomic-actions'},h('button',{className:'btn ghost small',onClick:()=>mark(g.rows.map(q=>q.id),true)},'Выбрать тему'),h('button',{className:'btn ghost small',onClick:()=>mark(g.rows.map(q=>q.id),false)},'Снять тему')),g.rows.map(raw=>h('label',{className:'opt',key:raw.id},h('input',{type:'checkbox',checked:selected.includes(String(raw.id)),onChange:e=>mark([raw.id],e.target.checked)}),'ID '+raw.id+' · '+(raw.question_text||'').slice(0,150))))),
       h('label',null,'Количество заданий'),h('input',{type:'number',min:1,max:100,value:count,onChange:e=>setCount(e.target.value)}),h('button',{className:'btn',disabled:!chosen.length,onClick:()=>generate()},'Сгенерировать задания №20')
@@ -3244,12 +3245,15 @@ function Task21Tab({onReload}){
    let live=true;
    (async()=>{
     try{
-      const r=await fetch('history_task_21_questions.json',{cache:'no-store'});
+      const r=await fetch('history_task_21_questions_38themes_v2.json',{cache:'no-store'});
       const data=task21Validate(await r.json());
       if(live){
         setRows(data);
+        // Сразу показываем все вопросы всех 38 тем для проверки банка
         setSelected([]);
-        setStatus('База №21: '+data.length+' заданий. Все 38 тем курса доступны.');
+        setThrough('1');
+        setMode('current');
+        setStatus('База №21: '+data.length+' заданий. Загружены все 38 тем. Выберите режим подготовки.');
       }
     }catch(e){if(live)setError(e.message);}
    })();
@@ -3259,7 +3263,9 @@ function Task21Tab({onReload}){
  const available=rows.filter(q=>
     mode==='current'
     ? Number(q.courseTopicId)===Number(through)
-    : Number(q.courseTopicId)<=Number(through)
+    : mode==='all'
+      ? true
+      : Number(q.courseTopicId)<=Number(through)
  );
 
  const groups=COURSE38_TOPICS.map(t=>({
@@ -3316,14 +3322,23 @@ function Task21Tab({onReload}){
    h('label',null,'Режим'),
    h('select',{value:mode,onChange:e=>setMode(e.target.value)},
      h('option',{value:'current'},'Только текущая тема'),
-     h('option',{value:'cumulative'},'Накопительно')
+     h('option',{value:'cumulative'},'Накопительно'),
+     h('option',{value:'all'},'Все 38 тем')
    ),
    h('div',{className:'notice'},
      'Доступно: '+available.length+' · выбрано: '+chosen.length
    ),
    groups.map(g=>h('details',{key:g.id},
      h('summary',null,'Тема '+g.id+'. '+g.topic.name+' — '+g.rows.length+' заданий'),
-     g.rows.length>0&&h('button',{className:'btn ghost small',onClick:()=>toggleTopic(g.id,true)},'Выбрать тему')
+     g.rows.length>0&&h('button',{className:'btn ghost small',onClick:()=>toggleTopic(g.id,true)},'Выбрать тему'),
+     g.rows.length>0&&g.rows.map(q=>h('label',{className:'opt',key:q.id},
+       h('input',{
+         type:'checkbox',
+         checked:selected.includes(String(q.id)),
+         onChange:e=>setSelected(p=>e.target.checked?[...p,String(q.id)]:p.filter(x=>x!==String(q.id)))
+       }),
+       'ID '+q.id+' · '+(q.question_text||q.text||'')
+     ))
    )),
    h('label',null,'Количество заданий'),
    h('input',{type:'number',value:count,onChange:e=>setCount(e.target.value)}),
