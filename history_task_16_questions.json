@@ -21,7 +21,40 @@
     "imageFilename": "images/13343/task_99459_0.png",
     "imageFilenames": [
       "images/13343/task_99459_0.png"
-    ]
+    ],
+    "courseTopicId": 1,
+    "courseTopicName": "Восточные славяне и первые русские князья",
+    "topic": "Восточные славяне и первые русские князья",
+    "primaryCourseTopic": {
+      "id": 1,
+      "name": "Восточные славяне и первые русские князья"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 1,
+        "name": "Восточные славяне и первые русские князья"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья",
+      "primaryCourseTopic": {
+        "id": 1,
+        "name": "Восточные славяне и первые русские князья"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 1,
+          "name": "Восточные славяне и первые русские князья"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 129294,
@@ -45,7 +78,40 @@
     "imageFilename": "images/13343/task_129294_0.png",
     "imageFilenames": [
       "images/13343/task_129294_0.png"
-    ]
+    ],
+    "courseTopicId": 8,
+    "courseTopicName": "Первые Романовы. Россия в XVII веке",
+    "topic": "Первые Романовы. Россия в XVII веке",
+    "primaryCourseTopic": {
+      "id": 8,
+      "name": "Первые Романовы. Россия в XVII веке"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 8,
+        "name": "Первые Романовы. Россия в XVII веке"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 8,
+      "courseTopicName": "Первые Романовы. Россия в XVII веке",
+      "primaryCourseTopic": {
+        "id": 8,
+        "name": "Первые Романовы. Россия в XVII веке"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 8,
+          "name": "Первые Романовы. Россия в XVII веке"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 137001,
@@ -69,7 +135,40 @@
     "imageFilename": "images/13343/task_137001_0.png",
     "imageFilenames": [
       "images/13343/task_137001_0.png"
-    ]
+    ],
+    "courseTopicId": 7,
+    "courseTopicName": "Смутное время",
+    "topic": "Смутное время",
+    "primaryCourseTopic": {
+      "id": 7,
+      "name": "Смутное время"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 7,
+        "name": "Смутное время"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 7,
+      "courseTopicName": "Смутное время",
+      "primaryCourseTopic": {
+        "id": 7,
+        "name": "Смутное время"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 7,
+          "name": "Смутное время"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 137447,
@@ -93,7 +192,40 @@
     "imageFilename": "images/13343/task_137447_0.png",
     "imageFilenames": [
       "images/13343/task_137447_0.png"
-    ]
+    ],
+    "courseTopicId": 2,
+    "courseTopicName": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда",
+    "topic": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда",
+    "primaryCourseTopic": {
+      "id": 2,
+      "name": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 2,
+        "name": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 2,
+      "courseTopicName": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда",
+      "primaryCourseTopic": {
+        "id": 2,
+        "name": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 2,
+          "name": "Расцвет Древней Руси: Владимир, Ярослав, Русская Правда"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 137621,
@@ -117,7 +249,40 @@
     "imageFilename": "images/13343/task_137621_0.png",
     "imageFilenames": [
       "images/13343/task_137621_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 137957,
@@ -141,7 +306,40 @@
     "imageFilename": "images/13343/task_137957_0.png",
     "imageFilenames": [
       "images/13343/task_137957_0.png"
-    ]
+    ],
+    "courseTopicId": 3,
+    "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада",
+    "topic": "Раздробленность Руси. Нашествие с Востока и Запада",
+    "primaryCourseTopic": {
+      "id": 3,
+      "name": "Раздробленность Руси. Нашествие с Востока и Запада"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 3,
+        "name": "Раздробленность Руси. Нашествие с Востока и Запада"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 3,
+      "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада",
+      "primaryCourseTopic": {
+        "id": 3,
+        "name": "Раздробленность Руси. Нашествие с Востока и Запада"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 3,
+          "name": "Раздробленность Руси. Нашествие с Востока и Запада"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 197609,
@@ -165,7 +363,40 @@
     "imageFilename": "images/13343/task_197609_0.jpg",
     "imageFilenames": [
       "images/13343/task_197609_0.jpg"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 138511,
@@ -189,7 +420,40 @@
     "imageFilename": "images/13381/task_138511_0.png",
     "imageFilenames": [
       "images/13381/task_138511_0.png"
-    ]
+    ],
+    "courseTopicId": 3,
+    "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада",
+    "topic": "Раздробленность Руси. Нашествие с Востока и Запада",
+    "primaryCourseTopic": {
+      "id": 3,
+      "name": "Раздробленность Руси. Нашествие с Востока и Запада"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 3,
+        "name": "Раздробленность Руси. Нашествие с Востока и Запада"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 3,
+      "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада",
+      "primaryCourseTopic": {
+        "id": 3,
+        "name": "Раздробленность Руси. Нашествие с Востока и Запада"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 3,
+          "name": "Раздробленность Руси. Нашествие с Востока и Запада"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 138866,
@@ -213,7 +477,40 @@
     "imageFilename": "images/13381/task_138866_0.png",
     "imageFilenames": [
       "images/13381/task_138866_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 139189,
@@ -237,7 +534,40 @@
     "imageFilename": "images/13381/task_139189_0.png",
     "imageFilenames": [
       "images/13381/task_139189_0.png"
-    ]
+    ],
+    "courseTopicId": 8,
+    "courseTopicName": "Первые Романовы. Россия в XVII веке",
+    "topic": "Первые Романовы. Россия в XVII веке",
+    "primaryCourseTopic": {
+      "id": 8,
+      "name": "Первые Романовы. Россия в XVII веке"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 8,
+        "name": "Первые Романовы. Россия в XVII веке"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 8,
+      "courseTopicName": "Первые Романовы. Россия в XVII веке",
+      "primaryCourseTopic": {
+        "id": 8,
+        "name": "Первые Романовы. Россия в XVII веке"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 8,
+          "name": "Первые Романовы. Россия в XVII веке"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 141102,
@@ -261,7 +591,40 @@
     "imageFilename": "images/13381/task_141102_0.png",
     "imageFilenames": [
       "images/13381/task_141102_0.png"
-    ]
+    ],
+    "courseTopicId": 7,
+    "courseTopicName": "Смутное время",
+    "topic": "Смутное время",
+    "primaryCourseTopic": {
+      "id": 7,
+      "name": "Смутное время"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 7,
+        "name": "Смутное время"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 7,
+      "courseTopicName": "Смутное время",
+      "primaryCourseTopic": {
+        "id": 7,
+        "name": "Смутное время"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 7,
+          "name": "Смутное время"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 141400,
@@ -285,7 +648,40 @@
     "imageFilename": "images/13381/task_141400_0.png",
     "imageFilenames": [
       "images/13381/task_141400_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 142317,
@@ -309,7 +705,40 @@
     "imageFilename": "images/13381/task_142317_0.png",
     "imageFilenames": [
       "images/13381/task_142317_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 142607,
@@ -333,7 +762,40 @@
     "imageFilename": "images/13381/task_142607_0.png",
     "imageFilenames": [
       "images/13381/task_142607_0.png"
-    ]
+    ],
+    "courseTopicId": 31,
+    "courseTopicName": "СССР в 1945–1953 гг.",
+    "topic": "СССР в 1945–1953 гг.",
+    "primaryCourseTopic": {
+      "id": 31,
+      "name": "СССР в 1945–1953 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 31,
+        "name": "СССР в 1945–1953 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 31,
+      "courseTopicName": "СССР в 1945–1953 гг.",
+      "primaryCourseTopic": {
+        "id": 31,
+        "name": "СССР в 1945–1953 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 31,
+          "name": "СССР в 1945–1953 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 147738,
@@ -357,7 +819,40 @@
     "imageFilename": "images/13381/task_147738_0.png",
     "imageFilenames": [
       "images/13381/task_147738_0.png"
-    ]
+    ],
+    "courseTopicId": 7,
+    "courseTopicName": "Смутное время",
+    "topic": "Смутное время",
+    "primaryCourseTopic": {
+      "id": 7,
+      "name": "Смутное время"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 7,
+        "name": "Смутное время"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 7,
+      "courseTopicName": "Смутное время",
+      "primaryCourseTopic": {
+        "id": 7,
+        "name": "Смутное время"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 7,
+          "name": "Смутное время"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 147856,
@@ -381,7 +876,40 @@
     "imageFilename": "images/13381/task_147856_0.png",
     "imageFilenames": [
       "images/13381/task_147856_0.png"
-    ]
+    ],
+    "courseTopicId": 9,
+    "courseTopicName": "Пётр I: реформы и внешняя политика",
+    "topic": "Пётр I: реформы и внешняя политика",
+    "primaryCourseTopic": {
+      "id": 9,
+      "name": "Пётр I: реформы и внешняя политика"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 9,
+        "name": "Пётр I: реформы и внешняя политика"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 9,
+      "courseTopicName": "Пётр I: реформы и внешняя политика",
+      "primaryCourseTopic": {
+        "id": 9,
+        "name": "Пётр I: реформы и внешняя политика"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 9,
+          "name": "Пётр I: реформы и внешняя политика"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 148927,
@@ -405,7 +933,40 @@
     "imageFilename": "images/13381/task_148927_0.png",
     "imageFilenames": [
       "images/13381/task_148927_0.png"
-    ]
+    ],
+    "courseTopicId": 32,
+    "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "topic": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 32,
+      "name": "Хрущёв и «оттепель», 1953–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 32,
+      "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 32,
+          "name": "Хрущёв и «оттепель», 1953–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 150544,
@@ -429,7 +990,40 @@
     "imageFilename": "images/13381/task_150544_0.png",
     "imageFilenames": [
       "images/13381/task_150544_0.png"
-    ]
+    ],
+    "courseTopicId": 9,
+    "courseTopicName": "Пётр I: реформы и внешняя политика",
+    "topic": "Пётр I: реформы и внешняя политика",
+    "primaryCourseTopic": {
+      "id": 9,
+      "name": "Пётр I: реформы и внешняя политика"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 9,
+        "name": "Пётр I: реформы и внешняя политика"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 9,
+      "courseTopicName": "Пётр I: реформы и внешняя политика",
+      "primaryCourseTopic": {
+        "id": 9,
+        "name": "Пётр I: реформы и внешняя политика"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 9,
+          "name": "Пётр I: реформы и внешняя политика"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 151888,
@@ -453,7 +1047,40 @@
     "imageFilename": "images/13381/task_151888_0.png",
     "imageFilenames": [
       "images/13381/task_151888_0.png"
-    ]
+    ],
+    "courseTopicId": 6,
+    "courseTopicName": "Россия при Иване IV: реформы, опричнина, внешняя политика",
+    "topic": "Россия при Иване IV: реформы, опричнина, внешняя политика",
+    "primaryCourseTopic": {
+      "id": 6,
+      "name": "Россия при Иване IV: реформы, опричнина, внешняя политика"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 6,
+        "name": "Россия при Иване IV: реформы, опричнина, внешняя политика"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 6,
+      "courseTopicName": "Россия при Иване IV: реформы, опричнина, внешняя политика",
+      "primaryCourseTopic": {
+        "id": 6,
+        "name": "Россия при Иване IV: реформы, опричнина, внешняя политика"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 6,
+          "name": "Россия при Иване IV: реформы, опричнина, внешняя политика"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 153667,
@@ -477,7 +1104,40 @@
     "imageFilename": "images/13381/task_153667_0.png",
     "imageFilenames": [
       "images/13381/task_153667_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 154919,
@@ -501,7 +1161,40 @@
     "imageFilename": "images/13381/task_154919_0.png",
     "imageFilenames": [
       "images/13381/task_154919_0.png"
-    ]
+    ],
+    "courseTopicId": 9,
+    "courseTopicName": "Пётр I: реформы и внешняя политика",
+    "topic": "Пётр I: реформы и внешняя политика",
+    "primaryCourseTopic": {
+      "id": 9,
+      "name": "Пётр I: реформы и внешняя политика"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 9,
+        "name": "Пётр I: реформы и внешняя политика"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 9,
+      "courseTopicName": "Пётр I: реформы и внешняя политика",
+      "primaryCourseTopic": {
+        "id": 9,
+        "name": "Пётр I: реформы и внешняя политика"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 9,
+          "name": "Пётр I: реформы и внешняя политика"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 155478,
@@ -525,7 +1218,40 @@
     "imageFilename": "images/13381/task_155478_0.png",
     "imageFilenames": [
       "images/13381/task_155478_0.png"
-    ]
+    ],
+    "courseTopicId": 32,
+    "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "topic": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 32,
+      "name": "Хрущёв и «оттепель», 1953–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 32,
+      "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 32,
+          "name": "Хрущёв и «оттепель», 1953–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 156413,
@@ -549,7 +1275,40 @@
     "imageFilename": "images/13381/task_156413_0.png",
     "imageFilenames": [
       "images/13381/task_156413_0.png"
-    ]
+    ],
+    "courseTopicId": 4,
+    "courseTopicName": "Объединение русских земель вокруг Москвы",
+    "topic": "Объединение русских земель вокруг Москвы",
+    "primaryCourseTopic": {
+      "id": 4,
+      "name": "Объединение русских земель вокруг Москвы"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 4,
+        "name": "Объединение русских земель вокруг Москвы"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 4,
+      "courseTopicName": "Объединение русских земель вокруг Москвы",
+      "primaryCourseTopic": {
+        "id": 4,
+        "name": "Объединение русских земель вокруг Москвы"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 4,
+          "name": "Объединение русских земель вокруг Москвы"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 158030,
@@ -573,7 +1332,40 @@
     "imageFilename": "images/13381/task_158030_0.png",
     "imageFilenames": [
       "images/13381/task_158030_0.png"
-    ]
+    ],
+    "courseTopicId": 7,
+    "courseTopicName": "Смутное время",
+    "topic": "Смутное время",
+    "primaryCourseTopic": {
+      "id": 7,
+      "name": "Смутное время"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 7,
+        "name": "Смутное время"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 7,
+      "courseTopicName": "Смутное время",
+      "primaryCourseTopic": {
+        "id": 7,
+        "name": "Смутное время"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 7,
+          "name": "Смутное время"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 159207,
@@ -597,7 +1389,40 @@
     "imageFilename": "images/13381/task_159207_0.png",
     "imageFilenames": [
       "images/13381/task_159207_0.png"
-    ]
+    ],
+    "courseTopicId": 4,
+    "courseTopicName": "Объединение русских земель вокруг Москвы",
+    "topic": "Объединение русских земель вокруг Москвы",
+    "primaryCourseTopic": {
+      "id": 4,
+      "name": "Объединение русских земель вокруг Москвы"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 4,
+        "name": "Объединение русских земель вокруг Москвы"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 4,
+      "courseTopicName": "Объединение русских земель вокруг Москвы",
+      "primaryCourseTopic": {
+        "id": 4,
+        "name": "Объединение русских земель вокруг Москвы"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 4,
+          "name": "Объединение русских земель вокруг Москвы"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 161201,
@@ -621,7 +1446,40 @@
     "imageFilename": "images/13381/task_161201_0.png",
     "imageFilenames": [
       "images/13381/task_161201_0.png"
-    ]
+    ],
+    "courseTopicId": 32,
+    "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "topic": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 32,
+      "name": "Хрущёв и «оттепель», 1953–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 32,
+      "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 32,
+          "name": "Хрущёв и «оттепель», 1953–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 162332,
@@ -645,7 +1503,40 @@
     "imageFilename": "images/13381/task_162332_0.png",
     "imageFilenames": [
       "images/13381/task_162332_0.png"
-    ]
+    ],
+    "courseTopicId": 31,
+    "courseTopicName": "СССР в 1945–1953 гг.",
+    "topic": "СССР в 1945–1953 гг.",
+    "primaryCourseTopic": {
+      "id": 31,
+      "name": "СССР в 1945–1953 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 31,
+        "name": "СССР в 1945–1953 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 31,
+      "courseTopicName": "СССР в 1945–1953 гг.",
+      "primaryCourseTopic": {
+        "id": 31,
+        "name": "СССР в 1945–1953 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 31,
+          "name": "СССР в 1945–1953 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 164089,
@@ -669,7 +1560,40 @@
     "imageFilename": "images/13381/task_164089_0.png",
     "imageFilenames": [
       "images/13381/task_164089_0.png"
-    ]
+    ],
+    "courseTopicId": 15,
+    "courseTopicName": "Александр I и Отечественная война 1812 года",
+    "topic": "Александр I и Отечественная война 1812 года",
+    "primaryCourseTopic": {
+      "id": 15,
+      "name": "Александр I и Отечественная война 1812 года"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 15,
+        "name": "Александр I и Отечественная война 1812 года"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 15,
+      "courseTopicName": "Александр I и Отечественная война 1812 года",
+      "primaryCourseTopic": {
+        "id": 15,
+        "name": "Александр I и Отечественная война 1812 года"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 15,
+          "name": "Александр I и Отечественная война 1812 года"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 166194,
@@ -693,7 +1617,40 @@
     "imageFilename": "images/13381/task_166194_0.png",
     "imageFilenames": [
       "images/13381/task_166194_0.png"
-    ]
+    ],
+    "courseTopicId": 15,
+    "courseTopicName": "Александр I и Отечественная война 1812 года",
+    "topic": "Александр I и Отечественная война 1812 года",
+    "primaryCourseTopic": {
+      "id": 15,
+      "name": "Александр I и Отечественная война 1812 года"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 15,
+        "name": "Александр I и Отечественная война 1812 года"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 15,
+      "courseTopicName": "Александр I и Отечественная война 1812 года",
+      "primaryCourseTopic": {
+        "id": 15,
+        "name": "Александр I и Отечественная война 1812 года"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 15,
+          "name": "Александр I и Отечественная война 1812 года"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 168745,
@@ -717,7 +1674,40 @@
     "imageFilename": "images/13381/task_168745_0.png",
     "imageFilenames": [
       "images/13381/task_168745_0.png"
-    ]
+    ],
+    "courseTopicId": 35,
+    "courseTopicName": "Перестройка",
+    "topic": "Перестройка",
+    "primaryCourseTopic": {
+      "id": 35,
+      "name": "Перестройка"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 35,
+        "name": "Перестройка"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 35,
+      "courseTopicName": "Перестройка",
+      "primaryCourseTopic": {
+        "id": 35,
+        "name": "Перестройка"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 35,
+          "name": "Перестройка"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 169835,
@@ -741,7 +1731,40 @@
     "imageFilename": "images/13381/task_169835_0.png",
     "imageFilenames": [
       "images/13381/task_169835_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 169863,
@@ -765,7 +1788,40 @@
     "imageFilename": "images/13381/task_169863_0.png",
     "imageFilenames": [
       "images/13381/task_169863_0.png"
-    ]
+    ],
+    "courseTopicId": 37,
+    "courseTopicName": "Россия в 1990-е гг. + культура",
+    "topic": "Россия в 1990-е гг. + культура",
+    "primaryCourseTopic": {
+      "id": 37,
+      "name": "Россия в 1990-е гг. + культура"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 37,
+        "name": "Россия в 1990-е гг. + культура"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 37,
+      "courseTopicName": "Россия в 1990-е гг. + культура",
+      "primaryCourseTopic": {
+        "id": 37,
+        "name": "Россия в 1990-е гг. + культура"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 37,
+          "name": "Россия в 1990-е гг. + культура"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 169903,
@@ -789,7 +1845,40 @@
     "imageFilename": "images/13381/task_169903_0.png",
     "imageFilenames": [
       "images/13381/task_169903_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 174433,
@@ -813,7 +1902,40 @@
     "imageFilename": "images/13381/task_174433_0.jpg",
     "imageFilenames": [
       "images/13381/task_174433_0.jpg"
-    ]
+    ],
+    "courseTopicId": 35,
+    "courseTopicName": "Перестройка",
+    "topic": "Перестройка",
+    "primaryCourseTopic": {
+      "id": 35,
+      "name": "Перестройка"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 35,
+        "name": "Перестройка"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 35,
+      "courseTopicName": "Перестройка",
+      "primaryCourseTopic": {
+        "id": 35,
+        "name": "Перестройка"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 35,
+          "name": "Перестройка"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 175731,
@@ -837,7 +1959,40 @@
     "imageFilename": "images/13381/task_175731_0.png",
     "imageFilenames": [
       "images/13381/task_175731_0.png"
-    ]
+    ],
+    "courseTopicId": 32,
+    "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "topic": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 32,
+      "name": "Хрущёв и «оттепель», 1953–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 32,
+      "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 32,
+          "name": "Хрущёв и «оттепель», 1953–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 176203,
@@ -861,7 +2016,40 @@
     "imageFilename": "images/13381/task_176203_0.png",
     "imageFilenames": [
       "images/13381/task_176203_0.png"
-    ]
+    ],
+    "courseTopicId": 32,
+    "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "topic": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 32,
+      "name": "Хрущёв и «оттепель», 1953–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 32,
+      "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 32,
+          "name": "Хрущёв и «оттепель», 1953–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 176579,
@@ -885,7 +2073,40 @@
     "imageFilename": "images/13381/task_176579_0.png",
     "imageFilenames": [
       "images/13381/task_176579_0.png"
-    ]
+    ],
+    "courseTopicId": 32,
+    "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "topic": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 32,
+      "name": "Хрущёв и «оттепель», 1953–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 32,
+      "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 32,
+          "name": "Хрущёв и «оттепель», 1953–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 177663,
@@ -909,7 +2130,40 @@
     "imageFilename": "images/13381/task_177663_0.png",
     "imageFilenames": [
       "images/13381/task_177663_0.png"
-    ]
+    ],
+    "courseTopicId": 18,
+    "courseTopicName": "Александр III и социально-экономическое развитие конца XIX века",
+    "topic": "Александр III и социально-экономическое развитие конца XIX века",
+    "primaryCourseTopic": {
+      "id": 18,
+      "name": "Александр III и социально-экономическое развитие конца XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 18,
+        "name": "Александр III и социально-экономическое развитие конца XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 18,
+      "courseTopicName": "Александр III и социально-экономическое развитие конца XIX века",
+      "primaryCourseTopic": {
+        "id": 18,
+        "name": "Александр III и социально-экономическое развитие конца XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 18,
+          "name": "Александр III и социально-экономическое развитие конца XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 178526,
@@ -933,7 +2187,40 @@
     "imageFilename": "images/13381/task_178526_0.png",
     "imageFilenames": [
       "images/13381/task_178526_0.png"
-    ]
+    ],
+    "courseTopicId": 28,
+    "courseTopicName": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика",
+    "topic": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика",
+    "primaryCourseTopic": {
+      "id": 28,
+      "name": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 28,
+        "name": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 28,
+      "courseTopicName": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика",
+      "primaryCourseTopic": {
+        "id": 28,
+        "name": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 28,
+          "name": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 181484,
@@ -957,7 +2244,40 @@
     "imageFilename": "images/13381/task_181484_0.png",
     "imageFilenames": [
       "images/13381/task_181484_0.png"
-    ]
+    ],
+    "courseTopicId": 7,
+    "courseTopicName": "Смутное время",
+    "topic": "Смутное время",
+    "primaryCourseTopic": {
+      "id": 7,
+      "name": "Смутное время"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 7,
+        "name": "Смутное время"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 7,
+      "courseTopicName": "Смутное время",
+      "primaryCourseTopic": {
+        "id": 7,
+        "name": "Смутное время"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 7,
+          "name": "Смутное время"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 202341,
@@ -981,7 +2301,40 @@
     "imageFilename": "images/13381/task_202341_0.jpg",
     "imageFilenames": [
       "images/13381/task_202341_0.jpg"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 94975,
@@ -1005,7 +2358,40 @@
     "imageFilename": "images/13401/task_94975_0.png",
     "imageFilenames": [
       "images/13401/task_94975_0.png"
-    ]
+    ],
+    "courseTopicId": 14,
+    "courseTopicName": "Культура XVIII века",
+    "topic": "Культура XVIII века",
+    "primaryCourseTopic": {
+      "id": 14,
+      "name": "Культура XVIII века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 14,
+        "name": "Культура XVIII века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 14,
+      "courseTopicName": "Культура XVIII века",
+      "primaryCourseTopic": {
+        "id": 14,
+        "name": "Культура XVIII века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 14,
+          "name": "Культура XVIII века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 94979,
@@ -1029,7 +2415,40 @@
     "imageFilename": "images/13401/task_94979_0.png",
     "imageFilenames": [
       "images/13401/task_94979_0.png"
-    ]
+    ],
+    "courseTopicId": 17,
+    "courseTopicName": "Александр II и Великие реформы",
+    "topic": "Александр II и Великие реформы",
+    "primaryCourseTopic": {
+      "id": 17,
+      "name": "Александр II и Великие реформы"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 17,
+        "name": "Александр II и Великие реформы"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 17,
+      "courseTopicName": "Александр II и Великие реформы",
+      "primaryCourseTopic": {
+        "id": 17,
+        "name": "Александр II и Великие реформы"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 17,
+          "name": "Александр II и Великие реформы"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 94997,
@@ -1053,7 +2472,40 @@
     "imageFilename": "images/13401/task_94997_0.png",
     "imageFilenames": [
       "images/13401/task_94997_0.png"
-    ]
+    ],
+    "courseTopicId": 10,
+    "courseTopicName": "Культура XVI–XVII вв.",
+    "topic": "Культура XVI–XVII вв.",
+    "primaryCourseTopic": {
+      "id": 10,
+      "name": "Культура XVI–XVII вв."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 10,
+      "courseTopicName": "Культура XVI–XVII вв.",
+      "primaryCourseTopic": {
+        "id": 10,
+        "name": "Культура XVI–XVII вв."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 10,
+          "name": "Культура XVI–XVII вв."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95005,
@@ -1077,7 +2529,40 @@
     "imageFilename": "images/13401/task_95005_0.png",
     "imageFilenames": [
       "images/13401/task_95005_0.png"
-    ]
+    ],
+    "courseTopicId": 7,
+    "courseTopicName": "Смутное время",
+    "topic": "Смутное время",
+    "primaryCourseTopic": {
+      "id": 7,
+      "name": "Смутное время"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 7,
+        "name": "Смутное время"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 7,
+      "courseTopicName": "Смутное время",
+      "primaryCourseTopic": {
+        "id": 7,
+        "name": "Смутное время"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 7,
+          "name": "Смутное время"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95010,
@@ -1101,7 +2586,40 @@
     "imageFilename": "images/13401/task_95010_0.png",
     "imageFilenames": [
       "images/13401/task_95010_0.png"
-    ]
+    ],
+    "courseTopicId": 28,
+    "courseTopicName": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика",
+    "topic": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика",
+    "primaryCourseTopic": {
+      "id": 28,
+      "name": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 28,
+        "name": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 28,
+      "courseTopicName": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика",
+      "primaryCourseTopic": {
+        "id": 28,
+        "name": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 28,
+          "name": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95014,
@@ -1125,7 +2643,40 @@
     "imageFilename": "images/13401/task_95014_0.png",
     "imageFilenames": [
       "images/13401/task_95014_0.png"
-    ]
+    ],
+    "courseTopicId": 31,
+    "courseTopicName": "СССР в 1945–1953 гг.",
+    "topic": "СССР в 1945–1953 гг.",
+    "primaryCourseTopic": {
+      "id": 31,
+      "name": "СССР в 1945–1953 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 31,
+        "name": "СССР в 1945–1953 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 31,
+      "courseTopicName": "СССР в 1945–1953 гг.",
+      "primaryCourseTopic": {
+        "id": 31,
+        "name": "СССР в 1945–1953 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 31,
+          "name": "СССР в 1945–1953 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95017,
@@ -1149,7 +2700,40 @@
     "imageFilename": "images/13401/task_95017_0.png",
     "imageFilenames": [
       "images/13401/task_95017_0.png"
-    ]
+    ],
+    "courseTopicId": 17,
+    "courseTopicName": "Александр II и Великие реформы",
+    "topic": "Александр II и Великие реформы",
+    "primaryCourseTopic": {
+      "id": 17,
+      "name": "Александр II и Великие реформы"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 17,
+        "name": "Александр II и Великие реформы"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 17,
+      "courseTopicName": "Александр II и Великие реформы",
+      "primaryCourseTopic": {
+        "id": 17,
+        "name": "Александр II и Великие реформы"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 17,
+          "name": "Александр II и Великие реформы"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95022,
@@ -1173,7 +2757,40 @@
     "imageFilename": "images/13401/task_95022_0.png",
     "imageFilenames": [
       "images/13401/task_95022_0.png"
-    ]
+    ],
+    "courseTopicId": 20,
+    "courseTopicName": "Культура XIX века",
+    "topic": "Культура XIX века",
+    "primaryCourseTopic": {
+      "id": 20,
+      "name": "Культура XIX века"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 20,
+        "name": "Культура XIX века"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 20,
+      "courseTopicName": "Культура XIX века",
+      "primaryCourseTopic": {
+        "id": 20,
+        "name": "Культура XIX века"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 20,
+          "name": "Культура XIX века"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95024,
@@ -1197,7 +2814,40 @@
     "imageFilename": "images/13401/task_95024_0.png",
     "imageFilenames": [
       "images/13401/task_95024_0.png"
-    ]
+    ],
+    "courseTopicId": 32,
+    "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "topic": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 32,
+      "name": "Хрущёв и «оттепель», 1953–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 32,
+      "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 32,
+          "name": "Хрущёв и «оттепель», 1953–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95026,
@@ -1221,7 +2871,40 @@
     "imageFilename": "images/13401/task_95026_0.png",
     "imageFilenames": [
       "images/13401/task_95026_0.png"
-    ]
+    ],
+    "courseTopicId": 19,
+    "courseTopicName": "Николай II: внутренняя и внешняя политика до 1905 года",
+    "topic": "Николай II: внутренняя и внешняя политика до 1905 года",
+    "primaryCourseTopic": {
+      "id": 19,
+      "name": "Николай II: внутренняя и внешняя политика до 1905 года"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 19,
+        "name": "Николай II: внутренняя и внешняя политика до 1905 года"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 19,
+      "courseTopicName": "Николай II: внутренняя и внешняя политика до 1905 года",
+      "primaryCourseTopic": {
+        "id": 19,
+        "name": "Николай II: внутренняя и внешняя политика до 1905 года"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 19,
+          "name": "Николай II: внутренняя и внешняя политика до 1905 года"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95027,
@@ -1245,7 +2928,40 @@
     "imageFilename": "images/13401/task_95027_0.png",
     "imageFilenames": [
       "images/13401/task_95027_0.png"
-    ]
+    ],
+    "courseTopicId": 3,
+    "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада",
+    "topic": "Раздробленность Руси. Нашествие с Востока и Запада",
+    "primaryCourseTopic": {
+      "id": 3,
+      "name": "Раздробленность Руси. Нашествие с Востока и Запада"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 3,
+        "name": "Раздробленность Руси. Нашествие с Востока и Запада"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 3,
+      "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада",
+      "primaryCourseTopic": {
+        "id": 3,
+        "name": "Раздробленность Руси. Нашествие с Востока и Запада"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 3,
+          "name": "Раздробленность Руси. Нашествие с Востока и Запада"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95028,
@@ -1269,7 +2985,40 @@
     "imageFilename": "images/13401/task_95028_0.png",
     "imageFilenames": [
       "images/13401/task_95028_0.png"
-    ]
+    ],
+    "courseTopicId": 26,
+    "courseTopicName": "Гражданская война и военный коммунизм",
+    "topic": "Гражданская война и военный коммунизм",
+    "primaryCourseTopic": {
+      "id": 26,
+      "name": "Гражданская война и военный коммунизм"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 26,
+        "name": "Гражданская война и военный коммунизм"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 26,
+      "courseTopicName": "Гражданская война и военный коммунизм",
+      "primaryCourseTopic": {
+        "id": 26,
+        "name": "Гражданская война и военный коммунизм"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 26,
+          "name": "Гражданская война и военный коммунизм"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95029,
@@ -1293,7 +3042,40 @@
     "imageFilename": "images/13401/task_95029_0.png",
     "imageFilenames": [
       "images/13401/task_95029_0.png"
-    ]
+    ],
+    "courseTopicId": 30,
+    "courseTopicName": "Великая Отечественная война",
+    "topic": "Великая Отечественная война",
+    "primaryCourseTopic": {
+      "id": 30,
+      "name": "Великая Отечественная война"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 30,
+        "name": "Великая Отечественная война"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 30,
+      "courseTopicName": "Великая Отечественная война",
+      "primaryCourseTopic": {
+        "id": 30,
+        "name": "Великая Отечественная война"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 30,
+          "name": "Великая Отечественная война"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95030,
@@ -1317,7 +3099,40 @@
     "imageFilename": "images/13401/task_95030_0.png",
     "imageFilenames": [
       "images/13401/task_95030_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95035,
@@ -1341,7 +3156,40 @@
     "imageFilename": "images/13401/task_95035_0.png",
     "imageFilenames": [
       "images/13401/task_95035_0.png"
-    ]
+    ],
+    "courseTopicId": 8,
+    "courseTopicName": "Первые Романовы. Россия в XVII веке",
+    "topic": "Первые Романовы. Россия в XVII веке",
+    "primaryCourseTopic": {
+      "id": 8,
+      "name": "Первые Романовы. Россия в XVII веке"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 8,
+        "name": "Первые Романовы. Россия в XVII веке"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 8,
+      "courseTopicName": "Первые Романовы. Россия в XVII веке",
+      "primaryCourseTopic": {
+        "id": 8,
+        "name": "Первые Романовы. Россия в XVII веке"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 8,
+          "name": "Первые Романовы. Россия в XVII веке"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95037,
@@ -1365,7 +3213,40 @@
     "imageFilename": "images/13401/task_95037_0.png",
     "imageFilenames": [
       "images/13401/task_95037_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95038,
@@ -1389,7 +3270,40 @@
     "imageFilename": "images/13401/task_95038_0.png",
     "imageFilenames": [
       "images/13401/task_95038_0.png"
-    ]
+    ],
+    "courseTopicId": 8,
+    "courseTopicName": "Первые Романовы. Россия в XVII веке",
+    "topic": "Первые Романовы. Россия в XVII веке",
+    "primaryCourseTopic": {
+      "id": 8,
+      "name": "Первые Романовы. Россия в XVII веке"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 8,
+        "name": "Первые Романовы. Россия в XVII веке"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 8,
+      "courseTopicName": "Первые Романовы. Россия в XVII веке",
+      "primaryCourseTopic": {
+        "id": 8,
+        "name": "Первые Романовы. Россия в XVII веке"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 8,
+          "name": "Первые Романовы. Россия в XVII веке"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95039,
@@ -1413,7 +3327,40 @@
     "imageFilename": "images/13401/task_95039_0.png",
     "imageFilenames": [
       "images/13401/task_95039_0.png"
-    ]
+    ],
+    "courseTopicId": 32,
+    "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "topic": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 32,
+      "name": "Хрущёв и «оттепель», 1953–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 32,
+      "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 32,
+          "name": "Хрущёв и «оттепель», 1953–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95040,
@@ -1437,7 +3384,40 @@
     "imageFilename": "images/13401/task_95040_0.png",
     "imageFilenames": [
       "images/13401/task_95040_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95042,
@@ -1461,7 +3441,40 @@
     "imageFilename": "images/13401/task_95042_0.png",
     "imageFilenames": [
       "images/13401/task_95042_0.png"
-    ]
+    ],
+    "courseTopicId": 38,
+    "courseTopicName": "Россия в 2000-е–2020-е гг. + культура",
+    "topic": "Россия в 2000-е–2020-е гг. + культура",
+    "primaryCourseTopic": {
+      "id": 38,
+      "name": "Россия в 2000-е–2020-е гг. + культура"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 38,
+        "name": "Россия в 2000-е–2020-е гг. + культура"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 38,
+      "courseTopicName": "Россия в 2000-е–2020-е гг. + культура",
+      "primaryCourseTopic": {
+        "id": 38,
+        "name": "Россия в 2000-е–2020-е гг. + культура"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 38,
+          "name": "Россия в 2000-е–2020-е гг. + культура"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 95045,
@@ -1485,7 +3498,40 @@
     "imageFilename": "images/13401/task_95045_0.png",
     "imageFilenames": [
       "images/13401/task_95045_0.png"
-    ]
+    ],
+    "courseTopicId": 25,
+    "courseTopicName": "Первые преобразования большевиков",
+    "topic": "Первые преобразования большевиков",
+    "primaryCourseTopic": {
+      "id": 25,
+      "name": "Первые преобразования большевиков"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 25,
+        "name": "Первые преобразования большевиков"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 25,
+      "courseTopicName": "Первые преобразования большевиков",
+      "primaryCourseTopic": {
+        "id": 25,
+        "name": "Первые преобразования большевиков"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 25,
+          "name": "Первые преобразования большевиков"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 102909,
@@ -1509,7 +3555,40 @@
     "imageFilename": "images/13401/task_102909_0.png",
     "imageFilenames": [
       "images/13401/task_102909_0.png"
-    ]
+    ],
+    "courseTopicId": 13,
+    "courseTopicName": "Павел I",
+    "topic": "Павел I",
+    "primaryCourseTopic": {
+      "id": 13,
+      "name": "Павел I"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 13,
+        "name": "Павел I"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 13,
+      "courseTopicName": "Павел I",
+      "primaryCourseTopic": {
+        "id": 13,
+        "name": "Павел I"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 13,
+          "name": "Павел I"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 102911,
@@ -1533,7 +3612,40 @@
     "imageFilename": "images/13401/task_102911_0.png",
     "imageFilenames": [
       "images/13401/task_102911_0.png"
-    ]
+    ],
+    "courseTopicId": 6,
+    "courseTopicName": "Россия при Иване IV: реформы, опричнина, внешняя политика",
+    "topic": "Россия при Иване IV: реформы, опричнина, внешняя политика",
+    "primaryCourseTopic": {
+      "id": 6,
+      "name": "Россия при Иване IV: реформы, опричнина, внешняя политика"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 6,
+        "name": "Россия при Иване IV: реформы, опричнина, внешняя политика"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 6,
+      "courseTopicName": "Россия при Иване IV: реформы, опричнина, внешняя политика",
+      "primaryCourseTopic": {
+        "id": 6,
+        "name": "Россия при Иване IV: реформы, опричнина, внешняя политика"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 6,
+          "name": "Россия при Иване IV: реформы, опричнина, внешняя политика"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 102913,
@@ -1557,7 +3669,40 @@
     "imageFilename": "images/13401/task_102913_0.png",
     "imageFilenames": [
       "images/13401/task_102913_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116182,
@@ -1581,7 +3726,40 @@
     "imageFilename": "images/13401/task_116182_0.png",
     "imageFilenames": [
       "images/13401/task_116182_0.png"
-    ]
+    ],
+    "courseTopicId": 32,
+    "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "topic": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 32,
+      "name": "Хрущёв и «оттепель», 1953–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 32,
+      "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 32,
+          "name": "Хрущёв и «оттепель», 1953–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116191,
@@ -1605,7 +3783,40 @@
     "imageFilename": "images/13401/task_116191_0.png",
     "imageFilenames": [
       "images/13401/task_116191_0.png"
-    ]
+    ],
+    "courseTopicId": 19,
+    "courseTopicName": "Николай II: внутренняя и внешняя политика до 1905 года",
+    "topic": "Николай II: внутренняя и внешняя политика до 1905 года",
+    "primaryCourseTopic": {
+      "id": 19,
+      "name": "Николай II: внутренняя и внешняя политика до 1905 года"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 19,
+        "name": "Николай II: внутренняя и внешняя политика до 1905 года"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 19,
+      "courseTopicName": "Николай II: внутренняя и внешняя политика до 1905 года",
+      "primaryCourseTopic": {
+        "id": 19,
+        "name": "Николай II: внутренняя и внешняя политика до 1905 года"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 19,
+          "name": "Николай II: внутренняя и внешняя политика до 1905 года"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116195,
@@ -1629,7 +3840,40 @@
     "imageFilename": "images/13401/task_116195_0.png",
     "imageFilenames": [
       "images/13401/task_116195_0.png"
-    ]
+    ],
+    "courseTopicId": 35,
+    "courseTopicName": "Перестройка",
+    "topic": "Перестройка",
+    "primaryCourseTopic": {
+      "id": 35,
+      "name": "Перестройка"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 35,
+        "name": "Перестройка"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 35,
+      "courseTopicName": "Перестройка",
+      "primaryCourseTopic": {
+        "id": 35,
+        "name": "Перестройка"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 35,
+          "name": "Перестройка"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116197,
@@ -1653,7 +3897,40 @@
     "imageFilename": "images/13401/task_116197_0.png",
     "imageFilenames": [
       "images/13401/task_116197_0.png"
-    ]
+    ],
+    "courseTopicId": 32,
+    "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "topic": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 32,
+      "name": "Хрущёв и «оттепель», 1953–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 32,
+      "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 32,
+          "name": "Хрущёв и «оттепель», 1953–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116200,
@@ -1677,7 +3954,40 @@
     "imageFilename": "images/13401/task_116200_0.png",
     "imageFilenames": [
       "images/13401/task_116200_0.png"
-    ]
+    ],
+    "courseTopicId": 1,
+    "courseTopicName": "Восточные славяне и первые русские князья",
+    "topic": "Восточные славяне и первые русские князья",
+    "primaryCourseTopic": {
+      "id": 1,
+      "name": "Восточные славяне и первые русские князья"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 1,
+        "name": "Восточные славяне и первые русские князья"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья",
+      "primaryCourseTopic": {
+        "id": 1,
+        "name": "Восточные славяне и первые русские князья"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 1,
+          "name": "Восточные славяне и первые русские князья"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116203,
@@ -1701,7 +4011,40 @@
     "imageFilename": "images/13401/task_116203_0.png",
     "imageFilenames": [
       "images/13401/task_116203_0.png"
-    ]
+    ],
+    "courseTopicId": 35,
+    "courseTopicName": "Перестройка",
+    "topic": "Перестройка",
+    "primaryCourseTopic": {
+      "id": 35,
+      "name": "Перестройка"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 35,
+        "name": "Перестройка"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 35,
+      "courseTopicName": "Перестройка",
+      "primaryCourseTopic": {
+        "id": 35,
+        "name": "Перестройка"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 35,
+          "name": "Перестройка"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116206,
@@ -1725,7 +4068,40 @@
     "imageFilename": "images/13401/task_116206_0.png",
     "imageFilenames": [
       "images/13401/task_116206_0.png"
-    ]
+    ],
+    "courseTopicId": 21,
+    "courseTopicName": "Первая российская революция 1905–1907 гг.",
+    "topic": "Первая российская революция 1905–1907 гг.",
+    "primaryCourseTopic": {
+      "id": 21,
+      "name": "Первая российская революция 1905–1907 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 21,
+        "name": "Первая российская революция 1905–1907 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 21,
+      "courseTopicName": "Первая российская революция 1905–1907 гг.",
+      "primaryCourseTopic": {
+        "id": 21,
+        "name": "Первая российская революция 1905–1907 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 21,
+          "name": "Первая российская революция 1905–1907 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116209,
@@ -1749,7 +4125,40 @@
     "imageFilename": "images/13401/task_116209_0.png",
     "imageFilenames": [
       "images/13401/task_116209_0.png"
-    ]
+    ],
+    "courseTopicId": 1,
+    "courseTopicName": "Восточные славяне и первые русские князья",
+    "topic": "Восточные славяне и первые русские князья",
+    "primaryCourseTopic": {
+      "id": 1,
+      "name": "Восточные славяне и первые русские князья"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 1,
+        "name": "Восточные славяне и первые русские князья"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 1,
+      "courseTopicName": "Восточные славяне и первые русские князья",
+      "primaryCourseTopic": {
+        "id": 1,
+        "name": "Восточные славяне и первые русские князья"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 1,
+          "name": "Восточные славяне и первые русские князья"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116214,
@@ -1773,7 +4182,40 @@
     "imageFilename": "images/13401/task_116214_0.png",
     "imageFilenames": [
       "images/13401/task_116214_0.png"
-    ]
+    ],
+    "courseTopicId": 32,
+    "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "topic": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 32,
+      "name": "Хрущёв и «оттепель», 1953–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 32,
+      "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 32,
+          "name": "Хрущёв и «оттепель», 1953–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116217,
@@ -1797,7 +4239,40 @@
     "imageFilename": "images/13401/task_116217_0.png",
     "imageFilenames": [
       "images/13401/task_116217_0.png"
-    ]
+    ],
+    "courseTopicId": 34,
+    "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+    "topic": "СССР в 1964–1985 гг. — «застой»",
+    "primaryCourseTopic": {
+      "id": 34,
+      "name": "СССР в 1964–1985 гг. — «застой»"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 34,
+      "courseTopicName": "СССР в 1964–1985 гг. — «застой»",
+      "primaryCourseTopic": {
+        "id": 34,
+        "name": "СССР в 1964–1985 гг. — «застой»"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 34,
+          "name": "СССР в 1964–1985 гг. — «застой»"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116219,
@@ -1821,7 +4296,40 @@
     "imageFilename": "images/13401/task_116219_0.png",
     "imageFilenames": [
       "images/13401/task_116219_0.png"
-    ]
+    ],
+    "courseTopicId": 19,
+    "courseTopicName": "Николай II: внутренняя и внешняя политика до 1905 года",
+    "topic": "Николай II: внутренняя и внешняя политика до 1905 года",
+    "primaryCourseTopic": {
+      "id": 19,
+      "name": "Николай II: внутренняя и внешняя политика до 1905 года"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 19,
+        "name": "Николай II: внутренняя и внешняя политика до 1905 года"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 19,
+      "courseTopicName": "Николай II: внутренняя и внешняя политика до 1905 года",
+      "primaryCourseTopic": {
+        "id": 19,
+        "name": "Николай II: внутренняя и внешняя политика до 1905 года"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 19,
+          "name": "Николай II: внутренняя и внешняя политика до 1905 года"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116221,
@@ -1845,7 +4353,40 @@
     "imageFilename": "images/13401/task_116221_0.png",
     "imageFilenames": [
       "images/13401/task_116221_0.png"
-    ]
+    ],
+    "courseTopicId": 7,
+    "courseTopicName": "Смутное время",
+    "topic": "Смутное время",
+    "primaryCourseTopic": {
+      "id": 7,
+      "name": "Смутное время"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 7,
+        "name": "Смутное время"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 7,
+      "courseTopicName": "Смутное время",
+      "primaryCourseTopic": {
+        "id": 7,
+        "name": "Смутное время"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 7,
+          "name": "Смутное время"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116223,
@@ -1869,7 +4410,40 @@
     "imageFilename": "images/13401/task_116223_0.png",
     "imageFilenames": [
       "images/13401/task_116223_0.png"
-    ]
+    ],
+    "courseTopicId": 7,
+    "courseTopicName": "Смутное время",
+    "topic": "Смутное время",
+    "primaryCourseTopic": {
+      "id": 7,
+      "name": "Смутное время"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 7,
+        "name": "Смутное время"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 7,
+      "courseTopicName": "Смутное время",
+      "primaryCourseTopic": {
+        "id": 7,
+        "name": "Смутное время"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 7,
+          "name": "Смутное время"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116226,
@@ -1893,7 +4467,40 @@
     "imageFilename": "images/13401/task_116226_0.png",
     "imageFilenames": [
       "images/13401/task_116226_0.png"
-    ]
+    ],
+    "courseTopicId": 7,
+    "courseTopicName": "Смутное время",
+    "topic": "Смутное время",
+    "primaryCourseTopic": {
+      "id": 7,
+      "name": "Смутное время"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 7,
+        "name": "Смутное время"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 7,
+      "courseTopicName": "Смутное время",
+      "primaryCourseTopic": {
+        "id": 7,
+        "name": "Смутное время"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 7,
+          "name": "Смутное время"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116229,
@@ -1917,7 +4524,40 @@
     "imageFilename": "images/13401/task_116229_0.png",
     "imageFilenames": [
       "images/13401/task_116229_0.png"
-    ]
+    ],
+    "courseTopicId": 8,
+    "courseTopicName": "Первые Романовы. Россия в XVII веке",
+    "topic": "Первые Романовы. Россия в XVII веке",
+    "primaryCourseTopic": {
+      "id": 8,
+      "name": "Первые Романовы. Россия в XVII веке"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 8,
+        "name": "Первые Романовы. Россия в XVII веке"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 8,
+      "courseTopicName": "Первые Романовы. Россия в XVII веке",
+      "primaryCourseTopic": {
+        "id": 8,
+        "name": "Первые Романовы. Россия в XVII веке"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 8,
+          "name": "Первые Романовы. Россия в XVII веке"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116235,
@@ -1941,7 +4581,40 @@
     "imageFilename": "images/13401/task_116235_0.png",
     "imageFilenames": [
       "images/13401/task_116235_0.png"
-    ]
+    ],
+    "courseTopicId": 12,
+    "courseTopicName": "Екатерина II: внутренняя и внешняя политика",
+    "topic": "Екатерина II: внутренняя и внешняя политика",
+    "primaryCourseTopic": {
+      "id": 12,
+      "name": "Екатерина II: внутренняя и внешняя политика"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 12,
+        "name": "Екатерина II: внутренняя и внешняя политика"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 12,
+      "courseTopicName": "Екатерина II: внутренняя и внешняя политика",
+      "primaryCourseTopic": {
+        "id": 12,
+        "name": "Екатерина II: внутренняя и внешняя политика"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 12,
+          "name": "Екатерина II: внутренняя и внешняя политика"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116238,
@@ -1965,7 +4638,40 @@
     "imageFilename": "images/13401/task_116238_0.png",
     "imageFilenames": [
       "images/13401/task_116238_0.png"
-    ]
+    ],
+    "courseTopicId": 3,
+    "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада",
+    "topic": "Раздробленность Руси. Нашествие с Востока и Запада",
+    "primaryCourseTopic": {
+      "id": 3,
+      "name": "Раздробленность Руси. Нашествие с Востока и Запада"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 3,
+        "name": "Раздробленность Руси. Нашествие с Востока и Запада"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 3,
+      "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада",
+      "primaryCourseTopic": {
+        "id": 3,
+        "name": "Раздробленность Руси. Нашествие с Востока и Запада"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 3,
+          "name": "Раздробленность Руси. Нашествие с Востока и Запада"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116240,
@@ -1989,7 +4695,40 @@
     "imageFilename": "images/13401/task_116240_0.png",
     "imageFilenames": [
       "images/13401/task_116240_0.png"
-    ]
+    ],
+    "courseTopicId": 19,
+    "courseTopicName": "Николай II: внутренняя и внешняя политика до 1905 года",
+    "topic": "Николай II: внутренняя и внешняя политика до 1905 года",
+    "primaryCourseTopic": {
+      "id": 19,
+      "name": "Николай II: внутренняя и внешняя политика до 1905 года"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 19,
+        "name": "Николай II: внутренняя и внешняя политика до 1905 года"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 19,
+      "courseTopicName": "Николай II: внутренняя и внешняя политика до 1905 года",
+      "primaryCourseTopic": {
+        "id": 19,
+        "name": "Николай II: внутренняя и внешняя политика до 1905 года"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 19,
+          "name": "Николай II: внутренняя и внешняя политика до 1905 года"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116242,
@@ -2013,7 +4752,40 @@
     "imageFilename": "images/13401/task_116242_0.png",
     "imageFilenames": [
       "images/13401/task_116242_0.png"
-    ]
+    ],
+    "courseTopicId": 8,
+    "courseTopicName": "Первые Романовы. Россия в XVII веке",
+    "topic": "Первые Романовы. Россия в XVII веке",
+    "primaryCourseTopic": {
+      "id": 8,
+      "name": "Первые Романовы. Россия в XVII веке"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 8,
+        "name": "Первые Романовы. Россия в XVII веке"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 8,
+      "courseTopicName": "Первые Романовы. Россия в XVII веке",
+      "primaryCourseTopic": {
+        "id": 8,
+        "name": "Первые Романовы. Россия в XVII веке"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 8,
+          "name": "Первые Романовы. Россия в XVII веке"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116245,
@@ -2037,7 +4809,40 @@
     "imageFilename": "images/13401/task_116245_0.png",
     "imageFilenames": [
       "images/13401/task_116245_0.png"
-    ]
+    ],
+    "courseTopicId": 6,
+    "courseTopicName": "Россия при Иване IV: реформы, опричнина, внешняя политика",
+    "topic": "Россия при Иване IV: реформы, опричнина, внешняя политика",
+    "primaryCourseTopic": {
+      "id": 6,
+      "name": "Россия при Иване IV: реформы, опричнина, внешняя политика"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 6,
+        "name": "Россия при Иване IV: реформы, опричнина, внешняя политика"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 6,
+      "courseTopicName": "Россия при Иване IV: реформы, опричнина, внешняя политика",
+      "primaryCourseTopic": {
+        "id": 6,
+        "name": "Россия при Иване IV: реформы, опричнина, внешняя политика"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 6,
+          "name": "Россия при Иване IV: реформы, опричнина, внешняя политика"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116247,
@@ -2061,7 +4866,40 @@
     "imageFilename": "images/13401/task_116247_0.png",
     "imageFilenames": [
       "images/13401/task_116247_0.png"
-    ]
+    ],
+    "courseTopicId": 38,
+    "courseTopicName": "Россия в 2000-е–2020-е гг. + культура",
+    "topic": "Россия в 2000-е–2020-е гг. + культура",
+    "primaryCourseTopic": {
+      "id": 38,
+      "name": "Россия в 2000-е–2020-е гг. + культура"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 38,
+        "name": "Россия в 2000-е–2020-е гг. + культура"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 38,
+      "courseTopicName": "Россия в 2000-е–2020-е гг. + культура",
+      "primaryCourseTopic": {
+        "id": 38,
+        "name": "Россия в 2000-е–2020-е гг. + культура"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 38,
+          "name": "Россия в 2000-е–2020-е гг. + культура"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116251,
@@ -2085,7 +4923,40 @@
     "imageFilename": "images/13401/task_116251_0.png",
     "imageFilenames": [
       "images/13401/task_116251_0.png"
-    ]
+    ],
+    "courseTopicId": 4,
+    "courseTopicName": "Объединение русских земель вокруг Москвы",
+    "topic": "Объединение русских земель вокруг Москвы",
+    "primaryCourseTopic": {
+      "id": 4,
+      "name": "Объединение русских земель вокруг Москвы"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 4,
+        "name": "Объединение русских земель вокруг Москвы"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 4,
+      "courseTopicName": "Объединение русских земель вокруг Москвы",
+      "primaryCourseTopic": {
+        "id": 4,
+        "name": "Объединение русских земель вокруг Москвы"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 4,
+          "name": "Объединение русских земель вокруг Москвы"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116253,
@@ -2109,7 +4980,40 @@
     "imageFilename": "images/13401/task_116253_0.png",
     "imageFilenames": [
       "images/13401/task_116253_0.png"
-    ]
+    ],
+    "courseTopicId": 17,
+    "courseTopicName": "Александр II и Великие реформы",
+    "topic": "Александр II и Великие реформы",
+    "primaryCourseTopic": {
+      "id": 17,
+      "name": "Александр II и Великие реформы"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 17,
+        "name": "Александр II и Великие реформы"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 17,
+      "courseTopicName": "Александр II и Великие реформы",
+      "primaryCourseTopic": {
+        "id": 17,
+        "name": "Александр II и Великие реформы"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 17,
+          "name": "Александр II и Великие реформы"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116256,
@@ -2133,7 +5037,40 @@
     "imageFilename": "images/13401/task_116256_0.png",
     "imageFilenames": [
       "images/13401/task_116256_0.png"
-    ]
+    ],
+    "courseTopicId": 9,
+    "courseTopicName": "Пётр I: реформы и внешняя политика",
+    "topic": "Пётр I: реформы и внешняя политика",
+    "primaryCourseTopic": {
+      "id": 9,
+      "name": "Пётр I: реформы и внешняя политика"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 9,
+        "name": "Пётр I: реформы и внешняя политика"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 9,
+      "courseTopicName": "Пётр I: реформы и внешняя политика",
+      "primaryCourseTopic": {
+        "id": 9,
+        "name": "Пётр I: реформы и внешняя политика"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 9,
+          "name": "Пётр I: реформы и внешняя политика"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116260,
@@ -2157,7 +5094,40 @@
     "imageFilename": "images/13401/task_116260_0.png",
     "imageFilenames": [
       "images/13401/task_116260_0.png"
-    ]
+    ],
+    "courseTopicId": 6,
+    "courseTopicName": "Россия при Иване IV: реформы, опричнина, внешняя политика",
+    "topic": "Россия при Иване IV: реформы, опричнина, внешняя политика",
+    "primaryCourseTopic": {
+      "id": 6,
+      "name": "Россия при Иване IV: реформы, опричнина, внешняя политика"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 6,
+        "name": "Россия при Иване IV: реформы, опричнина, внешняя политика"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 6,
+      "courseTopicName": "Россия при Иване IV: реформы, опричнина, внешняя политика",
+      "primaryCourseTopic": {
+        "id": 6,
+        "name": "Россия при Иване IV: реформы, опричнина, внешняя политика"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 6,
+          "name": "Россия при Иване IV: реформы, опричнина, внешняя политика"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 116262,
@@ -2181,7 +5151,40 @@
     "imageFilename": "images/13401/task_116262_0.png",
     "imageFilenames": [
       "images/13401/task_116262_0.png"
-    ]
+    ],
+    "courseTopicId": 32,
+    "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "topic": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 32,
+      "name": "Хрущёв и «оттепель», 1953–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 32,
+      "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 32,
+          "name": "Хрущёв и «оттепель», 1953–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 177445,
@@ -2205,7 +5208,40 @@
     "imageFilename": "images/13401/task_177445_0.png",
     "imageFilenames": [
       "images/13401/task_177445_0.png"
-    ]
+    ],
+    "courseTopicId": 24,
+    "courseTopicName": "Революции 1917 года",
+    "topic": "Революции 1917 года",
+    "primaryCourseTopic": {
+      "id": 24,
+      "name": "Революции 1917 года"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 24,
+        "name": "Революции 1917 года"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 24,
+      "courseTopicName": "Революции 1917 года",
+      "primaryCourseTopic": {
+        "id": 24,
+        "name": "Революции 1917 года"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 24,
+          "name": "Революции 1917 года"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 177463,
@@ -2229,7 +5265,40 @@
     "imageFilename": "images/13401/task_177463_0.png",
     "imageFilenames": [
       "images/13401/task_177463_0.png"
-    ]
+    ],
+    "courseTopicId": 29,
+    "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+    "topic": "Культура России и СССР 1900–1930-х гг.",
+    "primaryCourseTopic": {
+      "id": 29,
+      "name": "Культура России и СССР 1900–1930-х гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 29,
+      "courseTopicName": "Культура России и СССР 1900–1930-х гг.",
+      "primaryCourseTopic": {
+        "id": 29,
+        "name": "Культура России и СССР 1900–1930-х гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 29,
+          "name": "Культура России и СССР 1900–1930-х гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 181616,
@@ -2253,7 +5322,40 @@
     "imageFilename": "images/13401/task_181616_0.png",
     "imageFilenames": [
       "images/13401/task_181616_0.png"
-    ]
+    ],
+    "courseTopicId": 27,
+    "courseTopicName": "НЭП и образование СССР",
+    "topic": "НЭП и образование СССР",
+    "primaryCourseTopic": {
+      "id": 27,
+      "name": "НЭП и образование СССР"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 27,
+        "name": "НЭП и образование СССР"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 27,
+      "courseTopicName": "НЭП и образование СССР",
+      "primaryCourseTopic": {
+        "id": 27,
+        "name": "НЭП и образование СССР"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 27,
+          "name": "НЭП и образование СССР"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183460,
@@ -2277,7 +5379,40 @@
     "imageFilename": "images/13401/task_183460_0.png",
     "imageFilenames": [
       "images/13401/task_183460_0.png"
-    ]
+    ],
+    "courseTopicId": 21,
+    "courseTopicName": "Первая российская революция 1905–1907 гг.",
+    "topic": "Первая российская революция 1905–1907 гг.",
+    "primaryCourseTopic": {
+      "id": 21,
+      "name": "Первая российская революция 1905–1907 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 21,
+        "name": "Первая российская революция 1905–1907 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 21,
+      "courseTopicName": "Первая российская революция 1905–1907 гг.",
+      "primaryCourseTopic": {
+        "id": 21,
+        "name": "Первая российская революция 1905–1907 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 21,
+          "name": "Первая российская революция 1905–1907 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183462,
@@ -2301,7 +5436,40 @@
     "imageFilename": "images/13401/task_183462_0.png",
     "imageFilenames": [
       "images/13401/task_183462_0.png"
-    ]
+    ],
+    "courseTopicId": 7,
+    "courseTopicName": "Смутное время",
+    "topic": "Смутное время",
+    "primaryCourseTopic": {
+      "id": 7,
+      "name": "Смутное время"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 7,
+        "name": "Смутное время"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 7,
+      "courseTopicName": "Смутное время",
+      "primaryCourseTopic": {
+        "id": 7,
+        "name": "Смутное время"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 7,
+          "name": "Смутное время"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183464,
@@ -2325,7 +5493,40 @@
     "imageFilename": "images/13401/task_183464_0.png",
     "imageFilenames": [
       "images/13401/task_183464_0.png"
-    ]
+    ],
+    "courseTopicId": 9,
+    "courseTopicName": "Пётр I: реформы и внешняя политика",
+    "topic": "Пётр I: реформы и внешняя политика",
+    "primaryCourseTopic": {
+      "id": 9,
+      "name": "Пётр I: реформы и внешняя политика"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 9,
+        "name": "Пётр I: реформы и внешняя политика"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 9,
+      "courseTopicName": "Пётр I: реформы и внешняя политика",
+      "primaryCourseTopic": {
+        "id": 9,
+        "name": "Пётр I: реформы и внешняя политика"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 9,
+          "name": "Пётр I: реформы и внешняя политика"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183466,
@@ -2349,7 +5550,40 @@
     "imageFilename": "images/13401/task_183466_0.png",
     "imageFilenames": [
       "images/13401/task_183466_0.png"
-    ]
+    ],
+    "courseTopicId": 7,
+    "courseTopicName": "Смутное время",
+    "topic": "Смутное время",
+    "primaryCourseTopic": {
+      "id": 7,
+      "name": "Смутное время"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 7,
+        "name": "Смутное время"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 7,
+      "courseTopicName": "Смутное время",
+      "primaryCourseTopic": {
+        "id": 7,
+        "name": "Смутное время"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 7,
+          "name": "Смутное время"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183467,
@@ -2373,7 +5607,40 @@
     "imageFilename": "images/13401/task_183467_0.png",
     "imageFilenames": [
       "images/13401/task_183467_0.png"
-    ]
+    ],
+    "courseTopicId": 3,
+    "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада",
+    "topic": "Раздробленность Руси. Нашествие с Востока и Запада",
+    "primaryCourseTopic": {
+      "id": 3,
+      "name": "Раздробленность Руси. Нашествие с Востока и Запада"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 3,
+        "name": "Раздробленность Руси. Нашествие с Востока и Запада"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 3,
+      "courseTopicName": "Раздробленность Руси. Нашествие с Востока и Запада",
+      "primaryCourseTopic": {
+        "id": 3,
+        "name": "Раздробленность Руси. Нашествие с Востока и Запада"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 3,
+          "name": "Раздробленность Руси. Нашествие с Востока и Запада"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183469,
@@ -2397,7 +5664,40 @@
     "imageFilename": "images/13401/task_183469_0.png",
     "imageFilenames": [
       "images/13401/task_183469_0.png"
-    ]
+    ],
+    "courseTopicId": 38,
+    "courseTopicName": "Россия в 2000-е–2020-е гг. + культура",
+    "topic": "Россия в 2000-е–2020-е гг. + культура",
+    "primaryCourseTopic": {
+      "id": 38,
+      "name": "Россия в 2000-е–2020-е гг. + культура"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 38,
+        "name": "Россия в 2000-е–2020-е гг. + культура"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 38,
+      "courseTopicName": "Россия в 2000-е–2020-е гг. + культура",
+      "primaryCourseTopic": {
+        "id": 38,
+        "name": "Россия в 2000-е–2020-е гг. + культура"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 38,
+          "name": "Россия в 2000-е–2020-е гг. + культура"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183471,
@@ -2421,7 +5721,40 @@
     "imageFilename": "images/13401/task_183471_0.png",
     "imageFilenames": [
       "images/13401/task_183471_0.png"
-    ]
+    ],
+    "courseTopicId": 32,
+    "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "topic": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 32,
+      "name": "Хрущёв и «оттепель», 1953–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 32,
+      "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 32,
+          "name": "Хрущёв и «оттепель», 1953–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183474,
@@ -2445,7 +5778,40 @@
     "imageFilename": "images/13401/task_183474_0.png",
     "imageFilenames": [
       "images/13401/task_183474_0.png"
-    ]
+    ],
+    "courseTopicId": 32,
+    "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "topic": "Хрущёв и «оттепель», 1953–1964 гг.",
+    "primaryCourseTopic": {
+      "id": 32,
+      "name": "Хрущёв и «оттепель», 1953–1964 гг."
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 32,
+      "courseTopicName": "Хрущёв и «оттепель», 1953–1964 гг.",
+      "primaryCourseTopic": {
+        "id": 32,
+        "name": "Хрущёв и «оттепель», 1953–1964 гг."
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 32,
+          "name": "Хрущёв и «оттепель», 1953–1964 гг."
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183476,
@@ -2469,7 +5835,40 @@
     "imageFilename": "images/13401/task_183476_0.png",
     "imageFilenames": [
       "images/13401/task_183476_0.png"
-    ]
+    ],
+    "courseTopicId": 24,
+    "courseTopicName": "Революции 1917 года",
+    "topic": "Революции 1917 года",
+    "primaryCourseTopic": {
+      "id": 24,
+      "name": "Революции 1917 года"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 24,
+        "name": "Революции 1917 года"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 24,
+      "courseTopicName": "Революции 1917 года",
+      "primaryCourseTopic": {
+        "id": 24,
+        "name": "Революции 1917 года"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 24,
+          "name": "Революции 1917 года"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183478,
@@ -2493,7 +5892,40 @@
     "imageFilename": "images/13401/task_183478_0.png",
     "imageFilenames": [
       "images/13401/task_183478_0.png"
-    ]
+    ],
+    "courseTopicId": 12,
+    "courseTopicName": "Екатерина II: внутренняя и внешняя политика",
+    "topic": "Екатерина II: внутренняя и внешняя политика",
+    "primaryCourseTopic": {
+      "id": 12,
+      "name": "Екатерина II: внутренняя и внешняя политика"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 12,
+        "name": "Екатерина II: внутренняя и внешняя политика"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 12,
+      "courseTopicName": "Екатерина II: внутренняя и внешняя политика",
+      "primaryCourseTopic": {
+        "id": 12,
+        "name": "Екатерина II: внутренняя и внешняя политика"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 12,
+          "name": "Екатерина II: внутренняя и внешняя политика"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183480,
@@ -2517,7 +5949,40 @@
     "imageFilename": "images/13401/task_183480_0.png",
     "imageFilenames": [
       "images/13401/task_183480_0.png"
-    ]
+    ],
+    "courseTopicId": 28,
+    "courseTopicName": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика",
+    "topic": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика",
+    "primaryCourseTopic": {
+      "id": 28,
+      "name": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 28,
+        "name": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 28,
+      "courseTopicName": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика",
+      "primaryCourseTopic": {
+        "id": 28,
+        "name": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 28,
+          "name": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183482,
@@ -2541,7 +6006,40 @@
     "imageFilename": "images/13401/task_183482_0.png",
     "imageFilenames": [
       "images/13401/task_183482_0.png"
-    ]
+    ],
+    "courseTopicId": 19,
+    "courseTopicName": "Николай II: внутренняя и внешняя политика до 1905 года",
+    "topic": "Николай II: внутренняя и внешняя политика до 1905 года",
+    "primaryCourseTopic": {
+      "id": 19,
+      "name": "Николай II: внутренняя и внешняя политика до 1905 года"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 19,
+        "name": "Николай II: внутренняя и внешняя политика до 1905 года"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 19,
+      "courseTopicName": "Николай II: внутренняя и внешняя политика до 1905 года",
+      "primaryCourseTopic": {
+        "id": 19,
+        "name": "Николай II: внутренняя и внешняя политика до 1905 года"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 19,
+          "name": "Николай II: внутренняя и внешняя политика до 1905 года"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183484,
@@ -2565,7 +6063,40 @@
     "imageFilename": "images/13401/task_183484_0.png",
     "imageFilenames": [
       "images/13401/task_183484_0.png"
-    ]
+    ],
+    "courseTopicId": 28,
+    "courseTopicName": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика",
+    "topic": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика",
+    "primaryCourseTopic": {
+      "id": 28,
+      "name": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 28,
+        "name": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 28,
+      "courseTopicName": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика",
+      "primaryCourseTopic": {
+        "id": 28,
+        "name": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 28,
+          "name": "СССР в 1920–1930-е гг.: индустриализация, коллективизация, политическая система, внешняя политика"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183486,
@@ -2589,7 +6120,40 @@
     "imageFilename": "images/13401/task_183486_0.png",
     "imageFilenames": [
       "images/13401/task_183486_0.png"
-    ]
+    ],
+    "courseTopicId": 17,
+    "courseTopicName": "Александр II и Великие реформы",
+    "topic": "Александр II и Великие реформы",
+    "primaryCourseTopic": {
+      "id": 17,
+      "name": "Александр II и Великие реформы"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 17,
+        "name": "Александр II и Великие реформы"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 17,
+      "courseTopicName": "Александр II и Великие реформы",
+      "primaryCourseTopic": {
+        "id": 17,
+        "name": "Александр II и Великие реформы"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 17,
+          "name": "Александр II и Великие реформы"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183488,
@@ -2613,7 +6177,40 @@
     "imageFilename": "images/13401/task_183488_0.png",
     "imageFilenames": [
       "images/13401/task_183488_0.png"
-    ]
+    ],
+    "courseTopicId": 35,
+    "courseTopicName": "Перестройка",
+    "topic": "Перестройка",
+    "primaryCourseTopic": {
+      "id": 35,
+      "name": "Перестройка"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 35,
+        "name": "Перестройка"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 35,
+      "courseTopicName": "Перестройка",
+      "primaryCourseTopic": {
+        "id": 35,
+        "name": "Перестройка"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 35,
+          "name": "Перестройка"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183490,
@@ -2637,7 +6234,40 @@
     "imageFilename": "images/13401/task_183490_0.png",
     "imageFilenames": [
       "images/13401/task_183490_0.png"
-    ]
+    ],
+    "courseTopicId": 36,
+    "courseTopicName": "Распад СССР",
+    "topic": "Распад СССР",
+    "primaryCourseTopic": {
+      "id": 36,
+      "name": "Распад СССР"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 36,
+        "name": "Распад СССР"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 36,
+      "courseTopicName": "Распад СССР",
+      "primaryCourseTopic": {
+        "id": 36,
+        "name": "Распад СССР"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 36,
+          "name": "Распад СССР"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183492,
@@ -2661,7 +6291,40 @@
     "imageFilename": "images/13401/task_183492_0.png",
     "imageFilenames": [
       "images/13401/task_183492_0.png"
-    ]
+    ],
+    "courseTopicId": 38,
+    "courseTopicName": "Россия в 2000-е–2020-е гг. + культура",
+    "topic": "Россия в 2000-е–2020-е гг. + культура",
+    "primaryCourseTopic": {
+      "id": 38,
+      "name": "Россия в 2000-е–2020-е гг. + культура"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 38,
+        "name": "Россия в 2000-е–2020-е гг. + культура"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 38,
+      "courseTopicName": "Россия в 2000-е–2020-е гг. + культура",
+      "primaryCourseTopic": {
+        "id": 38,
+        "name": "Россия в 2000-е–2020-е гг. + культура"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 38,
+          "name": "Россия в 2000-е–2020-е гг. + культура"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 183494,
@@ -2685,7 +6348,40 @@
     "imageFilename": "images/13401/task_183494_0.png",
     "imageFilenames": [
       "images/13401/task_183494_0.png"
-    ]
+    ],
+    "courseTopicId": 23,
+    "courseTopicName": "Первая мировая война",
+    "topic": "Первая мировая война",
+    "primaryCourseTopic": {
+      "id": 23,
+      "name": "Первая мировая война"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 23,
+        "name": "Первая мировая война"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 23,
+      "courseTopicName": "Первая мировая война",
+      "primaryCourseTopic": {
+        "id": 23,
+        "name": "Первая мировая война"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 23,
+          "name": "Первая мировая война"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   },
   {
     "id": 100707,
@@ -2709,6 +6405,39 @@
     "imageFilename": "images/13422/task_100707_0.png",
     "imageFilenames": [
       "images/13422/task_100707_0.png"
-    ]
+    ],
+    "courseTopicId": 16,
+    "courseTopicName": "Николай I",
+    "topic": "Николай I",
+    "primaryCourseTopic": {
+      "id": 16,
+      "name": "Николай I"
+    },
+    "requiredCourseTopics": [
+      {
+        "id": 16,
+        "name": "Николай I"
+      }
+    ],
+    "mentionedCourseTopics": [],
+    "metadata": {
+      "enabled": true,
+      "task16": true,
+      "courseTopicId": 16,
+      "courseTopicName": "Николай I",
+      "primaryCourseTopic": {
+        "id": 16,
+        "name": "Николай I"
+      },
+      "requiredCourseTopics": [
+        {
+          "id": 16,
+          "name": "Николай I"
+        }
+      ],
+      "mentionedCourseTopics": [],
+      "missingCourseTopic": false,
+      "constructorTopicsReviewed": true
+    }
   }
 ]
